@@ -5,12 +5,134 @@
   layout:decorate="~{layouts/layout}"
 >
 <head>
-  <title></title>
+  <title>covision-task</title>
 </head>
 
 <div layout:fragment="content">
+
+  <!--실 결재양식 내용 부분 시작 -->
+  <table class="table_10 tableStyle linePlus mt10 multi-row-table" id="TBL_WORK_INFO">
+    <colgroup>
+      <col style="width: 20%;">
+      <col style="width: 20%;">
+      <col style="width: 20%;">
+      <col style="width: 20%;">
+      <col style="width: 20%;">
+    </colgroup>
+
+    <tbody>
+    <tr>
+      <th>합계</th>
+      <td colspan="5">
+        <input class="custom-input" type="text" data-type="mField" data-pattern="currency" id="totalPrice"
+               value="{{ doc.BodyContext.doc.BodyContext.totalPrice }}">
+      </td>
+    </tr>
+    <tr class="multi-row-control">
+      <th>거래처</th>
+      <th>내역</th>
+      <th>금액</th>
+      <th>비고</th>
+      <th>
+        <input type="button" value="+추가" class="multi-row-add add-del-btn" onclick="addRow()">
+      </th>
+    </tr>
+    <tr class="multi-row-template">
+      <td>
+        <input class="custom-input" type="text" data-type="mField" id="position" value="{{ doc.BodyContext.position }}">
+      </td>
+      <td>
+        <input class="custom-input" type="text" data-type="mField" id="position" value="{{ doc.BodyContext.position }}">
+      </td>
+      <td>
+        <input class="custom-input" type="text" data-type="mField"
+               data-pattern="currency" id="price" value="{{ doc.BodyContext.price }}"
+               onchange="getTotlaPrice(this)">
+      </td>
+      <td>
+        <input class="custom-input" type="text" data-type="mField" id="position" value="{{ doc.BodyContext.position }}">
+      </td>
+      <td class="center">
+        <input type="button" value="-삭제" class="add-del-btn" onclick="deleteRow(this)">
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <!--실 결재양식 내용 부분 끝 -->
+
+
   <th:block layout:fragment="script">
-    <script src="/lib/js/"></script>
+
+    <script>
+      /**
+       *  각 로우의 가격의 총합계를 구하는 함수
+       */
+      let getTotlaPrice = (obj) => {
+        let currentTotalPrice = document.getElementById("totalPrice");
+        let price = Number(obj.value.replace(",", ""));
+        let totalPrice = Number(currentTotalPrice.value) + price;
+        currentTotalPrice.value = totalPrice;
+      }
+
+      let addRow = () => {
+        // table element 찾기
+        const table = document.getElementById('TBL_WORK_INFO');
+
+        // 새 행(Row) 추가
+        const newRow = table.insertRow();
+
+        // 새 행(Row)에 Cell 추가
+        let row = table.insertRow( table.rows.length ); // 하단에 추가
+        // let cell1 = row.insertCell(0);
+        // let cell2 = row.insertCell(1);
+        row.innerHTML = '<tr class="multi-row-template">\n' +
+          '      <td>\n' +
+          '        <input class="custom-input" type="text" data-type="mField" id="position" value="{{ doc.BodyContext.position }}">\n' +
+          '      </td>\n' +
+          '      <td>\n' +
+          '        <input class="custom-input" type="text" data-type="mField" id="position" value="{{ doc.BodyContext.position }}">\n' +
+          '      </td>\n' +
+          '      <td>\n' +
+          '        <input class="custom-input" type="text" data-type="mField"\n' +
+          '               data-pattern="currency" id="price" value="{{ doc.BodyContext.price }}"\n' +
+          '               onchange="getTotlaPrice(this)">\n' +
+          '      </td>\n' +
+          '      <td>\n' +
+          '        <input class="custom-input" type="text" data-type="mField" id="position" value="{{ doc.BodyContext.position }}">\n' +
+          '      </td>\n' +
+          '      <td class="center">\n' +
+          '        <input type="button" value="-삭제" class="add-del-btn" onclick="deleteRow(this)">\n' +
+          '      </td>\n' +
+          '    </tr>';
+      }
+
+      /**
+       * 원하는 데이블 로우 삭제하기
+       * @param obj
+       * @returns
+       */
+      let deleteRow = (obj) => {
+        let multiRowTemplates = $(obj).parent().parent();
+
+        // 최근 총 합계 - 삭제 하려는 로우의 가격 = 총 합
+        let currentTotalPrice = document.getElementById("totalPrice");
+        let price =  $(multiRowTemplates).find("#price").val();
+        let totalPrice = Number(currentTotalPrice.value) - Number(price);
+        currentTotalPrice.value = totalPrice;
+
+        // 유사배열
+        let trList =  document.getElementsByClassName("multi-row");
+        let trCount = trList.length;
+
+        if(trCount <= 1){
+          // Common.Warning('삭제할 수 없습니다.');
+          return false;
+        } else {
+          // 해당 로우 삭제
+          multiRowTemplates.remove();
+        }
+      }
+    </script>
   </th:block>
 </div>
 </html>
