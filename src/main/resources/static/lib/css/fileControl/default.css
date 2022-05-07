@@ -1,0 +1,524 @@
+@CHARSET "UTF-8";
+/* 폰트 변경시 '폰트_맑은 고딕'으로 검색 */
+
+
+/*상단 네비*/
+.header{position:relative; display:inline-block; background:url(/smarts4j/covicore/resources/images/covision/bg_header.gif) repeat-x; height:113px; width:100%; z-index:30;}
+
+/* 버튼 오버레이
+.txt_btn_bs {font-size:12px; color:#444444 !important; text-align:center; font-weight:bold;}
+.txt_btn_ws {font-size:12px; color:#444444 !important; text-align:center; font-weight:bold;}
+em.btn_bs_l{white-space:nowrap;float:left;  height:21px; text-align:center;  background:url(/smarts4j/covicore/resources/images/covision/Btn/btn_ws.gif) no-repeat 0 0  !important; font-style:normal;cursor:pointer; margin:0 2px 0 2px;  padding:0 0 0 5px;}
+span.btn_bs_r{white-space:nowrap;float:left; line-height:21px; margin-left:1px; height:21px;   background:url(/smarts4j/covicore/resources/images/covision/Btn/btn_ws.gif) no-repeat right !important; cursor:pointer; padding-right:1px; padding:0 5px 0 0;}
+*/
+/* header > GNB */
+.header .gnb { position:absolute; top:66px; left:20px; padding:0; margin:0;}
+.gnb li {margin-top:0; float:left; list-style:none; }
+.gnb .exmenu {margin-top:8px; float:left; height:26px; list-style:none; border-right:0;}
+.gnb .exmenu ul {padding:0; margin:0; position:absolute; top:33px; right:0; background:#fff; border:1px solid #4b4b4b;}
+.gnb .exmenu ul li {clear:both; border-right:0; height:30px !important; line-height:30px; margin-top:0;}
+.gnb .exmenu ul li a {padding:0 8px;color:#666; font-size:12px; line-height:30px; font-weight:normal;}
+.gnb .exmenu ul li a:hover {color:#666; font-size:12px; font-weight:normal; background:#f9f9f9;}
+.gnb a {text-align:center;font-size:15px; font-family: 맑은 고딕, Malgun Gothic, 돋움, 굴림, Dotum, Gulim,Apple-Gothic,sans-serif; padding:0 5px 0 5px;  color:#FFFFFF; display:block; font-weight:bold; text-decoration:none; line-height:45px;  white-space:nowrap; cursor:pointer; margin:0px;  overflow:hidden;}
+.gnb a:hover {text-align:center; font-size:15px; font-family: 맑은 고딕, Malgun Gothic, 돋움, 굴림, Dotum, Gulim, sans-serif; padding:0 5px 0 5px;  color:#FFFFFF; display:block; font-weight:bold; text-decoration:none; line-height:45px;  white-space:nowrap; cursor:pointer; margin:0px; overflow:hidden;}
+.off em {float:left; *margin-top:-1px;  padding-top:0; font-style:normal;}
+.off span {float:left;margin-left:12px; padding-top:0; padding-right:15px;}
+.over em {float:left; height:47px; background:#2f91e3; font-style:normal;}
+.over span {float:left; margin:0 0 0 12px; height:47px; padding-right:15px; background:#2f91e3;}
+.over span a {margin-top:0; color:#ffffff;}
+.over span a:hover {margin-top:0; color:#ffffff;} 
+.btn_mobile { display:block; margin:16px 0 0 -24px;  *margin:13px 0 0 -24px;/*ie7*/ _margin:10px 0 0 -17px;/*ie6*/ position:absolute;}
+@-moz-document url-prefix() { .btn_mobile { display:block; margin:-22px 0 0 44px;  position:absolute;} }
+
+.con_t {width:100%; margin:0; }
+.con_t_l {width:100%; float:left;margin:0 15px 15px -248px;}
+.con_t_r {width:230px;}
+/* 상단메뉴 오버 */
+.level1 { z-index:10; border:1px solid #7c7c7c; border-top:0; clear:both; z-index:6; position:absolute; width:auto; padding:3px 5px 7px 5px; white-space:nowrap; margin-top:47px; *margin-top:0;/*ie7*/ background-color:#ffffff;}
+.level1 li { float:none; width:100%; list-style:none; border-bottom:0; height:30px; width:auto; padding-right:30px; display:block;}
+.level1 a.smenu {background:url(/smarts4j/covicore/resources/images/covision/ico_off.gif) no-repeat 3px 16px; _background:url(/smarts4j/covicore/resources/images/covision/ico_off.gif) no-repeat 3px 21px;/*ie6*/  padding-left:10px; line-height:30px; white-space:nowrap; margin:0; padding-top:5px; font-family:돋움, 굴림, Dotum, Gulim, sans-serif;font-size:11px; color:#8a8a8a;  font-weight:normal; min-width:100%; * min-width:0;/*ie7*/  text-align:left;}
+.level1 a.smenu:hover {background:url(/smarts4j/covicore/resources/images/covision/ico_off.gif) no-repeat 3px 16px; _background:url(/smarts4j/covicore/resources/images/covision/ico_off.gif) no-repeat 3px 21px;/*ie6*/  padding-left:10px; line-height:30px; white-space:nowrap; margin:0; padding-top:5px; font-family:돋움, 굴림, Dotum, Gulim, sans-serif;font-size:11px; color:#e46112;  font-weight:normal; min-width:100%; * min-width:0;/*ie7*/  text-align:left;}
+.level1 a.smenu_on{background:url(/smarts4j/covicore/resources/images/covision/ico_on.gif) no-repeat 3px 19px; _background:url(/smarts4j/covicore/resources/images/covision/ico_on.gif) no-repeat 3px 21px;/*ie6*/  padding-left:10px; line-height:35px; white-space:nowrap; margin:0; padding-top:5px; font-family:돋움, 굴림, Dotum, Gulim, sans-serif;font-size:11px; color:#f78427;   min-width:100%; * min-width:0;/*ie7*/  text-align:left;}
+.level1 a:hover.smenu_on{background:url(/smarts4j/covicore/resources/images/covision/ico_on.gif) no-repeat 3px 19px; _background:url(/smarts4j/covicore/resources/images/covision/ico_on.gif) no-repeat 3px 21px;/*ie6*/ padding-left:10px; line-height:35px; white-space:nowrap; margin:0; padding-top:5px; font-family: 돋움, 굴림, Dotum, Gulim, sans-serif; font-size:11px; color:#f78427;  min-width:100%; * min-width:0;/*ie7*/  text-align:left;}
+
+/* lnb 타이틀 */
+.txt_ltit{font-size:15px; font-family: 맑은 고딕, Malgun Gothic, 돋움, 굴림, Dotum, Gulim,Apple-Gothic,sans-serif; font-weight:bold; color:#ffffff; line-height:49px; margin-left:46px;}
+.lt_community{background:url(/smarts4j/covicore/resources/images/covision/bg_ltit_community.jpg) no-repeat left 5px; float:left; width:202px; height:51px; margin:0 0 0 0; color:#fff; font-weight:bold; line-height:18px; padding-top:0px; background-color:#196fba;}
+.lt_mail {background:url(/smarts4j/covicore/resources/images/covision/bg_ltit_mail.jpg) no-repeat left 5px; float:left; width:202px; height:51px; margin:0 0 0 0; color:#fff; font-weight:bold; line-height:18px; padding-top:0px; background-color:#196fba;}
+.lt_mail_fw {background:url(/smarts4j/covicore/resources/images/covision/bg_ltit_mail_fw.jpg) no-repeat left 5px; float:left; width:202px; height:51px; margin:0 0 0 0; color:#fff; font-weight:bold; line-height:18px; padding-top:0px; background-color:#196fba;}
+.lt_mailcontact {background:url(/smarts4j/covicore/resources/images/covision/bg_ltit_bizcard.jpg) no-repeat left 5px; float:left; width:202px; height:51px; margin:0 0 0 0; color:#fff; font-weight:bold; line-height:18px; padding-top:0px; background-color:#196fba;}
+.lt_mailcalendar {background:url(/smarts4j/covicore/resources/images/covision/bg_ltit_schedule.jpg) no-repeat left 5px; float:left; width:202px; height:51px; margin:0 0 0 0; color:#fff; font-weight:bold; line-height:18px; padding-top:0px; background-color:#196fba;}
+.lt_doc {background:url(/smarts4j/covicore/resources/images/covision/bg_ltit_doc.jpg) no-repeat left 5px; float:left; width:202px; height:51px; margin:0 0 0 0; color:#fff; font-weight:bold; line-height:18px; padding-top:0px; background-color:#196fba;}
+.lt_board{background:url(/smarts4j/covicore/resources/images/covision/bg_ltit_board.jpg) no-repeat left 5px; float:left; width:202px; height:51px; margin:0 0 0 0; color:#fff; font-weight:bold; line-height:18px; padding-top:0px; background-color:#196fba;}
+.lt_approval{background:url(/smarts4j/covicore/resources/images/covision/bg_ltit_approval.jpg) no-repeat left 5px; float:left; width:202px; height:51px; margin:0 0 0 0; color:#fff; font-weight:bold; line-height:18px; padding-top:0px; background-color:#196fba;}
+.lt_survey{background:url(/smarts4j/covicore/resources/images/covision/bg_ltit_survey.jpg) no-repeat left 5px; float:left; width:202px; height:51px; margin:0 0 0 0; color:#fff; font-weight:bold; line-height:18px; padding-top:0px; background-color:#196fba;}
+.lt_resource{background:url(/smarts4j/covicore/resources/images/covision/bg_ltit_resource.jpg) no-repeat left 5px; float:left; width:202px; height:51px; margin:0 0 0 0; color:#fff; font-weight:bold; line-height:18px; padding-top:0px; background-color:#196fba;}
+.lt_schedule{background:url(/smarts4j/covicore/resources/images/covision/bg_ltit_schedule.jpg) no-repeat left 5px; float:left; width:202px; height:51px; margin:0 0 0 0; color:#fff; font-weight:bold; line-height:18px; padding-top:0px; background-color:#196fba;}
+.lt_mypage{background:url(/smarts4j/covicore/resources/images/covision/bg_ltit_mypage.jpg) no-repeat left 5px; float:left; width:202px; height:51px; margin:0 0 0 0; color:#fff; font-weight:bold; line-height:18px; padding-top:0px; background-color:#196fba;}
+.lt_bizcard{background:url(/smarts4j/covicore/resources/images/covision/bg_ltit_bizcard.jpg) no-repeat left 5px; float:left; width:202px; height:51px; margin:0 0 0 0; color:#fff; font-weight:bold; line-height:18px; padding-top:0px; background-color:#196fba;}
+.lt_vreservation{background:url(/smarts4j/covicore/resources/images/covision/bg_ltit_doc.jpg) no-repeat left 5px; float:left; width:202px; height:51px; margin:0 0 0 0; color:#fff; font-weight:bold; line-height:18px; padding-top:0px; background-color:#196fba;}
+.lt_businessreport{background:url(/smarts4j/covicore/resources/images/covision/bg_ltit_doc.jpg) no-repeat left 5px; float:left; width:202px; height:51px; margin:0 0 0 0; color:#fff; font-weight:bold; line-height:18px; padding-top:0px; background-color:#196fba;}
+.lt_report{background:url(/smarts4j/covicore/resources/images/covision/bg_ltit_report.jpg) no-repeat left 5px; float:left; width:202px; height:51px; margin:0 0 0 0; color:#fff; font-weight:bold; line-height:18px; padding-top:0px; background-color:#196fba;}
+.lt_suggestion{background:url(/smarts4j/covicore/resources/images/covision/bg_ltit_suggestion.jpg) no-repeat left 5px; float:left; width:202px; height:51px; margin:0 0 0 0; color:#fff; font-weight:bold; line-height:18px; padding-top:0px; background-color:#196fba;}
+.lt_Knowledge{background:url(/smarts4j/covicore/resources/images/covision/bg_ltit_Knowledge.jpg) no-repeat left 5px; float:left; width:202px; height:51px; margin:0 0 0 0; color:#fff; font-weight:bold; line-height:18px; padding-top:0px; background-color:#196fba;}
+.lt_mybox{background:url(/smarts4j/covicore/resources/images/covision/bg_ltit_doc.jpg) no-repeat left 5px; float:left; width:202px; height:51px; margin:0 0 0 0; color:#fff; font-weight:bold; line-height:18px; padding-top:0px; background-color:#196fba;}
+.lt_crm {background:url(/smarts4j/covicore/resources/images/covision/bg_ltit_schedule.jpg) no-repeat left 5px; float:left; width:202px; height:451px; margin:0 0 0 0; color:#fff; font-weight:bold; line-height:18px; padding-top:0px; background-color:#196fba;}
+.lt_blog{background:url(/smarts4j/covicore/resources/images/covision/bg_ltit_mypage.jpg) no-repeat left 5px; float:left; width:202px; height:51px; margin:0 0 0 0; color:#fff; font-weight:bold; line-height:18px; padding-top:0px; background-color:#196fba;}
+.lt_wiki{background:url(/smarts4j/covicore/resources/images/covision/bg_ltit_wiki.jpg) no-repea left 5pxt; float:left; width:202px; height:51px; margin:0 0 0 0; color:#fff; font-weight:bold; line-height:18px; padding-top:0px; background-color:#196fba;}
+.lt_meeting{background:url(/smarts4j/covicore/resources/images/covision/bg_ltit_doc.jpg) no-repeat left 5px; float:left; width:202px; height:51px; margin:0 0 0 0; color:#fff; font-weight:bold; line-height:18px; padding-top:0px; background-color:#196fba;}
+.lt_work{background:url(/smarts4j/covicore/resources/images/covision/bg_ltit_doc.jpg) no-repeat left 5px; float:left; width:202px; height:51px; margin:0 0 0 0; color:#fff; font-weight:bold; line-height:18px; padding-top:0px; background-color:#196fba;}
+.lt_suggestion2{background:url(/smarts4j/covicore/resources/images/covision/bg_ltit_doc.jpg) no-repeat left 5px; float:left; width:202px; height:51px; margin:0 0 0 0; color:#fff; font-weight:bold; line-height:18px; padding-top:0px; background-color:#196fba;}
+.lt_innovation{background:url(/smarts4j/covicore/resources/images/covision/bg_ltit_doc.jpg) no-repeat left 5px; float:left; width:202px; height:51px; margin:0 0 0 0; color:#fff; font-weight:bold; line-height:18px; padding-top:0px; background-color:#196fba;}
+.lt_project{background:url(/smarts4j/covicore/resources/images/covision/bg_ltit_doc.jpg) no-repeat left 5px; float:left; width:202px; height:51px; margin:0 0 0 0; color:#fff; font-weight:bold; line-height:18px; padding-top:0px; background-color:#196fba;}
+.lt_task {background:url(/smarts4j/covicore/resources/images/covision/bg_ltit_board.jpg) no-repeat left 5px; float:left; width:202px; height:51px; margin:0 0 0 0; color:#fff; font-weight:bold; line-height:18px; padding-top:0px; background-color:#196fba;}
+
+
+
+/* 메인 탭 
+.tab_over{float:left; text-align:center; background:url(/smarts4j/covicore/resources/images/covision/bg_tab.gif) repeat-x; width:50%;}
+.tab_over a {font-size:12px; color:#fff; font-weight:bold;}
+.tab_over a:hover {font-size:12px; color:#fff; font-weight:bold;}
+*/
+/* 전자결재 탭 
+.app_tab_01_on{float:left; background:url(/smarts4j/covicore/resources/images/covision/bg_tab.gif) repeat-x; width:100px; white-space:nowrap; height:26px; padding:0px;}
+.app_tab_02_on {float:left; background:url(/smarts4j/covicore/resources/images/covision/bg_tab.gif) repeat-x top left; width:98px; height:26px; padding:0px}
+.app_tabmenu {padding:0; margin:0; list-style:none; display:block; float:left; width:100%; height:28px; margin-bottom:10px; background-color:#858b91;}
+*/
+/* 탭 
+.appform_tab_01_on {float:left; background:url(/smarts4j/covicore/resources/images/covision/bg_tab.gif) repeat-x; white-space:nowrap; height:26px; width:86px; cursor:pointer;}
+.appform_tab_02_on{float:left; background:url(/smarts4j/covicore/resources/images/covision/bg_tab.gif) repeat-x; width:56px; height:26px; cursor:pointer; cursor:pointer;}
+.app_tab_01_on{float:left; background:url(/smarts4j/covicore/resources/images/covision/bg_tab.gif) repeat-x; width:100px; white-space:nowrap; height:26px; padding:0px;}
+.app_tab_02_on {float:left; background:url(/smarts4j/covicore/resources/images/covision/bg_tab.gif) repeat-x top left; width:98px; height:26px; padding:0px}
+*/
+/* 메인 중앙 탭 */
+.con_tab {float:left; background:url(/smarts4j/covicore/resources/images/covision/bg_ctab.gif); width:100%; padding:0px; margin:0px; list-style:none; border-top:1px solid #d4d4d4;}
+
+/* 팝업 탭 
+.layer_searchlist_title { height:27px; background:#444444;}
+*/
+/* 기본탭 
+.tabmenu_on a {display:block; padding:7px 12px 7px 12px; font-weight:bold; border-top:1px solid #858b91; border-left:1px solid #858b91; color:#fff; background:#858b91;}
+*/
+/* 메인 TOP 이미지 */
+.webmail_main_header { display:none; width:100%; height:107px; background:url(/smarts4j/covicore/resources/images/covision/approval_portal_tit_bg_m.jpg) repeat-x top left; z-index:10;}
+.webmail_main_title {float:left; width:298px; height:107px;  background:url(/smarts4j/covicore/resources/images/covision/mail_portal_tit_bg.jpg) no-repeat top left; z-index:11; padding-top:35px;  padding-left:135px; *padding-top:25px;/*ie7*/}
+.webmail_main_r {float:right; height:107px; background:url(/smarts4j/covicore/resources/images/covision/board_portal_tit_bg_r.jpg) no-repeat top right; z-index:12;}
+.webmail_main_tit_txt {font-size:26px; font-family: 맑은 고딕, Malgun Gothic, 돋움, 굴림, Dotum, Gulim,Apple-Gothic,sans-serif; color:#FFF; *line-height:normal;/*ie7*/ text-decoration:none; white-space:nowrap;}
+.doc_main_header { display:none; width:100%; height:107px; background:url(/smarts4j/covicore/resources/images/covision/approval_portal_tit_bg_m.jpg) repeat-x top left; z-index:10;}
+.doc_main_title {float:left; width:298px; height:107px;  background:url(/smarts4j/covicore/resources/images/covision/doc_portal_tit_bg.jpg) no-repeat top left; z-index:11; padding-top:35px;  padding-left:135px; *padding-top:25px;/*ie7*/}
+.doc_main_r {float:right; height:107px; background:url(/smarts4j/covicore/resources/images/covision/board_portal_tit_bg_r.jpg) no-repeat top right; z-index:12;}
+.doc_main_tit_txt {font-size:26px; font-family: 맑은 고딕, Malgun Gothic, 돋움, 굴림, Dotum, Gulim,Apple-Gothic,sans-serif; color:#FFF; *line-height:normal;/*ie7*/ text-decoration:none; white-space:nowrap;}
+.board_main_header { display:none; width:100%; height:107px; background:url(/smarts4j/covicore/resources/images/covision/approval_portal_tit_bg_m.jpg) repeat-x top left; z-index:10;}
+.board_main_title {float:left; width:298px; height:107px;  background:url(/smarts4j/covicore/resources/images/covision/board_portal_tit_bg.jpg) no-repeat top left; z-index:11; padding-top:35px;  padding-left:135px; *padding-top:25px;/*ie7*/}
+.board_main_r {float:right; height:107px; background:url(/smarts4j/covicore/resources/images/covision/board_portal_tit_bg_r.jpg) no-repeat top right; z-index:12;}
+.board_main_tit_txt {font-size:26px; font-family: 맑은 고딕, Malgun Gothic, 돋움, 굴림, Dotum, Gulim,Apple-Gothic,sans-serif; color:#FFF; *line-height:normal;/*ie7*/ text-decoration:none; white-space:nowrap;}
+.research_main_header { display:none; width:100%; height:107px; background:url(/smarts4j/covicore/resources/images/covision/approval_portal_tit_bg_m.jpg) repeat-x top left; z-index:10;}
+.research_main_title {float:left; width:298px; height:107px;  background:url(/smarts4j/covicore/resources/images/covision/research_portal_tit_bg.jpg) no-repeat top left; z-index:11; padding-top:35px;  padding-left:135px; *padding-top:25px;/*ie7*/}
+.research_main_tit_txt {font-size:26px; font-family: 맑은 고딕, Malgun Gothic, 돋움, 굴림, Dotum, Gulim,Apple-Gothic,sans-serif; color:#FFF; *line-height:normal;/*ie7*/ text-decoration:none; white-space:nowrap;}
+.research_main_r {float:right; width:257px; height:107px; background:url(/smarts4j/covicore/resources/images/covision/approval_portal_tit_bg_r.jpg) no-repeat top right; z-index:12;}
+.schedule_main_header { display:none; width:100%; height:107px; background:url(/smarts4j/covicore/resources/images/covision/approval_portal_tit_bg_m.jpg) repeat-x top left; z-index:10;}
+.schedule_main_title {float:left; width:298px; height:107px;  background:url(/smarts4j/covicore/resources/images/covision/schedule_portal_tit_bg.jpg) no-repeat top left; z-index:11; padding-top:35px;  padding-left:135px; *padding-top:25px;/*ie7*/}
+.schedule_main_tit_txt {font-size:26px; font-family: 맑은 고딕, Malgun Gothic, 돋움, 굴림, Dotum, Gulim,Apple-Gothic,sans-serif; color:#FFF; *line-height:normal;/*ie7*/ text-decoration:none; white-space:nowrap;}
+.schedule_main_r {float:right; width:275px; height:107px; background:url(/smarts4j/covicore/resources/images/covision/approval_portal_tit_bg_r.jpg) no-repeat top right; z-index:12;}
+.app_main_header { display:none; width:100%; height:107px; background:url(/smarts4j/covicore/resources/images/covision/approval_portal_tit_bg_m.jpg) repeat-x top left; z-index:10;}
+.app_main_title {float:left; width:298px; height:107px;  background:url(/smarts4j/covicore/resources/images/covision/approval_portal_tit_bg.jpg) no-repeat top left; z-index:11; padding-top:35px;  padding-left:135px; *padding-top:25px;/*ie7*/}
+.app_main_tit_txt {font-size:26px; font-family: 맑은 고딕, Malgun Gothic, 돋움, 굴림, Dotum, Gulim,Apple-Gothic,sans-serif; color:#FFF; *line-height:normal;/*ie7*/ text-decoration:none; white-space:nowrap;}
+.app_main_r {float:right; width:275px; height:107px; background:url(/smarts4j/covicore/resources/images/covision/approval_portal_tit_bg_r.jpg) no-repeat top right; z-index:12;}
+.resource_main_header { display:none; width:100%; height:107px; background:url(/smarts4j/covicore/resources/images/covision/approval_portal_tit_bg_m.jpg) repeat-x top left; z-index:10;}
+.resource_main_title {float:left; width:298px; height:107px;  background:url(/smarts4j/covicore/resources/images/covision/resource_portal_tit_bg.jpg) no-repeat top left; z-index:11; padding-top:35px;  padding-left:135px; *padding-top:25px;/*ie7*/}
+.resource_main_tit_txt {font-size:26px; font-family: 맑은 고딕, Malgun Gothic, 돋움, 굴림, Dotum, Gulim,Apple-Gothic,sans-serif; color:#FFF; *line-height:normal;/*ie7*/ text-decoration:none; white-space:nowrap;}
+.resource_main_r {float:right; width:275px; height:107px; background:url(/smarts4j/covicore/resources/images/covision/approval_portal_tit_bg_r.jpg) no-repeat top right; z-index:12;}
+.suggestion_main_header { display:none; width:100%; height:107px; background:url(/smarts4j/covicore/resources/images/covision/approval_portal_tit_bg_m.jpg) repeat-x top left; z-index:10;}
+.suggestion_main_title {float:left; width:298px; height:107px;  background:url(/smarts4j/covicore/resources/images/covision/suggestion_portal_tit_bg.jpg) no-repeat top left; z-index:11; padding-top:35px;  padding-left:135px; *padding-top:25px;/*ie7*/}
+.suggestion_main_tit_txt {font-size:26px; font-family: 맑은 고딕, Malgun Gothic, 돋움, 굴림, Dotum, Gulim,Apple-Gothic,sans-serif; color:#FFF; *line-height:normal;/*ie7*/ text-decoration:none; white-space:nowrap;}
+.suggestion_main_r {float:right; width:275px; height:107px; background:url(/smarts4j/covicore/resources/images/covision/approval_portal_tit_bg_r.jpg) no-repeat top right; z-index:12;}
+
+
+/* 시스템 아이콘  */
+.Board_systemIco { width:24px;height:24px;background:url(/smarts4j/covicore/resources/images/covision/ico_board_over.png) no-repeat;display:none;}
+.Board_Maeil_systemIco { width:24px;height:24px;background:url(/smarts4j/covicore/resources/images/covision/ico_board_over.png) no-repeat;display:none;}
+.Portal_systemIco { width:24px;height:24px;background:url(/smarts4j/covicore/resources/images/covision/ico_Portal.png) no-repeat;display:none;}
+.Schedule_systemIco { width:24px;height:24px;background:url(/smarts4j/covicore/resources/images/covision/ico_Schedule.png) no-repeat;display:none;}
+.Doc_systemIco { width:24px;height:24px;background:url(/smarts4j/covicore/resources/images/covision/ico_doc.png) no-repeat;display:none;}
+.Resource_systemIco { width:24px;height:24px;background:url(/smarts4j/covicore/resources/images/covision/ico_Resource.png) no-repeat;display:none;}
+.Survey_systemIco { width:24px;height:24px;background:url(/smarts4j/covicore/resources/images/covision/ico_Survey.png) no-repeat;display:none;}
+.Approval_systemIco { width:24px;height:24px;background:url(/smarts4j/covicore/resources/images/covision/ico_Approval.png) no-repeat;display:none;}
+.Mail_systemIco {width:24px;height:24px;background:url(/smarts4j/covicore/resources/images/covision/ico_Mail.png) no-repeat;display:none;}
+.MailCalendar_systemIco {width:24px;height:24px;background:url(/smarts4j/covicore/resources/images/covision/ico_MailCalendar.png) no-repeat;display:none;}
+.MailContact_systemIco {width:24px;height:24px;background:url(/smarts4j/covicore/resources/images/covision/ico_MailContact.png) no-repeat;display:none;}
+.Collaboration_systemIco { width:24px;height:24px;background:url(/smarts4j/covicore/resources/images/covision/ico_doc.png) no-repeat;display:none;}
+.BizCard_systemIco { width:24px;height:24px;background:url(/smarts4j/covicore/resources/images/covision/ico_businesscard.png) no-repeat;display:none;}
+.WorkTime_systemIco { width:24px;height:24px;background:url(/smarts4j/covicore/resources/images/covision/ico_worktime.png) no-repeat;display:none;}
+.WorkTime_systemIco { width:24px;height:24px;background:url(/smarts4j/covicore/resources/images/covision/ico_worktime.png) no-repeat;display:none;}
+.Report_systemIco { width:24px;height:24px;background:url(/smarts4j/covicore/resources/images/covision/ico_Report.png) no-repeat;display:none;}
+.Community_systemIco { width:24px;height:24px;background:url(/smarts4j/covicore/resources/images/covision/ico_Community.png) no-repeat;display:none;}
+.KM_systemIco{ width:33px;height:24px;background:url(/smarts4j/covicore/resources/images/covision/ico_KM.png) no-repeat;display:none;}
+
+/*푸터*/
+.copyright_name{font-size:11px; color:#828282; font-weight:bold;}
+.footer .copyright dd{float:left; font:normal 11px dotum,'돋움',Apple-Gothic,맑은 고딕, Malgun Gothic,sans-serif; color:#a1a1a1; line-height:18px; padding:0 0 0 15px; }
+.footer{clear:both; width:100%; display:inline-block; position:relative; border-top:0; z-index:10; background:#858a95; }
+
+/*포털 날씨 색 */
+.txt_day{font:normal 36px 'Verdana', '맑은 고딕','dotum',Apple-Gothic, Malgun Gothic,sans-serif; font-size:21px; color:#4e5582;}
+.txt_bb21 {font-size:21px; font-family: 맑은 고딕, Malgun Gothic, 돋움, 굴림, Dotum, Gulim,,Apple-Gothic,sans-serif; color:#4e5582; letter-spacing:-1px;}
+.txt_gn11_m {font-size:11px; color:#767676; font-weight:normal; }
+.txt_ob11_m {font-size:11px; color:#f86f2c; font-weight:bold;}
+
+/* .mybox{ background:url(/smarts4j/covicore/resources/images/covision/line_02.gif) no-repeat 62px 43px ;} */
+.mybox .b01{background:url(/smarts4j/covicore/resources/images/covision/ico_mb01_new.gif) no-repeat 7px 4px;}
+.mybox .b02{background:url(/smarts4j/covicore/resources/images/covision/ico_mb02_new.gif) no-repeat 7px 4px; margin-left:17px;}
+.mybox .b03{background:url(/smarts4j/covicore/resources/images/covision/ico_mb03_new.gif) no-repeat 7px 4px; margin-left:17px;}
+
+/*메인배너 테마*/
+.new_main_img {width:100%; height:183px; background:#d6dddb; border:0;}
+.portal_mban_img{width:100%; height:183px; background:url(/smarts4j/covicore/resources/images/covision/main_img_new.jpg) no-repeat center top;}
+
+/* header > Top 좌측메뉴 */
+.header .mymenu {position:absolute; top:22px; right:29px; border-left:0; padding:0; z-index:30;}
+.header .mymenu a{font-size:11px; color:#6e6e6e; text-decoration:none; white-space:nowrap; }
+.header .mymenu a:hover{color:#6e6e6e;  font-size:11px; text-decoration:none; white-space:nowrap; }
+.header .mymenu .btn_todolist {margin:-2px 5px 1px 0; *margin:-2px 5px 0 0;/*ie7*/}
+.header .mymenu .btn_logout {display:none; margin:-5px 8px 0 10px; *margin:-3px 8px 0 10px;/*ie7*/ padding-top:3px;}
+
+h1 {}
+h1 a {position:absolute; top:13px; left:20px; width:90px; height:36px; background:url(/smarts4j/covicore/resources/images/covision/logo_header.png) no-repeat left top;}
+h1 a img {display:none;}
+
+/* 라운드처리 */
+.round_b {width:100%; background-color:transprant;margin:0 0 15px 0; float:left; padding:0px;}
+.round_b .r1{display:block; height:1px; overflow:hidden;}
+.round_b .r2{display:block; height:0px; overflow:hidden;}
+.round_b .r3{display:block; height:0px; overflow:hidden;}
+.round_b .r4{display:block; height:0px; overflow:hidden; }
+.round_b .r1_b{display:block; height:1px; overflow:hidden;}
+.round_b .r2_b{display:block; height:0px; overflow:hidden;}
+.round_b .r3_b{display:block; height:0px; overflow:hidden;}
+.round_b .r4_b{display:block; height:0px; overflow:hidden;}
+.round_b .r1, .round_b .r2, .round_b .r3, .round_b .r4, .round_b .r5{border:#d4d4d4; background: #ffffff;}
+.round_b .r1_b, .round_b .r2_b, .round_b .r3_b, .round_b .r4_b, .round_b .r5_b{border:#d4d4d4; background: #ffffff;}
+.round_b .r1{background:#d4d4d4;}
+.round_b .r1{margin:0;}
+.round_b .r2{border-left:2px solid #d4d4d4; border-right:2px solid #d4d4d4; margin:0px 3px 0px 3px;}  
+.round_b .r3{border-left:1px solid #d4d4d4; border-right:1px solid #d4d4d4;}
+.round_b .r4{border-left:1px solid #d4d4d4; border-right:1px solid #d4d4d4;}
+.round_b .r5{background-color:#fff; padding:0 2px 0 0;}
+.round_b .r3{margin:0;}
+.round_b .r4{height:0;}
+.round_b .r4{margin:0;}
+
+/* 라운드처리_하단 */   
+.round_b .r1_b{background:#d4d4d4;}
+.round_b .r1_b{margin:0;}
+.round_b .r2_b{border-left:2px solid #d4d4d4; border-right:2px solid #d4d4d4; margin:0px 3px 0px 3px;}  
+.round_b .r3_b{border-left:1px solid #d4d4d4; border-right:1px solid #d4d4d4;}
+.round_b .r4_b{border-left:1px solid #d4d4d4; border-right:1px solid #d4d4d4;}
+.round_b .r5_b{border-left:1px solid #d4d4d4; border-right:1px solid #d4d4d4;}
+.round_b .r3_b{margin:0;}
+.round_b .r4_b{height:0;}
+.round_b .r4_b{margin:0;}  
+
+/* 라운드처리_없음 */  
+.round_x {width:100%; background-color:transprant;margin:0 0 10px 0; float:left; padding:0px;}
+
+/* 웹파트_외각 */  
+.WP_wrap {width: 100%;  margin-right: 0px; margin-bottom: 0px; margin-left: 0px;}
+
+.txt_day{font:normal 36px 'Verdana', '맑은 고딕','dotum',Apple-Gothic, Malgun Gothic,sans-serif; font-size:21px; color:#5e5e5e;}
+
+/* Select > 메인 */
+.select_m{width:200px; position:relative; line-height:normal; margin-top:10px; display:inline-block; *display:inline;/*ie7*/ _margin-top:10px;/*ie6*/  vertical-align:middle; background:#fff; *zoom:1;}
+.select_m *{margin:0; padding:0; cursor:pointer; font-size:12px;}
+.select_m .myValue{position:relative; z-index:1; left:0; top:0; border:1px solid #d4d4d4; color:#666; line-height:19px; _line-height:normal;/*ie6*/ text-align:left; overflow:visible; background:transparent;}
+.select_m button.myValue{font:normal 12px dotum,'돋움',Apple-Gothic,맑은 고딕, Malgun Gothic,sans-serif;  color:#808080; height:22px; padding-bottom:1px;  width:100%; line-height:22px; *line-height:13px;/*ie6*/   text-indent:5px; *text-indent:0;  *padding-left:5px;/*ie7*/ _padding-top:3px;/*ie6*/}
+.select_m .ctrl{position:absolute; top:0; right:0; width:18px; height:20px; border:1px solid #bababa; border-left:1px solid #eaeaea; background:url(/smarts4j/covicore/resources/images/covision/btn_select.gif) repeat-x -2px 0;}
+@-moz-document url-prefix() {.select_m button.myValue{font:normal 12px dotum,'돋움',Apple-Gothic,맑은 고딕, Malgun Gothic,sans-serif;  color:#808080; height:22px; padding-bottom:1px;  width:100%; line-height:19px; text-indent:5px; }}
+
+.cal_bottom{text-align:left; border:solid 1px #e4e4e4; background-color:#ffffff; width:188px; margin:0 0 5px 0; padding:8px 9px 5px 9px; *padding:8px 9px 8px 9px;/*ie7*/}
+.date_portal_p {margin-top:5px; float:left; margin-left:10px; margin-bottom:3px; font-weight:bold;}
+.con h3{font-size:12px; height:38px; _height:21px;/*ie6*/ color:#196fb9; font-weight:bold; line-height:48px; padding-left:0px; _padding-top:0px;/*ie6*/}
+.blog_layout h3{font-size:12px; height:28px; _height:21px;/*ie6*/ color:#545454; font-weight:bold; line-height:28px; padding-left:0px; _padding-top:0px;/*ie6*/}
+.con {margin-left:265px; margin-right:248px;}
+.con_l{float:left; margin-left:-245px; display:inline; width:230px; clear:both;}
+.con_c{float:left; width:100%;  }
+.con_r{float:left;  margin-right:-245px; margin-left:15px; _margin-right:-109px;/*ie6*/  *margin-left:7px;/*ie7*/ _margin-left:10px;/*ie6*/ width:230px; _width:201px;/*ie6*/ }
+.c01{float:left; width:100%; *width:100%; border-left:solid 1px #d4d4d4; border-right:solid 1px #d4d4d4; position:relative; padding-bottom:8px; background-color:#FFF;}
+
+
+
+/* 메인 중앙 탭 
+.photo_list{border:0; padding:0px;}
+*/
+/* header > Top 우측메뉴 */
+.header .mymenu2 {position:absolute; top:19px; right:110px; min-width:100px; padding:3px 10px; background:#ffffff; border:0;}
+.header .lmenu { }
+.header .lmenu a{position:absolute; top:22px; right:80px; padding:5px 5px 4px 3px; background:#ffffff; clear:both; border:0;font-size:12px; color:#444444; text-decoration:none;}
+/* (폰트_맑은 고딕)
+.header .lmenu a{position:absolute; top:14px; right:10px; padding:3px 5px 5px 3px; background:#727272; clear:both; border:1px solid #545454;font-size:12px; color:#dddddd; text-decoration:none;}
+*/
+.header .lmenu a:hover{color:#444444;  font-size:12px; text-decoration:none;}
+.header .lmenu .ico_people {margin:0 4px 0 0;}
+
+
+
+/* 전체 탭 공통 
+.ct_off a {float:left; padding:7px 10px 0 10px; text-align:center; height:20px; font-size:12px; display:block; color:#cccccc; margin:0px;}
+.ct_off a:hover {float:left; padding:7px 10px 0 10px; text-align:center; height:20px; font-size:12px; display:block; color:#cccccc; margin:0px;}
+.ct_over a {float:left; padding:7px 10px 0 10px; text-align:center; height:20px; font-weight:bold; font-size:12px; display:block; color:#444; background:#fff; margin:0px;}
+.ct_over a:hover {float:left; padding:7px 10px 0 10px; text-align:center; height:20px; font-weight:bold; font-size:12px; display:block; color:#444; background:#fff; margin:0px;}
+*/
+
+/* 전체 탭 공통 (폰트_맑은 고딕)
+.ct_off a {float:left; padding:4px 10px 0 10px; text-align:center; height:20px; font-size:12px; display:block; color:#cccccc; margin:0px;}
+.ct_off a:hover {float:left; padding:4px 10px 0 10px; text-align:center; height:20px; font-size:12px; display:block; color:#cccccc; margin:0px;}
+.ct_over a {float:left; padding:7px 10px 0 10px; text-align:center; height:20px; font-weight:bold; font-size:12px; display:block; color:#444; background:#fff; margin:0px;}
+.ct_over a:hover {float:left; padding:7px 10px 0 10px; text-align:center; height:20px; font-weight:bold; font-size:12px; display:block; color:#444; background:#fff; margin:0px;}
+ */
+
+.list_sum_img{float:left; margin-bottom:6px; *margin-bottom:0px; width:97px; padding:3px 12px 0 7px; margin-right:16px;}
+.menubar_tab{font:normal 12px dotum,'돋움',맑은 고딕,Apple-Gothic, Malgun Gothic,sans-serif;color:#999999; padding:8px 2px 0 2px; float:left;}
+.research_result_graph_txt {padding-left:5px; height:20px; line-height:20px;}
+.list_view {float:right; margin:10px 10px 0 0;}
+.list_view a {display:inline-block;}
+.list_d{margin:0 10px 0 10px; padding:0px;}
+.todo_g{position:absolute; z-index:5; margin-top:50px; left:0px; padding:15px 0 15px 0; box-shadow: 0 0 7px #7a7a83; background:url(/smarts4j/covicore/resources/images/covision/todolist_img.jpg) no-repeat 16px 13px;  width:100%;  background-color:#fafafa; border-bottom:1px solid #bebebe; height:134px;}
+.todo_ico{position:absolute; top:-5px; z-index:4; right:68px;}
+.aList5 { background-color:#FFF; list-style:none; width:198px; border:solid 1px #bfbfbf; position:absolute; margin-top:-1px; *margin:20px 0 0 -205px;/*ie7*/ list-style:none; z-index:8;}
+
+.doc_tabmenu_on {background-color:#414141;}
+.doc_tabmenu_on a {background-color:#414141;}
+
+/* 알림이 */
+.notice_g{position:absolute; top:50px; min-width:200px;  background-color:#f26522; z-index:5; right:29px; *margin-left:-300px;/*ie7*/ padding:5px;}
+.notice_con{padding:10px 13px; }
+.notice_con .txt_tb12 {font-size:14px;}
+.notice_con .txt_wn12 {font-size:14px;}
+.notice_ico{position:absolute;  top:-5px; *top:-9px;/*ie7*/ _top:-8px;/*ie6*/ z-index:12; right:39px;}
+
+ /* 페이지당 갯 수 아이콘 스타일 - 공통 
+.list_many{float:right;  margin:0 0 7px 0; padding:0px; border-top:1px #c9c9c9 solid; border-bottom:1px #c9c9c9 solid; border-right:1px #c9c9c9 solid;  }
+.list_many li{float:left;  border-left:1px #c9c9c9 solid; cursor:pointer;}
+.list_many_off a {font-weight:bold; font-size:11px; line-height:15px;}
+.list_many_over a {font-weight:bold; color:#FFF; font-size:11px; line-height:15px;}
+.list_many_off {font-size:11px;   height:15px; display:inline-block; color:#808080; padding:0 3px 0 2px;}
+.list_many_over {font-size:11px;  height:15px; display:inline-block; font-weight:bold;color:#fff; padding:0 3px 0 2px; background-color:#5a5a5a;}
+*/
+
+/* 결재현황보기
+.layer_tabmenu {display:block; float:left; width:100%; height:28px; margin-bottom:10px; background-color:#444444;}
+.layer_tabmenu ul {padding:0; margin:0;}
+ */
+.btn_myportal {position:absolute; top:9px; right:336px;}
+
+/* 블로그 테마 적용 */
+.blog_write a {display:block; margin-bottom:10px; width:202px; height:42px; line-height:42px; font-size:12px; color:#fff; font-weight:bold; background:url(/smarts4j/covicore/resources/images/covision/btn_blog_write.gif) no-repeat left top; text-align:center;}
+.blog_list_title_date {float:left; width:41px; height:39px; background:url(/smarts4j/covicore/resources/images/covision/blog_date_bg.jpg) no-repeat left top;}
+.btn_mydisk_upload {display:block; width:px; height:29px; line-height:29px; background:url(/smarts4j/covicore/resources/images/covision/btn_mydisk_upload.gif) no-repeat left top;}
+.personal_layout h3 {font-size:12px; height:28px; _height:21px; color:#545454; font-weight:bold; line-height:28px; padding-left:0px; _padding-top:0px;}
+
+/* DivPopup */
+.layer_divpop {overflow:visible;line-height:normal;position:absolute;}
+.layer_divpop .divpop_header {margin:0; line-height:32px; padding-left:8px; background:url(/smarts4j/covicore/resources/images/covision/bg_pop2.gif) repeat-x; height:32px; padding-top:1px \9; color:#000; font-size:13px;text-align:left;cursor:move;overflow:hidden;text-overflow:ellipsis;-o-text-overflow: ellipsis;-ms-text-overflow:ellipsis;padding-right:72px;}
+.layer_divpop .divpop_header_ico {background:url(/smarts4j/covicore/resources/images/covision/ico_pop.gif) no-repeat 0 2px; line-height:32px;padding-left:12px; font-weight:bold;}
+.layer_divpop .divpop_contents {position:relative;border:3px solid #6e7882;background:#fff;}  
+.layer_divpop .divpop_body {color:#444;font-family:'돋움',Dotum,'굴림',Gulim,AppleGothic,Sans-serif;font-size:12px;line-height:14px;}
+.layer_divpop .divpop_close {position:absolute; top:4px; right:4px;}
+.layer_divpop .divpop_full {position:absolute; top:4px; right:72px;}
+.layer_divpop .divpop_mini {position:absolute; top:4px; right:38px;}
+
+.approval_btop .logo {position:absolute; top:7px; right:8px; width:99px; height:24px; background:url(/smarts4j/covicore/resources/images/covision/logo_form.png) no-repeat right top;} 
+.form_footer {margin:15px auto 0; width:354px; height:20px; background:url(/smarts4j/covicore/resources/images/covision/form_footer.png) no-repeat left top;}
+
+.ct_over a {color:#444444; border-top:3px solid #2f91e3; padding:9px 15px 0 15px}
+.ct_over a:hover {color:#444444; border-top:3px solid #2f91e3; padding:9px 15px 0 15px}
+
+.tab_over {heifht:31px; border-top:3px solid #2f91e3;}
+.tab_over a {heifht:31px; color:#444444;}
+.tab_over a:hover {heifht:31px; color:#444444;}
+
+.mybox dt {height:43px;}
+.mybox dd {padding-top:62px;}
+.con_t_l_box {margin-left:268px;}
+.content_f {margin-top:20px;}
+.content_f_1024 {margin-top:20px;}
+.calendar_m {width:210px !important;}
+.cal_table {padding-top:12px; width:210px; height:23px; background:url(/smarts4j/covicore/resources/images/covision/calendar_m_tit.gif) no-repeat left top;}
+.cal_thead {display:none;}
+
+.txt_calendar02 {margin-top:0;}
+.calendar_m a {color:#555555; height:24px; line-height:20px;}
+.calendar_m a:hover {color:#555555; height:24px; line-height:20px; background:url(/smarts4j/covicore/resources/images/covision/calendar_m.gif) no-repeat center top; border:0;}
+.calendar_select a {color:#555555; height:24px; line-height:20px; background:url(/smarts4j/covicore/resources/images/covision/calendar_m.gif) no-repeat center top; border:0;}
+.calendar_select a:hover {color:#555555; height:24px; line-height:20px; background:url(/smarts4j/covicore/resources/images/covision/calendar_m.gif) no-repeat center top; border:0;}
+.calendar_sat a {color:#458acf;}
+.calendar_sun a {color:#d43134;}
+.calendar_gray a {color:#d4d4d4;}
+.calendar_today a {color:#ffffff; background:url(/smarts4j/covicore/resources/images/covision/calendar_today.gif) no-repeat center top; border:0;}
+.calendar_today a:hover {color:#ffffff; background:url(/smarts4j/covicore/resources/images/covision/calendar_today.gif) no-repeat center top; border:0;}
+.cal_table2 {margin:0 0 0 3px !important;}
+.date_portal_p img {display:none;}
+.r01 .pop_btn2 {margin-top:10px;}
+.txt_company {color:#ffffff !important;}
+.time {margin-top:-5px; margin-left:16px;}
+.time_01 span {display:block; width:49px; height:20px; line-height:21px; text-align:center; color:#ffffff; background:url(/smarts4j/covicore/resources/images/covision/seoul.gif) no-repeat left top;}
+
+.r02 ul {float:left; padding:0 19px 5px 19px;}
+.r02 li {height:24px; background: url(/smarts4j/covicore/resources/images/covision/bullet_link.gif) no-repeat 0 2px;}
+.ico_h3 {margin:0 17px 0 0;}
+.l03 .tag {padding:0 19px 13px;}
+.tag a {word-break:break-all;}
+
+.container {margin-left:-222px;}
+
+.content_sf_f {margin-right:241px;}
+.content {margin-right:224px;}
+.container_f_1024 {}
+.container_f_all_1024 {margin-left:-230px;}
+.content_sf_all {margin-right:20px;}
+.content_sf_1024 {margin-left:20px; margin-right:238px;}
+.content_f_all_1024 {margin-right:12px;}
+.sub_f_all {margin-left:221px;}
+.content_sf_f {margin-right:220px;}
+.sub_f {margin-left:221px;}
+.content_mf {margin-left:222px; margin-top:20px; margin-right:15px;}
+.content_1024 {margin-top:20px;}
+
+.lnb_close {height:51px;}
+.lnb_close a img {display:none;}
+.lnb_open a img {display:none;}
+.lnb_close a {display:inline-block; width:14px; height:51px; background:url(/smarts4j/covicore/resources/images/covision/btn_lnb_close.gif) no-repeat left 6px; background-color:#196fba;}
+.lnb_close a:hover {display:inline-block; width:14px; height:51px; background:url(/smarts4j/covicore/resources/images/covision/btn_lnb_close.gif) no-repeat left 6px; background-color:#196fba;}
+.lnb_open a {display:inline-block; width:14px; height:51px; background:url(/smarts4j/covicore/resources/images/covision/btn_lnb_open.gif) no-repeat left 6px; background-color:#ffffff;}
+.lnb_open a:hover {display:inline-block; width:14px; height:51px; background:url(/smarts4j/covicore/resources/images/covision/btn_lnb_open.gif) no-repeat left 6px; background-color:#ffffff;}
+
+.resource_off a{height:30px; line-height:32px !important; background:#ffffff; color:#a4a4a4; display:block; border-top:1px solid #d4d4d4;}
+.resource_off a:hover{height:30px; line-height:32px !important; background:#ffffff; color:#a4a4a4; display:block; border-top:1px solid #d4d4d4;}
+.resource_on a{height:28px !important; line-height:28px !important; background:#ffffff; color:#444444 !important; display:block; font-weight:bold; border-top:3px solid #2f91e3 !important;}
+.resource_on a:hover{height:28px !important; line-height:28px !important; background:#ffffff; color:#444444 !important; display:block; font-weight:bold; border-top:3px solid #2f91e3 !important;}
+
+.sch_off a{height:30px; line-height:32px !important; background:#fff; color:#a4a4a4; display:block; border-top:1px solid #d4d4d4;}
+.sch_off a:hover{height:30px; line-height:32px !important; background:#fff; color:#a4a4a4; display:block; border-top:1px solid #d4d4d4;}
+.sch_on a{height:28px !important; line-height:28px !important; background:#fff; color:#444444 !important; display:block; font-weight:bold; border-top:3px solid #2f91e3 !important;}
+.sch_on a:hover{height:28px !important; line-height:28px !important; background:#fff; color:#444444 !important; display:block; font-weight:bold; border-top:3px solid #2f91e3 !important;}
+
+.app_tabmenu_on1 {display:block; float:left; border-top:2px solid #2f91e3; border-right:1px solid #d4d4d4;}
+.app_tabmenu_on1 a {display:block; float:left; padding:6px 11px 8px 11px; font-weight:bold; color:#444444; background-color:#fff; text-align:center;}
+.app_tabmenu_on1 a:hover {font-weight:bold; color:#444444;}
+.app_tabmenu_on {display:block; float:left; border-top:2px solid #2f91e3; border-right:1px solid #d4d4d4;}
+.app_tabmenu_on a {display:block; float:left; padding:8px 13px 8px 11px; font-weight:bold; color:#444444; background-color:#fff; text-align:center;}
+.app_tabmenu_on a:hover {font-weight:bold; color:#444444;}
+.app_tabmenu_off {display:block; float:left; border-right:1px solid #d4d4d4;}
+.app_tabmenu_off a {display:block; float:left; padding:8px 13px 8px 11px; font-weight:normal; color:#a4a4a4; text-align:center;}
+.app_tabmenu_off a:hover {font-weight:normal; color:#a4a4a4;}
+
+.appform_txt_tab_01_on {font-size:11px; color:#444444; font-weight:bold; display:block; text-align:center;  padding-top:6px; cursor:pointer;}
+.appform_txt_tab_01_off {font-size:11px; color:#a4a4a4; font-weight:normal; display:block; text-align:center;  padding-top:7px;  cursor:pointer;}
+.appform_txt_tab_02_on{font-size:11px; color:#444444; font-weight:bold; display:block; text-align:center; height:20px; padding-top:6px; cursor:pointer;}
+.appform_txt_tab_02_off{font-size:11px; color:#a4a4a4; font-weight:normal; display:block; text-align:center; height:20px; padding-top:7px; cursor:pointer;}
+
+.app_txt_tab_01_on {font-size:11px; color:#444444; font-weight:bold; display:block; width:99px; text-align:center; padding-top:6px; cursor:pointer;}
+.app_txt_tab_01_off {font-size:11px; color:#a4a4a4; font-weight:normal; display:block; width:99px; text-align:center; padding-top:6px; cursor:pointer;}
+.app_txt_tab_02_on {font-size:11px; color:#444444; font-weight:bold; display:block; width:98px; text-align:center; padding-top:6px; cursor:pointer; }
+.app_txt_tab_02_off {font-size:11px; color:#a4a4a4; font-weight:normal; display:block; width:98px; text-align:center; padding-top:6px; cursor:pointer;}
+
+.appform_tab_01_on {border-top:2px solid #2f91e3; color:#f57921;}
+.appform_tab_02_on {border-top:2px solid #2f91e3; color:#f57921;}
+
+.app_tab_01_on{float:left; background:#fff; width:99px; white-space:nowrap; height:26px; padding:0px; border-top:2px solid #2f91e3; color:#f57921; border-right:1px solid #d4d4d4;}
+.app_tab_02_on {float:left; background:#fff; width:98px; height:25px; padding:0px; border-top:2px solid #2f91e3; color:#f57921;}
+
+.tabmenu_on {margin-top:-1px; display:block; float:left; text-align:center; border-top:2px solid #2f91e3; border-right:1px solid #d4d4d4; border-bottom:1px solid #d4d4d4; cursor:pointer;}
+.tabmenu_on a {display:block; padding:7px 12px 7px 12px; font-weight:bold; border-top:0; border-left:0; color:#444444; background:#ffffff;}
+.tabmenu_on a:hover {display:block; padding:7px 12px 7px 12px; font-weight:bold; color:#444444;}
+
+.sub_l .cal_table2 {padding-top:12px; background: url(/smarts4j/covicore/resources/images/covision/calendar_m_tit.gif) no-repeat left top;}
+.sub_l .pop_btn2 {margin-top:5px; margin-bottom:5px;}
+
+.l04 table {width:193px !important;}
+.footer .copyright {color:#ffffff;}
+.footer .copyright span {color:#ffffff !important;}
+
+.mymenu2 .menubar {display:none;}
+.top_ico_myportal {margin:0 5px; display:inline-block; width:25px; height:21px; background:url(/smarts4j/covicore/resources/images/covision/ico_myportal.gif) no-repeat left top;}
+.top_ico_mdm {margin:0 5px; display:inline-block; width:25px; height:21px; background:url(/smarts4j/covicore/resources/images/covision/ico_mdm.gif) no-repeat left top;}
+.top_ico_smartdesk {margin:0 5px; display:inline-block; width:25px; height:21px; background:url(/smarts4j/covicore/resources/images/covision/ico_smartdesk.gif) no-repeat left top;}
+.top_ico_todo {margin:0 5px; display:inline-block; width:25px; height:21px; background:url(/smarts4j/covicore/resources/images/covision/ico_todo.gif) no-repeat left top;}
+.top_ico_todo_ani {margin:0 5px; display:inline-block; width:25px; height:21px; background:url(/smarts4j/covicore/resources/images/covision/ico_todo_ani.gif) no-repeat left top;}
+.top_ico_admin {margin:0 5px; display:inline-block; width:25px; height:21px; background:url(/smarts4j/covicore/resources/images/covision/ico_admin.gif) no-repeat left top;}
+.top_ico_config {margin:0 5px; display:inline-block; width:25px; height:21px; background:url(/smarts4j/covicore/resources/images/covision/ico_config.gif) no-repeat left top;}
+.top_ico_org {margin:0 5px; display:inline-block; width:25px; height:21px; background:url(/smarts4j/covicore/resources/images/covision/ico_org.gif) no-repeat left top !important;}
+.top_ico_resetting {margin:0 5px; display:inline-block; width:25px; height:21px; background:url(/smarts4j/covicore/resources/images/covision/ico_resetting.gif) no-repeat left top;}
+.top_ico_resetting_progress {margin:0 5px; display:inline-block; width:25px; height:21px; background:url(/smarts4j/covicore/resources/images/covision/ico_resetting_progress.gif) no-repeat left top;}
+.top_ico_menurefresh {margin:0 5px; display:inline-block; width:25px; height:21px; background:url(/smarts4j/covicore/resources/images/covision/ico_menurefresh.gif) no-repeat left top;}
+.top_ico_change {margin:0 5px; display:inline-block; width:25px; height:21px; background:url(/smarts4j/covicore/resources/images/covision/ico_change.gif) no-repeat left top;}
+.top_ico_logout {margin:0 5px; display:inline-block; width:25px; height:21px; background:url(/smarts4j/covicore/resources/images/covision/ico_logout.gif) no-repeat left top;}
+.top_ico_sms {margin:0 5px; display:inline-block; width:25px; height:21px; background:url(/smarts4j/covicore/resources/images/covision/ico_sms.gif) no-repeat left top;}
+
+.top_ico_org img {display:none;}
+.top_ico_resetting img {display:none;}
+
+.ico_menu_refresh {}
+.txt_myportal {display:none;}
+.txt_mdm {display:none;}
+.txt_smartdesk {display:none;}
+.txt_todo1 {display:none;}
+.txt_todo2 {display:none;}
+.txt_admin {display:none;}
+.txt_config {display:none;}
+.txt_org {display:none;}
+.txt_menurefresh {display:none;}
+.txt_change {display:none;}
+.txt_logout {display:none;}
+.txt_resetting {display:none;} 
+.txt_sms {display:none;}
+
+.header .mymenu2 {position:absolute; top:22px; right:130px; min-width:100px; padding:0; background:#ffffff; border:0;}
+.header .lmenu a{position:absolute; top:22px; right:92px; padding:0; background:#ffffff; clear:both; border:0;font-size:12px; color:#444444; text-decoration:none;}
+.header .mymenu {position:absolute; top:22px; right:20px; border-left:0; padding:0; z-index:30;}
+
+.l04 ul {margin:0; padding:10px 17px;}
+.l04 ul li input[type="radio"] {margin-top:2px;}
+
+.board_btop_g2 {margin:10px 0 10px 10px;}
+
+.dday {float:left; border-left:1px solid #d4d4d4; border-right:1px solid #d4d4d4; width:100%; background-color:#FFF; position:relative;}
+.dday_table {width:191px; margin-left:19px; margin-bottom:12px;}
+.dday_table td {height:24px; line-height:24px;}
+.dday_table td .txt_date {color:#888;}
+
+/* 통합검색 */
+.portalunifiedsearch_search_01 {position:absolute; top:19px; left:150px;}
+.portalunifiedsearch_search_01 dl dd {float:left; margin-right:4px;}
+.portalunifiedsearch_search_01 dl dd input {width:150px; height:22px; line-height:22px; padding-left:5px; border:2px solid #bfbfbf;}
+.portalunifiedsearch_search_01 a {display:inline-block;}
+em.btn_bs_portalunifiedsearch_l {display:inline-block; height:28px; background:#4e5759; padding-left:10px;}
+span.btn_bs_portalunifiedsearch_r {display:inline-block; height:28px; line-height:28px; background:#4e5759; padding-right:10px;}
+.txt_portalunifiedsearch {color:#fff; font-weight:bold; font-style:normal;}
+
+/* 최종접속시간 */
+.user_ip_lasttime {position:absolute; top:17px; right:180px;}
+.txt_lastlogin_lable {margin-right:7px; color:#fff;}
+.txt_lastlogin {margin-right:25px; font-weight:bold; color:#fff;}
+.txt_userip_lable {margin-right:7px; color:#fff;}
+.txt_userip {font-weight:bold; color:#fff;}
+
+.app_line_conf_r_tab_on a {color:#444444 !important; border-top:2px solid #2f91e3 !important;}
+.app_line_conf_r_tab_on a:hover {color:#444444 !important; border-top:2px solid #2f91e3 !important;}
+.app_line_conf_r_tab_on2 a {display:block; height:33px; line-height:31px; width:72px; color:#444444 !important; font-weight:bold; text-align:center; border-top:2px solid #2f91e3 !important;}
+.app_line_conf_r_tab_on2 a:hover {display:block; height:33px; line-height:31px; width:72px; color:#444444 !important; font-weight:bold; text-align:center; border-top:2px solid #2f91e3 !important;}
+
+span.mc_tab_on_r {border-top:2px solid #2f91e3 !important;}
+.txt_mc_tab_on {color:#444444 !important;}
+
+.layer_tabmenu_on1 a {color:#444444 !important; border-top:2px solid #2f91e3 !important;}
+.layer_tabmenu_on a {color:#444444 !important; border-top:2px solid #2f91e3 !important;}
+
+.btn_always_top {display:inline-block; width:48px; height:30px; background:url(/smarts4j/covicore/resources/images/covision/btn_Always_top.png) no-repeat left top; opacity:0.5;}
+.btn_always_dev {display:inline-block; width:52px; height:30px; background:url(/smarts4j/covicore/resources/images/covision/btn_Always_dev.png) no-repeat left top; opacity:0.5;}
+.btn_always_lock {display:inline-block; width:51px; height:30px; background:url(/smarts4j/covicore/resources/images/covision/btn_Always_lock.png) no-repeat left top; opacity:0.5;}
+.btn_always_top:hover {display:inline-block; width:48px; height:30px; background:url(/smarts4j/covicore/resources/images/covision/btn_Always_top.png) no-repeat left top; opacity:1;}
+.btn_always_dev:hover {display:inline-block; width:52px; height:30px; background:url(/smarts4j/covicore/resources/images/covision/btn_Always_dev.png) no-repeat left top; opacity:1;}
+.btn_always_lock:hover {display:inline-block; width:51px; height:30px; background:url(/smarts4j/covicore/resources/images/covision/btn_Always_lock.png) no-repeat left top; opacity:1;}
+.txt_always_top {display:none;}
+.txt_always_dev {display:none;}
+.txt_always_lock {display:none;}

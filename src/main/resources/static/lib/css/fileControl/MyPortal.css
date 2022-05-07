@@ -1,0 +1,184 @@
+@CHARSET "UTF-8";
+/********************************************************************
+Covision UXD team
+  - Name : 김동욱
+  - Deta : 2014.06.16
+ ********************************************************************/
+ 
+.myportal_title {font-size:20px; font-weight:bold; float:left; margin-left:15px;}
+.myportal_title_point {color:#69aa41;}
+.btn_myportal {margin-top:5px; margin-left:5px; display:inline-table; vertical-align:top;}
+.mywp_tabmenu {float:right; list-style:none; margin:0; padding:0; margin-top:10px; margin-right:15px;}
+.mywp_tabmenu_off {margin-left:1px; float:right;}
+.mywp_tabmenu_on {margin-left:1px; float:right;}
+.mywp_tabmenu_off a {display:inline-block; height:25px; line-height:25px; background:url(/smarts4j/covicore/resources/images/covision/mywp_tabmenu_off.gif) no-repeat left top; text-align:center; padding-left:15px;}
+.mywp_tabmenu_off a span {display:inline-block; height:25px; line-height:25px; background:url(/smarts4j/covicore/resources/images/covision/mywp_tabmenu_off.gif) no-repeat right top; text-align:center; color:#636363; padding-right:15px; font-weight:bold;}
+.mywp_tabmenu_on a {display:inline-block; height:25px; line-height:25px; background:url(/smarts4j/covicore/resources/images/covision/mywp_tabmenu_on.gif) no-repeat left top; text-align:center; padding-left:15px;}
+.mywp_tabmenu_on a span {display:inline-block; height:25px; line-height:25px; background:url(/smarts4j/covicore/resources/images/covision/mywp_tabmenu_on.gif) no-repeat right top; text-align:center; color:#ffffff; padding-right:15px; font-weight:bold;}
+.myportalsetting {clear:both; padding-top:15px; background:#fff;}
+.myportalsetting_box {position:relative; clear:both; margin:30px 15px 15px 15px; background:#fff; border-top:1px solid #6b6b6b; border-bottom:1px solid #6b6b6b;}
+.myportalsetting_ul .ui-widget {margin-top:13px; margin-bottom:7px; padding-top:2px; padding-bottom:5px; display:inline-block; width:100px; height:68px;}
+.myportalsetting_ul .ui-widget:hover {display:inline-block; background:url(/smarts4j/covicore/resources/images/covision/webpart_ico_sel.gif) no-repeat left top; }
+/* .myportalsetting_ul .ui-widget {margin-top:7px; margin-bottom:7px; padding-top:7px; display:inline-block;}
+.myportalsetting_ul .ui-widget:hover {display:inline-block; background:url(/smarts4j/covicore/resources/images/covision/webpart_ico_sel.gif) no-repeat left top; } */
+.btn_webpart {width:20px; display:inline-table; vertical-align:top; padding-top:23px;}
+.btn_left {position:absolute; top:25%; left:12px;}
+.btn_right {position:absolute; top:25%; right:12px;}
+.myportalsetting_ul {list-style:none; margin:0; padding:0; height:90px;}
+.myportalsetting_list {list-style:none; margin:0; padding:0;}
+.myportalsetting_list li {vertical-align:top;}
+.myportalsetting_list li a {display:inline-table; font-weight:bold; word-break: break-all;}
+.myportalsetting_list2 {list-style:none; margin:0; padding:0;}
+.myportalsetting_list2 li a {display:inline-block; margin-top:5px; font-weight:bold;}
+.portallayout {clear:both; margin:15px;}
+.btn_paging {bottom:5px; list-style:none; margin:0; height:10px; display:inline-table; padding:0; clear:both; margin-top:5px; margin-left:-47px; margin-bottom:10px;}
+.btn_paging li {float:left; margin:0 2px;}
+.webpart {position:relative; width:100%; height:auto; min-height:30px !important; margin:0 0 15px 0; border:1px solid #979797; border-top:3px solid #000000; float:left;}
+.webpart:hover {background:none;}
+.webpart-placeholder {position:relative; width:100%; margin:0 0 15px 0; border:1px solid #979797; border-top:3px solid #000000; float:left; list-style:none;!important}
+.webpart_title {position:absolute; top:8px; left:10px; font-weight:bold;}
+.webpart_btn {position:absolute; top:7px; right:4px; width:62px; height:20px; background:url(/smarts4j/covicore/resources/images/covision/btn_webpart_bg.gif) no-repeat left top;}
+.webpart_btn a {display:inline-block; margin-top:4px; margin-left:3px; margin-right:3px;}
+.webpart_setting .w_con01 {margin-top:0; margin-bottom:20px;}
+.portallayout .layoutline {border:1px dashed #adadad;}
+.portallayout .layoutline_none {border:none; !important}
+.portallayout .layouttable {border-collapse:separate; border-spacing:1px; width:100%; min-height:200px;}
+.portallayout .webpart_place {vertical-align:top; padding:8px 10px 0 8px; min-height:100px;}
+
+.layout_save {font-size:12px; font-weight:normal;}
+.mywp_cont {clear:both; padding:9px; margin-top:20px; min-height:100px;}
+
+.wpboard_mail {width:100%;}
+.wpboard_mail td {height:25px; vertical-align:top;}
+.wpboard_mail td img {margin-top:-2px;}
+.wpboard_mail td div {padding-top:2px; padding-bottom:4px;}
+
+.wpboard_importance {margin-bottom:10px; padding-bottom:10px; border-bottom:1px dotted #999; width:100%;}
+.wpboard_importance td {height:25px;}
+.wpboard_importance td div img {margin-top:-3px; width:12px;}
+
+.wpboard {width:100%;}
+.wpboard td {height:25px;}
+.wpboard td div img {margin-top:-3px; width:12px;}
+
+.mywp_tab {clear:both; list-style:none; margin:0 0 0 -1px; padding:0; height:30px;}
+.mywp_tab li {float:left; margin-right:1px;}
+.mywp_tab .mywp_tab_on {display:inline-block; height:24px; line-height:24px; background:url(/smarts4j/covicore/resources/images/covision/mywp_tab_on.gif) no-repeat left top;}
+.mywp_tab .mywp_tab_on span {display:inline-block; height:24px; line-height:24px; background:url(/smarts4j/covicore/resources/images/covision/mywp_tab_on.gif) no-repeat right top; padding-right:10px; margin-left:10px; color:#fff; font-weight:bold;}
+.mywp_tab .mywp_tab_off {display:inline-block; height:24px; line-height:24px; background:url(/smarts4j/covicore/resources/images/covision/mywp_tab_off.gif) no-repeat left top;}
+.mywp_tab .mywp_tab_off span {display:inline-block; height:24px; line-height:24px; background:url(/smarts4j/covicore/resources/images/covision/mywp_tab_off.gif) no-repeat right top; padding-right:10px; margin-left:10px; color:#666; font-weight:bold;}
+
+.mywp_search {clear:both; margin:5px 0; text-align:left;}
+.mywp_search_btn {display:inline-block; height:25px; line-height:25px; background:url(/smarts4j/covicore/resources/images/covision/mywp_search_btn.gif) no-repeat left top;}
+.mywp_search_btn span {display:inline-block; height:25px; line-height:25px; background:url(/smarts4j/covicore/resources/images/covision/mywp_search_btn.gif) no-repeat right top; padding-right:10px; margin-left:20px; color:#fff; font-weight:bold;}
+.mywp_search_list {list-style:none; margin:10px 0 10px 0; padding:0 0 10px 0; border-bottom:1px dashed #999;}
+.mywp_search_list dt {font-size:12px; color:#e96e5f; font-weight:bold; text-align:left;}
+.mywp_search_list dd {font-size:11px; color:#959595; text-align:left; margin-top:5px;}
+.mywp_search_list_last {list-style:none; margin:0; padding:0; margin-bottom:5px;}
+.mywp_search_list_last dt {font-size:12px; color:#e96e5f; font-weight:bold; text-align:left;}
+.mywp_search_list_last dd {font-size:11px; color:#959595; text-align:left; margin-top:5px;}
+
+
+.day_normal {color:#fff; font-weight:bold; display:block; padding-top:3px; text-align:center; background:url(/smarts4j/covicore/resources/images/covision/btn_nbox.gif) no-repeat 0 0; width:40px; height:16px;}
+.day_point {color:#fff; font-weight:bold; display:block; padding-top:3px; text-align:center; background:url(/smarts4j/covicore/resources/images/covision/btn_pbox.gif) no-repeat 0 0; width:40px; height:16px;}
+
+.mywp_clock01 {float:left; width:100%; margin-bottom:15px; padding-bottom:5px; border-bottom:1px dashed #999;}
+.mywp_clock01_l {float:left; margin-bottom:10px;}
+.mywp_clock01_r {float:right; margin-bottom:10px;}
+.mywp_clock02 {width:100%; margin-bottom:5px;}
+.mywp_clock02_l {float:left; margin-bottom:10px;}
+.mywp_clock02_r {float:right; margin-bottom:10px;}
+.mywp_date {color:#959595;}
+.mywp_btn {float:left; margin-top:5px; margin-bottom:10px; height:19px;}
+.mywp_btn a {margin-right:4px;}
+.mywp_paging {float:right; margin-top:5px; margin-bottom:10px; height:19px; color:#999;}
+.mywp_paging .page {color:#000000;}
+.wp_point {color:#e96e5f;}
+
+.mywp_linksite {list-style:none; margin:5px 0; padding:0;}
+.mywp_linksite li {height:24px; line-height:24px; text-align:left; background:url(/smarts4j/covicore/resources/images/covision/dot02.gif) no-repeat 1px 5px; padding-left:9px;}
+
+.photo_board .border {border:1px solid #ddd;}
+.photo_title {margin-top:5px; font-size:14px; font-weight:bold; text-align:left;}
+.photo_view {margin-top:5px; color:#959595; font-size:11px; text-align:left;}
+.photo_date {margin-top:5px; color:#959595; font-size:11px; text-align:left;}
+.board_paging {margin-top:10px; margin-bottom:10px;}
+.board_paging img {margin:0 2px;}
+
+.facebook .webpart {position:relative; width:100%; height:auto; min-height:30px !important; margin:0 0 15px 0; border:1px solid #3c599b; border-top:0;}
+.facebook .ui-widget {padding:0;}
+.facebook .webpart_title {display:block; width:100%; height:36px; background:url(/smarts4j/covicore/resources/images/covision/facebook_logo.jpg) no-repeat 10px 8px; background-color:#3c599b; top:0; left:0;}
+.facebook .webpart_title span {display:none;}
+.facebook .mywp_cont {overflow:auto; border:1px solid #3c599b;}
+
+.twitter .webpart {position:relative; width:100%; height:auto; min-height:30px !important; margin:0 0 15px 0; border:1px solid #32ccfe; border-top:0;}
+.twitter .ui-widget {padding:0;}
+.twitter .webpart_title {display:block; width:100%; height:36px; background:url(/smarts4j/covicore/resources/images/covision/twitter_logo.jpg) no-repeat 10px 6px; background-color:#32ccfe; top:0; left:0;}
+.twitter .webpart_title span {display:none;}
+.twitter .mywp_cont { overflow:auto; border:1px solid #32ccfe;}
+
+.img_banner .webpart {position:relative; width:100%; height:auto; min-height:30px !important; margin:0 0 15px 0;}
+.img_banner .ui-widget {padding:0;}
+.img_banner .webpart_title {display:none;}
+.img_banner .mywp_cont {margin:0; padding:0;}
+.img_banner .mywp_cont table {width:100%;}
+.img_banner .mywp_cont table td img {width:100%;}
+
+.mywp_memo {height:180px; width:100%; color:#888888; line-height:16px; font-size:12px; overflow-x:hidden; overflow-y:scroll; border:0px; background-color:#fff; resize:none;}
+.mywp_memo_bottom {margin-top:10px; width:100%;}
+.mywp_memo_bottom a {margin-right:4px;}
+
+.trans_select {width:100%; border-bottom:1px dashed #999; margin-bottom:10px; padding-bottom:10px;}
+.trans_text {height:180px; width:99%; color:#888888; line-height:16px; font-size:12px; overflow:auto; border:1px solid #ddd; background-color:#fffce1; resize:none; border-radius:3px;}
+.trans_btn_box {margin:15px auto;}
+.trans_btn {display:inline-block; height:24px; line-height:24px; background:url(/smarts4j/covicore/resources/images/covision/mywp_trans_btn.gif) no-repeat left top;}
+.trans_btn span {display:inline-block; height:24px; line-height:24px; background:url(/smarts4j/covicore/resources/images/covision/mywp_trans_btn.gif) no-repeat right top; padding-right:10px; margin-left:20px; color:#fff; font-weight:bold;}
+
+.timeline_list {list-style:none; margin:0; padding:0;}
+.timeline_list li {position:relative; border-bottom:1px solid #ddd;}
+.timeline_today {background:#fffce1; }
+.timeline_table_new {min-height:70px; border-left:5px solid #eb8458;}
+.timeline_table {min-height:70px; border-left:5px solid #fff;}
+.timeline_table_list {margin-top:8px;} 
+.timeline_select {width:100%; height:29px; background:url(/smarts4j/covicore/resources/images/covision/timeline_bg.gif) repeat-x left top; font-weight:bold;}
+.timeline_btn {position:absolute; bottom:10px; right:5px;}
+.redday {color:#e74c3c;}
+.redday strong {font-size:13px;}
+.grayday {color:#889a9b;}
+.grayday strong {font-size:13px;}
+.blueday {color:#4ba9c8;}
+.blueday strong {font-size:13px;}
+
+.myportal_btn_close {margin-top:20px;}
+.myportal_btn_close a {display:inline-block; width:100%; height:30px;  text-align:center; margin:0 auto;}
+.myportal_btn_close a img {display:inline-block; vertical-align:middle;}
+
+.myportal_new {margin:0 auto; padding-top:30px; padding-bottom:30px; font-weight:bold;}
+.myportal_new_select {display:inline-table; list-style:none; margin:0 auto 10px; padding:0;}
+.myportal_new_select li {float:left; margin-left:10px; margin-right:10px; text-align:left;}
+.myportal_new_select li img {width:100px; height:75px; border:1px solid #ddd; margin-bottom:6px;}
+.myportal_new_select li.btn_webpart img {width:20px; height:40px; border:0; margin:0;}
+
+.f_photo {border:1px solid #070707; width:40px; height:40px;}
+.f_txt {text-align:left; font-weight:bold;  color:#3b5998;}
+.f_txt a{text-align:left;  font-weight:bold;  color:#3b5998;}
+.f_txt2 {text-align:left;  color:#969696;}
+
+.tw_txt {text-align:left; font-weight:bold;  color:#0fa5d6;}
+.tw_txt a{text-align:left;  font-weight:bold;  color:#0fa5d6;}
+.tw_txt2 {text-align:left;  color:#969696;}
+
+
+.f_box {float:left; margin-top:15px;}
+.f_ico01 {background:url(/smarts4j/covicore/resources/images/covision/facebook_ico01.gif) no-repeat left top; color:#6d84b4; text-align:left; padding-left:17px; font-size:11px;}
+.f_ico02 {background:url(/smarts4j/covicore/resources/images/covision/facebook_ico02.gif) no-repeat left top; color:#6d84b4; text-align:left; padding-left:17px; font-size:11px;}
+.f_ico03 {background:url(/smarts4j/covicore/resources/images/covision/facebook_ico03.gif) no-repeat left top; color:#6d84b4; text-align:left; padding-left:17px; font-size:11px;}
+
+.tw_box {float:left; margin-top:15px;}
+.tw_ico01 {background:url(/smarts4j/covicore/resources/images/covision/twitter_ico.gif) no-repeat left top; color:#6d84b4; text-align:left; padding-left:17px; font-size:11px;}
+.tw_photo {border:1px solid #070707; width:40px; height:40px;}
+
+.btn_myportal_open {display:inline-block; width:77px; height:26px; background:url(/Images/Images/Theme/X_Default_new/btn_myportal_open.gif) no-repeat left top;}
+.btn_myportal_close {display:inline-block; width:77px; height:26px; background:url(/Images/Images/Theme/X_Default_new/btn_myportal_close.gif) no-repeat left top;}
+.btn_myportal_setting {display:inline-block; width:26px; height:26px; background:url(/Images/Images/Theme/X_Default_new/btn_myportal_setting.gif) no-repeat left top;}
+.btn_myportal_setting_sel {display:inline-block; width:26px; height:26px; background:url(/Images/Images/Theme/X_Default_new/btn_myportal_setting_click.gif) no-repeat left top;}

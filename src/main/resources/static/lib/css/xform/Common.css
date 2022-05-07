@@ -1,0 +1,454 @@
+@charset "utf-8";
+/********************************************************************
+Covision UXD team
+  - Name : 장대근
+  - Deta : 2012.04.03
+ ********************************************************************/
+
+html,body{width:100%;}  
+
+/* 정해진 사이즈에서 멈춤 */
+* html .fix_wrap, 
+* html .fix_conts {height:1px;}
+.fix_wrap {min-width:1225px; margin:0 auto; _margin-left:1225px;/*ie6*/}
+.fix_conts {position:relative; _margin-left:-1225px;/*ie6*/}
+.fix_wrap_1024 {min-width:1007px; margin:0 auto; _margin-left:1007px;/*ie6*/}
+.fix_conts_1024 {position:relative; _margin-left:-1007px;/*ie6*/}
+
+/* 공통제어 */
+html,body,div,li,dl,dt,dd,p,h1,h2,h3,h4,h5,h6,form{margin:0;padding:0;font:normal 12px dotum,'돋움',Apple SDGothic Neo,Apple-Gothic,맑은 고딕, Malgun Gothic,sans-serif; color:#444444;  line-height:1.5em; -webkit-text-size-adjust:none; }
+span {line-height:normal;}
+form{ width:100%; height:100%;}
+select{font:normal 12px dotum,'돋움',Apple-Gothic,맑은 고딕, Malgun Gothic,sans-serif; color:#444444; }
+img {border:0;vertical-align:middle;}
+a {font:normal 12px dotum,'돋움',Apple-Gothic,맑은 고딕, Malgun Gothic,sans-serif;color:#444444;text-decoration:none; line-height:15px; -webkit-text-size-adjust:none;x; }
+a:hover {font:normal 12px dotum,'돋움',Apple-Gothic,맑은 고딕, Malgun Gothic,sans-serif;color:#000000; text-decoration:none; line-height:15px; -webkit-text-size-adjust:none;}
+INPUT {font:normal 12px dotum,'돋움',Apple-Gothic,맑은 고딕, Malgun Gothic,sans-serif;color:#444444; line-height:20px; height:18px; *height:17px;/*ie7*/  vertical-align:middle; border:1px #d0d0d0 solid;}
+/* 여기 공통에서 스타일을 줄경우 XFree에 HTML 디자인이 깨짐.(김형복:2012.06.18)
+TEXTAREA{border:1px #d0d0d0 solid;font:normal 12px dotum,'돋움',Apple-Gothic,맑은 고딕, Malgun Gothic,sans-serif;color:#666666; padding:7px; resize:none; }
+*/
+TEXTAREA{font:normal 12px dotum,'돋움',Apple-Gothic,맑은 고딕, Malgun Gothic,sans-serif;color:#444444; }
+/* Select > 공통 */
+.select{position:relative; line-height:normal; display:inline-block; *display:inline;  background:#fff; z-index:10;}
+.select2 {margin-top:0px; _margin-top:-1px;  _padding-bottom:2px; }
+.select *{margin:0; padding:0; cursor:pointer; font-size:12px; z-index:10;}
+.select .myValue{ outline:none; position:relative; z-index:11; padding-right:20px; top:0; left:0; border:1px solid #d4d4d4; color:#444444; line-height:19px; _line-height:normal; text-align:left; overflow:visible; background:transparent;}
+.select button.myValue{z-index:10; font:normal 12px dotum,'돋움',Apple-Gothic,맑은 고딕, Malgun Gothic,sans-serif; color:#444444; height:21px; padding-bottom:1px; padding-top:1px \9;/*ie9*/ *padding-top:0px;/*ie7*/ overflow:hidden; line-height:20px; *line-height:17px;/*ie7*/  _line-height:13px;/*ie6*/  text-indent:5px; *text-indent:0; *padding-left:5px;/*ie7*/ _padding-top:3px;/*ie6*/}
+@-moz-document url-prefix() {.select button.myValue{font:normal 12px dotum,'돋움',Apple-Gothic,맑은 고딕, Malgun Gotsans-serif;  color:#444444; height:21px; padding-bottom:1px; width:100%; line-height:15px; }}
+.select .ctrl{position:absolute; top:0; right:0; width:17px; height:20px; border-left:1px solid #eaeaea; background:url(/smarts4j/covicore/resources/images/covision/btn_select.gif) repeat-x 0 0;}
+
+
+/* 레이아웃 */
+.layout{ position:relative; z-index:20; width:100%; margin:0px; padding:0px; }
+.container {float:left;position:relative; width:100%; margin-left:-234px; z-index:21; }
+.content { width:auto; margin-left:234px;margin-right:229px; }
+.content_mf { width:auto; margin-left:234px; margin-top:10px;}
+.content_sf { width:auto; margin-left:234px; margin-right:23px; }
+.aside { width:220px; float:right;  padding-top:10px; padding-bottom:5px; padding-right:8px; position:relative; z-index:22;}
+.footer{ clear:both; width:100%; display:inline-block; position:relative; border-top:solid 1px #d4d4d4 ; z-index:10; }
+
+/* 레이아웃 전체 풀화면 */
+.content_sf_all {width:auto; margin-right:40px;}
+.sub_f_all{float:left;width:auto; margin-left:242px; border-left:solid 1px #d4d4d4;  position:relative;  background-color:#fff;  border-right:solid 1px #d4d4d4; width:100%; }
+.sub_l_f_all{float:left; display:inline; position:absolute;}
+.sub_c_f_all{background-color:#fff; border-right:solid 1px #d4d4d4; width:100%;}
+.container_f_all_1024 {float:left; position:relative; margin-left:-242px; z-index:20; width:100%;}
+.content_f_all_1024 { width:auto; margin-right:10px; margin-left:8px;}
+
+/* 서브컨테츠 > 컨텐츠 레이아웃(full) */
+.content_sf_f {width:auto; margin-right:246px;}
+.sub_f{float:left;width:auto; margin-left:242px; border-left:solid 1px #d4d4d4; position:relative; background-color:#fff; border-right:solid 1px #d4d4d4; width:100%;}
+.sub_l_f{float:left; display:inline; position:absolute;}
+.sub_c_f{background-color:#fff; border-right:solid 1px #d4d4d4; width:100%;}
+
+/*레이아웃 FULL 화면*/
+.container_f {float:left; position:relative; z-index:20; width:100%; margin-left:-22px;}
+.content_f {width:auto; margin-left:22px; margin-top:10px;}
+.content_sf_1024 { width:auto; margin-left:8px;margin-right:228px;}
+.container_f_1024 {float:left; position:relative; z-index:20; width:100%; margin-left:-8px;}
+.content_f_1024 { width:auto; margin-left:8px; margin-top:10px; }
+.aside_f {width:22px; float:right; display:inline-block;  padding-top:10px; padding-bottom:5px; position:relative; z-index:22;}
+.aside_f_1024 {width:22px; float:right; right:0px; margin-left:-14px; display:inline-block;  padding-top:10px; padding-bottom:5px; position:absolute; z-index:22;}
+.bottom_height {margin:-1px 0 0 0;  background-color:#FFF; float:left;  width:100%; border-left:1px #d4d4d4 solid; border-right:1px #d4d4d4 solid;  position:relative;}
+.bottom_height2 {margin: 0 0 0 0; margin-bottom:-1px;  background-color:#FFF; float:left;  width:100%; border-left:1px #d4d4d4 solid; border-right:1px #d4d4d4 solid;}
+
+/*레이아웃 FULL 화면(1024)*/
+.container_1024 {float:left; position:relative; z-index:20; width:100%; margin-left:-8px;}
+.content_1024 { width:auto; margin-left:8px; margin-top:10px;}
+.aside_1024 {width:220px; right:0px; display:inline-block; margin-left:-220px; padding-right:8px;  padding-top:10px; padding-bottom:5px; position:absolute; z-index:22;}
+.aList {background-color:#FFF; width:108px; border:solid 1px #bfbfbf; z-index:40; position:absolute; *position:relative;/*ie7*/ _position:absolute;/*ie6*/ margin-top:-1px; _margin:21px 0 0 -114px;/*ie6*/ list-style:none;}
+.aList li a{font-size:12px;background-color:#FFFFFF; display:block; line-height:19px; vertical-align:middle;  _height:1%;/*ie6*/ padding:3px 5px 0 5px; z-index:10;}
+.aList li a:hover{font-size:12px;background-color:#f2f2f2; display:block; line-height:19px;  vertical-align:middle; padding:3px 5px 0 5px; z-index:10;}
+.aList_last a{background:url(/smarts4j/covicore/resources/images/covision/line_pop.gif) repeat-x 0 21px; height:19px; z-index:10;}
+.aList_last a:hover{background:url(/smarts4j/covicore/resources/images/covision/line_pop.gif) repeat-x 0 21px; z-index:10;}
+.aList2 {background-color:#FFF; width:69px; border:solid 1px #bfbfbf; position:absolute; *position:relative;/*ie7*/ _position:absolute;/*ie6*/ margin-top:-1px; _margin:21px 0 0 -75px;/*ie6*/ list-style:none;}
+.aList2 li a{font-size:11px;background-color:#FFFFFF; display:block; line-height:14px; vertical-align:middle; _height:1%;/*ie6*/ padding:5px 5px 0 5px; }
+.aList2 li a:hover{font-size:11px; background-color:#f2f2f2; display:block; line-height:14px;  vertical-align:middle;  padding:5px 5px 0 5px;}
+.aList2_last a{background:url(/smarts4j/covicore/resources/images/covision/line_pop.gif) repeat-x 0 21px; height:19px;}
+.aList2_last a:hover{background:url(/smarts4j/covicore/resources/images/covision/line_pop.gif) repeat-x 0 21px;}
+.aList3 { padding-top:3px; white-space:nowrap; right:0; padding-bottom:3px; background-color:#FFF; z-index:7;  border:solid 2px #6e7882; position:absolute; margin-top:-2px; *margin:13px 4px 0 0; _margin:13px 0 0 -114px;/*ie6*/ z-index:100; list-style:none;}
+.aList3 li a{font-size:12px; white-space:nowrap;  display:block; line-height:19px; vertical-align:middle;  padding:3px 20px 0 10px;}
+.aList3 li a:hover{font-size:12px; display:block; line-height:19px; white-space:nowrap; vertical-align:middle; padding:3px 20px 0 10px; text-decoration:underline;}
+.aList3 span a{ margin-left:-1px;}
+.aList3 span a:hover{ margin-left:-1px;}
+@-moz-document url-prefix() {.aList3 span a{ margin-left:-3px; display:inline-block; position:relative;}}
+@-moz-document url-prefix() {.aList3 span a:hover{ margin-left:-3px; display:inline-block; position:relative;}}
+
+/* Footer > copyright */
+.footer .copyright {padding:15px 0 15px 18px;}
+.footer .copyright dt{float:left;}
+.txt_company {font-weight:bold;}
+.copyright_line{margin-left:18px; display:inline;}
+
+.copyright_name{font-size:11px; color:#7287d2; font-weight:bold;}
+.footer .copyright dd{float:left; font:normal 11px dotum,'돋움',Apple-Gothic,맑은 고딕, Malgun Gothic,sans-serif; color:#a1a1a1; line-height:18px; padding:0 0 0 15px;}
+
+/* 포털 컨텐츠 > 컨텐츠 레이아웃 */
+.con{ width:auto;  margin-left:221px; margin-right:215px;}
+*:first-child+html .con_r{float:right; margin-left:10px;  width:203px;}
+.layoutb h3{/*background:url(/smarts4j/covicore/resources/images/covision/bg_h3.gif) repeat-x;*/ font-size:12px; height:28px; _height:21px;/*ie6*/ color:#545454; font-weight:bold; line-height:28px; _padding-top:7px;/*ie6*/ margin-top:0px \9;/*ie9*/}
+.more{margin:-22px 0 0 183px; float:right; padding-right:7px;}
+.mlist_num{margin:-22px 0 0 183px; float:right; padding-right:7px;}
+.mlist_num img{padding-left:0px;}
+.ico_h3{margin:-2px 7px 0 0px; *margin:-2px 7px 0 0px;/*ie7*/}
+.ico_tab{margin:0 3px 0 0;}
+.con_table h3{background:url(/smarts4j/covicore/resources/images/covision/bg_h3.gif) repeat-x; height:28px; _height:21px;/*ie6*/ color:#444444; font-weight:bold; line-height:28px; _padding-top:7px;/*ie6*/ margin-top:3px \9;/*ie9*/}
+
+/* 서브 컨텐츠 > 컨텐츠 레이아웃 */
+.sub{width:auto;  margin-left:226px; *margin-right:2px;/*ie7*/ width:100%;  float:left;position:relative; z-index:21; background-color:#fff;  border-right:solid 1px #d4d4d4;}
+.sub_l{float:left; margin-left:-219px; padding-bottom:30px;  background-color:#f9f9f9; z-index:2; border-left:solid 1px #d4d4d4; border-right:solid 1px #d4d4d4; width:216px; display:inline; }
+/* lnb_test */.lnb-nav{float:left; margin-left:-218px; padding-bottom:30px;  background-color:#fff; z-index:2; border-left:solid 1px #d4d4d4; border-right:solid 1px #d4d4d4; width:216px; display:inline; }
+/* lnb_test */.fixed {position:fixed; top:0px;}
+/******* start of jscrollpane *********/
+.jspContainer {overflow: hidden; position: relative;}
+.jspPane {position: absolute; overflow: hidden; width:auto !important; /* to avoid cut-off api names in reference in horiz scroll */}
+.jspVerticalBar {position: absolute; top: 0; right: 0; width: 4px; height: 100%; background: #fff;}
+.jspHorizontalBar {position: absolute; bottom: 0; left: 0; width: 100%; height: 4px; background: #f5f5f5;}
+.jspVerticalBar *, .jspHorizontalBar * {margin: 0; padding: 0;}
+.jspCap {display: block;}
+.jspVerticalBar .jspCap {height: 4px;}
+.jspHorizontalBar .jspCap {width: 0; height: 100%;}
+.jspHorizontalBar .jspCap {float: left;}
+.jspTrack {position: relative; background: #e4e4e4;}
+.jspDrag {background: #fff; border:1px solid #e9e9e9; position: relative; top: 0; left: 0; cursor: pointer;}
+.jspDrag:hover, .jspDrag:active {
+	  border-color: #09c;
+	  background-color: #4cadcb;
+	  background-image: -webkit-gradient(linear, left top, right top, from(#5dbcd9), to(#4cadcb));
+	  background-image: -webkit-linear-gradient(left, #5dbcd9, #4cadcb);
+	  background-image: -moz-linear-gradient(left, #5dbcd9, #4cadcb);
+	  background-image: -ms-linear-gradient(left, #5dbcd9, #4cadcb);
+	  background-image: -o-linear-gradient(left, #5dbcd9, #4cadcb);
+	  background-image: linear-gradient(left, #5dbcd9, #4cadcb);
+	  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#5dbcd9', EndColorStr='#4cadcb');	
+	}
+.jspHorizontalBar .jspTrack, .jspHorizontalBar .jspDrag {float: left; height: 100%;}
+.jspArrow {background: #999; text-indent: -20000px; display: block; cursor: pointer;}
+.jspArrow.jspDisabled {cursor: default; background: #ccc;}
+.jspVerticalBar .jspArrow {height: 16px;}
+.jspHorizontalBar .jspArrow {width: 16px; float: left; height: 100%;}
+.jspVerticalBar .jspArrow:focus {outline: none;}
+.jspCorner {float: left; height: 100%;}
+/* lnb_test */.scroll-pane {border:none !important; outline:none;}
+
+
+
+
+.sub_c{float:left;background-colo오후 3:46 2013-08-30r:#fff; width:100%; z-index:1;}
+.lnb_close{float:left; margin:0px; padding:0px;}
+.lnb_open{float:left; margin:0px; padding:0px; position:relative;}
+.stit{font-size:16px; font-family:Malgun Gothic, 맑은 고딕, dotum,'돋움', Apple-Gothic,sans-serif; font-weight:bold; color:#444444; min-width:100%; background:url(/smarts4j/covicore/resources/images/covision/bg_stit.gif) repeat-x bottom; height:35px; margin-top:-2px; margin-bottom:12px; }
+.location{ float:right; margin-top:-34px; z-index:20; position:relative; list-style:none;} 
+.location_list{ float:left; position:relative; line-height:15px;} 
+.btn_location {margin-top:-2px;_margin-top:-0;/*ie6*/ margin-left:3px; }
+.con_in{margin:10px 24px 40px 24px;}
+
+/* 메일 */
+.mail_box{width:auto;   width:100%;  float:left; position:relative; z-index:21; }
+.mail_con{ margin-left:8px; margin-top:-10px; background-color:#fff;  border-right:solid 1px #d4d4d4; }
+.mail_bottom{ margin-left:8px; background:url(/smarts4j/covicore/resources/images/covision/bg_import.gif);  border-right:solid 1px #d4d4d4; border-left:solid 1px #d4d4d4;}
+
+
+/* 웹가젯 */
+.gadget_top .gadget_top_list{margin:6px 0 0 3px; *margin:4px 0 0 3px;} 
+.gadget_top .gadget_top_list a {display:block;}
+.gadget_top .gadget_top_list .gadget_menu {width:85px; height:30px; padding:4px 7px 4px 8px; float:left; list-style:none;background:url(/smarts4j/covicore/resources/images/covision/ico_gadget_bg.gif) no-repeat;}
+.btn_gadget{ float:left;  z-index:1; margin:0px; padding:0px; _margin-top:-2px;/*ie6*/}
+.gadget{background:url(/smarts4j/covicore/resources/images/covision/bg_gadget.gif) repeat-y;  z-index:2; width:203px; float:left; margin-left:-5px; margin-bottom:10px; }
+.gadget ul {margin:0; padding:0;}
+.gadget_top{background:url(/smarts4j/covicore/resources/images/covision/bg_gadget_top.jpg) no-repeat 0 0; float:left; width:203px; }
+.gadet_ad{margin:6px 0 0 180px;}
+.gadget_bottom{ width:203px; display:block; float:left; background:url(/smarts4j/covicore/resources/images/covision/bg_gadget_bottom.gif) no-repeat 0 0; height:14px;}
+.gadget_memo{ float:left; background:url(/smarts4j/covicore/resources/images/covision/bg_memo.jpg) no-repeat; width:184px; height:173px; margin:10px 0 0 10px; _margin:10px 0 0 5px;/*ie6*/}
+.memo_list{float:left; margin:10px 0 0 10px !important; _margin:10px 0 0 5px;/*ie6*/  list-style:none;}
+.memo_list li{float:left; margin-right:4px;}
+.memo_con{ height:106px; height:116px \9; width:165px; *width:165px;/*ie7*/ float:left; margin-left:8px; *margin-left:0;/*ie7*/ color:#888888; line-height:16px; font-size:11px; margin-top:5px;
+overflow-x:hidden; overflow-y:scroll; border:0px; background-color:#fffce1; resize:none;
+scrollbar-3dlight-color:#faf7d8; scrollbar-arrow-color:#9e9b83; scrollbar-track-color:#f3efcc; scrollbar-darkshadow-color:#faf7d8; scrollbar-face-color:#efeac6; scrollbar-highlight-color:#e1dec6; scrollbar-shadow-color:#d6d2b4; 
+}
+.memo_remove{float:left; margin:3px 0 0 8px;}
+.btn_x{margin:-20px 0 0 180px; *margin:-20px 0 0 150px;/*ie7*/  float:right; padding-right:7px;}
+.memo_limit{float:right;  padding:0 0 0 7px; margin:8px 7px 0 0; color:#b2ae89; font-size:11px;}
+.gadget_box{float:left; width:184px; margin-left:9px; _margin-left:5px;/*ie6*/ margin-top:15px; padding-bottom:6px; background:url(/smarts4j/covicore/resources/images/covision/box_gadget_bottom.gif) no-repeat left bottom;}
+.gadget_t{float:left; width:184px;  font-size:12px; height:32px;  font-weight:bold; color:#626262; background:url(/smarts4j/covicore/resources/images/covision/box_gadget_top.gif) no-repeat;}
+.gadget_top_tit{display:block; padding:11px 0 5px 38px; *padding:13px 0 2px 40px;/*ie7*/}
+.gadget_list_m{background:url(/smarts4j/covicore/resources/images/covision/bg_gadget_li.gif) repeat-x; height:21px; padding-left:7px; vertical-align:middle; padding-top:7px;  list-style:none;}
+.gadget_list_m2{background:url(/smarts4j/covicore/resources/images/covision/bg_gadget_li2.gif) repeat-x; height:38px; padding-left:7px; line-height:14px; padding-top:6px; vertical-align:middle; list-style:none;}
+.gadget_list{background:url(/smarts4j/covicore/resources/images/covision/dot01.gif) no-repeat left 5px; padding-left:7px; _float:left;/*ie6*/}
+.gadget_list_n{ float:left; margin:0; width:182px; border-left:1px solid #c2c2c2; border-right:1px solid #c2c2c2; background:#ffffff; }
+.gadget_join{background:url(/smarts4j/covicore/resources/images/covision/ico_gadget_join.gif) no-repeat 0 1px; padding-left:13px; _float:left;/*ie6*/}
+.gadget_list2{ margin:0; _float:left;/*ie6*/}
+.gadget_img{ display:block; float:left; padding-top:5px; padding-right:10px;}
+
+/*공통파일*/
+.r_tabr {list-style:none; float:right; margin-top:-23px; margin-right:2px;}
+.sch_top{ width:100%; margin-top:15px; margin-bottom:10px;  margin-left:-20px; margin-left:-42px \9;}
+
+/*파이어폭스*/
+@-moz-document url-prefix() {.sch_top{ width:100%; margin-top:15px; margin-bottom:5px;  margin-left:-37px; } }
+.sch_top_dl_month{height:26px; position:relative; margin-left:40px; margin-left:80px \9;/*ie9*/}
+.sch_top_dl_week {height:26px; position:relative; margin-left:30px; margin-left:80px \9;/*ie9*/}
+.sch_top_dl_day {height:26px; position:relative; margin-left:40px; margin-left:80px \9;/*ie9*/}
+@-moz-document url-prefix() {.sch_top_dl_month{height:26px; position:relative; margin-left:60px;} }
+@-moz-document url-prefix() {.sch_top_dl_week {height:26px; position:relative; margin-left:60px;} }
+@-moz-document url-prefix() {.sch_top_dl_day {height:26px; position:relative; margin-left:60px;} }
+.sch_top_btn_l{margin:13px 8px 0 0; line-height:26px; position:relative; float:left;}
+.sch_top_btn_r{margin:13px 0 0 8px; line-height:26px; position:relative; float:left;}
+.sch_top_tit{*margin-left:-4px;/*ie7*/  position:relative; float:left;}
+.btn_today{ float:left; margin-top:5px;  position:relative;} 
+
+/*일정 반복*/
+.repeat_w01{ position:relative; z-index:8;}
+.repeat_time { height:35px; margin-top:10px; }
+.repeat_time dd{ float:left; height:30px; font-weight:bold;} 
+.repeat_w02{position:relative; z-index:8; height:150px;}
+.repeat_set{ border:1px #bfbfbf solid; height:121px; _height:120px;/*ie6*/ }
+.repeat_set_menu{ list-style:none; float:left;  padding:0px; margin:0 0 0 0; width:72px; background-color:#f2f2f2; }
+.repeat_set_menu li a{border-bottom:1px #bfbfbf solid;}
+.repeat_set_off a {border-right:1px #d7d7d7 solid;float:left; width:72px; padding:9px 0px 0 0px; text-align:center; height:20px;  font-size:12px; display:block; color:#9f9f9f; margin:0px;}
+.repeat_set_off a:hover {border-right:1px #d7d7d7 solid;float:left; width:72px; padding:9px 0px 0 0px; text-align:center; height:20px;  font-size:12px; display:block; color:#9f9f9f; margin:0px;}
+.repeat_set_on a {float:left; width:73px; padding:9px 0px 2px 0px; text-align:center; height:20px; font-weight:bold; font-size:12px; display:block; color:#666666; background-color:#FFF; margin:0px;}
+.repeat_set_on a:hover {float:left; width:73px; padding:9px 0px 2px 0px; text-align:center; height:20px; font-weight:bold; font-size:12px; display:block; color:#666666; background-color:#FFF; margin:0px;}
+.repeat_con{padding:6px; display:block; position:relative; margin-left:73px;}
+.repeat_day{ list-style:none;}
+.repeat_day li{ height:26px; line-height:26px;}
+.repeat_day span{ margin-right:5px;}
+.repeat_week{list-style:none; margin-top:10px;}
+.repeat_week li{ display:inline; margin-right:13px;}
+.repeat_month1{list-style:none;}
+.repeat_month1 li{height:26px; line-height:26px; padding-bottom:5px;}
+.repeat_month2{list-style:none; margin-top:6px;}
+.repeat_month2 li{display:inline; margin-right:13px;}
+.repeat_year_p{ height:26px; line-height:26px; }
+.repeat_year1{list-style:none;}
+.repeat_year1 li{height:26px; line-height:26px; padding-bottom:3px;}
+.repeat_year2{list-style:none; margin-top:6px;}
+.repeat_year2 li{display:inline; margin-right:13px;}
+.repeat_w03{ position:relative; z-index:8; margin-top:10px;}
+.repeat_scale{border:1px #bfbfbf solid; height:80px; padding:10px;}
+.repear_scale_ul{list-style:none; margin-top:6px;}
+.repear_scale_ul li{margin-bottom:5px;}
+.repeat_scale1{ float:left;width:190px;}
+.repeat_scale1 p{ height:26px; line-height:26px;}
+.repeat_scale2{ float:left;}
+
+/* 게시 작성 */
+.w_top {width:100%; height:25px; margin-top:15px; text-align:right;  position:relative;}
+.w_top dl{ float:right;}
+
+/*.w_top_line{background: url/smarts4j/covicore/resources/images/covision/line01.gif) no-repeat right 4px; padding-right:5px;}*/
+.w_top_line{padding-right:5px;}
+.w_top dt{ float:left; margin-top:2px; padding-right:7px; margin-right:5px; font-size:11px; color:#343434; background: url/smarts4j/covicore/resources/images/covision/ico_not.gif) no-repeat right 5px;}
+.w_top dd{ float:left; font-size:11px; padding-left:5px; padding-right:5px;}
+.w_con01{ width:100%; margin-top:20px; border-top:1px solid #d7d7d7;}
+.w_con01_m { width:100%; margin-top:5px; margin-bottom:20px; border-top:1px solid #d7d7d7;}
+.w_con01_last{ width:100%; margin-top:20px; margin-bottom:20px; border-top:1px solid #d7d7d7;}
+.w_con01_2{ width:100%;  border-top:1px solid #d7d7d7;}
+.w_con01_line{ border-bottom:1px solid #d7d7d7; height:20px; padding-top:5px; padding-bottom:5px; padding-left:10px;}
+.w_con01_line em{ font-style:normal;}
+.ttit01{ background-color:#f9f9f9; font-weight:bold; border-right:1px solid #CCCCCC; border-bottom:1px solid #d7d7d7; height:20px; padding-top:5px; padding-bottom:5px; padding-left:10px;}
+.ttit02{ background-color:#f9f9f9; font-weight:bold; border-left:1px solid #CCCCCC; border-right:1px solid #CCCCCC; border-bottom:1px solid #d7d7d7; height:20px; padding-top:5px; padding-bottom:5px; padding-left:10px;}
+col#wtit {width:130px;}
+col#wtit2 {width:120px;}
+.w_con01_full{ padding-right:14px; position:relative;border-bottom:1px solid #d7d7d7; height:20px; padding-top:5px; padding-bottom:5px; padding-left:10px;}
+.w_con02{ margin-top:15px; padding-right:22px; *padding-right:0;/*ie7*/ position:relative;}
+.w_con02_p{ font-weight:bold; background: url/smarts4j/covicore/resources/images/covision/img_tit.gif) no-repeat 0 2px; *background: url/smarts4j/covicore/resources/images/covision/img_tit.gif) no-repeat 0 3px;/*ie7*/ _background: url/smarts4j/covicore/resources/images/covision/img_tit.gif) no-repeat 0 0;/*ie6*/ padding-left:17px; margin-bottom:3px;}
+.w_con02_box{ background-color:#f9f9f9; border:1px solid #cdcdcd;  padding:10px; display:inline-block; width:100%; *width:auto;/*ie7*/ position:relative;}
+.w_con02_pbox{background: url/smarts4j/covicore/resources/images/covision/bg_pbox.gif) repeat-x 0 bottom; height:29px;}
+.w_con02_pl{ float:left;}
+.w_con02_pr{ float:right;}
+.w_con02_box dl{ width:300px; display:inline-block; margin:10px 7px 0 0; padding:0px; vertical-align:top;  position:relative; float:left;}
+.w_con02_box dd{ bottom:0px; line-height:20px; }
+.w_con02_box dt{vertical-align:top; float:left;}
+.w_con02_box_left{margin-right:8px; float:left;}
+.w_con02_box_bottom{margin-left:90px;}
+.w_con03{ margin-top:15px; padding-right:22px; *padding-right:0;/*ie7*/ position:relative; z-index:3; }
+.w_con03_p{ font-weight:bold; background: url/smarts4j/covicore/resources/images/covision/ico_write2.gif) no-repeat 3px 4px; padding-left:17px; margin-bottom:3px;}
+.w_con03_p2{ font-weight:bold; background: url/smarts4j/covicore/resources/images/covision/ico_write2.gif) no-repeat 3px 4px; padding-left:17px;  margin-bottom:3px; border-bottom:1px #d7d7d7 solid; }
+.w_con03_box{ background-color:#f9f9f9; border:1px solid #cdcdcd;  padding:5px 10px 5px 10px; display:inline-block; width:100%; *width:auto;/*ie7*/}
+.w_con03_table{ width:100%;}
+.w_con03_table_line{ height:20px; padding-top:5px; padding-right:5px; padding-bottom:5px;}
+.w_con03_line{ border-bottom:1px dashed #dadada; height:20px; padding-top:5px; padding-right:5px; padding-bottom:5px;}
+col#w3tit {width:100px;}
+col#w3tit2 {width:100px;}
+.w_con04{border:1px solid #d5d5d5; margin:10px 0 0 0; padding:0; position:relative; z-index:3;}
+.w_con04 h4{background:url/smarts4j/covicore/resources/images/covision/tit_view02.gif) repeat-x ;  line-height:35px; _line-height:30px;/*ie6*/}
+.w_con04 img.trans{position:absolute; z-index:3;}
+.w_con05{ width:100%; margin-top:15px; border-top:1px solid #d7d7d7;}
+.w_con05_p{ float:none;   display:inline-block;}
+.w_con05 input{ *margin-top:-1px;/*ie7*/}
+.w_con05_line{padding-right:14px; border-bottom:1px solid #d7d7d7; height:20px; padding-top:5px; padding-bottom:5px; padding-left:10px;}
+.w_con05_t01{height:20px; padding-top:5px; padding-bottom:5px; padding-left:10px; background-color:#f9f9f9; font-weight:bold; border-right:1px solid #CCCCCC; border-bottom:1px solid #d7d7d7;}
+col#w5tit {width:100px;}
+.w_con06{ margin-top:15px; padding-right:22px; *padding-right:0;/*ie7*/ position:relative;}
+.w_con06_p{ font-weight:bold; background: url/smarts4j/covicore/resources/images/covision/ico_write2.gif) no-repeat 3px 4px; padding-left:17px; margin-bottom:3px;}
+.w_con06_box{ background-color:#f9f9f9; border:1px solid #cdcdcd;  padding:10px; display:inline-block; width:100%; *width:auto;/*ie7*/}
+.w_con06_box2{ background-color:#f9f9f9; border:1px solid #cdcdcd;  padding:10px; display:inline-block;}
+.w_con06_table{ width:100%;}
+.w_con06_p2{float:right;}
+col#w6tit {width:75px;}
+.w_con07{margin-top:15px; padding-right:22px; position:relative; text-align:center;}
+.w_con07 p{ display:inline-block; width:195px;}
+
+/* 게시 topbar */
+.board_btop{background:url/smarts4j/covicore/resources/images/covision/bg_btop.gif) repeat-x;  z-index:5;  position:relative; border:1px solid #d5d5d5; margin:0px; padding:0; }
+.board_btop img.trans{position:absolute;}
+.tl{top:0px; left:0px; margin:-1px 0 0 -1px; _margin:0 0 0 -1px;/*ie6*/}
+.mplus{top:0px; right:0px; margin:5px 5px 0 0; _margin:5px 30px 0 0;/*ie6*/}
+.tr{top:0px; right:0px; margin:-1px -1px 0 0; _margin:0 24px 0 0;/*ie6*/}
+.bl{bottom:0px; left:0px; _bottom:auto;/*ie6*/ margin:0 0 -1px -1px; _margin:-4px 0 0 -1px;/*ie6*/}
+.br{bottom:0px; right:0px; _bottom:auto;/*ie6*/  margin:0 -1px -1px 0; _margin:-4px 24px 0 0;/*ie6*/}
+.board_btop_g{ padding:0; margin:7px 0 0 10px; height:21px; z-index:2; list-style:none;}
+.board_interest {margin:-21px 12px 0 0; height:21px; z-index:2; list-style:none; float:right;}
+.board_btop_g li.tlist {height:21px; _height:14px;/*ie6*/ padding-top:7px; list-style:none;}
+
+/* safari only */
+body:first-of-type .board_btop_g li.tlist {height:21px; padding-top:5px;}
+.board_btop_g li.tlist span{margin-left:4px; vertical-align:middle; list-style:none;}
+.board_btop_g2{padding:0; margin:7px 0 7px 10px; height:21px; _height:14px;/*ie6*/ z-index:2; list-style:none;}
+.board_btop_g2 li.tlist { height:21px; _height:14px;/*ie6*/ padding-top:7px; list-style:none;}
+.board_btop_g2 li.tlist span{margin-left:4px; vertical-align:middle; list-style:none; float:left;}
+.board_btop_g3{padding:0; margin:7px 0 7px 10px; height:21px; _height:14px;/*ie6*/ z-index:2; }
+.board_btop_g3 li.tlist { height:21px; _height:14px;/*ie6*/ list-style:none;}
+.board_btop_g3 li.tlist span{margin-left:4px; vertical-align:middle; list-style:none;}
+.rss{margin-right:3px;}
+
+/* safari only */
+.rss{margin-right:3px; margin-top:-3px;}
+.board_search{border:1px solid #d5d5d5; position:relative; z-index:1; vertical-align:middle; background-color:#fff; margin:7px 4px 4px 4px; height:24px; padding:10px 8px 10px 10px;}
+.board_search2{border:1px solid #d5d5d5; position:relative; z-index:1; vertical-align:middle; background-color:#fff; margin:7px 4px 4px 4px; height:50px; padding:10px 8px 10px 10px;}
+col#checkbox {width:33px;}
+col#id_num {width:50px;}
+col#group {width:110px;}
+col#user{width:68px;}
+col#data {width:55px;}
+col#day {width:79px;}
+col#use {width:60px;}
+col#hit {width:60px;}
+col#level{width:100px;}
+col#myscraplist{width:95px;}
+col#reportlist{width:145px;}
+col#sch_date{width:225px;}
+.aList6 {width:248px; white-space:nowrap; right:0; background-color:#FFF; z-index:7; border:solid 1px #6e7882; position:absolute;}
+.aList6 ul {list-style:none;}
+.aList6 ul li {height:19px; _height:10px; _line-height:16px; border-bottom:solid 1px #d4d4d4; display:block;}
+.aList6 ul li .sign a {padding-left:20px; height:10px;line-height:16px; _line-height:10px; background-color:#FFF; white-space:nowrap; display:block;}
+.aList6 ul li .sign a:hover{padding-left:20px; height:10px;  line-height:16px; _line-height:10px; white-space:nowrap; display:block; background:url(/smarts4j/covicore/resources/images/covision/sign_check.gif) no-repeat top left;}
+.aList6 dl.bt {height:26px; background-color:#FFF; padding:5px 0 0 25px; cursor:default;}
+.aList6 ul li .x a{margin-top:-19px; margin-right:0px; height:10px; white-space:nowrap; right:0; padding:0; float:right; }
+.aList6 ul li .x a:hover{margin-top:-19px; margin-right:0px; height:10px; white-space:nowrap; right:0; padding:0; float:right; }
+
+/* 좌측 달력 */
+.r01_menutop{float:left; width:100%; position:relative; padding-bottom:14px;  background-color:#FFF;}
+.cal_table2{ margin:5px 0 0 15px; _margin:5px 0 0 10px;/*ie6*/ text-align:center; padding:0px;}
+.cal_table2 thead td {padding-top:3px;}
+.cal_table2 thead{font-weight:bold; color:#6b6b6b; }
+.cal_table2 td{width:26px; height:16px; line-height:16px; vertical-align:middle; padding:0px;}
+.cal_table2 tr{height:16px;padding:0px;}
+.cal_table2 a{margin-left:-2px;}
+
+/* 상태바 */
+.app_level { _display:inline; float:left; margin:5px 7px 5px 18px; padding:0; width:40px; height:9px; background-color:#ececec;}
+.app_level_t {float:left; line-height:21px;}
+
+/* 게시 보기 */
+.table_view{z-index:3; position:relative; border:1px solid #d5d5d5; margin:10px 0 0 0; padding:0; }
+.view_date{ position:absolute; top:0px; right:0px; margin:10px 15px 0 0; _margin:17px 37px 0 0;/*ie6*/}
+.table_view img.trans{position:absolute;}
+.view{width:100%; position:relative;}
+.view_01{width:100%;}
+.view_02{ text-align:left; background-color:#fbfbfb; width:100%; border-bottom:1px #dadada solid; border-top:1px #dadada solid;}
+.view_02 td{ padding:5px 0 5px 0;}
+.view_02 p{ float:left; margin-right:20px; margin-left:10px;}
+.view_02_top{border-bottom:dashed 1px #dadada;}
+.view_03{ width:100%;}
+.view_03_r{ text-align:right; padding-top:10px;}
+.view_con{ padding:10px 10px 30px 10px;  line-height:20px;}
+.view_mobile{ padding-top:10px; padding-bottom:10px; border-top:dashed 1px #dadada;}
+.view_b{ margin-top:10px; margin-bottom:25px;}
+.board_body{overflow-x:scroll; overflow-y:hidden; position:relative; padding:10px; margin-top:10px; margin-bottom:10px;}
+
+/*팝업*/
+.aList4 { padding-top:3px; white-space:nowrap; right:0; padding-bottom:3px; background-color:#FFF; z-index:7; border:solid 2px #6e7882; position:absolute; *position:relative;/*ie7*/ _position:absolute;/*ie6*/ margin-top:-2px; _margin:21px 0 0 -200px;/*ie6*/ list-style:none;}
+.aList4 li a{font-size:12px;background-color:#FFFFFF; display:block; line-height:19px; vertical-align:middle; _height:1%;/*ie6*/ padding:3px 20px 0 10px; text-align:left;}
+.aList4 li a:hover{font-size:12px; display:block; line-height:19px; vertical-align:middle; padding:3px 20px 0 10px; text-align:left;}
+.last {padding-bottom:7px;}
+.fav {padding:7px 20px 0 10px; border-top:1px solid #e5e5e5; font-weight:bold; text-align:left;}
+.aList5 {padding:0; margin:0;}
+.aList5 li a{font-size:12px;background-color:#FFFFFF; display:block; line-height:19px; vertical-align:middle; _height:1%;/*ie6*/ padding:3px 5px 0 5px;}
+.aList5 li a:hover{font-size:12px;background-color:#f2f2f2; display:block; line-height:19px; vertical-align:middle; padding:3px 5px 0 5px;}
+.aList5_last a{background:url(/smarts4j/covicore/resources/images/covision/line_pop.gif) repeat-x 0 21px; height:19px;}
+.aList5_last a:hover{background:url(/smarts4j/covicore/resources/images/covision/line_pop.gif) repeat-x 0 21px;}
+.aList6 {width:300px; white-space:nowrap; right:0; background-color:#FFF; z-index:999; border:solid 2px #6e7882; position:absolute; margin-top:0x; *margin-top:21px; _margin:21px 0 0 -200px;/*ie6*/ list-style:none;}
+.aList6 li a{font-size:12px; background-color:#fff; display:block; line-height:19px; vertical-align:middle;  _height:1%;/*ie6*/ padding:3px 20px 6px 10px; text-align:left;}
+.aList6 li a:hover{font-size:12px; display:block; line-height:19px; vertical-align:middle; padding:3px 20px 6px 10px; text-align:left; background:#f4f4f4;}
+.aList7 { white-space:nowrap; right:0; background-color:#fdfdfe;  z-index:7;  border:solid 1px #c5c5c5; position:absolute; margin:-16px -1px 0 0; _margin:-16px 22px 0 0;/*ie6*/ z-index:100; list-style:none;}
+.aList7 li a{display:block; _display:inline-block;/*ie6*/  font-size:12px; white-space:nowrap; border:1px solid #fdfdfe; line-height:19px;   padding:0 20px 0 10px; _padding:3px 20px 0 10px;/*ie6*/}
+.aList7 li a:hover{display:block; _display:inline-block;/*ie6*/ font-size:12px;line-height:19px; white-space:nowrap; border:1px solid #eaecf4; _border:1px solid #fdfdfe;/*ie6*/  padding:0 20px 0 10px; _padding:3px 20px 0 10px;/*ie6*/ background:url/smarts4j/covicore/resources/images/covision/bg_mplus.gif) repeat-x; _background:url() repeat-x;}
+.aList8 { padding-top:3px; white-space:nowrap; right:0; padding-bottom:3px; background-color:#FFF; z-index:7; border:solid 2px #6e7882; _position:absolute;/*ie6*/ margin-top:-2px; _margin-top:21px;/*ie6*/ _margin-right:320px;/*ie6*/ list-style:none;}
+.aList8 li a{font-size:12px;background-color:#FFFFFF; display:block; line-height:19px; vertical-align:middle; _height:1%;/*ie6*/ padding:3px 20px 0 10px; text-align:left;}
+.aList8 li a:hover{font-size:12px; display:block; line-height:19px;  vertical-align:middle; padding:3px 20px 0 10px; text-align:left;}
+.last {padding-bottom:7px;}
+.fav {padding:7px 20px 0 10px; border-top:1px solid #e5e5e5; font-weight:bold; text-align:left;}
+
+.web_error {position:absolute; margin-top:120px; left:46%; width:520px;}
+.web_error_txt {font-size:15px; font-weight:bold; color:#000;}
+.web_error ul {list-style:none; padding:10px 0;}
+.web_error ul li {padding:5px; word-break:break-all;}
+
+.div_border {border:1px solid #cdcdcd;}
+
+/* 모바일 버전 보기 */
+.mobile_view {clear:both; background-image:url(/smarts4j/covicore/resources/images/covision/bg_mobile.jpg); background-repeat:repeat-x; width:100%; margin:30px 0 30px 0; border-top:1px solid #7a7a7a; border-bottom:1px solid #7a7a7a;}
+.mobile_view a {display:block; color:#666666;  display:block; width:100%;  font-weight:bold; -webkit-text-stroke-width:.01em;  font-size:4.5em; text-align:center;}
+.mobile_view a:hover {color:#666666;}
+.mobile_view span {background-image:url(/smarts4j/covicore/resources/images/covision/ico_pcmobile.png); background-repeat: no-repeat; height:130px;line-height:130px;padding-right:41px; background-position:right 10px;}
+
+.todo_g {z-index:20 !important;}
+
+/* suggestion 추가 */
+.suggestion_box {margin-top:20px;}
+.suggestion_table {width:100%;}
+.suggestion_table th {height:30px; background:#f9f9f9;}
+.suggestion_table td {text-align:center; height:30px; background:#ffffff;}
+.suggestion_table td.left {padding-left:10px; text-align:left;}
+.suggestion_select td {background:#eef7f9 !important;}
+.suggestion_memo img {margin-bottom:3px; margin-left:5px;}
+.suggestion_percent {_display:inline; float:left; margin:2px 5px 3px 15px; height:15px;}
+
+/*테마 추가 및 수정*/
+.theme_input{ border:1px #d0d0d0 solid; color:#fff; padding-left:5px; line-height:21px; *margin-right:-5px;/*ie7*/ height:21px;}
+.theme_con dd{ display:inline;  height:21px; line-height:21px;}
+.theme_img{ padding-left:5px;}
+.theme_select{margin-top:-5px; height:110px; *margin-top:24px;/*ie7*/ right:0px; margin-right:-42px; *margin-right:-40px;/*ie7*/ position:absolute; width:72px; _width:80px;  padding:7px 5px 7px 7px; _padding:7px 0px 3px 7px;/*ie6*/ border:1px #7d7d7d solid;  cursor:pointer; background-color:#FFF;}
+.theme_select li{ list-style:none; width:15px; height:16px;  float:left; display:inline-block;  margin-right:3px; margin-bottom:3px;}
+.theme_select li a{ width:15px; height:16px; margin-right:3px; margin-bottom:3px;}
+.theme_select li a:hover{ width:15px; height:16px; background:url(/smarts4j/covicore/resources/images/covision/theme_check.gif) no-repeat 4px 4px;margin-right:3px; margin-bottom:3px;}
+.theme_select a img{ border:1px solid #FFFFFF;}
+.theme_select a:hover img{border:1px #070707 solid; }
+.theme_select img{ width:14px; height:14px;}
+.theme_color{display:inline-block; position:relative;  margin-bottom:-7px; *bottom:-5px;  width:194px; height:21px;}
+
+@-moz-document url-prefix() {.theme_select{margin-top:-5px; height:114px;  right:0px; margin-right:-42px;position:absolute; width:72px;  padding:7px 5px 3px 7px; border:1px #7d7d7d solid;  cursor:pointer; background-color:#FFF;}}
+@-moz-document url-prefix() {.theme_select a img{ border:1px solid #FFFFFF; margin-top:-3px;} }
+@-moz-document url-prefix() {.theme_select a:hover img{border:1px #070707 solid; margin-top:-3px;} }

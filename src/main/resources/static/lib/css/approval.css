@@ -1,0 +1,168 @@
+@charset "utf-8";
+/* CSS Document */
+.form_wrap { width:100%;}
+.wordCont { position:absolute; top:80px; bottom:0px; width:100%;}
+.form_box { width:100%; overflow:auto; display:block; height:100%;}
+.apptit_h2 {color:#3b3b3b; font-size:27px; font-weight:bold; margin:10px 0 30px 0; display:block; text-align:center;}
+.apptit_h3 {width:100%; display:block; color:#fff; background-color:#636d7e; height:24px; line-height:24px; padding:5px 0px 5px 0px; margin:4px 0;}
+.apptit_h3 span {padding-left:23px; display:inline-block; font-weight:bold; font-size:14px; background:url(/smarts4j/covicore/resources/images/theme/icn_png.png) no-repeat -448px -445px;}
+.fileAdd {display:inline-block; text-indent:0; border-radius:20px !important; border:1px solid #fff; padding:0px 10px 1px 25px; height:28px; color:#fff; background:url(/smarts4j/covicore/resources/images/theme/icn_png.png) no-repeat -135px -906px #636d7e; float:right; margin:-2px 16px 0 0; font-size:12px; cursor:pointer;}
+.apptit_h4 {background:url(/smarts4j/covicore/resources/images/theme/icn_png.png) no-repeat -460px -410px; padding-left:24px; color:#333333; line-height:25px; font-weight:bold;}
+.titIcn {background:url(/smarts4j/covicore/resources/images/theme/icn_png.png) no-repeat -447px -363px; margin:0px; padding:6px 0 6px 32px; float:left; color:#444; font-size:14px; font-weight:bold; line-height:16px; text-align:left;}
+.persTable td.on {background:#fff; font-weight:bold; border-right:1px solid #d3d8df; font-size:14px;}
+.persTable td.off {font-weight:bold; border-right:1px solid #d3d8df; font-size:14px;}
+.persTable td:last-child {border-right:none;}
+.titBtn {
+	border:none !important;
+	display:inline-block;
+	position:relative;	
+	height:20px; 
+	margin:0;
+	padding:1px 8px 3px 3px;
+	background:#419de8; 
+	color:#fff; 
+	border-radius:3px;
+	outline:0;
+	font-size:13px;
+	text-align:center;
+	vertical-align:middle;
+	box-sizing:content-box;
+	cursor:pointer;}
+.totDownBtn {
+	display:inline-block; 
+	position:relative; 
+	height:22px; 
+	margin:5px 0;
+	padding:1px 5px 4px 5px !important;
+	border:1px solid #c6c6c6; 
+	border-radius:3px; 
+	outline:0; 
+	color:#444444; 
+	font-size:12px; 
+	font-weight:normal;
+	line-height:22px; 
+	vertical-align:middle; 
+	cursor:pointer; 
+	box-sizing:content-box; 
+	background:#fff !important; }
+.previewBtn {
+	display:inline-block; 
+	position:relative; 
+	height:22px; 
+	margin:0; 
+	padding:1px 5px 2px 25px !important; 
+	border:1px solid #c6c6c6; 
+	border-radius:3px; 
+	outline:0; 
+	color:#444444; 
+	font-size:13px; 
+	line-height:22px; 
+	vertical-align:middle; 
+	cursor:pointer; 
+	box-sizing:content-box; 
+	background:#fff url(/smarts4j/covicore/resources/images/theme/icn_png.png) no-repeat -3px -164px !important;}
+.totDownBtn:hover {border:1px solid #777;}
+.previewBtn:hover {border:1px solid #777;}
+.staron, .staroff {position:absolute; right:0; top:0;}
+.staron a {background:url(/smarts4j/covicore/resources/images/theme/icn_png.png) no-repeat -430px -90px; width:47px; height:48px; display:block; text-indent:-20000px;}
+.staroff a {background:url(/smarts4j/covicore/resources/images/theme/icn_png.png) no-repeat -370px -90px; width:47px; height:48px; display:block; text-indent:-20000px;}
+.boxStyle {width:100%; border-collapse:collapse; border-spacing:0;}
+.boxStyle thead td , .boxStyle tbody td { 
+	color:#404e5d;
+	border:1px solid #cfd5dc;
+	font-size:13px;
+	background:#fff;
+	line-height:18px;}
+.boxStyle a {display:block; padding:14px;width:33%; text-overflow:ellipsis; overflow:hidden; white-space:nowrap;}
+.boxStyle td:hover , .boxStyle a:hover { 
+	background:#4497dc;
+	color:#fff !important;
+	cursor:pointer;}
+iframe.paperView {border:1px;}
+/*결재선 팝업*/
+.layer_divpop .divpop_header {padding-top:1px;}
+.proNum {margin:0 12px; clear:both; border-bottom:1px solid #ddd; display:inline-block; width:174px; font-size:12px; padding:0;}
+.proNum li {list-style:none; display:inline-block; padding:0 8px; float:left; line-height:34px; background: url(/smarts4j/covicore/resources/images/theme/line_gry.gif) no-repeat 0 center;}
+.proNum li:first-child {padding-left:0; background:none;}
+.addList {font-size:12px; margin:6px 0 0 45px; line-height:20px;}
+.addList dt {width:30px; float:left; padding-right:6px;}
+.addList dd {float:right; width:110px; text-align:left;}
+.bgG {background: #f8fbfd;}
+
+/* 양식 미리보기 */
+.wordTop {border-bottom:1px solid #cfd5dc; background:#f3f7f9; display:inline-block; z-index:100; width:100%; }
+.topWrap { padding:10px 20px;}
+.wordCheck {position:absolute; right:0; top:12px; margin-right:40px; }
+.borLine {border:1px solid #eaeaea;}
+.zoominout { position:absolute; left:50%; margin:-25px 0 0 -25px; z-index:105;}
+.plus {border-radius:0 !important; position:absolute; display:block; text-indent:-20000px; z-index:105; width:25px; height:25px; background:url(/smarts4j/covicore/resources/images/theme/icn_png.png) no-repeat -341px -51px; cursor:pointer;}
+.minus {border-radius:0 !important; position:absolute; display:block; text-indent:-20000px; z-index:105; width:25px; height:25px; background:url(/smarts4j/covicore/resources/images/theme/icn_png.png) no-repeat -371px -51px; margin-left:25px; cursor:pointer;}
+.wordView {position:relative; text-align:center;}
+.zoominout li {list-style:none; float:left; display:inline-block;}
+.zoominout li:last-child {margin-left:-1px;}
+.wordLayout td:first-child {}
+.wordLeft {padding:20px;}
+.wordLayout {width:100%; min-width:600px;}
+.wordRight p {text-align:center; margin-top:25px;}
+.wordForm input {height:22px;}
+.wordForm select {height:24px;}
+.wordForm {float:right; margin-bottom:5px;}
+.signArea {height:65px !important; font-style:italic; font-size:15px; font-weight:bold;}
+.signArea02 {height:92px !important; font-style:italic; font-size:15px; font-weight:bold;}
+
+/* 결재선 팝업 */
+.appTree {float:left; width:189px; margin-right:10px; border:1px solid #d3d8df; padding:10px; height:470px; }
+.appTreeTop {position:absolute; width:209px; height:40px;}
+.appTreeBot {margin-top:42px; z-index:100; overflow:auto; height:430px;}
+.appTree .treeBodyTable input {margin-right:4px; margin-left:-20px !important;}
+.appLinebox {clear:both;}
+.appList {float:left; width:276px; height:491px; border-left:1px solid #d3d8df; border-right:1px solid #d3d8df; border-bottom:1px solid #d3d8df; overflow:auto;}
+.appInfo {float:left; width:450px; height:233px; margin:0px 0 10px 0;  border:1px solid #d3d8df;}
+#Apvlist {height:197px; overflow-y:auto;}
+.appInfo02 {float:left; width:450px; height:433px; margin:0px 0 10px 0; overflow:auto; border:1px solid #d3d8df;}
+.appPers {float:right; width:209px; height:433px; margin:56px 0px 0 0; border:1px solid #d3d8df; overflow-y:auto; overflow-x:hidden;}
+.appInfoBot {float:left; width:450px; height:188px; overflow:auto; border:1px solid #d3d8df; margin-bottom:10px;}
+.treeSelect {width:190px;}
+.appListTop {position:absolute; width:276px; height:40px;}
+.appListBot {margin-top:42px; width:100%; z-index:100; overflow:auto; height:449px;}
+.appListBot td {height:50px !important;}
+.appBtn {position:relative; float:left; width:109px; text-align:center; margin-top:156px;}
+.appTab {float:left; width:452px;}
+.popBtn {clear:both; width:100%; border-top:1px solid #b9c2cc; text-align:right; padding:15px 0px 15px 0px;}
+.appBox {/*height:609px;*/ margin:10px;}
+.AXTree_none .AXTreeScrollBody {border:none !important;}
+.AXTree_none .AXTreeScrollBody .AXTreeBody .treeBodyTable tbody tr td .bodyTdText {padding:1px 8px;}
+.appBtnSend {float:left; width:109px; margin-top:176px; text-align:center;}
+.appBtnSend02 {float:left; width:109px; margin-top:88px; text-align:center;}
+.appTab {float:left; width:452px;}
+.appOpen {position:absolute; right:0; top:50%; margin-top:-34px; width:20px; height:68px; display:block; background:url(/smarts4j/covicore/resources/images/theme/icn_png.png) no-repeat -430px -10px; text-indent:-20000px; z-index:105;}
+.appClose {position:absolute; right:220px; top:50%; margin-top:-34px; width:20px; height:68px; display:block; background:url(/smarts4j/covicore/resources/images/theme/icn_png.png) no-repeat -460px -10px; text-indent:-20000px; z-index:105;}
+.appTab .AXTabsLarge {margin-top:10px !important;}
+.listTitle {width:430px; border-bottom:1px solid #eaecef; background:#f8f8f8; height:26px; padding:9px 0 0 20px;}
+.infoTable td {height:40px !important;}
+.infoTable thead td {height:33px !important; background:#f8f8f8; padding:2px 0 0 20px;}
+.infoTable tbody tr:last-child td {border-bottom:1px solid #e9e9e9 !important;}
+.infoTable thead {border-top:none !important;}
+.infoTableBot td {height:30px !important;}
+.infoTableBot thead td {height:33px !important; background:#f8f8f8; padding:2px 0 0 20px;}
+.infoTableBot tbody tr:last-child td {border-bottom:1px solid #e9e9e9 !important;}
+.infoTableBot thead {border-top:none !important;}
+.persTable td {height:26px !important;}
+.persTable thead td {height:33px !important; background:#f8f8f8; padding:2px 0 0 20px;}
+.persTable tbody tr:last-child td {border-bottom:1px solid #e9e9e9 !important;}
+.persTable thead {border-top:none !important;}
+.persTable tr.persOn {background:#f8f8f8;}
+.btnWArea { background:#fff; z-index:105; width:430px; height:26px; padding:10px 20px 0 0; }
+.btnWArea02 {position:absolute; background:#fff; z-index:105; width:430px; height:26px; padding:10px 20px 0 0; bottom:77px;}
+.sendRight {background:url(/smarts4j/covicore/resources/images/theme/icn_png.png) no-repeat -352px -479px; padding-right:18px; float:right; font-size:12px; color:#555;}
+.moreEnd {position:absolute; right:0px; background:url(/smarts4j/covicore/resources/images/theme/icn_png.png) no-repeat -181px -84px; width:30px; text-indent:-20000px;}
+.form_wrap .conin_view {  border-right:0px;}
+.wordView { padding:20px;}
+
+.appSubject {text-align:left;}
+.moreTxt {position:relative; width:115px; text-overflow:ellipsis; white-space: nowrap; word-break:break-all; display:inline-block; overflow:hidden;}
+.wordCheck .txt_gn11 { vertical-align:middle; padding-left:3px; font-size:13px;}
+.table_13 {clear:both; width:100%; margin-top:5px; border:1px solid #666666; border-collapse:collapse;} 
+.table_13 th {height:30px; padding:0px 14px 0px 14px; white-space:nowrap; font-weight:bold; background-color:#f6f6f6; border:1px solid #666666; } 
+
+.table_13 td {height:30px; padding:0px 17px 0px 14px; border:1px solid #666666;}

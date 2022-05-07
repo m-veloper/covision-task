@@ -1,0 +1,142 @@
+﻿@charset "utf-8";
+	/* 공통제어 */
+	div, ul,li,dl,dt,dd,ol,p,h1,h2,h3,h4,h5,h6,form
+	    {
+	        margin:0;padding:0;font:normal 12px dotum,'돋움',Apple-Gothic,맑은 고딕, Malgun Gothic,sans-serif;color:#666666;  line-height:1.5em; -webkit-text-size-adjust:none; 
+	    }
+	/* lka 맥도날드 양식내 입력박스는 테두리 없도록*/
+	INPUT {font:normal 12px dotum,'돋움',Apple-Gothic,맑은 고딕, Malgun Gothic,sans-serif;color:#666666; line-height:20px; height:18px; *height:17px;/*ie7*/  vertical-align:middle; border:0px;}
+	TEXTAREA{border:0px;font:normal 12px dotum,'돋움',Apple-Gothic,맑은 고딕, Malgun Gothic,sans-serif;color:#666666; padding:7px; resize:none; }
+	/* lka 맥도날드 양식내 입력박스는 테두리 없도록*/
+	th { font-size: 12px;}
+	td { font-size: 12px;}
+	tr { font-size: 12px;}
+    .sub_p{float:left;background-color:#FFF4FF; width:100%; z-index:1;}
+    .sub_b{float:left;background-color:#F7FBFF; width:100%; z-index:1;}
+        /*기안지 작성 시작 */
+	.approval_form {clear:both; _display:inline-block; *display:inline-block; _width:auto; *width:auto; margin-top:12px; border:0px; position:relative;}
+	.draft_tit{margin:0 auto; width:99%; height:30px; padding:0px 1px 0px 1px; display:block; white-space:nowrap; position:relative;} 
+	.draft_page {padding:33px 0px 0px 0px; border:0;}
+	.draft_tit h5 {margin:0 auto; font-size:24px; font-weight:bold; margin-top:17px; padding:0 auto; vertical-align:middle; text-align:center; position:relative;}
+	.drop_menu {padding-left:5px;}
+	.p_sign { width:90px; height:50px; text-align:center; font-family:gungsuh,궁서; font-weight:500; font-size:18px; font-style:italic; letter-spacing:-1; color:#666666;}
+
+	/* 폰트그룹  */
+	.txt_gn11 {font-size:11px; color:#767676; font-weight:normal; }
+	.txt_gn11 a{font-size:11px; color:#767676;}
+	.txt_gn11 a:hover{font-size:11px; color:#181818;}
+	.txt_gn11_blur3{font-size:11px; color:#a6a6a6;}
+	.txt_gn11_blur3 a {font-size:11px; color:#a6a6a6;}
+	.txt_gn11_blur3 a:hover{font-size:11px; color:#a6a6a6; }
+	.txt_gn11_blur{font-size:11px; color:#a6a6a6; font-weight:normal;}
+	.txt_gn11_blur a {font-size:11px; color:#a6a6a6; font-weight:normal;}
+	.txt_gn11_blur a:hover{font-size:11px; color:#a6a6a6; text-decoration:underline; font-weight:normal;}
+	.txt_gn11_blur2{font-size:11px; color:#a6a6a6;}
+	.txt_gn11_blur2 a {font-size:11px; color:#a6a6a6;}
+	.txt_gn11_blur2 a:hover{font-size:11px; color:#a6a6a6; }
+	.txt_gn11_blur3{font-size:11px; color:#919191;}
+
+        /* 테이블 */
+        .table_1_left {float:left; margin-bottom:0px; border:1px solid #bcbcbc; border-collapse:collapse;}
+        .table_1_left .tit {width:12px; margin:0; padding:0 10px 0 10px; background-color:#f6f6f6;}
+        .table_1 {margin:0px; border:1px solid #bcbcbc; border-collapse:collapse;}
+        .table_1 .tit {width:12px; margin:0; padding:0 10px 0 10px; background-color:#f6f6f6;}
+        .table_1_1 {border-left:1px solid #bcbcbc;}
+        .table_1_1 th { height:20px; padding-top:2px; border-bottom:1px solid #bcbcbc; text-align:center; vertical-align:middle;}
+
+	.la {border-top:1px dashed #d5d5d5; text-align:center; line-height:16px; padding-top:3px;}
+	.td_check {margin-top:1px 0 0 0; float:left; border:0;}
+	.td_img {padding:3px 0 0 3px; float:left;}
+	.td_txt {padding:2px 0 0 3px; float:left;}
+
+        .table_2 {width:100%; margin-top:17px; border:1px solid #bcbcbc; border-collapse:collapse;}
+        .table_2 th {width:1%; height:30px; white-space:nowrap; padding:0px 14px 0px 14px; font-weight:bold; background-color:#f6f6f6; border:1px solid #bcbcbc; }
+        .table_2 td {height:30px; padding:0px 17px 0px 14px; border:1px solid #bcbcbc;}
+
+        .table_3 {clear:both; width:100%; margin-top:5px; border:1px solid #bcbcbc; border-collapse:collapse;}
+        .table_3 th {width:1%; height:30px; padding:0px 14px 0px 14px; white-space:nowrap; font-weight:bold; background-color:#f6f6f6; border:1px solid #bcbcbc; }
+        .table_3 td {height:30px; padding:0px 17px 0px 14px; border:1px solid #bcbcbc;}
+
+        .table_4 {clear:both; width:100%; margin-top:6px; border:1px solid #bcbcbc; border-collapse:collapse;}
+        .table_4 th {width:1%; height:30px; padding:0px 14px 0px 14px; white-space:nowrap; font-weight:bold; background-color:#f6f6f6; border:1px solid #bcbcbc; }
+        .table_4 td {padding:0px 0px 0px 0px;}
+ 
+        .table_5 {clear:both; width:100%; margin-top:5px; border:1px solid #bcbcbc; border-collapse:collapse;}
+        .table_5_th {width:1%; height:30px; padding:0px 14px 0px 14px; white-space:nowrap; font-weight:bold; background-color:#f6f6f6; border:1px solid #bcbcbc; }
+        .table_5_td {height:30px; padding:0px 14px 0px 14px; border:1px solid #bcbcbc;}
+
+        .table_6 {clear:both; width:100%; margin-top:8px; border:1px solid #bcbcbc; border-collapse:collapse;}
+        .table_6 th {width:1%; height:30px; padding:0px 14px 0px 14px; white-space:nowrap; font-weight:bold; background-color:#f6f6f6; border:1px solid #bcbcbc; }
+        .table_6 td {height:30px; padding:0px 14px 0px 14px; border:1px solid #bcbcbc;}
+
+        .table_7 {clear:both; width:100%; margin-top:0px; border:1px solid #bcbcbc; border-collapse:collapse;}
+        .table_7 th {height:30px; padding:0px 0px 0px 0px; white-space:nowrap; font-weight:bold; background-color:#f6f6f6; border:1px solid #bcbcbc; }
+        .table_7 td {height:30px; padding:0px 10px 0px 10px; border:1px solid #bcbcbc;}
+        
+        .table_8 {clear:both; width:100%; margin-top:6px; border:1px solid #bcbcbc; border-collapse:collapse;}
+        .table_8 th {width:1%; height:30px; padding:0px 14px 0px 14px; white-space:nowrap; font-weight:bold; background-color:#f6f6f6; border:1px solid #bcbcbc; }
+        .table_8 td {height:20px; padding:0px 4px 0px 4px; border:1px solid #bcbcbc;}
+        
+        .table_9 td { font-size:12px; font-family:돋움; color:#666666;}
+        
+        .table_10 {clear:both; width:100%; margin-top:5px; border:1px solid #bcbcbc; border-collapse:collapse;}
+        .table_10 th {width:1%; height:30px; padding:0px 1px 0px 1px; white-space:nowrap; font-weight:bold; background-color:#f6f6f6; border:1px solid #bcbcbc; }
+        .table_10 td {height:30px; padding:0px 5px 0px 5px;border:1px solid #bcbcbc;}
+        .table_10 input[type=text] {border:1px solid #C0C0C0;}
+        .table_10 textarea {width: 100%; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing: border-box; resize:none; border:1px solid #C0C0C0;margin-top:5px; margin-bottom:5px; overflow:auto;} 
+        
+        .table_11 {clear:both; width:100%; margin-top:5px; border:0px none #FFFFFF; border-collapse:collapse;}
+        .table_11 td {height:30px; padding:0px 0px 0px 0px; border: 0px none #FFFFFF;}
+        
+        .table_html {clea r:both; width:100%; margin-top:6px; border:1px solid #bcbcbc; border-collapse:collapse;}
+        .table_html th {width:1%; height:30px; padding:0px 14px 0px 14px; white-space:nowrap; font-weight:bold; background-color:#f6f6f6; border:1px solid #bcbcbc; }
+        .table_html td {height:20px; padding:0px 10px 0px 10px; border:1px solid #bcbcbc;}
+
+        .table_logo {clear:both; width:100%; margin:0px; border:0px;}
+        .table_logo td {width:100%; padding:0px;}
+
+        .table_form_info {clear:both; width:100%; margin:0px; border:1px solid #bcbcbc; border-collapse:collapse;}
+        .table_form_info th {width:1%; height:30px; padding:0px 14px 0px 14px; white-space:nowrap; font-weight:bold; background-color:#f6f6f6; border:1px solid #bcbcbc; }
+        .table_form_info td {padding:0px 0px 0px 0px; border:1px solid #bcbcbc; text-align:center;}
+	/*기안지 작성 끝 */
+
+/*TimePicker*/
+.ui-timepicker-div .ui-widget-header { margin-bottom: 4px;  }
+.ui-timepicker-div dl { text-align: left; }
+.ui-timepicker-div dl dt { height: 25px; margin-bottom: -25px; }
+.ui-timepicker-div dl dd { margin: 0 0 0 25px; }
+.ui-timepicker-div td { font-size: 100%; }
+.ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
+.ui-datepicker {border:2px solid #666; z-index:10}
+.ui-widget-header { border:1px solid #666;}
+.ui-button-text {font-weight:bold}
+
+
+.table_mc_head { border: 0px currentColor; width: 97%; margin-top: 10px;margin-left:5px; margin-right: 5px;margin-top: 5px;}
+.table_mc_head_15 { border: 0px currentColor; width: 97%; margin-top: 10px;margin-left:25px; margin-right: 5px;margin-top: 5px;}
+        .table_mc {clear:both; width:97%; margin-top:6px;margin-left:15px; border:1px solid #bcbcbc; border-collapse:collapse;}
+        .table_mc th {width:1%; height:25px; padding:0px 1px 0px 1px; white-space:nowrap; font-weight:bold; background-color:#f6f6f6; border:1px solid #bcbcbc; }
+        .table_mc td {height:20px; padding:0px 2px 0px 2px; border:1px solid #bcbcbc;}
+
+
+	/* lka 양식 body내에서 사용하는 테이블*/
+        .form_in_table{clear:both; width:98%; margin:0px; border:1px solid #bcbcbc; border-collapse:collapse;}
+        .form_in_table th {width:1%; height:30px; padding:0px 5px 0px 5px; white-space:nowrap; background-color:#f6f6f6; border:1px solid #bcbcbc; }
+        .form_in_table td {height:30px; padding:0px 5px 0px 5px; border:1px solid #bcbcbc; text-align:left;}
+
+        .form_in_table2{clear:both; width:100%; margin:0px; border:1px solid #bcbcbc; border-collapse:collapse;}
+        .form_in_table2 th {width:1%; height:30px; padding:0px 5px 0px 5px; white-space:nowrap; background-color:#f6f6f6; border:1px solid #bcbcbc; }
+        .form_in_table2 td {height:30px; padding:0px 5px 0px 5px; border:1px solid #bcbcbc; text-align:left;}
+	/* lka 양식 body내에서 사용하는 테이블*/
+
+	/* lka 양식 body를 전체로 감싸는 div*/
+        .form_div{width:100%; border:1px solid #bcbcbc;}
+	/* lka 양식 body를 전체로 감싸는 div*/
+
+	/* lka border스타일 추가*/
+        .tb_border{border:1px solid #bcbcbc;}
+	/* lka border스타일 추가*/
+	
+	/* lka th스타일 추가*/
+        .thst {width:1%; height:30px; padding:0px 5px 0px 5px; white-space:nowrap; background-color:#f6f6f6; border:1px solid #bcbcbc; font-weight:bold; text-align:center; }
+	/* lka th스타일 추가*/

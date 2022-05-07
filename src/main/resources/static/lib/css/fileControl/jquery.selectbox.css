@@ -1,0 +1,76 @@
+@CHARSET "UTF-8";
+
+.jquery-selectbox {
+	position: relative;
+	height: 19px;
+	line-height:12px;
+	line-height:14px \9;
+	border: 1px solid #d4d4d4;
+	z-index: 0;
+	float: left;
+	display: inline;
+	font-size: 12px;
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: #808080;
+	padding: 0;
+}
+.jquery-selectbox.selecthover {
+	border-color: #d4d4d4;
+	z-index: 700;
+}	
+.jquery-selectbox .jquery-selectbox-currentItem {
+	padding: 3px 0px 2px 3px;
+	white-space: nowrap;
+	display: block;
+	overflow: hidden;
+	cursor: pointer;
+	background: #ffffff;
+}
+
+.jquery-selectbox .jquery-selectbox-list {
+	display: none;
+	position: absolute;
+	top: 19px;
+	padding: 0px;
+	left: 0px;
+	background: #ffffff;
+	margin-left:-1px;
+	line-height:19px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	z-index: 1000;
+	border: 1px solid #bfbfbf;
+}
+.jquery-selectbox .jquery-selectbox-moreButton {
+	/*
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	*/
+	float: right;
+	background: url("/smarts4j/covicore/resources/images/covision/lay-selectMoreButton.gif");
+	width: 17px;
+	height: 19px;
+	cursor: pointer;
+}
+.jquery-selectbox .jquery-selectbox-moreButton.morebuttonhover {
+	background: url("/smarts4j/covicore/resources/images/covision/lay-selectMoreButton.gif");
+}
+
+.jquery-selectbox .jquery-selectbox-item.listelementhover {
+	background: #f2f2f2;
+	color: #181818;
+}
+.jquery-selectbox .jquery-selectbox-item 
+{
+    line-height:19px;
+	padding-left:3px;
+	display: block;
+	cursor: pointer;
+}
+
+/** ERROR classes **/
+form .error .jquery-selectbox {
+	color: #d00;
+	border-color: #d00;
+}

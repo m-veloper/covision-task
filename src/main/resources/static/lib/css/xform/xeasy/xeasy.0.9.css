@@ -1,0 +1,262 @@
+/* revision 
+    14.08.14 Text align 관련 스타일 추가
+    */
+/*---------------------------------
+  Text align
+----------------------------------*/
+.left-align {
+    text-align: left !important;
+}
+.center-align {
+    text-align: center !important;
+}
+.right-align {
+    text-align: right !important;
+}
+/*---------------------------------
+  Validation
+----------------------------------*/
+.bad { border:1px solid #CE5454 !important; box-shadow:0 0 4px -2px #CE5454; position:relative; left:0; -moz-animation:.7s 1 shake linear; -webkit-animation:0.7s 1 shake linear; }
+.check-this {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  padding: 3px 0px 3px 3px;
+  border: 3px solid rgba(81, 203, 238, 1);
+}
+.input-required {
+    background-repeat: no-repeat;
+    background-image: url(data:image/gif;base64,R0lGODlhBQAFAIABAP8AAP///yH5BAEAAAEALAAAAAAFAAUAAAIIhH+RCuHtQgEAOw==);
+}
+
+/*---------------------------------
+  Time Picker
+----------------------------------*/
+.ui-timepicker-wrapper {
+	overflow-y: auto;
+	height: 150px;
+	width: 6.5em;
+	background: #fff;
+	border: 1px solid #ddd;
+	-webkit-box-shadow:0 5px 10px rgba(0,0,0,0.2);
+	-moz-box-shadow:0 5px 10px rgba(0,0,0,0.2);
+	box-shadow:0 5px 10px rgba(0,0,0,0.2);
+	outline: none;
+	z-index: 10001;
+	margin: 0;
+}
+
+.ui-timepicker-wrapper.ui-timepicker-with-duration {
+	width: 11em;
+}
+
+.ui-timepicker-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.ui-timepicker-duration {
+	margin-left: 5px; color: #888;
+}
+
+.ui-timepicker-list:hover .ui-timepicker-duration {
+	color: #888;
+}
+
+.ui-timepicker-list li {
+	padding: 3px 0 3px 5px;
+	cursor: pointer;
+	white-space: nowrap;
+	color: #000;
+	list-style: none;
+	margin: 0;
+}
+
+.ui-timepicker-list:hover .ui-timepicker-selected {
+	background: #fff; color: #000;
+}
+
+li.ui-timepicker-selected,
+.ui-timepicker-list li:hover,
+.ui-timepicker-list .ui-timepicker-selected:hover {
+	background: #1980EC; color: #fff;
+}
+
+li.ui-timepicker-selected .ui-timepicker-duration,
+.ui-timepicker-list li:hover .ui-timepicker-duration {
+	color: #ccc;
+}
+
+.ui-timepicker-list li.ui-timepicker-disabled,
+.ui-timepicker-list li.ui-timepicker-disabled:hover,
+.ui-timepicker-list li.ui-timepicker-selected.ui-timepicker-disabled {
+	color: #888;
+	cursor: default;
+}
+
+.ui-timepicker-list li.ui-timepicker-disabled:hover,
+.ui-timepicker-list li.ui-timepicker-selected.ui-timepicker-disabled {
+	background: #f2f2f2;
+}
+
+/*---------------------------------
+  Date Picker
+----------------------------------*/
+
+#ui-datepicker-div, #ui-datepicker-div .ui-corner-all{
+    -webkit-border-radius : 0;
+}
+.ui-datepicker-pop {
+    width : 175px;
+    /*height: 183px;*/
+    border: solid 2px #6e7882 !important;
+    padding: 5px;
+    background-color: #FFF;
+}
+.ui-datepicker-calendar {
+    border-spacing: 0 !important;
+    border-collapse:collapse;
+    border : solid 1px #d7d7d7 !important;
+    width: 100%;
+    margin: 0 !important;
+}
+.ui-datepicker .ui-datepicker-header {
+    border: none !important;
+    background : none !important;
+    padding: 0em 0 .2em;
+}
+
+.ui-datepicker-calendar th {
+    height: 12px;
+    width:14px;
+    padding: 2px 3px; /*padding: 4px 5px; */
+    background: #f0f0f0;
+    vertical-align: middle;
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.ui-datepicker-calendar th span {
+    color: #808080;
+    font-size: 12px; /* 8px */
+}
+
+.ui-datepicker-calendar th span[title=Sunday], .ui-datepicker-calendar th span[title=일] {
+    color: #ff0000 !important;
+}
+.ui-datepicker-calendar tr td:first-child a {
+    color: #ff0000 !important;
+}
+
+.ui-datepicker-calendar td {
+    border : solid 1px #d7d7d7;
+    background-color: #ffffff !important;
+}
+
+.ui-datepicker-calendar td:hover {
+    border : solid 1px #999;
+    background-color: #CECECE !important;
+}
+.ui-datepicker-calendar td a:hover {
+    background-color: #CECECE !important;
+}
+.ui-datepicker-calendar a.ui-state-highlight {
+    background-color: #FFDAB9 !important;
+}
+
+.ui-datepicker-calendar > tbody > tr > td > a { 
+    display: block;
+    font-size: 8pt;
+    font-family: Tahoma;
+    color: #808080;
+    line-height: 9pt;
+    text-decoration: none ;
+    text-align: center;
+    background: #ffffff !important;
+    border: none !important;
+}
+.ui-datepicker-calendar > tbody > tr > td > span { 
+    display: block;
+    font-size: 8pt;
+    font-family: Tahoma;
+    color: #808080;
+    line-height: 9pt;
+    text-decoration: none ;
+    text-align: center;
+    background: #ffffff !important;
+    border: none !important;
+}
+.ui-datepicker-other-month a {
+    color: #c5c5c5 !important;
+}
+.ui-datepicker-week-end a {
+    color: #748cd2 !important;
+}
+.ui-datepicker-week-end span {
+    color: #748cd2 !important;
+}
+
+.ui-datepicker-close {
+    width: 100%;
+    border: 1px rgb(215, 215, 215) solid;
+    background-color: #ffffff;
+    padding: 2px;
+    font-size: 12px;
+    text-align:center;
+    z-index: 1;    
+    display: none;
+}
+.ui-datepicker-buttonpane button {
+    width: 100% !important;
+    border: 1px rgb(215, 215, 215) solid;
+    background-color: #ffffff;
+    padding: 2px;
+    font-size: 12px !important;
+    text-align:center;
+    z-index: 1;
+    opacity: 1 !important;
+    
+}
+
+.ui-datepicker-prev, .ui-datepicker-next {
+    position: absolute;
+    font-size: 10px;
+    cursor: pointer;
+    width: 15px !important;
+    height: 13px !important;
+    border:none !important;
+}
+
+.ui-datepicker-prev {
+    top: 5px !important;
+    left: 5px !important;
+    background: #FFF url(data:image/gif;base64,R0lGODlhDwANAMQAAPn5+f39/eHh4dTU1OLi4ldXV1ZWVtXV1fb29vr6+lVVVfj4+NfX1/z8/Pf39/7+/tbW1v///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAPAA0AAAVjoMCMBzNADKSq4vNEcBy5bunKMf3Yr6zMNNXt9VD8ZKpGIxBoGI8xVSKhNFihMGkCAFgYjLoH5LAoLxyLgqKpbKQQCPMioaC2VXAHWt+dTg8Qeg4IgoSCDgwEKiUQAykrKgQhADs=) no-repeat  !important;    
+}
+
+.ui-datepicker-next {
+    top: 5px !important;
+    right: 7px !important;
+    background: #FFF  url(data:image/gif;base64,R0lGODlhDwANAMQAAPn5+f39/eHh4dTU1OLi4ldXV1ZWVtXV1fb29vr6+lVVVfj4+NfX1/z8/Pf39/7+/tbW1v///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAPAA0AAAVhoACNIwMNzMGswvG8TyTP0ZvCMS3bEB4pOp5OoYgZH6MhsREINBpJmsJAfSYSI9yDaFgAAFcI4/kMKAoLx2K9OEDIjYQiwV4gEJDD9ep1qP13Yn6DCISDEAQkJAwDYm6IIQA7) no-repeat !important;
+}
+
+.ui-datepicker-prev span {
+    display: none !important;
+}
+
+.ui-datepicker-next span {
+    display: none !important;
+}
+.ui-state-hover{
+    background: none;
+}
+.ui-datepicker-title {
+    text-align: center;
+    font-size: 12px !important;
+}
+.ui-datepicker-buttonpane {
+    border: none;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.ui-datepicker-current-day {
+    outline: solid 1px #555 !important;
+}

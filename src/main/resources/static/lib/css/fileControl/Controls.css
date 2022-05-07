@@ -1,0 +1,929 @@
+@charset "utf-8";
+/* lnb 메뉴_기본*/  
+ul.leftmenu { width:100%; padding:0; margin:0; margin-bottom:7px;  float:left; border-bottom:solid 1px #c2c5c7;}
+ul.leftmenu * {font-size:12px; text-decoration:none;}
+ul.leftmenu li {list-style:none; border-top:solid 1px #c2c5c7; }
+ul.leftmenu li.leftmenu01 {border-top:solid 1px #c2c5c7;background:url(/smarts4j/covicore/resources/images/covision/ico_sub_close.gif) no-repeat; *background:url(/smarts4j/covicore/resources/images/covision/ico_sub_close.gif) no-repeat;/*ie7*/}
+ul.leftmenu li.leftmenu01_last {border-top:solid 1px #c2c5c7; border-bottom:solid 1px #c2c5c7; background:url(/smarts4j/covicore/resources/images/covision/ico_sub_close.gif) no-repeat; *background:url(/smarts4j/covicore/resources/images/covision/ico_sub_close.gif) no-repeat;/*ie7*/}
+ul.leftmenu li.leftmenu01_open {background:url(/smarts4j/covicore/resources/images/covision/ico_sub_open.gif) no-repeat; *background:url(/smarts4j/covicore/resources/images/covision/ico_sub_close.gif) no-repeat;/*ie7*/}
+ul.leftmenu li a {display:block; padding:11px 0 10px 28px; font-weight:bold;}
+ul.leftmenu li a:hover {display:block; padding:11px 0 10px 28px; font-weight:bold;}
+ul.leftmenu li a span { display:block; padding:0 0 0 15px;  cursor:pointer;}
+ul.leftmenu li.leftmenu02 {list-style:none;border-top:solid 1px #f1f1f1; margin:0px; padding:0px; }
+ul.leftmenu li.leftmenu02_last {list-style:none; border-top:solid 1px #f8f8f8; border-bottom:solid 1px #c2c5c7; margin-bottom:-5px; padding-bottom:5px; }
+
+/*2013.04.19 menu open color */
+ul.leftmenu li.leftmenu01_open > a { color:#f86f2c;}
+ul.leftmenu li.leftmenu01_open > a:hover { color:#f86f2c;}
+
+/* 메뉴 하단 트리 추가 */
+ul.leftmenu li ul .tree_dir {padding-left:17px !important;}
+ul.leftmenu li .tree_dir a {background-image:none;display:inline-block; line-height:normal; padding:0px;  margin-top:0px; *margin-top:0px;/*ie7*/ *padding-bottom:0px;/*ie7*/ font-weight:normal; }
+ul.leftmenu li .tree_dir a:hover {background-image:none;display:inline-block; line-height:normal; padding:0px;  margin-top:0px; *margin-top:0px;/*ie7*/ *padding-bottom:0px;/*ie7*/ font-weight:normal; }
+ul.leftmenu li ul .tree_dir {line-height: normal; padding-left:0px; border:0px; padding-bottom:0px; }
+ul.leftmenu li ul li .tree_dir a  {font-size:12px; background-image:none; padding:0px; line-height:15px; display:inline-block;  font-weight:normal;}
+ul.leftmenu li ul li .tree_dir a:hover  {font-size:12px; background-image:none; padding:0px;  line-height:normal display:inline-block; font-weight:normal; }
+ul.leftmenu .tree_dir li{list-style:none; border-top:none; }
+ul.leftmenu li ul .tree_dir { padding:0; margin:0px; list-style:none; border-top:none;  padding-bottom:0px; background-color:none;}
+ul.leftmenu li ul li .tree_dir {list-style:none; border:0px; background-image:none; line-height:normal;}
+ul.leftmenu li ul li .tree_dir a {font-size:12px; background-image:none; padding:0px;  line-height:normal; display:block; font-weight:normal;}
+ul.leftmenu li ul li .tree_dir a:hover {font-size:12px; background-image:none; padding:0px;  line-height:normal; display:block; font-weight:normal; }
+ul.leftmenu li ul li .tree_dir li a {font-size:12px; background-image:none;  line-height:normal; display:block; font-weight:normal; }
+ul.leftmenu li ul .tree_dir li a img {margin:0 0 0 0;}
+ul.leftmenu li ul li .tree_dir li a:hover {font-size:12px; background-image:none; line-height:normal; display:block; font-weight:normal;}
+ul.leftmenu li ul li .tree_dir li a span {padding:0px;}
+ul.leftmenu li ul li .tree_dir li a span img {margin:0 0 0 0;}
+ul.leftmenu li ul .tree_dir ul {list-style:none; border:0; padding-left:0px !important;}
+ul.leftmenu li .tree_dir ul{ padding-bottom:0px;}
+
+.leftmenu .tree	{width: 153px; margin: 0px 0 0px 10px;padding:0; background:none;}
+
+ul.leftmenu li ul { padding:0; margin:0; list-style:none;border-top:solid 1px #c2c5c7; padding-top:5px; padding-bottom:5px; background-color:#f1f1f1;}
+ul.leftmenu li ul li {list-style:none;background:none; line-height:12px;}
+ul.leftmenu li ul li a {font-size:12px; background:url(/smarts4j/covicore/resources/images/covision/dot03.gif) no-repeat 19px 9px; padding:0 0 0 29px;  line-height:20px; display:block; font-weight:normal;}
+ul.leftmenu li ul li a:hover {font-size:12px; background:url(/smarts4j/covicore/resources/images/covision/dot03.gif) no-repeat 19px 9px; padding:0 0 0 29px;  line-height:20px; display:block; font-weight:normal; }
+ul.leftmenu li ul li ul {list-style:none; border:0; padding-left:9px;}
+ul.leftmenu li ul li ul li a {font-size:12px; background:none; line-height:14px; display:block; font-weight:normal; background:url(/smarts4j/covicore/resources/images/covision/dot02.gif) no-repeat 23px 5px;}
+ul.leftmenu li ul li ul li a img {margin:-2px 5px 0 0;}
+ul.leftmenu li ul li ul li a:hover {font-size:12px; background:none;  line-height:14px; display:block; font-weight:normal; background:url(/smarts4j/covicore/resources/images/covision/dot02.gif) no-repeat 23px 5px;}
+ul.leftmenu li ul li ul li a span {padding:0 0 0 8px;}
+ul.leftmenu li ul li ul li a span img {margin:-2px 5px 0 0;}
+
+/* lnb 메뉴_일정관리*/ 
+ul.leftmenu2 { padding:0; margin:0; width:100%; float:left; border-bottom:solid 1px #c2c5c7; }
+ul.leftmenu2 * {font-size:12px; text-decoration:none;}
+ul.leftmenu2 li {list-style:none; border-top:solid 1px #c2c5c7;}
+ul.leftmenu2 em{ float:left;  font-style:normal;}
+.Theme{ height:36px;}
+ul.leftmenu2 li .Theme_btn a{ display:inline; margin-left:-28px;  z-index:3;}
+ul.leftmenu2 li .Theme_btn a:hover{ display:inline; margin-left:-28px; z-index:3;}
+ul.leftmenu2 li.leftmenu2_01{ clear: both;border-top:solid 1px #c2c5c7;background:url(/smarts4j/covicore/resources/images/covision/ico_sub_close.gif) no-repeat; *background:url(/smarts4j/covicore/resources/images/covision/ico_sub_close.gif) no-repeat;/*ie7*/}
+ul.leftmenu2 li.leftmenu2_01_last {clear: both;border-top:solid 1px #c2c5c7; border-bottom:solid 1px #c2c5c7; background:url(/smarts4j/covicore/resources/images/covision/ico_sub_close.gif) no-repeat; *background:url(/smarts4j/covicore/resources/images/covision/ico_sub_close.gif) no-repeat;/*ie7*/}
+ul.leftmenu2 li.leftmenu2_01_open {clear: both;  background:url(/smarts4j/covicore/resources/images/covision/ico_sub_close.gif) no-repeat; *background:url(/smarts4j/covicore/resources/images/covision/ico_sub_close.gif) no-repeat;/*ie7*/}
+ul.leftmenu2 li a {display:block; padding:11px 0 10px 28px; font-weight:bold; z-index:4; position:relative;}
+ul.leftmenu2 li a:hover {display:block; padding:11px 0 10px 28px; font-weight:bold; z-index:4;position:relative;}
+ul.leftmenu2 li a span {display:block;padding:0 0 0 15px;  cursor:pointer;}
+ul.leftmenu2 li.leftmenu2_02 {list-style:none;border-top:solid 1px #f8f8f8; }
+
+.leftmenu2 .tree	{width: 153px; margin: 0px 0 0px 10px;padding:0; background:none;}
+
+ul.leftmenu2 li ul {clear:both; list-style:none; border-top:solid 1px #c2c5c7; padding-bottom:5px; padding-left:8px;background-color:#f8f8f8; }
+ul.leftmenu2 li ul li {list-style:none;background:none; position:relative;  _height:20px;/*ie6*/ _padding-top:3px;/*ie6*/}
+ul.leftmenu2 li ul li a {font-size:12px; padding-left:0px; line-height:36px; font-weight:bold;  display:inline; }
+ul.leftmenu2 li ul li a:hover {font-size:12px; padding-left:0px; line-height:36px; font-weight:bold; display:inline; }
+ul.leftmenu2 li ul li ul {list-style:none; border:0; padding-left:16px;}
+ul.leftmenu2 li ul li ul li a {font-size:12px; background:none;  padding-left:0px;line-height:20px;  font-weight:normal; display:inline;}
+ul.leftmenu2 li ul li ul li a:hover {font-size:12px; background:none; padding-left:0px; line-height:20px;  font-weight:normal; display:inline;}
+ul.leftmenu2 li ul li ul li a span {padding:0 0 0 8px;}
+
+.sub_l ul+span {background-color:#fff;}
+
+.schedule_color{ display:inline; margin:5px 3px 0 0; margin:5px 3px 0 0 \9; }
+.schedule_color img{width:11px; height:11px;}
+
+/*lnb 메뉴_자원*/
+ul.leftmenu3 {padding:0; margin:0; float:left; list-style:none;}
+
+.leftmenu3_01 a{width:100%; *width:188px;/*ie7*/  font-weight:bold; float:left;border-top:solid 1px #c2c5c7; border-bottom:solid 1px #c2c5c7; background:url(/smarts4j/covicore/resources/images/covision/ico_sub_close.gif) no-repeat 5px 7px; padding-left:28px; height:26px; line-height:27px; *background:url(/smarts4j/covicore/resources/images/covision/ico_sub_close.gif) no-repeat 5px 9px;/*ie7*/}
+.leftmenu3_01 a:hover{width:100%; *width:188px;/*ie7*/ font-weight:bold; float:left;border-top:solid 1px #c2c5c7; border-bottom:solid 1px #c2c5c7; background:url(/smarts4j/covicore/resources/images/covision/ico_sub_close.gif) no-repeat 5px 7px; padding-left:28px; height:26px; line-height:27px; *background:url(/smarts4j/covicore/resources/images/covision/ico_sub_close.gif) no-repeat 5px 9px;/*ie7*/}
+.leftmenu3_01_open a{width:100%; *width:188px;/*ie7*/ font-weight:bold; float:left;border-top:solid 1px #c2c5c7; border-bottom:solid 1px #c2c5c7; background:url(/smarts4j/covicore/resources/images/covision/ico_sub_open.gif) no-repeat 5px 7px; *background:url(/smarts4j/covicore/resources/images/covision/ico_sub_open.gif) no-repeat 5px 9px;/*ie7*/ padding-left:28px; height:26px; line-height:27px;}
+.leftmenu3_01_open a:hover{width:100%; *width:188px;/*ie7*/ font-weight:bold;  float:left;border-top:solid 1px #c2c5c7; border-bottom:solid 1px #c2c5c7; background:url(/smarts4j/covicore/resources/images/covision/ico_sub_open.gif) no-repeat 5px 7px; *background:url(/smarts4j/covicore/resources/images/covision/ico_sub_open.gif) no-repeat 5px 9px;/*ie7*/ padding-left:28px; height:26px; line-height:27px;}
+.right_btn {position:absolute; background-image:none; *left:-217px;}
+.right_btn img {position:absolute; top:4px; left:189px;}
+ 
+/*메뉴트리*/ 
+.tree_scroll {margin-top:-1px; width:196px;overflow:auto; padding:5px 10px 5px 10px; background-color:#fff; border-top:1px solid #d4d4d4;}
+.tree_scroll_menu {width:196px;overflow:auto;overflow-y:hidden; padding:5px 10px 5px 10px; background-color:#fff;}
+.tree_dir{padding:0; margin:0; font-family:dotum;font-size:12px;color:#000;float:left;}
+.tree_dir ul,.tree_dir li,.tree_dir span{list-style:none; margin:0;padding:0;}  
+.tree_dir .tree_ico{display:inline-block;width:18px;height:16px;margin:-1px 0 0 2px; vertical-align:middle;}  
+.tree_dir img{vertical-align:middle;}
+.tree_dir .tree_ex{display:inline-block; margin:0 0 0 3px; vertical-align:middle; } 
+.tree_dir .tree_ex2{display:inline-block; margin:0 0 0 3px; vertical-align:middle; }  
+.tree_dir .tree_ex3{display:inline-block; margin:1px 2px 0 -14px; vertical-align:middle; }  
+.tree_dir .tree_label{margin-left:1px;color:#444444; vertical-align:middle; display:inline-block; margin-top:1px;}  
+.tree_dir .tree_label:hover {margin-left:1px;color:#444444; vertical-align:middle; display:inline-block; margin-top:1px; text-decoration:underline;}
+.tree_dir .tree_label a{display:inline-block;margin:3px 0 0 5px;  position:relative;padding-left:10px; font-family:'돋움',dotum; font-size:12px; letter-spacing:-1px;vertical-align:middle;}   
+.tree_dir .tree_label .tree_label_selected a{ color: red;}  
+.tree_dir .input_check8{ height:16px !important; }
+
+.tree_dir ul{clear:both; list-style:none; background:url(/smarts4j/covicore/resources/images/covision/bg_tree_stream.gif) repeat-y 7px 0;}  
+.tree_dir li{list-style:none; padding-left:16px;background:url(/smarts4j/covicore/resources/images/covision/bg_tree_branch.gif) no-repeat 7px -20px; white-space:nowrap;padding-top:1px;min-height:17px;}
+.tree_dir li.tree_last_node{background:url(/smarts4j/covicore/resources/images/covision/bg_tree_branch_last.gif) no-repeat 7px -20px; padding-top:1px;} 
+.tree_dir li.line{padding-left:20px; min-height:17px; background:url(/smarts4j/covicore/resources/images/covision/bg_tree_branch2.gif) no-repeat 7px -20px; line-height:17px;}     
+.tree_dir li.line_last{padding-left:20px;margin-bottom:4px;background:url(/smarts4j/covicore/resources/images/covision/bg_tree_branch_last2.gif) no-repeat 7px -20px;}
+
+/*말풍선팝업*/ 
+.ly_help{position:absolute;z-index:10;margin-top:5px; padding:5px; border:1px solid #888;background:#fff;text-align:left;}  
+.ly_help .clse{position:absolute;top:3px;right:4px;}    
+.ly_help .edge_cen{position:absolute;top:0;left:50%;width:9px;height:6px;margin:-6px 0 0 -5px;background:url(/smarts4j/covicore/resources/images/covision/bg_layer_edge.gif) no-repeat 0 0;font-size:0}  
+.ly_help .edge_rgt{position:absolute;top:0;right:0;width:9px;height:6px;margin-top:-6px; margin-right:9px;background:url(/smarts4j/covicore/resources/images/covision/bg_layer_edge.gif) no-repeat 0 0;font-size:0}
+.ly_help .edge_lgt{position:absolute;top:0;left:0;width:9px;height:6px;margin-top:-6px; margin-left:8px;background:url(/smarts4j/covicore/resources/images/covision/bg_layer_edge.gif) no-repeat 0 0;font-size:0}   
+
+.ly_data{ padding:15px; width:195px; white-space:normal;}
+.ly_data span{ width:24px; display:block; float:left; margin-top:5px;}
+.ly_data dd{float:left; background:url(/smarts4j/covicore/resources/images/covision/line_pop.gif) repeat-x bottom;}
+.ly_data a em { float:left; display:block; width:170px; font-style:normal;  margin-top:5px;  padding-bottom:6px; cursor:pointer;}
+.ly_data a:hover em { float:left; display:block; width:170px; font-style:normal;   cursor:pointer;}}
+.ly_data dd.ly_data_last{float:left; background:none;}
+
+
+
+
+/*팝업*/ 
+h4 .gn {color:#767676; font-size:11px; font-weight:normal;}
+.pop_btn1{height:22px; margin-top:10px;}
+.pop_btn2{clear:both; height:22px; margin-top:9px; border:0px; border:hidden;}
+.pop_btn2_right{float:right; height:22px; margin-top:9px; margin-bottom:9px; border:0px; border:hidden;}
+.pop_btn3 {margin-top:17px; padding-bottom:40px; margin-left:310px;}
+.pop_btn4{ height:22px; margin-top:12px; border:0px; border:hidden;}
+.pop_btn5 {height:22px; margin-top:9px; }
+.pop_btn6{height:22px;  margin-top:12px; padding-bottom:40px;}
+.pop_btn7{height:22px;  margin-top:12px; padding-bottom:40px;}
+.pop_btn9{float:right; height:22px;  margin-top:10px; margin-right:17px; padding-bottom:20px;}
+.pop_btn8{position:absolute; right:19px; top:601px; height:22px;}
+.pop_btn10{height:22px;  margin-top:12px; padding-bottom:40px;}
+
+/* 팝업 게시 분류 */
+.pop_board{overflow:visible;line-height:normal; width:300px; margin:auto; position:absolute; z-index:20; *margin:20px 0 0 -223px;/*ie7*/}  
+
+/*팝업(width 300px)*/ 
+.pop_wrap{overflow:visible;line-height:normal; width:300px; margin:auto; top:35%; left:40%; position:absolute; z-index:50;}  
+.pop_wrap_approval {overflow:visible; line-height:normal; margin:auto; top:23%; left:45%; position:absolute; }  
+.ly_header_ico {background:url(/smarts4j/covicore/resources/images/covision/ico_pop.gif) no-repeat 0 2px; padding-left:12px;}
+.ly_header_ico2 {background:url(/smarts4j/covicore/resources/images/covision/ico_pop.gif) no-repeat 0 2px; color:#e0e0e0; padding-left:12px;}
+.pop_wrap .pop_wrap fieldset{border:none}  
+.pop_wrap legend{display:none}
+
+.pop_body p{ line-height:22px; padding:0 10px 0 10px;}
+.pop_body li {list-style:none; text-align:left;}
+.pop_body .last {text-align:left; padding-bottom:7px;}
+.pop_body .fav {text-align:left; padding:7px 0 0 0; border-top:1px solid #e5e5e5; font-weight:bold;}
+
+.pop_left{ float:left; text-align:left; display:inline-block; position:relative; width:250px; font-size:11px; color:#777;}
+.pop_left2{ text-align:center; display:inline-block; position:relative;}
+
+.pop_tit{text-align:left; background:url(/smarts4j/covicore/resources/images/covision/bullet_01.gif) no-repeat 0 1px;  margin-left:2; margin:15px 0 5px 8px; }
+.pop_tit2{text-align:left; background:url(/smarts4j/covicore/resources/images/covision/bullet_01.gif) no-repeat 0 1px; margin-left:2px; _margin-bottom:3px;/*ie6*/   }
+.pop_tit3{text-align:left; background:url(/smarts4j/covicore/resources/images/covision/bullet_01.gif) no-repeat 0 1px;  margin-left:2; margin-top:-8px; }
+.pop_content{position:relative;z-index:20;border:3px solid #6e7882;background:#fff;}  
+.pop_wrap .ly_header{ line-height:30px; padding-left:8px; background:url(/smarts4j/covicore/resources/images/covision/bg_pop.gif) repeat-x; height:30px; padding-top:1px \9; color:#000; font-size:13px;font-weight:bold; text-align:left;}  
+.pop_wrap .ly_body{margin:0 20px;padding:15px 0 4px;color:#444;font-family:'돋움',Dotum,'굴림',Gulim,AppleGothic,Sans-serif;font-size:12px;line-height:14px;}  
+.pop_wrap .ly_body dt{margin:0 0 9px}  
+.pop_wrap .ly_body dd{margin:0 0 6px}  
+.pop_wrap .ly_body .input_radio{_margin:-3px;vertical-align:middle}  
+.pop_wrap .close_layer{position:absolute;top:7px;right:7px; height:16px;}  
+.pop_wrap .shadow{_display:none;overflow:visible;position:absolute; z-index:10;width:100%;height:100%}  
+.pop_body{ padding:10px; text-align:center;}
+.pop_body ul {padding:0;}
+.pop_body_sd{ padding:10px; text-align:left; position:relative;}
+.pop_wrap .shadow2{top:3px;left:3px;background:url(/smarts4j/covicore/resources/images/covision/shadow2.png)}  
+.pop_wrap .shadow3{top:2px;left:2px;background:url(/smarts4j/covicore/resources/images/covision/shadow3.png)}  
+.pop_wrap .shadow4{top:1px;left:1px;background:url(/smarts4j/covicore/resources/images/covision/shadow4.png)}  
+.pop_footer{margin:0 20px;padding:10px 0 15px;border-top:1px solid #e8e8e8;text-align:center}  
+.pop_footer input,.pop_footer a,.pop_footer img{vertical-align:top}  
+.pop_footer input,.pop_footer a{margin:0 1px 0 0}   
+
+/* 팝업(내부)(width 300px) */
+.pop_wrap1 {overflow:visible;line-height:normal; width:300px; margin:auto; top:30%; left:30%; position:absolute; }  
+.pop_wrap1 .ly_header{margin:0 0 5px; line-height:30px; padding-left:8px; background:url(/smarts4j/covicore/resources/images/covision/bg_pop.gif) repeat-x; height:30px; padding-top:1px \9; color:#000; font-size:13px;font-weight:bold; text-align:left;}  
+.pop_wrap1 .ly_body{margin:0 20px;padding:15px 0 4px;color:#444;font-family:'돋움',Dotum,'굴림',Gulim,AppleGothic,Sans-serif;font-size:12px;line-height:14px;}  
+.pop_wrap1 .ly_body dt{margin:0 0 9px}  
+.pop_wrap1 .ly_body dd{margin:0 0 6px}  
+.pop_wrap1 .ly_body .input_radio{_margin:-3px;vertical-align:middle}  
+.pop_wrap1 .close_layer{position:absolute;top:7px;right:7px; height:16px;}  
+.pop_wrap1 .shadow{_display:none; overflow:visible; position:absolute; z-index:10; width:100%; height:100%}  
+.pop_wrap1 .shadow2{top:3px;left:3px;background:url(/smarts4j/covicore/resources/images/covision/shadow2.png)}  
+.pop_wrap1 .shadow3{top:2px;left:2px;background:url(/smarts4j/covicore/resources/images/covision/shadow3.png)}  
+.pop_wrap1 .shadow4{top:1px;left:1px;background:url(/smarts4j/covicore/resources/images/covision/shadow4.png)} 
+
+/*팝업(width 790px)*/
+.pop_wrap2 {overflow:visible;line-height:normal; width:790px; height:600px; top:20%; left:27%; position:absolute; z-index:50; }  
+.pop_wrap_approval2 {overflow:visible; line-height:normal; margin:auto; top:23%; left:45%; position:absolute;}  
+.pop_wrap2 .pop_wrap fieldset {border:none}  
+.pop_wrap2 legend {display:none}
+.pop_menu {margin:10px auto; width:400px;}
+
+
+.pop_wrap2 .ly_header {margin:0; line-height:30px; padding-left:8px; background:url(/smarts4j/covicore/resources/images/covision/bg_pop.gif) repeat-x; height:30px; padding-top:1px \9; color:#000; font-size:13px;font-weight:bold; text-align:left;}  
+.pop_wrap2 .ly_body {margin:0 20px;padding:15px 0 4px;color:#444;font-family:'돋움',Dotum,'굴림',Gulim,AppleGothic,Sans-serif;font-size:12px;line-height:14px;}  
+.pop_wrap2 .ly_body dt {margin:0 0 9px}  
+.pop_wrap2 .ly_body dd {margin:0 0 6px}  
+.pop_wrap2 .ly_body .input_radio {_margin:-3px;vertical-align:middle}  
+.pop_wrap2 .close_layer {position:absolute; top:7px; right:7px; height:16px;}  
+.pop_wrap2 .view_layer {position:relative; top:20px; left:20px; height:25px;} 
+.pop_wrap2 .shadow {_display:none;overflow:visible;position:absolute; z-index:10;width:100%;height:100%}  
+.pop_body2 {padding:10px; text-align:left;}
+.pop_body3 {text-align:left; background-color:#ffffff;}
+.pop_body_comm {margin:10px; padding:10px 10px 0 10px; text-align:left;}
+.pop_wrap2 .shadow2 {top:3px;left:3px;background:url(/smarts4j/covicore/resources/images/covision/shadow2.png)}  
+.pop_wrap2 .shadow3 {top:2px;left:2px;background:url(/smarts4j/covicore/resources/images/covision/shadow3.png)}  
+.pop_wrap2 .shadow4 {top:1px;left:1px;background:url(/smarts4j/covicore/resources/images/covision/shadow4.png)}  
+
+/*팝업(내부, width 500px)*/
+.pop_wrap3 {overflow:visible;line-height:normal; width:500px; margin:auto; top:20%; left:17%; position:absolute; }  
+.pop_wrap3 .pop_wrap fieldset{border:none}  
+.pop_wrap3 legend{display:none}
+.pop_body3 p{ line-height:22px; padding:0 10px 0 10px;}
+.pop_body3 li {list-style:none; text-align:left;}
+.pop_body3 .last {text-align:left; padding-bottom:7px;}
+.pop_body3 .fav {text-align:left; padding:7px 0 0 0; border-top:1px solid #e5e5e5; font-weight:bold;}
+
+.pop_wrap3 .ly_header{margin:0 0 5px; line-height:30px; padding-left:8px; background:url(/smarts4j/covicore/resources/images/covision/bg_pop.gif) repeat-x; height:30px; padding-top:1px \9; color:#000; font-size:13px;font-weight:bold; text-align:left;}  
+.pop_wrap3 .ly_body{margin:0 20px;padding:15px 0 4px;color:#444;font-family:'돋움',Dotum,'굴림',Gulim,AppleGothic,Sans-serif;font-size:12px;line-height:14px;}  
+.pop_wrap3 .ly_body dt{margin:0 0 9px}  
+.pop_wrap3 .ly_body dd{margin:0 0 6px}  
+.pop_wrap3 .ly_body .input_radio{_margin:-3px;vertical-align:middle}  
+.pop_wrap3 .close_layer{position:absolute;top:7px;right:7px; height:16px;}  
+.pop_wrap3 .shadow{_display:none; overflow:visible; position:absolute; z-index:10; width:100%; height:100%}  
+.pop_body3 {text-align:center;}
+.pop_wrap3 .shadow2{top:3px;left:3px;background:url(/smarts4j/covicore/resources/images/covision/shadow2.png)}  
+.pop_wrap3 .shadow3{top:2px;left:2px;background:url(/smarts4j/covicore/resources/images/covision/shadow3.png)}  
+.pop_wrap3 .shadow4{top:1px;left:1px;background:url(/smarts4j/covicore/resources/images/covision/shadow4.png)}   
+
+/*팝업(width 500px)*/
+.pop_wrap4 {overflow:visible;line-height:normal; width:500px; margin:auto; top:35%; left:35%; position:absolute; }  
+.pop_wrap4 .ly_header {margin:0 0 5px; line-height:30px; padding-left:8px; background:url(/smarts4j/covicore/resources/images/covision/bg_pop.gif) repeat-x; height:30px; padding-top:1px \9; color:#000; font-size:13px;font-weight:bold; text-align:left;}  
+.pop_wrap4 .pop_wrap fieldset{border:none}  
+.pop_wrap4 legend{display:none}
+.pop_body4 p{ line-height:22px; padding:0 10px 0 10px;}
+.pop_body4 li {list-style:none; text-align:left;}
+.pop_body4 .last {text-align:left; padding-bottom:7px;}
+.pop_body4 .fav {text-align:left; padding:7px 0 0 0; border-top:1px solid #e5e5e5; font-weight:bold;}
+
+.ad01{ overflow:scroll;  width:235px;  float:left; position:relative;  height:168px;  border:solid 1px #d0d0d0;}
+.ad01 a {display:block;}
+.ad01 .list_off{background-color:#fff;  padding:6px 0 3px 5px; border-bottom:1px dashed #e5e5e5; }
+.ad01 .list_on{background-color:#ebf5f8; padding:6px 0 3px 5px; border-bottom:1px dashed #e5e5e5; }
+
+.ad02{ width:210px; vertical-align:top; display:inline-block; border-bottom:1px #d7d7d7 solid; margin-left:20px; position:relative; height:170px;}
+.ad02 th{ border-bottom:1px #d7d7d7 solid; border-top:1px #d7d7d7 solid; height:28px;  background-color:#f9f9f9;}
+.ad02 .table_top{ background:url(/smarts4j/covicore/resources/images/covision/line_th.gif) no-repeat 0 2px; margin-top:2px; display:block; padding-left:7px;}
+.ad02 .table_top_last {background:none;  display:block; padding-left:7px;margin-top:2px; }
+
+.grid_sort {float:right; padding-right:4px; margin-top:7px;}
+
+.ad04{ vertical-align:top;  border-bottom:1px #d7d7d7 solid; position:relative; width:100% }
+.ad04 td{ text-align:center; }
+.ad04 td a{ text-align:center; font-size:12px; text-align:center; color:#444444;}
+.ad04 td a:hover{ text-align:center; font-size:12px; text-align:center; color:#444444;}
+.ad04 th { border-bottom:1px #d7d7d7 solid; border-top:1px #d7d7d7 solid; height:28px; text-align:center;   background-color:#f9f9f9;}
+.ad04 th a{font-weight:bold; font-size:12px; text-align:center; color:#777;} 
+.ad04 th a:hover{font-weight:bold; font-size:12px; text-align:center; color:#777;} 
+
+.ad04 .table_top{ background:url(/smarts4j/covicore/resources/images/covision/line_th.gif) no-repeat 0 2px; margin-top:2px; display:block; padding-left:7px;}
+.ad04 .table_top_last { background:none;  display:block; padding-left:7px;margin-top:2px; }
+
+.ad04_list{ height:27px; border-bottom:1px #d7d7d7 dashed; color:#777;}
+.ad04_list_last{height:27px; }
+
+.board_simple{vertical-align:top; display:inline-block; border-bottom:1px #d7d7d7 solid; }
+.board_simple th{ border-bottom:1px #d7d7d7 solid; border-top:1px #d7d7d7 solid; height:28px;  background-color:#f9f9f9;}
+.board_simple .table_top{ background:url(/smarts4j/covicore/resources/images/covision/line_th.gif) no-repeat 0 2px; margin-top:2px; display:block; padding-left:7px;}
+.board_simple .table_top_last { background:none;  display:block; padding-left:7px;margin-top:2px; }
+
+.table_top{ background:url(/smarts4j/covicore/resources/images/covision/line_th.gif) no-repeat 0 0; margin-top:0; display:block;}
+.table_top_last {background:none; display:block; padding-left:7px; padding-right:7px; margin-top:0; }
+ 
+.ad_list{ height:27px; border-bottom:1px #d7d7d7 dashed;  text-align:left; padding-left:19px;}
+.ad_list_last{height:27px;  text-align:left; padding-left:19px;}
+.board_simple_td{ height:27px; border-bottom:1px #d7d7d7 dashed;  padding-left:2px;}
+.board_simple_td_last{height:27px; padding-left:2px;}
+
+.board_theme_td{  padding-top:4px;  padding-bottom:4px;border-bottom:1px #d7d7d7 dashed;  padding-left:2px;}
+.board_theme_td_last{padding-top:4px; padding-bottom:4px;  padding-left:2px;}
+.theme_p{padding-bottom:5px; position:relative; float:left; margin-top:5px;}
+
+@-moz-document url-prefix() { .ad_list{ height:28px; border-bottom:1px #d7d7d7 dashed;  text-align:left; padding-left:19px;}}
+@-moz-document url-prefix() { .ad_list_last{height:28px;  text-align:left; padding-left:19px;} }
+col#ad01 {width:106px;}
+col#ad02 {width:47px;}
+col#ad03 {width:47px;}
+
+.pop_wrap4 .ly_header{margin:0 0 5px; line-height:30px; padding-left:8px; background:url(/smarts4j/covicore/resources/images/covision/bg_pop.gif) repeat-x; height:30px; padding-top:1px \9; color:#000; font-size:13px;font-weight:bold; text-align:left;}  
+.pop_wrap4 .ly_body{margin:0 20px;padding:15px 0 4px;color:#444;font-family:'돋움',Dotum,'굴림',Gulim,AppleGothic,Sans-serif;font-size:12px;line-height:14px;}  
+.pop_wrap4 .ly_body dt{margin:0 0 9px}  
+.pop_wrap4 .ly_body dd{margin:0 0 6px}  
+.pop_wrap4 .ly_body .input_radio{_margin:-3px;vertical-align:middle}  
+.pop_wrap4 .close_layer{position:absolute;top:7px;right:7px; height:16px;}  
+.pop_wrap4 .shadow{_display:none; overflow:visible; position:absolute; z-index:10; width:100%; height:100%}  
+.pop_body4 { padding:10px; text-align:center;}
+.pop_wrap4 .shadow2{top:3px;left:3px;background:url(/smarts4j/covicore/resources/images/covision/shadow2.png)}  
+.pop_wrap4 .shadow3{top:2px;left:2px;background:url(/smarts4j/covicore/resources/images/covision/shadow3.png)}  
+.pop_wrap4 .shadow4{top:1px;left:1px;background:url(/smarts4j/covicore/resources/images/covision/shadow4.png)}  
+
+/*팝업(width 700px)*/
+.pop_wrap5 {overflow:visible;line-height:normal; width:700px; height:357px; top:25%; left:30%; position:absolute; z-index:50; }   
+.pop_wrap5 .pop_wrap fieldset {border:none;}  
+.pop_wrap5 legend {display:none;}
+.pop_wrap5 .ly_header {margin:0; line-height:32px; padding-left:8px; background:url(/smarts4j/covicore/resources/images/covision/bg_pop.gif) repeat-x; height:30px; padding-top:1px \9; color:#000; font-size:13px; font-weight:bold; text-align:left;}  
+.pop_wrap5 .ly_header2 {margin:0; line-height:32px; padding-left:8px; background:url(/smarts4j/covicore/resources/images/covision/bg_pop2.gif) repeat-x; height:32px; padding-top:1px \9; color:#000; font-size:13px; font-weight:bold; text-align:left;}  
+.pop_wrap5 .ly_body {margin:0 20px;padding:15px 0 4px;color:#444;font-family:'돋움',Dotum,'굴림',Gulim,AppleGothic,Sans-serif;font-size:12px;line-height:14px;}  
+.pop_wrap5 .ly_body dt {margin:0 0 9px}  
+.pop_wrap5 .ly_body dd {margin:0 0 6px}  
+.pop_wrap5 .ly_body .input_radio {_margin:-3px;vertical-align:middle}  
+.pop_wrap5 .close_layer {position:absolute; top:7px; right:7px; height:16px;}  
+.pop_wrap5 .view_layer {position:relative; top:20px; left:20px; height:25px;} 
+.pop_wrap5 .shadow {_display:none;overflow:visible;position:absolute; z-index:10;width:100%;height:100%} 
+.pop_body5 {height:307px; padding-top:10px; padding-left:18px; text-align:left; background-color:#fff;} 
+.pop_wrap5 .shadow2 {top:3px;left:3px;background:url(/smarts4j/covicore/resources/images/covision/shadow2.png)}  
+.pop_wrap5 .shadow3 {top:2px;left:2px;background:url(/smarts4j/covicore/resources/images/covision/shadow3.png)}  
+.pop_wrap5 .shadow4 {top:1px;left:1px;background:url(/smarts4j/covicore/resources/images/covision/shadow4.png)}  
+
+/*조직도 팝업(width 975px)*/
+.pop_wrap6 {overflow:visible;line-height:normal; width:975px; height:678px; top:11%; left:24%; position:absolute; z-index:50; }   
+.pop_wrap6 .pop_wrap fieldset {border:none;}  
+.pop_wrap6 legend {display:none;}
+.pop_wrap6 .ly_header {margin:0; line-height:32px; padding-left:8px; background:url(/smarts4j/covicore/resources/images/covision/bg_pop.gif) repeat-x; height:30px; padding-top:1px \9; color:#000; font-size:13px; font-weight:bold; text-align:left;}  
+.pop_wrap6 .ly_header2 {margin:0; line-height:32px; padding-left:8px; background:url(/smarts4j/covicore/resources/images/covision/bg_pop2.gif) repeat-x; height:32px; padding-top:1px \9; color:#000; font-size:13px; font-weight:bold; text-align:left;}  
+.pop_wrap6 .ly_body {margin:0 20px;padding:15px 0 4px;color:#444;font-family:'돋움',Dotum,'굴림',Gulim,AppleGothic,Sans-serif;font-size:12px;line-height:14px;}  
+.pop_wrap6 .ly_body dt {margin:0 0 9px}  
+.pop_wrap6 .ly_body dd {margin:0 0 6px}  
+.pop_wrap6 .ly_body .input_radio {_margin:-3px; vertical-align:middle}  
+.pop_wrap6 .close_layer {position:absolute; top:7px; right:7px; height:16px;}  
+.pop_wrap6 .view_layer {position:relative; top:20px; left:20px; height:25px;} 
+.pop_wrap6 .shadow {_display:none;overflow:visible;position:absolute; z-index:10;width:100%;height:100%} 
+.pop_body6 {height:632px; height:631px \9; padding-top:10px; padding-left:15px; text-align:left; background-color:#fff;} 
+.pop_body6_w {height:632px; padding-top:10px; padding-left:15px; text-align:left; background-color:#fff;} 
+.pop_body6_info {padding:0; margin:0; list-style:none;}
+.pop_body6_info li {list-style:none; float:left; margin-right:3px; height:21px; line-height:21px; white-space:nowrap;}
+.pop_body6_info li select{ margin-top:2px;}
+.layer_check { display:table-block; vertical-align:middle; margin-top:2px !important;}
+.layer_check_txt {padding-top:5px;}
+.pop_wrap6 .shadow2 {top:3px;left:3px;background:url(/smarts4j/covicore/resources/images/covision/shadow2.png)}  
+.pop_wrap6 .shadow3 {top:2px;left:2px;background:url(/smarts4j/covicore/resources/images/covision/shadow3.png)}  
+.pop_wrap6 .shadow4 {top:1px;left:1px;background:url(/smarts4j/covicore/resources/images/covision/shadow4.png)} 
+
+.pop_wrap13 {overflow:visible;line-height:normal; top:11%; left:24%; position:absolute; z-index:50; }   
+.pop_wrap13 .pop_wrap fieldset {border:none;}  
+.pop_wrap13 legend {display:none;}
+.pop_wrap13 .ly_header {margin:0; line-height:32px; padding-left:8px; background:url(/smarts4j/covicore/resources/images/covision/bg_pop.gif) repeat-x; height:30px; padding-top:1px \9; color:#000; font-size:13px; font-weight:bold; text-align:left;}  
+.pop_wrap13 .ly_header2 {margin:0; line-height:32px; padding-left:8px; background:url(/smarts4j/covicore/resources/images/covision/bg_pop2.gif) repeat-x; height:32px; padding-top:1px \9; color:#000; font-size:13px; font-weight:bold; text-align:left;}  
+.pop_wrap13 .ly_body {margin:0 20px;padding:15px 0 4px;color:#444;font-family:'돋움',Dotum,'굴림',Gulim,AppleGothic,Sans-serif;font-size:12px;line-height:14px;}  
+.pop_wrap13 .ly_body dt {margin:0 0 9px}  
+.pop_wrap13 .ly_body dd {margin:0 0 6px}  
+.pop_wrap13 .ly_body .input_radio {_margin:-3px; vertical-align:middle}  
+.pop_wrap13 .close_layer {position:absolute; top:7px; right:7px; height:16px;}  
+.pop_wrap13 .view_layer {position:relative; top:20px; left:20px; height:25px;} 
+.pop_wrap13 .shadow {_display:none;overflow:visible;position:absolute; z-index:10;width:100%;height:100%} 
+.pop_body13 {padding-top:10px; padding-left:15px; text-align:left; background-color:#fff;} 
+.pop_body13_info {list-style:none;}
+.pop_body13_info li {list-style:none; float:left; margin-right:3px; height:21px; line-height:21px; white-space:nowrap;}
+.layer_check { display:table-block; vertical-align:middle;}
+.layer_check_txt {padding-top:5px;}
+.pop_wrap13 .shadow2 {top:3px;left:3px;background:url(/smarts4j/covicore/resources/images/covision/shadow2.png)}  
+.pop_wrap13 .shadow3 {top:2px;left:2px;background:url(/smarts4j/covicore/resources/images/covision/shadow3.png)}  
+.pop_wrap13 .shadow4 {top:1px;left:1px;background:url(/smarts4j/covicore/resources/images/covision/shadow4.png)} 
+
+/*설문대상보기*/
+.pop_wrap8 {overflow:visible;line-height:normal; width:790px; height:565px; top:20%; left:27%; position:absolute; z-index:50; }  
+.pop_wrap8 .pop_wrap fieldset {border:none}  
+.pop_wrap8 legend {display:none}
+.pop_wrap8 .ly_header {margin:0 0 5px; line-height:30px; padding-left:8px; background:url(/smarts4j/covicore/resources/images/covision/bg_pop.gif) repeat-x; height:30px; padding-top:1px \9; color:#000; font-size:13px;font-weight:bold; text-align:left;}  
+.pop_wrap8 .ly_body {margin:0 20px;padding:15px 0 4px;color:#444;font-family:'돋움',Dotum,'굴림',Gulim,AppleGothic,Sans-serif;font-size:12px;line-height:14px;}  
+.pop_wrap8 .ly_body dt {margin:0 0 9px}  
+.pop_wrap8 .ly_body dd {margin:0 0 6px}  
+.pop_wrap8 .ly_body .input_radio {_margin:-3px;vertical-align:middle}  
+.pop_wrap8 .close_layer {position:absolute; top:7px; right:7px; height:16px;}  
+.pop_wrap8 .view_layer {position:relative; top:20px; left:20px; height:25px;} 
+.pop_wrap8 .shadow {_display:none;overflow:visible;position:absolute; z-index:10;width:100%;height:100%}  
+.pop_body8 {padding:10px; height:504px; text-align:left;}
+.pop_wrap8 .shadow2 {top:3px;left:3px;background:url(/smarts4j/covicore/resources/images/covision/shadow2.png)}  
+.pop_wrap8 .shadow3 {top:2px;left:2px;background:url(/smarts4j/covicore/resources/images/covision/shadow3.png)}  
+.pop_wrap8 .shadow4 {top:1px;left:1px;background:url(/smarts4j/covicore/resources/images/covision/shadow4.png)}   
+
+/*답변 목록 보기*/
+.pop_wrap9 {overflow:visible;line-height:normal; width:790px; height:635px; top:20%; left:27%; position:absolute; z-index:50; }  
+.pop_wrap9 .pop_wrap fieldset {border:none}  
+.pop_wrap9 legend {display:none}
+.pop_wrap9 .ly_header {margin:0 0 5px; line-height:30px; padding-left:8px; background:url(/smarts4j/covicore/resources/images/covision/bg_pop.gif) repeat-x; height:30px; padding-top:1px \9; color:#000; font-size:13px;font-weight:bold; text-align:left;}  
+.pop_wrap9 .ly_body {margin:0 20px;padding:15px 0 4px;color:#444;font-family:'돋움',Dotum,'굴림',Gulim,AppleGothic,Sans-serif;font-size:12px;line-height:14px;}  
+.pop_wrap9 .ly_body dt {margin:0 0 9px}  
+.pop_wrap9 .ly_body dd {margin:0 0 6px}  
+.pop_wrap9 .ly_body .input_radio {_margin:-3px;vertical-align:middle}  
+.pop_wrap9 .close_layer {position:absolute; top:7px; right:7px; height:16px;}  
+.pop_wrap9 .view_layer {position:relative; top:20px; left:20px; height:25px;} 
+.pop_wrap9 .shadow {_display:none;overflow:visible;position:absolute; z-index:10;width:100%;height:100%}  
+.pop_body9 {padding:10px; height:574px; text-align:left;}
+.pop_wrap9 .shadow2 {top:3px;left:3px;background:url(/smarts4j/covicore/resources/images/covision/shadow2.png)}  
+.pop_wrap9 .shadow3 {top:2px;left:2px;background:url(/smarts4j/covicore/resources/images/covision/shadow3.png)}  
+.pop_wrap9 .shadow4 {top:1px;left:1px;background:url(/smarts4j/covicore/resources/images/covision/shadow4.png)} 
+
+/*팝업(width 700px)*/
+.pop_wrap10 {overflow:visible;line-height:normal; width:700px; height:316px; top:25%; left:30%; position:absolute; z-index:50; }   
+.pop_wrap10 .pop_wrap fieldset {border:none;}  
+.pop_wrap10 legend {display:none;}
+.pop_wrap10 .ly_header {margin:0; line-height:32px; padding-left:8px; background:url(/smarts4j/covicore/resources/images/covision/bg_pop.gif) repeat-x; height:30px; padding-top:1px \9; color:#000; font-size:13px; font-weight:bold; text-align:left;}  
+.pop_wrap10 .ly_header2 {margin:0; line-height:32px; padding-left:8px; background:url(/smarts4j/covicore/resources/images/covision/bg_pop2.gif) repeat-x; height:32px; padding-top:1px \9; color:#000; font-size:13px; font-weight:bold; text-align:left;}  
+.pop_wrap10 .ly_body {margin:0 20px;padding:15px 0 4px;color:#444;font-family:'돋움',Dotum,'굴림',Gulim,AppleGothic,Sans-serif;font-size:12px;line-height:14px;}  
+.pop_wrap10 .ly_body dt {margin:0 0 9px}  
+.pop_wrap10 .ly_body dd {margin:0 0 6px}  
+.pop_wrap10 .ly_body .input_radio {_margin:-3px;vertical-align:middle}  
+.pop_wrap10 .close_layer {position:absolute; top:7px; right:7px; height:16px;}  
+.pop_wrap10 .view_layer {position:relative; top:20px; left:20px; height:25px;} 
+.pop_wrap10 .shadow {_display:none;overflow:visible;position:absolute; z-index:10;width:100%;height:100%} 
+.pop_body10 { height:270px; padding-top:10px; padding-left:15px; text-align:left; background-color:#fff;} 
+.pop_wrap10 .shadow2 {top:3px;left:3px;background:url(/smarts4j/covicore/resources/images/covision/shadow2.png)}  
+.pop_wrap10 .shadow3 {top:2px;left:2px;background:url(/smarts4j/covicore/resources/images/covision/shadow3.png)}  
+.pop_wrap10 .shadow4 {top:1px;left:1px;background:url(/smarts4j/covicore/resources/images/covision/shadow4.png)}  
+
+ /*검색*/
+.pop_wrap11 {overflow:visible;line-height:normal; width:790px; height:521px; top:20%; left:27%; position:absolute; z-index:50; }  
+.pop_wrap11 .pop_wrap fieldset {border:none}  
+.pop_wrap11 legend {display:none}
+.pop_wrap11 .ly_header {margin:0 0 5px; line-height:30px; padding-left:8px; background:url(/smarts4j/covicore/resources/images/covision/bg_pop.gif) repeat-x; height:30px; padding-top:1px \9; color:#000; font-size:13px;font-weight:bold; text-align:left;}  
+.pop_wrap11 .ly_body {margin:0 20px;padding:15px 0 4px;color:#444;font-family:'돋움',Dotum,'굴림',Gulim,AppleGothic,Sans-serif;font-size:12px;line-height:14px;}  
+.pop_wrap11 .ly_body dt {margin:0 0 9px}  
+.pop_wrap11 .ly_body dd {margin:0 0 6px}  
+.pop_wrap11 .ly_body .input_radio {_margin:-3px;vertical-align:middle}  
+.pop_wrap11 .close_layer {position:absolute; top:7px; right:7px; height:16px;}  
+.pop_wrap11 .view_layer {position:relative; top:20px; left:20px; height:25px;} 
+.pop_wrap11 .shadow {_display:none;overflow:visible;position:absolute; z-index:10;width:100%;height:100%}  
+.pop_body11 {padding:10px; height:460px; text-align:left;}
+.pop_wrap11 .shadow2 {top:3px;left:3px;background:url(/smarts4j/covicore/resources/images/covision/shadow2.png)}  
+.pop_wrap11 .shadow3 {top:2px;left:2px;background:url(/smarts4j/covicore/resources/images/covision/shadow3.png)}  
+.pop_wrap11 .shadow4 {top:1px;left:1px;background:url(/smarts4j/covicore/resources/images/covision/shadow4.png)}   
+
+/*문서연결*/
+.pop_wrap12 {overflow:visible;line-height:normal; width:790px; height:585px; top:20%; left:27%; position:absolute; z-index:50; }  
+.pop_wrap12 .pop_wrap fieldset {border:none}  
+.pop_wrap12 legend {display:none}
+.pop_wrap12 .ly_header {margin:0 0 5px; line-height:30px; padding-left:8px; background:url(/smarts4j/covicore/resources/images/covision/bg_pop.gif) repeat-x; height:30px; padding-top:1px \9; color:#000; font-size:13px;font-weight:bold; text-align:left;}  
+.pop_wrap12 .ly_body {margin:0 20px;padding:15px 0 4px;color:#444;font-family:'돋움',Dotum,'굴림',Gulim,AppleGothic,Sans-serif;font-size:12px;line-height:14px;}  
+.pop_wrap12 .ly_body dt {margin:0 0 9px}  
+.pop_wrap12 .ly_body dd {margin:0 0 6px}  
+.pop_wrap12 .ly_body .input_radio {_margin:-3px;vertical-align:middle}  
+.pop_wrap12 .close_layer {position:absolute; top:7px; right:7px; height:16px;}  
+.pop_wrap12 .view_layer {position:relative; top:20px; left:20px; height:25px;} 
+.pop_wrap12 .shadow {_display:none;overflow:visible;position:absolute; z-index:10;width:100%;height:100%}  
+.pop_body12 {padding:10px; height:524px; text-align:left;}
+.pop_wrap12 .shadow2 {top:3px;left:3px;background:url(/smarts4j/covicore/resources/images/covision/shadow2.png)}  
+.pop_wrap12 .shadow3 {top:2px;left:2px;background:url(/smarts4j/covicore/resources/images/covision/shadow3.png)}  
+.pop_wrap12 .shadow4 {top:1px;left:1px;background:url(/smarts4j/covicore/resources/images/covision/shadow4.png)}    
+
+.layer_cont {clear:both; list-style:none; float:left;}
+.layer_tree {margin:10px 14px 0 0;  float:left; width:221px; height:549px; background:#fff; border:1px solid #d4d2d2;}
+.layer_tree ul { list-style:none;}
+.tree_label .img_align7{ margin-top:-5px; margin-right:3px;}
+.layer_tree .layer_tree_in {padding:0; margin:0; list-style:none; margin-top:10px; margin-left:8px; height:35px;}
+.layer_searchlist { margin-top:10px; float:left; width:330px; height:549px; background:#fff; border:1px solid #d4d2d2;}
+.layer_searchlist .member_list2 {float:left;}
+.layer_searchlist .member_list2 ul {width:100%; padding:0; margin:0; list-style:none; margin-right:10px;}
+.layer_searchlist .member_list2 ul .sel {height:28px; line-height:28px; padding-left:5px; _height:20px; _line-height:20px; _padding-top:7px; border-bottom:1px solid #e1e1e1; background:#f0fafd;}
+.layer_searchlist .member_list2 ul li {height:28px; line-height:28px; padding-left:5px; _height:20px; _line-height:20px; _padding-top:7px; border-bottom:1px solid #e1e1e1; white-space:nowrap;}
+.layer_searchlist .member_list2 ul li span {white-space:nowrap;}
+.layer_searchlist_style { float:right; margin-top:5px; margin-right:10px;}
+.layer_searchlist_title { height:27px; background:#919adb;}
+.layer_searchlist_title_txt {float:left; height:27px; line-height:27px; padding-left:12px; font-weight:bold; color:#fff; _height:16px; _padding-top:10px;}
+.popup_bul {margin-top:-4px; _margin-top:-2px;}
+.layer_searchlist_tab {_display:inline_block; padding:15px 10px 0px 10px; margin-top:0px; margin-bottom:10px; height:10px; *height:20px;/*ie7*/}
+.layer_searchlist_tab li {float:left; list-style:none; height:14px; line-height:14px;}
+.layer_searchlist_tab li .input_check {margin:-4px 4px 0 0 !important;}
+@media screen and (-webkit-min-device-pixel-ratio:0) {.layer_searchlist_tab li .input_check {margin:-2px 4px 0 0 !important;}}
+.layer_searchlist_tab .t_on {display:inline-block; font-weight:normal; color:#F86F2C; height:14px; line-height:14px; float:left;}
+.layer_searchlist_tab .t_off {display:inline-block; font-weight:normal; height:14px; line-height:14px; float:left;}
+.layer_searchlist_info {display:block; clear:both; margin-top:10px; *margin-top:-10px;/*ie7*/ padding-top:7px; margin-left:10px; width:310px; height:27px; _height:22px; border-top:1px solid #e1e1e1; border-bottom:1px solid #e1e1e1; background:#f1f1f3; }
+.layer_searchlist_info ul {padding:0; margin:0;}
+.layer_searchlist_info li {list-style:none;}
+.layer_searchlist_info2 {display:block; clear:both; margin-top:10px; *margin-top:-10px;/*ie7*/ padding-top:7px; width:310px; height:27px; _height:22px; background:#f1f1f3;  border-top:1px solid #e1e1e1; border-bottom:1px solid #e1e1e1;}
+.layer_searchlist_info2 ul {padding:0; margin:0;}
+.layer_searchlist_info2 li {list-style:none;}
+.layer_searchlist_info_l {float:left;}
+.layer_searchlist_info_l li {list-style:none; padding-left:5px; float:left;}
+.layer_searchlist_info_r {margin-top:2px; margin-right:9px;  float:right;}
+.layer_searchlist_info_r li {list-style:none; padding-left:15px; float:left;}
+.layer_searchlist_info_list { margin-top:10px; margin-left:10px; width:310px; height:427px; overflow:auto;}
+.layer_searchlist_info_l_sch { margin-top:4px;}
+.layer_searchlist_info_l_sch li {list-style:none; padding-left:13px; float:left;}
+
+em.btn_pm_ws_l{float:left; height:27px; text-align:center; background:url(/smarts4j/covicore/resources/images/covision/btn_ws.gif) no-repeat 0 0; font-style:normal; cursor:pointer; margin:0 2px 0 0;  padding:0 0 0 5px;}
+span.btn_pm_ws_r{float:left; line-height:27px; margin-left:1px; height:27px; background:url(/smarts4j/covicore/resources/images/covision/btn_ws.gif) no-repeat right; cursor:pointer; padding-right:1px; padding:0 5px 0 0;}
+.ico_btn4 {margin-top:-1px; margin-left:-5px; margin-right:3px;}
+.layer_selectlist_info_list1 {margin-left:10px; margin-right:10px;}
+.layer_selectlist_info_list2 {margin-top:15px; *margin-top:25px; margin-left:10px; margin-right:10px; padding-bottom:10px;}
+.layer_selectlist_info_list1_cont {margin-top:8px; width:310px; height:245px; overflow:auto;}
+.layer_selectlist_info_list1_cont ul {list-style:none; margin-right:10px; padding:0px; margin:0px;}
+.layer_selectlist_info_list1_cont ul .sel {height:28px; line-height:28px; padding-left:5px; _height:20px; _line-height:20px; _padding-top:7px; border-bottom:1px solid #e1e1e1; background:#f0fafd;}
+.layer_selectlist_info_list1_cont ul li {height:28px; line-height:28px; padding-left:5px; _height:20px; _line-height:20px; _padding-top:7px; border-bottom:1px solid #e1e1e1;}
+.layer_selectlist_info_list2_cont {margin-top:8px; width:310px; height:125px; overflow:auto;}
+.layer_selectlist_info_list2_cont ul {list-style:none; margin-right:10px; padding:0px; margin:0px;}
+.layer_selectlist_info_list2_cont ul .sel {height:28px; line-height:28px; padding-left:5px; _height:20px; _line-height:20px; _padding-top:7px; border-bottom:1px solid #e1e1e1; background:#f0fafd;}
+.layer_selectlist_info_list2_cont ul li {height:28px; line-height:28px; padding-left:5px; _height:20px; _line-height:20px; _padding-top:7px; border-bottom:1px solid #e1e1e1;}
+
+.layer_btn_box {width:37px; height:550px; float:left;}
+.layer_btn2 {margin:80px 5px 0 5px;}
+.layer_btn3 {margin:130px 5px 0 5px;}
+.layer_btn4 {margin:130px 5px 0 5px;}
+
+.layer_selectlist2 {margin-top:10px; float:left; width:330px; height:175px; background:#fff; border:1px solid #d4d2d2;}
+.layer_selectlist3 {margin-top:10px; float:left; width:330px; height:175px; background:#fff; border:1px solid #d4d2d2;}
+
+.layer_searchlist_info2 {display:block; clear:both; margin-top:10px; *margin-top:-10px;/*ie7*/ padding-top:7px; width:310px; height:27px; _height:22px; background:#f1f1f3;  border-top:1px solid #e1e1e1; border-bottom:1px solid #e1e1e1; *margin-top:10px;}
+.layer_searchlist_info2 li {list-style:none;}
+
+.layer_selectlist_info_list1_cont3 {height:93px; overflow:auto; }
+.layer_selectlist_info_list1_cont3 ul {list-style:none;}
+.layer_selectlist_info_list1_cont3 ul {padding:0; margin:0; list-style:none; margin-right:10px;}
+.layer_selectlist_info_list1_cont3 ul .sel {height:28px; line-height:28px; padding-left:5px; _height:20px; _line-height:20px; _padding-top:7px; border-bottom:1px solid #e1e1e1; background:#f0fafd;}
+.layer_selectlist_info_list1_cont3 ul li {height:28px; line-height:28px; padding-left:5px; _height:20px; _line-height:20px; _padding-top:7px; border-bottom:1px solid #e1e1e1;}
+
+.layer_selectlist_info_list1_cont4 ul {list-style:none;}
+.layer_selectlist_info_list1_cont4 ul {padding:0; margin:0; list-style:none; margin-right:10px;}
+.layer_selectlist_info_list1_cont4 ul .sel {height:28px; line-height:28px; padding-left:5px; _height:20px; _line-height:20px; _padding-top:7px; border-bottom:1px solid #e1e1e1; background:#f0fafd;}
+.layer_selectlist_info_list1_cont4 ul li {height:28px; line-height:28px; padding-left:5px; _height:20px; _line-height:20px; _padding-top:7px; border-bottom:1px solid #e1e1e1;}
+
+.member_list {border-bottom:1px solid #e1e1e1; margin-top:10px;}
+.member_check {padding-left:5px; vertical-align:top;}
+.search_list_table {width:290px;}
+.search_list_table ul {list-style:none; padding-left:10px;}
+.search_list_table ul li {line-height:15px;}
+.search_list_table .face { width:52px; padding:0; margin:0;}
+.search_list_table .face img {border:1px solid #dcdcdc;}
+.search_list_table .text { padding-left:8px; background:url(/smarts4j/covicore/resources/images/covision/dot02.gif) no-repeat 2px 4px;}
+.search_list_table a {color:#238cb3; text-decoration:underline;}
+.text_box { display:inline-block; border:1px solid #e1e1e1; width:240px; margin:5px 10px 10px 0px; padding:5px 0px 5px 0px; list-style:none;}
+.text_box li {float:left; padding-right:15px;}
+
+.layer_btn {float:left; width:29px; height:57px; margin-top:240px; margin-left:5px; margin-right:3px; }
+.layer_btn a {margin-bottom:3px;}
+.layer_selectlist {float:left; margin-top:10px; width:330px; height:549px; background:#fff; border:1px solid #d4d2d2;}
+
+/*조직도 팝업(width 606px)*/
+.pop_wrap7 {overflow:visible;line-height:normal; width:606px; height:681px; top:11%; left:33%; position:absolute; z-index:50; }   
+.pop_wrap7 .pop_wrap fieldset {border:none;}  
+.pop_wrap7 legend {display:none;}
+.pop_wrap7 .ly_header2 {margin:0; line-height:32px; padding-left:8px; background:url(/smarts4j/covicore/resources/images/covision/bg_pop2.gif) repeat-x; height:32px; padding-top:1px \9; color:#000; font-size:13px; font-weight:bold; text-align:left;}  
+.pop_wrap7 .ly_body {margin:0 20px;padding:15px 0 4px;color:#444;font-family:'돋움',Dotum,'굴림',Gulim,AppleGothic,Sans-serif;font-size:12px;line-height:14px;}  
+.pop_wrap7 .ly_body dt {margin:0 0 9px}  
+.pop_wrap7 .ly_body dd {margin:0 0 6px}  
+.pop_wrap7 .ly_body .input_radio {_margin:-3px; vertical-align:middle}  
+.pop_wrap7 .close_layer {position:absolute; top:7px; right:7px; height:16px;}  
+.pop_wrap7 .view_layer {position:relative; top:20px; left:20px; height:25px;} 
+.pop_wrap7 .shadow {_display:none;overflow:visible;position:absolute; z-index:10;width:100%;height:100%} 
+.pop_body7 {height:632px; padding-top:10px; padding-left:17px; text-align:left; background-color:#ffffff;} 
+.pop_body7_info {list-style:none;}
+.pop_body7_info li {list-style:none; float:left; margin-right:3px; height:21px; line-height:21px; white-space:nowrap;}
+.pop_wrap7 .shadow2 {top:3px;left:3px;background:url(/smarts4j/covicore/resources/images/covision/shadow2.png)}  
+.pop_wrap7 .shadow3 {top:2px;left:2px;background:url(/smarts4j/covicore/resources/images/covision/shadow3.png)}  
+.pop_wrap7 .shadow4 {top:1px;left:1px;background:url(/smarts4j/covicore/resources/images/covision/shadow4.png)}  
+
+/*팝업(width auto)*/
+.pop_wrap_auto {overflow:visible;line-height:normal; margin:0px; top:35%; left:35%; position:absolute; }  
+.pop_wrap_auto .pop_wrap fieldset{border:none} 
+.pop_body_auto { line-height:22px; padding:10px;}
+.pop_body_auto p{ margin-top:10px;}
+.pop_body_auto .fav {text-align:left; padding:7px 0 0 0; border-top:1px solid #e5e5e5; font-weight:bold;}
+.pop_wrap_auto .shadow{_display:none; overflow:visible; position:absolute; z-index:10; width:100%; height:100%}  
+.pop_wrap_auto .shadow2{top:3px;left:3px;background:url(/smarts4j/covicore/resources/images/covision/shadow2.png)}  
+.pop_wrap_auto .shadow3{top:2px;left:2px;background:url(/smarts4j/covicore/resources/images/covision/shadow3.png)}  
+.pop_wrap_auto .shadow4{top:1px;left:1px;background:url(/smarts4j/covicore/resources/images/covision/shadow4.png)}
+
+/*팝업 캘린더 */
+.pop_calendar {line-height:normal; position:absolute; overflow:visible; *margin:20px 0 0 -103px; z-index:50;}
+.pop_calendar_body{position:relative;z-index:20;border:3px solid #6e7882;background:#fff; padding:7px; }
+.calendar_s1{ position:relative; z-index:20;}  
+
+/*팝업_슬라이드*/
+/*흰색 테마*/
+.pop_slide_white {overflow:visible;line-height:normal; width:806px; *width:803px;/*ie6*/ top:15%; left:30%; position:absolute; z-index:50; }   
+.pop_slide_con_w{position:relative;z-index:20;border:3px solid #6e7882; background:url(/smarts4j/covicore/resources/images/covision/bg_album_white.gif) repeat-y;} 
+.pop_slide_white legend {display:none;}
+.pop_slide_white .ly_header {margin:0 0 5px; line-height:30px; padding-left:8px; background:url(/smarts4j/covicore/resources/images/covision/bg_pop.gif) repeat-x; height:30px; padding-top:1px \9; color:#000; font-size:13px;font-weight:bold; text-align:left;}  
+.pop_slide_white .ly_body {margin:0 20px; _margin:0;/*ie6*/ padding:5px 0 4px;color:#444;font-family:'돋움',Dotum,'굴림',Gulim,AppleGothic,Sans-serif;font-size:12px;line-height:14px;}  
+.pop_slide_white .close_layer {position:absolute; top:7px; right:7px; height:16px;}  
+.pop_slide_white .shadow {_display:none;overflow:visible;position:absolute; z-index:10;width:100%;height:100%} 
+.pop_slide_white .shadow2 {top:3px;left:3px;background:url(/smarts4j/covicore/resources/images/covision/shadow2.png)}  
+.pop_slide_white .shadow3 {top:2px;left:2px;background:url(/smarts4j/covicore/resources/images/covision/shadow3.png)}  
+.pop_slide_white .shadow4 {top:1px;left:1px;background:url(/smarts4j/covicore/resources/images/covision/shadow4.png)}
+
+/*블랙 테마*/
+.pop_slide_block {overflow:visible;line-height:normal; width:806px; *width:803px;/*ie6*/ top:15%; left:30%; position:absolute; z-index:50; }   
+.pop_slide_con_b{position:relative;z-index:20;border:3px solid #6e7882; background:url(/smarts4j/covicore/resources/images/covision/bg_album_black.gif) repeat-y;} 
+.pop_slide_white legend {display:none;}
+.pop_slide_block .ly_header {margin:0 0 5px; line-height:30px; padding-left:8px; background-color:#111112; height:30px; padding-top:1px \9; color:#000; font-size:13px;font-weight:bold; text-align:left;}  
+.pop_slide_block .ly_body {margin:0 20px; _margin:0;/*ie6*/ padding:5px 0 4px;color:#444;font-family:'돋움',Dotum,'굴림',Gulim,AppleGothic,Sans-serif;font-size:12px;line-height:14px;}  
+.pop_slide_block .close_layer {position:absolute; top:7px; right:7px; height:16px;}  
+.pop_slide_block .shadow {_display:none;overflow:visible;position:absolute; z-index:10;width:100%;height:100%} 
+.pop_slide_block .shadow2 {top:3px;left:3px;background:url(/smarts4j/covicore/resources/images/covision/shadow2.png)}  
+.pop_slide_block .shadow3 {top:2px;left:2px;background:url(/smarts4j/covicore/resources/images/covision/shadow3.png)}  
+.pop_slide_block .shadow4 {top:1px;left:1px;background:url(/smarts4j/covicore/resources/images/covision/shadow4.png)}
+
+
+
+
+
+
+.slide_top{ height:30px;}
+.slide_key{ width:50px;  _position:relative;/*ie6*/}
+.slide_key dd {margin-top:3px;}
+.pop_slide_01{width:100px; text-align:center; margin-left:18px;}
+.pop_slide_02{ float:right; *margin-top:-22px;/*ie7*/ _margin-right:10px;/*ie6*/ margin-left:-5px;}
+.pop_slide_02 ul {padding:0; margin:0;}
+
+.slide_mr{ float:right; width:50px;  margin-right:10px; margin-top:200px; _position:relative;/*ie6*/}
+.slide_ml{ float:left;width:50px;   margin-left:10px;margin-top:200px; _position:relative;/*ie6*/}
+
+.slide_photo {width:628px;  min-height:420px; text-align:center; margin-bottom:20px; display:table;}
+.slide_photo dl{display: table-cell; vertical-align:middle; padding-bottom:10px;}
+.slide_photo dt{ margin-bottom:14px;}
+.slide_photo dd{ margin-top:3px;}
+.slide_line{width:743px; margin-left:8px; _margin-left:25px;/*ie6*/ height:2px; background-color:#5b5b5b; _position:relative;/*ie6*/}
+.slide_btn{ float:left; margin-top:-5px; *margin-top:-7px;/*ie7*/ _margin-top:-5px;/*ie7*/  _position:absolute;/*ie6*/ }
+
+.slide_menu{margin-top:25px; margin-bottom:20px; _position:relative;/*ie6*/}
+.slide_btn2_ml{width:80px; float:left; margin-top:32px; _margin-left:10px;/*ie6*/ _position:relative;/*ie6*/}
+.slide_btn2_mr{width:80px; float:right; margin-top:32px; _margin-right:10px;/*ie6*/ _position:relative;/*ie6*/}
+.slide_list{width:600px; *width:590px;/*ie7*/ overflow:hidden;}
+.slide_select{border:3px solid #ff8400; position:absolute; width:89px; height:82px; _margin-left:3px;/*ie6*/}
+.slide_color {float:right; position:absolute; margin-left:39px; *margin-left:-26px;/*ie7*/ margin-top:3px; *margin-top:18px;}
+.slide_color li{ list-style:none; margin-bottom:3px;}
+
+
+ /*가젯 설정 화면*/
+.gadget_ad{width:183px; padding:12px;}
+.gadget_ad h4{color:#333333; font-weight:bold; background:url(/smarts4j/covicore/resources/images/covision/ico_gadget.gif) no-repeat 0 5px; padding-left:10px;}
+.gadget_ad_all{ line-height:15px; height:20px; margin:5px 0 5px 0; font-weight:bold; color:#333333; border-bottom:1px #c2c2c2 dashed;}
+.gadget_ad ul{list-style:none; border-bottom:1px #c2c2c2 dashed; margin-bottom:10px; _margin-top:6px;/*ie6*/}
+.gadget_ad li{list-style:none; line-height:23px; height:23px;}
+
+/*탭*/
+.tabmenu {padding:0; margin:0; height:31px; border-left:1px solid #c2c5c7;}
+.tabmenu ul {margin:0;}
+.tabmenu_on {display:block; float:left; text-align:center; border-top:1px solid #c2c5c7; border-right:1px solid #c2c5c7; cursor:pointer;}
+.tabmenu_on a {display:block; padding:7px 12px 7px 12px; *padding:5px 12px 8px 12px;/*ie7*/ _padding:7px 12px 7px 12px;/*ie6*/ font-weight:bold; border-top:1px solid #444444; border-left:1px solid #444444; color:#fff; background:#444444;}
+.tabmenu_on a:hover {display:block;padding:7px 12px 7px 12px; *padding:5px 12px 8px 12px;/*ie7*/ _padding:7px 12px 7px 12px;/*ie6*/ font-weight:bold; color:#fff;}
+.tabmenu_off {display:block; float:left; text-align:center; border-top:1px solid #c2c5c7; border-right:1px solid #c2c5c7; cursor:pointer;}
+.tabmenu_off a {display:block; padding:7px 12px 7px 12px; *padding:5px 12px 8px 12px;/*ie7*/ _padding:7px 12px 7px 12px;/*ie6*/ font-weight:bold; border-top:1px solid #f4f6f5; border-left:1px solid #f4f6f5; color:#757575; background-color:#eff0f1;}
+.tabmenu_off a:hover {display:block; padding:7px 12px 7px 12px; *padding:5px 12px 8px 12px;/*ie7*/ _padding:7px 12px 7px 12px;/*ie6*/ font-weight:bold; color:#757575;}
+
+
+.tabright {}
+.tabright_line {display:block; float:left; color:#dbdee1; margin-top:8px; margin-left:-2px; margin-top:6px 9\;/*ie9*/}
+.layer_tabmenu_on1 {display:block; _margin-left:0px; float:left;}
+.layer_tabmenu_on1 a {display:block; float:left; padding:8px 13px 8px 11px; font-weight:bold; color:#000; background-color:#fff; text-align:center;}
+.layer_tabmenu_on1 a:hover {font-weight:bold; color:#000;}
+.layer_tabmenu_on {display:block; margin-left:-2px; float:left;}
+.layer_tabmenu_on a {display:block; float:left; padding:8px 13px 8px 11px; font-weight:bold; color:#000; background-color:#fff; text-align:center;}
+.layer_tabmenu_on a:hover {font-weight:bold; color:#000;}
+.layer_tabmenu_off {display:block; float:left;}
+.layer_tabmenu_off a {display:block; float:left; padding:8px 13px 8px 11px; font-weight:normal; color:#fff; text-align:center;}
+.layer_tabmenu_off a:hover {font-weight:normal; color:#fff;}
+
+/* 게시 > 처리결과(진행) */
+.table_list table tbody td .handing { margin-top:5px; *margin-top:15px;/*ie7*/ width:230px;}
+.table_list table tbody td .handing_remove{ margin-top:5px; *margin-top:15px;/*ie7*/ width:230px;}
+.table_list table tbody td .handing td{ height:23px; line-height:19px; *line-height:16px; padding:3px 5px 0 5px; text-align:center;  border-bottom:1px dotted #bcbcbc;}
+.table_list table tbody td .handing_remove td{ height:23px; line-height:19px; *line-height:16px; padding:5px 0 5px 0 ; text-align:left;  border-bottom:1px dotted #bcbcbc;}
+.table_list table th{ color:#444444 !important;}
+
+/*관심게시 설정*/
+.pop_interest{width:318px; margin-bottom:10px;}
+.pop_interest td{height:23px; line-height:19px; *line-height:16px; padding:3px 5px 0 5px; text-align:left;  border-bottom:1px dotted #bcbcbc;}
+
+
+
+/*신고 내용 본문 */
+.reportlist01{width:263px; text-align:left; border:1px #d0d0d0 solid; padding:5px;  height:70px; background-color:#f5f5f5; overflow-y:scroll;}
+.reportlist02{width:263px; text-align:left; border:1px #d0d0d0 solid; padding:5px; height:70px; background-color:#fff; overflow-y:scroll;}
+
+/*사용자 프로필*/
+
+
+.pro_g{width:460px; _width:470px;/*ie6*/ text-align:left; padding:10px;  _padding:10px 0 10px 10px;/*ie6*/ background-color:#fff; border:0; }
+.pro_g2{text-align:left; height:140px; padding:10px;  _padding:10px 0 10px 10px;/*ie6*/ background-color:#fff; border:1px #d4d2d2 solid; }
+.pro_01{position:relative; display:block; height:113px; _margin:55px 0 0 15px;/*ie6*/ }
+.pro_012{position:relative; display:block; height:113px; _margin:0 0 0 15px;/*ie6*/ }
+.pro_01_01{ padding-top:7px; padding-bottom:7px; margin-left:92px; position:relative;  }
+.pro_01_02{ height:19px; border-bottom:1px dashed #e1e1e1; margin-left:92px; position:relative; line-height:19px; padding-top:3px;}
+.pro_01 dt{float:left; width:94px;}
+.pro_012 dt{float:left; width:94px;}
+.pro_02{display:block; position:relative; padding:10px; background-color:#fafafa; border:1px #CCCCCC solid; _margin:0 0 -40px 15px;/*ie6*/}
+.pro_02_03 p{ margin-top:3px; margin-left:-10px;}
+.pro_02_01{position:relative; width:237px; float:left; height:21px; line-height:21px;}
+.pro_02_02{position:relative; height:21px; line-height:21px}
+.pro_02_03{ text-align:left; margin-top:2px;}
+.pro_02_04{position:relative; height:21px; line-height:21px; *margin-top:-12px;/*ie7*/ }
+.pro_03{margin:15px 10px 0 10px; background-color:#FFF; border:1px solid #d4d4d4; border-top:0; padding:0; }
+.pro_03 li{ float:left;}
+.pro_04{padding:10px; margin-top:25px; *margin-top:0px;/*ie6*/ min-height:155px;}
+.pro_con td{ border-bottom:1px #e1e1e1 solid; height:30px; padding:0 0 0 5px;}
+.pro_con .align{ text-align:left;}
+.pro_tit{background:url(/smarts4j/covicore/resources/images/covision/dot01.gif) no-repeat 0 5px; padding-left:5px; font-weight:bold;}
+.photo_change {margin:7px 0 0 12px;}
+
+.pro_date1{background:url(/smarts4j/covicore/resources/images/covision/pro_date1.gif) no-repeat 0 2px; padding-left:17px;}
+.pro_date2{background:url(/smarts4j/covicore/resources/images/covision/pro_date2.gif) no-repeat 0 2px; padding-left:17px;}
+.pro_view{ height:20px; margin-bottom:12px;}
+.pro_date_top { height:30px; margin-left:130px; *margin-left:0px;/*ie7*/ width:230px; *width:260px;/*ie7*/}
+.pro_view li{ margin-right:17px;}
+.pro_today{ float:right; margin-top:-2px; *margin-top:-18px;/*ie7*/ margin-left:-15px;}
+.pro_date_tit{ font-weight:bold; background:url(/smarts4j/covicore/resources/images/covision/bg_pro.gif) repeat-x;}
+
+.pro_date_g { border-top:1px #bfbfbf solid;  border-right:1px #bfbfbf solid;}
+.pro_date_g td{border-left:1px #bfbfbf solid;  border-bottom:1px #bfbfbf solid;  height:20px;}
+.pro_possible_half{background-color:#7f91ee; width:18px;  cursor:pointer; height:12px;}
+.pro_impossible_half{background-color:#f26522; width:18px;  cursor:pointer; height:12px;}
+.pro_possible{background-color:#7f91ee; width:18px;  cursor:pointer; height:24px;}
+.pro_impossible{background-color:#f26522; width:18px; cursor:pointer;  height:24px;}
+
+.re_possible_half{background-color:#7f91ee;  width:100%; height:31px; cursor:pointer;  }
+.re_impossible_half{background-color:#f26522;  wwidth:100%; height:31px; cursor:pointer; }
+.re_possible {width:100%; height:60px; cursor:pointer;  }
+
+.pro_bottom { text-align:right; margin-right:10px;  height:30px;}
+.pro_bottom dl{ position:relative; width:200px;  margin-top:7px;  display:inline;}
+.pro_bottom dd{ display:inline;}
+.pro_btn { position:relative; right:0px;}
+.pro_btn img{ margin-right:1px; position:relative; margin-top:-4px;}
+.pro_bottom_list{ right:0px; margin-right:5px;}
+
+
+
+
+
+.pro_blank{width:18px; height:24px;}
+
+/*공지 팝업*/
+.pro_today_x{ height:22px; padding-top:7px; background-color:#6e7882; text-align:right; padding-right:10px;}
+.pro_today_btn{ float:right; font-size:12px; color:#e3e7ee; background:url(/smarts4j/covicore/resources/images/covision/pop_x.gif) no-repeat right 1px; *background:url(/smarts4j/covicore/resources/images/covision/pop_x.gif) no-repeat right 2px;/*ie7*/ padding-right:17px;}
+
+
+/* 달력 컨트롤 */
+.LaryeCalenderPop { position:absolute; background-color:#FFFFB3; layer-background-color:#FFFFB3; overflow:visible; }
+
+
+
+/* 파일 컨트롤 */
+.file_controls table {border:1px #c4c4c4 solid; width:100%; font-size:12px; color:#777; border-collapse: collapse;}
+.file_controls table thead tr {margin:0px; padding:0px; background:url(/smarts4j/covicore/resources/images/covision/table_th_bg.gif) repeat-x ; }
+.file_controls table th{ height:20px; line-height:12px; text-align:center; vertical-align:middle; font-weight:normal; }
+.file_controls table .file_con{ background:url(/smarts4j/covicore/resources/images/covision/table_th_line.gif) no-repeat 0 -2px; margin-top:-3px; *margin-top:0px;/*ie7*/ display:block; padding-left:7px; padding-top:1px;}
+.file_controls table .file_con_last {color:#888; background:none; margin-top:-3px;}
+.file_controls table tbody td { height:16px;  line-height:16px; padding:0px 0px 0px 0px; *padding:0px 0px 0px 0px;/*ie7*/ text-align:center;}
+.file_controls table .align{ text-align:left; padding-left:10px; padding-right:10px;}
+
+col#file01 {width:120px;}
+col#file02 {width:120px;}
+
+.research_board_btop {background:#fff;  z-index:5;  position:relative; border:1px solid #d5d5d5; margin:0px; padding:0;}
+.research_board_btop img.trans{position:absolute;}
+.research_board_btop .tl{top:0px; left:0px; margin:-1px 0 0 -1px; _margin:0 0 0 -1px;/*ie6*/}
+.research_board_btop .mplus{top:0px; right:0px; margin:5px 5px 0 0; _margin:5px 30px 0 0;/*ie6*/}
+.research_board_btop .tr{top:0px; right:0px; margin:-1px -1px 0 0; _margin:0 23px 0 0;/*ie6*/}
+.research_board_btop .bl{bottom:0px; left:0px; _bottom:auto;/*ie6*/ margin:0 0 -1px -1px; _margin:-4px 0 0 -1px;/*ie6*/}
+.research_board_btop .br{bottom:0px; right:0px; _bottom:auto;/*ie6*/  margin:0 -1px -1px 0; _margin:-4px 23px 0 0;/*ie6*/}
+
+.research_board_btop2 {z-index:5; position:relative; border:1px solid #d5d5d5; margin:0px; padding:0;}
+.research_board_btop2 img.trans{position:absolute;}
+.research_board_btop2 .tl{top:0px; left:0px; margin:-1px 0 0 -1px; _margin:0 0 0 -1px;/*ie6*/}
+.research_board_btop2 .mplus{top:0px; right:0px; margin:5px 5px 0 0; _margin:5px 30px 0 0;/*ie6*/}
+.research_board_btop2 .tr{top:0px; right:0px; margin:-1px -1px 0 0; _margin:0 23px 0 0;/*ie6*/}
+.research_board_btop2 .bl{bottom:0px; left:0px; _bottom:auto;/*ie6*/ margin:0 0 -1px -1px; _margin:4px 0 0 -1px;/*ie6*/}
+.research_board_btop2 .br{bottom:0px; right:0px; _bottom:auto;/*ie6*/  margin:0 -1px -1px 0; _margin:4px 23px 0 0;/*ie6*/}
+
+.research_board_btop3 {_width:auto;/*ie6*/ background:#fff;  z-index:5;  position:relative; border:1px solid #d5d5d5; margin:0px; padding:0;}
+.research_board_btop3 img.trans{position:absolute;}
+.research_board_btop3 .tl{top:0px; left:0px; margin:-1px 0 0 -1px; _margin:0 0 0 -1px;/*ie6*/}
+.research_board_btop3 .mplus{top:0px; right:0px; margin:5px 5px 0 0; _margin:5px 30px 0 0;/*ie6*/}
+.research_board_btop3 .tr{top:0px; right:0px; margin:-1px -1px 0 0; _margin:0 10px 0 0;/*ie6*/}
+.research_board_btop3 .bl{bottom:0px; left:0px; _bottom:auto;/*ie6*/ margin:0 0 -1px -1px; _margin:-4px 0 0 -1px;/*ie6*/}
+.research_board_btop3 .br{bottom:0px; right:0px; _bottom:auto;/*ie6*/  margin:0 -1px -1px 0; _margin:-4px 10px 0 0;/*ie6*/}
+
+.research_board_search {position:relative; z-index:1; vertical-align:middle; margin:7px 0 7px 4px; height:27px; *padding:7px 0 0 4px;}
+.research_board_btop3 .rt {float:right; margin-right:5px;}
+
+.research_con {z-index:3;  position:relative; border:0; margin:15px 0 0 0; padding:0; _margin-right:1px;/*ie6*/ border:1px solid #d4d4d4;}
+.research_con h4{display:none; background:url(/smarts4j/covicore/resources/images/covision/tit_view02.gif) repeat-x ; padding-top:8px; height:28px; min-width:100%; line-height:28px; _line-height:28px;/*ie6*/}
+.research_con img.trans{position:absolute;}
+.research_con .tr{top:0px; right:0px; margin:-1px -1px 0 0; _margin:0 24px 0 0;/*ie6*/}
+
+.img_number{ margin-bottom:10px; text-align:left; }
+.img_number_search dd{ margin:0px; padding:0px; margin-bottom:5px; text-align:left;}
+
+/* 슬라이드 검색바 일반 */
+.data1{width:162px; margin-left:4px; float:right;}
+.data1.data1 dd{ width:162px;}
+.data1 .data1_2{float:left; margin-top:-2px; background:url(/smarts4j/covicore/resources/images/covision/slider_bar.gif) no-repeat 0 0; height:16px; }
+.data1_btn{position:absolute; margin:2px 0 0 0;}
+.data1_3{float:left; padding-top:5px !important; margin-top:0px; height:12px; line-height:12px;}
+.data_select{ float:right; display:block; margin-left:10px; }
+
+.data2{float:right;margin-left:4px; font-size:11px;}
+.data2 dd{font-size:11px; float:left;}
+.data2 pre{font-size:12px; float:left; margin-top:3px;}
+.data2 INPUT{ font-size:12px; width:60px; margin-left:3px; height:17px; float:left; display:inline-block; text-align:center;  margin-right:3px; color:#959595;}
+
+.data2_2{float:left;margin-left:4px; font-size:11px;}
+.data2_2 dd{font-size:11px; float:left;}
+.data2_2 pre{font-size:12px; float:left; margin-top:3px;}
+.data2_2 INPUT{ font-size:12px; width:60px; margin-left:3px; height:17px; float:left; display:inline-block; text-align:center;  margin-right:3px; color:#959595;}
+
+/* 슬라이드 검색바 통합검색 */
+.data_s{width:162px;margin-left:4px; float:left;}
+.data_s.data_s dd{width:162px;}
+.data_s .data_s_2{float:left; background:url(/smarts4j/covicore/resources/images/covision/bg_data.gif) no-repeat 0 4px; height:14px; }
+.data_s_btn{position:absolute; margin:2px 0 0 30px; *margin:-2px 0 0 30px;/*ie7*/ _margin:0 0 0 30px;/*ie6*/}
+.data_s_3{float:left; height:12px; line-height:12px;}
+.data_s_select{ float:left; display:block; margin-left:10px; }
+
+.data_s2{float:left;margin-left:4px; font-size:11px;}
+.data_s2 dd{font-size:11px; float:left;}
+.data_s2 pre{font-size:12px; float:left; margin-top:3px;}
+.data_s2 INPUT{ font-size:11px; width:60px; margin-left:3px; height:17px; float:left; display:inline-block; text-align:center;  margin-right:3px; color:#959595;}
+
+.yes {display:block; margin:0 auto; padding-left:3px; padding-right:3px; width:12px; height:19px; white-space:nowrap; line-height:20px; font-size:12px; color:#fff; font-weight:normal; background:url(/smarts4j/covicore/resources/images/covision/btn_t_bg2.gif) repeat-x bottom left; border:1px solid #c0c0c0; text-align:center;}
+.yes:hover {display:block; margin:0 auto; padding-left:3px; padding-right:3px; width:12px; height:19px; white-space:nowrap; line-height:20px; font-size:12px; color:#fff; font-weight:normal; background:url(/smarts4j/covicore/resources/images/covision/btn_t_bg2.gif) repeat-x bottom left; border:1px solid #c0c0c0; text-align:center;}
+
+.no {display:block; margin:0 auto; padding-left:3px; padding-right:3px; width:12px; height:19px; white-space:nowrap; line-height:20px; font-size:12px; color:#777; font-weight:normal; background:url(/smarts4j/covicore/resources/images/covision/btn_t_bg.gif) repeat-x bottom left; border:1px solid #c0c0c0; text-align:center;}
+.no:hover {display:block; margin:0 auto; padding-left:5px; padding-right:2px; width:12px; height:19px; white-space:nowrap; line-height:20px; font-size:12px; color:#777; font-weight:normal; background:url(/smarts4j/covicore/resources/images/covision/btn_t_bg.gif) repeat-x bottom left; border:1px solid #c0c0c0; text-align:center;}
+
+.popup_top_mini {overflow:visible; line-height:normal; z-index:50; }  
+.popup_top_mini .pop_wrap fieldset {border:none;}  
+.popup_top_mini legend {display:none;}
+
+.popup_top_mini .ly_header {margin:0; line-height:30px; padding-left:8px; background:url(/smarts4j/covicore/resources/images/covision/bg_pop.gif) repeat-x; height:30px; padding-top:1px \9; color:#000; font-size:13px;font-weight:bold; text-align:left;}  
+.popup_top_mini .shadow {_display:none;overflow:visible;position:absolute; z-index:10; width:100%;height:100%}  
+
+.popup_btn1 {position:absolute; top:7px; right:73px; height:16px;}
+.popup_btn2 {position:absolute; top:7px; right:40px; height:16px;}
+.popup_btn3 {position:absolute; top:7px; right:7px; height:16px;}
+
+.top_popup_mini {list-style:none; position:absolute; top:10px; left:15px; z-index:50; }
+.top_popup_mini li {float:left; margin-left:10px;}
+
+.org_paging {float:right; padding-right:10px;}
+.org_paging .btn_pg {margin-top:1px;}
+
+/* 20130122 SMS 디자인 */
+.pop_body_sms {height:450px; padding-top:10px; padding-left:15px; text-align:left;  background:url(/smarts4j/covicore/resources/images/covision/bg_sms.gif);} 
+.box_sms { margin-top:5px; padding:0px; width:720px;}
+.sms_l {width:207px; height:426px;  background:url(/smarts4j/covicore/resources/images/covision/bg_phone.gif) no-repeat; float:left;}
+.sms_message_box {margin-top:105px;}
+.sms_message_w {border:0px; background-color:#FFFFFF; width:167px; height:162px; overflow: hidden; font:normal 12px dotum,'돋움',Apple-Gothic,맑은 고딕, Malgun Gothic,sans-serif;color:#808080;  }
+.sms_btn {width:182px; margin-left:-1px;}
+
+.sms_r {width:248px; float:left; margin-top:10px;margin-left:35px;}
+.sms_r2 {width:200px; height:300px; float:right; margin: 0 auto;}
+.sms_num_w {width:210px; background-color:#fff7d1; font:normal 12px dotum,'돋움',Apple-Gothic,맑은 고딕, Malgun Gothic,sans-serif;color:#a38465;}
+.sms_num_list {background-color:#FFFFFF; width:210px; height:142px; overflow: hidden; font:normal 12px dotum,'돋움',Apple-Gothic,맑은 고딕, Malgun Gothic,sans-serif;color:#808080;}
+.sms_reply {width:210px; background-color:#fff; font:normal 12px dotum,'돋움',Apple-Gothic,맑은 고딕, Malgun Gothic,sans-serif;color:#a38465;}
+
+.pop_body_sms_pop { height:210px;background:url(/smarts4j/covicore/resources/images/covision/bg_sms.gif);padding-top:10px;}
+.sms_con1 a { display:block; width:100%; height:100%;line-height:27px;}
+.sms_con1 a:hover { display:block; width:100%; height:100%; background-color:#fff8d9; color:#ed6700; }
+.sms_con1 td {width:30px; height:27px; text-align:center; vertical-align:middle; background-color:#FFFFFF;}
+.sms_pop_box {width:430px; height:210px;}
+
+.sms_con2 a { display:block; width:100%; height:100%;line-height:27px;}
+.sms_con2 a:hover { display:block; width:100%; height:100%; background-color:#fff8d9; color:#ed6700; }
+.sms_con2 td {width:42px; height:27px; text-align:center; vertical-align:middle; background-color:#FFFFFF;}
+
+.sms_pop_list{ overflow-y:scroll; width:430px; height:195px; background-color:#FFFFFF; border:1px solid #c4c9d1; }
+.sms_pop_list_table { width:100%;}
+.sms_pop_list_table a { display:block; width:100%; height:100%;line-height:27px; white-space:nowrap; }
+.sms_pop_list_table a:hover { display:block; width:100%; height:100%; background-color:#fff8d9; color:#808080; white-space:nowrap;}
+.sms_pop_list_table td {height:27px; text-align:left; vertical-align:middle; background-color:#FFFFFF; border-bottom:#e1e1e1 solid 1px; }
+.sms_list_space { width:10px; display:inline-table;}
+
+/* 20141231 사용자 프로필 추가 */
+.profile_table01 .my_table_con {margin-top:0; width:508px; border:1px solid #d4d4d4; border-bottom:0;}
+.profile_table01 .txt_gb12 {line-height:normal !important;}
+.profile_table01 .myttit01 {width:70px; height:13px !important; line-height:normal !important; padding:5px !important;}
+.profile_table01 .myttit02 {width:70px; height:13px !important; line-height:normal !important; padding:5px !important;}
+.profile_table01 .my_con01_line {height:13px !important; line-height:normal !important; padding:5px !important;}
+.profile_table02 .my_table_con {margin-top:0; border:1px solid #d4d4d4; border-bottom:0;}
+.profile_table02 .myttit01 {width:70px; height:13px !important; line-height:normal !important; padding:5px !important;}
+.profile_table02 .myttit02 {width:70px; height:13px !important; line-height:normal !important; padding:5px !important;}
+.profile_table02 .my_con01_line {height:13px !important; line-height:normal !important; padding:5px !important;}
+.profile_schedule {margin-top:15px;}
+.profile_schedule_l03 {width:602px; padding:10px; border:1px solid #d4d4d4; background:#ffffff;}
+
+.pro_g {width:auto;}
+.layer_searchlist2 { margin-top:10px; float:left; width:555px; height:549px; background:#fff; border:1px solid #d4d2d2;}
+.layer_searchlist2 .member_list2 {float:left;}
+.layer_searchlist2 .member_list2 ul {width:100%; padding:0; margin:0; list-style:none; margin-right:10px;}
+.layer_searchlist2 .member_list2 ul .sel {line-height:28px; padding:5px 5px 5px 5px; _height:20px; _line-height:20px; _padding-top:7px; border-bottom:1px solid #e1e1e1; background:#f0fafd;}
+.layer_searchlist2 .member_list2 ul li {line-height:28px; padding:5px 5px 5px 5px; _height:20px; _line-height:20px; _padding-top:7px; border-bottom:1px solid #e1e1e1; white-space:nowrap;}
+.layer_searchlist2 .member_list2 ul li span {white-space:nowrap;}
+.layer_searchlist2 .layer_searchlist_info {display:none; width:530px; padding-right:5px;}
+.layer_searchlist2 .layer_searchlist_info_list {width:530px; height:477px; padding-right:5px;}
+.layer_searchlist2 .search_list_table ul li {line-height:18px; min-height:18px; background:url(/smarts4j/covicore/resources/images/covision/dot02.gif) no-repeat 2px 7px;}
+.layer_searchlist2 .search_list_table .text {clear:both;}
+.layer_searchlist2 .search_list_table ul {min-width:180px; margin:0;}
+.layer_searchlist2 .text_box {min-width:240px; border:0; border-left:1px solid #e1e1e1; padding:0; padding-left:10px;}
+.layer_searchlist2 .search_list_table {margin-bottom:10px;}
+.layer_searchlist2 .search_list_table .face {}
+.layer_searchlist_style { float:right; margin-top:5px; margin-right:10px;}
+.layer_searchlist_title { height:27px; background:#919adb;}
+.layer_searchlist_title_txt {float:left; height:34px; line-height:34px; padding-left:12px; font-weight:bold; color:#fff;}
+.popup_bul {margin-top:-4px; _margin-top:-2px;}
+
+.pop_body7_info {list-style:none; margin:0; padding:0;}
+.profile_list_table {table-layout:fixed;}
+.profile_list_table .input_check {margin-top:4px; margin-bottom:-1px; vertical-align:middle;}
+.profile_list_table td .ellipsis2 {max-width:135px; height:auto; white-space:nowrap;}
+.profile_list_table td .txt_bb12 .txt_gn11_blur3 {font-weight:normal;}
+.profile_out {margin-top:10px; width:100%; border:1px solid #e1e1e1;}
+.profile_out td {padding:5px;}
+
+.Theme_btn {display:inline-block; margin-left:3px; margin-top:10px;}

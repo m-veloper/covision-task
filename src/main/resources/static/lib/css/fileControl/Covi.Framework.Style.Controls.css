@@ -1,0 +1,207 @@
+@CHARSET "UTF-8";
+
+/* DivPopup */
+.layer_divpop {overflow:visible;line-height:normal;position:absolute;}
+.layer_divpop .divpop_header {margin:0; line-height:32px; padding-left:8px; background:url(/smarts4j/covicore/resources/images/covision/bg_pop2.gif) repeat-x; height:32px; padding-top:1px \9; color:#000; font-size:13px;text-align:left;cursor:move;overflow:hidden;text-overflow:ellipsis;-o-text-overflow: ellipsis;-ms-text-overflow:ellipsis;padding-right:72px;}
+.layer_divpop .divpop_header_ico {background:url(/smarts4j/covicore/resources/images/covision/ico_pop.gif) no-repeat 0 2px; line-height:32px;padding-left:12px; font-weight:bold;}
+.layer_divpop .divpop_contents {position:relative;border:3px solid #6e7882;background:#fff;}  
+.layer_divpop .divpop_body {color:#444;font-family:'돋움',Dotum,'굴림',Gulim,AppleGothic,Sans-serif;font-size:12px;line-height:14px;}
+.layer_divpop .divpop_close {position:absolute; top:4px; right:4px;}
+.layer_divpop .divpop_full {position:absolute; top:4px; right:72px;}
+.layer_divpop .divpop_mini {position:absolute; top:4px; right:38px;}
+.layer_divpop .divpop_window {position:absolute; top:4px; right:106px;}
+.layer_divpop .divpop_window_fix {position:absolute; top:4px; right:72px;} 
+
+/* Alert 팝업 */ 
+.layer_alert {overflow:visible;line-height:normal;position:absolute;}
+.layer_alert .alert_content{position:relative;border:3px solid #6e7882;background:#fff;}
+.layer_alert .alert_header{ line-height:30px; padding-left:8px; background:url(/smarts4j/covicore/resources/images/covision/bg_pop.gif) repeat-x; height:30px; padding-top:1px \9; color:#000; font-size:13px;text-align:left;font-weight:bold;overflow:hidden;text-overflow:ellipsis;-o-text-overflow: ellipsis;-ms-text-overflow:ellipsis;padding-right:30px;}  
+.layer_alert .alert_header_ico {line-height:30px;background:url(/smarts4j/covicore/resources/images/covision/ico_pop.gif) no-repeat 0 2px; padding-left:12px;}
+.layer_alert .alert_body{ padding:10px; text-align:center;}
+.layer_alert .alert_body p{margin:0;padding:0;font:normal 12px dotum,'돋움',Apple-Gothic,맑은 고딕, Malgun Gothic,sans-serif;color:#808080; vertical-align:middle;}
+.layer_alert .alert_body span{margin:0;padding:0;font:normal 12px dotum,'돋움',Apple-Gothic,맑은 고딕, Malgun Gothic,sans-serif;color:#808080; vertical-align:middle;}
+.layer_alert .alert_body div{margin:0;padding:0;font:normal 12px dotum,'돋움',Apple-Gothic,맑은 고딕, Malgun Gothic,sans-serif;color:#808080; vertical-align:middle;}
+
+.layer_alert .ly_btn{height:22px; margin-top:9px;}
+.layer_alert em.btn_bs_l{white-space:nowrap; float:left; height:21px; text-align:center;  background:url(/smarts4j/covicore/resources/images/covision/btn_bs.gif) no-repeat 0 0; font-style:normal;cursor:pointer; margin:0 2px 0 2px;  padding:0 0 0 5px; _padding:1px 0 0 5px;/*ie6*/}
+.layer_alert em.btn_ws_l{white-space:nowrap;float:left; height:21px; text-align:center;  background:url(/smarts4j/covicore/resources/images/covision/btn_ws.gif) no-repeat 0 0; font-style:normal;cursor:pointer; margin:0 2px 0 2px;  padding:0 0 0 5px; _padding:1px 0 0 5px;/*ie6*/}
+.layer_alert span.btn_bs_r{white-space:nowrap;float:left; line-height:21px;  line-height:22px \9;/*ie9*/ *line-height:20px;/*ie7*/ _line-height:20px;/*ie6*/ margin-left:1px; height:21px; _height:15px;/*ie6*/   background:url(/smarts4j/covicore/resources/images/covision/btn_bs.gif) no-repeat right; cursor:pointer; padding-right:1px; padding:0 5px 0 0; _padding:0 5px 0 0;/*ie6*/}
+.layer_alert span.btn_ws_r{white-space:nowrap;float:left; line-height:21px;  line-height:22px \9;/*ie9*/ *line-height:20px;/*ie7*/ _line-height:20px;/*ie6*/ margin-left:1px; height:21px; _height:15px;/*ie6*/   background:url(/smarts4j/covicore/resources/images/covision/btn_ws.gif) no-repeat right; cursor:pointer; padding-right:1px; padding:0 5px 0 0; _padding:0 5px 0 0;/*ie6*/}
+.layer_alert .txt_btn_bs {font-size:12px; color:#e9e9e9; text-align:center; padding:0 7px 0 7px;font-weight:bold;}
+.layer_alert .txt_btn_ws {font-size:12px; color:#7c7c7c; text-align:center; padding:0 7px 0 7px;font-weight:bold;}
+.layer_alert .ly_close {position:absolute;top:4px;right:4px;}
+.layer_alert .img_align { margin-top:0px; *margin-top:0px;/*ie7*/ margin-right:4px; _margin-top:0px;/*ie6*/}
+
+ /* Balloon 말풍선 */
+.layer_balloon {position:absolute;z-index:10;margin-top:5px; padding:5px; border:1px solid #888;background:#fff;text-align:left;}  
+.layer_balloon .close{position:absolute;top:3px;right:4px;}    
+.layer_balloon .edge_cen{position:absolute;top:0;left:50%;width:9px;height:6px;margin:-6px 0 0 -5px;background:url(/smarts4j/covicore/resources/images/covision/bg_layer_edge.gif) no-repeat 0 0;font-size:0}  
+.layer_balloon .edge_rgt{position:absolute;top:0;right:0;width:9px;height:6px;margin-top:-6px; margin-right:8px;background:url(/smarts4j/covicore/resources/images/covision/bg_layer_edge.gif) no-repeat 0 0;font-size:0}
+.layer_balloon .edge_lgt{position:absolute;top:0;left:0;width:9px;height:6px;margin-top:-6px; margin-left:8px;background:url(/smarts4j/covicore/resources/images/covision/bg_layer_edge.gif) no-repeat 0 0;font-size:0}
+
+/* 달력 컨트롤 */
+.c_day {background:#fff; vertical-align:middle;}
+.t_day {background:#eff6fb; vertical-align:middle;}
+.s_day {background:#64a2dc; vertical-align:middle;}
+.w_day {height:12px; padding:4px 5px; background:#f0f0f0; vertical-align:middle;}
+.cal_body { width:100%; margin:3px 0 8px 0; }
+.cal_month {font-size:12px; font-weight:bold;}
+.txt_sun {color:#ff0000;}
+.txt_sat {color:#748cd2;}
+.txt_today {color:#fff; font-weight:bold;}
+.ttday { font-size: 8pt; font-family: Tahoma; color: #fff; line-height: 9pt; text-align:center;}
+.stylecal { font-size: 8pt; font-family: Tahoma; color: #808080; line-height: 9pt; text-align:center; }
+.notmonth { font-size: 8pt; font-family: Tahoma; color: #FFFFFF; line-height: 9pt; text-align:center; }
+.futuremonth { font-size: 8pt; font-family: Tahoma; color: #CCCCCC; line-height: 9pt; text-align:center; }
+a.ttday:link {display:block; font-size: 8pt; font-family: Tahoma; color: #fff; line-height: 9pt;  text-decoration: none; text-align:center; }
+a.ttday:visited {display:block; font-size: 8pt; font-family: Tahoma; color: #fff; line-height: 9pt;  text-decoration: none; text-align:center; }
+a.ttday:hover {display:block; font-size: 8pt; font-family: Tahoma; color: #fff; line-height: 9pt; text-decoration: none; background-color:#64a2dc; text-align:center;}
+a.notmonth:link {display:block; font-size: 8pt; font-family: Tahoma; color: #c5c5c5; line-height: 9pt;  text-decoration: none; text-align:center; }
+a.notmonth:visited {display:block; font-size: 8pt; font-family: Tahoma; color: #c5c5c5; line-height: 9pt;  text-decoration: none; text-align:center; }
+a.notmonth:hover {display:block; font-size: 8pt; font-family: Tahoma; color: #808080; line-height: 9pt; text-decoration: none; background-color:#f2f2f2; text-align:center;}
+a.stylecal:link {display:block; font-size: 8pt; font-family: Tahoma; color: #808080; line-height: 9pt;  text-decoration: none; text-align:center; }
+a.stylecal:visited {display:block; font-size: 8pt; font-family: Tahoma; color: #808080; line-height: 9pt;  text-decoration: none; text-align:center; }
+a.stylecal:hover {display:block; font-size: 8pt; font-family: Tahoma; color: #808080; line-height: 9pt; text-decoration: none; background-color:#f2f2f2; text-align:center; }
+a.gotoday {font-size:11px; text-decoration:none;}
+a.gotoday:hover {font-size:11px; text-decoration:underline;}
+.row_off { background-color:#fff; }
+.row_on { background-color:#E8E8F3; }
+.row_off_a { background-color:#fff; }
+.row_on_a { background-color:#f2f2f2}
+.trow_off { background-color:#eff6fb; }
+.trow_on { background-color:#eff6fb; }
+.trow_off_a { background-color:#eff6fb; }
+.trow_on_a { background-color:#eff6fb;} 
+.srow_off { background-color:#64a2dc; }
+.srow_on { background-color:#64a2dc; }
+.srow_off_a { background-color:#64a2dc; }
+.srow_on_a { background-color:#64a2dc;}
+.ime_calender_mode {ime-mode:disabled;cursor:pointer;background-color:#fefae1;}
+
+
+/* 그리드 뷰 컨트롤 - 사용자 디자인 */
+.table_list{ margin-top:15px;} /* 테이블을 감싸는 Div */
+.table_list table {clear:both; position:relative; width:100%; font-size:12px; color:#777; border-collapse:collapse; margin-top:0px;}
+.table_list table th { height:30px; margin:0px; padding:0px; background:url(/smarts4j/covicore/resources/images/covision/table_th_bg.gif) repeat-x ; text-align:center; vertical-align:middle;white-space:nowrap;}
+.table_list table th a { font-weight:bold;}
+.table_list table tbody td { height:26px; line-height:21px; *line-height:16px; padding:3px 2px 0 3px \9; *padding:2px 2px 0 3px; padding:3px 2px 1px 3px;border-bottom:1px solid #e1e1e1;}
+.table_list table tfoot td {height:26px; line-height:21px; *line-height:16px; padding:3px 2px 0 3px \9; *padding:2px 2px 0 3px; padding:3px 2px 1px 3px; border-bottom:1px solid #e1e1e1;}
+.table_list table .align{ text-align:left;}
+
+
+/* 그리드 뷰 컨트롤 - 해더에 rowspan 을 사용하는 경우  */
+.table_list_rowspan{ margin-top:15px;} /* 테이블을 감싸는 Div */
+.table_list_rowspan table {clear:both; position:relative; width:100%; font-size:12px; color:#777; border-collapse:collapse; margin-top:0px;}
+.table_list_rowspan table .rowspan { height:60px; margin:0px; padding:0px; background:url(/smarts4j/covicore/resources/images/covision/table_th_rowspan.gif) repeat-x ; text-align:center; vertical-align:middle;}
+.table_list_rowspan table .rowspan_top { height:30px; margin:0px; padding:0px; background:url(/smarts4j/covicore/resources/images/covision/table_th_rowspan_top.gif) repeat-x ; text-align:center; vertical-align:middle;}
+.table_list_rowspan table .rowspan_bottom { height:30px; margin:0px; padding:0px; background:url(/smarts4j/covicore/resources/images/covision/table_th_bg.gif) repeat-x ; text-align:center; vertical-align:middle;}
+.table_list_rowspan table th a { font-weight:bold;}
+.table_list_rowspan table tbody td { height:26px; line-height:21px; *line-height:16px; padding:3px 2px 0 3px \9; *padding:2px 2px 0 3px; padding:3px 2px 1px 3px;border-bottom:1px solid #e1e1e1;}
+.table_list_rowspan table tfoot td {height:26px; line-height:21px; *line-height:16px; padding:3px 2px 0 3px \9; *padding:2px 2px 0 3px; padding:3px 2px 1px 3px; border-bottom:1px solid #e1e1e1;}
+.table_list_rowspan table .align{ text-align:left;}
+
+
+/* 그리드 뷰 컨트롤 - 관리자 디자인 */
+.ztable_list table {clear:both; position:relative; width:100%; font-size:12px; color:#777; border-collapse:collapse; margin-top:0px;}
+.ztable_list table thead tr {height:30px; margin:0px; padding:0px; background:url(/smarts4j/covicore/resources/images/covision/zadmin_table_th_bg.gif) repeat top left;text-align:center; vertical-align:middle;}
+.ztable_list table tr th {height:30px; margin:0px; padding:0px; background:url(/smarts4j/covicore/resources/images/covision/zadmin_table_th_bg.gif) repeat top left;text-align:center; vertical-align:middle;white-space:nowrap;}
+.ztable_list table th {text-align:center; vertical-align:middle;white-space:nowrap;}
+.ztable_list table th a { font-weight:bold;}
+.ztable_list table .table_top { padding-left:0px; border-top:1px solid #c8c8c8; border-left:1px solid #dfdfdf; border-bottom:1px solid #c8c8c8;}
+.ztable_list table .table_top_first {color:#888; border-top:1px solid #c8c8c8; border-bottom:1px solid #c8c8c8;}
+.ztable_list table tbody td {height:24px; line-height:21px; *line-height:16px; padding:3px 0 0 0 \9; *padding:2px 0 0 0; padding:3px 2px 1px 2px; border-bottom:1px solid #e1e1e1;}
+.ztable_list table tfoot td {height:24px; line-height:21px; *line-height:16px; padding:3px 0 0 0 \9; *padding:2px 0 0 0; padding:3px 0 1px 0; border-bottom:1px solid #e1e1e1;}
+.ztable_list div {overflow:auto;overflow-y:hidden;}
+
+/* 그리드뷰 Colum 내 컨텐츠 제어  */
+/* 말줄임 CSS - width가 정의되지 않은 경우 자동 말줄임 => 뒤에 ...이 보이지 않음. */
+.grv_ellipsis_none{height:13px;line-height:14px;width:100%;overflow:hidden;-o-text-overflow:ellipsis; /*Opera 9*/-ms-text-overflow:ellipsis; /* IE 8 above */-moz-binding:url('ellipsis.xml#ellipsis');text-overflow:ellipsis;display:block;}
+/* 말줄임 CSS - <P>태그에 width를 지정한 경우 말줄임 => 뒤에 ...이 나타남. */
+.grv_ellipsis_dot{white-space:nowrap;text-overflow:ellipsis;/* IE, Safari */-o-text-overflow: ellipsis;/* Opera under 10.7 */-ms-text-overflow:ellipsis; /* IE 8 above */overflow:hidden;/* "overflow" value must be different from "visible" */ width:100%;-moz-binding: url('/Images/Css/ellipsis.xml#ellipsis');}
+/* 줄바꿈 하지 않게 하는 CSS - width를 지정 하던 않하던 상관없이 줄바꿈을 하지않고 모두 보임. */
+.grv_nowrap{white-space:nowrap;width:100%;display:block;}
+/* 자동 줄바꿈 CSS - 줄바꿈이 되지않는 문자열(연속되는 영문)이라 하더라도 줄바꿈이 됨. */
+.grv_wordbreak{word-wrap:break-word;/* Internet Explorer 5.5+ */white-space: pre-wrap; /* css-3 */white-space: -moz-pre-wrap; /* Mozilla, since 1999 */white-space: -pre-wrap; /* Opera 4-6 */white-space: -o-pre-wrap; /* Opera 7 */word-break: break-all;}
+
+/* 페이징 컨트롤 디자인 */
+.paginate {padding:18px; height:15px; line-height:15px; text-align:center; font-size:12px; line-height:15px\0/;/*ie8*/ *height:13px;/*ie7*/ *line-height:13px;/*ie7*/}
+.paginate img{margin-top:-2px; padding:0; margin-top:-1px\0/;/*ie8*/ *margin-top:-6px;/*ie7*/ _margin-top:-3px;/*ie6*/}
+.paginate a{width:auto; height:15px; text-align:center; padding:3px 3px 2px 2px; line-height:15px; margin-left:2px; margin-right:2px; *padding:3px 3px 3px 2px;/*ie7*/ *height:13px;/*ie7*/ *line-height:13px;/*ie7*/}
+.paginate a:hover{}
+.paginate *{display:inline-block; border:1px solid #fff; font-size:12px;}
+.paginate strong {border:1px solid #dbdbdb; width:auto; height:15px; text-align:center; padding:3px 3px 2px 2px; line-height:15px; color:#f1641e; font-size:12px; background-color:#f7f7f7; line-height:18px\9;/*ie9*/ line-height:15px\0/;/*ie8*/ *padding:3px 3px 3px 2px;/*ie7*/ *height:13px;/*ie7*/ *line-height:13px;/*ie7*/}
+.paginate span a {}
+.paginate span a:hover {border:1px solid #dbdbdb; width:auto; height:15px; line-height:15px; text-align:center; font-size:12px; background-color:#fff; line-height:18px\9;/*ie9*/ line-height:15px\0/;/*ie8*/ *padding:3px 3px 3px 2px;/*ie7*/ *height:13px;/*ie7*/ *line-height:13px;/*ie7*/} 
+
+/* 페이징 컨트롤 중 Page Go 디자인 */
+.paging table  tbody td { height:23px; line-height:21px; padding:5px 0 3px 0; padding:5px 0 0 0 \9;border:0; text-align:center;}
+.paging .go { width:180px; text-align:center;}
+
+/* 사용하는 곳 없음.
+.total_search {*float:left; display:inline-block; margin-top:3px; padding:0; }
+.searchlist1 {float:left;}
+.searchlist2 { float:left;margin-left:5px; margin-top:-2px;}
+.searchlist3{ float:left;margin-left:5px;}
+ */
+ 
+ /* Button(API Test 등에서 막 만들어서 쓰는 버튼) */
+.tbutton {font-weight:bold;float:left;margin-right:3px;cursor: pointer;line-height: 15px;padding: 2px 8px 1px 8px;background:url(/smarts4j/covicore/resources/images/covision/btn_bs.gif) repeat 0 0; color:#FFFFFF; font-size:12px;}
+
+/* Ime-Mode INPUT Controls Style */
+.ime_mode_disabled {ime-mode:disabled;}
+
+div.layout_boxtab {float:left;/*align:center;*/
+  padding:20px 20px 20px 20px; 
+}
+
+/* Tab1 style*/
+.tab2{position:relative;height:29px;width:100%;background:url(/WebSite/Common/images/tab_menu.gif) repeat-x 0 100%;font-family:'돋움',dotum;font-size:12px;}  
+.tab2 ul,.tab2 ul li{margin:0;padding:0}  
+.tab2 ul li{list-style:none;height:29px;*height:30px;}  
+.tab2 ul li,.tab2 ul li a{background:url(/WebSite/Common/Images/Tab/bg_tab2_off.gif) no-repeat;}  
+.tab2 ul li{float:left;margin-right:-1px;line-height:26px;*height:30px;}  
+.tab2 ul li a{display:inline-block;padding:2px 16px 1px;_padding:3px 16px 0;background-position: 100% 0;font-weight:bold;color:#666;text-decoration:none !important}  
+.tab2 ul li a:hover{color:#000}  
+.tab2 ul li.on,.tab2 ul li.on a{background-image:url(/WebSite/Common/Images/Tab/bg_tab2_on.gif)}  
+.tab2 ul li.on a{color:#517599}  
+
+ /* boxTab style1*/
+.box_type {float:left;width:100%;}  
+.box_type .tab_box{float:left;position:relative;z-index:100;width:100%;}  
+.box_type .tab_box li{float:left;margin-right:3px;border:1px solid #d4d4d4;border-bottom:none;background:#f4f4f4;}  
+.box_type .tab_box li a{display:block;padding:8px 19px 6px;color:#666;text-decoration:none}  
+.box_type .tab_box li a:hover{background:#ffffff;color:#333}  
+.box_type .tab_box li.on{background:#ffffff;}  
+.box_type .tab_box li.on a{color:#517599;font-weight:bold;letter-spacing:-1px;text-decoration:none;vertical-align:top;}  
+.box_type .cont{float:left;width:100%;height:100%;margin-top:-1px;border:1px solid #ccc;background:#ffffff;color:#666;vertical-align:top;}
+/*.box_type .cont{float:left;margin-top:-1px;border:1px solid #ccc;background:#ffffff;color:#666;vertical-align:top,} */ 
+.box_type .cont p{padding:10px} 
+
+/* boxTab style2*/
+.box_type1{width:100%;margin:0;padding:0;height:28px;}  
+.box_type1 .tab_box2{float:left;position:relative;z-index:100;width:100%;background:url(http://html.nhndesign.com/guidelines/uio/img/menu/bg_tab.gif) repeat-x 0 100%;height:28px;}  
+.box_type1 .tab_box2 li{float:left;padding:0;margin-right:-1px;background:url(/WebSite/Common/Images/Tab/bg_tab_left.gif) no-repeat;height:28px;}  
+.box_type1 .tab_box2 li span{display:block;padding:0;margin-left:3px;background:url(/WebSite/Common/Images/Tab/bg_tab_right.gif) no-repeat 100% 0}  
+.box_type1 .tab_box2 li span a{color:#666;line-height:14px;text-decoration:none;display:block;padding:9px 19px 5px}  
+.box_type1 .tab_box2 li a:hover{color:#333}  
+.box_type1 .tab_box2 li.on{background-position:0 -28px}  
+.box_type1 .tab_box2 li.on span{background-position:100% -28px}  
+.box_type1 .tab_box2 li.on span a{color:#517599;font-weight:bold;letter-spacing:-1px}  
+.box_type1 .cont{float:left;width:100%;height:100px;margin-top:-1px;border:1px solid #ccc;background:#f4f4f4;color:#666} 
+/* .box_type1 .cont{float:left;margin-top:-1px;border:1px solid #ccc;background:#f4f4f4;color:#666}  */
+.box_type1 .cont p{padding:10px} 
+
+/* ColorPicker 컨트롤 */
+.CoviColorPicker {height:100px;width:65px;border:0px #7d7d7d solid;  cursor:pointer; background-color:#FFF;}
+.CoviColorPicker ul{padding:0px; margin:0px;} 
+.CoviColorPicker li{ list-style:none; width:14px; height:15px;  float:left; display:inline-block;  margin-right:1px; margin-bottom:1px;}
+.CoviColorPicker li a{ width:14px; height:15px; margin-right:1px; margin-bottom:1px;}
+.CoviColorPicker li a:hover{ width:14px; height:15px; background:url(/smarts4j/covicore/resources/images/covision/theme_check.gif) no-repeat 4px 4px;margin-right:1px; margin-bottom:1px;}
+.CoviColorPicker a img{ border:1px solid #FFFFFF;}
+.CoviColorPicker a:hover img{border:1px #070707 solid; }
+.CoviColorPicker img{ width:14px; height:14px;}
+
+/* 텍스트박스 필수필드 스타일 */
+.input_must{border:1px #999999 solid; background:url(/smarts4j/covicore/resources/images/covision/ico_must.gif) no-repeat;background-color:#FCF8EF; font-family: 돋움, Dotum, 굴림, 맑은 고딕, Malgun Gothic, Gulim,Apple-Gothic,sans-serif; color:#333333; padding-left:5px;}
+.textarea_must{border:1px #999999 solid;background:url(/smarts4j/covicore/resources/images/covision/ico_must.gif) no-repeat;background-color:#FCF8EF; font-family: 돋움, Dotum, 굴림, 맑은 고딕, Malgun Gothic, Gulim,Apple-Gothic,sans-serif; color:#333333; padding-left:5px;}
+.input_must_hover{border:1px #ff0000 solid;}

@@ -1,0 +1,196 @@
+@CHARSET "UTF-8";
+/********************************************************************
+Covision UXD team
+  - Name : 김동욱
+  - Deta : 2014.06.17
+ ********************************************************************/
+
+.gadget_box {position:relative;}
+.btn_task_setting {position:absolute; top:8px; right:24px;}
+.btn_snslist {position:absolute; top:35px; left:80px;}
+.task_menu {float:left; width:198px; height:27px; background:#ffffff; border-left:1px solid #c2c2c2; border-right:1px solid #c2c2c2; border-bottom:1px solid #c2c2c2;}
+.task_menu .select2 {margin-top:3px; margin-left:3px;}
+.task_menu .select2 span {}
+.selectbox {margin-left:0 !important;}
+/*.task_choice {position:absolute; top:27px; left:33px; list-style:none; border:1px solid #ccc; z-index:100;}*/
+.task_choice {list-style:none;min-width:150px;}
+.task_choice li {background:#fff;}
+.task_choice li a {display:block; height:24px; line-height:24px; padding:0 10px;}
+.task_choice li a:hover {display:block; height:24px; line-height:24px; background:#f9f9f9; padding:0 10px;}
+/*.gadget_task_scroll {width:198px;height:264px; overflow:auto; overflow-x:hidden; border-left:1px solid #c2c2c2; border-right:1px solid #c2c2c2; z-index:50; background:#fff;}*/
+.gadget_task_scroll {width:198px;min-height:264px; overflow:auto; overflow-x:hidden; border-left:1px solid #c2c2c2; border-right:1px solid #c2c2c2; z-index:50; background:#fff;}
+/* .task_search {position:absolute; top:60px; width:182px; height:27px; background:#ffffff; border-left:1px solid #c2c2c2; border-right:1px solid #c2c2c2; border-bottom:1px solid #949494; z-index:1000;}*/
+.task_search {position:absolute; top:60px; width:182px; height:27px; background:#ffffff; border-left:1px solid #c2c2c2; border-right:1px solid #c2c2c2; border-bottom:1px solid #949494; z-index:9;}
+.btn_task {float:right; margin-top:5px;}
+.btn_task a {margin-right:7px;}
+.btn_task_search2 img {margin-top:-1px;}
+.gadget_task_ul {clear:both; list-style:none; padding:0;}
+.gadget_task_ul li {border-top:1px solid #dddddd; margin:-1px;}
+.task_staton {position:relative; padding-top:5px; padding-right:2px; padding-bottom:5px; min-height:33px; border-left:3px solid #ff9000; background:#ffffff; border-bottom:1px solid #dddddd;}
+.task_statoff {position:relative; padding-top:5px; padding-right:2px; padding-bottom:5px; min-height:33px; border-left:3px solid #ffffff; background:#ffffff; border-bottom:1px solid #dddddd;}
+.gadget_task_ul_depth_box {margin-top:5px; margin-left:5px; position:relative; margin-bottom:5px; border:1px solid #dddddd; border-right:0;}
+.gadget_task_ul_depth_box .edge_cen {position:absolute; top:0; left:22px; width:9px; height:6px; margin:-5px 0 0 -5px; background:url(/smarts4j/covicore/resources/images/covision/bg_layer_edge.gif) no-repeat 0 0;}
+.gadget_task_ul_depth {list-style:none; margin-top:-1px !important;}
+.gadget_task_ul_depth li {background:#fff; border-top:1px dotted #c2c2c2;}
+.gadget_task_ul_depth .task_staton {background:#fff; border-bottom:0;}
+.gadget_task_ul_depth .task_statoff {background:#fff; border-bottom:0; border-left:3px solid #fff;}
+.gadget_task_ul_depth_box2 {position:relative;}
+.gadget_task_ul_depth_box2 .edge_cen {position:absolute; top:0; left:42px; width:9px; height:6px; margin:-5px 0 0 -5px; background:url(/smarts4j/covicore/resources/images/covision/bg_layer_edge.gif) no-repeat 0 0;}
+.gadget_task_ul_depth_box2 .gadget_task_ul_depth {margin-top:5px !important; margin-left:10px !important; border-top:1px solid #c2c2c2; border-left:1px solid #c2c2c2;}
+.gadget_task_ul_depth_box2 .gadget_task_ul_depth li {background:#ffffff; border-top:0;}
+.gadget_task_ul_depth_box2 .gadget_task_ul_depth .task_staton {background:#ffffff; border-bottom:1px solid #c2c2c2;}
+.gadget_task_ul_depth_box2 .gadget_task_ul_depth .task_statoff {background:#ffffff; border-left:3px solid #ffffff; border-bottom:1px solid #c2c2c2;}
+.task_ul {list-style:none; margin:0; padding:0;}
+/*.task_ul li {margin-left:8px; margin-right:8px; border:0; background:#ffffff;}*/
+.task_ul li {margin-left:8px; margin-right:1px; border:0; background:#ffffff;}
+.task_ul li .file {margin-top:-1px; width:12px;}
+/* .task_ul li.name {width:137px; margin-top:2px; margin-bottom:5px;} */
+.task_ul li.name {width:175px; margin-top:2px; margin-bottom:5px;}
+.task_ul li.date {clear:both; padding-top:6px; padding-left:10px;}
+.task_list_table {float:left; margin-top:6px !important; list-style:none;}
+.task_list_table li {float:left; height:12px; line-height:normal; margin-left:0; margin-right:7px;}
+.task_list_table li img {width:12px;}
+.gadget_task_scroll a img {vertical-align:middle; margin-bottom:1px;}
+.task_list_table2 {float:left; list-style:none;}
+.task_list_table2 li {float:left; height:12px; line-height:normal; margin-left:0; margin-right:7px;}
+.task_list_table2 li img {width:12px;}
+/*.task_percent {font-size:11px; font-weight:bold; text-decoration:underline; color:#3879d9; white-space:nowrap;}*/
+.task_percent {font-size:12px; color:#3879d9; white-space:nowrap;}
+.task_date_right {position:absolute; top:25px; right:5px;}
+.task_date {font-size:12px; color:#888888;}
+.task_paging {clear:both; margin-top:-1px; padding-top:6px; height:20px; border-top:1px solid #ddd; border-left:1px solid #c2c2c2; border-right:1px solid #c2c2c2; background:#ffffff; text-align:center; z-index:1000;}
+.task_per_ui {float:left;list-style:none; width:180px; margin-right:15px;}
+.task_per_ui li {float:left; height:24px; line-height:24px;}
+.task_per_ui li a {}
+.task_per_ui li a:hover {text-decoration:underline;}
+.task_per_ui2 {float:left;list-style:none; margin-right:20px !important;}
+.task_per_ui2 li {float:left; margin-left:3px; margin-right:3px;}
+.task_per_ui2 li a {}
+.task_per_ui2 li a:hover {text-decoration:underline;}
+.per_select a {color:#ed601b; font-weight:bold;}
+.task_red {color:#FF0000;}
+/*.task_pm {position:absolute; top:7px; right:4px;}*/
+.task_pm {float:right;padding-right:3px;padding-top:0px;}
+
+.task_ly_work {position:absolute; z-index:1000000; margin-top:5px; padding:5px; border:1px solid #888; background:#fff; text-align:left; margin-left:-10px;}  
+.task_ly_work .clse{position:absolute;top:3px;right:4px;}    
+.task_ly_work .edge_cen{position:absolute;top:0;left:15px;width:9px;height:6px;margin:-6px 0 0 -5px;background:url(/smarts4j/covicore/resources/images/covision/bg_layer_edge.gif) no-repeat 0 0;font-size:0}  
+
+.task_ly_progress {position:absolute; z-index:100000; margin-top:0; padding:5px; border:1px solid #888; background:#fff; text-align:left; margin-left:-10px;}  
+.task_ly_progress .clse{position:absolute;top:3px;right:4px;}    
+.task_ly_progress .edge_cen{position:absolute;top:0;left:29px;width:9px;height:6px;margin:-6px 0 0 -5px;background:url(/smarts4j/covicore/resources/images/covision/bg_layer_edge.gif) no-repeat 0 0;font-size:0}  
+
+.task_progress_ul {list-style:none; margin:0; padding:0;}
+.task_progress_ul li {line-height:22px; border-bottom:1px dotted #ddd; background:#ffffff;}
+
+.task_progress_ui {width:150px; margin-right:25px;}
+.task_progress_ui td {height:22px;}
+.task_progress_ui td a { font-weight:bold;}
+.task_progress_ui td a:hover {text-decoration:underline;}
+.complate {color:#3879d9;}
+.return {color:#ed601b;}
+
+.task_ly_file {position:absolute; z-index:1000000; margin-top:0; padding:5px; border:1px solid #888; background:#fff; text-align:left; margin-left:-85px;}  
+.task_ly_file .clse{position:absolute;top:3px;right:4px;}    
+.task_ly_file .edge_cen{position:absolute;top:0;left:10px;width:9px;height:6px;margin:-6px 0 0 -5px;background:url(/smarts4j/covicore/resources/images/covision/bg_layer_edge.gif) no-repeat 0 0;font-size:0}  
+
+.task_file_ui {list-style:none; width:135px; margin-right:15px !important;}
+.task_file_ui li {padding-top:4px; height:18px; margin-right:0; border:0;}
+.task_file_ui li a img {margin-top:-1px; width:12px;}
+
+.task_list_left {float:left; width:503px; height:630px; border-right:1px solid #444444;}
+.task_list_right {float:left; width:445px; height:610px; overflow:auto; padding:10px;}
+.task_list_title_r {float:right; margin-top:-20px; margin-right:6px;}
+.task_list_title_ul {list-style:none; margin:0; padding:0;}
+.task_list_title_ul li {float:left;}
+
+.task_list_title {padding-left:10px; padding-top:10px; font-weight:bold; height:28px; line-height:28px; border-bottom:1px solid #444444;}
+.task_list_title .txt_blue {color:#3879d9;}
+.task_list_title .grv_ellipsis_dot {white-space:nowrap; text-overflow:ellipsis; -o-text-overflow:ellipsis; -ms-text-overflow:ellipsis; overflow:hidden; width:77%; -moz-binding:url('/Images/Css/ellipsis.xml#ellipsis'); font-weight:bold;}
+
+.task_list_title_new {padding-left:7px; padding-top:10px; font-weight:bold; height:28px; line-height:28px; border-bottom:1px solid #444444; border-left:3px solid #ff9000;}
+.task_list_title_new .txt_blue {color:#3879d9;}
+.task_list_title_new .grv_ellipsis_dot {white-space:nowrap; text-overflow:ellipsis; -o-text-overflow:ellipsis; -ms-text-overflow:ellipsis; overflow:hidden; width:77%; -moz-binding:url('/Images/Css/ellipsis.xml#ellipsis'); font-weight:bold;}
+
+.task_list_box {height:591px; overflow:auto; overflow-x:hidden;}
+.task_list_cont {border-bottom:1px solid #858585;}
+.task_list_cont_new {border-left:3px solid #ff9000; border-bottom:1px solid #858585;}
+
+.task_list_cont_normal {background:#ffffff; padding:10px;}
+.task_list_cont_my {background:#fffdea; padding:10px;}
+.task_list_cont_select {background:#f0faff; padding:10px;}
+.task_write_info {}
+.task_write_info_right {float:right; font-size:11px; color:#939393;}
+/*
+.task_write_text {position:relative; padding-top:5px; width:100%;}
+*/
+.task_write_text {position:relative; padding-top:5px;}
+/*.task_write_text_close {text-overflow:ellipsis; -o-text-overflow:ellipsis; -ms-text-overflow:ellipsis; -moz-binding:url('/Images/Css/ellipsis.xml#ellipsis'); white-space:nowrap; overflow:hidden;}
+.task_write_text_open {}
+*/
+.task_write_detail {position:absolute; top:4px; right:0; margin-right:-45px;}
+.task_write_detail a {text-decoration:underline; color:#3879d9; font-weight:bold;}
+.task_write_data {position:relative; padding-top:5px;}
+.task_write_share {}
+a.task_write_share {text-decoration:underline; color:#3879d9;}
+.task_write_file {padding-top:5px;}
+.task_write_percent {text-decoration:underline; color:#3879d9; font-weight:bold;}
+.task_write_percent:hover {text-decoration:underline; color:#3879d9; font-weight:bold;}
+
+.task_opinion {margin:10px 0 10px 10px; border:1px solid #c2c2c2; border-right:0;}
+.task_opinion_ul {list-style:none; margin:-1px 0 0 0; padding:0;}
+.task_opinion_ul li {border-top:1px dotted #c2c2c2;}
+.task_opinion_ul li .task_list_cont_normal  {}
+
+.task_opinion_ul .task_list_cont {border-bottom:0;}
+.task_opinion_ul .task_list_cont_new {border-bottom:0;}
+.task_opinion_ul .task_write_text {margin-left:17px;}
+.task_opinion_ul .task_write_file {margin-left:17px;}
+
+.task_reply_ul {list-style:none; margin:0 0 10px 0; padding:0;}
+.task_reply_ul li ul {list-style:none; margin-left:10px; padding:0;}
+.task_reply {position:relative; margin:10px 0 0 20px; border:1px solid #c2c2c2; border-right:0; border-bottom:1px solid #c2c2c2;}
+.task_reply .edge_cen {position:absolute; top:0; left:22px; width:9px; height:6px; margin:-6px 0 0 -5px; background: url(/smarts4j/covicore/resources/images/covision/bg_layer_edge2.gif) no-repeat 0 0;}
+.task_reply .task_list_cont {border-bottom:0;}
+.task_reply .task_list_cont_new {border-bottom:0;}
+
+.task_list_right .w_con01 {margin-top:10px;}
+.task_list_right .ttit01_text {background-color:#f9f9f9; font-weight:bold; border-right:1px solid #CCCCCC; border-bottom:1px solid #d7d7d7; height:180px; padding-top:5px; padding-bottom:5px; padding-left:10px;}
+
+.gadget_task_ul .task_opinion {margin:5px 0 5px 5px;}
+.gadget_task_ul .task_opinion .task_opinion_ul {border-bottom:1px solid #c2c2c2; border-left:1px solid #c2c2c2;}
+.gadget_task_ul .task_opinion .task_write_per {margin-left:0;}
+.gadget_task_ul .task_opinion .task_write_text {margin-left:0;}
+.gadget_task_ul .task_opinion .task_date {margin-left:0;}
+.gadget_task_ul .task_opinion .task_write_file {margin-left:0;}
+.gadget_task_ul .task_reply {margin-top:6px; margin-left:5px; margin-bottom:6px;}
+.gadget_task_ul .task_reply_ul li ul {margin-left:0;}
+
+.task_write_data .task_ly_progress {top:26px; right:0; width:200px;}
+.task_ly_progress .task_progress_ul li {border:0;}
+.task_list {padding:0 15px; margin-bottom:20px;}
+.task_list_scroll {height:309px; overflow:auto; overflow-x:hidden;}
+
+
+
+/*말풍선팝업-환경설정*/ 
+.task_ly_help{position:absolute;z-index:10;margin-top:30px; padding:5px; border:1px solid #888;background:#fff;text-align:left;}  
+.task_ly_help .close{position:absolute;top:3px;right:4px;}    
+.task_ly_help .edge_cen{position:absolute;top:0;left:50%;width:9px;height:6px;margin:-6px 0 0 -5px;background:url(/smarts4j/covicore/resources/images/covision/bg_layer_edge.gif) no-repeat 0 0;font-size:0}  
+.task_ly_help .edge_rgt{position:absolute;top:0;right:0;width:9px;height:6px;margin-top:-6px; margin-right:2px;background:url(/smarts4j/covicore/resources/images/covision/bg_layer_edge.gif) no-repeat 0 0;font-size:0}
+.task_ly_help .edge_lgt{position:absolute;top:0;left:0;width:9px;height:6px;margin-top:-6px; margin-left:8px;background:url(/smarts4j/covicore/resources/images/covision/bg_layer_edge.gif) no-repeat 0 0;font-size:0}   
+
+.task_ly_data{ padding:15px; width:146px; white-space:normal;}
+.task_ly_data span{ width:24px; display:block; float:left; margin-top:5px;}
+.task_ly_data dd{float:left; background:url(/smarts4j/covicore/resources/images/covision/line_pop.gif) repeat-x bottom;}
+.task_ly_data a em { float:left; display:block; width:170px; font-style:normal;  margin-top:5px;  padding-bottom:6px; cursor:pointer;}
+.task_ly_data a:hover em { float:left; display:block; width:170px; font-style:normal;   cursor:pointer;}}
+.task_ly_data dd.ly_data_last{float:left; background:none;}
+
+ /*가젯 설정 화면*/
+/* .task_gadget_ad{width:146px; padding-left:12px; padding-right:12px; padding-top:2px; padding-bottom:2px;}*/
+.task_gadget_ad{width:146px; padding-left:7px; padding-right:7px; padding-top:2px; padding-bottom:2px;}
+.task_gadget_ad h4{color:#333333; font-weight:bold; background:url(/smarts4j/covicore/resources/images/covision/ico_gadget.gif) no-repeat 0 5px; padding-left:10px;}
+.task_gadget_ad_all{ line-height:15px; height:20px; margin:5px 0 5px 0; font-weight:bold; color:#333333; border-bottom:1px #c2c2c2 dashed;}
+.task_gadget_ad ul{list-style:none; border-bottom:1px #c2c2c2 dashed; margin-bottom:5px; _margin-top:3px;/*ie6*/}
+.task_gadget_ad li{list-style:none; line-height:23px; height:23px;}
