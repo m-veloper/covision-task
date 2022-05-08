@@ -1,0 +1,116 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        
+        <col style="width:20%" />
+        <col style="width:13%" />
+        <col style="width:27%" />
+        <col style="width:13%" />
+        <col style="width:27%" />
+        
+    </colgroup>
+     <tr>
+     	<th rowspan="2">신청인</th>
+    	<th >성명</th>
+		<td >
+			<input type="text" name="userName" data-type="mField" value="{{ doc.BodyContext.userName }}"    style="width:98%; " >
+		</td>
+		<th >직급</th>
+		<td  >
+			<input type="text"  name="userPosition" data-type="mField" value="{{ doc.BodyContext.userPosition }}"    style="width:98%; " >
+		</td>
+    </tr>
+    <tr>
+    	<th >부서명</th>
+		<td  >
+			<input type="text" name="userDept" data-type="mField" value="{{ doc.BodyContext.userDept }}"    style="width:98%; " >
+		</td>
+		<th >대상자관계</th>
+		<td >
+			<input type="text" name="targetRelation" data-type="mField" value="{{ doc.BodyContext.targetRelation }}"    style="width:98%; " >
+		</td>
+		
+    </tr>
+    
+     <tr>
+     	<th rowspan="3">공상치료<br>대 상 자</th>
+    	<th >성명</th>
+		<td >
+			<input type="text" name="targetName" data-type="mField" value="{{ doc.BodyContext.targetName }}"    style="width:98%; " >
+		</td>
+		<th >직급</th>
+		<td  >
+			<input type="text"  name="targetPosition" data-type="mField" value="{{ doc.BodyContext.targetPosition }}"    style="width:98%; " >
+		</td>
+    </tr>
+    <tr>
+    	<th >부서명</th>
+		<td  >
+			<input type="text" name="targetDept" data-type="mField" value="{{ doc.BodyContext.targetDept }}"    style="width:98%; " >
+		</td>
+		<th >주민등록번호</th>
+		<td >
+			<input type="text" name="rrn" data-type="mField" value="{{ doc.BodyContext.rrn }}"    style="width:98%; " >
+		</td>
+		
+    </tr>
+    <tr>
+    	<th >주소</th>
+		<td colspan="4" >
+			<input type="text" name="address" data-type="mField" value="{{ doc.BodyContext.address }}"    style="width:98%; " >
+		</td>
+		
+    </tr>
+    
+   <tr>
+    <th >발생부위,발병명<br>(기타사항)</th>
+	    <td colspan="4" >
+		    <div style="width:99% ;height : 180px">
+		    	<textarea data-type="mField" name="etcComment" style="width:99%" rows="10" >{{ doc.BodyContext.etcComment }}</textarea>
+		    </div>
+	    </td>
+    </tr>
+    
+</table>
+
+<table class="tableStyle linePlus "><!-- class="table_10" -->
+    <colgroup>
+        
+         <col style="width:30%" />
+         <col style="width:40%" />
+        <col style="width:30%" />
+    </colgroup>
+    	<tr  >
+    	<td colspan ="3" style="font-size:14px; text-align :center ;border-bottom: none;">
+    		<br><br>
+    		<strong>상기 내용으로 공상 치료 신청서를 제출합니다.</strong>
+    		<br><br>
+    	</td>
+    	</tr>
+  
+		<tr  >
+			<td style="border-right: none; border-top: none !important; border-bottom: none; "   ></td>	    
+			<td align ="center" style="border-left: none; border-right: none; border-top: none !important;  border-bottom: none; " >
+				<input type="text"  autocomplete ="off" data-pattern="date" data-date-format="yy년 mm월 dd일" placeholder ="20    년      월       일" data-type="mField"   name="writeDate"  value="{{ doc.BodyContext.writeDate }}" style="text-align:center;width:98% ; " >			
+			</td>
+			<td style=" border-top: none !important; border-bottom: none; "   >
+			<br><br></td>	  
+		</tr>
+		<tr  >
+			<td style="border-right: none; border-top: none !important; border-bottom: none; "   ></td>	  
+			<td align ="right" style="border-left: none; border-right: none; border-top: none !important; border-bottom: none; "   >신청인 </td>	    
+			<td  style="border-left: none;  border-top: none !important;  border-bottom: none; " >
+				<input type="text" name="writePerson" data-type="mField" value="{{ doc.BodyContext.writePerson}}"    style="text-align:center;width:65% ; " >(서명 또는 인)
+		
+			</td>
+		</tr>
+		<tr  >
+			<td colspan ="3" style="color : red" >※ 붙임서류 : 사고경위서 (육하원칙에 의거하여 작성) 1부.</td>	
+		</tr>
+		
+    </table>
+   
+<!--실 결재양식 내용 부분 끝 -->

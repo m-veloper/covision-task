@@ -1,0 +1,145 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+
+		<colgroup>
+			<col style="width:20%" />
+	       <col style="width:80%" />
+		</colgroup>  
+		
+			 
+		<tr>
+			<th >용어(약어)명</th>
+			<td  >
+				<input type="text" name="wordName" data-type="mField" value="{{ doc.BodyContext.wordName }}"    style="width:98%; " >
+			</td>
+			
+		</tr>
+		
+		<tr>
+			<th >용어(약어)구분</th>
+			<td  >
+			  <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_0">
+					&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id ="chkBox_01" name="chkBox_0"  value="chkBox_01">용어 생성, 수정 
+					&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id ="chkBox_02" name="chkBox_0"  value="chkBox_02">약어 생성, 수정
+				</div>
+			</td>
+		</tr>
+		
+		<tr>
+			<th >신청사유</th>
+			<td  >
+				<input type="text" name="reqReason" data-type="mField" value="{{ doc.BodyContext.reqReason }}"    style="width:98%; " >
+			</td>
+			
+		</tr>
+		<tr>
+			<td colspan="2" style="border-bottom: none;">
+			
+			
+				<table class="tableStyle linePlus "><!-- class="table_10" -->
+				    <colgroup>
+				        
+				         <col style="width:30%" />
+				         <col style="width:40%" />
+				        <col style="width:30%" />
+				    </colgroup>
+				    	<tr  >
+				    	<td colspan ="3" style="font-size:14px; text-align :center ;border: none;">
+				    		<br><br>
+				    		<strong>위와 같이 용어 생성을 요청합니다.</strong>
+				    		<br><br>
+				    	</td>
+				    	</tr>
+				  
+						<tr  >
+							<td style="border: none; "   ></td>	    
+							<td align ="center" style="border: none;" >
+								<input type="text"  autocomplete ="off" data-pattern="date" data-date-format="yy년 mm월 dd일" placeholder ="20    년      월       일" data-type="mField"   name="writeDate"  value="{{ doc.BodyContext.writeDate }}" style="text-align:center;width:98% ; " >			
+							</td>
+							<td style=" border: none !important; border-bottom: none; "   >
+							<br><br></td>	  
+						</tr>
+						
+						
+				    </table>
+			
+			
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="border-top: none;">
+				
+				<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+				    <colgroup>
+				        
+				        <col style="width:70%" />
+				        <col style="width:30%" />
+				    </colgroup>
+				 
+				    <tr>
+				     	<td style =" border: none; ">
+				     	</td>
+				     	<td style =" border: none; ">
+					     	신청부서 : <input type="text" name="userDept" data-type="mField" value="{{ doc.BodyContext.userDept }}"    style="width:60%; " >     	
+				     	</td>
+				    </tr>
+				    <tr>
+				     	<td style =" border: none; ">
+				     	</td>
+				     	<td style =" border: none; ">
+				     		신청인   : <input type="text" name="userName" data-type="mField" value="{{ doc.BodyContext.userName }}"    style="width:60%; " >(서명)     	
+				     	</td>
+				    </tr>
+				    <tr>
+				     	<td style =" border: none; ">
+				     	</td>
+				     	<td style =" border: none; ">
+				     		부서장   : <input type="text" name="userCheif" data-type="mField" value="{{ doc.BodyContext.userCheif }}"    style="width:60%; " >(서명)     	
+				     	</td>
+				    </tr>
+				    
+				    <tr>
+				     	<td colspan="2" style =" border: none; font-size:14px;text-align : center ; ">
+				     		<br><br>
+				     		<strong>성수의료재단 인천백병원 의료정보·의무기록위원장 귀하</strong>
+				     	</td>
+  					</tr>
+				    
+				</table>
+			</td>
+		</tr>
+		
+		<tr>
+			<th colspan="2">처리결과</th>
+		</tr>
+		<tr>
+			<th >용어(약어) 종류</th>
+			<td  >
+				 <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1">
+					&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id ="chkBox_11" name="chkBox_1"  value="chkBox_11">진단용어
+					&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id ="chkBox_12" name="chkBox_1"  value="chkBox_12">수술 , 시술용어
+					&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id ="chkBox_13" name="chkBox_1"  value="chkBox_13">기타
+				</div>
+			</td>
+			
+		</tr>
+		<tr>
+			<th >용어적용일</th>
+			<td  >
+				<input type="text"  autocomplete ="off" data-pattern="date" data-date-format="yy년 mm월 dd일" placeholder ="20    년      월       일" data-type="mField"   name="applyDate"  value="{{ doc.BodyContext.applyDate }}" style="width:98% ; " >			
+			</td>
+			
+		</tr>
+		<tr>
+			<th >용어코드<br>및<br>용어명칭</th>
+			<td  >
+				<div style="width:99% ;height : 100px">
+					<textarea data-type="mField" name="wordCommnet"  style="width:99%" rows="5" >{{ doc.BodyContext.wordCommnet }}</textarea>
+				</div>
+			</td>
+			
+		</tr>
+		
+</table>

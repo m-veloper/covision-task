@@ -1,0 +1,133 @@
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+		<colgroup>
+			<col style="width:12%" />
+	       <col style="width:30%" />
+	       <col style="width:10%" />
+	       <col style="width:19%" />
+	       <col style="width:10%" />
+	       <col style="width:19%" />
+		</colgroup>  
+		
+			 
+		<tr>
+			<th >청구부서명</th>
+			<td  >
+				<input type="text" name="reqDept" data-type="mField" value="{{ doc.BodyContext.reqDept }}"    style="width:98%; " >
+			</td>
+			<th >신청일자</th>
+			<td  >
+				<input type="text"  autocomplete ="off" data-pattern="date" data-date-format="yy년 mm월 dd일" data-type="mField"   name="reqDate"  value="{{ doc.BodyContext.reqDate }}" style="width:98% ; " >	
+			
+			</td>
+			<th >청구자</th>
+			<td  >
+				<input type="text" name="reqUser" data-type="mField" value="{{ doc.BodyContext.reqUser }}"    style="width:80%; " >(인)
+			</td>
+		</tr>
+		
+		<tr>
+			<th >장비명</th>
+			<td  >
+				<input type="text" name="equiptmentName" data-type="mField" value="{{ doc.BodyContext.equiptmentName }}"    style="width:98%; " >
+			</td>
+			<th >모델명</th>
+			<td  >
+				<input type="text" name="modelName" data-type="mField" value="{{ doc.BodyContext.modelName }}"    style="width:98%; " >
+			</td>
+			<th >수량</th>
+			<td  >
+				<input type="text" name="qty" data-type="mField" data-pattern="numeral" value="{{ doc.BodyContext.qty }}"    style="width:98%; " >
+			</td>
+		</tr>
+		
+		<tr>
+			<th >제조사</th>
+			<td  >
+				<input type="text" name="produceCompany" data-type="mField" value="{{ doc.BodyContext.produceCompany }}"    style="width:98%; " >
+			</td>
+			<th >단가</th>
+			<td  >
+				<input type="text" name="cost" data-type="mField" data-pattern="numeral" value="{{ doc.BodyContext.cost }}"    style="width:98%; " >
+			</td>
+			<th >금액</th>
+			<td  >
+				<input type="text" name="amt" data-type="mField" data-pattern="numeral" value="{{ doc.BodyContext.amt }}"   style="width:98%; " >
+			</td>
+		</tr>
+		<tr>
+			<th >청구구분</th>
+			<td  align="center">
+				<div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_0">
+					<input type="checkbox" id ="chkBox_01" name="chkBox_0"  value="chkBox_01">신규구입&nbsp;&nbsp;
+					<input type="checkbox" id ="chkBox_02" name="chkBox_0"  value="chkBox_02">추가구입<br>
+					<input type="checkbox" id ="chkBox_03" name="chkBox_0"  value="chkBox_03">폐품대체&nbsp;&nbsp;
+					<input type="checkbox" id ="chkBox_04" name="chkBox_0"  value="chkBox_04">노후대체
+				</div>
+			</td>
+			<th >판매처</th>
+			<td  colspan="3">
+				<input type="text" name="sellCompany" data-type="mField" value="{{ doc.BodyContext.sellCompany }}"    style="width:98%; " >
+			</td>
+		</tr>
+		<tr>
+			<th >청구사유</th>
+			<td  colspan="5">
+				<div style="width:99% ;height : 180px">
+					<textarea data-type="mField" name="reqCommnet" style="width:99%" rows="10" >{{ doc.BodyContext.reqCommnet }}</textarea>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<th >용도</th>
+			<td  colspan="5">
+				<div style="width:99% ;height : 180px">
+					<textarea data-type="mField" name="purposeCommnet" style="width:99%" rows="10" >{{ doc.BodyContext.purposeCommnet }}</textarea>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<th >주요성능<br>및 <br>특별 성능</th>
+			<td  colspan="5">
+				<div style="width:99% ;height : 180px">
+					<textarea data-type="mField" name="propertyCommnet" style="width:99%" rows="10" >{{ doc.BodyContext.propertyCommnet }}</textarea>
+				</div>
+			</td>
+		</tr>
+</table>
+		
+<table class="tableStyle linePlus "><!-- class="table_10" -->
+
+		<colgroup>
+			<col style="width:12%" />
+	       <col style="width:12%" />
+	       <col style="width:32%" />
+	       <col style="width:12%" />
+	       <col style="width:32%" />
+		</colgroup>  
+		
+		<tr>
+			<th >설치장소</th>
+			<th >기존장소</th>
+			<td  >
+				<input type="text" name="orginPlace" data-type="mField" value="{{ doc.BodyContext.orginPlace }}"    style="width:98%; " >
+			</td>
+			<th >신규장소</th>
+			<td  >
+				<input type="text" name="newPlace" data-type="mField" value="{{ doc.BodyContext.newPlace }}"    style="width:98%; " >
+			</td>
+		</tr>
+		
+		
+		<tr>
+			<th >구매부 <br>검토의견</th>
+			<td  colspan="4">
+				<div style="width:99% ;height : 180px">
+					<textarea data-type="mField" name="purchaseCommnet" style="width:99%" rows="10" >{{ doc.BodyContext.purchaseCommnet }}</textarea>
+				</div>
+			</td>
+		</tr>
+</table>
+
+<!--실 결재양식 내용 부분 끝 -->

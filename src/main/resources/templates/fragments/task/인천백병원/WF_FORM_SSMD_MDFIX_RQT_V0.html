@@ -1,0 +1,91 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+
+		<colgroup>
+			<col style="width:12%" />
+	       <col style="width:38%" />
+	       <col style="width:12%" />
+	       <col style="width:38%" />
+		</colgroup>  
+		
+			 
+		<tr>
+			<th >부서명</th>
+			<td  >
+				<input type="text" name="reqDept" data-type="mField" value="{{ doc.BodyContext.reqDept }}"    style="width:98%; " >
+			</td>
+			<th >의뢰일</th>
+			<td  >
+				<input type="text"  autocomplete ="off" data-pattern="date" data-date-format="yy년 mm월 dd일" data-type="mField"   name="reqDate"  value="{{ doc.BodyContext.reqDate }}" style="width:98% ; " >	
+			
+			</td>
+		</tr>
+</table>
+
+
+<table class="table_10 multi-row-table  tableStyle linePlus" id="TBLINFO" style="border-left: 1px solid #c3d7df;">
+    <colgroup>
+		
+        <col style="width: 25%">
+        <col style="width: 25%">
+        <col style="width: 50%">
+    </colgroup>
+    <tbody>
+	    <tr class="multi-row-control" data-mode="writeOnly">
+	        <td colspan="3" style="text-align: right">
+	            <input type="button" value="+추가" class="multi-row-add usa">
+				<input type="button" value="-삭제" class="multi-row-del-auto usa">
+	        </td>
+	    </tr>
+	   
+	    <tr>
+	        
+	        <th>장비명</th>
+	        <th>관리번호</th>
+	        <th>수리사유</th>
+	    </tr>
+	    <tr class="multi-row-template multi-sum">
+			 
+	        <td>
+	            <input name="itemName" style="width: 99%;" type="text" data-type="rField">
+	        </td>
+	        <td>
+	            <input name="manageNo" style="width: 99%;" type="text" data-type="rField">
+	        </td>
+	        <td>
+	            <input name="rmk" style="width: 99%;" type="text" data-type="rField">
+	        </td>
+	    </tr>
+	   
+	</tbody>
+</table>
+
+<table class="tableStyle linePlus "><!-- class="table_10" -->
+
+
+		<colgroup>
+			<col style="width:12%" />
+	       <col style="width:14%" />
+	       <col style="width:30%" />
+	       <col style="width:14%" />
+	       <col style="width:30%" />
+		</colgroup>  
+		
+		<tr>
+			<th rowspan="2">요청부서</th>
+			
+			<td  align ="left" colspan="4"  style =" border-bottom: none;">
+				위와 같이 수리를 의뢰합니다.    
+			</td>
+		</tr>
+		<tr>
+			
+			<td  align ="right" colspan="4" style =" border-top: none;">
+				부서장 : <input type="text" name="chiefName" data-type="mField" value="{{ doc.BodyContext.chiefName }}"    style="width:30%; " >(서명)
+			</td>
+		</tr>
+</table>
+
+<!--실 결재양식 내용 부분 끝 -->

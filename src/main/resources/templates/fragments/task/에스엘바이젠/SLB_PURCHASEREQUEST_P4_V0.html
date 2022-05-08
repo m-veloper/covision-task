@@ -1,0 +1,230 @@
+<!--실 결재양식 내용 부분 시작 -->
+   <table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+	   <colgroup>
+	    	<col style="width:12%">
+	    	<col style="width:23%">
+	    	<col style="width:12%">
+	    	<col style="width:23%">
+	    	<col style="width:12%">
+	    	<col style="width:*">
+	    </colgroup>
+	    
+	    
+	    <tr>
+	    	<th>사업자번호
+			</th>
+		    <td >
+		    	<input type="text" name="companyNo" data-type="mField" value="{{ doc.BodyContext.companyNo }}"   style="width:98%; " >           
+		    </td>
+		    <th rowspan="3">거래처연락처
+			</th>
+		    <td>       
+				<input type="text"  name="managerName" data-type="mField" value="{{ doc.BodyContext.managerName }}"   placeholder="이름" style="width:98%; " >        
+			
+			</td>
+		    <th >통화
+			</th>
+		    <td>
+		    	<select name="div_money" data-type="mField" data-element-type="sel_d_v" style="width: 98%;"  value="{{ doc.BodyContext.div_money }}"  >
+	    			<option value="KRW">KRW</option>
+	    			<option value="USD">USD</option>
+	    			<option value="JPY">JPY</option>
+	    			<option value="EUR">EUR</option>
+	    			<option value="CNY">CNY</option>
+	    			<option value="GBP">GBP</option>
+	    		</select>
+		    </td>
+	    </tr>
+	    <tr>
+	   		<th rowspan="2">거래처명
+			</th>
+		    <td rowspan="2">
+		    	<textarea id="companyName"  rows="2" data-type="mField" style="width: 98%;" placeholder="사업자등록증 기준">{{ doc.BodyContext.companyName }}</textarea>      
+		    </td>
+		    <td>       
+				<input type="text"  name="managerMail" data-type="mField" value="{{ doc.BodyContext.managerMail }}"   placeholder="이메일" style="width:98%; " >        
+			
+			</td>
+			<th >입고요청일
+			</th>
+		    <td >
+		     	<input type="text" name="supplyDate" value="{{ doc.BodyContext.supplyDate }}"  autocomplete ="off" data-pattern="date" data-type="mField" style="width: 98%;text-align:center">
+		    </td>
+	    </tr>
+		<tr>  
+		    <td>       
+				<input type="text"  name="managerTel" data-type="mField" value="{{ doc.BodyContext.managerTel }}"   placeholder="연락처" style="width:98%; " >        
+			
+			</td>
+			<th >외주대상
+			</th>
+		    <td >
+		     	<input type="text"  name="outsourcingName" data-type="mField" value="{{ doc.BodyContext.outsourcingName }}"   style="width:98%; " >              
+		    </td>
+	    </tr>
+
+		
+	
+</table>
+
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+	<colgroup>
+	       <col style="width:12%" />
+	       <col style="width:88%" />
+	       
+		</colgroup>  
+		<tr >
+		<th>제목
+		</th>
+			<td >
+				<input type="text" id="subTitle" name="subTitle" data-type="mField" value="{{ doc.BodyContext.subTitle }}"    style="width:98%; " >    
+			</td>
+		</tr>
+		
+</table>
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+	<colgroup>
+	      <col style="width:12%" />
+	       <col style="width:88%" />
+	       
+		</colgroup>  
+	<tr style="height:150px;">
+	<th>내용
+	</th>
+		<td >
+			<textarea id="comment" placeholder="[작성내용] &#13;&#10;1. 구매물품 &#13;&#10;2. 사용처/필요사유 &#13;&#10;3. 현보유량 / 추가구매수량 / 예상사용기간 &#13;&#10;4. 특이사항 등"  rows="10" data-type="mField" style="width: 98%;height:98%;">{{ doc.BodyContext.comment }}</textarea>
+		</td>
+	</tr>
+	
+</table>
+
+
+<table class="table_10 multi-row-table RowSumTable tableStyle linePlus" id="TBLINFO" style="border-left: 1px solid #c3d7df;">
+    <colgroup>
+   		<col style="width: 5%" data-mode="writeOnly">
+		<col style="width: 5%">
+		<col style="width: 10%">
+		<col style="width: 10%">
+		<col style="width: 10%">
+		<col style="width: 10%">
+		<col style="width: 10%">
+		<col style="width: 10%">
+		<col style="width: 5%">
+		<col style="width: 5%">
+        <col style="width: 10%">
+        <col style="width: 10%">
+    </colgroup>
+    <tbody>
+	    <tr class="multi-row-control" data-mode="writeOnly">
+	        <td colspan="12" style="text-align: right">
+	            <input type="button" id="btnAdd" value="+추가" class="multi-row-add smButton">
+	            <input type="button" id="btnDelSel" value="-삭제" class="multi-row-del smButton">
+	        </td>
+	    </tr>
+	    <tr>
+	    	<th class="multi-row-selector-wrap"></th>
+	        <th>No.</th>
+	        <th>항목1</th>
+	        <th>항목2</th>
+	        <th>파이프라인</th>
+	        <th>품목명</th>
+	        <th>제조사</th>
+	        <th>CAT#</th>
+	        <th>단위</th>
+	        <th>수량</th>
+	        <th>단가</th>
+	        <th>공급가액</th>
+	        
+	    </tr>
+	    <tr class="multi-row-template multi-sum">
+			<td class="multi-row-selector-wrap" style="width: 10px; text-align: center;"><input class="multi-row-selector" type="checkbox"></td>
+	        <td class="multi-row-seq"></td>
+	        <td>
+	        	<select name="REQ_Div1" onchange="initDivSelect(this);" data-type="rField" data-element-type="sel_d_t"  style="width: 98%; text-align :center;" title="구분" >
+	    			<option value="0">선택</option>
+	    			<option value="1">연구재료</option>
+	    			<option value="2">생산재료</option>
+	    		</select> 
+	        </td>
+	        <td>
+	      	   
+	      	  <select name="REQ_Div2" data-type="rField" onchange="initDivInput(this,2);"  data-element-type="sel_d_t"  style="width: 98%; display:none; text-align :center;" title="구분" >
+	    			<option value="0">선택</option>
+	    			<option value="01">Cloning</option>
+	    			<option value="02">배양배지</option>
+	    			<option value="03">배양배지_첨가물</option>
+	    			<option value="04">바이러스_생산</option>
+	    			<option value="05">바이러스_분석용</option>
+	    			<option value="06">분석_kit</option>
+	    			<option value="07">분석_antibody</option>
+	    			<option value="08">분석_시약</option>
+	    			<option value="09">소모품_disposable</option>
+	    			<option value="10">소모품_초자류</option>
+	    			<option value="11">소모품_기타</option>
+	    			<option value="12">유지_가스</option>
+	    			<option value="13">유지_질소</option>
+	    			<option value="14">동물</option>
+	    			<option value="15">기기소모품</option>	    			
+	    			<option value="16">Microcarrier</option>
+
+	    		</select>
+	    		<select name="REQ_Div3" data-type="rField" onchange="initDivInput(this,3);"  data-element-type="sel_d_t"  style="width: 98%; display:none; text-align :center;" title="구분" >
+	    			<option value="0">선택</option>
+	    			<option value="17">배양배지</option>
+	    			<option value="18">배양배지_첨가물</option>
+	    			<option value="19">바이러스_분석용</option>
+	    			<option value="20">소모품_disposable</option>
+	    			<option value="21">소모품_초자류</option>
+	    			<option value="22">소모품_기타</option>
+	    			<option value="23">유지_CO2 가스</option>
+	    			<option value="24">유지_LN2 가스</option>
+	    			<option value="25">기기소모품</option>
+	    			<option value="26">분석_배지</option>
+	    			<option value="27">분석_kit</option>
+	    			<option value="28">분석_antibody</option>
+	    			<option value="29">분석_시약</option>
+	    			<option value="30">분석_표준품</option>
+	    		</select>
+	    		<input name="REQ_DivInputName" style="width: 99%; display:none; "  type="text" data-type="rField">	    		
+	        </td>
+	        <td>
+	      		 <select name="PipeLine" data-type="rField" data-element-type="sel_d_t"  style="width: 98%;  text-align :center;" title="구분" >
+	    			<option value="0">선택</option>
+	    			<option value="31">IPSBIO_IPB0101</option>
+	    			<option value="32">Slvaxigen_세포주보관</option>	    			
+	    		</select>
+	        </td>
+	        <td><input name="REQ_ITMENAME" style="width: 99%;" type="text" data-type="rField"></td>
+	        <td><input name="CAT" style="width: 99%;" type="text" data-type="rField"></td>
+	        <td><input name="createCompany" style="width: 99%;" type="text" data-type="rField"></td>
+	        <td><input name="unit" style="width: 99%;" type="text" data-type="rField" ></td>
+	        <td><input name="qty" onblur="COST_CAL();" style="width: 99%;" type="text" data-type="rField" data-pattern=currency data-numeral-format="0,0"></td>
+	         <td align="right">
+	            <input name="REQ_PRICE" onblur="COST_CAL();" style="width: 99%;"   type="text" data-type="rField" data-pattern=currency data-numeral-format="0,0">
+	        </td>
+	        
+	        <td align="right">
+	            <input name="SUPPLY_PRICE"  readonly="readonly"  style="width: 99%;"   data-sum-ref="qty,REQ_PRICE" data-formula="({0}*{1})" type="text" data-type="rField" data-pattern=currency data-numeral-format="0,0">
+	        </td>	        
+	       
+	    </tr>
+	    <tr>
+	    	<th data-mode="writeOnly"></th>
+	        <th colspan="10">부가세</th>
+	         <td align="right">
+	            <input name="REQ_VAT" style="width: 99%;" type="text" value="{{ doc.BodyContext.REQ_VAT }}" data-type="mField" data-pattern="currency" data-numeral-format="0,0" onblur="COST_CAL();">
+	        </td>
+	    </tr>
+	    <tr>
+	    	<th data-mode="writeOnly"></th>
+	        <th colspan="10">합계</th>
+	        <td align="right">
+	            <input name="REQ_TOTAL" style="width: 99%;" type="text" readonly="readonly" value="{{ doc.BodyContext.REQ_TOTAL }}" data-type="mField" data-pattern="currency" data-numeral-format="0,0">
+	        </td>
+	    </tr>
+	</tbody>
+</table>
+
+<!--실 결재양식 내용 부분 끝 -->

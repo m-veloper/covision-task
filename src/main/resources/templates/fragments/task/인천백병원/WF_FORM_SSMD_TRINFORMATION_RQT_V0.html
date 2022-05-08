@@ -1,0 +1,168 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+		<colgroup>
+			<col style="width:12%" />
+	       <col style="width:21%" />
+	       <col style="width:12%" />
+	       <col style="width:21%" />
+	       <col style="width:12%" />
+	       <col style="width:22%" />
+		</colgroup>  
+		<tr>
+			<td colspan ="6" align ="center" style ="font-size:14px;border-top:none ;border-left:none; border-right:none" >
+			<strong>※ 진료정보의 수정은 작성자 또는 주치의 본인에 한하여 수정 가능합니다.</strong>
+			</td  >
+		</tr>
+		<tr>
+			<th >등록번호</th>
+			<td  >
+				<input type="text" name="regNo" data-type="mField" value="{{ doc.BodyContext.regNo }}"    style="width:98%; " >
+			</td>
+			<th >성명</th>
+			<td  >
+				<input type="text" name="userName" data-type="mField" value="{{ doc.BodyContext.userName }}"    style="width:98%; " >
+			</td>
+			<th >생년월일</th>
+			<td  >
+				<input type="text" name="userBirthday" data-type="mField" value="{{ doc.BodyContext.userBirthday }}"    style="width:98%; " >
+			</td>
+		</tr>
+</table>
+<table class="tableStyle linePlus "><!-- class="table_10" -->
+		<colgroup>
+			<col style="width:20%" />
+	       <col style="width:80%" />
+		</colgroup>  
+		<tr>
+			<th >진료정보</th>
+			<td  >
+				<div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_0">
+					&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id ="chkBox_01" name="chkBox_0"  value="chkBox_01">외래 
+					&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id ="chkBox_02" name="chkBox_0"  value="chkBox_02">입원
+					&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id ="chkBox_03" name="chkBox_0"  value="chkBox_03">응급 
+					&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id ="chkBox_04" name="chkBox_0"  value="chkBox_04">건강검진
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<th >서식종류</th>
+			<td  >
+				<input type="text" name="wordName" data-type="mField" value="{{ doc.BodyContext.wordName }}"    style="width:98%; " >
+			</td>
+			
+		</tr>
+		<tr>
+			<th >해당일자</th>
+			<td  >
+				<input type="text"  autocomplete ="off" data-pattern="date" data-date-format="yy년 mm월 dd일" data-type="mField"   name="reqDate"  value="{{ doc.BodyContext.reqDate }}" style="width:98% ; " >
+			
+			</td>
+			
+		</tr>
+		<tr>
+			<th >
+				<div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1">
+					<input type="checkbox" id ="chkBox_11" name="chkBox_1"  value="chkBox_11">수정 
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="checkbox" id ="chkBox_12" name="chkBox_1"  value="chkBox_12">삭제
+					<br><br>사유
+				</div>
+			</th>
+			<td  >
+				<div style="width:99% ;height : 100px">
+					<textarea data-type="mField" name="reqReason"  style="width:99%" rows="5" >{{ doc.BodyContext.reqReason }}</textarea>
+				</div>
+			</td>
+			
+		</tr>
+		
+		<tr>
+			<th >
+				<div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_2">
+					<input type="checkbox" id ="chkBox_21" name="chkBox_2"  value="chkBox_21">수정 
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="checkbox" id ="chkBox_22" name="chkBox_2"  value="chkBox_22">삭제
+					<br><br>내용
+				</div>
+			</th>
+			<td  >
+				<div style="width:99% ;height : 100px">
+					<textarea data-type="mField" name="reqComment"  style="width:99%" rows="5" >{{ doc.BodyContext.reqComment }}</textarea>
+				</div>
+			</td>
+			
+		</tr>
+		<tr>
+			<td colspan="2" style="border-bottom: none;">
+			
+			
+				<table class="tableStyle linePlus "><!-- class="table_10" -->
+				    <colgroup>
+				        
+				         <col style="width:30%" />
+				         <col style="width:40%" />
+				        <col style="width:30%" />
+				    </colgroup>
+				    	<tr  >
+				    	<td colspan ="3" style="font-size:14px; text-align :center ;border: none;">
+				    		<br><br>
+				    		<strong>본인은 상기 사유로 수정, 삭제를 요청하며 이로 인한 문제 발생 시 본인에게  책임이 있음을 인정합니다.</strong>
+				    		<br><br>
+				    	</td>
+				    	</tr>
+				  
+						<tr  >
+							<td style="border: none; "   ></td>	    
+							<td align ="center" style="border: none;" >
+								<input type="text"  autocomplete ="off" data-pattern="date" data-date-format="yy년 mm월 dd일" placeholder ="20    년      월       일" data-type="mField"   name="writeDate"  value="{{ doc.BodyContext.writeDate }}" style="text-align:center;width:98% ; " >			
+							</td>
+							<td style=" border: none !important; border-bottom: none; "   >
+							<br><br></td>	  
+						</tr>
+						
+						
+				    </table>
+			
+			
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="border-top: none;">
+				
+				<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+				    <colgroup>
+				        
+				        <col style="width:70%" />
+				        <col style="width:30%" />
+				    </colgroup>
+				 
+				    <tr>
+				     	<td style =" border: none; ">
+				     	</td>
+				     	<td style =" border: none; ">
+					     	신청부서 : <input type="text" name="reqUserDept" data-type="mField" value="{{ doc.BodyContext.reqUserDept }}"    style="width:60%; " >     	
+				     	</td>
+				    </tr>
+				    <tr>
+				     	<td style =" border: none; ">
+				     	</td>
+				     	<td style =" border: none; ">
+				     		신청인   : <input type="text" name="reqUserName" data-type="mField" value="{{ doc.BodyContext.reqUserName }}"    style="width:60%; " >(서명)     	
+				     	</td>
+				    </tr>
+				    <tr>
+				     	<td style =" border: none; ">
+				     	</td>
+				     	<td style =" border: none; ">
+				     		부서장   : <input type="text" name="reqUserCheif" data-type="mField" value="{{ doc.BodyContext.reqUserCheif }}"    style="width:60%; " >(서명)     	
+				     	</td>
+				    </tr>
+				</table>
+			</td>
+		</tr>
+		
+		
+		
+</table>

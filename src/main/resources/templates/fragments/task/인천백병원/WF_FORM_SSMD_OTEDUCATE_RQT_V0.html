@@ -1,0 +1,143 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+
+		<colgroup>
+			<col style="width:15%" />
+	       <col style="width:35%" />
+	       <col style="width:15%" />
+	       <col style="width:35%" />
+		</colgroup>  
+		<tr>
+			<td colspan="4" align ="center">
+				<div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1">
+					&nbsp;&nbsp;&nbsp;&nbsp;보수교육<input type="checkbox" id ="chkBox_01" name="chkBox_1"  value="chkBox_1">
+					&nbsp;&nbsp;&nbsp;&nbsp;보수 외 교육<input type="checkbox" id ="chkBox_02" name="chkBox_1"  value="chkBox_2">
+				</div>
+			</td>
+		</tr>	 
+		
+		<tr>
+			<th >작성일자</th>
+			<td  align ="center">
+				<input type="text"  autocomplete ="off" data-pattern="date" data-date-format="yy년 mm월 dd일" data-type="mField"   name="writeDate"  value="{{ doc.BodyContext.writeDate }}" style="text-align:center;width:98% ; " >			
+			</td>
+	    	<th rowspan ="2">총 참석<br>대상자</th>
+			<td rowspan ="2">
+				<input type="text" name="personCnt" data-type="mField" value="{{ doc.BodyContext.personCnt }}"    style="width:80%; " >명<br>
+	            (총<input type="text" name="personTot" data-type="mField" value="{{ doc.BodyContext.personTot }}"    style="width:80%; " >인)
+			</td>
+			
+			
+		
+	    </tr>
+	    <tr>
+			<th >작성자</th>
+			<td  >
+				소속:<input type="text" name="userDept" data-type="mField" value="{{ doc.BodyContext.userDept }}"    style="width:80%; " ><br>
+				성명:<input type="text" name="userName" data-type="mField" value="{{ doc.BodyContext.userName }}"    style="width:80%; " >
+	        
+			</td>
+	    </tr>
+	  
+	     
+</table>
+
+
+
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus "><!-- class="table_10" -->
+
+
+		<colgroup>
+			<col style="width:15%" />
+	       <col style="width:35%" />
+	       <col style="width:15%" />
+	       <col style="width:35%" />
+		</colgroup>  
+		 <tr>
+	    	<th rowspan ="2">교육일시</th>
+			<td align ="center">
+				<input type="text"  autocomplete ="off" data-pattern="date" data-date-format="yy년 mm월 dd일" data-type="mField"   name="educateDate"  value="{{ doc.BodyContext.educateDate }}" style="text-align:center;width:98% ; " >
+				
+			</td>
+			<th >수강료</th>
+			<td  >
+			  <input type="text"   name="educateAmt" data-type="mField" data-pattern="numeral" value="{{ doc.BodyContext.educateAmt }}" style="width: 85%;"  >원 	   
+			</td>
+	    </tr>
+	    
+	     <tr>
+			<td >
+				교육시간 : <input type="text"   name="educateTime" data-type="mField" value="{{ doc.BodyContext.educateTime }}" style="width: 50%;"  >시간
+			</td>
+			<th >숙박비</th>
+			<td  >
+				<input type="text"   name="sleepAmt" data-type="mField" value="{{ doc.BodyContext.sleepAmt }}" style="width: 45%;"  >
+				<input type="text"   name="sleepDay" data-type="mField" value="{{ doc.BodyContext.sleepDay }}" style="width: 45%;"  placeholder ="(  박    일   )">   
+			     
+			  
+			</td>
+	    </tr>
+	    
+	     	
+		
+		<tr>
+	    	<th rowspan ="2">교육장소</th>
+			<td rowspan ="2" >
+			<input type="text" name="educatePlace" data-type="mField" value="{{ doc.BodyContext.educatePlace }}"    style="width:98%; " >
+	           
+			</td>
+			<th >식비</th>
+			<td  >
+			<input type="text"  name="eatFee" data-type="mField" data-pattern="numeral" value="{{ doc.BodyContext.eatFee }}"    style="width:85%; " >원
+	           
+			</td>
+	    </tr>
+	    
+	    <tr>
+	    	
+			<th >교통비</th>
+			<td  >
+			<input type="text"  name="tranFee" data-type="mField" data-pattern="numeral" value="{{ doc.BodyContext.tranFee }}"    style="width:85%; " >원
+	           
+			</td>
+	    </tr>
+	    
+	    <tr>
+	    	<th >교육주관</th>
+			<td  >
+			<input type="text"  name="educateMain" data-type="mField" value="{{ doc.BodyContext.educateMain }}"    style="width:98%; " >
+	           
+			</td>
+			<th >총비용</th>
+			<td  >
+				<input type="text"  name="totalFee" data-type="mField" data-pattern="numeral" value="{{ doc.BodyContext.totalFee }}"    style="width:85%; " >원
+	           
+			</td>
+	    </tr>
+	    
+	     <tr>
+	    	<th >교육명</th>
+			<td colspan="3" >
+			<input type="text"  name="educateName" data-type="mField" value="{{ doc.BodyContext.educateName }}"    style="width:98%; " >
+	           
+			</td>
+	    </tr>
+	   
+		<tr>
+			<td colspan="4" >
+				<div style="width:99% ;height : 180px">
+					<textarea data-type="mField" name="educateCommnet" style="width:99%" rows="10" placeholder ="교육 내용">{{ doc.BodyContext.educateCommnet }}</textarea>
+				</div>
+			</td>
+		</tr>
+</table>
+
+<div>
+<strong>※사외교육 신청서 승인 시 공가계 승인을 함께 부여한다. </strong><br>-별도 공가계 제출 생략
+
+</div>
+

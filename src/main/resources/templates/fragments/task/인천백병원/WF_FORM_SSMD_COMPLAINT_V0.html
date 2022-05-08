@@ -1,0 +1,214 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+
+		<colgroup>
+			<col style="width:10%" />
+	       <col style="width:25%" />
+	       <col style="width:10%" />
+	       <col style="width:25%" />
+	       <col style="width:10%" />
+	       <col style="width:20%" />
+		</colgroup>  
+		
+		<tr>
+	    	<th >민원유형</th>
+			<td  >
+				<input type="text" name="complainDiv" data-type="mField" value="{{ doc.BodyContext.complainDiv }}"    style="width:90%; " >
+	           
+			</td>
+			<th >접수방법</th>
+			<td  >
+				<input type="text" name="reqDiv" data-type="mField" value="{{ doc.BodyContext.reqDiv }}"    style="width:90%; " >
+	           
+			</td>
+			<th >접수일자</th>
+			<td  >
+				<input type="text"  autocomplete ="off" data-pattern="date" data-date-format="yy년 mm월 dd일" data-type="mField"   name="reqDate"  value="{{ doc.BodyContext.reqDate}}" style="text-align:center;width:98% ; " >
+			
+			</td>
+		
+	    </tr>
+	  
+	    <tr>
+	    	<td colspan="6" align ="center">
+                      <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1">
+					  &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id ="chkBox_01" name="chkBox_1"  value="chkBox_1">진료
+                      &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id ="chkBox_02" name="chkBox_1"  value="chkBox_2">간호
+                      &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id ="chkBox_03" name="chkBox_1"  value="chkBox_3">원무
+                      &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id ="chkBox_04" name="chkBox_1"  value="chkBox_4">검진
+                      &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id ="chkBox_05" name="chkBox_1"  value="chkBox_5">식사
+                      &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id ="chkBox_06" name="chkBox_1"  value="chkBox_6">시설
+                      &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id ="chkBox_07" name="chkBox_1"  value="chkBox_7">검사
+                      &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id ="chkBox_08" name="chkBox_1"  value="chkBox_8">기타(
+                      <input type="text" name="etcOpnion1" value="{{ doc.BodyContext.etcOpnion1 }}"   data-type="mField"  style="width:200px;" >)
+                   
+                  </div>
+                  </td>
+	    </tr>	    
+	     
+</table>
+
+
+
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+
+		<colgroup>
+			<col style="width:8%" />
+			<col style="width:12%" />
+	       <col style="width:25%" />
+	       <col style="width:15%" />
+	       <col style="width:40%" />
+		</colgroup>  
+		 <tr>
+		 	<th rowspan ="5">민<br>원<br>인</th>
+	    	<th >성명</th>
+			<td  >
+			<input type="text" name="userName" data-type="mField" value="{{ doc.BodyContext.userName }}"    style="width:90%; " >
+	           
+			</td>
+			<th >주민번호</th>
+			<td  >
+			  <input type="text"   name="rrn" data-type="mField" value="{{ doc.BodyContext.rrn }}" style="width: 90%;"  > 	   
+			</td>
+	    </tr>
+		
+		<tr>
+	    	<th >등록번호</th>
+			<td  >
+			<input type="text" name="regNo" data-type="mField" value="{{ doc.BodyContext.regNo }}"    style="width:90%; " >
+	           
+			</td>
+			<th >진료과/주치의</th>
+			<td  >
+			<input type="text"  name="trtDoctor" data-type="mField" value="{{ doc.BodyContext.trtDoctor }}"    style="width:90%; " >
+	           
+			</td>
+	    </tr>
+	    
+	    <tr>
+	    	<th >성별/나이</th>
+			<td  >
+			<input type="text"  name="genderAge" data-type="mField" value="{{ doc.BodyContext.genderAge }}"    style="width:90%; " >
+	           
+			</td>
+			<th >전화번호</th>
+			<td  >
+			<input type="text"  name="telNo" data-type="mField" value="{{ doc.BodyContext.telNo }}"    style="width:90%; " >
+	           
+			</td>
+	    </tr>
+	   
+	   
+	    
+	    <tr>
+	    <th >관계</th>
+	    	<td colspan="3" >
+	            <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_2">
+	             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id ="chkBox_09" name="chkBox_2"  value="chkBox_9">환자
+	             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id ="chkBox_10" name="chkBox_2"  value="chkBox_10">보호자
+	             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id ="chkBox_11" name="chkBox_2"  value="chkBox_11">방문객
+	             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id ="chkBox_12" name="chkBox_2"  value="chkBox_12">기타(
+	                <input type="text" name="etcOpnion2" value="{{ doc.BodyContext.etcOpnion2 }}"   data-type="mField"  style="width:150px;" >)
+	            
+	            </div>
+            </td>
+	    </tr>
+	    <tr>
+	    	<th >주소</th>
+			<td colspan="3" >
+			<input type="text"  name="address" data-type="mField" value="{{ doc.BodyContext.address }}"    style="width:90%; " >
+	           
+			</td>
+	    </tr>
+	    
+	    <tr>
+	    	<th colspan="2">발생일시</th>
+	    	<td  >
+				<input type="text"  autocomplete ="off" data-pattern="date" data-date-format="yy년 mm월 dd일" data-type="mField"   name="actionDate"  value="{{ doc.BodyContext.actionDate }}" style="text-align:center;width:98% ; " >
+			
+			</td>
+
+	    	<th >발생장소</th>
+			<td >
+				<input type="text"  name="actionPlace" data-type="mField" value="{{ doc.BodyContext.actionPlace }}"    style="width:90%; " >
+	           
+			</td>
+	    </tr>  
+	    
+	     <tr>
+		    
+		     <th colspan ="2">
+		    	민원내용
+		    </th>
+		    <td colspan="3" >
+			    <div style="width:99% ;height : 180px">
+			    	<textarea data-type="mField" name="complainComment" style="width:99%" rows="10" >{{ doc.BodyContext.complainComment }}</textarea>
+			    </div>
+		    </td>
+	    </tr>
+	    
+	     <tr>
+		 	<th rowspan ="2">해<br>당<br>부<br>서</th>
+	    	<th >원인 및<br>처리내용</th>
+			<td  colspan ="4" >
+				<input type="text" name="causeCommnet" data-type="mField" value="{{ doc.BodyContext.causeCommnet }}"    style="width:90%; " >
+	           
+			</td>
+	    </tr>
+	     <tr>
+	    	<th >개선방안</th>
+			<td  colspan ="4" >
+				<input type="text" name="improveComment" data-type="mField" value="{{ doc.BodyContext.improveComment }}"    style="width:90%; " >
+	           
+			</td>
+	    </tr>
+	    
+	    <tr>
+		 	<th rowspan ="3">고<br>객<br>만<br>족<br>팀</th>
+	    	<th >통보내용</th>
+			<td colspan ="4" >
+				<input type="text" name="noticeComment" data-type="mField" value="{{ doc.BodyContext.noticeComment }}"    style="width:90%; " >
+	           
+			</td>
+			
+	    </tr>
+	     <tr>
+	    	<th >통보일시</th>
+			<td  >
+	           <input type="text"  autocomplete ="off" data-pattern="date" data-date-format="yy년 mm월 dd일" data-type="mField"   name="noticeDate"  value="{{ doc.BodyContext.noticeDate }}" style="text-align:center;width:98% ; " >
+			
+			</td>
+			<th >통보방법</th>
+			<td  align ="center" >
+				<div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_3">
+	              &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id ="chkBox_13" name="chkBox_3"  value="chkBox_13">구두
+	              &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id ="chkBox_14" name="chkBox_3"  value="chkBox_14">전화
+	              &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id ="chkBox_15" name="chkBox_3"  value="chkBox_15">우편
+	              &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id ="chkBox_16" name="chkBox_3"  value="chkBox_16">기타
+              </div>
+			</td>
+	    </tr>
+	    <tr>
+	    	<th >확인결과</th>
+			<td colspan="4" align ="center">
+				<div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_4">
+	              &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id ="chkBox_17" name="chkBox_4"  value="chkBox_17">매우만족
+	              &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id ="chkBox_18" name="chkBox_4"  value="chkBox_18">만족
+	              &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id ="chkBox_19" name="chkBox_4"  value="chkBox_19">보통
+	              &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id ="chkBox_20" name="chkBox_4"  value="chkBox_20">불만
+	              &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id ="chkBox_21" name="chkBox_4"  value="chkBox_21">매우불만
+	              &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id ="chkBox_22" name="chkBox_4"  value="chkBox_22">기타
+              </div>
+			</td>
+	    </tr>
+	    
+	     
+</table>
+
+
+

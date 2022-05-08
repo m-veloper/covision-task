@@ -9,129 +9,202 @@
 </head>
 
 <div layout:fragment="content">
+  <style>
+    .inline{
+      display: inline-block;
+    }
+  </style>
 
-  <!--실 결재양식 내용 부분 시작 -->
-  <table class="table_10 tableStyle linePlus mt10 multi-row-table" id="TBL_WORK_INFO">
-    <colgroup>
-      <col style="width: 20%;">
-      <col style="width: 20%;">
-      <col style="width: 20%;">
-      <col style="width: 20%;">
-      <col style="width: 20%;">
-    </colgroup>
-
+  <table class="tableStyle linePlus mt10" style="width: 50%">
     <tbody>
     <tr>
-      <th>합계</th>
-      <td colspan="5">
-        <input class="custom-input" type="text" data-type="mField" data-pattern="currency" id="totalPrice"
-               value="{{ doc.BodyContext.doc.BodyContext.totalPrice }}">
+      <td class="" style="width: 70%">
+        <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_0">
+          <input type="checkbox" id="chkBox_01" name="chkBox_0" value="chkBox_01"> 0. 문제 발생 전에 발견되어 결과에 영향을 미치지 않았음 <br>
+          <input type="checkbox" id="chkBox_02" name="chkBox_0" value="chkBox_02"> 1. 발생 시 심각한 결과를 초래할 수 있는 시스템이나 업무 과정상의 문제 또는 사건이 발생하였으나 환자에게 해가 미약한 경우
+        </div>
       </td>
+      <th class="">근접오류 [7일/상시]</th>
     </tr>
-    <tr class="multi-row-control">
-      <th>거래처</th>
-      <th>내역</th>
-      <th>금액</th>
-      <th>비고</th>
-      <th>
-        <input type="button" value="+추가" class="multi-row-add add-del-btn" onclick="addRow()">
-      </th>
+    <tr>
+      <td class="">
+        <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1">
+          <input type="checkbox" id="chkBox_03" name="chkBox_1" value="chkBox_03"> 2. 사건/사고의 발생으로 인한 치료 또는 중재가 필요로 함 <br>
+          <input type="checkbox" id="chkBox_04" name="chkBox_1" value="chkBox_04"> 3. 입원기간이 연장되거나 퇴원 시 장애를 일으키는 사건/사고
+        </div>
+      </td>
+      <th class="">위해사고 [3일이내]</th>
     </tr>
-    <tr class="multi-row-template">
-      <td>
-        <input class="custom-input" type="text" data-type="mField" id="position" value="{{ doc.BodyContext.position }}">
-      </td>
-      <td>
-        <input class="custom-input" type="text" data-type="mField" id="position" value="{{ doc.BodyContext.position }}">
-      </td>
-      <td>
-        <input class="custom-input" type="text" data-type="mField"
-               data-pattern="currency" id="price" value="{{ doc.BodyContext.price }}"
-               onchange="getTotlaPrice(this)">
-      </td>
-      <td>
-        <input class="custom-input" type="text" data-type="mField" id="position" value="{{ doc.BodyContext.position }}">
-      </td>
-      <td class="center">
-        <input type="button" value="-삭제" class="add-del-btn" onclick="deleteRow(this)">
-      </td>
+    <tr>
+      <td class="">
+        <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_2">
+          <input type="checkbox" id="chkBox_05" name="chkBox_2" value="chkBox_05"> 4. 주요 기능의 영구적 손실을 가져오거나 사망을 초래함 <br>
+        </div>
+      <th class="">적신호 [24시간내]</th>
     </tr>
     </tbody>
   </table>
-  <!--실 결재양식 내용 부분 끝 -->
+
+  <table class="tableStyle linePlus mt10">
+    <tbody>
+    <tr>
+      <th class="">등록번호</th>
+      <td class="">
+        <input type="text" data-type="mField" id="regNum" value="{{ doc.BodyContext.regNum }}">
+      </td>
+      <th class="">성명</th>
+      <td class="">
+        <input type="text" data-type="mField" id="name" value="{{ doc.BodyContext.name }}">
+      </td>
+      <th class="">나이</th>
+      <td class="">
+        <input type="text" data-type="mField" id="age" value="{{ doc.BodyContext.age }}">
+      </td>
+    </tr>
+    <tr>
+      <th class="">발생일시</th>
+      <td class="">
+        <input type="text" autocomplete="off" data-pattern="date" data-date-format="yy년 mm월 dd일" data-type="mField" name="issueDate" value="{{ doc.BodyContext.issueDate }}" style="width:98% ; ">
+        시      분
+      </td>
+      <th class="">발생장소</th>
+      <td class="">
+        <input type="text" data-type="mField" id="place" value="{{ doc.BodyContext.place }}">
+      </td>
+      <th class="">진료과</th>
+      <td class="">
+        <input type="text" data-type="mField" id="medical" value="{{ doc.BodyContext.medical }}">
+      </td>
+    </tr>
+    <tr>
+      <th class="" colspan="6">환자 관련 사항</th>
+<!--      <td class="" colspan="5">-->
+<!--      </td>-->
+    </tr>
+    <tr>
+      <th class="">의식 상태</th>
+      <td class="" colspan="5">
+        <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_3">
+          <input type="checkbox" id="chkBox_06" name="chkBox_3" value="chkBox_06"> 명료(Alert)
+          <input type="checkbox" id="chkBox_07" name="chkBox_3" value="chkBox_07"> 기면(Drowsy)
+          <input type="checkbox" id="chkBox_08" name="chkBox_3" value="chkBox_08"> 혼미(Stupor)
+          <input type="checkbox" id="chkBox_09" name="chkBox_3" value="chkBox_09"> 반혼수(Semicoma)
+          <input type="checkbox" id="chkBox_10" name="chkBox_3" value="chkBox_10"> 혼수(Coma)
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th class="">활동 상태</th>
+      <td class="" colspan="5">
+        <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_4">
+          <input type="checkbox" id="chkBox_11" name="chkBox_4" value="chkBox_11"> 독립적
+          <input type="checkbox" id="chkBox_12" name="chkBox_4" value="chkBox_12"> 부분적인 도움(보조기구 사용)
+          <input type="checkbox" id="chkBox_13" name="chkBox_4" value="chkBox_13"> 항상 도움필요
+          <input type="checkbox" id="chkBox_14" name="chkBox_4" value="chkBox_14"> 침상안정 상태
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th class="" rowspan="3">환자 낙상 요인 <br>(해당사항 모두 선택)</th>
+      <td class="" colspan="5">
+        <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_5">
+          <input type="checkbox" id="chkBox_15" name="chkBox_5" value="chkBox_15"> 흥분
+          <input type="checkbox" id="chkBox_16" name="chkBox_5" value="chkBox_16"> 어지러움
+          <input type="checkbox" id="chkBox_17" name="chkBox_5" value="chkBox_17"> 전신쇠약
+          <input type="checkbox" id="chkBox_18" name="chkBox_5" value="chkBox_18"> 마비
+          <input type="checkbox" id="chkBox_19" name="chkBox_5" value="chkBox_19"> 시력장애
+          <input type="checkbox" id="chkBox_20" name="chkBox_5" value="chkBox_20"> 체위성 저혈압
+          <input type="checkbox" id="chkBox_21" name="chkBox_5" value="chkBox_21"> 기타
+          (<input type="text" data-type="mField" id="fallFactorsEct1" value="{{ doc.BodyContext.fallFactorsEct1 }}">)
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="" colspan="5">
+        <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_6">
+          <input type="checkbox" id="chkBox_22" name="chkBox_6" value="chkBox_22"> 평형장애
+          <input type="checkbox" id="chkBox_23" name="chkBox_6" value="chkBox_23"> 보행장애
+          <input type="checkbox" id="chkBox_24" name="chkBox_6" value="chkBox_24"> 수면장애
+          <input type="checkbox" id="chkBox_25" name="chkBox_6" value="chkBox_25"> 낙상 과거력(1년이내)
+          <input type="checkbox" id="chkBox_26" name="chkBox_6" value="chkBox_26"> 기타
+          (<input type="text" data-type="mField" id="fallFactorsEct2" value="{{ doc.BodyContext.fallFactorsEct2 }}">)
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="" colspan="5">
+        <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_7">
+          <input type="checkbox" id="chkBox_27" name="chkBox_7" value="chkBox_17"> 낙상유발약물 복용
+          (약품명: <input type="text" data-type="mField" id="drug" value="{{ doc.BodyContext.drug }}">)
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th class="" colspan="3">낙상 유형</th>
+      <th class="" colspan="3">손상 내용</th>
+    </tr>
+    <tr>
+      <td class="" colspan="3">
+        <div style="width:99% ;height : 180px">
+          <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_7">
+            <input type="checkbox" id="chkBox_27" name="chkBox_7" value="chkBox_17"> 낙상유발약물 복용
+            (약품명: <input type="text" data-type="mField" id="drug" value="{{ doc.BodyContext.drug }}">)
+          </div>
+        </div>
+      </td>
+      <td class="" colspan="3">
+        <div style="width:99% ;height : 180px">
+          <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_7">
+            <input type="checkbox" id="chkBox_27" name="chkBox_7" value="chkBox_17"> 낙상유발약물 복용
+            (약품명: <input type="text" data-type="mField" id="drug" value="{{ doc.BodyContext.drug }}">)
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th class="" colspan="3">육하원칙에 따라 문제 내용 및 발생 후 중재활동을 기록하여 주십시오.</th>
+      <th class="" colspan="3">본인이 생각하는 문제 원인과 개선방안을 기록하여 주십시오.</th>
+    </tr>
+    <tr>
+      <td class="" colspan="3">
+        <div style="width:99% ;height : 180px">
+          <textarea data-type="mField" name="detailsOfOccurrence" id="arbitrationActivities" style="width:99%">{{ doc.BodyContext.arbitrationActivities }}</textarea>
+        </div>
+      </td>
+      <td class="" colspan="3">
+        <div style="width:99% ;height : 180px">
+          <textarea data-type="mField" name="detailsOfOccurrence" id="improvementActivities" style="width:99%">{{ doc.BodyContext.improvementActivities }}</textarea>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th class="">내부 보고 여부</th>
+      <td class="" colspan="5">
+        <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_7">
+          <input type="checkbox" id="chkBox_18" name="chkBox_7" value="chkBox_18"> 보고 수행(당직의, 주치의, 부서장)
+          <input type="checkbox" id="chkBox_19" name="chkBox_7" value="chkBox_19"> 보고 미 수행
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th class="">보고일</th>
+      <td class="" colspan="2">
+        <input type="text" autocomplete="off" data-pattern="date" data-date-format="yy년 mm월 dd일" data-type="mField" name="reportDate" value="{{ doc.BodyContext.reportDate }}" style="width:98% ; ">
+      </td>
+      <td class="" colspan="3">
+        작성자 : <input type="text" name="reqUserName" data-type="mField" value="{{ doc.BodyContext.reqUserName }}"    style="width:60%; " >(서명)
+      </td>
+    </tr>
+    <tr>
+      <td class="" colspan="6">※ 근접오류 보고시에는 익명보고가 가능합니다.</td>
+    </tr>
+    </tbody>
+  </table>
 
 
   <th:block layout:fragment="script">
-
     <script>
-      /**
-       *  각 로우의 가격의 총합계를 구하는 함수
-       */
-      let getTotlaPrice = (obj) => {
-        let currentTotalPrice = document.getElementById("totalPrice");
-        let price = Number(obj.value.replace(",", ""));
-        let totalPrice = Number(currentTotalPrice.value) + price;
-        currentTotalPrice.value = totalPrice;
-      }
 
-      let addRow = () => {
-        // table element 찾기
-        const table = document.getElementById('TBL_WORK_INFO');
-
-        // 새 행(Row) 추가
-        const newRow = table.insertRow();
-
-        // 새 행(Row)에 Cell 추가
-        let row = table.insertRow( table.rows.length ); // 하단에 추가
-        // let cell1 = row.insertCell(0);
-        // let cell2 = row.insertCell(1);
-        row.innerHTML = '<tr class="multi-row-template">\n' +
-          '      <td>\n' +
-          '        <input class="custom-input" type="text" data-type="mField" id="position" value="{{ doc.BodyContext.position }}">\n' +
-          '      </td>\n' +
-          '      <td>\n' +
-          '        <input class="custom-input" type="text" data-type="mField" id="position" value="{{ doc.BodyContext.position }}">\n' +
-          '      </td>\n' +
-          '      <td>\n' +
-          '        <input class="custom-input" type="text" data-type="mField"\n' +
-          '               data-pattern="currency" id="price" value="{{ doc.BodyContext.price }}"\n' +
-          '               onchange="getTotlaPrice(this)">\n' +
-          '      </td>\n' +
-          '      <td>\n' +
-          '        <input class="custom-input" type="text" data-type="mField" id="position" value="{{ doc.BodyContext.position }}">\n' +
-          '      </td>\n' +
-          '      <td class="center">\n' +
-          '        <input type="button" value="-삭제" class="add-del-btn" onclick="deleteRow(this)">\n' +
-          '      </td>\n' +
-          '    </tr>';
-      }
-
-      /**
-       * 원하는 데이블 로우 삭제하기
-       * @param obj
-       * @returns
-       */
-      let deleteRow = (obj) => {
-        let multiRowTemplates = $(obj).parent().parent();
-
-        // 최근 총 합계 - 삭제 하려는 로우의 가격 = 총 합
-        let currentTotalPrice = document.getElementById("totalPrice");
-        let price =  $(multiRowTemplates).find("#price").val();
-        let totalPrice = Number(currentTotalPrice.value) - Number(price);
-        currentTotalPrice.value = totalPrice;
-
-        // 유사배열
-        let trList =  document.getElementsByClassName("multi-row");
-        let trCount = trList.length;
-
-        if(trCount <= 1){
-          // Common.Warning('삭제할 수 없습니다.');
-          return false;
-        } else {
-          // 해당 로우 삭제
-          multiRowTemplates.remove();
-        }
-      }
     </script>
   </th:block>
 </div>

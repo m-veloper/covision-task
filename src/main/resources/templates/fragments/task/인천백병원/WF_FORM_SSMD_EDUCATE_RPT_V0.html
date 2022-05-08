@@ -1,0 +1,98 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+
+		<colgroup>
+			<col style="width:12%" />
+	       <col style="width:38%" />
+	       <col style="width:12%" />
+	       <col style="width:38%" />
+		</colgroup>  
+	
+		<tr>
+			<td style="font-size:14px; border-left: none; border-right: none; border-top: none !important;  border-bottom: none; "><b>1. 교육개요</b>
+			</td>
+			<td colspan ="3" style="font-size:14px; border-left: none; border-right: none; border-top: none !important;  ">
+			</td>
+		
+		</tr>		 
+		<tr>
+			<th >명칭</th>
+			<td  colspan="3">
+				<input type="text" name="educateName" data-type="mField" value="{{ doc.BodyContext.educateName }}"    style="width:98%; " >
+			</td>
+		</tr>
+		<tr>
+			<th >구분</th>
+			<td  colspan="3">
+				<input type="text" name="educateDiv" data-type="mField" value="{{ doc.BodyContext.educateDiv }}"    style="width:98%; " >
+			</td>
+		</tr>
+</table>
+
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+
+		<colgroup>
+			<col style="width:12%" />
+	       <col style="width:38%" />
+	       <col style="width:12%" />
+	       <col style="width:38%" />
+		</colgroup>  
+	
+		<tr>
+			<td style="font-size:14px; border-left: none; border-right: none; border-top: none !important;  border-bottom: none; "><b>2. 교육내용</b>
+			</td>
+			<td colspan ="3" style="font-size:14px; border-left: none; border-right: none; border-top: none !important;  ">
+			</td>
+		
+		</tr>	 
+		
+		<tr>
+			<th >교육장소</th>
+			<td  colspan="3">
+				<input type="text" name="educatePlace" data-type="mField" value="{{ doc.BodyContext.educatePlace }}"    style="width:98%; " >
+			</td>
+		</tr>
+		<tr>
+			<th >교육강사</th>
+			<td  colspan="3">
+				<input type="text" name="educatePerson" data-type="mField" value="{{ doc.BodyContext.educatePerson }}"    style="width:98%; " >
+			</td>
+		</tr>
+		<tr>
+			<th >교육방법</th>
+			<td  colspan="3">
+				<input type="text" name="educateTool" data-type="mField" value="{{ doc.BodyContext.educateTool }}"    style="width:98%; " >
+			</td>
+		</tr>
+		<tr>
+			
+			<th >교육일자</th>
+			<td  colspan="3">
+				<input type="text"  autocomplete ="off" data-pattern="date" data-date-format="yy년 mm월 dd일" data-type="mField"   name="educateDate"  value="{{ doc.BodyContext.educateDate }}" style="width:98% ; " >	
+			
+			</td>
+		</tr>
+	
+	   <tr>
+	  		<th >교육내용</th>
+			<td colspan="3" >
+				<div style="width:99% ;height : 180px">
+					<textarea data-type="mField" name="educateDetail" style="width:99%" rows="10" >{{ doc.BodyContext.educateDetail }}</textarea>
+				</div>
+			</td>
+		</tr>
+	  
+	     <tr>
+			<th >비고</th>
+			<td colspan="3" >
+				<div style="width:99% ;height : 180px">
+					<textarea data-type="mField" name="educateCommnet" style="width:99%" rows="10" >{{ doc.BodyContext.educateCommnet }}</textarea>
+				</div>
+			</td>
+		</tr>
+</table>
+<!--실 결재양식 내용 부분 끝 -->
