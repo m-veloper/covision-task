@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script language="javascript" type="text/javascript" src="/covicore/resources/script/jquery.min.js"></script>
+    <script type="text/javascript" src="/covicore/resources/script/Dext5/js/dext5editor.js"></script>
+</head>
+<body>
+    <div id="tbContentElement">
+        <script type="text/javascript">
+            //TODO: Dext5 에디터 Init 될시 focus가 initfocus로 옮겨지게되면 해당 이벤트 발생하여 focus가 다시 templateContainer 로 옮겨짐
+            //Author : YJYOO
+            //Date :  2016-04-06
+            // gypark 수정
+            function initFocus(){
+             	if (parent.document.getElementById("formBox")) {
+             		$('#formBox', window.parent.document).animate({scrollTop :0}, 0);
+             		window.scrollTo(0, 0);
+             	}
+            }
+
+            //Dext5 에디터 로딩 완료 호출 이벤트
+            function dext_editor_loaded_event(editor) {
+                // work something ...
+                //전자결재 양식이 Write 모드일때 BaseConfig의 에디터 로딩체크 기능 실행 여부 확인
+                //Date : 2016-03-24 
+                //Author : YJYOO
+                parent.Common.getBaseConfigList(["CheckApprovalEditorLoad"]);//일괄호출
+                if (parent.coviCmn.configMap["CheckApprovalEditorLoad"] != null && parent.coviCmn.configMap["CheckApprovalEditorLoad"].toUpperCase() == "Y") {
+                    parent.Common.AlertClose();
+                }
+            }
+            //에디터 창 높이 조절 함수
+            function PlusMinusEditorHeight(pMode) {
+                if (pMode == "plus") {
+                    if (($('#tbContentElement').height() + 200) < 1000) {
+                        $('#tbContentElement').height($('#tbContentElement').height() + 200);
+                    }
+                }
+
+                if (pMode == "minus") {
+                    if (($('#tbContentElement').height() - 200) > 100) {
+                        $('#tbContentElement').height($('#tbContentElement').height() - 200);
+                    }
+                }
+
+                // Dext5 Editor 높이 조절
+                $('#dext_frame_holderdext5editor').height($('#tbContentElement').height());
+
+                // Dext5 Editor 감싸는 iFrame 높이 조절
+                parent.document.all.dext5Frame.height = $('#tbContentElement').height() + 30;
+            }
+
+            DEXT5.config.InitXml = "dext_editor_approval.xml";
+            //DEXT5.config.HandlerUrl = "http://localhost:8088/handler/upload_handler.ashx";
+            //DEXT5.config.SkinName = "blue";
+            //DEXT5.config.ToSavePathURL = "dext5data";
+            //DEXT5.config.Lang = "ko-kr"; // ko-kr, en-us, ja-jp, zh-cn, zh-tw
+            //DEXT5.config.Mode = "view";
+            //DEXT5.config.focusInitObjId = "title"; // 에디터가 로드된 후 설정한 아이디를 가진 객체에 포커스를 줌.
+            //DEXT5.config.NextTabElementId = "nextInput";
+            //DEXT5.config.IgnoreSameEditorName = "1";
+
+            //DEXT5.config.Width = "100%";
+            //DEXT5.config.Height = "500px";
+
+            // TODO: DEXT5 Test by Kyle 2015-07-31
+            //DEXT5.config.ToSavePathURL = "/FrontStorage/Approval/Image";
+
+            //TODO: Dext5 에디터 Init 될시 focustarget을 initfocus로 지정 후 initfocus의 onfocus 이벤트에서 다시 templateContainer로 focus이동
+            //Author : YJYOO
+            //Date :  2016-04-06
+            DEXT5.config.focusInitObjId = "initfocus";
+            new Dext5editor("dext5editor");
+        </script>
+    </div>
+    <div>
+        <table style="width: 100%; background: #F6F6F6; margin-top: 0px; border: 1px solid #BDBDBD; border-top: 0.5px; border-bottom: 0.5px">
+            <tr>
+                <td style="height: 15px; text-align: center;">
+                    <table class="editor_size" cellpadding="0" cellspacing="0" align="center">
+                        <tr>
+                            <td style="height: 11px; text-align: center; vertical-align: middle"><a href='javascript:PlusMinusEditorHeight("minus");'>
+                                <img src="/HtmlSite/smarts4j_n/approval/resources/images/Approval/editor_minus.gif" alt="minus" title="minus" /></a></td>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            <td style="height: 11px; text-align: center; vertical-align: middle"><a href='javascript:PlusMinusEditorHeight("plus");'>
+                                <img src="/HtmlSite/smarts4j_n/approval/resources/images/Approval/editor_plus.gif" alt="plus" title="plus" /></a></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="initfocus" tabindex="1" onfocus="initFocus();"></div>
+</body>
+</html>
