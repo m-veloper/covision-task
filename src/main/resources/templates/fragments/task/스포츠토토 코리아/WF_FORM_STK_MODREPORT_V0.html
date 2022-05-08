@@ -1,0 +1,71 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:10%" />
+        <col style="width:32%" />
+        <col style="width:12%" />
+        <col style="width:30%" />
+    </colgroup>
+    <tr>
+    	<th>분 류</th>
+    	<td>
+    		<div class="ml10" data-type="mField" data-element-type="rdo_d" data-node-name="devType">
+    			<input type="radio" name="devType" value="01" checked="checked" />&nbsp;신규개발&nbsp;&nbsp;&nbsp;
+    			<input type="radio" name="devType" value="02" />&nbsp;기능수정
+    		</div>
+    	</td>
+    	<th>개발 방법</th>
+    	<td>
+    		<div class="ml10" data-type="mField" data-element-type="rdo_d" data-node-name="devHow">
+    			<input type="radio" name="devHow" value="01" checked="checked" />&nbsp;자 체&nbsp;&nbsp;&nbsp;
+    			<input type="radio" name="devHow" value="02"/>&nbsp;외 주
+    		</div>
+    	</td>
+    </tr>
+    <tr>
+    	<th>과제명</th>
+    	<td colspan="3" style="height: 60px;">
+    		<input type="text" name="devTitle" data-type="mField" value="{{ doc.BodyContext.devTitle }}"  style="width:98%;" >
+    	</td>
+    </tr>
+</table>
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+	<colgroup>
+        <col style="width:20%" />
+        <col style="width:*" />
+    </colgroup>
+    <tr>
+    	<th>1. 변경 내역</th>
+    	<td style="height: 100px;">
+    		<textarea data-type="mField" name="devContents" rows="5" style="overflow:auto;width:98%;">{{ doc.BodyContext.devContents }}</textarea>
+    	</td>
+    </tr>
+</table>
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+	<colgroup>
+        <col style="width:*" />
+    </colgroup>
+    <tr>
+    	<th>2. 변경 결과</th>
+    </tr>
+    <tr>
+    	<td style="height: 100px;">
+    		<textarea data-type="mField" name="devDtl" rows="5" style="overflow:auto;width:98%;" >{{ doc.BodyContext.devDtl }}</textarea>
+    	</td>
+    </tr>
+</table>
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+	<colgroup>
+        <col style="width:*" />
+    </colgroup>
+    <tr>
+    	<td>
+    		<p>■ 별첨</p>
+    		<br/>
+    		<p>1. 모니터링 결과 회의록</p>
+    	</td>
+    </tr>
+</table>
+<!--실 결재양식 내용 부분 끝 -->

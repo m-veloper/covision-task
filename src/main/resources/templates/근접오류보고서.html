@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{layouts/layout}"
+>
+<head>
+  <title>covision-task</title>
+</head>
+
+<div layout:fragment="content">
+
+  <style>
+    .inline{
+      display: inline-block;
+    }
+  </style>
+
+  <!--실 결재양식 내용 부분 시작 -->
+
+  <table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+      <col style="width:100%"/>
+    </colgroup>
+    <tr>
+      <td style=" border: none; ">
+        <strong>
+          <U>근접오류(Near miss)란</U>
+        </strong>
+        문제 발생 전에 발견되어 결과에는 영향을 미치지 않았지만 발생 시 심각한 결과를 초래할 수 있는 시스템이나 업무과정상의 문제 또는 사건이 발생하였으나, 환자에게 해가 미약한 경우를 말합니다. 또한
+        문제발생 전에 발견하여 심각한 결과를 초래할 수 있는 사건을 사전에 예방한 경우도 있습니다.
+        이런 경우 “Good Catch”라는 용어로 최근 학회에서는 사용을 권고하고 있습니다.
+        근접오류 보고서는 직원분들이 병원 내에서 실행하고 있는 모든 업무 중 우연히 시스템으로 또는 어떤 사람이 막았기 때문에 일어나지 않은 사건에 관한 비공개 보고서입니다.
+        이 보고서를 통해 위해사건을 사전에 예방하고 개선하여 직원분들이 안전한 의료 환경에서 환자를 안전하게 치료하기 위함이오니 적극적인 보고를 부탁 드립니다.
+        본인은 위의 내용을 충분히 숙지하고 이에 서명, 날인하여 이를 위반하였을 때에는 관련 법령 및 병원의 제 규정에 따라 민·형사상의 책임뿐만 아니라 제반 손해 배상의 책임 등을 감수할 것이며, 병원에
+        끼친 손해에 대해 지체 없이 변상, 복구할 것을 서약하며 이에 위와 같이 진료정보를 요청합니다.
+      </td>
+    </tr>
+    <tr>
+      <td style=" border: none; ">
+        * 이 자료는 절대 비밀 보장되며 추후 개선활동의 자료로만 이용됩니다
+      </td>
+    </tr>
+  </table>
+
+
+  <!--실 결재양식 내용 부분 시작 -->
+
+  <!--실 결재양식 내용 부분 시작 -->
+  <table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+
+    <colgroup>
+      <col style="width:20%"/>
+      <col style="width:80%"/>
+    </colgroup>
+    <tr>
+      <th>사건 제공자 경력</th>
+      <td>
+        <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_0">
+          <input type="checkbox" id="chkBox_01" name="chkBox_0" value="chkBox_01"> 1년 미만
+          <input type="checkbox" id="chkBox_02" name="chkBox_0" value="chkBox_02"> 1년 이상 5년 미만
+          <input type="checkbox" id="chkBox_03" name="chkBox_0" value="chkBox_03"> 5년 이상 10년 미만
+          <input type="checkbox" id="chkBox_04" name="chkBox_0" value="chkBox_04"> 10년 이상
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th>발생일시</th>
+      <td>
+        <input type="text" autocomplete="off" data-pattern="date" data-date-format="yy년 mm월 dd일" data-type="mField" name="issueDate" value="{{ doc.BodyContext.issueDate }}" style="width:98% ; ">
+      </td>
+    </tr>
+    <tr>
+      <th>사건 제공자</th>
+      <td>
+        <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1">
+          <input type="checkbox" id="chkBox_05" name="chkBox_1" value="chkBox_05"> 본인
+          <input type="checkbox" id="chkBox_06" name="chkBox_1" value="chkBox_06"> 동일 부서원
+          <input type="checkbox" id="chkBox_07" name="chkBox_1" value="chkBox_07"> 타 부서원
+          <input type="checkbox" id="chkBox_08" name="chkBox_1" value="chkBox_08">기타
+          (<input type="text" name="etc" data-type="mField" value="{{ doc.BodyContext.etc }}">)
+        </div>
+      </td>
+
+    </tr>
+    <tr>
+      <th>사건 대상자</th>
+      <td>
+        <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_2">
+          <input type="checkbox" id="chkBox_09" name="chkBox_2" value="chkBox_09"> 환자
+          <input type="checkbox" id="chkBox_10" name="chkBox_2" value="chkBox_10"> 보호자
+          <input type="checkbox" id="chkBox_11" name="chkBox_2" value="chkBox_11"> 방문객
+          <input type="checkbox" id="chkBox_12" name="chkBox_2" value="chkBox_12"> 직원
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th>공개 여부</th>
+      <td>
+        <span>나 이외의 다른 직원도 알고 있나?</span>
+        <span>
+          <div class="inline" data-type="mField" data-element-type="chk_d" data-node-name="chkBox_3">
+            <input type="checkbox" id="chkBox_13" name="chkBox_3" value="chkBox_13"> 예
+            <input type="checkbox" id="chkBox_14" name="chkBox_3" value="chkBox_14"> 아니오
+          </div>
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <th>발생 경위</th>
+      <td>
+        <div style="width:99% ;height : 180px">
+          <textarea data-type="mField" name="detailsOfOccurrence"
+                    placeholder="문제 내용 및 발견 과정(6하 원칙에 따라 작성) 육하원칙(언제, 어디서, 누가, 무엇을, 어떻게, 왜)" id="detailsOfOccurrence" style="width:99%">{{ doc.BodyContext.detailsOfOccurrence }}</textarea>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <th>조치 내용</th>
+      <td>
+        <div style="width:99% ;height : 180px">
+          <textarea data-type="mField" name="actionDetails" id="actionDetails" style="width:99%">{{ doc.BodyContext.actionDetails }}</textarea>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{layouts/layout}"
+>
+<head>
+  <title>covision-task</title>
+</head>
+
+<div layout:fragment="content">
+  <style>
+    .inline{
+      display: inline-block;
+    }
+  </style>
+
+  <table class="tableStyle linePlus mt10" style="width: 50%">
+    <tbody>
+    <tr>
+      <td class="" style="width: 70%">
+        <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_0">
+          <input type="checkbox" id="chkBox_01" name="chkBox_0" value="chkBox_01"> 0. 문제 발생 전에 발견되어 결과에 영향을 미치지 않았음 <br>
+          <input type="checkbox" id="chkBox_02" name="chkBox_0" value="chkBox_02"> 1. 발생 시 심각한 결과를 초래할 수 있는 시스템이나 업무 과정상의 문제 또는 사건이 발생하였으나 환자에게 해가 미약한 경우
+        </div>
+      </td>
+      <th class="">근접오류 [7일/상시]</th>
+    </tr>
+    <tr>
+      <td class="">
+        <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1">
+          <input type="checkbox" id="chkBox_03" name="chkBox_1" value="chkBox_03"> 2. 사건/사고의 발생으로 인한 치료 또는 중재가 필요로 함 <br>
+          <input type="checkbox" id="chkBox_04" name="chkBox_1" value="chkBox_04"> 3. 입원기간이 연장되거나 퇴원 시 장애를 일으키는 사건/사고
+        </div>
+      </td>
+      <th class="">위해사고 [3일이내]</th>
+    </tr>
+    <tr>
+      <td class="">
+        <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_2">
+          <input type="checkbox" id="chkBox_05" name="chkBox_2" value="chkBox_05"> 4. 주요 기능의 영구적 손실을 가져오거나 사망을 초래함 <br>
+        </div>
+      <th class="">적신호 [24시간내]</th>
+    </tr>
+    </tbody>
+  </table>
+
+  <table class="tableStyle linePlus mt10">
+    <tbody>
+    <tr>
+      <th class="">등록번호</th>
+      <td class="">
+        <input type="text" data-type="mField" id="regNum" value="{{ doc.BodyContext.regNum }}">
+      </td>
+      <th class="">성명</th>
+      <td class="">
+        <input type="text" data-type="mField" id="name" value="{{ doc.BodyContext.name }}">
+      </td>
+      <th class="">나이</th>
+      <td class="">
+        <input type="text" data-type="mField" id="age" value="{{ doc.BodyContext.age }}">
+      </td>
+    </tr>
+    <tr>
+      <th class="">발생일시</th>
+      <td class="">
+        <input type="text" autocomplete="off" data-pattern="date" data-date-format="yy년 mm월 dd일" data-type="mField" name="issueDate" value="{{ doc.BodyContext.issueDate }}" style="width:98% ; ">
+        시      분
+      </td>
+      <th class="">발생장소</th>
+      <td class="">
+        <input type="text" data-type="mField" id="place" value="{{ doc.BodyContext.place }}">
+      </td>
+      <th class="">진료과</th>
+      <td class="">
+        <input type="text" data-type="mField" id="medical" value="{{ doc.BodyContext.medical }}">
+      </td>
+    </tr>
+    <tr>
+      <th class="" colspan="6">투약사고 유형</th>
+<!--      <td class="" colspan="5">-->
+<!--      </td>-->
+    </tr>
+    <tr>
+      <th class="">1) 투약전 발견</th>
+      <td class="" colspan="5">
+        <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_3">
+          <input type="checkbox" id="chkBox_06" name="chkBox_3" value="chkBox_06"> 의사 처방오류
+          <input type="checkbox" id="chkBox_07" name="chkBox_3" value="chkBox_07"> 약사 조제/ 불출오류
+          <input type="checkbox" id="chkBox_08" name="chkBox_3" value="chkBox_08"> 기타
+          (<input type="text" data-type="mField" id="beforeEct" value="{{ doc.BodyContext.beforeEct }}">)
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th class="" rowspan="3">2) 투약후 발견</th>
+      <td class="" colspan="5">
+        <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_4">
+          <input type="checkbox" id="chkBox_09" name="chkBox_4" value="chkBox_09"> 다른 환자
+          <input type="checkbox" id="chkBox_10" name="chkBox_4" value="chkBox_10"> 다른 약품
+          <input type="checkbox" id="chkBox_11" name="chkBox_4" value="chkBox_11"> 다른 시간
+          <input type="checkbox" id="chkBox_12" name="chkBox_4" value="chkBox_12"> 다른 경로
+          <input type="checkbox" id="chkBox_13" name="chkBox_4" value="chkBox_13"> 다른 용량
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="" colspan="5">
+        <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_5">
+          <input type="checkbox" id="chkBox_14" name="chkBox_5" value="chkBox_14"> 약물 부작용
+          <input type="checkbox" id="chkBox_15" name="chkBox_5" value="chkBox_15"> 일혈/침윤
+          <input type="checkbox" id="chkBox_16" name="chkBox_5" value="chkBox_16"> 투약하지 않아야할 상황에서 투약
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="" colspan="5">
+        <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_6">
+          <input type="checkbox" id="chkBox_17" name="chkBox_6" value="chkBox_17"> 기타
+          (<input type="text" data-type="mField" id="afterEct" value="{{ doc.BodyContext.afterEct }}">)
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th class="" colspan="3">육하원칙에 따라 문제 내용 및 발생 후 중재활동을 기록하여 주십시오.</th>
+      <th class="" colspan="3">본인이 생각하는 문제 원인과 개선방안을 기록하여 주십시오.</th>
+    </tr>
+    <tr>
+      <td class="" colspan="3">
+        <div style="width:99% ;height : 180px">
+          <textarea data-type="mField" name="detailsOfOccurrence" id="arbitrationActivities" style="width:99%">{{ doc.BodyContext.arbitrationActivities }}</textarea>
+        </div>
+      </td>
+      <td class="" colspan="3">
+        <div style="width:99% ;height : 180px">
+          <textarea data-type="mField" name="detailsOfOccurrence" id="improvementActivities" style="width:99%">{{ doc.BodyContext.improvementActivities }}</textarea>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th class="">내부 보고 여부</th>
+      <td class="" colspan="5">
+        <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_7">
+          <input type="checkbox" id="chkBox_18" name="chkBox_7" value="chkBox_18"> 보고 수행(당직의, 주치의, 부서장)
+          <input type="checkbox" id="chkBox_19" name="chkBox_7" value="chkBox_19"> 보고 미 수행
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th class="">보고일</th>
+      <td class="" colspan="2">
+        <input type="text" autocomplete="off" data-pattern="date" data-date-format="yy년 mm월 dd일" data-type="mField" name="reportDate" value="{{ doc.BodyContext.reportDate }}" style="width:98% ; ">
+      </td>
+      <td class="" colspan="3">
+        작성자 : <input type="text" name="reqUserName" data-type="mField" value="{{ doc.BodyContext.reqUserName }}"    style="width:60%; " >(서명)
+      </td>
+    </tr>
+    <tr>
+      <td class="" colspan="6">※ 근접오류 보고시에는 익명보고가 가능합니다.</td>
+    </tr>
+    </tbody>
+  </table>
+
+
+  <th:block layout:fragment="script">
+    <script>
+
+    </script>
+  </th:block>
+</div>
+</html>
