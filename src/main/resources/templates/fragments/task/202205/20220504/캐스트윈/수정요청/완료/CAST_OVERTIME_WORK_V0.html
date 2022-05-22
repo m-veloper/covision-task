@@ -1,0 +1,87 @@
+<style>
+	.ui-timepicker-wrapper{
+	    width: 60px !important;
+	}
+</style>
+<!--실 결재양식 내용 부분 시작 -->
+<div style="font-size:10pt;" class="mt15">
+	기간 : <input type="text" data-type="mField" id="SDate" value="{{ doc.BodyContext.SDate }}" style="width: 13%;" data-pattern="date"  data-date-format="yy.mm.dd" onchange="calYear(); settingSDate();"/> 
+	~ <input type="text" data-type="mField" id="EDate" value="{{ doc.BodyContext.EDate }}" style="width: 13%;" data-pattern="date"  data-date-format="yy.mm.dd" onchange="calYear(); settingEDate();"/>
+	<div style="display:inline-block; width:65%; text-align:right;" align="right">
+	<input type="text" data-type="mField" id="year" value="{{ doc.BodyContext.year }}" style="width: 10%;" readonly /> 
+	<input type="text" data-type="mField" id="DeptName" value="{{ doc.BodyContext.DeptName }}" style="width: 17%;" readonly />
+	</div>
+</div>
+<table class="tableStyle linePlus mt10 multi-row-table RowSumTable" id="TBL_WORK_INFO">
+    <colgroup>
+        <col style="width:9%" />
+        <col style="width:9%" />
+        <col style="width:*" />
+        <col style="width:10%" />
+        <col style="width:17%" />
+        <col style="width:9%" />
+        <col style="width:9%" />
+        <col style="width:7%" />
+        <col style="width:6%" />
+    </colgroup>
+    <tr>
+		<th> 월/일 </th>
+		<th>신청자</th>
+		<th>작 업 내 용</th>
+		<th>특근 사유</th>
+		<th>특근시간</th>
+		<th>작 성 자</th>
+		<th>검 토 자</th>
+		<th colspan="2">총 시간</th>
+    </tr>
+    <tr class="multi-row-control" align="right" data-mode="writeOnly">
+		<td colspan="9">
+			<input type="button" value="+추가" class="multi-row-add usa">
+			<input type="button" value="-삭제" class="multi-row-del-auto usa">
+		</td>
+	</tr>
+    <tr class="multi-row-template">
+    	<td>
+    		<input type="text" data-type="rField" name="WorkDate" style="width: 99%;" data-pattern="date" data-date-format="mm/dd" />
+    	</td>
+    	<td>
+    		<input type="text" data-type="rField" name="WorkEmp" style="width: 99%;" />
+    	</td>
+    	<td>
+    		<input type="text" data-type="rField" name="WorkDetail" style="width: 99%;" />
+    	</td>
+    	<td>
+    		<input type="text" data-type="rField" name="OverworkReason" style="width: 99%;" />
+    	</td>
+    	<td align="center">
+    		<input type="text" name="StartTime" data-type="rField" data-pattern="time" data-time-format="H:i" style="width:40%;" onchange="calWorkTime(this);" required title="시작시간" data-time-step="10" data-time-min="00:00" data-time-max="23:59" class="ui-timepicker-input pattern-active pattern-time-active input-required pattern-required-active" autocomplete="off">
+    		~ <input type="text" name="EndTime" data-type="rField" data-pattern="time" data-time-format="H:i" style="width:40%;" onchange="calWorkTime(this);" required title="종료시간" data-time-step="10" data-time-min="00:00" data-time-max="23:59" class="ui-timepicker-input pattern-active pattern-time-active input-required pattern-required-active" autocomplete="off">
+    	</td>
+		<td>
+    		<input type="text" data-type="rField" name="Writer" style="width: 99%;" />
+    	</td>
+    	<td>
+    		<input type="text" data-type="rField" name="Checking" style="width: 99%;" />
+    	</td>
+    	<td align="center">
+    		<input type="text" name="WorkTime" data-type="rField" value="" style="width:99%;" readonly="readonly">
+    	</td>
+    	<td style="text-align: center;">시간</td>
+    </tr>
+    <tr>
+    	<th colspan="7"></th>
+    	<th>
+    		<input type="text" id="TotalTime" data-type="mField"  value="{{ doc.BodyContext.TotalTime }}" style="width:99%;" readonly="readonly" autocomplete="off">
+    	</th>
+    	<th>시간</th>
+    </tr>
+</table>
+<div style="font-size:10pt; text-align:center;" class="mt15">
+	위와 같이 <input type="text" data-type="mField" id="S_Date" value="{{ doc.BodyContext.S_Date }}" style="width: 13%;" data-pattern="date"  data-date-format="mm월 dd일"/> ~ <input type="text" data-type="mField" id="E_Date" value="{{ doc.BodyContext.E_Date }}" style="width: 13%;" data-pattern="date"  data-date-format="mm월 dd일" /> 분 특근 내역을 보고 합니다.
+</div>
+<div style="font-size:10pt; text-align:right;" class="margin-top:40px;margin-bottom:40px;">
+	<input type="text" data-type="mField" id="Todays" value="{{ doc.BodyContext.Todays }}" style="width: 18%;" data-pattern="date"  data-date-format="yy년 mm월 dd일"/>
+</div>
+
+
+<!--실 결재양식 내용 부분 끝 -->

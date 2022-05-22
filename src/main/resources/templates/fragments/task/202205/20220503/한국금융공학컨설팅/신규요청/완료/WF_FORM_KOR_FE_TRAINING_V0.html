@@ -1,0 +1,87 @@
+<style>
+	.custom-input {
+		width: 100%
+	}
+	.center {
+		text-align: center;
+	}
+
+</style>
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:12%" />
+        <col style="width:*" />
+    </colgroup>
+    <tbody>
+	  <tr>
+	    <th>신청일</th>
+	    <td colspan="2">
+	  	 	<input class="custom-input" type="text" data-type="mField" data-pattern="date" id="reqDate" value="{{ doc.BodyContext.reqDate }}">
+	    </td>
+	    <th>접수일</th>
+	    <td  colspan="2">
+	    	<input class="custom-input" type="text" data-type="mField" data-pattern="date" id="regDate" value="{{ doc.BodyContext.regDate }}">	
+	    </td>
+	  </tr>
+	  <tr>
+	    <th>직위</th>
+	    <td>
+	    	<input class="custom-input" type="text" data-type="mField" id="position" value="{{ doc.BodyContext.position }}">
+	    </td>
+	    <th>소속</th>
+	    <td>
+	    	<input class="custom-input" type="text" data-type="mField" id="affiliation" value="{{ doc.BodyContext.affiliation }}">	
+	    </td>
+	    <th>성명</th>
+	    <td>
+	    	<input class="custom-input" type="text" data-type="mField" id="name" value="{{ doc.BodyContext.name }}">	
+	    </td>
+	  </tr>
+	  <tr>
+	    <th>교육/훈련명</th>
+	    <td colspan="5">
+	    	<input class="custom-input" type="text" data-type="mField" id="title" value="{{ doc.BodyContext.title }}">	
+	    </td>
+	  </tr>
+	  <tr>
+	    <th>교육기간</th>
+	    <td colspan="5">
+	    	<input class="custom-input" type="text" data-type="mField" data-pattern="date" id="period" value="{{ doc.BodyContext.period }}">	
+	    </td>
+	  </tr>
+	  <tr>
+	    <th>교육비</th>
+	    <td colspan="2">
+	    	<input class="custom-input" type="text" data-type="mField" data-pattern="currency"  id="cost" value="{{ doc.BodyContext.cost }}">	
+	    </td>
+	    <th>본인부담금</th>
+	    <td colspan="2">
+	    	<input class="custom-input" type="text" data-type="mField" data-pattern="currency" id="personalCharge" value="{{ doc.BodyContext.personalCharge }}">
+	    </td>
+	  </tr>
+	  <tr>
+	    <th>교육일수</th>
+	    <td colspan="2">
+	    	<input class="custom-input" type="text" data-type="mField" data-pattern="numeric"  id="days" value="{{ doc.BodyContext.days }}">
+	    </td>
+	    <th>교육시간</th>
+	    <td colspan="2">
+	    	<input class="custom-input" type="text" data-type="mField" data-pattern="numeric" id="tiems" value="{{ doc.BodyContext.tiems }}">
+	    </td>
+	  </tr>
+	  <tr>
+	    <th>교육내용</th>
+	    <td colspan="5">
+	    	<textarea id="Context" data-type="mField" style="width: 98%;">{{ doc.BodyContext.Context }}</textarea>
+	    </td>
+	  </tr>
+	  <tr>
+	    <th>교육 후 제출서류</th>
+	    <td colspan="5" class="center">
+	    	<input class="custom-input center" data-type="mField" type="text" id="requiredDocument" value="교육/훈련 수료증(증명서) - 수료 후 경영기획실에 제출" readonly="readonly">	
+	    </td>
+	  </tr>
+	</tbody>
+</table>
+<!--실 결재양식 내용 부분 끝 -->

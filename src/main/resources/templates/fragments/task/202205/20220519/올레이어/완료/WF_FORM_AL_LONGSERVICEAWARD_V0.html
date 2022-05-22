@@ -1,0 +1,119 @@
+<style>
+	#TBL_WORK_INFO input{
+		width: 100%
+	}
+	
+	#TBL_WORK_INFO td,
+	#TBL_WORK_INFO td input{
+		text-align: center;
+	}
+	
+	.border-none-tlr{
+		border-left: none !important;
+		border-right: none !important;
+		border-top: none !important;
+		font-size: 16px !important;
+		font-weight: bold;;
+	}
+</style>
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10" id="TBL_WORK_INFO">
+
+    <colgroup>
+        <col style="width:15%" />
+        <col style="width:*" />
+        <col style="width:15%" />
+        <col style="width:*" />
+    </colgroup>
+
+    <tr>
+    	<td colspan="4" class="border-none-tlr" style="text-align: left;">
+    		<span>1. 신청인</span>
+    	</td>
+    </tr>
+    
+    <tr>
+    	<th>신 청 자</th>
+    	<td>
+    		<input placeholder="신청자 입력" type="text" data-type="mField" id="reqUser" value="{{ doc.BodyContext.reqUser }}" autocomplete="off">
+    	</td>
+   		<th>연 락 처</th>
+    	<td>
+    		<input placeholder="연락처 입력" type="text" data-type="mField" id="phone" value="{{ doc.BodyContext.phone }}" autocomplete="off">
+    	</td>
+    </tr>
+
+    <tr>
+    	<td colspan="4" class="border-none-tlr" style="text-align: left;">
+    		<span>2. 장기근속포상 지급 신청서</span>
+    	</td>
+    </tr>
+    
+    <tr>
+ 		<th>구 분</th>
+    	<td colspan="3">
+    		<div class="check-section" data-type="mField" data-element-type="rdo_d" data-node-name="checkPoint1">
+               	장기근속 5년 <input style="margin-right: 20px;" type="radio" name="checkPoint1" value="5" data-text="5">
+               	장기근속 10년 <input style="margin-right: 20px;" type="radio" name="checkPoint1" value="10" data-text="10">
+               	장기근속 20년 <input style="margin-right: 20px;" type="radio" name="checkPoint1" value="20" data-text="20">
+            </div>
+    	</td>
+    </tr>
+    
+     <tr>
+  		<th>입 사 일</th>
+    	<td>
+    		<input placeholder="입사일  선택" type="text" data-type="mField" id="startDt" value="{{ doc.BodyContext.startDt }}" data-pattern="date" data-date-format="yy년 mm월 dd일" autocomplete="off">
+   		</td>
+  		<th>근 무 년 수</th>
+  		<td>
+  			<input placeholder="년수 입력" style="width:90%" data-pattern="numeric" type="text" data-type="mField" id="wYear" value="{{ doc.BodyContext.wYear }}" autocomplete="off">
+  			<span> 년</span>
+  		</td>
+    </tr>
+
+    <tr>
+        <th>지 급 금 액</th>
+        <td colspan="3" class="center">
+        	<input style="width: 62%; border:none" placeholder="금액 입력시 한글 자동 변환됨" type="text" id="amtToHangul" data-type="mField" value="{{ doc.BodyContext.amtToHangul }}" autocomplete="off" readonly="readonly">
+        	<span>(</span>
+        	<input style="width: 30%" placeholder="지급 금액 입력" data-pattern="numeral" data-numeral-format="0,0" type="text" id="price" data-type="mField" value="{{ doc.BodyContext.price }}" autocomplete="off">
+        	<span>원)</span>
+        </td>
+    </tr>
+    
+	<tr>
+		<td colspan="4" style="border-bottom: none">
+			<div style="padding-top: 20px; font-size: 15px; font-weight: bold;">
+				<p>회사관리규정에 의거하여 위와 같은 장기근속포상 지급을 신청하오니 허가하여 주시기 바랍니다.</p>
+			</div>
+		</td>
+	</tr>
+	
+	<tr>
+		<td colspan="4" style="border-bottom: none">
+			<div style="text-align:left; padding-left:20px; padding-top: 20px; font-size: 15px; font-weight: bold;">
+				<p style="padding-bottom: 10px">※ 신청인 첨부서류</p>
+				<p style="padding-left: 10px">1) 경영관리부에서 확인.</p>
+			</div>
+		</td>
+	</tr>
+	
+	<tr>
+		<td colspan="4" style="border-bottom: none">
+			<div style="padding-top: 25px; text-align: center;">
+				<input style="width: 30%; text-align: center; font-size: 17px; font-weight: bold; border: none" type="text" data-type="mField" id="today" value="{{ doc.BodyContext.today }}" autocomplete="off" readonly="readonly">
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="4">
+			<div style="padding-top: 40px; margin-bottom: 30px; font-size: 25px; font-weight: bold;">
+				<p style="margin-bottom: 10px">주식회사 올레이어</p>			
+				<span>대표이사 : 윤 석 호</span>
+			</div>
+		</td>
+	</tr>      
+</table>
+<!--실 결재양식 내용 부분 끝 -->

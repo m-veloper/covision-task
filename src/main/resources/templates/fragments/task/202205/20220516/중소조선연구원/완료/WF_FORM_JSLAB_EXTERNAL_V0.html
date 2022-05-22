@@ -1,0 +1,157 @@
+<!--실 결재양식 내용 부분 시작 -->
+
+<br>
+
+
+<table class="tableStyle linePlus mt10 multi-row-table sortable" id="headerTitle">
+	<colgroup>
+		<col style="width:15%">
+		<col style="width:70%">
+		<col style="width:15%">
+	</colgroup>
+	<tr>
+		<td rowspan="2" style=" border:hidden;text-align:center">
+		 <img src="/covicore/common/photo/photo.do?img=/1/covistorage/PhotoPath/jslab_external_logo.png" style="width:auto; height:55px;">
+		 <!-- <img src="/approval/resources/images/jslab_external_logo.png" style="width:auto; height:55px;"> -->
+		</td>
+		<td style=" border:hidden; font-size:14px;text-align:center">
+			<strong>"IoT 기반 함정 정비 통합 관제 플랫품 연구개발 사업"</strong>
+		</td>
+	</tr>
+	<tr>
+		<td style=" border:hidden;font-size:23px; text-align:center" >
+			<strong>중소조선연구원 민군 스마트팩토리 추진단</strong>
+		</td>
+	</tr>
+	
+</table>
+
+
+<hr color="black" width="99%" size="0.5">
+<b>
+<table border="0" style="letter-spacing: 1px; font-size:13px;">
+	
+	<colgroup>
+	        <col style="width: 12%">
+	        <col style="width: 60%">
+	        <col style="width: 12%">
+	        <col style="width: 16%">
+	</colgroup>  
+    <tbody>
+       <tr>
+          <td>수 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;신</td>
+        <td colspan="3">
+          	<input placeholder="수신 입력" type="text" data-type="mField" id="NO" value="{{ doc.BodyContext.NO }}" style="width:99%; border:hidden">
+       	</td>
+      </tr>
+       <tr>
+          <td>(경 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;유)</td>
+        <td colspan="3">
+          	<input placeholder="경유 입력" type="text" data-type="mField" id="REFERENCE" value="{{ doc.BodyContext.REFERENCE }}" style="width:99%; border:hidden">
+       	</td>
+      </tr>
+		<tr>
+          	<td>제 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;목</td>
+	        <td colspan="3" id="tblFormSubject">
+	          	<input placeholder="제목 입력" type="text" data-type="dField" id="Subject" value="{{ doc.FormInstanceInfo.Subject }}" title="제목" data-model="Subject" data-binding="pre" style="width:99%; border:hidden" required="" >
+	       	</td>
+		</tr>
+	</tbody>
+</table>
+</b>
+
+
+<hr color="black" width="99%" size="0.5">
+
+
+<!-- 에디터 시작 -->
+<div id="divWebEditorContainer" data-element-type="editor">
+</div>
+<!-- 에디터 종료 -->    
+
+
+<table align="center" id="TableBlowCompanyInformation" style="border-style: none;" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td style="text-align: center;font-size: 16pt;font-weight: bold;">
+            	민군 스마트팩토리 추진단장
+            </td>
+            <td style="width: 78px; height: 78px; vertical-align: bottom; padding-right: 40px;" rowspan="2">
+                <img id="ImgSeal" style="height: 78px; width: 78px;" src="/HtmlSite/smarts4j_n/covicore/resources/images/covision/no_img.gif">
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<br>
+<hr color="black" width="99%" size="0.5">
+
+<table style="font-size:12px; width: 100%">
+	<tr>
+		<td></td>
+		<td>
+			<input style="border:none; font-size: 10px" placeholder="날짜" type="text" data-type="mField" id="issueDt" value="{{ doc.BodyContext.issueDt }}" data-pattern="date" data-date-format="mm/dd" autocomplete="off"/>
+		</td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>
+			<span>연구원</span>
+			<input style="width: 70%; border: none;" placeholder="입력" type="text" data-type="mField" id="person1" value="{{ doc.BodyContext.person1 }}">
+		</td>
+		<td>
+			<span>센터장</span>
+			<input style="width: 70%; border: none;" placeholder="입력" type="text" data-type="mField" id="person2" value="{{ doc.BodyContext.person2 }}" style="border:hidden">
+		</td>
+		<td></td>
+		<td></td>		
+		<td></td>		
+	</tr>
+	<tr>
+		<td colspan="5">
+			<span>협력자</span>
+			<input style="border: none;" placeholder="입력" type="text" data-type="mField" id="person3" value="{{ doc.BodyContext.person3 }}" style="border:hidden">
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<span>시행</span>
+			<input style="width: 90%; border: none" placeholder="입력" type="text" data-type="mField" id="whenDt" value="{{ doc.BodyContext.whenDt }}">
+		</td>
+		<td colspan="3">
+			<span>접수</span>
+			<input style="width: 90%; border: none" placeholder="입력" type="text" data-type="mField" id="regDt" value="{{ doc.BodyContext.regDt }}">
+		</td>
+	</tr>
+	<tr>
+		<td colspan="4">
+			<span>우</span>
+			<input placeholder="입력" type="text" data-type="mField" id="act" value="{{ doc.BodyContext.act }}" style="border:hidden">
+		</td>
+		<td colspan="1">
+			/ www.rims.re.kr
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span>전화</span>
+			<input style="width: 80%; border: none" placeholder="입력" type="text" data-type="mField" id="phone" value="{{ doc.BodyContext.phone }}">
+		</td>
+		<td>
+			<span>전송</span>
+			<input style="width: 80%; border: none" placeholder="입력" type="text" data-type="mField" id="transfer" value="{{ doc.BodyContext.transfer }}">
+		</td>
+		<td>
+			<span>/</span>
+			<input style="width: 80%; border: none" placeholder="공식 전자우편" type="text" data-type="mField" id="email" value="{{ doc.BodyContext.email }}">
+		</td>
+		<td></td>
+		<td>
+			<span>/</span>
+			<input style="width: 80%; border: none" placeholder="공개여부" type="text" data-type="mField" id="status" value="{{ doc.BodyContext.status }}">
+		</td>
+	</tr>
+</table>
+<!--실 결재양식 내용 부분 끝 -->

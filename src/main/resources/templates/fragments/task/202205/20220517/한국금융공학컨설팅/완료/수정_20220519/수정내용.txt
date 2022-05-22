@@ -1,0 +1,3 @@
+xform에서 제공하는 RowSumTable 기능 적용 불가
+
+직접 js 로직 작성

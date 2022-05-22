@@ -1,0 +1,95 @@
+<style>
+	#TBL_WORK_INFO td,
+	#TBL_WORK_INFO td input {
+		text-align: center;
+	}
+	.center {
+		text-align: center;
+	}
+</style>
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10 RowSumTable" id="TBL_WORK_INFO"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:12%" />
+        <col style="width:*" />
+        <col style="width:12%" />
+        <col style="width:*" />
+    </colgroup>
+    <tr>
+    	<th>문서명</th>
+    	<td colspan="3">
+    		<input type="text" id="docName" data-type="mField" style="width: 98%;" value="{{ doc.BodyContext.docName }}">
+    	</td>
+    </tr>
+     <tr>
+    	<th>결의일자</th>
+    	<td>
+    		<input style="width: 98%;" type="text" data-type="mField" id="resolutionDt" value="{{ doc.BodyContext.resolutionDt }}" data-pattern="date" data-date-format="yy년 mm월 dd일" autocomplete="off">
+    	</td>
+   		<th>결의부서</th>
+    	<td>
+    		<p>경영관리실</p>
+    	</td>
+    </tr>
+    
+     <tr>
+    	<th>지출일자</th>
+    	<td>
+    		<input style="width: 98%;" type="text" data-type="mField" id="expenditureDt" value="{{ doc.BodyContext.expenditureDt }}" data-pattern="date" data-date-format="yy년 mm월 dd일" autocomplete="off">
+    	</td>
+   		<th>결 의 자</th>
+    	<td>
+    		<input type="text" id="resolutionUser" data-type="mField" style="width: 98%;" value="{{ doc.BodyContext.resolutionUser }}">
+    	</td>
+    </tr>
+     <tr>
+    	<th>공급가액</th>
+    	<td>
+	        <span>\ </span>
+	        <input style="width: 90%" placeholder="공급가액 입력" data-pattern="currency" class="sum-table-cell" type="text" data-type="mField" id="supplyPrice" value="{{ doc.BodyContext.supplyPrice }}" autocomplete="off">
+    	</td>
+   		<th>부가가치세</th>
+    	<td>
+    		<span>\ </span>
+	        <input style="width: 90%" placeholder="자동입력됨" data-pattern="currency" class="sum-table-cell" type="text" data-type="mField" id="vat" value="{{ doc.BodyContext.vat }}" autocomplete="off" readonly="readonly">
+    	</td>
+    </tr>
+     <tr>
+    	<th>합 계</th>
+    	<td colspan="3">
+	        <span>\ </span>
+	        <input style="width: 96%" placeholder="자동입력됨" data-pattern="currency" class="sum-table-total" type="text" data-type="mField" id="totalPrice" value="{{ doc.BodyContext.totalPrice }}" readonly="readonly">
+    	</td>
+    </tr>
+     <tr>
+    	<th>자금집행일</th>
+    	<td colspan="3">
+	        <input style="width: 98%;" type="text" data-type="mField" id="executionDt" value="{{ doc.BodyContext.executionDt }}" data-pattern="date" data-date-format="yy년 mm월 dd일" autocomplete="off">
+    	</td>
+    </tr>
+     <tr>
+    	<th>지출거래처</th>
+    	<td colspan="3">
+	        <input type="text" id="client" data-type="mField" style="width: 98%;" value="{{ doc.BodyContext.client }}">
+    	</td>
+    </tr>
+     <tr>
+    	<th>지출은행</th>
+    	<td colspan="3">
+	        <input type="text" id="bank" data-type="mField" style="width: 98%;" value="{{ doc.BodyContext.bank }}">
+    	</td>
+    </tr>
+     <tr>
+    	<th>계좌번호</th>
+    	<td colspan="3">
+	        <input type="text" id="bankAc" data-type="mField" style="width: 98%;" value="{{ doc.BodyContext.bankAc }}">
+    	</td>
+    </tr>
+    <tr>
+    	<th>내용</th>
+    	<td colspan="3">
+        	<textarea style="min-height: 300px; width: 100%" data-type="mField" id="context">{{ doc.BodyContext.context }}</textarea>
+    	</td>
+    </tr>
+</table>
+<!--실 결재양식 내용 부분 끝 -->

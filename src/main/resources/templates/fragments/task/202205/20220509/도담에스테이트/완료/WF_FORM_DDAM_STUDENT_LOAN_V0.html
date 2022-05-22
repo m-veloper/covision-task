@@ -1,0 +1,278 @@
+<style>
+	ul {
+		margin: 0;
+		padding-left:10px;
+	   	list-style:none;
+	}
+	
+	ul li{
+		margin-bottom: 7px
+	}
+	#TBL_WORK_INFO td{
+		text-align: center;
+	}
+	#TBL_WORK_INFO input{
+		width: 100%
+	}
+</style>
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10 RowSumTable" id="TBL_WORK_INFO"><!-- class="table_10" -->
+    <tbody>
+    <tr>
+        <th rowspan="2" style="width: 9%">신청인</th>
+        <th style="width: 10%">성명</th>
+        <td colspan="5">
+        	<input type="text" data-type="mField" id="name" value="{{ doc.BodyContext.name }}">
+        </td>
+    </tr>
+    <tr>
+        <th>신청금액 <br>합계</th>
+        <td colspan="5">
+        	<span>\ </span><input style="width: 95%" placeholder="자동입력됨" data-pattern="currency" class="sum-table-total" type="text" data-type="mField" id="totalPrice" value="{{ doc.BodyContext.totalPrice }}" readonly="readonly">
+        </td>
+    </tr>
+    <tr>
+        <th rowspan="5">자녀정보</th>
+        <th>학교</th>
+        <td>
+        	<input type="text" data-type="mField" id="shcool1" value="{{ doc.BodyContext.shcool1 }}">
+        </td>
+        <td>
+        	<input type="text" data-type="mField" id="shcool2" value="{{ doc.BodyContext.shcool2 }}">
+        </td>
+        <td>
+        	<input type="text" data-type="mField" id="shcool3" value="{{ doc.BodyContext.shcool3 }}">
+        </td>
+        <td>
+        	<input type="text" data-type="mField" id="shcool4" value="{{ doc.BodyContext.shcool4 }}">
+        </td>
+        <td>
+        	<input type="text" data-type="mField" id="shcool5" value="{{ doc.BodyContext.shcool5 }}">
+        </td>
+    </tr>
+    <tr>
+        <th>성명</th>
+        <td>
+			<input type="text" data-type="mField" id="childName1" value="{{ doc.BodyContext.childName1 }}">
+        </td>
+        <td>
+			<input type="text" data-type="mField" id="childName2" value="{{ doc.BodyContext.childName2 }}">
+        </td>
+        <td>
+			<input type="text" data-type="mField" id="childName3" value="{{ doc.BodyContext.childName3 }}">
+        </td>
+        <td>
+			<input type="text" data-type="mField" id="childName4" value="{{ doc.BodyContext.childName4 }}">
+        </td>
+        <td>
+			<input type="text" data-type="mField" id="childName5" value="{{ doc.BodyContext.childName5 }}">
+        </td>
+    </tr>
+    <tr>
+        <th>나이/학년</th>
+        <td>
+	        <input style="width: 42%;" data-pattern="numeric" type="text" data-type="mField" id="childAge1" value="{{ doc.BodyContext.childAge1 }}">
+	        <span>/</span>
+	        <input style="width: 42%;" data-pattern="numeric" type="text" data-type="mField" id="childGrade1" value="{{ doc.BodyContext.childGrade1 }}">
+        </td>
+        <td>
+	        <input style="width: 42%;" data-pattern="numeric" type="text" data-type="mField" id="childAge2" value="{{ doc.BodyContext.childAge2 }}">
+	        <span>/</span>
+	        <input style="width: 42%;" data-pattern="numeric" type="text" data-type="mField" id="childGrade2" value="{{ doc.BodyContext.childGrade2 }}">
+        </td>
+        <td>
+	        <input style="width: 42%;" data-pattern="numeric" type="text" data-type="mField" id="childAge3" value="{{ doc.BodyContext.childAge3 }}">
+	        <span>/</span>
+	        <input style="width: 42%;" data-pattern="numeric" type="text" data-type="mField" id="childGrade3" value="{{ doc.BodyContext.childGrade3 }}">
+        </td>
+        <td>
+	        <input style="width: 42%;" data-pattern="numeric" type="text" data-type="mField" id="childAge4" value="{{ doc.BodyContext.childAge4 }}">
+	        <span>/</span>
+	        <input style="width: 42%;" data-pattern="numeric" type="text" data-type="mField" id="childGrade4" value="{{ doc.BodyContext.childGrade4 }}">
+        </td>
+        <td>
+	        <input style="width: 42%;" data-pattern="numeric" type="text" data-type="mField" id="childAge5" value="{{ doc.BodyContext.childAge5 }}">
+	        <span>/</span>
+	        <input style="width: 42%;" data-pattern="numeric" type="text" data-type="mField" id="childGrade5" value="{{ doc.BodyContext.childGrade5 }}">
+        </td>
+    </tr>
+    <tr>
+        <th>신청회차</th>
+        <td>
+			<div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_0" style="font-size: 12px">
+	          <input type="checkbox" id="chkBox_01" name="chkBox_0" value="chkBox_01">1분기
+	          <input type="checkbox" id="chkBox_02" name="chkBox_0" value="chkBox_02">2분기
+	          <br>
+              <input type="checkbox" id="chkBox_03" name="chkBox_0" value="chkBox_03">3분기
+	          <input type="checkbox" id="chkBox_04" name="chkBox_0" value="chkBox_04">4분기
+	          <br>
+              <input type="checkbox" id="chkBox_05" name="chkBox_0" value="chkBox_05">1학기
+	          <input type="checkbox" id="chkBox_06" name="chkBox_0" value="chkBox_06">2학기
+        	</div>        
+        </td>
+        <td>
+			<div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1" style="font-size: 12px">
+	          <input type="checkbox" id="chkBox_07" name="chkBox_1" value="chkBox_07">1분기
+	          <input type="checkbox" id="chkBox_08" name="chkBox_1" value="chkBox_08">2분기
+	          <br>
+              <input type="checkbox" id="chkBox_09" name="chkBox_1" value="chkBox_09">3분기
+	          <input type="checkbox" id="chkBox_10" name="chkBox_1" value="chkBox_10">4분기
+	          <br>
+              <input type="checkbox" id="chkBox_11" name="chkBox_1" value="chkBox_11">1학기
+	          <input type="checkbox" id="chkBox_12" name="chkBox_1" value="chkBox_12">2학기
+        	</div>        
+        </td>
+        <td>
+			<div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_2" style="font-size: 12px">
+	          <input type="checkbox" id="chkBox_13" name="chkBox_2" value="chkBox_13">1분기
+	          <input type="checkbox" id="chkBox_14" name="chkBox_2" value="chkBox_14">2분기
+	          <br>
+              <input type="checkbox" id="chkBox_15" name="chkBox_2" value="chkBox_15">3분기
+	          <input type="checkbox" id="chkBox_16" name="chkBox_2" value="chkBox_16">4분기
+	          <br>
+              <input type="checkbox" id="chkBox_17" name="chkBox_2" value="chkBox_17">1학기
+	          <input type="checkbox" id="chkBox_18" name="chkBox_2" value="chkBox_18">2학기
+        	</div>        
+        </td>
+        <td>
+			<div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_3" style="font-size: 12px">
+	          <input type="checkbox" id="chkBox_19" name="chkBox_3" value="chkBox_19">1분기
+	          <input type="checkbox" id="chkBox_20" name="chkBox_3" value="chkBox_20">2분기
+	          <br>
+              <input type="checkbox" id="chkBox_21" name="chkBox_3" value="chkBox_21">3분기
+	          <input type="checkbox" id="chkBox_22" name="chkBox_3" value="chkBox_22">4분기
+	          <br>
+              <input type="checkbox" id="chkBox_23" name="chkBox_3" value="chkBox_23">1학기
+	          <input type="checkbox" id="chkBox_24" name="chkBox_3" value="chkBox_24">2학기
+        	</div>        
+        </td>
+        <td>
+			<div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_4" style="font-size: 12px">
+	          <input type="checkbox" id="chkBox_25" name="chkBox_4" value="chkBox_25">1분기
+	          <input type="checkbox" id="chkBox_26" name="chkBox_4" value="chkBox_26">2분기
+	          <br>
+              <input type="checkbox" id="chkBox_27" name="chkBox_4" value="chkBox_27">3분기
+	          <input type="checkbox" id="chkBox_28" name="chkBox_4" value="chkBox_28">4분기
+	          <br>
+              <input type="checkbox" id="chkBox_29" name="chkBox_4" value="chkBox_29">1학기
+	          <input type="checkbox" id="chkBox_30" name="chkBox_4" value="chkBox_30">2학기
+        	</div>        
+        </td>
+    </tr>
+    <tr>
+        <th>신청금액</th>
+        <td>
+	        <span>\ </span><input style="width: 75%" data-pattern="currency" class="sum-table-cell" type="text" data-type="mField" id="reqPrice1" value="{{ doc.BodyContext.reqPrice1 }}">
+        </td>
+        <td>
+        	<span>\ </span><input style="width: 75%" data-pattern="currency" class="sum-table-cell" type="text" data-type="mField" id="reqPrice2" value="{{ doc.BodyContext.reqPrice2 }}">
+        </td>
+        <td>
+        	<span>\ </span><input style="width: 75%" data-pattern="currency" class="sum-table-cell" type="text" data-type="mField" id="reqPrice3" value="{{ doc.BodyContext.reqPrice3 }}">
+        </td>
+        <td>
+        	<span>\ </span><input style="width: 75%" data-pattern="currency" class="sum-table-cell" type="text" data-type="mField" id="reqPrice4" value="{{ doc.BodyContext.reqPrice4 }}">
+        </td>
+        <td>
+        	<span>\ </span><input style="width: 75%" data-pattern="currency" class="sum-table-cell" type="text" data-type="mField" id="reqPrice5" value="{{ doc.BodyContext.reqPrice5 }}">
+        </td>
+    </tr>
+    <tr>
+        <th>첨부서류</th>
+        <td colspan="6">
+            <ul style="text-align: left;">
+                <li>- 가족관계 증명원 또는 호적등본 (최초 신청시에만 제출)</li>
+                <li>- 재학증명서 또는 수업료 납부영수증(자녀이름명시 및 대학생에 한하며 제출 필수)</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="7">
+            <ul style="text-align: center; margin-top: 30px; margin-bottom: 30px">
+                <li>위와 같이 도담에스테이트(주) 학자금을 신청하오니 지급하여 주시기 바랍니다.</li>
+                <li>
+                	<input style="width: 30%" placeholder="신청일" type="text" data-type="mField" id="reqDate" value="{{ doc.BodyContext.reqDate }}" data-pattern="date" data-date-format="yy년 mm월 dd일" autocomplete="off">
+               	</li>
+                <li>신청인(근로자) &nbsp 
+                	<input style="width: 30%" placeholder="이름" type="text" data-type="mField" id="reqUser" value="{{ doc.BodyContext.reqUser }}" readonly="readonly"> ( 서명 또는 인 )
+               	</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <th rowspan="4">주의사항</th>
+        <td colspan="3" rowspan="4">
+            <ul style="text-align: left; font-size: 12px">
+                <li>1) 해외유학중인 자녀도 국내교육기관과 동등한 학력일 경우신청 가능합니다.</li>
+                <li>2) 신청기간 안에 제출해 주시기 바랍니다.<br>
+                    <strong style="color: red">(기한엄수)–신청기간 이후 제출 시 처리 불가</strong>
+                </li>
+                <li>3) 취학 전 아동은 5,6,7세에 한하며, 당해연도 3월에입학예정인 경우는 초등학생으로 신청하셔야 합니다.</li>
+            </ul>
+        </td>
+        <th rowspan="4">지원금액</th>
+        <td>5~7세</td>
+        <td>50만원/분기</td>
+    </tr>
+    <tr>
+        <td>초등학생</td>
+        <td>40만원/분기</td>
+    </tr>
+    <tr>
+        <td>중,고등학생</td>
+        <td>40만원/분기</td>
+    </tr>
+    <tr>
+        <td>대학생</td>
+        <td>250만원/학기</td>
+    </tr>
+    <tr>
+        <th colspan="7">기준 기간 및 신청 기간</th>
+    </tr>
+    <tr>
+        <th>구분</th>
+        <th colspan="2">기준기간</th>
+        <th colspan="2">신청기간</th>
+        <th colspan="2">비고</th>
+    </tr>
+    <tr>
+        <th>1분기</th>
+        <td colspan="2">3/1~5/31</td>
+        <td colspan="2">2/1~2/28</td>
+        <td colspan="2" rowspan="4">
+       		취학전아동<br>
+       		초등학생<br>
+       		중학생<br>
+       		고등학생<br>
+        </td>
+    </tr>
+    <tr>
+        <th>2분기</th>
+        <td colspan="2">6/1~8/31</td>
+        <td colspan="2">5/1~5/31</td>
+    </tr>
+    <tr>
+        <th>3분기</th>
+        <td colspan="2">9/1~11/30</td>
+        <td colspan="2">8/1~8/31</td>
+    </tr>
+    <tr>
+        <th>4분기</th>
+        <td colspan="2">12/1~2/28</td>
+        <td colspan="2">11/1~11/30</td>
+    </tr>
+    <tr>
+        <th>1학기</th>
+        <td colspan="2">3/1~8/31</td>
+        <td colspan="2">2/1~2/28</td>
+        <td colspan="2" rowspan="2">대학생</td>
+    </tr>
+    <tr>
+        <th>2학기</th>
+        <td colspan="2">9/1~2/28</td>
+        <td colspan="2">8/1~8/31</td>
+    </tr>
+    </tbody>
+</table>
+<!--실 결재양식 내용 부분 끝 -->

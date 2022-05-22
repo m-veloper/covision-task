@@ -1,0 +1,109 @@
+<style>
+	.TBL_WORK_INFO input{
+		width: 100%
+	}
+	
+	.TBL_WORK_INFO td,
+	.TBL_WORK_INFO td input{
+		text-align: center;
+	}
+	
+	.border-none-tlr{
+		border-left: none !important;
+		border-right: none !important;
+		border-top: none !important;
+		font-size: 16px !important;
+		font-weight: bold;;
+	}
+	
+	/* 이미지 위로 텍스트 올리기 */
+	
+	.sign-img{
+		display:none;
+		width: 50px;
+		height: 50px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate( 50%, -50% );
+	}
+	
+	
+</style>
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10 TBL_WORK_INFO"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:100%" />
+        <col style="width:100%" />
+    </colgroup>
+    
+	<tr>
+		<td colspan="4" style="text-align: left">
+			<div style="font-size: 16px; padding-top: 20px; padding-left: 10px">
+				<p style="margin-bottom: 7px">
+				&nbsp;&nbsp;&nbsp;
+				근로기준법 제62조 규정에 근거하여 (주)올레이어 대표이사 윤석호와 근로자대표 최병국은
+				</p>					
+				<p style="margin-bottom: 7px">
+					연차유급휴가의 대체-특정한 근로일에 연차유급휴가 일괄 사용에 관하여 다음과 같이 합의합니다.
+				</p>					
+			</div>
+			
+			<div style="text-align:center; font-size: 20px; font-weight:bold; padding-top: 50px; padding-left: 10px">
+				<p style="margin-bottom: 7px"> 
+				- 다&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;음 - 
+				</p>					
+			</div>
+
+			<div style="font-size: 15px; padding-top: 30px; padding-left: 10px; padding-bottom: 50px">
+				<span>○ 대상근로일 : </span>
+				<input placeholder="입력" style="width: 80%" type="text" data-type="mField" id="wDate" value="{{ doc.BodyContext.wDate }}" autocomplete="off">
+				
+				<br><br>
+				
+				<span>○ 합의 사항 : 상기 대상 근로일에 전(全) 근로자에 대하여 연차유급휴가 사용으로 처리 </span>
+					
+				<br><br>
+				
+				<span>○ 근거 법령 : </span>
+				<br>
+				<span>근로기준법 제62조 (유급휴가의 대체) 사용자는 근로자대표와의 서면 합의에 따라 제60조에 따른<br> 
+				연차 유급휴가일을 갈음하여 특정한 근로일에 근로자를 휴무시킬 수 있다.</span>
+			</div>
+		</td>
+	</tr> 
+
+    <tr>
+    	<th>사용자</th>
+   		<th>근로자 대표</th>
+    </tr>
+   	<tr>
+		<td style="height: 100px">
+			<span>대표이사 윤 석 호 (서명 또는 인)</span>
+			<!-- <img class="sign-img" src="https://t1.daumcdn.net/cfile/blog/212074375301C90327" alt=""> -->
+			<img id="ceoSign" class="sign-img" src="http://localhost:8080/gwstorage/e-sign/ApprovalSign/BackStamp/sign_superadmin_no2img.gif" alt="">
+		</td>
+		<td>
+			<span>최 병 국 (서명 또는 인)</span>
+			<!-- <img class="sign-img" src="https://t1.daumcdn.net/cfile/blog/212074375301C90327" alt=""> -->
+			<img id="workerSign" class="sign-img" src="http://localhost:8080/gwstorage/e-sign/ApprovalSign/BackStamp/sign_superadmin_no2img.gif" alt="">
+		</td>
+    </tr>
+    <tr>
+		<td colspan="4" style="border-bottom: none">
+			<div style="padding-top: 25px; text-align: center;">
+				<input style="width: 30%; text-align: center; font-size: 17px; font-weight: bold; border: none" type="text" data-type="mField" id="today" value="{{ doc.BodyContext.today }}" autocomplete="off" readonly="readonly">
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="4">
+			<div style="padding-top: 40px; margin-bottom: 30px; font-size: 25px; font-weight: bold;">
+				<p style="margin-bottom: 10px">주식회사 올레이어</p>					
+				<span>대표이사 : 윤 석 호</span>
+			</div>
+		</td>
+	</tr> 
+</table>
+<!--실 결재양식 내용 부분 끝 -->

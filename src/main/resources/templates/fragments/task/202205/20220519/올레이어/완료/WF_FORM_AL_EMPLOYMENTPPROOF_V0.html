@@ -1,0 +1,126 @@
+<style>
+	#TBL_WORK_INFO input{
+		width: 100%
+	}
+	
+	#TBL_WORK_INFO td,
+	#TBL_WORK_INFO td input{
+		text-align: center;
+	}
+</style>
+
+<div style ="font-size: 11px; border: none; display:none; text-align : right" id="doc_complet_no">
+	<span>발급 번호 : </span>
+	<span id="docNo"></span>
+</div>
+
+<div align ="center"  style="border: none; display:none" id="titleDiv">
+	<p style="font-size:30px; margin: 30px auto;">재직증명서</p>
+</div>
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10" id="TBL_WORK_INFO">
+
+    <colgroup>
+        <col style="width:15%" />
+        <col style="width:*" />
+        <col style="width:15%" />
+        <col style="width:*" />
+    </colgroup>
+    
+    <tr>
+    	<th>성 명</th>
+    	<td>
+    		<input type="text" data-type="mField" id="name" value="{{ doc.BodyContext.name }}">
+    	</td>
+   		<th>생 년 월 일</th>
+    	<td>
+    		<input type="text" data-type="mField" id="birthDay" value="{{ doc.BodyContext.birthDay }}" data-pattern="date" data-date-format="yy년 mm월 dd일" autocomplete="off">
+    	</td>
+    </tr>
+    
+    <tr>
+    	<th>주민등록번호</th>
+    	<td colspan="3">
+    		<input placeholder="예 : 987654-1234567" type="text" data-type="mField" id="userNumber" value="{{ doc.BodyContext.userNumber }}">
+    	</td>
+    </tr>
+    
+    <tr>
+    	<th>현 주 소</th>
+    	<td colspan="3">
+    		<input type="text" data-type="mField" id="addr" value="{{ doc.BodyContext.addr }}">
+    	</td>
+    </tr> 
+    
+    <tr>
+ 		<th>소 속</th>
+    	<td>
+    		<input type="text" data-type="mField" id="department" value="{{ doc.BodyContext.department }}">
+    	</td>
+   		<th>직 급</th>
+    	<td>
+    		<input type="text" data-type="mField" id="position" value="{{ doc.BodyContext.position }}">
+    	</td>
+    </tr>
+    
+    <tr>
+  		<th>입 사 일</th>
+    	<td>
+    		<input type="text" data-type="mField" id="startDt" value="{{ doc.BodyContext.startDt }}" data-pattern="date" data-date-format="yy년 mm월 dd일" autocomplete="off">
+   		</td>
+  		<th>퇴 직 일</th>
+  		<td>
+  			<input type="text" data-type="mField" id="endDt" value="{{ doc.BodyContext.endDt }}" data-pattern="date" data-date-format="yy년 mm월 dd일" autocomplete="off">
+  		</td>
+    </tr>
+    
+    <tr>
+ 		<th>근 무 기 간</th>
+    	<td colspan="3">
+    		<input style="width: 23%; border: none" type="text" data-type="mField" id="wStartDt" value="{{ doc.BodyContext.wStartDt }}" autocomplete="off" readonly="readonly">
+    		<span style="font-weight: bold;"> ~ </span>
+    		<span style="font-weight: bold;"> 현재까지 </span>
+    	</td>
+    </tr>
+    
+    <tr>
+    	<th>사업장소재지</th>
+    	<td colspan="3">
+    		<p>서울시 영등포구 국회대로70길 15-1, 404~411호(여의도동, 극동VIP빌딩)</p>
+    	</td>
+    </tr> 
+    
+	<tr>
+    	<th>용도</th>
+    	<td colspan="3">
+    		<input type="text" data-type="mField" id="purpose" value="{{ doc.BodyContext.purpose }}">
+    	</td>
+    </tr>
+	<tr>
+		<td colspan="4" style="border-bottom: none">
+			<div style="text-align: left; padding-top: 30px; padding-left:20px; font-size: 17px; font-weight: bold;">
+				<p>상기와 같이 재직하고 있음을 증명합니다.</p>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="4" style="border-bottom: none">
+			<div style="padding-top: 50px; text-align: center;">
+				<input style="width: 30%; text-align: center; font-size: 17px; font-weight: bold; border: none" type="text" data-type="mField" id="today" value="{{ doc.BodyContext.today }}" autocomplete="off" readonly="readonly">
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="4">
+			<div style="padding-top: 45px; margin-bottom: 45px; font-size: 25px; font-weight: bold;">
+				<p style="margin-bottom: 10px">주식회사 올레이어</p>				
+				<span>대표이사 : 윤 석 호</span>
+				<span>
+					<img id="ImgSeal" style="height: 78px; width: 78px;" src="/HtmlSite/smarts4j_n/covicore/resources/images/covision/no_img.gif">
+				</span>
+			</div>
+		</td>
+	</tr>      
+</table>
+<!--실 결재양식 내용 부분 끝 -->

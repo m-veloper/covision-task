@@ -1,0 +1,174 @@
+<style>
+	.TBL_WORK_INFO input{
+		width: 100%
+	}
+	
+	.TBL_WORK_INFO td,
+	.TBL_WORK_INFO td input{
+		text-align: center;
+	}
+	
+	.border-none-tlr{
+		border-left: none !important;
+		border-right: none !important;
+		border-top: none !important;
+		font-size: 16px !important;
+		font-weight: bold;;
+	}
+</style>
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10 TBL_WORK_INFO" id="TBL_WORK_INFO">
+
+    <colgroup>
+        <col style="width:15%" />
+        <col style="width:*" />
+        <col style="width:15%" />
+        <col style="width:*" />
+    </colgroup>
+    
+    <tr>
+    	<td colspan="4" class="border-none-tlr" style="text-align: left;">
+    		<span>1. 신청인</span>
+    	</td>
+    </tr>
+    
+    <tr>
+    	<th>신 청 자</th>
+    	<td>
+    		<input placeholder="신청자 입력" type="text" data-type="mField" id="reqUser" value="{{ doc.BodyContext.reqUser }}" autocomplete="off">
+    	</td>
+   		<th>연 락 처</th>
+    	<td>
+    		<input placeholder="010-XXXX-XXXX" type="text" data-type="mField" id="phone" value="{{ doc.BodyContext.phone }}" autocomplete="off">
+    	</td>
+    </tr>
+    
+    <tr>
+ 		<th>소 속</th>
+    	<td>
+    		<input type="text" data-type="mField" id="group" value="{{ doc.BodyContext.group }}">
+    	</td>
+   		<th>직 급</th>
+    	<td>
+    		<input type="text" data-type="mField" id="position" value="{{ doc.BodyContext.position }}">
+    	</td>
+    </tr>
+    
+     <tr>
+    	<th>퇴 사 후  주 소</th>
+    	<td>
+    		<input type="text" data-type="mField" id="addr" value="{{ doc.BodyContext.addr }}">
+    	</td>
+    	<th>전 화 번 호 </th>
+    	<td>
+    		<input type="text" data-type="mField" id="tel" value="{{ doc.BodyContext.tel }}">
+    	</td>
+    </tr>
+    
+    <tr>
+  		<th>입 사 일</th>
+    	<td>
+    		<input type="text" data-type="mField" id="startDt" value="{{ doc.BodyContext.startDt }}" data-pattern="date" data-date-format="yy년 mm월 dd일" autocomplete="off">
+   		</td>
+  		<th>퇴 직 일</th>
+  		<td>
+  			<input type="text" data-type="mField" id="endDt" value="{{ doc.BodyContext.endDt }}" data-pattern="date" data-date-format="yy년 mm월 dd일" autocomplete="off">
+  		</td>
+    </tr> 
+</table>
+
+<table class="tableStyle linePlus mt10 TBL_WORK_INFO">
+
+    <colgroup>
+        <col style="width:15%" />
+        <col style="width:55%" />
+    </colgroup>
+    
+    <tr>
+    	<td colspan="4" class="border-none-tlr" style="text-align: left;">
+    		<span>2. 사유</span>
+    	</td>
+    </tr>
+    
+    <tr>
+ 		<th>구분</th>
+    	<td colspan="2">
+    		<input type="text" data-type="mField" id="department" value="{{ doc.BodyContext.department }}">
+    	</td>
+   		<th>비고</th>
+    </tr>
+    
+    <tr>
+ 		<th>사 직 사 유</th>
+    	<td colspan="2">
+ 			<textarea id="context1" data-type="mField" style="width: 100%;">{{ doc.BodyContext.context1 }}</textarea>
+    	</td>
+    	<td>
+    		<textarea id="context2" data-type="mField" style="width: 100%;">{{ doc.BodyContext.context2 }}</textarea>
+    	</td>
+    </tr>
+    
+         <tr>
+    	<td colspan="4" style="border: none;">
+    	</td>
+    </tr>
+    <tr>
+    	<td colspan="4" class="border-none-tlr" style="text-align: left;">
+    		<span>3. 업무인수인계</span>
+    	</td>
+    </tr>
+    
+    <tr>
+   		<th>업 무 내 용</th>
+    	<td colspan="3">
+    		<p> 별첨 : 인수인계 자료 목록</p>
+    	</td>
+    </tr>
+    
+    <tr>
+   		<th>인 계 자</th>
+    	<td colspan="3">
+    		<input type="text" data-type="mField" id="transfer" value="{{ doc.BodyContext.transfer }}">
+    	</td>
+    </tr>
+</table>
+
+<table>
+	<tr>
+		<td colspan="4" style="border-bottom: none">
+			<div style="padding-top: 30px; font-size: 13px; font-weight: bold;">
+				<p> 1. 본인은 퇴직에 따른 업무 인수, 인계의 철저로 최종 퇴사 시까지 책임과 의무를 완수 하고 재직시 업무상 제반 비밀사항을 
+				&nbsp;&nbsp;&nbsp;&nbsp;타인에게 누설함이 귀사의 경영에 막대한 손해와 피해를 준다는 사실을 지각하고 이를 누설하지 않겠습니다.</p>
+				<br>
+				<p> 2. 기타 회사와 관련된 제반사항 (자료 및 문서) 은 회사 규정에 따라 정해진 위치에 저장하며 자료의 목록은 별도의 자료로 
+				&nbsp;&nbsp;&nbsp;&nbsp;제출 하겠습니다</p>
+			</div>
+		</td>
+	</tr>
+	
+	<tr>
+		<td colspan="4" style="border-bottom: none; text-align: center;">
+			<div style="padding-top: 30px; font-size: 16px; font-weight: bold;">
+				<p> 상기 본인은 위와 같은 사유로 신청서를 제출하오니 허가하여 주시기 바랍니다. </p>
+			</div>
+		</td>
+	</tr>
+	
+	<tr>
+		<td colspan="4" style="border-bottom: none">
+			<div style="padding-top: 25px; text-align: center;">
+				<input style="width: 30%; text-align: center; font-size: 17px; font-weight: bold; border: none" type="text" data-type="mField" id="today" value="{{ doc.BodyContext.today }}" autocomplete="off" readonly="readonly">
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="4">
+			<div style="text-align:center; padding-top: 40px; margin-bottom: 30px; font-size: 25px; font-weight: bold;">
+				<p style="margin-bottom: 10px">주식회사 올레이어</p>				
+				<span>대표이사 : 윤 석 호</span>
+			</div>
+		</td>
+	</tr> 
+</table>
+<!--실 결재양식 내용 부분 끝 -->
