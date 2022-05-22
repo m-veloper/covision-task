@@ -1,6 +1,14 @@
 <!--실 결재양식 내용 부분 시작 -->
-
 <style>
+  #TBL_WORK_INFO input{
+    width: 100%
+  }
+
+  #TBL_WORK_INFO td,
+  #TBL_WORK_INFO td input{
+    text-align: center;
+  }
+
   #bottomTable tr,
   #bottomTable th,
   #bottomTable td{
@@ -14,7 +22,11 @@
   <span id="docNo"></span>
 </div>
 
-<table class="tableStyle linePlus mt10">
+<div align ="center"  style="border: none; display:none" id="titleDiv">
+  <p style="font-size:30px; margin: 30px auto;">위 임 장</p>
+</div>
+
+<table class="tableStyle linePlus mt10" id="TBL_WORK_INFO">
   <tbody>
   <tr>
     <th rowspan="3">피위임인</th>

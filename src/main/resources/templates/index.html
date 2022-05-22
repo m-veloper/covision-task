@@ -9,102 +9,77 @@
 </head>
 
 <div layout:fragment="content">
-  <!--실 결재양식 내용 부분 시작 -->
-
   <style>
-    #bottomTable tr,
-    #bottomTable th,
-    #bottomTable td{
-      border: none ;
+    #TBL_WORK_INFO input{
+      width: 100%
+    }
+
+    #TBL_WORK_INFO td,
+    #TBL_WORK_INFO td input{
+      text-align: center;
     }
   </style>
-  <br>
 
   <div style ="font-size: 11px; border: none; display:none; text-align : right" id="doc_complet_no">
     <span>발급 번호 : </span>
     <span id="docNo"></span>
   </div>
 
-  <table class="tableStyle linePlus mt10">
-    <tbody>
-    <tr>
-      <th rowspan="3">피위임인</th>
-      <th>성명</th>
-      <td>
-        <input type="text" data-type="mField" id="name" value="{{ doc.BodyContext.name }}">
-      </td>
-      <th>직책</th>
-      <td>
-        <input type="text" data-type="mField" id="position" value="{{ doc.BodyContext.position }}">
-      </td>
-    </tr>
-    <tr>
-      <th>주민등록번호</th>
-      <td colspan="3">
-        <input type="text" data-type="mField" id="userNumber" value="{{ doc.BodyContext.userNumber }}">
-      </td>
-    </tr>
-    <tr>
-      <th>주소</th>
-      <td colspan="3">
-        <input type="text" data-type="mField" id="addr" value="{{ doc.BodyContext.addr }}">
-      </td>
-    </tr>
-    </tbody>
-  </table>
-
-  <!-- 에디터 시작 -->
-  <div id="divWebEditorContainer" data-element-type="editor">
+  <div align ="center"  style="border: none; display:none" id="titleDiv">
+    <p style="font-size:30px; margin: 30px auto;">사 용 인 감 계</p>
   </div>
-  <!-- 에디터 종료 -->
 
-  <table class="tableStyle linePlus mt10" id="bottomTable">
-    <tbody>
+  <!--실 결재양식 내용 부분 시작 -->
+  <table class="tableStyle linePlus mt10" id="TBL_WORK_INFO">
+    <colgroup>
+      <col style="width:15%" />
+      <col style="width:*" />
+      <col style="width:15%" />
+      <col style="width:*" />
+    </colgroup>
+    
+    <tr>
+        <th>사용인감</th>
+        <td rowspan="2">서울시 영등포구 국회대로 70 길 15-1, 404~411 호<br>(여의도동, 극동 VIP 빌딩)<br>㈜ 올레이어<br>대표이사 윤 석 호</td>
+    </tr>
+    <tr>
+        <td>
+          <img id="ImgSeal" style="height: 78px; width: 78px;" src="/HtmlSite/smarts4j_n/covicore/resources/images/covision/no_img.gif">
+        </td>
+    </tr>
+    <tr>
+        <th>용도</th>
+        <td>
+          <input type="text" data-type="mField" id="purpose" value="{{ doc.BodyContext.purpose }}">
+        </td>
+    </tr>
     <tr>
       <td colspan="2" style="border-bottom: none">
-        <div style="padding-top: 25px; padding-bottom: 50px; text-align: center;">
+        <div style="text-align: left; padding-top: 30px; padding-left:20px; font-size: 17px; font-weight: bold;">
+          <p>위 인감은 폐사가 사용하는 인감으로서 아래의 용도에 사용하겠으며, 위
+            인감사용으로 인한 법률상의 모든 책임은 폐사에 있음을 확약하고 이에 사용
+            인감계를 제출합니다.</p>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" style="border-bottom: none">
+        <div style="padding-top: 50px; text-align: center;">
           <input style="width: 30%; text-align: center; font-size: 17px; font-weight: bold; border: none" type="text" data-type="mField" id="today" value="{{ doc.BodyContext.today }}" autocomplete="off" readonly="readonly">
         </div>
       </td>
     </tr>
     <tr>
-      <td style="text-align: right">(위임자)</td>
-    </tr>
-    <tr>
-      <td style="text-align: right">사업자등록번호</td>
-      <td>119-81-72660</td>
-    </tr>
-    <tr>
-      <td style="text-align: right">상&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;호</td>
-      <td>㈜올레이어</td>
-    </tr>
-    <tr>
-      <td style="text-align: right">성&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;명</td>
-      <td>
-        <span>대표이사 : 윤 석 호</span>
-        <span>
-					<img id="ImgSeal" style="height: 78px; width: 78px;" src="/HtmlSite/smarts4j_n/covicore/resources/images/covision/no_img.gif">
-				</span>
-      </td>
-
-    </tr>
-    <tr>
-      <td style="text-align: right">주&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;소</td>
-      <td>서울시 영등포구 국회대로70길 15-1, 404~411호
-        (여의도동, 극동VIP빌딩)</td>
-    </tr>
-
-    <tr>
-      <td colspan="2" style="text-align: center; padding-top: 50px;">
-        <input type="text" data-type="mField" id="toSend" value="{{ doc.BodyContext.toSend }}">
-        <span>귀하</span>
+      <td colspan="2">
+        <div style="padding-top: 45px; margin-bottom: 45px; font-size: 25px; font-weight: bold;">
+          <p style="margin-bottom: 10px">주식회사 올레이어</p>
+          <span>대표이사 : 윤 석 호</span>
+        </div>
       </td>
     </tr>
-    </tbody>
   </table>
-
-
   <!--실 결재양식 내용 부분 끝 -->
+
   <th:block layout:fragment="script">
     <script>
 
