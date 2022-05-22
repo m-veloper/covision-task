@@ -50,6 +50,9 @@ function postRenderingForTemplate() {
         }
      
         //<!--loadMultiRow_Write-->
+
+        // 오늘 날짜 자동 입력
+        getDate.today()
     }
 }
 
@@ -80,3 +83,18 @@ function makeBodyContext() {
     return bodyContextObj;
 }
 
+/**
+ * 날짜 자동 입력
+ */
+let getDate = {
+
+    // 오늘 날짜 자동 입력
+    today() {
+        let todayElement = document.getElementById("today");
+        let today = new Date();
+        let year = today.getFullYear();
+        let month = (today.getMonth() + 1) < 10 ? "0" + (today.getMonth() + 1) : (today.getMonth() + 1);
+        let date = today.getDate() < 10 ? "0" + today.getDate() : today.getDate();
+        todayElement.value = (year + "년 " + month + "월 " + date + "일")
+    }
+}

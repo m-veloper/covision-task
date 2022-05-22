@@ -1,15 +1,96 @@
-
 <!--실 결재양식 내용 부분 시작 -->
-<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
-    <colgroup>
-        <col style="width:12%" />
-        <col style="width:*" />
-    </colgroup>
-    <tr>
-    	<th>내용</th>
-    	<td>
-    		<textarea id="Context" data-type="mField" style="width: 98%;">{{ doc.BodyContext.Context }}</textarea>
-    	</td>
-    </tr>
+
+<style>
+  #bottomTable tr,
+  #bottomTable th,
+  #bottomTable td{
+    border: none ;
+  }
+</style>
+<br>
+
+<div style ="font-size: 11px; border: none; display:none; text-align : right" id="doc_complet_no">
+  <span>발급 번호 : </span>
+  <span id="docNo"></span>
+</div>
+
+<table class="tableStyle linePlus mt10">
+  <tbody>
+  <tr>
+    <th rowspan="3">피위임인</th>
+    <th>성명</th>
+    <td>
+      <input type="text" data-type="mField" id="name" value="{{ doc.BodyContext.name }}">
+    </td>
+    <th>직책</th>
+    <td>
+      <input type="text" data-type="mField" id="position" value="{{ doc.BodyContext.position }}">
+    </td>
+  </tr>
+  <tr>
+    <th>주민등록번호</th>
+    <td colspan="3">
+      <input type="text" data-type="mField" id="userNumber" value="{{ doc.BodyContext.userNumber }}">
+    </td>
+  </tr>
+  <tr>
+    <th>주소</th>
+    <td colspan="3">
+      <input type="text" data-type="mField" id="addr" value="{{ doc.BodyContext.addr }}">
+    </td>
+  </tr>
+  </tbody>
 </table>
+
+<!-- 에디터 시작 -->
+<div id="divWebEditorContainer" data-element-type="editor">
+</div>
+<!-- 에디터 종료 -->
+
+<table class="tableStyle linePlus mt10" id="bottomTable">
+  <tbody>
+  <tr>
+    <td colspan="2" style="border-bottom: none">
+      <div style="padding-top: 25px; padding-bottom: 50px; text-align: center;">
+        <input style="width: 30%; text-align: center; font-size: 17px; font-weight: bold; border: none" type="text" data-type="mField" id="today" value="{{ doc.BodyContext.today }}" autocomplete="off" readonly="readonly">
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align: right">(위임자)</td>
+  </tr>
+  <tr>
+    <td style="text-align: right">사업자등록번호</td>
+    <td>119-81-72660</td>
+  </tr>
+  <tr>
+    <td style="text-align: right">상&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;호</td>
+    <td>㈜올레이어</td>
+  </tr>
+  <tr>
+    <td style="text-align: right">성&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;명</td>
+    <td>
+      <span>대표이사 : 윤 석 호</span>
+      <span>
+					<img id="ImgSeal" style="height: 78px; width: 78px;" src="/HtmlSite/smarts4j_n/covicore/resources/images/covision/no_img.gif">
+				</span>
+    </td>
+
+  </tr>
+  <tr>
+    <td style="text-align: right">주&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;소</td>
+    <td>서울시 영등포구 국회대로70길 15-1, 404~411호
+      (여의도동, 극동VIP빌딩)</td>
+  </tr>
+
+  <tr>
+    <td colspan="2" style="text-align: center; padding-top: 50px;">
+      <input type="text" data-type="mField" id="toSend" value="{{ doc.BodyContext.toSend }}">
+      <span>귀하</span>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+
 <!--실 결재양식 내용 부분 끝 -->
