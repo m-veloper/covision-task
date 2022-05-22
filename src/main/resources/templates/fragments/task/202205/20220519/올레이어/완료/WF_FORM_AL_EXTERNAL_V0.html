@@ -1,15 +1,117 @@
 
 <!--실 결재양식 내용 부분 시작 -->
-<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+<!--실 결재양식 내용 부분 시작 -->
+
+<br>
+
+<div style ="font-size: 11px; border: none; display:none; text-align : right" id="doc_complet_no">
+  <span>발급 번호 : </span>
+  <span id="docNo"></span>
+</div>
+
+<table class="tableStyle linePlus mt10 multi-row-table sortable" id="headerTitle">
+  <colgroup>
+    <col style="width:15%">
+    <col style="width:70%">
+    <col style="width:15%">
+  </colgroup>
+  <tr>
+    <td rowspan="2" style=" border:hidden;text-align:center">
+    </td>
+    <td style=" border:hidden; font-size:23px;text-align:center">
+      <strong>㈜ 올레이어 공문</strong>
+    </td>
+  </tr>
+  <tr>
+    <td style=" border:hidden;font-size:12px; text-align:center" >
+      <strong>서울시 영등포구 국회대로70길 15-1 404~411호(여의도동, 극동VIP빌딩), Tel) 02-6677-7450 fax)02-704-7946</strong>
+    </td>
+  </tr>
+
+</table>
+
+
+<hr color="black" width="99%" size="0.5">
+<b>
+  <table border="0" style="letter-spacing: 1px; font-size:13px;">
+
     <colgroup>
-        <col style="width:12%" />
-        <col style="width:*" />
+      <col style="width: 12%">
+      <col style="width: 60%">
+      <col style="width: 12%">
+      <col style="width: 16%">
     </colgroup>
+    <tbody>
     <tr>
-    	<th>내용</th>
-    	<td>
-    		<textarea id="Context" data-type="mField" style="width: 98%;">{{ doc.BodyContext.Context }}</textarea>
-    	</td>
+      <td>문 서 번 호</td>
+      <td colspan="3">
+        <input style="width: 70%; border: none;" placeholder="입력" type="text" data-type="mField" id="docNumber" value="{{ doc.BodyContext.docNumber }}">
+      </td>
     </tr>
+    <tr>
+      <td>시 행 일 자</td>
+      <td colspan="3">
+        <input style="width: 90%; border: none" placeholder="입력" type="text" data-type="mField" id="whenDt" value="{{ doc.BodyContext.whenDt }}">
+      </td>
+    </tr>
+    <tr>
+      <td>수 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;신</td>
+      <td colspan="3">
+        <input placeholder="수신 입력" type="text" data-type="mField" id="NO" value="{{ doc.BodyContext.NO }}" style="width:99%; border:hidden">
+      </td>
+    </tr>
+    <tr>
+      <td>발 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;신</td>
+      <td colspan="3">
+        <input placeholder="발신 입력" type="text" data-type="mField" id="send" value="{{ doc.BodyContext.send }}" style="width:99%; border:hidden">
+      </td>
+    </tr>
+    <tr>
+      <td>참 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;조</td>
+      <td colspan="3">
+        <input placeholder="발신 입력" type="text" data-type="mField" id="reference" value="{{ doc.BodyContext.reference }}" style="width:99%; border:hidden">
+      </td>
+    </tr>
+    <tr>
+      <td>제 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;목</td>
+      <td colspan="3" id="tblFormSubject">
+        <input placeholder="제목 입력" type="text" data-type="dField" id="Subject" value="{{ doc.FormInstanceInfo.Subject }}" title="제목" data-model="Subject" data-binding="pre" style="width:99%; border:hidden" required="" >
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</b>
+
+
+<hr color="black" width="99%" size="0.5">
+
+
+<!-- 에디터 시작 -->
+<div id="divWebEditorContainer" data-element-type="editor">
+</div>
+<!-- 에디터 종료 -->
+
+
+<table style="ext-align: center; width: 100%">
+  <tbody>
+  <tr>
+    <td colspan="4" style="border-bottom: none">
+      <div style="padding-top: 25px; text-align: center;">
+        <input style="width: 30%; text-align: center; font-size: 17px; font-weight: bold; border: none" type="text" data-type="mField" id="today" value="{{ doc.BodyContext.today }}" autocomplete="off" readonly="readonly">
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <div style="padding-top: 40px; margin-bottom: 30px; font-size: 25px; font-weight: bold; text-align: center;">
+        <p style="margin-bottom: 10px">주식회사 올레이어</p>
+        <span>대표이사 : 윤 석 호</span>
+        <span>
+					<img id="ImgSeal" style="height: 78px; width: 78px;" src="/HtmlSite/smarts4j_n/covicore/resources/images/covision/no_img.gif">
+				</span>
+      </div>
+    </td>
+  </tr>
+  </tbody>
 </table>
 <!--실 결재양식 내용 부분 끝 -->

@@ -9,199 +9,121 @@
 </head>
 
 <div layout:fragment="content">
-  <style>
-    .inline{
-      display: inline-block;
-    }
-  </style>
+  <!--실 결재양식 내용 부분 시작 -->
 
-  <table class="tableStyle linePlus mt10" style="width: 50%">
-    <tbody>
-    <tr>
-      <td class="" style="width: 70%">
-        <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_0">
-          <input type="checkbox" id="chkBox_01" name="chkBox_0" value="chkBox_01"> 0. 문제 발생 전에 발견되어 결과에 영향을 미치지 않았음 <br>
-          <input type="checkbox" id="chkBox_02" name="chkBox_0" value="chkBox_02"> 1. 발생 시 심각한 결과를 초래할 수 있는 시스템이나 업무 과정상의 문제 또는 사건이 발생하였으나 환자에게 해가 미약한 경우
-        </div>
-      </td>
-      <th class="">근접오류 [7일/상시]</th>
-    </tr>
-    <tr>
-      <td class="">
-        <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1">
-          <input type="checkbox" id="chkBox_03" name="chkBox_1" value="chkBox_03"> 2. 사건/사고의 발생으로 인한 치료 또는 중재가 필요로 함 <br>
-          <input type="checkbox" id="chkBox_04" name="chkBox_1" value="chkBox_04"> 3. 입원기간이 연장되거나 퇴원 시 장애를 일으키는 사건/사고
-        </div>
-      </td>
-      <th class="">위해사고 [3일이내]</th>
-    </tr>
-    <tr>
-      <td class="">
-        <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_2">
-          <input type="checkbox" id="chkBox_05" name="chkBox_2" value="chkBox_05"> 4. 주요 기능의 영구적 손실을 가져오거나 사망을 초래함 <br>
-        </div>
-      <th class="">적신호 [24시간내]</th>
-    </tr>
-    </tbody>
-  </table>
+  <br>
 
-  <table class="tableStyle linePlus mt10">
-    <tbody>
+  <div style ="font-size: 11px; border: none; display:none; text-align : right" id="doc_complet_no">
+    <span>발급 번호 : </span>
+    <span id="docNo"></span>
+  </div>
+
+  <table class="tableStyle linePlus mt10 multi-row-table sortable" id="headerTitle">
+    <colgroup>
+      <col style="width:15%">
+      <col style="width:70%">
+      <col style="width:15%">
+    </colgroup>
     <tr>
-      <th class="">등록번호</th>
-      <td class="">
-        <input type="text" data-type="mField" id="regNum" value="{{ doc.BodyContext.regNum }}">
+      <td rowspan="2" style=" border:hidden;text-align:center">
       </td>
-      <th class="">성명</th>
-      <td class="">
-        <input type="text" data-type="mField" id="name" value="{{ doc.BodyContext.name }}">
-      </td>
-      <th class="">나이</th>
-      <td class="">
-        <input type="text" data-type="mField" id="age" value="{{ doc.BodyContext.age }}">
+      <td style=" border:hidden; font-size:23px;text-align:center">
+        <strong>㈜ 올레이어 공문</strong>
       </td>
     </tr>
     <tr>
-      <th class="">발생일시</th>
-      <td class="">
-        <input type="text" autocomplete="off" data-pattern="date" data-date-format="yy년 mm월 dd일" data-type="mField" name="issueDate" value="{{ doc.BodyContext.issueDate }}" style="width:98% ; ">
-        시      분
-      </td>
-      <th class="">발생장소</th>
-      <td class="">
-        <input type="text" data-type="mField" id="place" value="{{ doc.BodyContext.place }}">
-      </td>
-      <th class="">진료과</th>
-      <td class="">
-        <input type="text" data-type="mField" id="medical" value="{{ doc.BodyContext.medical }}">
+      <td style=" border:hidden;font-size:12px; text-align:center" >
+        <strong>서울시 영등포구 국회대로70길 15-1 404~411호(여의도동, 극동VIP빌딩), Tel) 02-6677-7450 fax)02-704-7946</strong>
       </td>
     </tr>
-    <tr>
-      <th class="" colspan="6">환자 관련 사항</th>
-<!--      <td class="" colspan="5">-->
-<!--      </td>-->
-    </tr>
-    <tr>
-      <th class="">의식 상태</th>
-      <td class="" colspan="5">
-        <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_3">
-          <input type="checkbox" id="chkBox_06" name="chkBox_3" value="chkBox_06"> 명료(Alert)
-          <input type="checkbox" id="chkBox_07" name="chkBox_3" value="chkBox_07"> 기면(Drowsy)
-          <input type="checkbox" id="chkBox_08" name="chkBox_3" value="chkBox_08"> 혼미(Stupor)
-          <input type="checkbox" id="chkBox_09" name="chkBox_3" value="chkBox_09"> 반혼수(Semicoma)
-          <input type="checkbox" id="chkBox_10" name="chkBox_3" value="chkBox_10"> 혼수(Coma)
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <th class="">활동 상태</th>
-      <td class="" colspan="5">
-        <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_4">
-          <input type="checkbox" id="chkBox_11" name="chkBox_4" value="chkBox_11"> 독립적
-          <input type="checkbox" id="chkBox_12" name="chkBox_4" value="chkBox_12"> 부분적인 도움(보조기구 사용)
-          <input type="checkbox" id="chkBox_13" name="chkBox_4" value="chkBox_13"> 항상 도움필요
-          <input type="checkbox" id="chkBox_14" name="chkBox_4" value="chkBox_14"> 침상안정 상태
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <th class="" rowspan="3">환자 낙상 요인 <br>(해당사항 모두 선택)</th>
-      <td class="" colspan="5">
-        <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_5">
-          <input type="checkbox" id="chkBox_15" name="chkBox_5" value="chkBox_15"> 흥분
-          <input type="checkbox" id="chkBox_16" name="chkBox_5" value="chkBox_16"> 어지러움
-          <input type="checkbox" id="chkBox_17" name="chkBox_5" value="chkBox_17"> 전신쇠약
-          <input type="checkbox" id="chkBox_18" name="chkBox_5" value="chkBox_18"> 마비
-          <input type="checkbox" id="chkBox_19" name="chkBox_5" value="chkBox_19"> 시력장애
-          <input type="checkbox" id="chkBox_20" name="chkBox_5" value="chkBox_20"> 체위성 저혈압
-          <input type="checkbox" id="chkBox_21" name="chkBox_5" value="chkBox_21"> 기타
-          (<input type="text" data-type="mField" id="fallFactorsEct1" value="{{ doc.BodyContext.fallFactorsEct1 }}">)
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td class="" colspan="5">
-        <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_6">
-          <input type="checkbox" id="chkBox_22" name="chkBox_6" value="chkBox_22"> 평형장애
-          <input type="checkbox" id="chkBox_23" name="chkBox_6" value="chkBox_23"> 보행장애
-          <input type="checkbox" id="chkBox_24" name="chkBox_6" value="chkBox_24"> 수면장애
-          <input type="checkbox" id="chkBox_25" name="chkBox_6" value="chkBox_25"> 낙상 과거력(1년이내)
-          <input type="checkbox" id="chkBox_26" name="chkBox_6" value="chkBox_26"> 기타
-          (<input type="text" data-type="mField" id="fallFactorsEct2" value="{{ doc.BodyContext.fallFactorsEct2 }}">)
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td class="" colspan="5">
-        <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_7">
-          <input type="checkbox" id="chkBox_27" name="chkBox_7" value="chkBox_17"> 낙상유발약물 복용
-          (약품명: <input type="text" data-type="mField" id="drug" value="{{ doc.BodyContext.drug }}">)
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <th class="" colspan="3">낙상 유형</th>
-      <th class="" colspan="3">손상 내용</th>
-    </tr>
-    <tr>
-      <td class="" colspan="3">
-        <div style="width:99% ;height : 180px">
-          <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_7">
-            <input type="checkbox" id="chkBox_27" name="chkBox_7" value="chkBox_17"> 낙상유발약물 복용
-            (약품명: <input type="text" data-type="mField" id="drug" value="{{ doc.BodyContext.drug }}">)
-          </div>
-        </div>
-      </td>
-      <td class="" colspan="3">
-        <div style="width:99% ;height : 180px">
-          <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_7">
-            <input type="checkbox" id="chkBox_27" name="chkBox_7" value="chkBox_17"> 낙상유발약물 복용
-            (약품명: <input type="text" data-type="mField" id="drug" value="{{ doc.BodyContext.drug }}">)
-          </div>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <th class="" colspan="3">육하원칙에 따라 문제 내용 및 발생 후 중재활동을 기록하여 주십시오.</th>
-      <th class="" colspan="3">본인이 생각하는 문제 원인과 개선방안을 기록하여 주십시오.</th>
-    </tr>
-    <tr>
-      <td class="" colspan="3">
-        <div style="width:99% ;height : 180px">
-          <textarea data-type="mField" name="detailsOfOccurrence" id="arbitrationActivities" style="width:99%">{{ doc.BodyContext.arbitrationActivities }}</textarea>
-        </div>
-      </td>
-      <td class="" colspan="3">
-        <div style="width:99% ;height : 180px">
-          <textarea data-type="mField" name="detailsOfOccurrence" id="improvementActivities" style="width:99%">{{ doc.BodyContext.improvementActivities }}</textarea>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <th class="">내부 보고 여부</th>
-      <td class="" colspan="5">
-        <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_7">
-          <input type="checkbox" id="chkBox_18" name="chkBox_7" value="chkBox_18"> 보고 수행(당직의, 주치의, 부서장)
-          <input type="checkbox" id="chkBox_19" name="chkBox_7" value="chkBox_19"> 보고 미 수행
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <th class="">보고일</th>
-      <td class="" colspan="2">
-        <input type="text" autocomplete="off" data-pattern="date" data-date-format="yy년 mm월 dd일" data-type="mField" name="reportDate" value="{{ doc.BodyContext.reportDate }}" style="width:98% ; ">
-      </td>
-      <td class="" colspan="3">
-        작성자 : <input type="text" name="reqUserName" data-type="mField" value="{{ doc.BodyContext.reqUserName }}"    style="width:60%; " >(서명)
-      </td>
-    </tr>
-    <tr>
-      <td class="" colspan="6">※ 근접오류 보고시에는 익명보고가 가능합니다.</td>
-    </tr>
-    </tbody>
+
   </table>
 
 
+  <hr color="black" width="99%" size="0.5">
+  <b>
+    <table border="0" style="letter-spacing: 1px; font-size:13px;">
+
+      <colgroup>
+        <col style="width: 12%">
+        <col style="width: 60%">
+        <col style="width: 12%">
+        <col style="width: 16%">
+      </colgroup>
+      <tbody>
+      <tr>
+        <td>문 서 번 호</td>
+        <td colspan="3">
+          <input style="width: 70%; border: none;" placeholder="입력" type="text" data-type="mField" id="docNumber" value="{{ doc.BodyContext.docNumber }}">
+        </td>
+      </tr>
+      <tr>
+        <td>시 행 일 자</td>
+        <td colspan="3">
+          <input style="width: 90%; border: none" placeholder="입력" type="text" data-type="mField" id="whenDt" value="{{ doc.BodyContext.whenDt }}">
+        </td>
+      </tr>
+      <tr>
+        <td>수 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;신</td>
+        <td colspan="3">
+          <input placeholder="수신 입력" type="text" data-type="mField" id="NO" value="{{ doc.BodyContext.NO }}" style="width:99%; border:hidden">
+        </td>
+      </tr>
+      <tr>
+        <td>발 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;신</td>
+        <td colspan="3">
+          <input placeholder="발신 입력" type="text" data-type="mField" id="send" value="{{ doc.BodyContext.send }}" style="width:99%; border:hidden">
+        </td>
+      </tr>
+      <tr>
+        <td>참 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;조</td>
+        <td colspan="3">
+          <input placeholder="발신 입력" type="text" data-type="mField" id="reference" value="{{ doc.BodyContext.reference }}" style="width:99%; border:hidden">
+        </td>
+      </tr>
+      <tr>
+        <td>제 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;목</td>
+        <td colspan="3" id="tblFormSubject">
+          <input placeholder="제목 입력" type="text" data-type="dField" id="Subject" value="{{ doc.FormInstanceInfo.Subject }}" title="제목" data-model="Subject" data-binding="pre" style="width:99%; border:hidden" required="" >
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </b>
+
+
+  <hr color="black" width="99%" size="0.5">
+
+
+  <!-- 에디터 시작 -->
+  <div id="divWebEditorContainer" data-element-type="editor">
+  </div>
+  <!-- 에디터 종료 -->
+
+
+  <table style="ext-align: center; width: 100%">
+    <tbody>
+    <tr>
+      <td colspan="4" style="border-bottom: none">
+        <div style="padding-top: 25px; text-align: center;">
+          <input style="width: 30%; text-align: center; font-size: 17px; font-weight: bold; border: none" type="text" data-type="mField" id="today" value="{{ doc.BodyContext.today }}" autocomplete="off" readonly="readonly">
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <div style="padding-top: 40px; margin-bottom: 30px; font-size: 25px; font-weight: bold; text-align: center;">
+          <p style="margin-bottom: 10px">주식회사 올레이어</p>
+          <span>대표이사 : 윤 석 호</span>
+          <span>
+					<img id="ImgSeal" style="height: 78px; width: 78px;" src="/HtmlSite/smarts4j_n/covicore/resources/images/covision/no_img.gif">
+				</span>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <!--실 결재양식 내용 부분 끝 -->
   <th:block layout:fragment="script">
     <script>
 
