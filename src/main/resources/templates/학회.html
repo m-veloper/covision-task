@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{layouts/layout}"
+>
+<head>
+  <title>covision-task</title>
+</head>
+
+<div layout:fragment="content">
+  <style>
+    #TBL_WORK_INFO input{
+      width: 100%
+    }
+
+    #TBL_WORK_INFO td,
+    #TBL_WORK_INFO td input{
+      text-align: center;
+    }
+  </style>
+
+  <table class="tableStyle linePlus mt10" id="TBL_WORK_INFO">
+    <colgroup>
+      <col style="width:15%"/>
+      <col style="width:*"/>
+      <col style="width:15%"/>
+      <col style="width:*"/>
+    </colgroup>
+
+    <tr>
+      <th>소속</th>
+      <td>
+        <input type="text" data-type="mField" id="department" value="{{ doc.BodyContext.department }}">
+      </td>
+      <th>직책/성명</th>
+      <td>
+        <input type="text" data-type="mField" id="position1" value="{{ doc.BodyContext.department }}">
+      </td>
+    </tr>
+
+    <tr>
+      <th>교육(세미나)목적</th>
+      <td colspan="3">
+        <textarea id="goal" data-type="mField" style="width: 98%; min-height: 100px;">{{ doc.BodyContext.goal }}</textarea>
+      </td>
+    </tr>
+
+    <tr>
+      <th>개최기관</th>
+      <td colspan="3">
+        <input type="text" data-type="mField" id="organization" value="{{ doc.BodyContext.organization }}">
+      </td>
+    </tr>
+
+    <tr>
+      <th>교육장소</th>
+      <td colspan="3">
+        <input type="text" data-type="mField" id="place" value="{{ doc.BodyContext.place }}">
+      </td>
+    </tr>
+
+    <tr>
+      <th>참석기간</th>
+      <td colspan="3">
+        <input type="text" id="startDt" data-type="mField" data-pattern="date" data-date-format="yy년 mm월 dd일" value="{{ doc.BodyContext.startDt }}"  style="width:30%;"> ~
+        <input type="text" id="endDt" data-type="mField" data-pattern="date" data-date-format="yy년 mm월 dd일" value="{{ doc.BodyContext.endDt }}"  style="width:30%;">
+        (	<input type="text" id="startTime" data-type="mField" data-pattern="time" data-time-format="H:i" value="{{ doc.BodyContext.startTime }}" style="width:20%;">
+        ~
+        <input type="text" id="sndTime" data-type="mField" data-pattern="time" data-time-format="H:i" value="{{ doc.BodyContext.endTime }}" style="width:20%;">)
+      </td>
+    </tr>
+
+    <tr>
+      <th>교육비용</th>
+      <td colspan="3">
+        <input type="text" data-type="mField" id="cost" value="{{ doc.BodyContext.cost }}">
+      </td>
+    </tr>
+
+    <tr>
+      <th>업무대리인</th>
+      <td colspan="3">
+        <input type="text" data-type="mField" id="agent" value="{{ doc.BodyContext.agent }}">
+      </td>
+    </tr>
+
+    <tr>
+      <th>
+        교육자료<br>
+        홍보자료
+      </th>
+      <td colspan="3">
+        <textarea id="datas" data-type="mField" style="width: 98%; min-height: 300px;">{{ doc.BodyContext.datas }}</textarea>
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan="4">
+        <p>상기와 같이 교육/학회 세미나 참석을 신청합니다.</p>
+        <input style="width: 30%; text-align: center; font-size: 17px; font-weight: bold; border: none" type="text" data-type="mField" id="today" value="{{ doc.BodyContext.today }}" autocomplete="off" readonly="readonly">
+      </td>
+    </tr>
+
+
+  </table>
+  <th:block layout:fragment="script">
+    <script>
+
+    </script>
+  </th:block>
+</div>
+</html>

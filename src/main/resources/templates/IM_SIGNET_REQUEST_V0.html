@@ -1,0 +1,170 @@
+﻿﻿<table class="tableStyle linePlus table_10" style="margin-top: 10px;">
+	<colgroup>
+		<col style="width: 30%;">
+		<col style="width: 15%;">
+		<col style="width: 20%;">
+		<col style="width: 20%;">
+		<col style="width: 15%;">
+	</colgroup>
+	<tbody><tr>
+		<th>구 분</th>
+		<th colspan="4">내 용</th>
+	</tr>
+	<tr>
+		<th>요청자</th>
+		<td colspan="4">
+			<input type="text" data-type="mField" id="Name" value="{{ doc.BodyContext.Name }}" style="width: 150px" readonly="" />
+			<span data-mode="writeOnly">
+				<a onclick="OpenWinEmployee('Name');">
+				<img alt="search" style="vertical-align: middle; cursor: pointer;" src="/HtmlSite/smarts4j_n/covicore/resources/images/covision/btn_org.gif" width="25" height="21">
+				</a>
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<th>요청부서</th>
+		<td colspan="4"><input type="text" data-type="mField" id="Team" value="{{ doc.BodyContext.Team }}" style="width: 98%" readonly=""></td>
+	</tr>
+	<tr>
+		<th>날인(수령)요청 일자</th>
+		<td colspan="4"><input type="text" data-type="mField" id="RecivDate" value="{{ doc.BodyContext.RecivDate }}" style="width: 120px" data-pattern="date" readonly=""></td>
+	</tr>
+	<tr>
+		<th>계약(또는NDA)업체명</th>
+		<td colspan="4"><input type="text" data-type="mField" id="ComName" value="{{ doc.BodyContext.ComName }}" style="width: 98%"></td>
+	</tr>
+	<tr>
+		<th>문서 종류</th>
+		<td colspan="4"><input type="text" data-type="mField" id="DocType" value="{{ doc.BodyContext.DocType }}" style="width: 98%"></td>
+	</tr>
+	<tr>
+		<th>계약서(또는NDA)제목</th>
+		<td colspan="4"><input type="text" data-type="mField" id="ConSubject" value="{{ doc.BodyContext.ConSubject }}" style="width: 98%"></td>
+	</tr>
+	<tr>
+		<th>NDA 체결 여부</th>
+		<td colspan="4"><input type="text" data-type="mField" id="NDAorNot" value="{{ doc.BodyContext.NDAorNot }}" style="width: 98%"></td>
+	</tr>
+	<tr>
+		<th rowspan="3">기존 계약서 존재 여부</th>
+		<td colspan="4">
+			<div data-type="mField" data-element-type="rdo_d" data-node-name="RADIO" style="margin-bottom:8px;">
+				<input type="radio" name="RADIO" value="유"> 유&nbsp;&nbsp;&nbsp;
+				<input type="radio" name="RADIO" value="무"> 무
+			</div>
+			<p>&lt;기존계약서가 있는 경우에는 참조기안으로 첨부하세요&gt;</p>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="4"><span style="display:inline-block; width:174px;">기존 계약서 명 / 체결일자 : </span><input type="text" data-type="mField" id="ContractDate" value="{{ doc.BodyContext.ContractDate }}" style="width: 120px;" data-pattern="date" readonly=""></td>
+	</tr>
+	<tr>
+		<td colspan="4" style="min-height: 70px; word-break: break-all;"><span style="display:inline-block; width:180px;">기존 계약서 대비 변경사항 : </span><textarea id="ChangeCon" data-type="mField" rows="2" style="overflow: auto; width: 98%; resize: none;">{{ doc.BodyContext.ChangeCon }}</textarea>
+		</td>
+	</tr>
+	<tr>
+		<th>계약(또는NDA)체결 목적</th>
+		<td colspan="4"><input type="text" data-type="mField" id="ConObject" value="{{ doc.BodyContext.ConObject }}" style="width: 98%"></td>
+	</tr>
+	<tr>
+		<th>계약의 내용</th>
+		<td colspan="4"><input type="text" data-type="mField" id="ConContents" value="{{ doc.BodyContext.ConContents }}" style="width: 98%"></td>
+	</tr>
+	<tr>
+		<th>(계약의 주된 사항)</th>
+		<td colspan="4"><input type="text" data-type="mField" id="MainMatter" value="{{ doc.BodyContext.MainMatter }}" style="width: 98%"></td>
+	</tr>
+	<tr>
+		<th>담당자 의견</th>
+		<td colspan="4"><input type="text" data-type="mField" id="MangerOpinion" value="{{ doc.BodyContext.MangerOpinion }}" style="width: 98%"></td>
+	</tr>
+	<tr>
+		<th>계약서 수정 가능성</th>
+		<td colspan="4" style="min-height: 70px; word-break: break-all;">
+			<textarea id="TEXTAREA" data-type="mField" rows="5" style="overflow: auto; width: 98%; resize: none;" placeholder="*당사에서 수정요청을 한 경우 수정할 수 있는지 여부 / 수정불가 or 수정가능 or 수정할 필요 없음(기본 양식 등)">{{ doc.BodyContext.TEXTAREA }}</textarea>
+		</td>
+	</tr>
+	<tr>
+		<th>비고(참고사항)</th>
+		<td colspan="4">
+			<textarea id="NoteItem" data-type="mField" rows="5" style="overflow: auto; width: 98%; resize: none;">{{ doc.BodyContext.NoteItem }}</textarea>
+		</td>
+	</tr>
+	<tr>
+		<th rowspan="7" style="line-height:24px;"><p style="color: red; margin-bottom:15px;">날인 요청 사항</p>
+			사용인감 중 ①번 및 금융거래용은<br>특수 용도이므로 특별히<br>요구되는 경우에 한하여<br>요청하고, 그 외는 일반 ㉦ 날인에 체크
+		</th>
+		<th colspan="2">구분</th>
+		<th>인장 담당자</th>
+		<th>날인 요청 사항</th>
+	</tr>
+	<tr>
+		<th rowspan="3">사용<br>인감</th>
+		<th style="line-height:24px;"><span style="font-weight:600">사용인감</span><br>일반 (㉦)</th>
+		<th>인사팀장</th>
+		<td style="text-align:center">
+			<div data-type="mField" data-element-type="chk_d" data-node-name="CHECK_BOX">
+				<input type="checkbox" id="CHECK_BOX_01" name="CHECK_BOX" value="check">
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<th style="line-height:24px;"><span style="font-weight:600">사용인감</span><br>특수 (①)</th>
+		<th>경영관리그룹장</th>
+		<td style="text-align:center">
+			<div data-type="mField" data-element-type="chk_d" data-node-name="CHECK_BOX02">
+				<input type="checkbox" id="CHECK_BOX_02" name="CHECK_BOX02" value="check">
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<th style="line-height:24px;"><span style="font-weight:600">사용인감</span><br>금융거래용 (★)</th>
+		<th>경영관리그룹장</th>
+		<td style="text-align:center">
+			<div data-type="mField" data-element-type="chk_d" data-node-name="CHECK_BOX03">
+				<input type="checkbox" id="CHECK_BOX_03" name="CHECK_BOX03" value="check">
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<th rowspan="2">법인<br>인감</th>
+		<th style="line-height:24px;"><span style="font-weight:600">법인인감</span></th>
+		<th>대표이사</th>
+		<td style="text-align:center">
+			<div data-type="mField" data-element-type="chk_d" data-node-name="CHECK_BOX04">
+				<input type="checkbox" id="CHECK_BOX_04" name="CHECK_BOX04" value="check">
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<th style="line-height:24px;"><span style="font-weight:600">법인인감<br>증명서</span>발급</th>
+		<th>재무팀</th>
+		<td style="text-align:center">
+			<div data-type="mField" data-element-type="chk_d" data-node-name="CHECK_BOX05">
+				<input type="checkbox" id="CHECK_BOX_05" name="CHECK_BOX05" value="check">
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<th colspan="2">대표이사 서명</th>
+		<th>대표이사</th>
+		<td style="text-align:center">
+			<div data-type="mField" data-element-type="chk_d" data-node-name="CHECK_BOX06">
+				<input type="checkbox" id="CHECK_BOX_06" name="CHECK_BOX06" value="check">
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<th>메모</th>
+		<td colspan="4" style="min-height: 70px; word-break: break-all;"><textarea id="Note" data-type="mField" rows="3" style="overflow: auto; width: 98%; resize: none;">{{ doc.BodyContext.Note }}</textarea>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="5" style="line-height:24px">
+			<strong>※ 유의사항</strong><br>
+			&nbsp;<strong>- 법인인감 및 대표이사 친필 서명의 경우 최종 결재선을 대표이사까지 지정하시기 바랍니다.</strong><br>
+			&nbsp;- 사용인감 및 법인인감 날인 : 날인 예정일로부터 2일 전까지 결재되어야 합니다.<br>
+			&nbsp;- 법인인감 증명서 발급 : 발급 예정일로부터 3일 전까지 결재되어야 합니다.(발급 수량 및 제출처 기재)
+		</td>
+	</tr>
+</tbody></table>
