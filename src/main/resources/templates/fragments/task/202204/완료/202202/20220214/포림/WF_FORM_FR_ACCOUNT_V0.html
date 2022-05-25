@@ -1,0 +1,188 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+
+		<colgroup>
+			<col style="width:14%" />
+			<col style="width:12%" />
+	     	<col style="width:31%" />
+	        <col style="width:12%" />
+	        <col style="width:31%" />
+		</colgroup>  
+		
+		<tr>
+			<th rowspan ="5">인적사항</th>
+    		<th >성명</th>
+			<td  >
+			<input type="text" id="userName" name="userName" data-type="mField" value="{{ doc.BodyContext.userName }}"    style="width:90%; " >	           
+			</td>
+			<th >주민등록번호</th>
+			<td  >
+			<input type="text" onkeyup='onlyNumber(this);'  id="userRRN1" name="userRRN1" maxlength="6" data-type="mField" value="{{ doc.BodyContext.userRRN1}}"    style="width:40%; " > -
+	         <input type="text" onkeyup='onlyNumber(this);' id="userRRN2" name="userRRN2" maxlength="7" data-type="mField" value="{{ doc.BodyContext.userRRN2}}"    style="width:40%; " >  
+			</td>
+	    </tr>
+	    <tr>
+    	<th >소속</th>
+		<td  >
+		<input type="text" id="userDept" name="userDept" data-type="mField" value="{{ doc.BodyContext.userDept }}"    style="width:90%; " >
+           
+		</td>
+		<th >직      급</th>
+		<td  >
+		<input type="text" id="userPosition" name="userPosition" data-type="mField" value="{{ doc.BodyContext.userPosition }}"    style="width:90%; " >
+           
+		</td>
+	    </tr>
+	  
+	    <tr>
+	    	<th >연락처</th>
+			<td  >
+			<input type="text" id="userPhone" name="userPhone" data-type="mField" value="{{ doc.BodyContext.userPhone }}"    style="width:90%; " >
+	           
+			</td>
+			<th >휴대전화</th>
+			<td  >
+			<input type="text" id="userCellPhone" name="userCellPhone" data-type="mField" value="{{ doc.BodyContext.userCellPhone }}"    style="width:90%; " >
+	           
+			</td>
+		</tr>
+	    
+	     <tr>
+	    	<th >주소</th>
+			<td colspan ="4">
+			<input type="text" id="userAddr" name="userAddr" data-type="mField" value="{{ doc.BodyContext.userAddr }}"    style="width:90%; " >
+	           
+			</td>
+	    </tr>   
+</table>
+
+
+
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+		<colgroup>
+			<col style="width:14%" />
+			<col style="width:12%" />
+	     	<col style="width:31%" />
+	        <col style="width:12%" />
+	        <col style="width:31%" />
+		</colgroup>  
+		
+		<tr>
+			<th rowspan ="9">경위</th>
+    		<th >제목</th>
+			<td  colspan ="3">
+			<input type="text" id="account" name="account" data-type="mField" value="{{ doc.BodyContext.account }}"    style="width:90%; " >	           
+			</td>
+			
+	    </tr>
+	    <tr>
+    	<th >일시</th>
+		<td  colspan ="3">
+		<input type="text" data-type="mField" id="accountDay" name = "accountDay" value="{{ doc.BodyContext.accountDay }}"  size="10" style="width : 30%;  " data-pattern="date" data-date-format="yy년 mm월 dd일"  >
+        </td>
+	    </tr>
+	    <tr>
+			<th >장소</th>
+			<td colspan ="3" >
+			<input type="text" id="accountLocal" name="accountLocal" data-type="mField" value="{{ doc.BodyContext.accountLocal }}"    style="width:90%; " >	           
+			</td>
+			
+	    </tr>
+	    
+	     <tr>
+			<th >사고상황</th>
+			<td colspan ="3" >
+			 <textarea id="accountConditions" data-type="mField" rows="3" style="overflow: auto; width: 90%;">{{ doc.BodyContext.accountConditions }}</textarea>
+			 </td>
+			
+	    </tr>
+	    <tr>
+			<th >사고원인</th>
+			<td  colspan ="3">
+			 <textarea id="accountReason" data-type="mField" rows="3" style="overflow: auto; width: 90%;">{{ doc.BodyContext.accountReason }}</textarea>
+			 </td>
+			
+	    </tr>
+	     <tr>
+			<th >사고결과</th>
+			<td colspan ="3" >
+			 <textarea id="accountResult" data-type="mField" rows="3" style="overflow: auto; width: 90%;">{{ doc.BodyContext.accountResult }}</textarea>
+			 </td>
+			
+	    </tr>
+	     <tr>
+			<th >사고 처리 <br>및&nbsp; 조치</th>
+			<td colspan ="3" >
+			 <textarea id="accountHandling" data-type="mField" rows="3" style="overflow: auto; width: 90%;">{{ doc.BodyContext.accountHandling }}</textarea>
+			 </td>
+			
+	    </tr>
+	     <tr>
+			<th >현장소장<br>진술 <br>및 <br>안전대책</th>
+			<td colspan ="3" >
+			 <textarea id="saftyHandling" data-type="mField" rows="3" style="overflow: auto; width: 90%;">{{ doc.BodyContext.saftyHandling }}</textarea>
+			 </td>
+			
+	    </tr>
+	     <tr>
+			<th >첨부서류</th>
+			<td colspan ="3" >
+			 1.사진대장(필수)
+			 </td>
+			
+	    </tr>
+	      <tr>
+			<th colspan ="2">사고처리결과</th>
+			<td class="Approval_labelTD" colspan="3" >
+            <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1" style ="text-align :center  ">
+                <input type="checkbox" id="chkBox_01" name="chkBox_1" value="산업재해">산업재해&nbsp;&nbsp;
+                <input type="checkbox" id="chkBox_02" name="chkBox_1" value="공상">공상&nbsp;&nbsp;
+                <input type="checkbox" id="chkBox_03" name="chkBox_1" value="교통사고(자동차보험)">교통사고(자동차보험)&nbsp;&nbsp;
+                <input type="checkbox" id="chkBox_04" name="chkBox_1" value="기타">기타&nbsp;&nbsp;
+            </div>
+		</td>
+			
+	    </tr>
+	    
+		
+</table>
+
+   
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        
+         <col style="width:38%" />
+         <col style="width:7.5%" />
+         <col style="width:18%" />
+         <col style="width:3%" />
+         <col style="width:33.5%" />
+    </colgroup>
+     </tr>
+    
+      <tr>
+	    <td colspan ="5" style ="text-align :center ;border-left: none; border-right: none;  border-top: none; border-bottom: none;">
+		    <div style ="text-align :center  ">
+		    	<span>상기 기록 사실에 허위가 없습니다.</span>
+		    </div>
+	    </td>
+    </tr>
+    
+    <tr>
+	    <td colspan ="5" style ="text-align :center ;border-left: none; border-right: none;  border-top: none; border-bottom: none;">
+	    <input type="text" data-type="mField" id="requestDay" name = "requestDay" value="{{ doc.BodyContext.requestDay }}"  size="10" style="width : 25%; text-align :center ; " data-pattern="date" data-date-format="yy년 mm월 dd일"  >
+		</td>
+    </tr>
+    <tr>
+	    <td colspan ="5" style ="text-align :center ;border-left: none; border-right: none;  border-top: none; border-bottom: none;">
+	     <div style ="text-align :center " >작성자 : 
+	    <input type="text" style ="text-align :center ; width : 25% ;" data-type="mField" id = "writePerson" name="writePerson"  value="{{ doc.BodyContext.writePerson }}" >
+	   (서명)
+	    </div>
+	    </td>
+	    
+    </tr>
+    </table>
+<!--실 결재양식 내용 부분 끝 -->

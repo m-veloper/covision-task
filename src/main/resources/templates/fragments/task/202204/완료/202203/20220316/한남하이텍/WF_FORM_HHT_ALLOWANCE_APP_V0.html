@@ -1,0 +1,118 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="multi-row-table tableStyle linePlus mt10" id="sumTable"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:7%" />
+        <col style="width:9%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:8%" />
+        <col style="width:8%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:*" />
+    </colgroup>
+    <tr>
+    	<th colspan="2">사업명</th>
+    	<td colspan="8">
+    		<input type="text" name="bizNm" data-type="mField" value="{{ doc.BodyContext.bizNm }}"  style="width:99%;" />
+    	</td>
+    </tr>
+    <tr>
+    	<th colspan="2">과제명</th>
+    	<td colspan="8">
+    		<input type="text" name="prjctNm" data-type="mField" value="{{ doc.BodyContext.prjctNm }}"  style="width:99%;" />
+    	</td>
+    </tr>
+    <tr>
+    	<th colspan="2">부서명</th>
+    	<td colspan="5">
+    		<input type="text" name="dptNm" data-type="mField" value="{{ doc.BodyContext.dptNm }}"  style="width:99%;" />
+    	</td>
+    	<th colspan="2">연구책임자 성명</th>
+    	<td>
+    		<input type="text" name="mngNm" data-type="mField" value="{{ doc.BodyContext.mngNm }}"  style="width:99%;" />
+    	</td>
+    </tr>
+    <tr>
+    	<th colspan="2">지원기관명</th>
+    	<td colspan="5">
+    		<input type="text" name="spprtOrgNm" data-type="mField" value="{{ doc.BodyContext.spprtOrgNm }}"  style="width:99%;" />
+    	</td>
+    	<th colspan="2">당해년도 연구기간</th>
+    	<td>
+    		<input type="text" name="rsrchPrd" data-type="mField" value="{{ doc.BodyContext.rsrchPrd }}"  style="width:99%;" />
+    	</td>
+    </tr>
+    <tr>
+    	<th colspan="2">다년도 여부</th>
+    	<td colspan="5">
+    		<input type="text" name="multiYn" data-type="mField" value="{{ doc.BodyContext.multiYn }}"  style="width:99%;" />
+    	</td>
+    	<th colspan="2">연구비</th>
+    	<td>
+    		<input type="text" name="rsrchPay" data-type="mField" value="{{ doc.BodyContext.rsrchPay }}"  style="width:99%;" />
+    	</td>
+    </tr>
+    <tr>
+    	<th colspan="10">연구수당(인센티브) 지급내용</th>
+    </tr>
+    <tr class="multi-row-control" data-mode="writeOnly">
+    	<td colspan="10">
+    		<em class="btn_iws_l" style="float: right;">
+                <span class="btn_iws_r multi-row-add" id="btnAdd" style="cursor: pointer;">
+                    <strong class="txt_btn_ws">
+                        <img class="ico_btn" alt="" src="/approval/resources/images/xform/ico_plus.gif">추가
+                    </strong>
+                </span>
+            </em>
+            <em class="btn_iws_l" style="float: right; padding-right: 10px;">
+                <span class="btn_iws_r multi-row-del-auto" id="btnDel" style="cursor: pointer;">
+                    <strong class="txt_btn_ws">
+                        <img class="ico_btn" alt="" src="/approval/resources/images/xform/ico_x.gif">삭제
+                    </strong>
+                </span>
+            </em>
+    	</td>
+    </tr>
+    <tr>
+    	<th rowspan="2">향목</th>
+    	<th colspan="5">연구원 정보</th>
+    	<th colspan="4">기여도 평가 내역</th>
+    </tr>
+    <tr>
+    	<th>팀구성<br/>구 분</th>
+    	<th>주민등록<br/>번호</th>
+    	<th>지급은행</th>
+    	<th>계좌번호</th>
+    	<th>성 명</th>
+    	<th>기여도</th>
+    	<th>지급액<br/>(원)</th>
+    	<th colspan="2">기여내용 및 지급사유<br/>(★상세히 기재요망)</th>
+    </tr>
+    <tr class="multi-row-template">
+    	<td class="multi-row-seq"></td>
+    	<td><input type="text" data-type="rField" name="teamType" style="width: 99%;" /></td>
+    	<td><input type="text" data-type="rField" name="regNum" style="width: 99%;" /></td>
+    	<td><input type="text" data-type="rField" name="bank" style="width: 99%;" /></td>
+    	<td><input type="text" data-type="rField" name="acntNum" style="width: 99%;" /></td>
+    	<td><input type="text" data-type="rField" name="named" style="width: 99%;" /></td>
+    	<td><input type="text" data-type="rField" name="cntrbtn" style="width: 99%;" /></td>
+    	<td><input type="text" data-type="rField" name="payAmt" data-pattern="currency" style="width: 99%;" /></td>
+    	<td colspan="2">
+    		<textarea name="etc" data-type="rField" style="width: 98%;"></textarea>
+    	</td>
+    </tr>
+    <tr>
+    	<td colspan="10">
+    		<p class="mt10" style="font-weight: bold;">※주의사항</p>
+    		<p class="mt5">1. 연구원구분 : 연구책임자, 공동연구자, 연구조원, 외부연구원으로 구분</p>
+    		<p class="mt5">2. 생년월일 : 주민등록번호상의 앞자리</p>
+    		<p class="mt5">3. 기여구분</p>
+    		<p class="mt5">①연구결과물(예:특허, 기술이전 등) ②연구보고서작성 ③우수실험결과 ④논문발표 ⑤기타 우수한 연구성과</p>
+    		<p class="mt5">4. 기여내역 : 6하원칙에 의거하여 구체적으로 50자이상 기술할것</p>
+    	</td>
+    </tr>
+</table>
+<!--실 결재양식 내용 부분 끝 -->

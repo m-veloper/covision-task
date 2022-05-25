@@ -1,0 +1,174 @@
+
+
+<!--실 결재양식 내용 부분 시작 -->
+	
+	    <table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+			<colgroup>
+		       <col style="width:15%" />
+		       <col style="width:35%" />
+		       <col style="width:15%" />
+		       <col style="width:35%" />
+			</colgroup>  
+			
+			 <tr>
+				 <th > 소속법인
+				 </th>
+				 <td  >
+					(주)<input type="text" id="userCorporation" name="userCorporation" data-type="mField" value="{{ doc.BodyContext.userCorporation }}"    style="width:88%; " >
+		      
+				</td>
+			 
+		    	<th > 본부/팀</th>
+				<td  >
+					<input type="text" id="userDept" name="userDept" data-type="mField" value="{{ doc.BodyContext.userDept }}"    style="width:98%; " >
+		      
+				</td>
+				
+		    </tr>
+		    
+		      <tr>
+				 <th > 성명/직책
+				 </th>
+				 <td  >
+					<input type="text" id="userName" name="userName" data-type="mField" value="{{ doc.BodyContext.userName }}"    style="width:98%; " >
+		      
+				</td>
+			 
+		    	<th > 생년월일</th>
+				<td  >
+					<input type="text" data-type="mField" id="birthDay" name="birthDay"  value="{{ doc.BodyContext.birthDay }}" placeholder="20    년     월     일"  data-pattern="date" data-date-format="yy년 mm월 dd일"  title="생일"  style="width:50%;text-align:center"  >
+				</td>
+				
+		    </tr>
+		    
+		       <tr>
+				 <th >연락처
+				 </th>
+				 <td  >
+					<input type="text" id="phone" name="phone" data-type="mField" value="{{ doc.BodyContext.phone }}"    style="width:98%; " >
+		      
+				</td>
+			 
+		    	<th > 비상연락처(관계)</th>
+				<td  >
+					<input type="text" id="emergencyPhone" name="emergencyPhone" data-type="mField" value="{{ doc.BodyContext.emergencyPhone }}"    style="width:98%; " >
+		      
+				</td>
+				
+		    </tr>
+		    
+	       <tr>
+				<th >구분
+				</th>
+			 	<td colspan="3" >
+			 	 <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1" >
+	                <input type="checkbox" id="chkBox_01" name="chkBox_1" value="직무 상 상병">직무 상 상병&nbsp;&nbsp;<br>
+	                <input type="checkbox" id="chkBox_02" name="chkBox_1" value="육아휴직">육아휴직&nbsp;&nbsp;<br>
+	                <input type="checkbox" id="chkBox_03" name="chkBox_1" value="기타">기타&nbsp;&nbsp;
+	                (<input type="text" id="divEtc" name="divEtc" data-type="mField" value="{{ doc.BodyContext.divEtc }}"    style="width:30%; " >)
+	            </div>
+					
+	      
+				</td>
+				
+		    </tr>
+		    
+		    <tr>
+				<th >기간
+				</th>
+			 	<td colspan="3" align="center">
+		            <input type="text" data-type="mField" id="SDATE" value="{{ doc.BodyContext.SDATE }}" data-pattern="date" data-date-format="yy년 mm월 dd일"  title="시작일"  style="width:25%;text-align:center"  onchange="validateVacDate()">
+		            <b>&nbsp;~&nbsp;</b>
+		            <input type="text" data-type="mField" id="EDATE" value="{{ doc.BodyContext.EDATE }}" data-pattern="date" data-date-format="yy년 mm월 dd일" title="종료일"  style="width:25%;text-align:center"   onchange="validateVacDate()">
+		            &nbsp;
+		            ( <input type="text" data-type="mField" id="DAYS" value="{{ doc.BodyContext.DAYS }}"  readonly="readonly" style="width: 40px; text-align:right"><b>일간</b>)
+		        
+				</td>
+				
+		    </tr>
+		    <tr>
+				<th >업무지원
+				</th>
+			 	<td colspan="3" >
+					<input type="text" id="workSupport" name="workSupport" data-type="mField" value="{{ doc.BodyContext.workSupport }}"    style="width:98%; " >
+	      
+				</td>
+				
+		    </tr>
+		    
+		    <tr>
+				<th rowspan="2" >세부 상병내역<br>(상병휴직자만 작성)
+	
+				</th>
+				<th >병명
+				</th>
+			 	<td colspan="2" >
+					<input type="text" id="sicknessName" name="sicknessName" data-type="mField" value="{{ doc.BodyContext.sicknessName }}"    style="width:98%; " >
+	      
+				</td>
+				
+		    </tr>
+		    
+		     <tr>
+				
+				<th >치료 예상기간
+				</th>
+			 	<td colspan="2" >
+					<input type="text" id="treatmentTerm" name="treatmentTerm" data-type="mField" value="{{ doc.BodyContext.treatmentTerm }}"    style="width:98%; " >
+	      
+				</td>
+				
+		    </tr>
+		     <tr>
+				
+				<th >복직예정일
+				</th>
+			 	<td colspan="3" >
+					<input type="text" data-type="mField" id="reinstatementDate" name="reinstatementDate" value="{{ doc.BodyContext.reinstatementDate }}" data-pattern="date" data-date-format="yy년 mm월 dd일"  title="복직예정일" placeholder="20    년     월     일" style="width:25%;text-align:center"  >
+		           
+				</td>
+				
+		    </tr>
+	    
+	    </table>
+	    
+	    
+	    <table class="tableStyle linePlus "><!-- class="table_10" -->
+		  		<colgroup>
+			<col style="width:15%" />
+	       <col style="width:15%" />
+	       <col style="width:27%" />
+	       <col style="width:15%" />
+	       <col style="width:28%" />
+		</colgroup>  
+		
+			<tr>
+			   <td colspan ="5" style=" border-top: none; border-bottom: none; ">
+				   <div><br><br>
+				     ※ 상병으로 인한 휴직신청자는 질병 및 사고 관련 진단서 또는 그에 갈음할 서류를 첨부해 주시기 바랍니다.<br>
+				     ※ 육아휴직 신청자의 경우 휴가신청서를 참조문서로 첨부해 주시기 바랍니다.<br><br>
+
+				   </div>
+			  
+			   </td>
+		   </tr>
+		  
+		   <tr style="height:80px">
+			  <td colspan ="5" style="border-top: none; border-bottom: none; ">
+				   <div align="center"><br>
+				  위의 사유로 휴직신청서를 제출합니다.<br>
+				   </div>
+			  
+			   </td>
+		   </tr>
+		   <tr>
+			   <td colspan ="5" style=" border-top: none; border-bottom: none; " align="center">
+			   	<input  type="text" data-type="mField" id = "writeDate" name="writeDate" data-pattern="date" data-date-format="yy년 mm월 dd일"  value="{{ doc.BodyContext.writeDate }}" placeholder="20    년     월     일" style="width:30% ;text-align :center;  border:0px solid;" >
+			   </td>
+		   </tr>
+		  
+		   
+	   </table>
+	    	    
+<!--실 결재양식 내용 부분 끝 -->

@@ -1,0 +1,135 @@
+<p style="margin-top:30px; font-size:13px; text-align:center;">아래와 같이 해외출장시 사용한 출장여비내역을 보고하오니 정산 바랍니다.</p>
+<p><br></p>
+
+
+<table class="tableStyle linePlus  multi-row-table" >
+	 <colgroup>
+        <col style="width:12%" />
+        <col style="width:10%" />
+        <col style="width:19%" />
+        <col style="width:10%" />
+        <col style="width:19%" />
+        <col style="width:10%" />
+        <col style="width:19%" />
+    </colgroup>
+    <tr >
+		<th >정산총액</th>
+		<td colspan ="3">
+			<input type="text" id="calTotal" name="calTotal" data-type="mField" readonly="readonly" data-pattern="numeral" value="{{ doc.BodyContext.calTotal }}" style="width:99%;">
+		</td>
+		<th >정산총액</th>
+		<td colspan="2">
+			<input type="text" name="complteAmt" data-type="mField" data-pattern="numeral" value="{{ doc.BodyContext.complteAmt }}" style="width:99%;">
+		</td>
+	</tr>
+	
+	 <tr >
+		<td colspan ="7" style ="text-align : center">
+			<strong>출장여비내역</strong>
+		</td>
+		
+	</tr>
+    <tr >
+		<th>정산유형</th>
+		<td colspan="3">
+			<input type="text" readonly="readonly" id="calDiv"  name="calDiv" data-type="mField" value="{{ doc.BodyContext.calDiv }}" style="width: 99%;"  >
+		</td>
+		<td colspan="3" style="border-top: none; border-right: none;"  >
+		</td>
+	</tr>
+		
+	<tr >
+		<th>출장지</th>
+		<td colspan="3">
+			<input type="text" name="BizArea" data-type="mField" value="{{ doc.BodyContext.BizArea }}" style="width:99%;">
+		</td>
+		<th>PJ코드</th>
+		<td colspan="2">
+			<input type="text" name="PJCode" data-type="mField" value="{{ doc.BodyContext.PJCode }}" style="width:99%;">
+		</td>
+	</tr>
+    <tr >
+		<th>출장기간</th>
+		<td colspan="6" style="border-top: 1px solid #c3d7df !important;">
+			<input type="text" name="SDate" data-type="rField" style="width:100px;" data-pattern="date" onchange="calTotDays(this);">
+			<input type="text" name="STime" data-type="rField" style="width:100px;" data-pattern="time" data-time-format="H:i" onchange="calTotDays(this);">
+			~ 
+			<input type="text" name="EDate" data-type="rField" style="width:100px;" data-pattern="date" onchange="calTotDays(this);"> 
+			<input type="text" name="ETime" data-type="rField" style="width:100px;" data-pattern="time" data-time-format="H:i" onchange="calTotDays(this);"> 
+			(<input type="text" name="TotDays" data-type="rField" style="width:40px; border:none;" readonly> 일간)
+		</td>
+	</tr>
+    </table>
+
+<table class="table_10 multi-row-table RowSumTable tableStyle linePlus" id="tbl_info" >
+    <colgroup>
+        <col style="width: 15%">
+        <col style="width: 12%">
+        <col style="width: 15%">
+        <col style="width: 14%">
+        <col style="width: 14%">
+        <col style="width: 14%">
+        <col style="width: 15%">
+    </colgroup>
+    <tbody>
+	    <tr class="multi-row-control" data-mode="writeOnly">
+	        <td colspan="7" style="text-align: right">
+	             <input type="button" id="btnAdd" value="+추가" class="multi-row-add smButton">
+	            <input type="button" id="btnDelSel" value="-삭제" class="multi-row-del-auto smButton">
+	        </td>
+	    </tr>
+	   
+	    <tr>
+	        <th>구분</th>
+	        <th>일자</th>
+	        <th>사용내역</th>
+	        <th>사용금액</th>
+	        <th>화폐단위</th>
+	        <th>원화금액</th>
+	        <th>비고</th>
+	         
+	    </tr>
+	    <tr class="multi-row-template ">
+	    	
+	    	<td > 
+	    		<select name="useDiv" data-type="rField" data-element-type="sel_d_t" style="width: 98%;text-align:center" title="구분" >
+	    			<option value="0">선택</option>
+	    			<option value="1">교통비</option>
+	    			<option value="2">숙박비</option>
+	    			<option value="3">식비</option>
+	    			<option value="4">식비</option>
+	    		</select>  
+	    	</td>
+			<td >
+				<input type="text" data-type="rField"  name="useDate"  autocomplete ="off" data-pattern="date" data-type="rField" style="width: 98%;">
+			</td>
+			<td >
+				<input type="text" data-type="rField"  name="usePurpose"  style="width: 98%;" >
+			</td>
+			<td >
+				<input type="text" data-type="rField"  name="useComment"  style="width: 98%;" >
+			</td>
+			<td >
+				<input type="text" data-type="rField"  name="payDiv"  style="width: 98%;" >
+			</td>
+	        <td align="right">
+				<input type="text" data-type="rField" data-pattern="numeral"  name="cost"  style="width: 98%;" onblur="fn_a_sum();" onchange="fn_a_sum();">
+			</td>
+	        
+	         
+	        <td >
+	            <input name="rmk"  style="width: 99%;" type="text" data-type="rField"  >
+	        </td>	        
+	    </tr>
+	    <tr>
+        	<th colspan="5" >총 사용금액       
+        	</th>
+	        <td align="right">
+	        <input id="a_sum_1" style="width: 98%;" type="text" readonly="readonly" value="{{ doc.BodyContext.a_sum_1 }}" data-type="mField" data-pattern="numeral" ></td>
+	        
+	        <th ></th>
+	    </tr>
+	    
+	</tbody>
+	 
+</table>

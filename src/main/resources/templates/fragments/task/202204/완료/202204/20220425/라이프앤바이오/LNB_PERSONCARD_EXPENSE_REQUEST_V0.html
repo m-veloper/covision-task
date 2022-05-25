@@ -1,0 +1,132 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:12%" />
+        <col style="width:16.5%" />
+        <col style="width:*" />
+    </colgroup>
+    <tr>
+    	<th>사용자</th>
+    	<td colspan="2"><input type="text" data-type="mField" id="writer" value="{{ doc.BodyContext.writer }}" style="width:98%"></td>
+    </tr>
+     <tr>
+    	<th>작성일자</th>
+    	<td colspan="2"><input type="text" data-type="mField" id="wDate" value="{{ doc.BodyContext.wDate }}" style="width:120px"></td>
+    </tr>
+    <tr>
+    		<td colspan="3">
+			<table class="tableStyle linePlus mt10 multi-row-table RowSumTable" id="personTbl1">
+				<colgroup>
+					<col style="width:15%" />
+					<col style="width:15%" />
+					<col style="width:15%" />
+					<col style="width:25%" />
+					<col style="width:15%" />
+					<col style="width:15%" />
+				</colgroup>
+				<tr class="multi-row-control">
+					<td colspan="6" data-mode="writeOnly"  align="right">
+						<input type="button" value="+추가" class="multi-row-add usa">
+						<input type="button" value="-삭제" class="multi-row-del-auto usa">
+					</td>
+				</tr>
+				<tr>	
+					<th>구분</th>
+					<th>일자</th>
+					<th>사용액</th>
+					<th>사용내역</th>
+					<th>장소</th>
+					<th>비고</th>
+				</tr>
+				<tr class="multi-row-template">
+					<td align="center">
+		            <select name="Division" data-type="rField" data-element-type="sel_d_v"  style="width: 98%; text-align :center;" title="구분" >
+		    			<option value="선택">선택</option>
+		    			<option value="회의비">회의비</option>
+		    			<option value="접대비">접대비</option>
+		    			<option value="여비교통비">여비교통비</option>
+		    			<option value="차량유지비">차량유지비</option>
+		    			<option value="소모품비">소모품비</option>
+		    			<option value="기타">기타</option>
+		    			
+		    		</select>  
+			        </td>
+					<td><input type="text" data-type="rField" name="corpDate1" style="width:98%" data-pattern="date"></td>
+					<td><input type="text" data-type="rField" name="corpPrice1" style="width:98%" data-pattern="currency" class="sum-table-cell"></td>
+					<td><input type="text" data-type="rField" name="corpUseCon1" style="width:98%"></td>
+					<td><input type="text" data-type="rField" name="corpPlace1" style="width:98%"></td>
+					<td><input type="text" data-type="rField" name="corpEtc1" style="width:98%"></td>
+				</tr>
+				<tr>
+					<th colspan="2">합계</th>
+					<td><input type='text' data-type="mField" id="corpTotal1" value="{{ doc.BodyContext.corpTotal1 }}" style="width:98%;border:0px;" readonly data-pattern="currency" class="sum-table-colsum"></td>
+					<th colspan="3"></th>
+				</tr>
+			
+			</table>
+		</td>		    		    
+    </tr>
+    
+</table>
+
+<br>
+■ 개인차량 유류비 정산<br>
+<table class="tableStyle linePlus mt10 multi-row-table RowSumTable" id="carTbl">
+	<colgroup>
+		<col style="width:12%;" />
+		<col style="width:14%;" />
+		<col style="width:10%;" />
+		<col style="width:12%;" />
+		<col style="width:20%;" />
+		<col style="width:12%;" />
+	</colgroup>
+	<tr>
+		<th>차종</th>
+		<td><input type="text" data-type="mField" id="carType" value="{{ doc.BodyContext.carType }}" style="width:98%"></td>
+		<th>리터당 가격</th>
+		<td><input type="text" data-type="mField" id="eachPrice" value="{{ doc.BodyContext.eachPrice }}" style="width:98%" data-pattern="currency"></td>
+		<th colspan="2"></th>
+	</tr>
+	<tr data-mode="writeOnly">
+		<td colspan="6">※ 리터당 가격은 매달 말 공지함.</td>
+	</tr>
+	<tr class="multi-row-control">
+		<td colspan="6" data-mode="writeOnly"  align="right">
+			<input type="button" value="+추가" class="multi-row-add usa">
+			<input type="button" value="-삭제" class="multi-row-del-auto usa">
+		</td>
+	</tr>
+	<tr>
+		<th rowspan="2">일자</th>
+		<th colspan="4">유류비내역</th>
+		<th rowspan="2">비고</th>
+	</tr>
+	<tr>
+		<th>출발지→목적지</th>
+		<th>거리(km)</th>
+		<th>정산금액</th>
+		<th>업무내용</th>
+	</tr>
+	<tr class="multi-row-template">
+		<td><input type="text" data-type="rField" name="carDate" style="width:99%" data-pattern="date"></td>
+		<td><input type="text" data-type="rField" name="carDes" style="width:99%"></td>
+		<td><input type="text" data-type="rField" name="carkm" style="width:99%"></td>
+		<td><input type="text" data-type="rField" name="carprice" style="width:99%" data-pattern="currency" class="sum-table-cell"></td>
+		<td><input type="text" data-type="rField" name="carContent" style="width:99%"></td>
+		<td><input type="text" data-type="rField" name="carEtc" style="width:99%"></td>
+	</tr>
+	<tr>
+		<th colspan="3">합계</th>
+		<td><input type="text" data-type="mField" readonly="readonly" id="carTotal" value="{{ doc.BodyContext.carTotal }}" style="width:98%;border:0px" data-pattern="currency" class="sum-table-colsum"></td>
+		<th colspan="2"></th>
+	</tr>
+	<tr data-mode="writeOnly">
+		<td colspan="6">※ 차종 및 리터당 가격을 반드시 명시해주시기 바랍니다.<br>
+※ 1리터당 연비 10 Km 적용함.<br>
+※ 제차량 주행거리 계산은 http://map.naver.com/ 목적지 최단거리로 계산 적용함.</td>
+	</tr>
+</table>
+
+
+<!--실 결재양식 내용 부분 끝 -->

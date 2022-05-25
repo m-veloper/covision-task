@@ -1,0 +1,110 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+<input type="hidden" data-type="rField" name="UserCode">
+<input type="hidden" data-type="rField" name="CompanyCode">
+
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        
+        <col style="width:13%" />
+        <col style="width:37%" />
+        <col style="width:13%" />
+        <col style="width:37%" />
+    </colgroup>
+    <tr>
+    	<th >소속</th>
+		<td  >
+		<input type="text" id="userDept" name="userDept" data-type="mField" value="{{ doc.BodyContext.userDept}}"    style="width:90%; " >
+           
+		</td>
+		<th >직위</th>
+		<td  >
+		<input type="text" id="userPosition" name="userPosition" data-type="mField" value="{{ doc.BodyContext.userPosition}}"    style="width:90%; " >
+           
+		</td>
+    </tr>
+      <tr>
+    	<th >성명</th>
+		<td  >
+		<input type="text" id="userName" name="userName" data-type="mField" value="{{ doc.BodyContext.userName}}"    style="width:90%; " >
+           
+		</td>
+		<th >주민등록번호</th>
+		<td  >
+		<input type="text" onkeyup='onlyNumber(this);'  id="userRRN1" name="userRRN1" maxlength="6" data-type="mField" value="{{ doc.BodyContext.userRRN1}}"    style="width:40%; " > -
+         <input type="text" onkeyup='onlyNumber(this);' id="userRRN2" name="userRRN2" maxlength="7" data-type="mField" value="{{ doc.BodyContext.userRRN2}}"    style="width:40%; " >  
+		</td>
+    </tr>
+    <tr>
+    <td colspan ="4">
+    	상기명 본인은 사내 보안정책을 준수함에 있어 아래 내용과 같이 본인의 실수 또는 고의적인 행동으로   보안정책 위반 사항이 발생하였기에 이에 사유서를 제출하고 그에 따른 처벌을 감수하며 차후 본건을  계기로 보안정책을 준수할것을 서약합니다.
+    </td> 
+    </tr>
+    
+</table>
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        
+         <col style="width:35%" />
+        <col style="width:30%" />
+        <col style="width:35%" />
+    </colgroup>
+    <tr>
+    <td colspan ="3" style ="text-align :center ;border-left: none; border-right: none; border-top: none; ">
+	    <div style ="text-align :center">
+	    	<span>위반내용(6하원칙에 의하여 사에히 기술 요망)</span>
+	    </div>
+    	
+    </td>
+    </tr>
+    
+    <tr>
+    <td colspan="3" >
+    <div style="width:99%">
+    <textarea data-type="mField" id="violationReason" style="width:99%" rows="10" required>{{ doc.BodyContext.violationReason }}</textarea>
+    </div>
+       
+    </td>
+    </tr>
+    
+      <tr>
+	    <td colspan ="3" style ="text-align :center ;border-left: none; border-right: none;  border-bottom: none;">
+		    <div style ="text-align :center  ">
+		    	<span>상기 기록 사실에 허위가 없습니다.</span>
+		    </div>
+	    	
+	    </td>
+    </tr>
+    
+</table>
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        
+         <col style="width:38%" />
+         <col style="width:7.5%" />
+         <col style="width:18%" />
+         <col style="width:3%" />
+         <col style="width:33.5%" />
+    </colgroup>
+    <tr>
+    <td style="border-left: none; border-right: none; border-top: none; border-bottom: none; " align="center">
+    </td>
+    <td style="border-left: none; border-right: none; border-top: none; border-bottom: none; " align="center">
+    	<span>작성일:
+    	</span>
+    </td>
+    <td style="border-left: none; border-right: none; border-top: none; border-bottom: none; " align="center">
+    <input  data-type="mField" text-align="center" id = "writeDate" name="writeDate"  value="{{ doc.BodyContext.writeDate }}" readonly="readonly" style="width:98% ; border:0px solid;" >
+    </td>
+    <td style="border-left: none; border-right: none; border-top: none; border-bottom: none;" align="center">
+    </td>
+    <td style="border-left: none; border-right: none; border-top: none; border-bottom: none;" align="center">
+    </td>
+    </tr>
+    </table>
+
+<!--실 결재양식 내용 부분 끝 -->

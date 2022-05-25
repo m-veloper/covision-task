@@ -1,0 +1,64 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:15%" />
+        <col style="width:35%" />
+        <col style="width:15%" />
+        <col style="width:35%" />
+    </colgroup>
+    <tr>
+    	<th>성&nbsp;&nbsp;명</th>
+    	<td>
+    		<input type="text" name="rtrdNm" data-type="mField" value="{{ doc.BodyContext.rtrdNm }}"  style="width:98%;">
+    	</td>
+    	<th>주민등록번호</th>
+    	<td>
+    		<input type="text" name="rtrdNum" data-type="mField" value="{{ doc.BodyContext.rtrdNum }}"  style="width:98%;">
+    	</td>
+    </tr>
+    <tr>
+    	<th>소&nbsp;&nbsp;속</th>
+    	<td>
+    		<input type="text" name="rtrdDpt" data-type="mField" value="{{ doc.BodyContext.rtrdDpt }}"  style="width:98%;">
+    	</td>
+    	<th>직&nbsp;&nbsp;위</th>
+    	<td>
+    		<input type="text" name="rtrdGrd" data-type="mField" value="{{ doc.BodyContext.rtrdGrd }}"  style="width:98%;">
+    	</td>
+    </tr>
+    <tr>
+    	<th>사&nbsp;&nbsp;유</th>
+    	<td colspan="3">
+    		<input type="text" name="rtrdRsn" data-type="mField" value="{{ doc.BodyContext.rtrdRsn }}"  style="width:98%;">
+    	</td>
+    </tr>
+</table>
+<div class="mt50" align="center">
+	<p style="font-size: 20px; font-weight: bold;">상기 본인은 <input type="text" name="rtrdYear" data-type="mField" value="{{ doc.BodyContext.rtrdYear }}"  style="width:10%; font-weight: normal;">년 <input type="text" name="rtrdMonth" data-type="mField" value="{{ doc.BodyContext.rtrdMonth }}"  style="width:10%; font-weight: normal;">월 <input type="text" name="rtrdDay" data-type="mField" value="{{ doc.BodyContext.rtrdDay }}"  style="width:10%; font-weight: normal;">일 부로 사직하고자</p>
+	<p class="mt20" style="font-size: 20px; font-weight: bold;">이에 사직서를 제출합니다</p>
+</div>
+<div class="mt50" style="font-weight: bold;">
+	<span class="mt5" style="font-size: 15px;">(1) 본인은 ㈜신진금고를 퇴직함에 있어 귀사의 영업 및 기술적인 비밀을 귀사의 서면동의없이 제3자에게</span><br/>
+	<span class="mt5 ml20" style="font-size: 15px;">공개하거나 누설하지 아니하며 창업이나 경쟁관계에 있는 타회사 및 제3자를 위해 절대로 사용하지 않을</span><br/>
+	<span class="mt5 ml20" style="font-size: 15px;">것이며, 만일 정보누설로 인해 문제가 발생할 때에는 민.형사상의 어떠한 불이익이나 책임도 감수 할</span><br/>
+	<span class="mt5 ml20" style="font-size: 15px;">것을 확약합니다.</span><br/>
+	<span class="mt5" style="font-size: 15px;">(2) 본인은 재직기간 중 독자적으로 또는 다른 사람들과 함께 이룬 개발 등과 관련한 영업비밀이 퇴직후에도</span><br/>
+	<span class="mt5 ml20" style="font-size: 15px;">귀사만이 독자적으로 소유.사용.처분할 권리가 있음을 인정하며, 귀사의 원만한 경영활동을 위해 귀사의</span><br/>
+	<span class="mt5 ml20" style="font-size: 15px;">요청시 본인의 재직기간 중 담당했던 업무와 관련된 사항 가운데 지적재산권 출원인정 영업비밀의 권리화</span><br/>
+	<span class="mt5 ml20" style="font-size: 15px;">및 이의 보호유지.양도 등 전 과정에 있어 귀사의 입장에서 협조하겠습니다.</span><br/>
+	<span class="mt5" style="font-size: 15px;">(3) 본인은 퇴직과 동시에 재직기간 중 가지고 있던 회사의 영업비밀이 기록된 일체의 자료를 즉시 반납</span><br/>
+	<span class="mt5 ml20" style="font-size: 15px;">하겠습니다.</span><br/>
+	<span class="mt5" style="font-size: 15px;">(4) 본인은 본인의 자유의사에 따라 퇴직하며 퇴직 후 금번 퇴직과 관련하여 민.형사상 어떠한 이의도 제기</span><br/>
+	<span class="mt5 ml20" style="font-size: 15px;">하지않겠습니다.</span><br/>
+</div>
+<div class="mt30" align="right">
+	<p class="mr20" style="font-size: 18px; font-weight: bold;"><input type="text" name="wrtYear" data-type="mField" value="{{ doc.BodyContext.wrtYear }}"  style="width:10%; font-weight: normal;"> 년 <input type="text" name="wrtMonth" data-type="mField" value="{{ doc.BodyContext.wrtMonth }}"  style="width:10%; font-weight: normal;"> 월 <input type="text" name="wrtDay" data-type="mField" value="{{ doc.BodyContext.wrtDay }}"  style="width:10%; font-weight: normal;">일</p>
+</div>
+<div class="mt40" align="right">
+	<p class="mr25" style="font-size: 20px; font-weight: bold;">작성자&nbsp;&nbsp;<input type="text" name="wrtNm" data-type="mField" value="{{ doc.BodyContext.wrtNm }}"  style="width:15%; font-weight: normal;"> (인)</p>
+</div>
+<div class="mt40" align="center">
+	<p style="font-size: 22px; font-weight: bold;">(주) 신진금고&nbsp;&nbsp;&nbsp;대표이사 귀하</p>
+</div>
+<!--실 결재양식 내용 부분 끝 -->

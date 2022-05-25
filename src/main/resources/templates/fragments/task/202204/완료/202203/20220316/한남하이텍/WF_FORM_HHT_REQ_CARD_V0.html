@@ -1,0 +1,76 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:15%" />
+        <col style="width:35%" />
+        <col style="width:15%" />
+        <col style="width:35%" />
+    </colgroup>
+    <tr>
+    	<th rowspan="2">구  분</th>
+    	<td colspan="3" style="padding-left: 10%;">
+    		<div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1">
+    			<div align="left">
+	            	<input type="checkbox" id="chkBox_01" name="chkBox_1" value="01">&nbsp;프로젝트카드&nbsp;(실용카드 재무회계팀 수령 )
+                </div>
+            </div>
+    	</td>
+    </tr>
+    <tr>
+    	<td colspan="3" style="padding-left: 10%;">
+    		<div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1">
+    			<div align="left">
+	                <input type="checkbox" id="chkBox_02" name="chkBox_1" value="02">&nbsp;해외광고전용카드&nbsp;(페이스북, 인스타그램 등 해외광고 전용, <span style="text-decoration: underline;">실물카드X</span>)
+                </div>
+            </div>
+    	</td>
+    </tr>
+    <tr>
+    	<th>요  청</th>
+    	<td>
+    		<input type="text" name="userReq" data-type="mField" value="{{ doc.BodyContext.userReq }}"  style="width:98%; " >
+    	</td>
+    	<th>카드사용용도</th>
+    	<td>
+    		<input type="text" name="cardUseLimit" data-type="mField" value="{{ doc.BodyContext.cardUseLimit }}"  style="width:98%; " >
+    	</td>
+    </tr>
+    <tr>
+    	<th>소속법인</th>
+    	<td>
+    		<input type="text" name="aftCrprt" data-type="mField" value="{{ doc.BodyContext.aftCrprt }}"  style="width:98%; " >
+    	</td>
+    	<th>소속부서</th>
+    	<td>
+    		<input type="text" name="aftDptmt" data-type="mField" value="{{ doc.BodyContext.aftDptmt }}"  style="width:98%; " >
+    	</td>
+    </tr>
+    <tr>
+    	<th>사용부서</th>
+    	<td>
+    		<input type="text" name="useDptmt" data-type="mField" value="{{ doc.BodyContext.useDptmt }}"  style="width:98%; " >
+    	</td>
+    	<th>관 리 자</th>
+    	<td>
+    		<input type="text" name="mng" data-type="mField" value="{{ doc.BodyContext.mng }}"  style="width:98%; " >
+    	</td>
+    </tr>
+    <tr>
+    	<th>프로젝트코드</th>
+    	<td>
+    		<input type="text" name="prjctCd" data-type="mField" value="{{ doc.BodyContext.prjctCd }}"  style="width:98%; " >
+    	</td>
+    	<th>프로젝트명</th>
+    	<td>
+    		<input type="text" name="prjctNm" data-type="mField" value="{{ doc.BodyContext.prjctNm }}"  style="width:98%; " >
+    	</td>
+    </tr>
+    <tr>
+    	<th>특이사항</th>
+    	<td colspan="3">
+    		<input type="text" name="context" data-type="mField" value="{{ doc.BodyContext.context }}"  style="width:98%; " >
+    	</td>
+    </tr>
+</table>
+<!--실 결재양식 내용 부분 끝 -->

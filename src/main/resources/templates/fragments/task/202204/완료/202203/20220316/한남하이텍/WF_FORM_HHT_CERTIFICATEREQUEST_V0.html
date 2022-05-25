@@ -1,0 +1,163 @@
+
+
+<!--실 결재양식 내용 부분 시작 -->
+	
+	    <table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+		<colgroup>
+			<col style="width:15%" />
+	       <col style="width:15%" />
+	       <col style="width:27%" />
+	       <col style="width:15%" />
+	       <col style="width:28%" />
+		</colgroup>  
+		<tr>
+			<td colspan="5">
+				<div> <strong>■제증명신청서</strong>
+				</div>
+			</td>
+		</tr>
+		 <tr>
+			 <th rowspan="2"> 인적사항
+			 </th>
+		 
+	    	<th > 성명</th>
+			<td  >
+				<input type="text" id="userName" name="userName" data-type="mField" value="{{ doc.BodyContext.userName }}"    style="width:98%; " >
+	      
+			</td>
+			<th >주소</th>
+			<td  >
+				<input type="text" id="address" name="address" data-type="mField" value="{{ doc.BodyContext.address }}"    style="width:98%; " >
+	      </td>
+	    </tr>
+	    
+	     <tr>
+	    	<th > 직위</th>
+				<td  >
+					<input type="text" id="position" name="position" data-type="mField" value="{{ doc.BodyContext.position }}"    style="width:98%; " >
+		      
+				</td>
+			<th >생년월일</th>
+			<td  >
+				<input type="text" id="birthDay" name="birthDay" data-type="mField" value="{{ doc.BodyContext.birthDay }}"    style="width:98%; " >
+	      
+			</td>
+	    </tr>
+	    
+	      <tr>
+	    	<th colspan="2">증명서 종류</th>
+				<td  >
+					<select name="certificateDiv" data-type="mField" data-element-type="sel_d_v" style="width: 98%;"  value="{{ doc.BodyContext.certificateDiv }}" onchange ="ChangeValue(this);" title="인사구분" onchange ="ChangeTable(this);">
+			  			<option value="선택">선택</option>
+			  			<option value="재직증명서">재직증명서</option>
+			  			<option value="경력증명서">경력증명서</option>
+			  			<option value="근로소득 원천징수영수증">근로소득 원천징수영수증</option>
+			  		</select>  
+				</td>
+			<th >출력본수</th>
+			<td  >
+				<input type="text" id="printPaper" name="printPaper" data-type="mField" value="{{ doc.BodyContext.printPaper }}"    style="width:98%; " >
+	      
+			</td>
+	    </tr>
+	    
+	     <tr>
+	    	<th colspan="2">발급용도</th>
+				<td  >
+					<input type="text" id="issuePerpose" name="issuePerpose" data-type="mField" value="{{ doc.BodyContext.issuePerpose }}"    style="width:98%; " >
+		      
+				</td>
+			<th >제출처</th>
+			<td  >
+				<input type="text" id="submit" name="submit" data-type="mField" value="{{ doc.BodyContext.submit }}"    style="width:98%; " >
+	      
+			</td>
+	    </tr>
+	    
+	    <tr>
+	    	<th colspan="2">사용용도</th>
+				<td  colspan="3">
+					<input type="text" id="userPurpose" name="userPurpose" data-type="mField" value="{{ doc.BodyContext.userPurpose }}"    style="width:98%; " >
+		      
+				</td>
+	    </tr>
+	    
+	    </table>
+	    
+	    
+	    <table class="tableStyle linePlus "><!-- class="table_10" -->
+		  		<colgroup>
+			<col style="width:15%" />
+	       <col style="width:15%" />
+	       <col style="width:27%" />
+	       <col style="width:15%" />
+	       <col style="width:28%" />
+		</colgroup>  
+		  
+		   <tr style="height:80px">
+			   <td colspan ="5" style="border-top: none; border-bottom: none; ">
+				   <div align="center"><br>
+				   
+				   위 증명을 신청하오니 발급하여 주시기 바랍니다.<br>
+				   </div>
+			  
+			   </td>
+		   </tr>
+		   <tr>
+			   <td colspan ="5" style=" border-top: none; border-bottom: none; " align="center">
+			   <br>
+			   	<input  type="text" data-type="mField" id = "writeDate" name="writeDate" data-pattern="date" data-date-format="yy년 mm월 dd일"  value="{{ doc.BodyContext.writeDate }}" placeholder="20OO년 OO월 OO일" style="width:98% ;text-align :center;  border:0px solid;" >
+			   </td>
+		   </tr>
+		    <tr>
+			   <td colspan ="5" style="border-top: none; border-bottom: none; ">
+				   <div align="center"><br>
+				   (주)한남 하이텍 귀하<br><br>
+				   </div>
+			  
+			   </td>
+		   </tr>
+		   
+		   <tr>
+			   <td colspan ="5" style=" border-bottom: none; " >
+				   <div>
+				     ※영문증명서가 필요할 경우 성명과 주소를 영문으로 작성하며, 증명서 종류는 재직, 경력 및 기타로 기재합니다.
+				    <br>
+				   </div>
+			  
+			   </td>
+		   </tr>
+		   
+		   <tr>
+			   <th colspan="2">근무부서
+			   </th>
+			    <th>근무시간
+			   </th>
+			    <th>직위
+			   </th>
+			    <th>비고
+			   </th>
+		   
+		   </tr>
+		    <tr>
+			   <td colspan="2">
+			  		 <input type="text" id="workDept" name="workDept" data-type="mField" value="{{ doc.BodyContext.workDept }}"    style="width:98%; " >
+	      		</td>
+			    <td> 
+			    	<input type="text" id="workTime" name="workTime" data-type="mField" value="{{ doc.BodyContext.workTime }}"    style="width:98%; " >
+	      		
+			   </td>
+			    <td> 
+			    	<input type="text" id="workPosition" name="workPosition" data-type="mField" value="{{ doc.BodyContext.workPosition }}"    style="width:98%; " >
+	      		
+			   </td>
+			    <td> 
+			    	<input type="text" id="workRemark" name="workRemark" data-type="mField" value="{{ doc.BodyContext.workRemark }}"    style="width:98%; " >
+	      		
+			   </td>
+		   
+		   </tr>
+	   </table>
+	    	    
+<!--실 결재양식 내용 부분 끝 -->

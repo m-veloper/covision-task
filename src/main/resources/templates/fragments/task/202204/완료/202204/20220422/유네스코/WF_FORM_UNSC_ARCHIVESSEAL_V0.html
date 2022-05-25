@@ -1,0 +1,207 @@
+<!--실 결재양식 내용 부분 시작 -->
+
+<br>
+
+
+<table class="tableStyle linePlus  " id="headerTitle">
+	<colgroup>
+		<col style="width:15%">
+		<col style="width:70%">
+		<col style="width:15%">
+	</colgroup>
+	
+	
+	<tr>
+		<td rowspan="2" style=" border:hidden;text-align:center">
+			
+		</td>
+		<td style=" border:hidden; font-size:14px;text-align:center">
+			<strong>"시대와 공간을 잇는 상생적 가치확산"</strong>
+		</td>
+		<td rowspan="2" style=" border:hidden;text-align:center">
+			
+		</td>
+	</tr>
+	<tr>
+		<td style=" border:hidden;font-size:28px; text-align:center" >
+			<strong>유네스코 세계유산국제해석설명센터</strong>
+		</td>
+	</tr>
+	
+</table>
+
+
+<hr color="black" width="99%" size="0.5">
+<table class="tableStyle linePlus " >
+	<colgroup>
+        <col style="width:13%">
+        <col style="width:87%">
+    </colgroup>
+    
+    <tr>
+        <td align="center" style="border:none ">수신자(경유)</td>
+        <td style="border:none">
+            <input type="text" style ="width:98% " data-type="mField" id="recieveHeader" value="{{ doc.BodyContext.recieveHeader }}" >
+        </td>
+    </tr>
+    <tr>
+		<td align="center" style="border:none">제목</td>
+        <td style="border:none ">
+           <input type="text" style ="width:98% " data-type="mField" id="titleHeader" onchange="setTitle();"value="{{ doc.BodyContext.titleHeader }}" >
+        </td>
+    </tr>
+</table>
+
+
+<hr color="black" width="99%" size="0.5">
+<table class="table_3 tableStyle linePlus mt10" style="display: none;"  cellpadding="0" cellspacing="0" id="CCLine">
+    <colgroup>
+        <col style="width:13%">
+        <col style="width:87%">
+    </colgroup>
+    <tbody><tr>
+        <th style="height:10px" id="TIT_L_CCINFO"><!--{{ doc.oLang.lbl_apv_Lccinfo }}-->발신참조</th>
+        <td>
+            <span id="SendCC"></span>
+        </td>
+    </tr>
+    <tr>
+        <th style="height:10px" id="TIT_R_CCINFO"><!-- {{ doc.oLang.lbl_apv_Rccinfo }} -->수신참조</th>
+        <td>
+            <span id="RecCC"></span>
+        </td>
+    </tr>
+</tbody></table>
+
+
+<!-- 에디터 시작 -->
+<div id="divWebEditorContainer" data-element-type="editor">
+</div>
+<!-- 에디터 종료 -->    
+
+<div style="display : none; padding-left:10px; padding-bottom:50px" id="HALL">
+    ※&nbsp;첨부 : <span id="ATTACH"></span>  
+</div>
+<!--<textarea data-type="mField" id="ATTACH" rows="6" style="overflow:auto; width:98%;" readonly="readonly">{{ doc.BodyContext.ATTACH }}</textarea>-->
+
+
+
+<table align="center" id="TableBlowCompanyInformation" style="border-style: none; display: none;" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td style="text-align: center;font-size: 14pt;font-weight: bold;">
+            	유네스코 세계유산국제해석설명센터 센터장
+            </td>
+            <td style="width: 78px; height: 78px; vertical-align: bottom; padding-right: 40px;" rowspan="2">
+                <img id="ImgSeal" style="height: 78px; width: 78px;" src="/HtmlSite/smarts4j_n/covicore/resources/images/covision/no_img.gif">
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<span style="font-size:11px; display:none" >
+주소&nbsp;<input type="text" data-type="mField" id="HOMENUM" value="{{ doc.BodyContext.HOMENUM }}" style="width:43%; border:hidden">/&nbsp;
+담당&nbsp;<input type="text" data-type="mField" id="AD" value="{{ doc.BodyContext.AD }}" style="width:7%; border:hidden">/&nbsp;
+E-mail&nbsp;<input type="text" data-type="mField" id="EMAIL" value="{{ doc.BodyContext.EMAIL }}" style="width:18%; border:hidden" required="" title="E-mail">/&nbsp;
+전화&nbsp;<input type="text" data-type="mField" id="TEL" value="{{ doc.BodyContext.TEL }}" style="width:12%;border:hidden">&nbsp;
+</span>
+<div>수신처</div>
+<hr color="gray" width="99%" size="5">
+<table class="tableStyle linePlus"   cellpadding="0" cellspacing="0" >
+    <colgroup>
+        <col style="width:10%">
+        <col style="width:17.5%">
+        <col style="width:10%">
+        <col style="width:17.5%">
+        <col style="width:10%">
+        <col style="width:17.5%">
+        <col style="width:9%">
+        <col style="width:8.5%">
+    </colgroup>
+    <tr>
+        <td align="center" style="border:none ;">기안자</td>
+        <td style="border:none">
+            <input type="text" style ="width:98%" data-type="mField" id="user1" placeholder ="(직급/서명)" value="{{ doc.BodyContext.user1 }}" >
+        </td>
+        <td align="center" style="border:none">검토자</td>
+        <td style="border:none ">
+           <input type="text" style ="width:98%" data-type="mField" id="user2" placeholder ="(직급/서명)" value="{{ doc.BodyContext.user2 }}" >
+        </td>
+        <td align="center" style="border:none">결재권자</td>
+        <td style="border:none ">
+           <input type="text" style ="width:98%" data-type="mField" id="user3" placeholder ="(직급/서명)" value="{{ doc.BodyContext.user3 }}" >
+        </td>
+       <td style="border:none ">
+           
+        </td>
+         <td style="border:none ">
+           
+        </td>
+    </tr>
+     <tr>
+        <td align="center" style="border:none">협조자</td>
+        <td style="border:none">
+            <input type="text" style ="width:98%" data-type="mField" id="user4"  placeholder ="(직급/서명)"value="{{ doc.BodyContext.user4 }}" >
+        </td>
+        <td align="center" style="border:none"></td>
+        <td style="border:none ">
+           
+        </td>
+        <td style="border:none ">
+           
+        </td>
+        <td style="border:none ">
+           
+        </td>
+         <td style="border:none ">
+           
+        </td>
+    </tr>
+     <tr>
+        <td align="center" style="border:none">시행</td>
+        <td style="border:none" colspan ="2">
+           <input type="text" value="{{ doc.FormInstanceInfo.ReceiveNo }}" data-binding="pre" style="width:99%; border:hidden;" readonly="readonly" placeholder="자동 발번">
+        </td>
+        <td align="center" style="border:none"></td>
+       
+          <td align="center" style="border:none">접수</td>
+        <td style="border:none ">
+           <input type="text" style ="width:98%" data-type="mField" id="ReceiveStatus" value="{{ doc.BodyContext.ReceiveStatus }}" >
+        </td>
+         <td style="border:none ">
+           
+        </td>
+        <td style="border:none ">
+           
+        </td>
+    </tr>
+    
+     <tr>
+        <td align="center" style="border:none">우</td>
+        <td style="border:none" colspan ="3">
+           <input type="text" style ="width:98%" data-type="mField" id="zipNo" value="{{ doc.BodyContext.zipNo }}" >
+        </td>
+        <td style="border:none " colspan ="4">
+           <input type="text" style ="width:98%" data-type="mField" id="webAddress" value="{{ doc.BodyContext.webAddress }}" >
+        </td>
+    </tr>
+      <tr>
+        <td align="center" style="border:none">전화</td>
+        <td style="border:none"  >
+            <input type="text" style ="width:98%" data-type="mField" id="phone" value="{{ doc.BodyContext.phone }}" >
+        </td>
+        <td align="center" style="border:none">전송</td>
+        <td style="border:none"  >
+          <input type="text" style ="width:98%" data-type="mField" id="recInput1" value="{{ doc.BodyContext.recInput1 }}" >
+        </td>
+        <td style="border:none" colspan="2" >
+           <input type="text" style ="width:98%" data-type="mField" id="managerEmail" value="{{ doc.BodyContext.managerEmail }}" >
+        </td>
+        <td style="border:none" colspan="2"   >
+            <input type="text" style ="width:98%" data-type="mField" id="openYn" value="{{ doc.BodyContext.openYn }}" >
+        </td>
+    </tr>
+ 
+</table>
+
+<!--실 결재양식 내용 부분 끝 -->

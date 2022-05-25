@@ -1,0 +1,231 @@
+<!--실 결재양식 내용 부분 시작 -->
+
+<table class="table_10 multi-row-table RowSumTable tableStyle linePlus mt10" id="TBLINFO" style="border-left: 1px solid #c3d7df;">
+    <colgroup>
+         <col style="width: 12%">
+        <col style="width: 14%">
+        <col style="width: 14%">
+        <col style="width: 15%">
+        <col style="width: 15%">
+        <col style="width: 15%">
+        <col style="width: 15%">
+    </colgroup>
+    <tbody>
+	    <tr class="multi-row-control" data-mode="writeOnly">
+	        <td colspan="7" style="text-align: right">
+	            <input type="button" id="btnAdd" value="+추가" class="multi-row-add smButton">
+	            <input type="button" id="btnDelSel" value="-삭제" class="multi-row-del-auto smButton">
+	        </td>
+	    </tr>
+	    <tr>
+	        <th class="multi-row-autospan">출장자</th>
+	        <th colspan ="2">부서명</th>
+	        <th>성명</th>
+	        <th>직위</th>
+	        <th colspan ="2">비고</th>
+	    </tr>
+	    <tr class="multi-row-template ">
+			<td colspan ="2"><input name="user_dept_0" style="width: 99%;" type="text" data-type="rField"></td>
+	        <td >
+	            <input name="user_name_0" style="width: 99%;" type="text" data-type="rField">
+	        </td>
+	        <td >
+	            <input name="user_pstn_0" style="width: 99%;" type="text" data-type="rField">
+	        </td>
+	        <td colspan ="2">
+	            <input name="user_rmk_0" style="width: 99%;" type="text" data-type="rField">
+	        </td>
+	    </tr>
+	    
+	</tbody>
+</table>
+
+
+<table class="table_3 RowSumTable tableStyle  linePlus" cellpadding="0" cellspacing="0">
+    <colgroup>
+        <col style="width: 12%">
+        <col style="width: 14%">
+        <col style="width: 14%">
+        <col style="width: 14%">
+        <col style="width: 15%">
+        <col style="width: 15%">
+    </colgroup>
+    <tbody>
+    <tr>
+        <th>출장지역</th>
+        <td colspan="6">
+            <textarea data-type="mField" id="t_area" rows="3" cols="15" style="width:98%;overflow-y:auto;padding-left:0px;padding-right:0px;">{{ doc.BodyContext.t_area }}</textarea>
+        </td>
+    </tr>
+    <tr>
+        <th>출장목적</th>
+        <td colspan="6">
+            <textarea data-type="mField" id="t_purpose" rows="4" cols="15" style="width:98%;overflow-y:auto;padding-left:0px;padding-right:0px;">{{ doc.BodyContext.t_purpose }}</textarea>
+        </td>
+    </tr>
+    
+</table>
+
+
+<table class="table_10 multi-row-table RowSumTable tableStyle linePlus mt10" id="TBLINFO1" style="border-left: 1px solid #c3d7df;">
+    <colgroup>
+         <col style="width: 12%">
+        <col style="width: 14%">
+        <col style="width: 14%">
+        <col style="width: 15%">
+        <col style="width: 15%">
+        <col style="width: 15%">
+        <col style="width: 15%">
+    </colgroup>
+    <tbody>
+	    <tr class="multi-row-control" data-mode="writeOnly">
+	        <td colspan="7" style="text-align: right">
+	            <input type="button" id="btnAdd" value="+추가" class="multi-row-add smButton">
+	            <input type="button" id="btnDelSel" value="-삭제" class="multi-row-del-auto smButton">
+	        </td>
+	    </tr>
+	    <tr>
+	        <th class="multi-row-autospan">출장내용</th>
+	        <th colspan ="2">일정</th>
+	        <th colspan ="2">지역</th>
+	        <th colspan ="2">주요활동계획</th>
+	    </tr>
+	    <tr class="multi-row-template ">
+			<td colspan ="2"><input name="t_date" style="width: 99%;" type="text" data-type="rField"></td>
+	        <td colspan ="2">
+	            <input name="t_area" style="width: 99%;" type="text" data-type="rField">
+	        </td>
+	        <td colspan ="2">
+	            <input name="t_content" style="width: 99%;" type="text" data-type="rField">
+	        </td>
+	    </tr>
+	    
+	</tbody>
+</table> 
+
+<table class="table_10 multi-row-table RowSumTable tableStyle linePlus" id="TBLINFO2" style="border-left: 1px solid #c3d7df;">
+    <colgroup>
+          <col style="width: 12%">
+        <col style="width: 12.5%">
+        <col style="width: 12.5%">
+        <col style="width: 12.5%">
+        <col style="width: 12.5%">
+        <col style="width: 12.5%">
+        <col style="width: 12.5%">
+        <col style="width: 13%">
+    </colgroup>
+    <tbody>
+	    <tr class="multi-row-control" data-mode="writeOnly">
+	        <td colspan="8" style="text-align: right">
+	            <input type="button" id="btnAdd" value="+추가" class="multi-row-add smButton">
+	            <input type="button" id="btnDelSel" value="-삭제" class="multi-row-del-auto smButton">
+	        </td>
+	    </tr>
+	    <tr>
+	        <th class="multi-row-autospan">예상경비</th>
+	        <th>성명</th>
+	        <th>교통비</th>
+	        <th>숙박비</th>
+	        <th>식비</th>
+	        <th>일비</th>
+	        <th>기타</th>
+	        <th>합계</th>
+	    </tr>
+	    <tr class="multi-row-template ">
+			<td><input name="a_user_name_1" style="width: 99%;" type="text" data-type="rField"></td>
+	        <td align="right">
+	            <input name="a_cost_m1" data-pattern="currency" style="width: 99%;" type="text" data-type="rField"  class="sum-table-cell">
+	        </td>
+	        <td align="right"> 
+	            <input name="a_cost_m2" data-pattern="currency" style="width: 99%;" type="text" data-type="rField"  class="sum-table-cell">
+	        </td>
+	        <td align="right">
+	            <input name="a_cost_m3" data-pattern="currency" style="width: 99%;" type="text" data-type="rField"  class="sum-table-cell"> 
+	        </td>
+	         <td align="right">
+	            <input name="a_cost_m4" data-pattern="currency" style="width: 99%;" type="text" data-type="rField"  class="sum-table-cell">
+	        </td>
+	         <td align="right">
+	            <input name="a_cost_m5" data-pattern="currency" style="width: 99%;" type="text" data-type="rField"  class="sum-table-cell">
+	        </td>
+	         <td align="right">
+	            <input class="sum-table-rowsum"  name="a_cost_sum" style="width: 99%;" type="text" data-type="rField" readonly="readonly" data-pattern="currency" data-sum-ref="a_cost_m1,a_cost_m2,a_cost_m3,a_cost_m4,a_cost_m5" data-formula="+">
+	            
+	        </td>	        
+	    </tr>
+	    <tr>
+        <th colspan="2">
+            합계
+            <span data-mode="writeOnly">
+                <img align="absmiddle" class="table-sum-button" border="0">
+            </span>
+        </th>
+        <td align="right"><input class="sum-table-colsum" id="a_sum_1" style="width: 98%;" type="text" readonly="readonly" value="{{ doc.BodyContext.a_sum_1 }}" data-type="mField" data-pattern="currency"></td>
+        <td align="right"><input class="sum-table-colsum" id="a_sum_2" style="width: 98%;" type="text" readonly="readonly" value="{{ doc.BodyContext.a_sum_2 }}" data-type="mField" data-pattern="currency"></td>
+        <td align="right"><input class="sum-table-colsum" id="a_sum_3" style="width: 98%;" type="text" readonly="readonly" value="{{ doc.BodyContext.a_sum_3 }}" data-type="mField" data-pattern="currency"></td>
+        <td align="right"><input class="sum-table-colsum" id="a_sum_4" style="width: 98%;" type="text" readonly="readonly" value="{{ doc.BodyContext.a_sum_4 }}" data-type="mField" data-pattern="currency"></td>
+        <td align="right"><input class="sum-table-colsum" id="a_sum_5" style="width: 98%;" type="text" readonly="readonly" value="{{ doc.BodyContext.a_sum_5 }}" data-type="mField" data-pattern="currency"></td>
+        <td align="right"><input class="sum-table-total" id="a_sum_6" style="width: 98%;" type="text" readonly="readonly" value="{{ doc.BodyContext.a_sum_6 }}" data-type="mField" data-pattern="currency"></td>
+    </tr>
+	    
+	</tbody>
+	 <tr>
+        <th>비고</th>
+        <td colspan="7">
+            <textarea id="t_purpose1" style="width: 98%; padding-right: 0px; padding-left: 0px; -ms-overflow-y: auto;" rows="4" cols="15" data-type="mField">{{ doc.BodyContext.t_purpose1 }}</textarea>
+        </td>
+    </tr>
+</table>
+
+
+<table class="table_3 tableStyle mt10 linePlus" cellpadding="0" cellspacing="0" style="display: none;">
+    <tbody><tr>
+        <td style="">
+            <br style="">
+            &nbsp;&nbsp;♣ 출장비 지급 규정<br style=""><br style="">
+            &nbsp;&nbsp;1.	용어의 정의<br style=""><br style="">
+            &nbsp;&nbsp;-	출장 : 서울, 경기도권을 제외한 지역에 업무 상 방문 및 프로젝트 수행 (1일, 1박이상)<br style=""><br style="">
+            &nbsp;&nbsp;2.	비용 지급 기준<br style="">
+            <table class="table_3 tableStyle linePlus mt10" cellpadding="0" cellspacing="0" style="padding-left: 20px;" ;="">
+                <tbody><tr>
+                    <td align="center" style="">구분</td>
+                    <td align="center" style="">교통비</td>
+                    <td align="center" style="">숙박비*</td>
+                    <td align="center" style="">식비**</td>
+                    <td align="center" style="">일비***</td>
+                    <td align="center" style=""></td>
+                </tr>
+                <tr>
+                    <th rowspan="3">출장</th>
+                    <td align="center" style="">실비 지급</td>
+                    <td align="center" style="">실비 지급</td>
+                    <td align="center" style="">18,000</td>
+                    <td align="center" style="">8,000</td>
+                    <td align="center" style="">기준</td>
+                </tr>
+                <tr>
+                    <th>O</th>
+                    <th>O</th>
+                    <th>X</th>
+                    <th>X</th>
+                    <th rowspan="2">증빙</th>
+                </tr>
+                <tr>
+                    <th colspan="4">청구 및 지급 내역과 출장 복명서 일치하게 작성</th>
+                </tr>
+            </tbody></table>
+            <strong style="">
+                &nbsp;&nbsp;* 출장 숙박비는 1박 6만원 한도 내에서 지출<br><br>
+                &nbsp;&nbsp;** 출장 식비는 1일 3식 기준 출발일 도착일 모두 포함<br><br>
+                &nbsp;&nbsp;*** 출장 일비는 출발일 도착일 모두 포함 <br><br>
+                &nbsp;&nbsp;<font color="red">3.	지방 프로젝트 수행</font>
+            </strong><font color="red" style="">
+                의 경우 출장비로 처리하되 해당 프로젝트의 거리, 투입규모, <br><br>
+                &nbsp;&nbsp;투입자 성별, 근무여건 등을 고려하여 별도 지급 규정을 마련하여 운영한다.
+            </font><br style=""><br style="">
+            &nbsp;&nbsp;* 영수증 별도 품의,  발신 참조에 관리팀 필 참조<br style="">&nbsp;&nbsp;
+        </td>
+    </tr>
+    <!--실 결재양식 내용 부분 끝 -->
+</tbody></table>
+<!--실 결재양식 내용 부분 끝 -->

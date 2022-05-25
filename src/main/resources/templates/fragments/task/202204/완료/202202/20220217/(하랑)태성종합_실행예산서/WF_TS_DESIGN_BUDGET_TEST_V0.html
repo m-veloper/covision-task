@@ -1,0 +1,425 @@
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10 RowSumTable" id="BUDGET_TABLE_1"  style="border-collapse:separate;"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:10%" />
+        <col style="width:15%" />
+        <col style="width:15%" />
+        <col style="width:15%" />
+        <col style="width:15%" />
+        <col style="width:35%" />
+    </colgroup> 
+   <tr>
+   	<th>용역명</th>
+   	<td colspan="2">
+   		<input type="text" data-type="mField" id="CO_COMPANY_NAME" value="{{ doc.BodyContext.CO_COMPANY_NAME }}" style="width:98%; " />
+   	</td>
+   	<th>사업번호</th>
+   	<td colspan="2">
+   		<input type="text" data-type="mField" id="BUSINESS_NUMBER" value="{{ doc.BodyContext.BUSINESS_NUMBER }}" style="width:98%; " />
+   	</td>
+   </tr>
+   
+   <tr>
+   	<th>발주처</th>
+   	<td colspan="2">
+   		<input type="text" data-type="mField" id="PURCHASE_COMPANY" value="{{ doc.BodyContext.PURCHASE_COMPANY }}" style="width:98%; " />
+   	</td>
+   	<th>계약기간</th>
+   	<td colspan="2">
+   		<input type="text" data-type="mField" id="CONTRACT_PERIOD" value="{{ doc.BodyContext.CONTRACT_PERIOD }}" style="width:98%; " />
+   	</td>
+   </tr>
+   
+   <tr>
+   		<th>주관부서</th>
+   		<td>
+   			<input type="text" data-type="mField" id="MANAGE_DEPARTMENT" value="{{ doc.BodyContext.MANAGE_DEPARTMENT }}" style="width:98%; " />
+   		</td>
+   		<th>계약금액</th>
+   		<td style="text-align:right;">
+   			<input type="text" data-type="mField" id="CONTRACT_PRICE" style="width:98%" value="{{ doc.BodyContext.CONTRACT_PRICE }}" data-pattern="currency"  />
+   		</td>
+   		<th>지분금액</th>
+   		<td style="text-align:right;">
+   			<input type="text" data-type="mField" id="SHARE_PRICE"  style="width:98%" value="{{ doc.BodyContext.SHARE_PRICE }}" data-pattern="currency"  />
+   		</td>
+    </tr>
+   
+   <tr>
+    	<th>공동도급사</th>
+   		<td>
+   			<input type="text" data-type="mField" id="CO_WORK_COMPANY" value="{{ doc.BodyContext.CO_WORK_COMPANY }}" style="width:98%; " />
+   		</td>
+   		<th>당사지분율</th>
+   		<td style="text-align:right;">
+   			<input type="text" data-type="mField" id="OUR_PERCENT" value="{{ doc.BodyContext.OUR_PERCENT }}" style="width:98%; text-align:right; border:hidden;" readonly="readonly" data-formula-digit="2" data-formula="({0} / {1})*100"  data-sum-ref="#SHARE_PRICE,#CONTRACT_PRICE" />
+   		</td>
+   		<th>총괄 PM</th>
+   		<td>	
+   			<input type="text" data-type="mField" id="TOTAL_PM" value="{{ doc.BodyContext.TOTAL_PM }}" style="width:98%; " />
+   		</td>
+   </tr>
+	<tr>
+		<th>비목</th>
+		<th>세목</th>
+		<th>예산 금액 </th>
+		<th>실행율</th>
+		<th colspan="2">비고</th>
+	</tr>   
+   
+   	<tr>
+   		<th colspan="2">매출액 (수행금액 )</th>
+   		<td style="text-align:right">
+   			<input type="text" data-type="mField" id="SALES_PRICE" name="SALES_COST" style="width:98%; text-align:right" value="{{ doc.BodyContext.SALES_COST }}" data-pattern="currency"  onkeyup="calPercentDirect()" onchange="calSaleProfit()" />
+   		</td>
+   		<td>
+   			<input type="text" data-type="mField"  id="SALES_PERCENT"  value="{{ doc.BodyContext.SALES_PERCENT }}" readonly="readonly"  data-formula-digit="2" style="width:98%;  border:hidden;" />
+   		</td>
+   		<td colspan="2">
+   			<input type="text" data-type="mField" id="SALES_COMMENT"  value="{{ doc.BodyContext.SALES_COMMENT }}" style="width:98%; " placeholder="수행금액 = 지분금액" />
+   		</td>
+   	</tr>	
+   	
+	<tr>
+		<th colspan="2">실행예산 총 액</th>
+		<td style="text-align:right;">
+			<input type="text" data-type="mField" id="EXE_BUDGET" name="EXECUTE_BUDGET" style="width:98%; text-align:right;" value="{{ doc.BodyContext.EXECUTE_BUDGET }}" data-pattern="currency" data-formula="({0}+{1}+{2}+{3}+{4})"  data-sum-ref="#SUBTOTAL_COST,#DEPARTMENT_CARE,#GENERAL_CARE,#OUT_SOURCING,#LABOR_COST" />
+		</td>
+   		<td style="text-align:right">
+   			<input type="text" data-type="mField" id="EXE_PERCENT" value="{{ doc.BodyContext.EXE_PERCENT }}" style="width:98%;  border:hidden; text-align:right;" readonly="readonly"  data-formula-digit="2" data-formula="( {0} / {1} )*100"  data-sum-ref="#EXE_BUDGET,#SALES_PRICE" />
+   		</td>
+   		<td colspan="2">
+   			<input type="text" data-type="mField" id="EXE_COMMENT" value="{{ doc.BodyContext.EXE_COMMENT }}" style="width:98%;" placeholder="인건비 +직접경비 +외주비 +부서관리비 +일반관리비" />
+   		</td>
+	</tr>	
+	
+   <tr>
+		<th colspan="2">인건비</th>
+		<td style="text-align:right;">
+			<input type="text" data-type="mField" id="LABOR_COST"  style="width:98%; text-align:right;" value="{{ doc.BodyContext.LABOR_COST }}"   data-pattern="currency"   onkeyup="calDirect()" onchange="calSaleProfit()" />
+		</td>
+   		<td style="text-align:right">	
+   			<input type="text" data-type="mField" id="LABOR_PERCENT"  value="{{ doc.BodyContext.LABOR_PERCENT }}" style="width:98%;  border:hidden; text-align:right" readonly="readonly" data-formula-digit="2" data-formula="({0}/{1})*100"   data-sum-ref="#LABOR_COST,#SALES_PRICE"  />
+   		</td>
+   		<td colspan="2">
+   			<input type="text" data-type="mField" id="LABOR_COMMENT" value="{{ doc.BodyContext.LABOR_COMMENT }}" style="width:98%; " />
+   		</td>
+	</tr>
+
+   	
+   	<tr>
+		<th rowspan="10">직접경비</th>
+		<th>노무비</th>
+   		<td style="text-align:right">
+   			<input type="text" data-type="mField" id="DIRECT_COST_ID" class="sum-table-cell DIRECT_COST" value="{{ doc.BodyContext.DIRECT_COST_ID }}" style="width:98%; text-align:right;" data-pattern="currency" class="sum-table-cell" onkeyup="calDirect()" onchange="calSaleProfit()"/>
+   		</td>
+   		<td style="text-align:right;">
+   			<input type="text" data-type="mField" id="DIRECT_PERCENT" class="DIRECT_COST_PERCENT" value="{{ doc.BodyContext.DIRECT_PERCENT }}" style="width:98%; border:hidden; text-align:right;" readonly="readonly" data-formula-digit="2" data-formula="( {0} /{1} )*100"    data-sum-ref="#DIRECT_COST_ID,#SALES_PRICE" />
+   		</td>
+   		<td colspan="2">
+   			<input type="text" data-type="mField" id="DIRECT_COMMENT" value="{{ doc.BodyContext.DIRECT_COMMENT }}" style="width:98%;" placeholder="아르바이트비, 자문비 등"/>
+   		</td>
+	</tr>
+   <tr>
+   		<th>인쇄비</th>
+   		<td style="text-align:right">
+		   	<input type="text" data-type="mField" id="PRINT_COST" class="sum-table-cell DIRECT_COST" style="width:98%; text-align:right;" value="{{ doc.BodyContext.PRINT_COST }}" data-pattern="currency" class="sum-table-cell" onkeyup="calDirect()" onchange="calSaleProfit()" />
+   		</td>
+   		<td style="text-align:right;">
+   			<input type="text" data-type="mField" id="PRINT_PERCENT" class="DIRECT_COST_PERCENT" value="{{ doc.BodyContext.PRINT_PERCENT }}" style="width:98%; border:hidden; text-align:right;" readonly="readonly" data-formula="( {0} / {1} )*100" data-formula-digit="2"  data-sum-ref="#PRINT_COST,#SALES_PRICE"  />
+   		</td>
+   		<td colspan="2">
+   			<input type="text" data-type="mField" id="PRINT_COMMENT" value="{{ doc.BodyContext.PRINT_COMMENT }}" style="width:98%;" placeholder="복사비,보고서,인쇄비 등" />
+   		</td>
+	</tr>
+	<tr>
+   		<th>여비교통비</th>
+   		<td style="text-align:right">
+   			<input type="text" data-type="mField" id="TRANSPORT_COST"  style="width:98%" value="{{ doc.BodyContext.TRANSPORT_COST }}" data-pattern="currency" class="sum-table-cell DIRECT_COST" onkeyup="calDirect()" onchange="calSaleProfit()"/>
+   		</td>
+   		<td style="text-align:right;">
+   			<input type="text" data-type="mField" id="TRANSPORT_PERCENT" class="DIRECT_COST_PERCENT" value="{{ doc.BodyContext.TRANSPORT_PERCENT }}" style="width:98%;  border:hidden; text-align:right;" data-formula="( {0} / {1} )*100" data-formula-digit="2" readonly="readonly" data-sum-ref="#TRANSPORT_COST,#SALES_PRICE"  />
+   		</td>
+   		<td colspan="2">
+   			<input type="text" data-type="mField" id="TRANSPORT_COMMENT" value="{{ doc.BodyContext.TRANSPORT_COMMENT }}" style="width:98%;" placeholder="시내교통비, 국내출장비, 해외출장비 등" />
+   		</td>
+	</tr>
+   	<tr>
+   		<th>과업수행비</th>
+   		<td	style="text-align:right">
+   			<input type="text" data-type="mField" id="TASK_COST"  style="width:98%" value="{{ doc.BodyContext.TASK_COST }}" data-pattern="currency" class="sum-table-cell DIRECT_COST" onkeyup="calDirect()" onchange="calSaleProfit()" />
+   		</td>
+   		<td style="text-align:right;">
+   			<input type="text" data-type="mField" id="TASK_PERCENT" class="DIRECT_COST_PERCENT" value="{{ doc.BodyContext.TASK_PERCENT }}" style="width:98%;  border:hidden; text-align:right;"  data-formula="( {0} / {1} )*100" readonly="readonly" data-formula-digit="2" data-sum-ref="#TASK_COST,#SALES_PRICE" />
+   		</td>
+   		<td colspan="2">
+   			<input type="text" data-type="mField" id="TASK_COMMENT" value="{{ doc.BodyContext.TASK_COMMENT }}" style="width:98%;" placeholder="주민설명회,신문공고료,측량성과심사비 등" />
+   		</td>
+	</tr>
+   	<tr>
+   		<th>자료구입비</th>
+   		<td style="text-align:right">
+   			<input type="text" data-type="mField" id="MATERIAL_COST"  style="width:98%" value="{{ doc.BodyContext.MATERIAL_COST }}" data-pattern="currency" class="sum-table-cell DIRECT_COST" onkeyup="calDirect()" onchange="calSaleProfit()" />
+   		</td>
+   		<td style="text-align:right;">
+   			<input type="text" data-type="mField" id="MATERIAL_PERCENT" class="DIRECT_COST_PERCENT" value="{{ doc.BodyContext.MATERIAL_PERCENT }}" style="width:98%; border:hidden; text-align:right;"  data-formula="( {0} / {1} )*100"  data-formula-digit="2" readonly="readonly" data-sum-ref="#MATERIAL_COST,#SALES_PRICE"  />
+   		</td>
+   		<td colspan="2">
+   			<input type="text" data-type="mField" id="MATERIAL_COMMENT" value="{{ doc.BodyContext.MATERIAL_COMMENT }}" style="width:98%;" placeholder="사무용품비, 전산용품비, 도서구입비"/>
+   		</td>
+	</tr>
+   <tr>
+   		<th>합사운영비</th>
+   		<td style="text-align:right">
+   			<input type="text" data-type="mField" id="OPER_COST"  style="width:98%" value="{{ doc.BodyContext.OPER_COST }}" data-pattern="currency"  class="sum-table-cell DIRECT_COST" onkeyup="calDirect()" onchange="calSaleProfit()"/>
+   		</td>
+   		<td style="text-align:right;">
+   			<input type="text" data-type="mField" id="OPER_PERCENT" class="DIRECT_COST_PERCENT" value="{{ doc.BodyContext.OPER_PERCENT }}" style="width:98%; border:hidden; text-align:right;" data-formula="( {0} / {1} )*100" readonly="readonly" data-formula-digit="2" data-sum-ref="#OPER_COST,#SALES_PRICE" />
+   		</td>
+   		<td colspan="2">
+   			<input type="text" data-type="mField" id="OPER_COMMENT" value="{{ doc.BodyContext.OPER_COMMENT }}" style="width:98%; " placeholder="공급도급사 공동비용, 당사 단독비용"/>
+   		</td>
+	</tr>
+	 <tr>
+   		<th>복리후생비</th>
+   		<td style="text-align:right">
+   			<input type="text" data-type="mField" id="WELFARE_COST"  style="width:98%" value="{{ doc.BodyContext.WELFARE_COST }}" data-pattern="currency" class="sum-table-cell DIRECT_COST" onkeyup="calDirect()" onchange="calSaleProfit()"/>
+   		</td>
+   		<td style="text-align:right;">
+   			<input type="text" data-type="mField" id="WELFARE_PERCENT" class="DIRECT_COST_PERCENT" value="{{ doc.BodyContext.WELFARE_PERCENT }}" style="width:98%; border:hidden; text-align:right;" data-formula="( {0} / {1} )*100" readonly="readonly" data-formula-digit="2" data-sum-ref="#WELFARE_COST,#SALES_PRICE" />
+   		</td>
+   		<td colspan="2">
+   			<input type="text" data-type="mField" id="WELFARE_COMMENT" value="{{ doc.BodyContext.WELFARE_COMMENT }}" style="width:98%;" placeholder="순액 (매출액-외주비)의 3% 이내"/>
+   		</td>
+	</tr>
+	 <tr>
+   		<th>수수료</th>
+   		<td style="text-align:right">
+   			<input type="text" data-type="mField" id="CHARGE_COST"  style="width:98%;" value="{{ doc.BodyContext.CHARGE_COST }}" data-pattern="currency" class="sum-table-cell DIRECT_COST" onkeyup="calDirect()" onchange="calSaleProfit()"/>
+   		</td>
+   		<td style="text-align:right;">
+   			<input type="text" data-type="mField" id="CHARGE_PERCENT" class="DIRECT_COST_PERCENT" value="{{ doc.BodyContext.CHARGE_PERCENT }}" style="width:98%;  border:hidden; text-align:right;" readonly="readonly"  data-formula="( {0} / {1} )*100"  data-formula-digit="2" data-sum-ref="#CHARGE_COST,#SALES_PRICE"  />
+   		</td>
+   		<td colspan="2">
+   			<input type="text" data-type="mField" id="CHARGE_COMMENT" value="{{ doc.BodyContext.CHARGE_COMMENT }}" style="width:98%;" placeholder="관사업일 경우 평균 매출액의 2%"/>
+   		</td>
+	</tr>
+	 <tr>
+   		<th>예비비</th>
+   		<td style="text-align:right">
+   			<input type="text" data-type="mField" id="SPARE_COST"   style="width:98%" value="{{ doc.BodyContext.SPARE_COST }}"  data-pattern="currency"  class="sum-table-cell DIRECT_COST" onkeyup="calDirect()" onchange="calSaleProfit()"/>
+   		</td>
+   		<td style="text-align:right;">
+   			<input type="text" data-type="mField" id="SPARE_PERCENT"  class="DIRECT_COST_PERCENT" value="{{ doc.BodyContext.SPARE_PERCENT }}"  style="width:98%; border:hidden; text-align:right;" readonly="readonly"  data-formula="( {0} / {1} )*100" data-formula-digit="2"  data-sum-ref="#SPARE_COST,#SALES_PRICE" />
+   		</td>
+   		<td colspan="2">
+   			<input type="text" data-type="mField" id="SPARE_COMMENT"  value="{{ doc.BodyContext.SPARE_COMMENT }}"  style="width:98%; " />
+   		</td>
+	</tr>
+	 <tr>
+   		<th>소계</th>
+   		<td style="text-align:right">
+   			<input type="text" data-type="mField" id="SUBTOTAL_COST" name="SUBTOTAL_COST" style="width:98%; border:hidden;" value="{{ doc.BodyContext.SUBTOTAL_COST }}" readonly="readonly" data-pattern="currency" class="sum-table-colsum"  />
+   		</td>
+   		<td style="text-align:right;">
+   			<input type="text" data-type="mField" id="SUBTOTAL_PERCENT"  value="{{ doc.BodyContext.SUBTOTAL_PERCENT }}" style="width:98%; border:hidden; text-align:right;" data-formula="( {0} / {1} )*100" data-formula-digit="2" readonly="readonly"  data-sum-ref="#SUBTOTAL_COST,#SALES_PRICE" />
+   		</td>
+   		<td colspan="2">
+   			<input type="text" data-type="mField" id="SUBTOTAL_COMMENT"  value="{{ doc.BodyContext.SUBTOTAL_COMMENT }}" style="width:98%; " />
+   		</td>
+	</tr>
+</table>
+
+<table class="tableStyle linePlus  RowSumTable" id="BUDGET_TABLE_2" style="border-collapse:separate;"><!-- class="table_10" -->
+	 <colgroup>
+        <col style="width:10%" />
+        <col style="width:15%" />
+        <col style="width:15%" />
+        <col style="width:15%" />
+        <col style="width:15%" />
+        <col style="width:35%" />
+    </colgroup> 
+	 <tr>
+   		<th colspan="2">외주비</th>
+   		<td style="text-align:right">
+   			<input type="text" data-type="mField" id="OUT_SOURCING" style="width:98%; text-align:right" value="{{ doc.BodyContext.OUT_SOURCING }}" data-pattern="currency"  onkeyup="calDirect()" onchange="calOutSourcingPercent()"/>
+   		</td>
+   		<td style="text-align:right;">
+   		<input type="text" data-type="mField" id="OUT_SOURCING_PERCENT" value="{{ doc.BodyContext.OUT_SOURCING_PERCENT }}" style="width:98%; text-align:right; border:hidden" readonly="readonly" data-formula="( {0} / {1} )*100"  data-formula-digit="2" data-sum-ref="#OUT_SOURCING,#SALES_PRICE" />
+   		</td>
+   		<td colspan="2">
+   			<input type="text" data-type="mField" id="OUT_SOURCING_COMMENT"  value="{{ doc.BodyContext.OUT_SOURCING_COMMENT }}" style="width:98%;"   />
+   		</td>
+	</tr>
+	
+	<tr>
+   		<th colspan="2">직접 원가계</th>
+   		<td style="text-align:right">
+   			<input type="text" data-type="mField" id="DIRECT_TOTAL_PRICE" style="width:98%; text-align:right" value="{{ doc.BodyContext.DIRECT_TOTAL_PRICE }}" data-pattern="currency"   />
+   		</td>
+   		<td style="text-align:right;">
+   			<input type="text" data-type="mField" id="DIRECT_TOTAL_PERCENT"  value="{{ doc.BodyContext.DIRECT_TOTAL_PERCENT }}" style="width:98%; text-align:right; border:hidden" readonly="readonly" data-formula-digit="2" data-formula="( {0} / {1} )*100"   data-sum-ref="#DIRECT_TOTAL_PRICE,#SALES_PRICE" />
+   		</td>
+   		<td colspan="2">
+   			<input type="text" data-type="mField" id="DIRECT_TOTAL_COMMENT"  value="{{ doc.BodyContext.DIRECT_TOTAL_COMMENT }}" style="width:98%;" placeholder="인건비+직접경비+외주비" />
+   		</td>
+	</tr>
+	
+	<tr>
+   		<th colspan="2">부서관리비</th>
+   		<td style="text-align:right">
+   			<input type="text" data-type="mField" id="DEPARTMENT_CARE" style="width:98%; text-align:right	" value="{{ doc.BodyContext.DEPARTMENT_CARE }}"  data-pattern="currency"  onkeyup="calDeptPercent()"  onchange="calSaleProfit()"/>
+   		</td>
+   		<td style="text-align:right;">
+   			<input type="text" data-type="mField" id="DEPARTMENT_CARE_PERCENT"  value="{{ doc.BodyContext.DEPARTMENT_CARE_PERCENT }}" readonly="readonly" class="sum-table-cell" style="width:98%; text-align:right; border:hidden" data-formula-digit="2"  data-formula="( {0} / {1} )*100"   data-sum-ref="#DEPARTMENT_CARE,#SALES_PRICE" />
+   		</td>
+   		<td colspan="2">
+   			<input type="text" data-type="mField" id="DEPARTMENT_TOTAL_COMMENT"  value="{{ doc.BodyContext.DEPARTMENT_TOTAL_COMMENT }}" style="width:98%;" placeholder="매출액의 10% (턴키 사업은 순매출의 10%)" />
+   		</td>
+	</tr>
+	
+	<tr>
+   		<th colspan="2">일반관리비</th>
+   		<td style="text-align:right">
+   			<input type="text" data-type="mField" id="GENERAL_CARE" style="width:98%; text-align:right" value="{{ doc.BodyContext.GENERAL_CARE }}"  data-pattern="currency" onkeyup="calGeneralPercent()" onchange="calSaleProfit()" />
+   		</td>
+   		<td style="text-align:right;">
+   			<input type="text" data-type="mField" id="GENERAL_CARE_PERCENT"  value="{{ doc.BodyContext.GENERAL_CARE_PERCENT }}" style="width:98%; text-align:right; border:hidden" readonly="readonly" data-formula-digit="2" data-formula="( {0} / {1} )*100"  data-sum-ref="#GENERAL_CARE,#SALES_PRICE" />
+   		</td>
+   		<td  colspan="2">
+   			  <input type="text" data-type="mField" id="GENERAL_CARE_COMMENT"  value="{{ doc.BodyContext.GENERAL_CARE_COMMENT }}" style="width:98%; " placeholder="매출액의 10% (턴키 사업은 순매출의 10%)"/>
+   		</td>
+	</tr>
+	
+	<tr>
+   		<th colspan="2">영업 이익</th>
+   		<td style="text-align:right">
+   			<input type="text" data-type="mField" id="SALES_PROFIT"  value="{{ doc.BodyContext.SALES_PROFIT }}" style="width:98%; border:hidden; text-align:right" data-pattern="currency"  />
+   		</td>
+   		<td  style="text-align:right;">
+   			 <input type="text" data-type="mField" id="SALES_PROFIT_PERCENT"  value="{{ doc.BodyContext.SALES_PROFIT_PERCENT }}" style="width:98%; text-align:right; border:hidden" readonly="readonly" data-formula-digit="2" data-formula="({0}/{1})*100"  data-sum-ref="#SALES_PROFIT,#SALES_PRICE" />
+   		</td>
+   		<td colspan="2">
+   			 <input type="text" data-type="mField" id="SALES_PROFIT_COMMENT"  value="{{ doc.BodyContext.SALES_PROFIT_COMMENT }}" style="width:98%;"  placeholder="매출액 대비 5% 이상"/>
+   		</td>
+	</tr>	
+</table>
+
+<table class="tableStyle linePlus mt10 " id="BUDGET_TABLE_3" style="border-collapse:separate;"><!-- class="table_10" -->
+	<tr>
+		<td colspan="6" style="border:hidden;"><b> ○ 부서별 분담금액 및 실행 예산</b></td>
+	</tr>
+</table>
+
+<table class="table_10 multi-row-table RowSumTable tableStyle linePlus" id="TBLINFO" style="border-left: 1px solid #c3d7df;">
+    <colgroup>
+        <col style="width: 17%">
+        <col style="width: 16.5%">
+        <col style="width: 16.5%">
+        <col style="width: 16.5%">
+        <col style="width: 16.5%">
+        <col style="width: 17%">
+    </colgroup>
+    <tbody>
+	    <tr class="multi-row-control" data-mode="writeOnly">
+	        <td colspan="6" style="text-align: right">
+	            <input type="button" id="btnAdd" value="+추가" class="multi-row-add smButton">
+	            <input type="button" id="btnDelSel" value="-삭제" class="multi-row-del-auto smButton">
+	        </td>
+	    </tr>
+	    <tr>
+	        <th>구분</th>
+	        <th>매출분담액</th>
+	        <th>실행예산</th>
+	        <th>실행률</th>
+	        <th>PM(PL)</th>
+	        <th>서명</th>
+	    </tr>
+	    <tr class="multi-row-template  multi-sum">
+	    	<td><input name="DEPT_DIV" style="width: 99%;" type="text" data-type="rField"></td>
+			<td><input type="text"  data-type="rField" data-pattern="numeral" name="cost1"  style="width: 99%;" onblur="fn_a_sum_1();" onchange="fn_a_sum_1();" ></td>
+			<td align="right">
+				<input type="text" data-type="rField" data-pattern="numeral"  name="cost2"  style="width: 99%;" onblur="fn_a_sum_2();" onchange="fn_a_sum_2();">
+			</td>
+			<td align="right"> 
+				<input type="text" data-type="rField"  data-pattern="numeral" name="cost3"  data-sum-ref="cost1,cost2" data-formula="({0}/{1})*100"   style="width: 99%;" readonly="readonly" data-formula-digit="2" >
+			</td>
+	        
+	        
+	        <td align="right">
+	            <input name="EXE_PM" style="width: 99%;" type="text" data-type="rField"  > 
+	        </td>
+	         <td align="right">
+	            <input name="EXE_SIGN" style="width: 99%;" type="text" data-type="rField"  >
+	        </td>
+	        	        
+	    </tr>
+	    <tr>
+        <th >합계        </th>
+        <td align="right"><input class="sum-table-colsum" id="a_sum_1" style="width: 98%;" type="text" readonly="readonly" value="{{ doc.BodyContext.a_sum_1 }}" data-type="mField" data-pattern="numeral" ></td>
+        <td align="right"><input class="sum-table-colsum" id="a_sum_2" style="width: 98%;" type="text" readonly="readonly" value="{{ doc.BodyContext.a_sum_2 }}" data-type="mField" data-pattern="numeral"></td>
+        <td align="right"><input class="sum-table-colsum" id="a_sum_3" style="width: 98%;" type="text" readonly="readonly" value="{{ doc.BodyContext.a_sum_3 }}" data-type="mField" data-pattern="numeral" data-formula-digit="2" ></td>
+        <th colspan ="2"></th>
+    </tr>
+	    
+	</tbody>
+	 <tr>
+        <th>비고</th>
+        <td colspan="7">
+            <textarea id="t_purpose1" style="width: 98%; padding-right: 0px; padding-left: 0px; -ms-overflow-y: auto;" rows="4" cols="15" data-type="mField">{{ doc.BodyContext.t_purpose1 }}</textarea>
+        </td>
+    </tr>
+</table>
+
+<table class="table_3 tableStyle linePlus mt10" style="display: none;" cellspacing="0" cellpadding="0">
+    <tbody><tr>
+        <td style="">
+            <br style="">
+            &nbsp;&nbsp;♣ 출장비 지급 규정<br style=""><br style="">
+            &nbsp;&nbsp;1.	용어의 정의<br style=""><br style="">
+            &nbsp;&nbsp;-	출장 : 서울, 경기도권을 제외한 지역에 업무 상 방문 및 프로젝트 수행 (1일, 1박이상)<br style=""><br style="">
+            &nbsp;&nbsp;2.	비용 지급 기준<br style="">
+            <table class="table_3" style="padding-left: 20px;" cellspacing="0" cellpadding="0" ;="">
+                <tbody><tr>
+                    <td align="center" style="">구분</td>
+                    <td align="center" style="">교통비</td>
+                    <td align="center" style="">숙박비*</td>
+                    <td align="center" style="">식비**</td>
+                    <td align="center" style="">일비***</td>
+                    <td align="center" style=""></td>
+                </tr>
+                <tr>
+                    <th rowspan="3">출장</th>
+                    <td align="center" style="">실비 지급</td>
+                    <td align="center" style="">실비 지급</td>
+                    <td align="center" style="">18,000</td>
+                    <td align="center" style="">8,000</td>
+                    <td align="center" style="">기준</td>
+                </tr>
+                <tr>
+                    <th>O</th>
+                    <th>O</th>
+                    <th>X</th>
+                    <th>X</th>
+                    <th rowspan="2">증빙</th>
+                </tr>
+                <tr>
+                    <th colspan="4">청구 및 지급 내역과 출장 복명서 일치하게 작성</th>
+                </tr>
+            </tbody></table>
+            <strong style="">
+                &nbsp;&nbsp;* 출장 숙박비는 1박 6만원 한도 내에서 지출<br><br>
+                &nbsp;&nbsp;** 출장 식비는 1일 3식 기준 출발일 도착일 모두 포함<br><br>
+                &nbsp;&nbsp;*** 출장 일비는 출발일 도착일 모두 포함 <br><br>
+                &nbsp;&nbsp;<font color="red">3.	지방 프로젝트 수행</font>
+            </strong><font color="red" style="">
+                의 경우 출장비로 처리하되 해당 프로젝트의 거리, 투입규모, <br><br>
+                &nbsp;&nbsp;투입자 성별, 근무여건 등을 고려하여 별도 지급 규정을 마련하여 운영한다.
+            </font><br style=""><br style="">
+            &nbsp;&nbsp;* 영수증 별도 품의,  발신 참조에 관리팀 필 참조<br style="">&nbsp;&nbsp;
+        </td>
+    </tr>
+    <!--실 결재양식 내용 부분 끝 -->
+</tbody></table>
+
+<!--실 결재양식 내용 부분 끝 -->

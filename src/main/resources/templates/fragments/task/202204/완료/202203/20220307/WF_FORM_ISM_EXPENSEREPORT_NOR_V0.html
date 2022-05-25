@@ -1,0 +1,149 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:25%" />
+        <col style="width:25%" />
+         <col style="width:50%" />
+    </colgroup>
+    <tr>
+    	<th >사용자</th>
+		<td  colspan ="3">
+		<input type="text" id="userName" name="userName" data-type="mField" value="{{ doc.BodyContext.userName }}"    style="width:98%;  text-align:center" >
+           
+		</td>
+		
+    </tr>
+    <tr>
+    	<th >부서</th>
+		<td colspan ="3" >
+		<input type="text" id="userDept" name="userDept" data-type="mField" value="{{ doc.BodyContext.userDept }}"    style="width:98%;  text-align:center" >
+           
+		</td>
+		
+    </tr>
+    <tr>
+    <th >작성일자</th>
+		<td colspan ="3" >
+		<input type="text" data-type="mField" id="writeDate" value="{{ doc.BodyContext.writeDate }}" style="width:98%;  text-align:center" data-pattern="date">
+           
+		</td>
+    </tr>
+      
+    
+    
+</table>
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:25%" />
+        <col style="width:75%" />
+    </colgroup>
+    <tr>
+    	<th >지급업체</th>
+		<td  align ="center">
+		<input type="text" id="company" name="company" data-type="mField" value="{{ doc.BodyContext.company }}"    style="width:98%;  text-align:center" >
+           
+		</td>
+		
+    </tr>
+   <tr>
+    	<th >ERP등록(거래처)</th>
+		<td align ="center" >
+		<input type="text" id="erpYn" name="erpYn" data-type="mField" value="{{ doc.BodyContext.erpYn }}"    style="width:98%;  text-align:center" >
+           
+		</td>
+		
+    </tr>
+    <tr>
+    	<th >적요</th>
+		<td align ="center" >
+		<input type="text" id="outline" name="outline" data-type="mField" value="{{ doc.BodyContext.outline }}"    style="width:98%;  text-align:center" >
+           
+		</td>
+		
+    </tr>
+    <tr>
+    	<th >사업부</th>
+		<td align ="center" >
+		<input type="text" id="Dept" name="Dept" data-type="mField" value="{{ doc.BodyContext.Dept }}"    style="width:98%;  text-align:center" >
+           
+		</td>
+		
+    </tr>
+    <tr>
+    	<th >Project No.</th>
+		<td  align ="center">
+		<input type="text" id="Project" name="Project" data-type="mField" value="{{ doc.BodyContext.Project }}"    style="width:98%;  text-align:center" >
+           
+		</td>
+		
+    </tr>
+    <tr>
+    	<th >증빙일자</th>
+		<td  align ="center">
+		<input type="text" data-type="mField" id="proveDate" value="{{ doc.BodyContext.proveDate }}" style="width:98%;  text-align:center" data-pattern="date">  
+		</td>
+		
+    </tr>
+    <tr>
+    	<th >지급요청일자</th>
+		<td  align ="center">
+		<input type="text" data-type="mField" id="reqDate" value="{{ doc.BodyContext.reqDate }}" style="width:98%;  text-align:center" data-pattern="date">   
+		</td>
+		
+    </tr>
+    <tr>
+    	<th >공급가액</th>
+		<td  align ="center">
+		<input type="text" id="realAmt" name="realAmt" data-type="mField" value="{{ doc.BodyContext.realAmt }}"   data-pattern="numeral" onblur="fn_sum();" onchange="fn_sum1();" data-numeral-format="$0,0"  style="width:98%;  text-align:center  !important"" >
+           
+		</td>
+		
+    </tr>
+    <tr>
+    	<th >부가세</th>
+		<td  align ="center">
+		<input type="text" id="vatAmt" name="vatAmt" data-type="mField" value="{{ doc.BodyContext.vatAmt }}"   data-pattern="numeral" data-numeral-format="$0,0"  style="width:98%;  text-align:center  !important"" >
+           
+		</td>
+		
+    </tr>
+    <tr>
+    	<th >합계</th>
+		<td  align ="center">
+		<input type="text" id="totAmt" name="totAmt"  data-type="mField" value="{{ doc.BodyContext.totAmt }}"   data-pattern="numeral" data-numeral-format="$0,0"   style="width:98%; text-align:center  !important"" >
+           
+		</td>
+		
+    </tr>
+    <tr>
+    	<th >증빙서류</th>
+		<td  align ="center">
+		<input type="text" id="provePaper" name="provePaper" data-type="mField" value="{{ doc.BodyContext.provePaper }}"    style="width:98%;  text-align:center "">
+           
+		</td>
+		
+    </tr>
+    <tr>
+	    <td colspan="2">
+	    ■ 유의 사항<br>	
+	    1. 영수증 사본(스캔본)은 본 전자결재 작성시 파일로 첨부<br>
+	    2. 영수증 원본은 재무팀으로 제출<br>
+	    3. 지급요청일자는 정기결재일인 5일, 10일, 15일, 20일, 25일, 말일 중 선택하여 기입<br>
+	    → 정기결재일이 휴일인 경우 다음 영업일에 지급됩니다.<br> 
+	    → 지급요청일자(정기결제일)로부터 (-3)영업일까지 최종결재가 완료되지 않을 경우,<br>
+	    최종결재일에 따라 자금지급일이 미루어집니다.	<br>
+		 
+		<a onclick="openPopup();" >☞ 세부적인 작성 방법 안내 바로가기 </a>
+		
+	    </td>
+    </tr>
+    
+    
+    
+</table>
+
+
+
+<!--실 결재양식 내용 부분 끝 -->

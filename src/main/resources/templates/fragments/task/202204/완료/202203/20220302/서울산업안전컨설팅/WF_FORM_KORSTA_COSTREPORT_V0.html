@@ -1,0 +1,100 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+
+		<colgroup>
+			<col style="width:10%" />
+	       <col style="width:35%" />
+	       <col style="width:10%" />
+	       <col style="width:35%" />
+	       
+		</colgroup>  
+		<tr>
+	    	<th>기간
+			</th>
+			<td  >
+				<input type="text" data-type="mField" id="startDay" title ="시작일" name = "startDay" value="{{ doc.BodyContext.startDay }}"  size="10" style="width : 45%" data-pattern="date" data-date-format="yy년 mm월 dd일" onchange="calSDATEEDATE('this');" >~
+				<input type="text" data-type="mField" id="closeDay" title ="종료일" name = "closeDay" value="{{ doc.BodyContext.closeDay }}" size="10" style="width : 45%" data-pattern="date"  data-date-format="yy년 mm월 dd일" onchange="calSDATEEDATE('this');" >
+			</td>
+			
+	    	
+	    	<th >작성자</th>
+			<td  >
+			<input type="text" id="userName" name="userName" data-type="mField" value="{{ doc.BodyContext.userName}}"    style="width:90%; " >
+	         
+	           
+			</td>
+		</tr>
+</table>
+
+
+<table class="table_10 multi-row-table RowSumTable tableStyle linePlus" id="TBLINFO" style="border-left: 1px solid #c3d7df;">
+    <colgroup>
+        <col style="width: 15%">
+        <col style="width: 12%">
+        <col style="width: 15%">
+        <col style="width: 14%">
+        <col style="width: 14%">
+        <col style="width: 14%">
+        <col style="width: 15%">
+    </colgroup>
+    <tbody>
+	    <tr class="multi-row-control" data-mode="writeOnly">
+	        <td colspan="7" style="text-align: right">
+	            <input type="button" id="btnAdd" value="+추가" class="multi-row-add usa">
+	            <input type="button" id="btnDelSel" value="-삭제"  class="usa" onclick="delRow();" >
+	        </td>
+	    </tr>
+	    <tr>
+	        <th rowspan="2">사용일자</th>
+	        <th rowspan="2">계정과목</th>
+	        <th>사용내역</th>
+	        <th colspan="4">금액</th>
+	    </tr>
+	    <tr>
+	        <th>적요</th>
+	        <th>금액</th>
+	        <th>결재수단<br>(현금,카드,이체)</th>
+	        <th>첨부</th>
+	        <th>비고</th>
+	         
+	    </tr>
+	    <tr class="multi-row-template multi-sum">
+	    	<td>
+	    		<input type="text" name="a_use_date" autocomplete ="off" data-pattern="date" data-type="rField" style="width: 98%;">
+	    	</td>	
+	    	<td align="right"> 
+	    		<input type="text"  data-type="rField" name="accName"  style="width: 98%;" >
+	    	</td>
+			<td align="right">
+				<input type="text" data-type="rField"  name="useList"  style="width: 98%;" >
+			</td>
+	        <td align="right">
+				<input type="text" data-type="rField" data-pattern="numeral"  name="cost"  style="width: 98%;" onblur="fn_a_sum();" onchange="fn_a_sum();">
+			</td>
+	        
+	         <td >
+	            <input name="payment"  style="width: 98%;" type="text" data-type="rField"  >
+	        </td>
+	        <td >
+	            <input name="attach"  style="width: 99%;" type="text" data-type="rField"  >
+	        </td>
+	        <td >
+	            <input name="rmk"  style="width: 99%;" type="text" data-type="rField"  >
+	        </td>	        
+	    </tr>
+	    <tr>
+        	<th colspan="2" >합계       
+        	</th>
+        	<th ></th>
+	        <td align="right"><input class="sum-table-colsum" id="a_sum_1" style="width: 98%;" type="text" readonly="readonly" value="{{ doc.BodyContext.a_sum_1 }}" data-type="mField" data-pattern="numeral" ></td>
+	        <th ></th>
+	        <th ></th>
+	        <th ></th>
+	    </tr>
+	    
+	</tbody>
+	 
+</table>
+<!--실 결재양식 내용 부분 끝 -->

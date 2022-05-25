@@ -1,0 +1,209 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:18%" />
+        <col style="width:18%" />
+        <col style="width:18%" />
+        <col style="width:18%" />
+        <col style="width:10%" />
+        <col style="width:18%" />
+        
+    </colgroup>
+    
+    <tr>
+		<th>프로젝트명</th>
+		<td colspan="5">
+           <input type="text" id="projectNmae" name="projectNmae" data-type="mField" value="{{ doc.BodyContext.projectNmae}}"    style="width:98%; " >
+		</td>
+	</tr>
+	<tr>
+	<th>현장소장
+	</th>
+	<td colspan="2">
+		<input type="text" id="localManager" name="localManager" data-type="mField" value="{{ doc.BodyContext.localManager }}"    style="width:98%; " >
+	</td>
+	<th >담당임원
+	</th>
+	<td colspan="2">
+		<input type="text" id="dutyMember" name="dutyMember" data-type="mField" value="{{ doc.BodyContext.dutyMember }}"    style="width:98%; " >
+	</td>
+	</tr>
+	
+	<tr>
+	<th>공사기간
+	</th>
+		<td  style ="border-right : none">
+			<input type="text" data-type="mField" id="startDay" title ="시작일" name = "startDay" value="{{ doc.BodyContext.startDay }}"  size="10" style="width : 92%" data-pattern="date"  onchange="calSDATEEDATE('this');" >~
+		</td>
+		<td  style =" border-left : none;">
+			 <input type="text" data-type="mField" id="closeDay" title ="종료일" name = "closeDay" value="{{ doc.BodyContext.closeDay }}" size="10" style="width : 90%" data-pattern="date"  onchange="calSDATEEDATE('this');" >
+		</td>
+	<th >발주일자
+	</th>
+	<td colspan="2">
+		 <input type="text" data-type="mField" id="writeDay" title ="종료일" name = "writeDay" value="{{ doc.BodyContext.writeDay }}" size="10" style="width : 95%" data-pattern="date"   >
+	</td>
+	</tr>
+	<tr>
+	<th >공종명
+	</th>
+	<td colspan="2">
+			<input type="text" id="constructDivName" name="constructDivName" data-type="mField" value="{{ doc.BodyContext.constructDivName }}"    style="width:98%; " >
+	</td>
+	<th >업체명
+	</th>
+	<td colspan="2">
+		 	<input type="text" id="dealCompany" name="dealCompany" data-type="mField" value="{{ doc.BodyContext.dealCompany }}"    style="width:98%; " >
+	</td>
+	</tr>
+	
+	<tr>
+	<th >담당자
+	</th>
+	<td colspan="2">
+			<input type="text" id="manager" name="manager" data-type="mField" value="{{ doc.BodyContext.manager }}"    style="width:98%; " >
+	</td>
+	<th >연락처
+	</th>
+	<td colspan="2">
+		 	<input type="text" id="Tel" name="Tel" data-type="mField" value="{{ doc.BodyContext.Tel }}"    style="width:98%; " >
+	</td>
+	</tr>
+	
+	
+</table>
+
+
+<table class="tableStyle linePlus "><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:10%" />
+        <col style="width:15%" />
+        <col style="width:15%" />
+        <col style="width:15%" />
+        <col style="width:10%" />
+        <col style="width:15%" />
+        <col style="width:20%" />
+        
+    </colgroup>
+    <tr>
+        <th>구분</th>
+        <th>도급계약</th>
+        <th>실행금액</th>
+        <th>발주금액</th>
+        <th>발주율</th>
+        <th>외주업체명</th>
+        <th>지급조건</th>
+    </tr>
+    
+	<tr>
+	<th>금액
+	</th>
+	<td>
+		<input type="text" id="subcontractAmt" name="subcontractAmt" data-type="mField" value="{{ doc.BodyContext.subcontractAmt }}"    style="width:98%; " >
+	</td>
+	<td>
+		<input type="text" id="actionAmt" name="actionAmt" data-pattern="currency" data-type="mField" value="{{ doc.BodyContext.actionAmt }}"    style="width:98%; " >
+	</td>
+	<td>
+		<input type="text" id="orderAmt" name="orderAmt" data-pattern="currency" data-type="mField" value="{{ doc.BodyContext.orderAmt }}"    style="width:98%; " >
+	</td>
+	<td>
+		<input type="text" id="orderPercent" name="orderPercent" data-type="mField" value="{{ doc.BodyContext.orderPercent }}"    style="width:98%; " >
+	</td>
+	<td>
+		<input type="text" id="outsourcingName" name="outsourcingName" data-type="mField" value="{{ doc.BodyContext.outsourcingName }}"    style="width:98%; " >
+	</td>
+	
+	
+	
+	
+	<td class="Approval_labelTD" colspan="7" style="padding-left:3px;">
+            <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1">
+            	<input type="checkbox" id="chkBox_01" name="chkBox_1" value="현금">현금&nbsp;&nbsp;
+                <input type="checkbox" id="chkBox_02" name="chkBox_1" value="매담대">매담대&nbsp;&nbsp;<br>
+                <input type="checkbox" id="chkBox_03" name="chkBox_1" value="선급금 ">선급금&nbsp;&nbsp;
+                <input type="text" style="height :14px !important; width:30px;"   id="amt03" name="amt03" data-type="mField" value="{{ doc.BodyContext.amt03 }}"     >%
+            
+            </div>
+		</td>
+	</tr>
+</table>
+
+
+<table class="table_3 RowSumTable tableStyle linePlus mt10" cellspacing="0" cellpadding="0">
+    <colgroup>
+       <col style="width:20%" />
+        <col style="width:20%" />
+        <col style="width:20%" />
+        <col style="width:20%" />
+        <col style="width:20%" />
+        
+    </colgroup>
+    <tbody>
+    
+    <tr>
+    <th colspan ="5">입찰현황
+    </th>
+    </tr>
+    <tr>
+        <th>구분</th>
+        <th>업체명</th>
+        <th>입찰금액</th>
+        <th>NEGO.<br>확정금액</th>
+        <th>비고</th>
+    </tr>
+    
+    <tr>
+        <th >1 </th>
+        <td><input id="dealCompanyTb1" style="width: 98%;" type="text" value="{{ doc.BodyContext.dealCompanyTb1 }}" data-type="mField" ></td>
+        <td><input id="a_cost_11" style="width: 98%;" type="text" value="{{ doc.BodyContext.a_cost_11 }}" data-type="mField" data-pattern="currency"></td>
+        <td><input id="a_cost_12" style="width: 98%;" type="text" value="{{ doc.BodyContext.a_cost_12 }}" data-type="mField" data-pattern="currency"></td>
+        <td><input id="a_RMK1" style="width: 98%; " type="text" value="{{ doc.BodyContext.a_RMK1 }}" data-type="mField"  ></td>
+       
+    </tr>
+    <tr>
+        <th >2 </th>
+        <td><input id="dealCompanyTb2" style="width: 98%;" type="text" value="{{ doc.BodyContext.dealCompanyTb2 }}" data-type="mField" ></td>
+        <td><input id="a_cost_21" style="width: 98%;" type="text" value="{{ doc.BodyContext.a_cost_21 }}" data-type="mField" data-pattern="currency"></td>
+        <td><input id="a_cost_22" style="width: 98%;" type="text" value="{{ doc.BodyContext.a_cost_22 }}" data-type="mField" data-pattern="currency"></td>
+        <td><input id="a_RMK2" style="width: 98%;" type="text" value="{{ doc.BodyContext.a_RMK2 }}" data-type="mField"  ></td>
+       
+    </tr>
+    <tr>
+        <th >3 </th>
+        <td><input id="dealCompanyTb3" style="width: 98%;" type="text" value="{{ doc.BodyContext.dealCompanyTb3 }}" data-type="mField" ></td>
+        <td><input id="a_cost_31" style="width: 98%;" type="text" value="{{ doc.BodyContext.a_cost_31 }}" data-type="mField" data-pattern="currency"></td>
+        <td><input id="a_cost_32" style="width: 98%;" type="text" value="{{ doc.BodyContext.a_cost_32 }}" data-type="mField" data-pattern="currency"></td>
+        <td><input id="a_RMK3" style="width: 98%;" type="text" value="{{ doc.BodyContext.a_RMK3 }}" data-type="mField"  ></td>
+       
+    </tr>
+    <tr>
+        <th >4 </th>
+        <td><input id="dealCompanyTb4" style="width: 98%;" type="text" value="{{ doc.BodyContext.dealCompanyTb4 }}" data-type="mField" ></td>
+        <td><input id="a_cost_41" style="width: 98%;" type="text" value="{{ doc.BodyContext.a_cost_41 }}" data-type="mField" data-pattern="currency"></td>
+        <td><input id="a_cost_42" style="width: 98%;" type="text" value="{{ doc.BodyContext.a_cost_42 }}" data-type="mField" data-pattern="currency"></td>
+        <td><input id="a_RMK4" style="width: 98%;" type="text" value="{{ doc.BodyContext.a_RMK4 }}" data-type="mField"  ></td>
+       
+    </tr>
+  <tr>
+        <th >5 </th>
+        <td><input id="dealCompanyTb5" style="width: 98%;" type="text" value="{{ doc.BodyContext.dealCompanyTb5 }}" data-type="mField" ></td>
+        <td><input id="a_cost_51" style="width: 98%;" type="text" value="{{ doc.BodyContext.a_cost_51 }}" data-type="mField" data-pattern="currency"></td>
+        <td><input id="a_cost_52" style="width: 98%;" type="text" value="{{ doc.BodyContext.a_cost_52 }}" data-type="mField" data-pattern="currency"></td>
+        <td><input id="a_RMK5" style="width: 98%;" type="text" value="{{ doc.BodyContext.a_RMK5 }}" data-type="mField"  ></td>
+       
+    </tr>
+ 
+</tbody></table>
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+  <tr>
+    	
+    	<td colspan="8">
+    		<textarea id="Context" data-type="mField" style="width: 98%;height:125px">{{ doc.BodyContext.Context }}</textarea>
+    	</td>
+    </tr>
+</table>
+
+<!--실 결재양식 내용 부분 끝 -->

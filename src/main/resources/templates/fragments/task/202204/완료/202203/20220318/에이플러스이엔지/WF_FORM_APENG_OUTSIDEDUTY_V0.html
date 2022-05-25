@@ -1,0 +1,71 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:12%" />
+        <col style="width:*" />
+    </colgroup>
+   
+    <tr>
+    	<th >용역명
+		</th>
+		<td>
+			<input type="text" id="serviceName" name="serviceName" data-type="mField" value="{{ doc.BodyContext.serviceName }}"    style="width:98%; " >        
+		</td>
+    </tr>
+    <tr>
+   		<th >동행자
+		</th>
+		<td>
+			<input type="text" id="accompanyPerson" name="accompanyPerson" data-type="mField" value="{{ doc.BodyContext.accompanyPerson }}"    style="width:98%; " >        
+		</td>
+	</tr>
+    
+    <tr>
+    	<th >외근일자</th>
+		<td  >
+			<input type="text" data-type="mField" id="workDate" value="{{ doc.BodyContext.workDate }}" style="width:30%;" data-pattern="date">
+			<input type="text" name="goalTime" value="{{ doc.BodyContext.goalTime }}" data-type="mField" data-pattern="time" data-time-format="H:i" style="width:30%;" >        
+		</td>
+    </tr>
+    <tr style="height:80px">
+    	<th >목적지
+		</th>
+		
+		<td >
+    		<textarea id="goalPoint" data-type="mField" style="width: 98%;height:80px">{{ doc.BodyContext.goalPoint }}</textarea>
+    	</td>
+	</tr>
+	<tr>
+		<th >출발시간
+		</th>
+		<td>
+			<input type="text" name="startTime" value="{{ doc.BodyContext.startTime }}" data-type="mField" data-pattern="time" data-time-format="H:i" onchange="chkWorkTime(this);" style="width:30%;"  title="출발시간">
+		</td>
+	</tr>
+	
+	<tr>
+	 	<th >도착예정시간
+		</th>
+		<td>
+			<input type="text" name="endTime" value="{{ doc.BodyContext.endTime }}" data-type="mField" data-pattern="time" data-time-format="H:i" onchange="chkWorkTime(this);" style="width:30%;" title="도착예정시간">
+		</td>
+	</tr>
+	<tr style="height:80px">
+    	<th >외근목적
+		</th>
+		<td >
+    		<textarea id="outsideDutyPurpose" data-type="mField" style="width: 98%;height:80px">{{ doc.BodyContext.outsideDutyPurpose }}</textarea>
+    	</td>
+	</tr>
+	<tr>
+    	<th >이동수단
+		</th>
+		<td>
+			<input type="text" id="transportation" name="transportation" data-type="mField" value="{{ doc.BodyContext.transportation }}"    style="width:98%; " >        
+		</td>
+	</tr>
+	
+    
+</table>
+<!--실 결재양식 내용 부분 끝 -->

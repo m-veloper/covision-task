@@ -1,0 +1,57 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+	   <colgroup>
+	    	<col style="width:20%">
+	    	<col style="width:20%">
+	    	<col style="width:20%">
+	    	<col style="width:20%">
+	    	<col style="width:20%">
+	    </colgroup>
+	    <tr>
+	    	<th>일자</th>
+	    	<th>수신여부</th>
+	    	<th>문서번호<br>(공문대장번호)</th>
+	    	<th>발신처</th>
+	    	<th>수신처</th>
+	    </tr>
+	    
+	    <tr>
+	    	<td >
+	       		<input type="text" data-type="mField" id="reqDate" value="{{ doc.BodyContext.reqDate }}" style="width:90%;" data-pattern="date">
+			</td>
+			
+			<td >
+				<input type="text" id="sendReceive" name="sendReceive" data-type="mField" value="{{ doc.BodyContext.sendReceive }}"    style="width:98%; " >    
+			</td>
+			<td >
+				<input type="text" id="docNo" name="docNo" data-type="mField" value="{{ doc.BodyContext.docNo }}"    style="width:98%; " >    
+			</td>
+			<td >
+				<input type="text" id="sendDept" name="sendDept" data-type="mField" value="{{ doc.BodyContext.sendDept }}"    style="width:98%; " >    
+			</td>
+			<td >
+				<input type="text" id="receiveDept" name="receiveDept" data-type="mField" value="{{ doc.BodyContext.receiveDept }}"    style="width:98%; " >    
+			</td>
+	    </tr>
+	    
+
+		
+</table>
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+	<colgroup>
+	      <col style="width:20%" />
+	       <col style="width:80%" />
+	       
+		</colgroup>  
+	<tr style="height:150px;">
+	<th>문서내용
+	</th>
+		<td >
+			<textarea id="comment"  rows="10" data-type="mField" style="width: 98%;height:98%;">{{ doc.BodyContext.comment }}</textarea>
+		</td>
+	</tr>
+	
+</table>
+<!--실 결재양식 내용 부분 끝 -->

@@ -1,0 +1,95 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+
+		<colgroup>
+			<col style="width:10%" />
+	       <col style="width:23%" />
+	       <col style="width:10%" />
+	       <col style="width:23%" />
+	       
+		</colgroup>  
+		<tr>
+	    	<th >카드번호</th>
+			<td  >
+			<input type="text" id="cardNo" name="cardNo" data-type="mField" value="{{ doc.BodyContext.cardNo }}"    style="width:90%; " >
+	           
+			</td>
+	    	<th >부서명</th>
+			<td  >
+			<input type="text" id="userDept" name="userDept" data-type="mField" value="{{ doc.BodyContext.userDept }}"    style="width:90%; " >
+	           
+			</td>
+	    	<th >성명</th>
+			<td  >
+			<input type="text" id="userName" name="userName" data-type="mField" value="{{ doc.BodyContext.userName}}"    style="width:90%; text-align :center ;" >
+	         
+	           
+			</td>
+		</tr>
+</table>
+
+
+<table class="table_10 multi-row-table RowSumTable tableStyle linePlus" id="TBLINFO" style="border-left: 1px solid #c3d7df;">
+    <colgroup>
+        <col style="width: 12.5%">
+        <col style="width: 12.5%">
+        <col style="width: 12.5%">
+        <col style="width: 12.5%">
+        <col style="width: 12.5%">
+        <col style="width: 12.5%">
+        <col style="width: 12.5%">
+    </colgroup>
+    <tbody>
+	    <tr class="multi-row-control" data-mode="writeOnly">
+	        <td colspan="7" style="text-align: right">
+	            <input type="button" id="btnAdd" value="+추가" class="multi-row-add usa">
+	            <input type="button" id="btnDelSel" value="-삭제"  class="usa" onclick="delRow();" >
+	        </td>
+	    </tr>
+	    <tr>
+	        <th>날짜</th>
+	        <th>식대,교통비</th>
+	        <th>접대비,주유비</th>
+	        <th>기타</th>
+	        <th>합계</th>
+	        <th>사용(접대)내역 / 행선지 / 인원</th>
+	        <th>비고(사업명)</th>
+	    </tr>
+	    <tr class="multi-row-template multi-sum">
+	    	<td>
+	    		<input type="text" name="a_use_date" autocomplete ="off" data-pattern="date" data-type="rField" style="width: 90%;">
+	    	</td>	
+	    	<td align="right"> 
+	    		<input type="text"  data-type="rField" data-pattern="numeral" name="cost1"  style="width: 99%;" onblur="fn_a_sum_1();" onchange="fn_a_sum_1();" >
+	    	</td>
+			<td align="right">
+				<input type="text" data-type="rField" data-pattern="numeral"  name="cost2"  style="width: 99%;" onblur="fn_a_sum_2();" onchange="fn_a_sum_2();">
+			</td>
+	        <td align="right">
+				<input type="text" data-type="rField" data-pattern="numeral"  name="cost3"  style="width: 99%;" onblur="fn_a_sum_3();" onchange="fn_a_sum_3();">
+			</td>
+	         <td align="right">
+	             <input class="sum-table-rowsum"  name="cost4" style="width: 99%;" type="text" data-type="rField" readonly="readonly" data-pattern="currency" data-sum-ref="cost1,cost2,cost3" data-formula="+">
+	        </td>
+	         <td >
+	            <input name="useData"  style="width: 99%;" type="text" data-type="rField"  >
+	        </td>
+	        <td >
+	            <input name="useRmk"  style="width: 99%;" type="text" data-type="rField"  >
+	        </td>	        
+	    </tr>
+	    <tr>
+        <th >계        </th>
+	        <td align="right"><input class="sum-table-colsum" id="a_sum_1" style="width: 98%;" type="text" readonly="readonly" value="{{ doc.BodyContext.a_sum_1 }}" data-type="mField" data-pattern="numeral" ></td>
+	        <td align="right"><input class="sum-table-colsum" id="a_sum_2" style="width: 98%;" type="text" readonly="readonly" value="{{ doc.BodyContext.a_sum_2 }}" data-type="mField" data-pattern="numeral" ></td>
+	        <td align="right"><input class="sum-table-colsum" id="a_sum_3" style="width: 98%;" type="text" readonly="readonly" value="{{ doc.BodyContext.a_sum_3 }}" data-type="mField" data-pattern="numeral" ></td>
+	        <td align="right"><input class="sum-table-colsum" id="a_sum_4" style="width: 98%;" type="text" readonly="readonly" value="{{ doc.BodyContext.a_sum_4 }}" data-type="mField" data-pattern="numeral" ></td>
+	        <th colspan ="2"></th>
+	    </tr>
+	    
+	</tbody>
+	 
+</table>
+<!--실 결재양식 내용 부분 끝 -->

@@ -1,0 +1,202 @@
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:12%" />
+        <col style="width:20%" />
+        <col style="width:*" />
+    </colgroup>
+    <tr>
+    	<th>작 성 일 자</th>
+    	<td>
+    		<input type="text" data-type="mField" data-pattern="date" data-date-format="yy년 mm월 dd일" name="wrtDt" value="{{ doc.BodyContext.wrtDt }}"  style="width:95%; text-align: center;">
+    	</td>
+    	<td style="border-bottom: none; border-top: none; border-right: none;">
+    	</td>
+    </tr>
+    <tr>
+    	<th>지급요청일자</th>
+    	<td>
+    		<input type="text" data-type="mField" data-pattern="date" data-date-format="yy년 mm월 dd일" name="rcptDt" value="{{ doc.BodyContext.rcptDt }}"  style="width:95%; text-align: center;">
+    	</td>
+    	<td style="border-bottom: none; border-top: none; border-right: none;">
+    	</td>
+    </tr>
+    <tr>
+    	<th>부 서 명</th>
+    	<td>
+    		<input type="text" name="dptNm" data-type="mField" value="{{ doc.BodyContext.dptNm }}"  style="width:95%;" />
+    	</td>
+    	<td style="border-bottom: none; border-top: none; border-right: none;">
+    	</td>
+    </tr>
+    <tr>
+    	<th>작 성 자</th>
+    	<td>
+    		<input type="text" name="wrtNm" data-type="mField" value="{{ doc.BodyContext.wrtNm }}"  style="width:95%;" />
+    	</td>
+    	<td style="border-bottom: none; border-top: none; border-right: none;">
+    	</td>
+    </tr>
+</table>
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+	<colgroup>
+        <col style="width:10%" />
+        <col style="width:7%" />
+        <col style="width:7%" />
+        <col style="width:15%" />
+        <col style="width:5%" />
+        <col style="width:8%" />
+        <col style="width:10%" />
+    </colgroup>
+    <tr>
+    	<th>집행금액</th>
+    	<td colspan="3" style="text-align: center;">
+    		<input type="text" name="amtToHangul" id="amtToHangul" data-type="mField" value="{{ doc.BodyContext.amtToHangul }}"  style="width:95%;" readonly="readonly" />
+    	</td>
+    	<td colspan="3" style="text-align: center;">
+    		(\)<input type="text" name="amtToNumber" id="amtToNumber" data-type="mField" value="{{ doc.BodyContext.amtToNumber }}"  style="width:90%;" data-pattern="currency" readonly="readonly"/>
+    	</td>
+    </tr>
+    <tr>
+    	<th>지 급 처</th>
+    	<td colspan="6">
+    		<input type="text" name="pyt" data-type="mField" value="{{ doc.BodyContext.pyt }}"  style="width:95%;" />
+    	</td>
+    </tr>
+    <tr>
+    	<th>은 행 명</th>
+    	<td><input type="text" name="bnkNm" data-type="mField" value="{{ doc.BodyContext.bnkNm }}"  style="width:95%;" /></td>
+    	<th>계좌번호</th>
+    	<td colspan="2"><input type="text" name="accntNum" data-type="mField" value="{{ doc.BodyContext.accntNum }}" style="width:95%;" /></td>
+    	<th>예금주</th>
+    	<td><input type="text" name="accntHldr" data-type="mField" value="{{ doc.BodyContext.accntHldr }}"  style="width:95%;" /></td>
+    </tr>
+</table>
+<table class="multi-row-table tableStyle linePlus" id="sumTable"><!-- class="table_10" -->
+	<colgroup>
+        <col style="width:35%" />
+        <col style="width:30%" />
+        <col style="width:17%" />
+        <col style="width:18%" />
+    </colgroup>
+   	<tr class="multi-row-control" data-mode="writeOnly">
+    	<td colspan="4" style="border-top: none;">
+    		<em class="btn_iws_l" style="float: right;">
+                <span class="btn_iws_r multi-row-add" id="btnAdd" style="cursor: pointer;">
+                    <strong class="txt_btn_ws">
+                        <img class="ico_btn" alt="" src="/approval/resources/images/xform/ico_plus.gif">추가
+                    </strong>
+                </span>
+            </em>
+            <em class="btn_iws_l" style="float: right; padding-right: 10px;">
+                <span class="btn_iws_r multi-row-del-auto" id="btnDel" style="cursor: pointer;">
+                    <strong class="txt_btn_ws">
+                        <img class="ico_btn" alt="" src="/approval/resources/images/xform/ico_x.gif">삭제
+                    </strong>
+                </span>
+            </em>
+    	</td>
+    </tr>
+    <tr>
+    	<th>내  역</th>
+    	<th>거 래 처</th>
+    	<th>금  액<br/>(부가세포함)</th>
+    	<th>비  고</th>
+    </tr>
+    <tr class="multi-row-template">
+    	<td><input type="text" data-type="rField" name="history" style="width: 99%;" /></td>
+    	<td><input type="text" data-type="rField" name="accnt" style="width: 99%;" /></td>
+    	<td style="text-align: right;"><input type="text" data-type="rField" name="cost" style="width: 99%;" data-pattern="currency" class="sum-table-cell" onblur="COST_CAL()" /></td>
+    	<td><input type="text" data-type="rField" name="comment" style="width: 99%;" /></td>
+    </tr>
+    <tr>
+    	<th>합  계</th>
+    	<td></td>
+    	<td style="text-align: right;"><input type="text" data-type="mField" id="totalCost" name="totalCost" value="{{ doc.BodyContext.totalCost }}" data-pattern="currency"  class="sum-table-colsum"style="width: 99%;" readonly="readonly" /></td>
+    	<td></td>
+    </tr>
+</table>
+
+<table class="tableStyle linePlus"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:4%" />
+        <col style="width:10%" />
+        <col style="width:60%" />
+        <col style="width:26%" />
+    </colgroup>
+    <tr>
+    	<th>첨<br/>부<br/>서<br/>류</th>
+    	<td colspan="2">
+    		<p class="ml5">1. 건당 50만원 이상 지급금액시 기안서 사본(원부자재는 제외)</p><br/>
+    		<p class="ml5">2. 건당 3만원 이상 지급금액시 세금계산서, 신용카드영수증, 지출증빙 등</p><br/>
+    		<p class="ml5">3. 기타 지급금액 입증 자료</p><br/>
+    		<p class="ml5">4. 신규거래처 : 사업자등록증사본, 통장사본</p><br/>
+    		<p class="ml5">5. 경비사용규정 外, 기안서 품의 금액과 상이한 경우 등</p>
+    	</td>
+    	<td>
+    		<p>미첨부 또는 기재내용 부족시 지급보류될 수 있음</p>
+    	</td>
+    </tr>
+    <tr>
+    	<th colspan="2">특이사항</th>
+    	<td colspan="2" style="height: 150px;">
+    		<textarea name="notice" data-type="mField" style="width: 98%; height: 98%;">{{ doc.BodyContext.notice }}</textarea>
+    	</td>
+    </tr>
+</table>
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+	<colgroup>
+        <col style="width:*" />
+    </colgroup>
+    <tr>
+    	<td>
+    		<p style="font-weight: bold;">※ 추가기재란</p>
+    		<p style="font-weight: bold;">최근 3개월 지급액 추이 (매월 지출이 발생할 경우 작성)</p>
+    		<table class="tableStyle linePlus mt5 mb5"><!-- class="table_10" -->
+    			<colgroup>
+			        <col style="width:15%" />
+			        <col style="width:25%" />
+			        <col style="width:25%" />
+			        <col style="width:25%" />
+			    </colgroup>
+			    <tr>
+			    	<th>구분</th>
+			    	<th>당월</th>
+			    	<th>전월</th>
+			    	<th>전전월</th>
+			    </tr>
+			    <tr>
+			    	<th>금액</th>
+			    	<td style="text-align: right;"><input type="text" data-type="mField" name="crntAmt" data-pattern="currency"  value="{{ doc.BodyContext.crntAmt }}" style="width: 98%;" /></td>
+			    	<td style="text-align: right;"><input type="text" data-type="mField" name="lstAmt" data-pattern="currency"  value="{{ doc.BodyContext.lstAmt }}" style="width: 98%;" /></td>
+			    	<td style="text-align: right;"><input type="text" data-type="mField" name="prvsAmt" data-pattern="currency"  value="{{ doc.BodyContext.prvsAmt }}" style="width: 98%;" /></td>
+			    </tr>
+			    <tr>
+			    	<th>전원대비<br/>증감액 및 사유</th>
+			    	<td colspan="3" style="height: 100px;">
+			    		<textarea name="reason" data-type="mField" style="width: 98%; height: 98%;">{{ doc.BodyContext."reason" }}</textarea>
+			    	</td>
+			    </tr>
+    		</table>
+    		<p style="font-weight: bold;">분기예산 추가 기재사항 (분기예산에 해당하는 경우에만 작성)</p>
+    		<table class="tableStyle linePlus mt5 mb5"><!-- class="table_10" -->
+    			<colgroup>
+			        <col style="width:17%" />
+			        <col style="width:33%" />
+			        <col style="width:17%" />
+			        <col style="width:33%" />
+			    </colgroup>
+			    <tr>
+			    	<th>분기예산 금액</th>
+			    	<td style="text-align: right;"><input type="text" data-type="mField" name="bdgtAmt" data-pattern="currency"  value="{{ doc.BodyContext.bdgtAmt }}" style="width: 98%;" /></td>
+			    	<th>분기예산 잔액<br/>(당월 정산 비용 포함)</th>
+			    	<td style="text-align: right;"><input type="text" data-type="mField" name="bdgtBlnc" data-pattern="currency"  value="{{ doc.BodyContext.bdgtBlnc }}" style="width: 98%;" /></td>
+			    </tr>
+    		</table>
+    		<p style="font-weight: bold;">※ 분기예산 금액보다 20% 초과할 경우 추가 기안을 진행해 주세요.</p>
+    	</td>
+    </tr>
+</table>
+
+<!--실 결재양식 내용 부분 끝 -->

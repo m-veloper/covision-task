@@ -1,0 +1,173 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+
+		<colgroup>
+			<col style="width:15%" />
+	       <col style="width:35%" />
+	       <col style="width:15%" />
+	       <col style="width:35%" />
+		</colgroup>  
+		
+		<tr>
+			<th colspan ="4">기본정보
+			</th>
+		</tr>
+		<tr>
+	    	<th >소속</th>
+			<td  align="center" style="text-align:center">
+				<input type="text" id="userDept" name="userDept" data-type="mField" value="{{ doc.BodyContext.userDept }}"    style="width:98%; text-align:center">
+	           
+			</td>
+			<th >이름</th>
+			<td  align="center" style="text-align:center">
+				<input type="text" id="userName" name="userName" data-type="mField" value="{{ doc.BodyContext.userName }}"    style="width:98%;text-align:center">
+	           
+			</td>
+	    </tr>
+	    <tr>
+	    	<th >직위</th>
+			<td  align="center" style="text-align:center">
+				<input type="text" id="userPosition" name="userPosition" data-type="mField" value="{{ doc.BodyContext.userPosition }}"    style="width:98%;text-align:center" >
+	           
+			</td>
+			 <th>퇴사일
+			</th>
+			<td align="center" style="text-align:center">
+			 <input type="text" data-type="mField" id="retirementDay"  name = "retirementDay" value="{{ doc.BodyContext.retirementDay }}" size="10" style="width : 98%;text-align:center"" data-pattern="date"   > 	     	    
+	        </td>
+	    </tr>
+	    <tr>
+	    	<th >사번</th>
+			<td  align="center" style="text-align:center">
+				<input type="text" id="empNo" name="empNo" data-type="mField" value="{{ doc.BodyContext.empNo }}"    style="width:98%;text-align:center" >
+	           
+			</td>
+			 <th>마지막 근무일
+			</th>
+			<td align="center" style="text-align:center">
+			 <input type="text" data-type="mField" id="lastWorkDay"  name = "lastWorkDay" value="{{ doc.BodyContext.lastWorkDay }}" size="10" style="width : 98%; text-align:center"" data-pattern="date"   > 	    
+	        </td>
+	    </tr>
+	    <tr>
+	    	<th >E-mail</th>
+			<td  align="center" style="text-align:center" colspan="3">
+				<input type="text" id="empEmail" name="empEmail" data-type="mField" value="{{ doc.BodyContext.empEmail }}"    style="width:98%; text-align:center" >
+	           
+			</td>
+			
+	    </tr>
+	    
+	  
+</table>
+
+
+
+<table class="tableStyle linePlus "><!-- class="table_10" -->
+
+		 <colgroup>
+        
+	       <col style="width:15%" />
+	       <col style="width:35%" />
+	       <col style="width:15%" />
+	       <col style="width:35%" />
+	    </colgroup>
+	    	<tr>
+				<th colspan ="4">기간시스템 계정 삭제요청
+				</th>
+			</tr>
+		    <tr>
+		    	<th >그룹웨어</th>
+				<td  align="center">
+					 <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1">
+					  <input type="checkbox" id ="chkBox_01" name="chkBox_1"  value="chkBox_1">
+					  </div>
+				</td>
+				<th >MS365</th>
+				<td  align="center">
+					<div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_2">
+					  <input type="checkbox" id ="chkBox_02" name="chkBox_2"  value="chkBox_2">
+					  </div>
+				</td>
+		    </tr>
+		    
+	   	    <tr>
+		    	<th >ERP</th>
+				<td  align="center">
+					 <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_3">
+					  <input type="checkbox" id ="chkBox_3" name="chkBox_3"  value="chkBox_3">
+					  </div>
+				</td>
+				<th >SSLVPN</th>
+				<td  align="center">
+					<div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_4">
+					  <input type="checkbox" id ="chkBox_4" name="chkBox_4"  value="chkBox_4">
+					  </div>
+				</td>
+		    </tr>
+		    
+		     <tr>
+		    	<th >오피스키퍼</th>
+				<td  align="center">
+					 <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_5">
+					  <input type="checkbox" id ="chkBox_5" name="chkBox_5"  value="chkBox_5">
+					  </div>
+				</td>
+				<th >V3(EPP)</th>
+				<td  align="center">
+					<div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_6">
+					  <input type="checkbox" id ="chkBox_6" name="chkBox_6"  value="chkBox_6">
+					  </div>
+				</td>
+		    </tr>
+			
+		
+		    <tr>
+		    	<th >요청사항</th>
+				<td colspan ="3">
+				<input type="text" id="reqComment" name="reqComment" placeholder="* 예시) MS365 계정삭제는 10/25 요청, 그외 10/23 삭제"  data-type="mField" value="{{ doc.BodyContext.reqComment }}"    style="width:90%; " >
+		           
+				</td>
+		    </tr>  
+		    
+	     
+		    
+		    
+		</table>
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+<tr>
+<td>
+	<table class="tableStyle linePlus "><!-- class="table_10" -->
+	<colgroup>
+				<col style="width:15%" />
+		       <col style="width:35%" />
+		       <col style="width:15%" />
+		       <col style="width:35%" />
+			</colgroup>  
+			
+			<tr style=" height:100px;">
+				<td colspan ="4" style="border:hidden;">
+					<div  style="text-align:center;border:hidden;"> 위와 같이  계정삭제를 요청드립니다.
+					</div>
+				</td>
+				
+			</tr>
+			
+			<tr >
+				<td colspan ="4" style="border:hidden;">
+					<div  style="text-align:left;border:hidden;"> [참고사항]<br>
+					※ 퇴사자의 경우 마지막 근무일(출근일)과 퇴사일자를 반드시 기재
+					</div>
+				</td>
+				
+			</tr>
+			
+	</table>
+	</td>
+</tr>
+</table>
+
+
+<!--실 결재양식 내용 부분 끝 -->

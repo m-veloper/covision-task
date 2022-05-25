@@ -1,0 +1,207 @@
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:13%" />
+        <col style="width:35%" />
+        <col style="width:13%" />
+        <col style="width:35%" />
+    </colgroup>
+    <tr>
+    	<th>작성일자</th>
+    	<td>
+    		<input type="text" data-type="mField" data-pattern="date" data-date-format="yy년 mm월 dd일" name="wrtDt" value="{{ doc.BodyContext.wrtDt }}" style="width:99%;" />
+    	</td>
+    	<th>구분</th>
+    	<td>
+    		<input type="text" name="prjType" data-type="mField" value="{{ doc.BodyContext.prjType }}"  style="width:99%;" />
+    	</td>
+    </tr>
+    <tr>
+    	<th>귀속법인</th>
+    	<td>
+    		<input type="text" name="prjCorp" data-type="mField" value="{{ doc.BodyContext.prjCorp }}"  style="width:99%;" />
+    	</td>
+    	<th>업체</th>
+    	<td>
+    		<input type="text" name="prjCmp" data-type="mField" value="{{ doc.BodyContext.prjCmp }}"  style="width:99%;" />
+    	</td>
+    </tr>
+    <tr>
+    	<th>사업부</th>
+    	<td>
+    		<input type="text" name="prjBiz" data-type="mField" value="{{ doc.BodyContext.prjBiz }}"  style="width:99%;" />
+    	</td>
+    	<th>프로젝트코드</th>
+    	<td>
+    		<input type="text" name="prjCd" data-type="mField" value="{{ doc.BodyContext.prjCd }}"  style="width:99%;" />
+    	</td>
+    </tr>
+    <tr>
+    	<th>부서</th>
+    	<td>
+    		<input type="text" name="prjDpt" data-type="mField" value="{{ doc.BodyContext.prjDpt }}"  style="width:99%;" />
+    	</td>
+    	<th>프로젝트명</th>
+    	<td>
+    		<input type="text" name="prjNm" data-type="mField" value="{{ doc.BodyContext.prjNm }}"  style="width:99%;" />
+    	</td>
+    </tr>
+    <tr>
+    	<th>수행기간</th>
+    	<td>
+    		<input type="text" name="prjPrd" data-type="mField" value="{{ doc.BodyContext.prjPrd }}"  style="width:99%;" />
+    	</td>
+    	<td colspan="2"></td>
+    </tr>
+    <tr>
+    	<th>특이사항</th>
+    	<td colspan="3">
+    		<input type="text" name="prjNotice" data-type="mField" value="{{ doc.BodyContext.prjNotice }}"  style="width:99%;" />
+    	</td>
+    </tr>
+</table>
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+	<colgroup>
+        <col style="width:12%" />
+        <col style="width:25%" />
+        <col style="width:7%" />
+        <col style="width:12%" />
+        <col style="width:16%" />
+        <col style="width:16%" />
+        <col style="width:12%" />
+        <col style="width:9%" />
+    </colgroup>
+    <tr>
+    	<th colspan="2">매출</th>
+    	<td style="border-top: none; border-bottom: none;"></td>
+    	<th>영 역</th>
+    	<th>매출</th>
+    	<th>비용</th>
+    	<th>순 매 출</th>
+    	<th>%</th>
+    </tr>
+    <tr>
+    	<th>인건비</th>
+    	<td>
+    		<input type="text" name="prjLbrCost" data-type="mField" value="{{ doc.BodyContext.prjLbrCost }}"  style="width:99%;" />
+    	</td>
+    	<td style="border-top: none; border-bottom: none;"></td>
+    	<td style="text-align: center;">운영</td>
+    	<td><input type="text" name="lbrSale" data-type="mField" value="{{ doc.BodyContext.lbrCost }}"  style="width:99%;" /></td>
+    	<td><input type="text" name="lbrCost" data-type="mField" value="{{ doc.BodyContext.lbrCost }}"  style="width:99%;" /></td>
+    	<td><input type="text" name="lbrNetSale" data-type="mField" value="{{ doc.BodyContext.lbrNetSale }}"  style="width:99%;" /></td>
+    	<td><input type="text" name="lbrPercent" data-type="mField" value="{{ doc.BodyContext.lbrPercent }}"  style="width:99%;" /></td>
+    </tr>
+    <tr>
+    	<th>제작비</th>
+    	<td>
+    		<input type="text" name="prjPrdCost" data-type="mField" value="{{ doc.BodyContext.prjPrdCost }}"  style="width:99%;" />
+    	</td>
+    	<td style="border-top: none; border-bottom: none;"></td>
+    	<td style="text-align: center;">제작</td>
+    	<td><input type="text" name="prdSale" data-type="mField" value="{{ doc.BodyContext.prdSale }}"  style="width:99%;" /></td>
+    	<td><input type="text" name="prdCost" data-type="mField" value="{{ doc.BodyContext.prdCost }}"  style="width:99%;" /></td>
+    	<td><input type="text" name="prdNetSale" data-type="mField" value="{{ doc.BodyContext.prdNetSale }}"  style="width:99%;" /></td>
+    	<td><input type="text" name="prdPercent" data-type="mField" value="{{ doc.BodyContext.prdPercent }}"  style="width:99%;" /></td>
+    </tr>
+    <tr>
+    	<th>매체비</th>
+    	<td>
+    		<input type="text" name="prjMdCost" data-type="mField" value="{{ doc.BodyContext.prjMdCost }}"  style="width:99%;" />
+    	</td>
+    	<td style="border-top: none; border-bottom: none;"></td>
+    	<td style="text-align: center;">광고</td>
+    	<td><input type="text" name="mdSale" data-type="mField" value="{{ doc.BodyContext.mdSale }}"  style="width:99%;" /></td>
+    	<td><input type="text" name="mdCost" data-type="mField" value="{{ doc.BodyContext.mdCost }}"  style="width:99%;" /></td>
+    	<td><input type="text" name="mdNetSale" data-type="mField" value="{{ doc.BodyContext.mdNetSale }}"  style="width:99%;" /></td>
+    	<td><input type="text" name="mdPercent" data-type="mField" value="{{ doc.BodyContext.mdPercent }}"  style="width:99%;" /></td>
+    </tr>
+    <tr>
+    	<th>공통경비</th>
+    	<td>
+    		<input type="text" name="prjCmnCost" data-type="mField" value="{{ doc.BodyContext.prjCmnCost }}"  style="width:99%;" />
+    	</td>
+    	<td style="border-top: none; border-bottom: none;"></td>
+    	<td style="text-align: center;">기타</td>
+    	<td><input type="text" name="cmnSale" data-type="mField" value="{{ doc.BodyContext.cmnSale }}"  style="width:99%;" /></td>
+    	<td><input type="text" name="cmnCost" data-type="mField" value="{{ doc.BodyContext.cmnCost }}"  style="width:99%;" /></td>
+    	<td><input type="text" name="cmnNetSale" data-type="mField" value="{{ doc.BodyContext.cmnNetSale }}"  style="width:99%;" /></td>
+    	<td><input type="text" name="cmnPercent" data-type="mField" value="{{ doc.BodyContext.cmnPercent }}"  style="width:99%;" /></td>
+    </tr>
+</table>
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+	<colgroup>
+        <col style="width:12%" />
+        <col style="width:25%" />
+        <col style="width:7%" />
+        <col style="width:12%" />
+        <col style="width:16%" />
+        <col style="width:16%" />
+        <col style="width:12%" />
+        <col style="width:9%" />
+    </colgroup>
+    <tr>
+    	<th>순매출</th>
+    	<td>
+    		<input type="text" name="netSale" data-type="mField" value="{{ doc.BodyContext.netSale }}"  style="width:99%;" />
+    	</td>
+    	<td style="border-top: none; border-bottom: none;"></td>
+    	<th>월투입인력</th>
+    	<td colspan="2">
+    		<input type="text" name="mInptMnPwr" data-type="mField" value="{{ doc.BodyContext.mInptMnPwr }}"  style="width:80%;" />&nbsp;<span style="font-weight: bold;">M/M</span>
+    	</td>
+    	<td colspan="2" style="border-top: none; border-right: none; border-bottom: none;"></td>
+    </tr>
+    <tr>
+    	<th rowspan="2">예상수익</th>
+    	<td>
+    		<input type="text" name="estmtdPrft" data-type="mField" value="{{ doc.BodyContext.estmtdPrft }}"  style="width:99%;" />
+    	</td>
+    	<td style="border-top: none; border-bottom: none;"></td>
+    	<th>인당 매출</th>
+    	<td colspan="2">
+    		<input type="text" name="salePerPrsn" data-type="mField" value="{{ doc.BodyContext.salePerPrsn }}"  style="width:98%;" />
+    	</td>
+    	<td colspan="2" style="border-top: none; border-right: none; border-bottom: none;"></td>
+    </tr>
+    <tr>
+    	<td>
+    		<input type="text" name="estmtdPrftPercent" data-type="mField" value="{{ doc.BodyContext.estmtdPrftPercent }}"  style="width:85%;" />&nbsp;<span style="font-weight: bold;">%</span>
+    	</td>
+    	<td style="border-top: none; border-bottom: none;"></td>
+    	<th>인당 순매출</th>
+    	<td colspan="2">
+    		<input type="text" name="salePerNet" data-type="mField" value="{{ doc.BodyContext.salePerNet }}"  style="width:98%;" />
+    	</td>
+    	<td colspan="2" style="border-top: none; border-right: none; border-bottom: none;"></td>
+    </tr>
+    <tr>
+    	<td colspan="3" style="border-top: none; border-bottom: none; border-left: none;"></td>
+    	<th>인당 손익</th>
+    	<td colspan="2">
+    		<input type="text" name="prftLssPerPrsn" data-type="mField" value="{{ doc.BodyContext.prftLssPerPrsn }}"  style="width:98%;" />
+    	</td>
+    	<td colspan="2" style="border-top: none; border-right: none; border-bottom: none;"></td>
+    </tr>
+</table>
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+	<colgroup>
+        <col style="width:*" />
+    </colgroup>
+    <tr>
+    	<td>
+    		<p style="font-weight: bold;">[필수첨부파일]</p>
+    		<p class="mt5"> -. 프로젝트 예산 상세내역서 (공용엑셀파일)</p>
+    		<br/>
+    		<p style="font-weight: bold;">[NOTICE]</p>
+    		<p class="mt5"> -. 본 품의서는 프로젝트 진행 전 적정비용 및 투입인력을 계획, 사전 수익성 검토를 위한 보고서입니다.</p>
+    		<p class="mt5"> -. 작성시기 : 프로젝트 수주 계약 전후</p>
+    		<p class="mt5"> -. 작성대상 : 신규 계약 및 재수주 프로젝트</p>
+    		<p class="mt5"> -. 작성요령 : "프로젝트 예산 상세내역서" 에 항목 선정과 예상투입인력을 작성 후 참고하셔서 기재해주시기 바랍니다.</p>
+    	</td>
+    </tr>
+</table>
+<!--실 결재양식 내용 부분 끝 -->

@@ -1,0 +1,86 @@
+<table class="tableStyle linePlus table_10" style="margin-top: 10px;">
+	<colgroup>
+		<col style="width: 12%;">
+		<col style="width: 31%;">
+		<col style="width: 12%;">
+		<col style="width: 31%;">
+		<col style="width: 12%;">
+		<col style="width: 32%;">
+	</colgroup>
+	<tbody><tr>
+		<th>출고지시<br>No.</th>
+		<td><input type="text" data-type="mField" id="ReleaseNo" value="{{ doc.BodyContext.ReleaseNo }}" style="width: 98%"></td>
+		<th>납기일</th>
+		<td><input type="text" data-type="mField" id="ReleaseDate" value="{{ doc.BodyContext.ReleaseDate }}" style="width: 98%" data-pattern="date" readonly=""></td>
+		<th>출고처명</th>
+		<td><input type="text" data-type="mField" id="ReleaseName" value="{{ doc.BodyContext.ReleaseName }}" style="width: 98%"></td>
+	</tr>
+	<tr>
+		<th>출고처주소</th>
+		<td colspan="3"><input type="text" data-type="mField" id="RelAddress" value="{{ doc.BodyContext.RelAddress }}" style="width: 98%"></td>
+		<th>연락처</th>
+		<td><input type="text" data-type="mField" id="RelPhone" value="{{ doc.BodyContext.RelPhone }}" style="width: 98%"></td>
+	</tr>
+</tbody></table>
+
+<!-- 물품코드 -->
+<table class="multi-row-table tableStyle linePlus table_10 RowSumTable multi-sum" id="MULTI_TABLE">
+	<colgroup>
+		<col style="width: 5%;">		
+		<col style="width: 15%;">
+		<col style="width: 10%;">		
+		<col style="width: 10%;">
+		<col style="width: 15%;">
+		<col style="width: 15%;">
+		<col style="width: 15%;">
+		<col style="width: 15%;">
+	</colgroup>
+	<tbody><tr class="multi-row-control" data-mode="writeOnly">
+		<td colspan="9" style="text-align: right; border-left: hidden; border-right: hidden; border-top: hidden">
+			<input type="button" id="btnAdd" value="+추가" class="multi-row-add smButton">
+			<input type="button" id="btnDelAuto" value="-삭제" class="multi-row-del-auto smButton">
+		</td>
+	</tr>
+	<tr>
+		<th>No</th>		
+		<th>물품명</th>
+		<th>규격</th>		
+		<th>수량</th>
+		<th>단가</th>
+		<th>공급가액</th>
+		<th>부가세</th>
+		<th>비고</th>
+	</tr>
+	<tr class="multi-row-template multi-sum">
+		<td class="multi-row-seq" style="text-align: center">1</td>		
+		<td><input type="text" data-type="rField" name="GoodsName" style="width: 98%"></td>
+		<td><input type="text" data-type="rField" name="GoodsSize" style="width: 98%"></td>		
+		<td style="text-align: right;"><input type="text" data-type="rField" name="GoodsCnt" style="width: 98%" data-pattern="currency"></td>
+		<td style="text-align: right;"><input type="text" data-type="rField" name="GoodsPrice01" style="width: 98%" data-pattern="currency" onblur="checkValue(this), addSum()" onchange="checkValue(this)"></td>
+		<td style="text-align: right;"><input type="text" data-type="rField" name="GoodsPrice02" style="width: 98%" data-pattern="currency" class="sum-table-cell" data-sum-ref="GoodsCnt,GoodsPrice01" data-formula="*" onblur="checkValue(this), addSum()" onchange="checkValue(this)"></td>
+		<td style="text-align: right;"><input type="text" data-type="rField" name="GoodsFax" style="width: 98%" data-pattern="currency" class="sum-table-cell" onblur="addSum()"></td>
+		<td><input type="text" data-type="rField" name="GoodsEtc" style="width: 98%"></td>
+	</tr>
+	<tr>
+		<th rowspan="3">메<br>모</th>
+		<td rowspan="3" colspan="4">			
+			<textarea title="메모" id="memo" style="width:98%;" required="required" rows="5" data-type="mField">{{ doc.BodyContext.memo }}</textarea>
+		</td>
+		<th>공급가액(A)</th>
+		<td colspan="2" style="text-align: right;">
+			<input type="text" data-type="mField" id="Total01" value="{{ doc.BodyContext.Total01 }}" style="width: 98%" data-pattern="currency" data-sum-ref="GoodsPrice02" data-formula="+" readonly="readonly">
+		</td>
+	</tr>
+	<tr>		
+		<th>부가세(B)</th>
+		<td colspan="2" style="text-align: right;">
+			<input type="text" data-type="mField" id="Total02" value="{{ doc.BodyContext.Total02 }}" style="width: 98%" data-pattern="currency" data-sum-ref="GoodsFax" data-formula="+" readonly="readonly">
+		</td>
+	</tr>
+	<tr class="multi-sum">	
+		<th>합계(A+B)</th>
+		<td colspan="2" style="text-align: right;">
+			<input type="text" data-type="mField" id="Total" value="{{ doc.BodyContext.Total }}" style="width: 98%" data-pattern="currency" class="sum-table-total" readonly="readonly">
+		</td>
+	</tr>
+</tbody></table>

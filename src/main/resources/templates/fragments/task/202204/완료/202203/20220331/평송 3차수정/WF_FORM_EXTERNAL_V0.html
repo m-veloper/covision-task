@@ -1,0 +1,120 @@
+<!--실 결재양식 내용 부분 시작 -->
+
+<br>
+
+
+<table class="tableStyle linePlus mt10 multi-row-table sortable" id="headerTitle">
+	<colgroup>
+		<col style="width:15%">
+		<col style="width:70%">
+		<col style="width:15%">
+	</colgroup>
+	<tr>
+		<td rowspan="2" style=" border:hidden;text-align:center">
+			<img src="/HtmlSite/smarts4j_n/covicore/resources/images/covision/left.jpg"> 
+		</td>
+		<td style=" border:hidden; font-size:14px;text-align:center">
+			<strong>청소년이 행복한 대한민국</strong>
+		</td>
+		<td rowspan="2" style=" border:hidden;text-align:center">
+			<img src="/HtmlSite/smarts4j_n/covicore/resources/images/covision/right.JPG"> 
+		</td>
+	</tr>
+	<tr>
+		<td style=" border:hidden;font-size:28px; text-align:center" >
+			<strong>대전광역시평송청소년문화센터</strong>
+		</td>
+	</tr>
+	
+</table>
+
+
+<hr color="black" width="99%" size="0.5">
+<b>
+<table border="0" style="letter-spacing: 1px; font-size:13px;">
+<colgroup>
+        <col style="width: 12%">
+        <col style="width: 60%">
+        <col style="width: 12%">
+        <col style="width: 16%">
+</colgroup>  
+     <tbody><tr>
+          <td>문&nbsp;서&nbsp;번&nbsp;호 :</td>
+          <td><input type="text" value="{{ doc.FormInstanceInfo.ReceiveNo }}" data-binding="pre" style="width:99%; border:hidden;" readonly="readonly" placeholder="자동 발번"></td>
+          <td>발&nbsp;송&nbsp;일&nbsp;자 :</td>
+          <td><input type="text" data-type="mField" id="TODAY" value="{{ doc.BodyContext.TODAY }}" data-pattern="date" style="width:99%; border:hidden; text-align:left"></td>
+      </tr>
+       <tr>
+          <td>수 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;신 :</td>
+          <td colspan="3"><input type="text" data-type="mField" id="NO" value="{{ doc.BodyContext.NO }}" style="width:99%; border:hidden"></td>
+      </tr>
+       <tr>
+          <td>참 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;조 :</td>
+          <td colspan="3"><input type="text" data-type="mField" id="REFERENCE" value="{{ doc.BodyContext.REFERENCE }}" style="width:99%; border:hidden"></td>
+      </tr>
+       <tr style ="display:none">
+          <td>수&nbsp;신&nbsp;주&nbsp;소 :</td>
+          <td colspan="3"><input type="text" data-type="mField" id="RECADD" value="{{ doc.BodyContext.RECADD }}" style="width:99%; border:hidden"></td>
+      </tr>
+      <tr>
+          <td>제 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;목 :</td>
+          <td colspan="3" id="tblFormSubject"><input type="text" data-type="dField" id="Subject" value="{{ doc.FormInstanceInfo.Subject }}" title="제목" data-model="Subject" data-binding="pre" style="width:99%; height:20px;" required=""></td>
+      </tr>
+</tbody></table>
+</b>
+
+
+<hr color="black" width="99%" size="0.5">
+<table class="table_3 tableStyle linePlus mt10" style="display: none;"  cellpadding="0" cellspacing="0" id="CCLine">
+    <colgroup>
+        <col style="width:13%">
+        <col style="width:87%">
+    </colgroup>
+    <tbody><tr>
+        <th style="height:10px" id="TIT_L_CCINFO"><!--{{ doc.oLang.lbl_apv_Lccinfo }}-->발신참조</th>
+        <td>
+            <span id="SendCC"></span>
+        </td>
+    </tr>
+    <tr>
+        <th style="height:10px" id="TIT_R_CCINFO"><!-- {{ doc.oLang.lbl_apv_Rccinfo }} -->수신참조</th>
+        <td>
+            <span id="RecCC"></span>
+        </td>
+    </tr>
+</tbody></table>
+
+
+<!-- 에디터 시작 -->
+<div id="divWebEditorContainer" data-element-type="editor">
+</div>
+<!-- 에디터 종료 -->    
+
+<div style="padding-left:10px; padding-bottom:50px" id="HALL">
+    ※&nbsp;첨부 : <span id="ATTACH"></span>  
+</div>
+<!--<textarea data-type="mField" id="ATTACH" rows="6" style="overflow:auto; width:98%;" readonly="readonly">{{ doc.BodyContext.ATTACH }}</textarea>-->
+
+
+
+<table align="center" id="TableBlowCompanyInformation" style="border-style: none; display: none;" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td style="text-align: center;font-size: 14pt;font-weight: bold;">
+            	대전광역시평송청소년문화센터장
+            </td>
+            <td style="width: 78px; height: 78px; vertical-align: bottom; padding-right: 40px;" rowspan="2">
+                <img id="ImgSeal" style="height: 78px; width: 78px;" src="/HtmlSite/smarts4j_n/covicore/resources/images/covision/no_img.gif">
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<span style="font-size:11px">
+주소&nbsp;<input type="text" data-type="mField" id="HOMENUM" value="{{ doc.BodyContext.HOMENUM }}" style="width:43%; border:hidden">/&nbsp;
+담당&nbsp;<input type="text" data-type="mField" id="AD" value="{{ doc.BodyContext.AD }}" style="width:7%; border:hidden">/&nbsp;
+E-mail&nbsp;<input type="text" data-type="mField" id="EMAIL" value="{{ doc.BodyContext.EMAIL }}" style="width:18%; border:hidden" required="" title="E-mail">/&nbsp;
+전화&nbsp;<input type="text" data-type="mField" id="TEL" value="{{ doc.BodyContext.TEL }}" style="width:12%;border:hidden">&nbsp;
+</span>
+
+<!--실 결재양식 내용 부분 끝 -->

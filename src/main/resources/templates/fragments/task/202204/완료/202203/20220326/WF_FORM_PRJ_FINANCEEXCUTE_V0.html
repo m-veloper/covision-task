@@ -1,0 +1,78 @@
+<!--실 결재양식 내용 부분 시작 -->
+   <table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+	<colgroup>
+	       <col style="width:12%" />
+	       <col style="width:38%" />
+	       <col style="width:12%" />
+	       <col style="width:38%" />
+	       
+		</colgroup>  
+		
+	<tr>
+		<th>출금은행
+		</th>
+		<td >
+		<!--<input type="text" id="bankName" name="bankName" data-type="mField" value="{{ doc.BodyContext.bankName }}"    style="width:98%; " >  -->
+		<span>우리은행 MMDA</span>
+		</td>
+		<th>집행성격
+		</th>
+		<td > 
+			<select name="div_user" data-type="mField" data-element-type="sel_d_v" style="width: 98%;"  value="{{ doc.BodyContext.div_user}}"  >
+	    			<option value="정기">정기</option>
+	    			<option value="수시">수시</option>
+	    		</select>  
+			
+		
+		</td>
+	</tr>
+	<tr>
+		<th>출금계좌번호
+		</th>
+		<td >
+		<!-- <input type="text" id="accountNo" name="accountNo" data-type="mField" value="{{ doc.BodyContext.accountNo }}"    style="width:98%; " > -->
+		<span>1005-604-246976</span>
+		</td>
+		<th>집행예정일
+		</th>
+		<td >
+			<input type="text" data-type="mField" id="reqDate" value="{{ doc.BodyContext.reqDate }}" style="width:90%;" data-pattern="date">
+		</td>	     	
+	</tr>
+	
+</table>
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+	<colgroup>
+	       <col style="width:12%" />
+	       <col style="width:88%" />
+	       
+		</colgroup>  
+		<tr >
+		<th>제목
+		</th>
+			<td >
+				<input type="text" id="subTitle" name="subTitle" data-type="mField" value="{{ doc.BodyContext.subTitle }}"    style="width:98%; " >    
+			</td>
+		</tr>
+		
+</table>
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+	<colgroup>
+	      <col style="width:12%" />
+	       <col style="width:88%" />
+	       
+		</colgroup>  
+	<tr style="height:150px;">
+	<th>내용
+	</th>
+		<td >
+			<textarea id="comment"  rows="10" data-type="mField" style="width: 98%;height:98%;">{{ doc.BodyContext.comment }}</textarea>
+		</td>
+	</tr>
+	
+</table>
+
+<!--실 결재양식 내용 부분 끝 -->

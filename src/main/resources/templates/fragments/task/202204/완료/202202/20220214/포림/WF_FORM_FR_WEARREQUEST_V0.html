@@ -1,0 +1,74 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+<input type="hidden" data-type="rField" name="UserCode">
+<input type="hidden" data-type="rField" name="CompanyCode">
+
+
+</table><table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        
+        <col style="width:13%">
+        <col style="width:37%">
+        <col style="width:13%">
+        <col style="width:37%">
+    </colgroup>
+   
+    <tbody><tr>
+    	<th>현장명</th>
+		<td>
+		<input type="text" id="userDept" name="userDept" data-type="mField" value="{{ doc.BodyContext.userDept }}" style="width:90%; ">
+           
+		</td>
+		 <th>직책</th>
+		<td>
+		<input type="text" id="userPosition" name="userPosition" data-type="mField" value="{{ doc.BodyContext.userPosition }}" style="width:90%; ">
+           
+		</td>
+    </tr>
+    
+      <tr>
+    	<th>성명</th>
+		<td>
+		<input type="text" id="userName" name="userName" data-type="mField" value="{{ doc.BodyContext.userName }}" style="width:90%; ">
+           
+		</td>
+		 <th>입사일</th>
+			<td>
+			 
+			 <input type="text" data-type="mField" id="enterDay" name="enterDay" value="{{ doc.BodyContext.enterDay }}" size="10" style="width : 50%; text-align :center ; " data-pattern="date" data-date-format="yy년 mm월 dd일">
+		 	  
+			</td>
+    </tr>
+   
+    
+     <tr>
+    	<th>피복신청명</th>
+		<td colspan="3">
+		<input type="text" id="wearRequestName" name="wearRequestName" data-type="mField" value="{{ doc.BodyContext.wearRequestName }}" style="width:90%; ">
+           
+		</td>
+		
+    </tr>
+    <tr>
+   			 <th>피복신청일</th>
+			<td colspan="3">
+			 
+			 <input type="text" data-type="mField" id="wearRequestDay" name="wearRequestDay" value="{{ doc.BodyContext.wearRequestDay }}" size="10" style="width : 25%; text-align :center ; " data-pattern="date" data-date-format="yy년 mm월 dd일">
+		 	  
+			</td>
+    </tr>
+     <tr>
+    	<th>기타</th>
+		<td colspan="3">
+		<input type="text" id="anotherCommnet" name="anotherCommnet" data-type="mField" value="{{ doc.BodyContext.anotherCommnet }}" style="width:90%; ">
+           
+		</td>
+		
+    </tr>
+    
+</tbody></table>
+
+
+<!--실 결재양식 내용 부분 끝 -->

@@ -1,0 +1,187 @@
+<!--실 결재양식 내용 부분 시작 -->
+<table class="table_3 RowSumTable tableStyle mt10 linePlus" cellpadding="0" cellspacing="0">
+    <colgroup>
+        <col style="width: 12%">
+        <col style="width: 14%">
+        <col style="width: 14%">
+        <col style="width: 14%">
+        <col style="width: 15%">
+        <col style="width: 15%">
+    </colgroup>
+    <tbody><tr>
+        <th rowspan="4" style="width:12%;">출 장 자</th>
+        <th colspan="2">부 서 명</th>
+        <th>성 명</th>
+        <th>직 위</th>
+        <th colspan="2">비 고</th>
+    </tr>
+    <tr>
+        <td colspan="2"><input type="text" data-type="mField" id="user_dept_1" value="{{ doc.BodyContext.user_dept_1 }}" style="width:95%;height:20px;"></td>
+        <td><input type="text" data-type="mField" id="user_name_1" value="{{ doc.BodyContext.user_name_1 }}" style="width:95%;height:20px;"></td>
+        <td><input type="text" data-type="mField" id="user_pstn_1" value="{{ doc.BodyContext.user_pstn_1 }}" style="width:95%;height:20px;"></td>
+        <td colspan="2"><input type="text" data-type="mField" id="user_etc_1" value="{{ doc.BodyContext.user_etc_1 }}" style="width:95%;height:20px;"></td>
+    </tr>
+    <tr>
+        <td colspan="2"><input type="text" data-type="mField" id="user_dept_2" value="{{ doc.BodyContext.user_dept_2 }}" style="width:95%;height:20px;"></td>
+        <td><input type="text" data-type="mField" id="user_name_2" value="{{ doc.BodyContext.user_name_2 }}" style="width:95%;height:20px;"></td>
+        <td><input type="text" data-type="mField" id="user_pstn_2" value="{{ doc.BodyContext.user_pstn_2 }}" style="width:95%;height:20px;"></td>
+        <td colspan="2"><input type="text" data-type="mField" id="user_etc_2" value="{{ doc.BodyContext.user_etc_2 }}" style="width:95%;height:20px;"></td>
+    </tr>
+    <tr>
+        <td colspan="2"><input type="text" data-type="mField" id="user_dept_3" value="{{ doc.BodyContext.user_dept_3 }}" style="width:95%;height:20px;"></td>
+        <td><input type="text" data-type="mField" id="user_name_3" value="{{ doc.BodyContext.user_name_3 }}" style="width:95%;height:20px;"></td>
+        <td><input type="text" data-type="mField" id="user_pstn_3" value="{{ doc.BodyContext.user_pstn_3 }}" style="width:95%;height:20px;"></td>
+        <td colspan="2"><input type="text" data-type="mField" id="user_etc_3" value="{{ doc.BodyContext.user_etc_3 }}" style="width:95%;height:20px;"></td>
+    </tr>
+    <tr>
+        <th>출장지역</th>
+        <td colspan="6">
+            <textarea data-type="mField" id="t_area" rows="3" cols="15" style="width:98%;overflow-y:auto;padding-left:0px;padding-right:0px;">{{ doc.BodyContext.t_area }}</textarea>
+        </td>
+    </tr>
+    <tr>
+        <th>출장목적</th>
+        <td colspan="6">
+            <textarea data-type="mField" id="t_purpose" rows="4" cols="15" style="width:98%;overflow-y:auto;padding-left:0px;padding-right:0px;">{{ doc.BodyContext.t_purpose }}</textarea>
+        </td>
+    </tr>
+    <tr>
+        <th>출장기간</th>
+        <td colspan="6">
+            <input type="text" data-type="mField" id="SDATE" value="{{ doc.BodyContext.SDATE }}" data-pattern="date" title="시작일" required="" style="width:12%;height:20px;" readonly="readonly">
+            <b>&nbsp;~&nbsp;</b>
+            <input type="text" data-type="mField" id="EDATE" value="{{ doc.BodyContext.EDATE }}" data-pattern="date" title="종료일" required="" style="width:12%;height:20px;" readonly="readonly" onchange="validateVacDate()">
+            &nbsp;
+            (<input type="text" data-type="mField" id="NIGHTS" value="{{ doc.BodyContext.NIGHTS }}" data-pattern="period" data-period-ref="SDATE,EDATE" size="5" readonly="readonly" style="width:40px;height:20px;text-align:right"><b>박</b>  &nbsp;&nbsp;
+            <input type="text" data-type="mField" id="DAYS" value="{{ doc.BodyContext.DAYS }}" data-pattern="period" data-period-ref="SDATE,EDATE,1" size="5" readonly="readonly" style="width: 40px; height: 20px;text-align:right"><b>일</b>)
+        </td>
+    </tr>
+    <tr>
+        <th rowspan="4" id="tuserinfolabel">출장내용</th>
+        <th colspan="2">일 정</th>
+        <th colspan="2">지 역</th>
+        <th colspan="2">주 요 활 동 계 획</th>
+    </tr>
+    <tr>
+        <td colspan="2"><input type="text" data-type="mField" id="t_date_1" value="{{ doc.BodyContext.t_date_1 }}" style="width:95%;height:20px;"></td>
+        <td colspan="2"><input type="text" data-type="mField" id="t_area_1" value="{{ doc.BodyContext.t_area_1 }}" style="width:95%;height:20px;"></td>
+        <td colspan="2"><input type="text" data-type="mField" id="t_content_1" value="{{ doc.BodyContext.t_content_1 }}" style="width:95%;height:20px;"></td>
+    </tr>
+    <tr>
+        <td colspan="2"><input type="text" data-type="mField" id="t_date_2" value="{{ doc.BodyContext.t_date_2 }}" style="width:95%;height:20px;"></td>
+        <td colspan="2"><input type="text" data-type="mField" id="t_area_2" value="{{ doc.BodyContext.t_area_2 }}" style="width:95%;height:20px;"></td>
+        <td colspan="2"><input type="text" data-type="mField" id="t_content_2" value="{{ doc.BodyContext.t_content_2 }}" style="width:95%;height:20px;"></td>
+    </tr>
+    <tr>
+        <td colspan="2"><input type="text" data-type="mField" id="t_date_3" value="{{ doc.BodyContext.t_date_3 }}" style="width:95%;height:20px;"></td>
+        <td colspan="2"><input type="text" data-type="mField" id="t_area_3" value="{{ doc.BodyContext.t_area_3 }}" style="width:95%;height:20px;"></td>
+        <td colspan="2"><input type="text" data-type="mField" id="t_content_3" value="{{ doc.BodyContext.t_content_3 }}" style="width:95%;height:20px;"></td>
+    </tr>
+</table>
+    
+<table class="table_3 RowSumTable tableStyle linePlus" cellpadding="0" cellspacing="0">
+    <tr>
+        <th rowspan="4">예상경비</th>
+        <th>성명</th>
+        <th>교통비</th>
+        <th>숙박비</th>
+        <th>식비</th>
+        <th>일비</th>
+        <th>기타</th>
+        <th>합계</th>
+    </tr>
+    <tr>
+        <td><input type="text" data-type="mField" id="a_user_name_1" value="{{ doc.BodyContext.a_user_name_1 }}" style="width:98%;"></td>
+        <td><input type="text" data-type="mField" id="a_cost_11" value="{{ doc.BodyContext.a_cost_11 }}" data-pattern="currency" class="sum-table-cell" style="width:98%;"></td>
+        <td><input type="text" data-type="mField" id="a_cost_12" value="{{ doc.BodyContext.a_cost_12 }}" data-pattern="currency" class="sum-table-cell" style="width:98%;"></td>
+        <td><input type="text" data-type="mField" id="FOOD_EXPENSE_1" value="{{ doc.BodyContext.FOOD_EXPENSE_1 }}" data-pattern="currency" class="sum-table-cell" style="width:98%;"></td>
+        <td><input type="text" data-type="mField" id="a_cost_14" value="{{ doc.BodyContext.a_cost_14 }}" data-pattern="currency" class="sum-table-cell" style="width:98%;"></td>
+        <td><input type="text" data-type="mField" id="a_cost_15" value="{{ doc.BodyContext.a_cost_15 }}" data-pattern="currency" class="sum-table-cell" style="width:98%;"></td>
+        <td><input type="text" data-type="mField" id="a_cost_16" value="{{ doc.BodyContext.a_cost_16 }}" data-pattern="currency" class="sum-table-rowsum" style="width:98%;" readonly="readonly"></td>
+    </tr>
+    <tr>
+        <td><input type="text" data-type="mField" id="a_user_name_2" value="{{ doc.BodyContext.a_user_name_2 }}" style="width:98%;"></td>
+        <td><input type="text" data-type="mField" id="a_cost_21" value="{{ doc.BodyContext.a_cost_21 }}" data-pattern="currency" class="sum-table-cell" style="width:98%;"></td>
+        <td><input type="text" data-type="mField" id="a_cost_22" value="{{ doc.BodyContext.a_cost_22 }}" data-pattern="currency" class="sum-table-cell" style="width:98%;"></td>
+        <td><input type="text" data-type="mField" id="FOOD_EXPENSE_2" value="{{ doc.BodyContext.FOOD_EXPENSE_2 }}" data-pattern="currency" class="sum-table-cell" style="width:98%;"></td>
+        <td><input type="text" data-type="mField" id="a_cost_24" value="{{ doc.BodyContext.a_cost_24 }}" data-pattern="currency" class="sum-table-cell" style="width:98%;"></td>
+        <td><input type="text" data-type="mField" id="a_cost_25" value="{{ doc.BodyContext.a_cost_25 }}" data-pattern="currency" class="sum-table-cell" style="width:98%;"></td>
+        <td><input type="text" data-type="mField" id="a_cost_26" value="{{ doc.BodyContext.a_cost_26 }}" data-pattern="currency" class="sum-table-rowsum" style="width:98%;" readonly="readonly"></td>
+    </tr>
+    <tr>
+        <td><input type="text" data-type="mField" id="a_user_name_3" value="{{ doc.BodyContext.a_user_name_3 }}" style="width:98%;"></td>
+        <td><input type="text" data-type="mField" id="a_cost_31" value="{{ doc.BodyContext.a_cost_31 }}" data-pattern="currency" class="sum-table-cell" style="width:98%;"></td>
+        <td><input type="text" data-type="mField" id="a_cost_32" value="{{ doc.BodyContext.a_cost_32 }}" data-pattern="currency" class="sum-table-cell" style="width:98%;"></td>
+        <td><input type="text" data-type="mField" id="FOOD_EXPENSE_3" value="{{ doc.BodyContext.FOOD_EXPENSE_3 }}" data-pattern="currency" class="sum-table-cell" style="width:98%;"></td>
+        <td><input type="text" data-type="mField" id="a_cost_34" value="{{ doc.BodyContext.a_cost_34 }}" data-pattern="currency" class="sum-table-cell" style="width:98%;"></td>
+        <td><input type="text" data-type="mField" id="a_cost_35" value="{{ doc.BodyContext.a_cost_35 }}" data-pattern="currency" class="sum-table-cell" style="width:98%;"></td>
+        <td><input type="text" data-type="mField" id="a_cost_36" value="{{ doc.BodyContext.a_cost_36 }}" data-pattern="currency" class="sum-table-rowsum" style="width:98%;" readonly="readonly"></td>
+    </tr>
+    <tr>
+        <th colspan="2">
+            합계
+            <span data-mode="writeOnly">
+                <img  align="absmiddle" border="0" class="table-sum-button" style="cursor:hand;">
+            </span>
+        </th>
+        <td><input type="text" data-type="mField" id="a_sum_1" value="{{ doc.BodyContext.a_sum_1 }}" style="width:98%;" data-pattern="currency" class="sum-table-colsum" readonly="readonly"></td>
+        <td><input type="text" data-type="mField" id="a_sum_2" value="{{ doc.BodyContext.a_sum_2 }}" style="width:98%;" data-pattern="currency" class="sum-table-colsum" readonly="readonly"></td>
+        <td><input type="text" data-type="mField" id="FOOD_EXPENSE_TOTAL" value="{{ doc.BodyContext.FOOD_EXPENSE_TOTAL }}" style="width:98%;" data-pattern="currency" class="sum-table-colsum" readonly="readonly"></td>
+        <td><input type="text" data-type="mField" id="a_sum_4" value="{{ doc.BodyContext.a_sum_4 }}" style="width:98%;" data-pattern="currency" class="sum-table-colsum" readonly="readonly"></td>
+        <td><input type="text" data-type="mField" id="a_sum_5" value="{{ doc.BodyContext.a_sum_5 }}" style="width:98%;" data-pattern="currency" class="sum-table-colsum" readonly="readonly"></td>
+        <td><input type="text" data-type="mField" id="a_sum_6" value="{{ doc.BodyContext.a_sum_6 }}" style="width:98%;" data-pattern="currency" class="sum-table-total" readonly="readonly"></td>
+    </tr>
+</tbody>
+</table>
+
+<table class="table_3 tableStyle mt10 linePlus" cellpadding="0" cellspacing="0" style="display: none;">
+    <tbody><tr>
+        <td style="">
+            <br style="">
+            &nbsp;&nbsp;♣ 출장비 지급 규정<br style=""><br style="">
+            &nbsp;&nbsp;1.	용어의 정의<br style=""><br style="">
+            &nbsp;&nbsp;-	출장 : 서울, 경기도권을 제외한 지역에 업무 상 방문 및 프로젝트 수행 (1일, 1박이상)<br style=""><br style="">
+            &nbsp;&nbsp;2.	비용 지급 기준<br style="">
+            <table class="table_3 tableStyle linePlus mt10" cellpadding="0" cellspacing="0" style="padding-left: 20px;" ;="">
+                <tbody><tr>
+                    <td align="center" style="">구분</td>
+                    <td align="center" style="">교통비</td>
+                    <td align="center" style="">숙박비*</td>
+                    <td align="center" style="">식비**</td>
+                    <td align="center" style="">일비***</td>
+                    <td align="center" style=""></td>
+                </tr>
+                <tr>
+                    <th rowspan="3">출장</th>
+                    <td align="center" style="">실비 지급</td>
+                    <td align="center" style="">실비 지급</td>
+                    <td align="center" style="">18,000</td>
+                    <td align="center" style="">8,000</td>
+                    <td align="center" style="">기준</td>
+                </tr>
+                <tr>
+                    <th>O</th>
+                    <th>O</th>
+                    <th>X</th>
+                    <th>X</th>
+                    <th rowspan="2">증빙</th>
+                </tr>
+                <tr>
+                    <th colspan="4">청구 및 지급 내역과 출장 복명서 일치하게 작성</th>
+                </tr>
+            </tbody></table>
+            <strong style="">
+                &nbsp;&nbsp;* 출장 숙박비는 1박 6만원 한도 내에서 지출<br><br>
+                &nbsp;&nbsp;** 출장 식비는 1일 3식 기준 출발일 도착일 모두 포함<br><br>
+                &nbsp;&nbsp;*** 출장 일비는 출발일 도착일 모두 포함 <br><br>
+                &nbsp;&nbsp;<font color="red">3.	지방 프로젝트 수행</font>
+            </strong><font color="red" style="">
+                의 경우 출장비로 처리하되 해당 프로젝트의 거리, 투입규모, <br><br>
+                &nbsp;&nbsp;투입자 성별, 근무여건 등을 고려하여 별도 지급 규정을 마련하여 운영한다.
+            </font><br style=""><br style="">
+            &nbsp;&nbsp;* 영수증 별도 품의,  발신 참조에 관리팀 필 참조<br style="">&nbsp;&nbsp;
+        </td>
+    </tr>
+    <!--실 결재양식 내용 부분 끝 -->
+</tbody></table>
+<!--실 결재양식 내용 부분 끝 -->

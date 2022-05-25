@@ -1,0 +1,237 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:15%" />
+        <col style="width:*" />
+    </colgroup>
+    <tr>
+    	<td colspan="2">
+    		<span class="ml5" style="font-size: 15px; font-weight: bold;">1. 입찰내용</span>
+    	</td>
+    </tr>
+    <tr>
+    	<th>사업예산</th>
+    	<td>
+    		₩&nbsp;<input type="text" name="bizBudget" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.bizBudget }}"  style="width:50%;" >&nbsp;원&nbsp;(부가세 포함)
+    	</td>
+    </tr>
+    <tr>
+    	<th>계약방법</th>
+    	<td>
+    		<input type="text" name="cntrctMthd" data-type="mField" value="{{ doc.BodyContext.cntrctMthd }}"  style="width:98%;" >
+    	</td>
+    </tr>
+    <tr>
+    	<th>참여업체</th>
+    	<td>
+    		<input type="text" name="prtComp" data-type="mField" value="{{ doc.BodyContext.prtComp }}"  style="width:98%;" >
+    	</td>
+    </tr>
+    <tr>
+    	<th>평가결과</th>
+    	<td>
+    		<textarea name="evalResult" rows="3" data-type="mField" style="width: 98%; overflow:auto;">{{ doc.BodyContext.evalResult }}</textarea>
+    	</td>
+    </tr>
+    <tr>
+    	<th>평가내역</th>
+    	<td align="center">
+    		<p class="mt5" style="text-align: right;">(단위: 원, 점 부가가치세 포함)</p>
+    		<table class="tableStyle linePlus mt5"><!-- class="table_10" -->
+    			<colgroup>
+		        	<col style="width:10%" />
+			        <col style="width:12%" />
+			        <col style="width:11%" />
+			        <col style="width:11%" />
+			        <col style="width:11%" />
+			    </colgroup>
+			    <tr>
+			    	<th colspan="2">구분</th>
+			    	<th>배점</th>
+			    	<th>
+			    		<input type="text" name="tecEvalFirstNm" data-type="mField" value="{{ doc.BodyContext.tecEvalFirstNm }}"  style="width:98%;" >
+			    	</th>
+			    	<th>
+			    		<input type="text" name="tecEvalSecondNm" data-type="mField" value="{{ doc.BodyContext.tecEvalSecondNm }}"  style="width:98%;" >
+			    	</th>
+			    </tr>
+			    <tr>
+			    	<th rowspan="7">기술평가</th>
+			    	<td>
+			    		<input type="text" name="tecEvalType_1" data-type="mField" value="{{ doc.BodyContext.tecEvalType_1 }}"  style="width:98%;" >
+			    	</td>
+			    	<td align="right">
+			    		<input type="text" name="tecEvalPoint_1" data-type="mField" value="{{ doc.BodyContext.tecEvalPoint_1 }}"  style="width:98%;" >
+			    	</td>
+			    	<td align="right">
+			    		<input type="text" name="tecEvalFirst_1" data-type="mField" value="{{ doc.BodyContext.tecEvalFirst_1 }}"  style="width:98%;" >
+			    	</td>
+			    	<td align="right">
+			    		<input type="text" name="tecEvalSecond_1" data-type="mField" value="{{ doc.BodyContext.tecEvalSecond_1 }}"  style="width:98%;" >
+			    	</td>
+			    </tr>
+			    <tr>
+			    	<td>
+			    		<input type="text" name="tecEvalType_2" data-type="mField" value="{{ doc.BodyContext.tecEvalType_2 }}"  style="width:98%;" >
+			    	</td>
+			    	<td align="right">
+			    		<input type="text" name="tecEvalPoint_2" data-type="mField" value="{{ doc.BodyContext.tecEvalPoint_2 }}"  style="width:98%;" >
+			    	</td>
+			    	<td align="right">
+			    		<input type="text" name="tecEvalFirst_2" data-type="mField" value="{{ doc.BodyContext.tecEvalFirst_2 }}"  style="width:98%;" >
+			    	</td>
+			    	<td align="right">
+			    		<input type="text" name="tecEvalSecond_2" data-type="mField" value="{{ doc.BodyContext.tecEvalSecond_2 }}"  style="width:98%;" >
+			    	</td>
+			    </tr>
+			    <tr>
+			    	<td>
+			    		<input type="text" name="tecEvalType_3" data-type="mField" value="{{ doc.BodyContext.tecEvalType_3 }}"  style="width:98%;" >
+			    	</td>
+			    	<td align="right">
+			    		<input type="text" name="tecEvalPoint_3" data-type="mField" value="{{ doc.BodyContext.tecEvalPoint_3 }}"  style="width:98%;" >
+			    	</td>
+			    	<td align="right">
+			    		<input type="text" name="tecEvalFirst_3" data-type="mField" value="{{ doc.BodyContext.tecEvalFirst_3 }}"  style="width:98%;" >
+			    	</td>
+			    	<td align="right">
+			    		<input type="text" name="tecEvalSecond_3" data-type="mField" value="{{ doc.BodyContext.tecEvalSecond_3 }}"  style="width:98%;" >
+			    	</td>
+			    </tr>
+			    <tr>
+			    	<td>
+			    		<input type="text" name="tecEvalType_4" data-type="mField" value="{{ doc.BodyContext.tecEvalType_4 }}"  style="width:98%;" >
+			    	</td>
+			    	<td align="right">
+			    		<input type="text" name="tecEvalPoint_4" data-type="mField" value="{{ doc.BodyContext.tecEvalPoint_4 }}"  style="width:98%;" >
+			    	</td>
+			    	<td align="right">
+			    		<input type="text" name="tecEvalFirst_4" data-type="mField" value="{{ doc.BodyContext.tecEvalFirst_4 }}"  style="width:98%;" >
+			    	</td>
+			    	<td align="right">
+			    		<input type="text" name="tecEvalSecond_4" data-type="mField" value="{{ doc.BodyContext.tecEvalSecond_4 }}"  style="width:98%;" >
+			    	</td>
+			    </tr>
+			    <tr>
+			    	<td>
+			    		<input type="text" name="tecEvalType_5" data-type="mField" value="{{ doc.BodyContext.tecEvalType_5 }}"  style="width:98%;" >
+			    	</td>
+			    	<td align="right">
+			    		<input type="text" name="tecEvalPoint_5" data-type="mField" value="{{ doc.BodyContext.tecEvalPoint_5 }}"  style="width:98%;" >
+			    	</td>
+			    	<td align="right">
+			    		<input type="text" name="tecEvalFirst_5" data-type="mField" value="{{ doc.BodyContext.tecEvalFirst_5 }}"  style="width:98%;" >
+			    	</td>
+			    	<td align="right">
+			    		<input type="text" name="tecEvalSecond_5" data-type="mField" value="{{ doc.BodyContext.tecEvalSecond_5 }}"  style="width:98%;" >
+			    	</td>
+			    </tr>
+			    <tr>
+			    	<td>
+			    		<input type="text" name="tecEvalType_6" data-type="mField" value="{{ doc.BodyContext.tecEvalType_6 }}"  style="width:98%;" >
+			    	</td>
+			    	<td align="right">
+			    		<input type="text" name="tecEvalPoint_6" data-type="mField" value="{{ doc.BodyContext.tecEvalPoint_6 }}"  style="width:98%;" >
+			    	</td>
+			    	<td align="right">
+			    		<input type="text" name="tecEvalFirst_6" data-type="mField" value="{{ doc.BodyContext.tecEvalFirst_6 }}"  style="width:98%;" >
+			    	</td>
+			    	<td align="right">
+			    		<input type="text" name="tecEvalSecond_6" data-type="mField" value="{{ doc.BodyContext.tecEvalSecond_6 }}"  style="width:98%;" >
+			    	</td>
+			    </tr>
+			    <tr>
+			    	<td>
+			    		<input type="text" name="tecEvalType_7" data-type="mField" value="{{ doc.BodyContext.tecEvalType_7 }}"  style="width:98%;" >
+			    	</td>
+			    	<td align="right">
+			    		<input type="text" name="tecEvalPoint_7" data-type="mField" value="{{ doc.BodyContext.tecEvalPoint_7 }}"  style="width:98%;" >
+			    	</td>
+			    	<td align="right">
+			    		<input type="text" name="tecEvalFirst_7" data-type="mField" value="{{ doc.BodyContext.tecEvalFirst_7 }}"  style="width:98%;" >
+			    	</td>
+			    	<td align="right">
+			    		<input type="text" name="tecEvalSecond_7" data-type="mField" value="{{ doc.BodyContext.tecEvalSecond_7 }}"  style="width:98%;" >
+			    	</td>
+			    </tr>
+			    <tr>
+			    	<th rowspan="2">가격평가</th>
+			    	<td>
+			    		<input type="text" name="priceEvalType_1" data-type="mField" value="{{ doc.BodyContext.priceEvalType_1 }}"  style="width:98%;" >
+			    	</td>
+			    	<td align="right">
+			    		<input type="text" name="priceEvalPoint_1" data-type="mField" value="{{ doc.BodyContext.priceEvalPoint_1 }}"  style="width:98%;" >
+			    	</td>
+			    	<td align="right">
+			    		<input type="text" name="priceEvalFirst_1" data-type="mField" value="{{ doc.BodyContext.priceEvalFirst_1 }}"  style="width:98%;" >
+			    	</td>
+			    	<td align="right">
+			    		<input type="text" name="priceEvalSecond_1" data-type="mField" value="{{ doc.BodyContext.priceEvalSecond_1 }}"  style="width:98%;" >
+			    	</td>
+			    </tr>
+			    <tr>
+			    	<td>
+			    		<input type="text" name="priceEvalType_2" data-type="mField" value="{{ doc.BodyContext.priceEvalType_2 }}"  style="width:98%;" >
+			    	</td>
+			    	<td align="right">
+			    		<input type="text" name="priceEvalPoint_2" data-type="mField" value="{{ doc.BodyContext.priceEvalPoint_2 }}"  style="width:98%;" >
+			    	</td>
+			    	<td align="right">
+			    		<input type="text" name="priceEvalFirst_2" data-type="mField" value="{{ doc.BodyContext.priceEvalFirst_2 }}"  style="width:98%;" >
+			    	</td>
+			    	<td align="right">
+			    		<input type="text" name="priceEvalSecond_2" data-type="mField" value="{{ doc.BodyContext.priceEvalSecond_2 }}"  style="width:98%;" >
+			    	</td>
+			    </tr>
+			    <tr>
+			    	<th colspan="2">종합점수</th>
+			    	<td align="right">
+			    		<input type="text" name="totalPoint" data-type="mField" value="{{ doc.BodyContext.totalPoint }}"  style="width:98%;" >
+			    	</td>
+			    	<td align="right">
+			    		<input type="text" name="totalFirstPoint" data-type="mField" value="{{ doc.BodyContext.totalFirstPoint }}"  style="width:98%;" >
+			    	</td>
+			    	<td align="right">
+			    		<input type="text" name="totalSecondPoint" data-type="mField" value="{{ doc.BodyContext.totalSecondPoint }}"  style="width:98%;" >
+			    	</td>
+			    </tr>
+    		</table>
+    		<p class="mt10" style="text-align: left;">※ 최저점수 및 최고점수 제외하여 최종점수로 산정</p>
+    	</td>
+    </tr>
+</table>
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+	<colgroup>
+        <col style="width:*" />
+    </colgroup>
+    <tr>
+    	<td>
+    		<span class="ml5" style="font-size: 15px; font-weight: bold;">2. 특이사항</span>
+    	</td>
+    </tr>
+    <tr>
+    	<td>
+    		<textarea data-type="mField" name="notice" rows="5" style="overflow:auto;width:99%;">{{ doc.BodyContext.notice }}</textarea>
+    	</td>
+    </tr>
+</table>
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+	<colgroup>
+        <col style="width:*" />
+    </colgroup>
+    <tr>
+    	<td>
+    		<span class="ml5" style="font-size: 14px; font-weight: bold;">#. 첨부서류</span>
+    	</td>
+    </tr>
+    <tr>
+    	<td>
+    		<p>1. 가격제안서 1부. 끝.</p>
+    		<p class="mt5">2. 평가집계표 1부. 끝.</p>
+    	</td>
+    </tr>
+</table>
+<!--실 결재양식 내용 부분 끝 -->

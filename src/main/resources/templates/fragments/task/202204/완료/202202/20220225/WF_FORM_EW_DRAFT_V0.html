@@ -1,0 +1,56 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:12.5%" />
+        <col style="width:12.5%" />
+        <col style="width:12.5%" />
+        <col style="width:12.5%" />
+        <col style="width:12.5%" />
+        <col style="width:12.5%" />
+        <col style="width:12.5%" />
+        <col style="width:12.5%" />
+        
+    </colgroup>
+    
+    <tr>
+		<th>계약범위</th>
+		<td class="Approval_labelTD" colspan="7" style="padding-left:3px;">
+            <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1">
+            	<input type="checkbox" id="chkBox_01" name="chkBox_1" value="PC Upgrade">PC Upgrade&nbsp;&nbsp;
+                <input type="checkbox" id="chkBox_02" name="chkBox_1" value="Windows">Windows&nbsp;&nbsp;
+                <input type="checkbox" id="chkBox_03" name="chkBox_1" value="Microsoft Office">Microsoft Office&nbsp;&nbsp;
+                <input type="checkbox" id="chkBox_04" name="chkBox_1" value="CAD">CAD&nbsp;&nbsp;
+                <input type="checkbox" id="chkBox_05" name="chkBox_1" value="Sketch Up">Sketch Up&nbsp;&nbsp;
+                <input type="checkbox" id="chkBox_06" name="chkBox_1" value="Photoshop">Photoshop&nbsp;&nbsp;
+                <input type="checkbox" id="chkBox_07" name="chkBox_1" value="그 외 ">그 외&nbsp;&nbsp;
+            
+            </div>
+		</td>
+	</tr>
+	<tr>
+	<th>사용인원
+	</th>
+	<td>
+		<input type="text" id="userCount" name="userCount" data-type="mField" value="{{ doc.BodyContext.userCount }}"    style="width:98%; " >
+	</td>
+	<th >실사용자
+	</th>
+	<td colspan="5">
+		<input type="text" id="realUser" name="realUser" data-type="mField" value="{{ doc.BodyContext.realUser }}"    style="width:98%; " >
+	</td>
+	</tr>
+	<tr>
+    	<th>필요수량</th>
+    	<td colspan="7">
+    		<input type="text" id="needQty" name="needQty" data-type="mField" value="{{ doc.BodyContext.needQty }}"    style="width:98%; " >
+    	</td>
+    </tr>
+    <tr>
+    	
+    	<td colspan="8">
+    		<textarea id="Context" data-type="mField" style="width: 98%;height:125px">{{ doc.BodyContext.Context }}</textarea>
+    	</td>
+    </tr>
+</table>
+<!--실 결재양식 내용 부분 끝 -->

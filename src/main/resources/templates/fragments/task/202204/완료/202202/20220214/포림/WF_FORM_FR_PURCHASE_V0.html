@@ -1,0 +1,160 @@
+<!--실 결재양식 내용 부분 시작 -->
+
+
+		
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+		<colgroup>
+			<col style="width:25%" />
+			<col style="width:75%" />
+		</colgroup> 
+		
+		
+		<tr>
+			<th>구매사유 및 목적
+			</th>
+			<td  >
+	         <input type="text" data-type="mField" id="PURCHASEPURPOSE" name = "PURCHASEPURPOSE" value="{{ doc.BodyContext.PURCHASEPURPOSE }}" size="10" style="width : 95%" >
+		
+	        </td>
+		</tr>
+</table>
+
+
+
+<table class="tableStyle linePlus mt10 multi-row-table sortable" id="equipmentTbl">
+    <colgroup>
+		<col style="width: 4%">        
+        <col style="width: 16%">
+        <col style="width: 16%">
+        <col style="width: 16%">      
+        <col style="width: 16%">
+        <col style="width: 16%">
+        <col style="width: 16%">
+        
+    </colgroup>
+    <tbody>
+	    <tr class="multi-row-control" data-mode="writeOnly">
+	        <td colspan="7" style="text-align: right">
+	            <input type="button" value="+추가" class="multi-row-add usa">
+			<input type="button" value="-삭제" class="multi-row-del-auto usa">
+	        </td>
+	    </tr>
+	    <tr>
+			
+			<th >No.</th>
+			<th >장비명</th>
+			<th >관리번호</th>
+			<th >품명</th>
+			<th >규격</th>
+			<th >사유</th>
+			<th >목적</th>
+			
+	    </tr>
+	     <tr class="multi-row-template">
+			<td class="multi-row-seq"></td>
+	        <td><input name="equipmentNAME" style="width: 99%;" type="text" data-type="rField"></td>
+	        <td >
+	            <input name="manageNO" style="width: 99%;"  type="text" data-type="rField" >
+	        </td>
+	       
+	        <td >
+	            <input name="productName" style="width: 99%;" type="text"  data-type="rField" >
+	        </td>
+	         <td >
+	            <input name="standard" style="width: 99%;"  type="text" data-type="rField" >
+	        </td>
+	       
+	        <td >
+	            <input name="reason" style="width: 99%;" type="text"  data-type="rField" >
+	        </td>
+	        <td><input name="purpose" style="width: 99%;" type="text" data-type="rField"></td>
+	    </tr>
+	</tbody>
+</table>
+
+		
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+		<colgroup>
+			<col style="width:25%" />
+			<col style="width:75%" />
+		</colgroup> 
+		
+		
+		<tr>
+			<th>업체명
+			</th>
+			<td  >
+	         <input type="text" data-type="mField" id="customCompany" name = "customCompany" value="{{ doc.BodyContext.customCompany }}" size="10" style="width : 95%" >
+		
+	        </td>
+		</tr>
+		<tr>
+			<th>예상구입가
+			</th>
+			<td  >
+	         <input type="text" data-type="mField" id="estimatePrice" data-pattern="numeral" name = "estimatePrice" value="{{ doc.BodyContext.estimatePrice }}" size="10" style="width : 95%" >
+		
+	        </td>
+		</tr>
+</table>
+
+
+<table class="tableStyle linePlus mt10 multi-row-table sortable" id="ItemTbl">
+    <colgroup>
+		<col style="width: 4%">        
+        <col style="width: 10%">
+        <col style="width: 10%">
+        <col style="width: 8%">      
+        <col style="width: 8%">
+        <col style="width: 15%">
+        <col style="width: 10%">
+        
+    </colgroup>
+    <tbody>
+	    <tr class="multi-row-control" data-mode="writeOnly">
+	        <td colspan="9" style="text-align: right">
+	            <input type="button" value="+추가" class="multi-row-add usa">
+			<input type="button" value="-삭제" class="multi-row-del-auto usa">
+	        </td>
+	    </tr>
+	    <tr>
+			
+			<th >No.</th>
+			<th >품명</th>
+			<th >규격</th>
+			<th >단위</th>
+			<th >수량</th>
+			<th >희망납기일</th>
+			<th >용도</th>
+			<th >투자번호</th>
+			<th >발주번호</th>
+	    </tr>
+	     <tr>
+	     <tr class="multi-row-template">
+			<td class="multi-row-seq"></td>
+	        <td><input name="itemName" style="width: 99%;" type="text" data-type="rField"></td>
+	        <td >
+	            <input name="standardItem" style="width: 99%;"  type="text" data-type="rField"  >
+	        </td>
+	       
+	        <td >
+	            <input name="ea" style="width: 99%;" type="text"  data-type="rField"  >
+	        </td>
+	         <td >
+	            <input name="qty" style="width: 99%;"  type="text" data-type="rField" data-pattern="numeral" >
+	        </td>
+	       
+	        <td >
+	       	 <input type="text" data-type="rField" data-pattern="date"   data-date-format="yy/mm/dd" name="hopeDate" style="width: 98%">
+				
+	        </td>
+	        <td><input name="usedPurpose" style="width: 99%;" type="text" data-type="rField"></td>
+	        <td><input name="investNo" style="width: 99%;" type="text" data-type="rField"></td>
+	        <td><input name="orderNo" style="width: 99%;" type="text" data-type="rField"></td>
+	    </tr>
+	</tbody>
+</table>
+
+<!--실 결재양식 내용 부분 끝 -->

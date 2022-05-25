@@ -1,0 +1,176 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:15%" />
+        <col style="width:35%" />
+        <col style="width:15%" />
+        <col style="width:35%" />
+        
+    </colgroup>
+    
+    <tr>
+		<th>현장명</th>
+		<td >
+           <input type="text" id="localName" name="localName" data-type="mField" value="{{ doc.BodyContext.localName }}"    style="width:98%; " >
+		</td>
+		<th>공종명
+		</th>
+		<td >
+			<input type="text" id="constructName" name="constructName" data-type="mField" value="{{ doc.BodyContext.constructName }}"    style="width:98%; " >
+		</td>
+	</tr>
+	<tr>
+	
+	<th >발의일자
+	</th>
+	<td  >
+		<input type="text" data-type="mField" id="requestDay" title ="발의일" name = "requestDay" value="{{ doc.BodyContext.requestDay }}"  size="10" style="width : 92%" data-pattern="date" >
+	</td>
+	<th>지출일자
+	</th>
+		<td  style ="border-right : none">
+		<input type="text" data-type="mField" id="expenseDay" title ="지출일" name = "expenseDay" value="{{ doc.BodyContext.expenseDay }}"  size="10" style="width : 92%" data-pattern="date" >
+		</td>
+	</tr>
+	
+	<tr>
+	
+		<th >작성자
+		</th>
+		<td >
+			 <input type="text" id="writeName" name="writeName" data-type="mField" value="{{ doc.BodyContext.writeName }}"    style="width:98%; " >
+		</td>
+		<th>계약범위</th>
+		<td class="Approval_labelTD" colspan="7" style="padding-left:3px;">
+            <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1">
+            	<input type="checkbox" id="chkBox_01" name="chkBox_1" value="외주발주서">외주발주서&nbsp;&nbsp;&nbsp;
+                <input type="checkbox" id="chkBox_02" name="chkBox_1" value="전회지출결의서">전회지출결의서
+            
+            </div>
+		</td>
+	</tr>
+</table>
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:11%" />
+        <col style="width:11%" />
+        <col style="width:11%" />
+        <col style="width:11%" />
+        <col style="width:11%" />
+        <col style="width:11%" />
+        <col style="width:11%" />
+    </colgroup>
+    <tr>
+    	<th rowspan ="2">업체명</th>
+    	<th rowspan ="2">도급금액</th>
+    	<th rowspan ="2">실행금액</th>
+    	<th colspan ="5">하도급금액</th>
+    	<th rowspan ="2">비고</th>
+    </tr>
+    <tr>
+    	<th>계약/확정</th>
+    	<th>전회누계</th>
+    	<th>금회지급액</th>
+    	<th>기성누계</th>
+    	<th>잔고</th>
+    </tr>
+    <tr>
+    <td>
+    	<input type="text" id="companyName" name="companyName" data-type="mField" value="{{ doc.BodyContext.companyName }}"    style="width:98%; " >
+    </td>
+    <td>
+    	<input type="text" id="subcontractAmt" name="subcontractAmt" data-type="mField" data-pattern="numeral" value="{{ doc.BodyContext.subcontractAmt }}"    style="width:98%; " >
+    </td>
+    <td>
+    	<input type="text" id="actionAmt" name="actionAmt" data-type="mField" data-pattern="numeral" value="{{ doc.BodyContext.actionAmt }}"    style="width:98%; " >
+    </td>
+    <td>
+    	<input type="text" id="cost4" name="cost4" data-type="mField" data-pattern="numeral"  value="{{ doc.BodyContext.cost4 }}"    style="width:98%; "  onblur="fn_a_sub();fn_a_sum_4();" onchange="fn_a_sub();fn_a_sum_4();">
+    </td>
+    <td>
+    	<input type="text" id="cost5" name="cost5" data-type="mField" data-pattern="numeral"  value="{{ doc.BodyContext.cost5 }}"    style="width:98%; " onblur="fn_a_sub();fn_a_sum_4();" onchange="fn_a_sub();fn_a_sum_4();">
+    </td> 
+    <td>
+    	<input type="text" id="cost6" readonly ="readonly" name="cost6" data-type="mField" value="{{ doc.BodyContext.cost6 }}"    style="width:98%; " >
+    </td>
+    <td>
+    	<input type="text" id="cost7" readonly ="readonly" name="cost7" data-type="mField" value="{{ doc.BodyContext.cost7 }}"    style="width:98%; " >
+    </td>
+    <td>
+    	<input type="text" id="cost8" name="cost8" data-type="mField" value="{{ doc.BodyContext.cost8 }}"    style="width:98%; " >
+    </td>
+    <td>
+    	<input type="text" id="rmk" name="rmk" data-type="mField" value="{{ doc.BodyContext.rmk }}"    style="width:98%; " >
+    </td>
+        
+    </tr>
+</table>
+
+
+<table class="table_10 multi-row-table RowSumTable tableStyle linePlus mt10" id="TBLINFO" style="border-left: 1px solid #c3d7df;">
+    <colgroup>
+        <col style="width: 35%">
+        <col style="width: 15%">
+        <col style="width: 15%">
+        <col style="width: 15%">
+        <col style="width: 20%">
+    </colgroup>
+    <tbody>
+	    <tr class="multi-row-control" data-mode="writeOnly">
+	        <td colspan="5" style="text-align: right">
+	            <input type="button" id="btnAdd" value="+추가" class="multi-row-add usa">
+	            <input type="button" id="btnDelSel" value="-삭제"  class="usa" onclick="delRow();" >
+	        </td>
+	    </tr>
+	    <tr>
+	        <th rowspan ="2">내용</th>
+	        <th colspan ="3">금회기성</th>
+	        <th rowspan ="2">비고</th>
+	    </tr>
+	    <tr>
+	    	<th>공급가액</th>
+	    	<th>부가세</th>
+	    	<th>계</th>
+	    </tr>
+	    <tr class="multi-row-template multi-sum">
+	    	<td>
+	    		<input type="text" name="comment" data-type="rField" style="width: 90%;">
+	    	</td>	
+	    	<td align="right"> 
+	    		<input type="text"  data-type="rField" data-pattern="numeral" name="cost1"  style="width: 99%;" onblur="fn_a_sum_1();" onchange="fn_a_sum_1();" >
+	    	</td>
+			<td align="right">
+				<input type="text"  data-type="rField" data-pattern="numeral"  name="cost2" style="width: 99%;text-align :right;" readonly="readonly"  data-numeral-format="0,0" data-sum-ref="cost1" data-formula="({0}*0.1)" >
+			</td>
+	        <td align="right">
+					<input type="text"  data-type="rField" data-pattern="numeral"  name="cost3" style="width: 99%;text-align :right;" readonly="readonly"  data-numeral-format="0,0" data-sum-ref="cost1,cost2" data-formula="({0}+{1})">
+			</td>
+	        
+	        <td >
+	            <input name="useRmk"  style="width: 99%;" type="text" data-type="rField"  >
+	        </td>	        
+	    </tr>
+	    <tr>
+        <th >계        </th>
+	        <td align="right"><input class="sum-table-colsum" id="a_sum_1" style="width: 98%;" type="text" readonly="readonly" value="{{ doc.BodyContext.a_sum_1 }}" data-type="mField" data-pattern="numeral" ></td>
+	        <td align="right"><input class="sum-table-colsum" id="a_sum_2" style="width: 98%;" type="text" readonly="readonly" value="{{ doc.BodyContext.a_sum_2 }}" data-type="mField" data-pattern="numeral" ></td>
+	        <td align="right"><input class="sum-table-colsum" id="a_sum_3" style="width: 98%;" type="text" readonly="readonly" value="{{ doc.BodyContext.a_sum_3 }}" data-type="mField" data-pattern="numeral" ></td>
+	       
+	        <th  ></th>
+	    </tr>
+	    
+	</tbody>
+	 
+</table>
+
+
+<table class="tableStyle linePlus "><!-- class="table_10" -->
+  <tr>
+    	
+    	<td >
+    		<textarea id="Context" data-type="mField" style="width: 98%;height:125px">{{ doc.BodyContext.Context }}</textarea>
+    	</td>
+    </tr>
+</table>
+<!--실 결재양식 내용 부분 끝 -->

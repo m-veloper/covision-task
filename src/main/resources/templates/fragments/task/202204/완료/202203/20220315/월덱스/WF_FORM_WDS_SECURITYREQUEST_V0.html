@@ -1,0 +1,121 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+
+		<colgroup>
+			<col style="width:25%" />
+	       <col style="width:25%" />
+	       <col style="width:25%" />
+	       <col style="width:25%" />
+		</colgroup>  
+		
+		
+	    <tr>
+    		<th >DRM<br>(ShadowCube)</th>
+			<td  align="center" >
+				<div data-type="mField" data-element-type="chk_d" data-node-name="divType1">
+	    			결재권한<br><input type="checkbox" id="div11" name="divType1" value="결재권한"> 
+	    		</div>
+			</td>
+			<td  align="center" >
+				<div data-type="mField" data-element-type="chk_d" data-node-name="divType1">
+	    			특별라이센스<br><input type="checkbox" id="div21" name="divType1" value="특별라이센스 ">  
+	    		</div>
+			</td>
+			<td  align="center">
+				<div data-type="mField" data-element-type="chk_d" data-node-name="divType1">
+	    			상시복호화 권한<br><input type="checkbox" id="div31" name="divType1" value="상시복호화 권한 ">  
+	    		</div>	
+			</td>
+			
+		
+	    </tr>
+	    
+	    
+	     <tr>
+    		<th >DLP<br>(그라디우스)</th>
+			<td  align="center">
+				<div data-type="mField" data-element-type="chk_d" data-node-name="divType2">
+	    			임시정책 승인권한<br><input type="checkbox" id="div12" name="divType2" value="임시정책 승인권한"> 
+	    		</div>
+			</td>
+			<td   align="center">
+				<div data-type="mField" data-element-type="chk_d" data-node-name="divType2">
+	    			보안 USB 등록<br><input type="checkbox" id="div22" name="divType2" value="보안 USB 등록 ">  
+	    		</div>
+			</td>
+			<td  align="center">
+				<div data-type="mField" data-element-type="chk_d" data-node-name="divType2">
+	    			업무사이트 등록<br><input type="checkbox" id="div32" name="divType2" value="업무사이트 등록">  
+	    		</div>	
+			</td>
+			
+		
+	    </tr>
+</table>
+
+
+
+<!--실 결재양식 내용 부분 시작 -->
+  <table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+			<colgroup>
+		       <col style="width:25%" />
+		       <col style="width:75%" />
+			</colgroup>  
+			
+			 <tr>
+				 <th > 사용자사번
+				 </th>
+				 <td >
+					<input type="text" id="userEmpNO" name="userEmpNO" data-type="mField" value="{{ doc.BodyContext.userEmpNO }}"    style="width:98%; " >
+		      
+				</td>
+		    </tr>
+		    <tr>
+				 <th > 사용자 성명
+				 </th>
+				 <td >
+					<input type="text" id="userName" name="userName" data-type="mField" value="{{ doc.BodyContext.userName }}"    style="width:98%; " >
+		      
+				</td>
+		    </tr>
+		    
+		     <tr>
+				 <th > 사용 요청 기간
+				 </th>
+				 <td >
+					<input type="text" name="workDtSt" data-type="mField" data-pattern="date" data-date-format="yy년 mm월 dd일" value="{{ doc.BodyContext.workDtSt }}"  style="width:40%; text-align: center;">
+		   			<em>~</em>
+		   			<input type="text" name="workDtEd" data-type="mField" data-pattern="date" data-date-format="yy년 mm월 dd일" value="{{ doc.BodyContext.workDtEd }}"  style="width:40%; text-align: center;">		      
+				</td>
+		    </tr>
+		    <tr>
+				 <th > 목적(상세)
+				 </th>
+				 <td >
+					<textarea id="comment"  rows="3" data-type="mField" style="width: 98%;height:98%;">{{ doc.BodyContext.comment }}</textarea>
+		      
+				</td>
+		    </tr>
+		    
+		    <tr>
+				 
+				 <td colspan="2">
+					<div>
+					-결재권한: ShadowCube 복호화 결재 화면을 통해 결재 할 수 있는 권한(***권고***)<br>
+					-특별라이선스 : 일정기간 동안 사외에서도 로그인 및 복호화를 이용할 수 있는 권한<br>
+					-상시복호화 : 사내에서 결재 절차 없이 즉시 복호화 할 수 있는권한<br>
+					-임시정책승인권한 : DLP에서 차단되어진 행위를 임시로 사용할수 있도록 승인하는 권한<br>
+					<br>
+					팀장 승인 필요<br>
+					-보안USB등록 : 사내 자유로운 USB 사용을 위한 등록 요청<br>
+					(전체공지 DLP 설치 공지 메뉴얼 참고하여 USB 장치이름 추출)<br>
+					-업무사이트 등록 : 업무상 필수로 사용하는 사이트의 경우 임시정책 승인 없이<br>
+					파일로 업로드 가능(EX - naver.com , hometax.or.kr)<br>
+					</div>
+				</td>
+		    </tr>
+   </table>
+<!--실 결재양식 내용 부분 끝 -->

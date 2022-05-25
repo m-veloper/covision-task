@@ -1,0 +1,172 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+
+<table class="table_3 tableStyle mt10 linePlus">
+	 <tr>
+        <td style="height:80px;">
+            <textarea id="t_purpose1" style="width: 98%; text-align:left;padding-right: 0px; padding-left: 0px; -ms-overflow-y: auto;" rows="4" cols="15" data-type="mField">{{ doc.BodyContext.t_purpose1 }}</textarea>
+        </td>
+    </tr>
+</table>
+<table class="table_1 tableStyle linePlus mt10" cellpadding="0" cellspacing="0"style="width: 98%; height:100px;display:none"  >
+    <colgroup>
+         <col style="width: 16.7%" >
+        <col style="width: 16.7%">
+        <col style="width: 16.7%">
+        <col style="width: 16.7%">
+        <col style="width: 16.7%">
+        <col style="width: 16.7%">
+    </colgroup>
+	<tbody>
+		
+	
+	
+		<tr>
+			<th >선택유형</th>
+			<td  >
+				<input type="text" name="selectDiv" id ="selectDiv" data-type="mField" style="width:70%;" value="{{ doc.BodyContext.selectDiv }}"  >
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+
+
+
+<table class="table_10 multi-row-table RowSumTable tableStyle linePlus" id="TBLINFO" style="border-left: 1px solid #c3d7df; " >
+    <colgroup>
+        <col style="width: 14%">
+        <col style="width: 14%">
+        <col style="width: 14%">
+        <col style="width: 14%">
+        <col style="width: 15%">
+        <col style="width: 14%">
+        <col style="width: 15%">
+    </colgroup>
+    <tbody>
+	    <tr class="multi-row-control" data-mode="writeOnly">
+	    	<td colspan="3" style="text-align: left; border-right:none;" >
+	              <select name="div_table02" data-type="mField" data-element-type="sel_d_v" style="width: 98%;"  value="{{ doc.BodyContext.div_table02 }}" title="인사구분" onchange ="ChangeTable(this);">
+	    			
+	    			<option value="신규입사">신규입사</option>
+	    		</select>  
+	        </td>
+	        <td colspan="4" style="text-align: right" >
+	            <input type="button" id="btnAdd" value="+추가" class="multi-row-add smButton">
+	            <input type="button" id="btnDelSel" value="-삭제" class="multi-row-del-auto smButton">
+	        </td>
+	    </tr>
+	    
+	     <tr data-mode="readOnly">
+	    	<td colspan="7" style="text-align: left" >
+	              <select name="div_table02" data-type="mField" data-element-type="sel_d_v"  value="{{ doc.BodyContext.div_table02 }}" title="인사구분" onchange ="ChangeTable(this);">
+	    			
+	    			<option value="신규입사">신규입사</option>
+	    		</select>  
+	        </td>
+	    </tr>
+	    <tr>
+	        <th rowspan="2">NO</th>
+	        <th rowspan="2">구분</th>
+	        <th rowspan="2">성명</th>
+	        <th colspan="2">발령사항(命)</th>
+	        <th rowspan="2">입사일자</th>
+	        <th rowspan="2">발령일자</th>
+	    </tr>
+	    <tr>
+	    	<th>직급</th>
+	        <th>소속</th>
+	    
+	    </tr>
+	    <tr class="multi-row-template  ">
+	    	 <td class="multi-row-seq"></td>
+	         <td align="center">
+	            <select name="DivisionTbl02" data-type="rField" data-element-type="sel_d_v"  style="width: 98%; text-align:center" title="구분" >
+	    			<option value="">선택</option>
+	    			<option value="채용">채용</option>
+	    		</select>  
+	        </td>
+	        <td align="center">
+	            <input name="emp_nmTbl02" style="width: 98%;text-align:center" type="text" data-type="rField"  > 
+	        </td>
+	         <td align="center">
+	            <select name="positionTbl02" data-type="rField" data-element-type="sel_d_v"  style="width: 98%;text-align:center"title="현직급">
+	    			<option value="">선택</option>
+	    			<option value="사원">사원</option>
+	    			<option value="주임">주임</option>
+	    			<option value="대리">대리</option>
+	    			<option value="과장">과장</option>
+	    			<option value="차장">차장</option>
+	    			<option value="부장">부장</option>
+	    			<option value="이사">이사</option>
+	    			<option value="상무">상무</option>
+	    			<option value="전무">전무</option>
+	    			<option value="부사장">부사장</option>
+	    			<option value="사장">사장</option>
+	    			<option value="대표이사">대표이사</option>
+	    			
+	    		</select>  
+	        </td>
+	         
+	         <td align="center">
+	               <select name="preDept" data-type="rField" data-element-type="sel_d_v"  style="width: 98%;text-align:center " title="현소속">
+	    			<option value="">선택</option>
+	    			<option value="영업본부">영업본부</option>
+	    			<option value="견적실">견적실</option>
+	    			<option value="영업실">영업실</option>
+	    			<option value="설계본부">설계본부</option>
+	    			<option value="디자인1실">디자인1실</option>
+	    			<option value="전략설계실">전략설계실</option>
+	    			<option value="기술설계실">기술설계실</option>
+	    			<option value="사업관리본부">사업관리본부</option>
+	    			<option value="공사관리실">공사관리실</option>
+	    			<option value="원가혁신팀">원가혁신팀</option>
+	    			<option value="공무팀">공무팀</option>
+	    			<option value="안전보건팀">안전보건팀</option>
+	    			<option value="공사팀">공사팀</option>
+	    			<option value="외주구매실">외주구매실</option>
+	    			<option value="외주팀">외주팀</option>
+	    			<option value="구매팀">구매팀</option>
+	    			<option value="품질관리팀">품질관리팀</option>
+	    			<option value="경영지원본부">경영지원본부</option>
+	    			<option value="경영기획팀">경영기획팀</option>
+	    			<option value="인사총무팀">인사총무팀</option>
+	    			<option value="재경팀">재경팀</option>
+	    			<option value="별정">별정</option>	    			
+	    		</select>  
+	        </td>
+	        
+	         <td align="center"><input type="text" name="enterDateTbl02" autocomplete ="off" data-pattern="date" data-type="rField" style="width: 98%;"></td>	
+	         <td align="center"><input type="text" name="appointDateTbl02" autocomplete ="off" data-pattern="date" data-type="rField" style="width: 98%;"></td>	
+	    	
+	        	        
+	    </tr>
+	   
+	    </tbody>
+	
+</table>
+
+
+
+
+
+<table class="table_3 tableStyle mt10 linePlus">
+	 <tr>
+          <td style="height:80px;">
+            <textarea id="t_purpose2" style="width: 98%; text-align:right;padding-right: 0px; padding-left: 0px; -ms-overflow-y: auto;" rows="4" cols="15" data-type="mField">{{ doc.BodyContext.t_purpose2 }}</textarea>
+        </td>
+    </tr>
+</table>
+
+
+
+<table class="table_3 tableStyle  linePlus">
+	 <tr >
+		 <td align="center" style="height:150px; text-align :center;font-size: 14px;font-weight:bold" >
+		 	<div>경영지원실장 <input type="text" data-type="mField" style="width:200px;font-size: 14px;font-weight:bold ;text-align :center" id="chiefName" value="{{doc.BodyContext.chiefName}}">
+		 	</div>
+		 </td>
+    </tr>
+</table>
+
+<!--실 결재양식 내용 부분 끝 -->

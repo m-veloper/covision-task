@@ -1,0 +1,92 @@
+<div style="text-align:center; font-size:13px;">
+<br>
+아래와 같이 지출결의를 보고합니다.
+<br>
+</div>
+
+<table class="table_10 tableStyle linePlus mt10" ><!-- class="table_10" -->
+	<colgroup>
+		<col style="width:12%">
+		<col style="width:25%">
+		<col style="width:30%">
+		<col style="width:12%">
+		<col style="width:21%">
+	</colgroup>
+	<tr>
+		<th>지출목적</th>
+		<td colspan="2">
+			<input type="text" data-type="mField" style="width:98%;" id="Purchas_Purpose" value="{{doc.BodyContext.Purchas_Purpose}}">
+		</td>
+		<th>PJ코드</th>
+		<td>
+			<input type="text" data-type="mField" style="width:98%;" id="PJ_Code" value="{{doc.BodyContext.PJ_Code}}">
+		</td>
+	</tr>
+	<tr>
+		<th>지출합계금액</th>
+		<td>
+			<input type="text" data-type="mField" style="width:150px; text-align:right; border:none;" class="watch-value" data-watch="[name=Total_Cost]" id="Expected_Cost" value="{{doc.BodyContext.Expected_Cost}}" readonly> 원
+		</td>
+		<td align="center">
+			<div data-type="mField" data-element-type="rdo_d" data-node-name="Include_VAT">
+				<input type="radio" name="Include_VAT" value="Y">&nbsp;VAT포함&nbsp;&nbsp;
+				<input type="radio" name="Include_VAT" value="N">&nbsp;VAT불포함
+			</div>	
+		</td>
+	</tr>
+</table>	
+	
+<table class="table_10 linePlus mt10 multi-row-table RowSumTable tableStyle" id="request_Tbl"><!-- class="table_10" -->
+	<colgroup>
+		<col style="width:9%">
+		<col style="width:18%">
+		<col style="width:21%">
+		<col style="width:8%">
+		<col style="width:14%">
+		<col style="width:14%">
+		<col style="width:16%">
+	</colgroup>
+	<tr>
+		<td colspan="7" style="text-align:center; font-size:16px; font-weight:bold; border:none;">
+			지&nbsp;&nbsp;출&nbsp;&nbsp;내&nbsp;&nbsp;역
+		</td>
+	</tr>
+	<tr class="multi-row-control" >
+		<td colspan="7" style="text-align:right; border:none;">
+			<input type="button" value="+추가" class="usa multi-row-add" data-mode="writeOnly"><!-- onclick="addRow()"  -->
+	   		<input type="button" value="-삭제" class="usa multi-row-del-auto" data-mode="writeOnly"><!-- onclick="delRow()"  -->
+		</td>
+	</tr>
+	<tr>
+		<th>일자</th>
+		<th colspan="4">적요</th>
+		<th>지출금액</th>
+		<th>PJ코드</th>
+	</tr>
+	<tr class="multi-row-template">
+		<td align="center">
+			<input type="text" data-type="rField" data-pattern="date" data-date-format="mm-dd" name="Cost_Date" style="width:98%; text-align:center;" readonly>
+		</td>
+		<td colspan="4">
+			<textarea data-type="rField" name="Cost_Context" style="width:98%;"></textarea>
+		</td>
+		<td align="center">
+			<input type="text" data-type="rField" name="Cost" data-pattern="currency" class="sum-table-cell" style="width:98%;">
+		</td>
+		<td>
+			<textarea data-type="rField" name="ETC" style="width:98%;"></textarea>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="4" style="border-left:0px; border-bottom:0px;">
+		</td>
+		<th>총 금액</th>
+    	<td align="center">
+	        <input type="text" name="Total_Cost" id="Total_Cost" value="{{doc.BodyContext.Total_Cost}}" data-type="mField" data-pattern="currency" class="sum-table-colsum" style="width:98%; border:none;" readonly>
+	    </td>
+	    <td style="border-right:0px; border-bottom:0px;">
+		</td>
+	</tr>
+</table>
+<!--실 결재양식 내용 부분 끝 -->
+

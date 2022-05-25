@@ -1,0 +1,109 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<div class="mt10" align="right">
+	<span>VAT제외</span>
+</div>
+<table class="multi-row-table tableStyle linePlus mt5" id="sumTable"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:3%" />
+        <col style="width:12%" />
+        <col style="width:5%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:7%" />
+        <col style="width:7%" />
+        <col style="width:7%" />
+        <col style="width:7%" />
+        <col style="width:7%" />
+        <col style="width:10%" />
+        <col style="width:8%" />
+    </colgroup>
+    <tr class="multi-row-control" data-mode="writeOnly">
+    	<td colspan="12" align="right">
+    		<input type="button" id="btnAdd" value="+추가" class="multi-row-add smButton">
+	        <input type="button" id="btnDelSel" value="-삭제" class="multi-row-del-auto smButton">
+    	</td>
+    </tr>
+    <tr>
+    	<th rowspan="2">순번</th>
+    	<th rowspan="2">현장명</th>
+    	<th rowspan="2">공종</th>
+    	<th rowspan="2">준공예정일<br/>(계약준공일)</th>
+    	<th rowspan="2">기성금액<br/>(부가세제외)</th>
+    	<th colspan="5">투입비</th>
+    	<th rowspan="2">손익<br/>(기성-투입)</th>
+    	<th rowspan="2">비고</th>
+    </tr>
+    <tr>
+    	<th>재료비</th>
+    	<th>노무비</th>
+    	<th>장비비</th>
+    	<th>경비</th>
+    	<th>계</th>
+    </tr>
+    <tr class="multi-row-template multi-sum">
+    	<td class="multi-row-seq"></td>
+    	<td>
+    		<input type="text" data-type="rField" name="stieName" style="width: 99%;" />
+    	</td>
+    	<td>
+    		<input type="text" data-type="rField" name="work" style="width: 99%;" />
+    	</td>
+    	<td align="center">
+    		<input type="text" data-type="rField" name="completeDate" data-pattern="date" data-date-format="yy-mm-dd" style="width: 99%;" />
+    	</td>
+    	<td align="right">
+    		<input type="text" data-type="rField" name="madeAmt" style="width: 99%;" onblur="COST_CAL()" data-pattern="currency" />
+    	</td>
+    	<td align="right">
+    		<input type="text" data-type="rField" name="materialCost" style="width: 99%;" onblur="COST_CAL()" data-pattern="currency" />
+    	</td>
+    	<td align="right">
+    		<input type="text" data-type="rField" name="laborCost" style="width: 99%;" onblur="COST_CAL()" data-pattern="currency" />
+    	</td>
+    	<td align="right">
+    		<input type="text" data-type="rField" name="eqCost" style="width: 99%;" onblur="COST_CAL()" data-pattern="currency" />
+    	</td>
+    	<td align="right">
+    		<input type="text" data-type="rField" name="playCost" style="width: 99%;" onblur="COST_CAL()" data-pattern="currency" />
+    	</td align="right">
+    	<td>
+    		<input type="text" data-type="rField" name="totalCost" style="width: 99%; border: none;" data-pattern="currency" readonly="readonly" />
+    	</td>
+    	<td align="right">
+    		<input type="text" data-type="rField" name="proLostCost" style="width: 99%; border: none;" data-pattern="currency" readonly="readonly"/>
+    	</td>
+    	<td>
+    		<input type="text" data-type="rField" name="etc" style="width: 99%;"/>
+    	</td>
+    </tr>
+    <tr class="multi-sum">
+    	<th></th>
+    	<th>총투입비</th>
+    	<th></th>
+    	<th></th>
+    	<th align="right">
+    		<input type="text" id="sumMadeAmt" name="sumMadeAmt" data-type="mField" value="{{ doc.BodyContext.sumMadeAmt }}" data-pattern="currency" style="width:98%;" placeholder="-" readonly="readonly">
+    	</th>
+    	<th align="right">
+    		<input type="text" id="sumMaterialCost" name="sumMaterialCost" data-type="mField" value="{{ doc.BodyContext.sumMaterialCost }}" data-pattern="currency" style="width:98%;" placeholder="-" readonly="readonly">
+    	</th>
+    	<th align="right">
+    		<input type="text" id="sumLaborCost" name="sumLaborCost" data-type="mField" value="{{ doc.BodyContext.sumLaborCost }}" data-pattern="currency" style="width:98%;" placeholder="-" readonly="readonly">
+    	</th>
+    	<th align="right">
+    		<input type="text" id="sumEqCost" name="sumEqCost" data-type="mField" value="{{ doc.BodyContext.sumEqCost }}" data-pattern="currency" style="width:98%;" placeholder="-" readonly="readonly">
+    	</th>
+    	<th align="right">
+    		<input type="text" id="sumPlayCost" name="sumPlayCost" data-type="mField" value="{{ doc.BodyContext.sumPlayCost }}" data-pattern="currency" style="width:98%;" placeholder="-" readonly="readonly">
+    	</th>
+    	<th align="right">
+    		<input type="text" id="sumTotalCost" name="sumTotalCost" data-type="mField" value="{{ doc.BodyContext.sumTotalCost }}" data-pattern="currency" style="width:98%;" placeholder="-" readonly="readonly">
+    	</th>
+    	<th align="right">
+    		<input type="text" id="sumProLostCost" name="sumProLostCost" data-type="mField" value="{{ doc.BodyContext.sumProLostCost }}" data-pattern="currency" style="width:98%;" placeholder="-" readonly="readonly"> 
+    	</th>
+    	<th></th>
+    </tr>
+</table>
+<!--실 결재양식 내용 부분 끝 -->

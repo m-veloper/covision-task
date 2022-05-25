@@ -1,0 +1,110 @@
+﻿<table class="tableStyle linePlus table_10 RowSumTable multi-sum" style="margin-top: 10px;">
+	<colgroup>
+		<col style="width: 12%;">
+		<col style="width: 12%;">
+		<col style="width: 32%;">
+		<col style="width: 12%;">
+		<col style="width: 12%;">
+		<col style="width: 20%;">
+	</colgroup>
+	<tbody><tr>
+		<th rowspan="2">출장자</th>
+		<th>소속</th>
+		<td><input id="Dept" style="width: 98%;" type="text" value="{{ doc.BodyContext.Dept }}" data-type="mField"></td>
+		<th colspan="2">직위</th>
+		<td><input id="Position" style="width: 98%;" type="text" value="{{ doc.BodyContext.Position }}" data-type="mField"></td>
+	</tr>
+	<tr>
+		<th>성명</th>
+		<td><input id="PerName" style="width: 98%;" type="text" value="{{ doc.BodyContext.PerName }}" data-type="mField"></td>
+		<th colspan="2">신청일</th>
+		<td><input id="ReqDay" style="width: 98%;" type="text" readonly="" value="{{ doc.BodyContext.ReqDay }}" data-type="mField" data-pattern="date"></td>
+	</tr>
+	<tr>
+		<th>동행자</th>
+		<td colspan="2"><input id="ConPerson" style="width: 98%;" type="text" value="{{ doc.BodyContext.ConPerson }}" data-type="mField"></td>
+		<th colspan="2">출장지</th>
+		<td><input id="Location" style="width: 98%;" type="text" value="{{ doc.BodyContext.Location }}" data-type="mField"></td>
+	</tr>
+	<tr>
+		<th>출장목적</th>
+		<td style="-ms-word-break: break-all; min-height: 70px;" colspan="5"><textarea id="TripObject" style="width: 98%; overflow: auto;" rows="5" data-type="mField">{{ doc.BodyContext.TripObject }}</textarea>
+		</td>
+	</tr>
+	<tr>
+		<th>출장기간</th>
+		<td colspan="5">
+            <input title="시작일" id="SDATE" style="width: 12%; height: 20px;" required="" type="text" readonly="readonly" value="{{ doc.BodyContext.SDATE }}" data-type="mField" data-pattern="date">
+            <b>&nbsp;~&nbsp;</b>
+            <input title="종료일" id="EDATE" style="width: 12%; height: 20px;" required="" onchange="validateVacDate()" type="text" readonly="readonly" value="{{ doc.BodyContext.EDATE }}" data-type="mField" data-pattern="date">
+            &nbsp;
+            (<input id="NIGHTS" style="width: 40px; height: 20px; text-align: right;" type="text" size="5" readonly="readonly" value="{{ doc.BodyContext.NIGHTS }}" data-type="mField" data-pattern="period" data-period-ref="SDATE,EDATE"><b>박</b>  &nbsp;&nbsp;
+            <input id="DAYS" style="width: 40px; height: 20px; text-align: right;" type="text" size="5" readonly="readonly" value="{{ doc.BodyContext.DAYS }}" data-type="mField" data-pattern="period" data-period-ref="SDATE,EDATE,1"><b>일</b>)
+        </td>
+	</tr>
+	<tr>
+		<th rowspan="11">여비<br>지급<br>명세</th>
+		<th>구분</th>
+		<th colspan="2">산 출 내 역</th>
+		<th colspan="2">금액</th>
+	</tr>
+	<tr>
+		<th colspan="5">국내여비</th>
+	</tr>
+	<tr>
+		<th>교통비</th>
+		<td colspan="2"><input id="TranCon" style="width: 98%;" type="text" value="{{ doc.BodyContext.TranCon }}" data-type="mField"></td>
+		<td colspan="2"><input class="sum-table-cell" id="TranPrice" style="width: 98%;" type="text" value="{{ doc.BodyContext.TranPrice }}" data-type="mField" data-pattern="currency"></td>
+	</tr>
+	<tr>
+		<th>일비</th>
+		<td colspan="2"><input id="DayCon" style="width: 98%;" type="text" value="{{ doc.BodyContext.DayCon }}" data-type="mField"></td>
+		<td colspan="2"><input class="sum-table-cell" id="DayPrice" style="width: 98%;" type="text" value="{{ doc.BodyContext.DayPrice }}" data-type="mField" data-pattern="currency"></td>
+	</tr>
+	<tr>
+		<th>숙박비</th>
+		<td colspan="2"><input id="LodgeCon" style="width: 98%;" type="text" value="{{ doc.BodyContext.LodgeCon }}" data-type="mField"></td>
+		<td colspan="2"><input class="sum-table-cell" id="LodgePrice" style="width: 98%;" type="text" value="{{ doc.BodyContext.LodgePrice }}" data-type="mField" data-pattern="currency"></td>
+	</tr>
+	<tr>
+		<th colspan="3">지급액 합계</th>
+		<td colspan="2"><input class="sum-table-colsum" id="TotalPrice01" style="border: hidden currentColor; border-image: none; width: 98%;" type="text" readonly="" value="{{ doc.BodyContext.TotalPrice01 }}" data-type="mField" data-pattern="currency"></td>
+	</tr>
+	<tr>
+		<th colspan="5">국외여비</th>
+	</tr>
+	<tr>
+		<th>교통비</th>
+		<td colspan="2"><input id="TranCon02" style="width: 98%;" type="text" value="{{ doc.BodyContext.TranCon02 }}" data-type="mField"></td>
+		<td colspan="2"><input id="TranPrice02" style="width: 98%;" type="text" value="{{ doc.BodyContext.TranPrice02 }}" data-type="mField" data-pattern="currency"></td>
+	</tr>
+	<tr>
+		<th>일당체재비</th>
+		<td colspan="2"><input id="DayCon02" style="width: 98%;" type="text" value="{{ doc.BodyContext.DayCon02 }}" data-type="mField"></td>
+		<td colspan="2"><input id="DayPrice02" style="width: 98%;" type="text" value="{{ doc.BodyContext.DayPrice02 }}" data-type="mField" data-pattern="currency"></td>
+	</tr>
+	<tr>
+		<th>기본경비</th>
+		<td colspan="2"><input id="OrignCon" style="width: 98%;" type="text" value="{{ doc.BodyContext.OrignCon }}" data-type="mField"></td>
+		<td colspan="2"><input id="OrignPrice" style="width: 98%;" type="text" value="{{ doc.BodyContext.OrignPrice }}" data-type="mField" data-pattern="currency"></td>
+	</tr>
+	<tr>
+		<th colspan="3">지급액 합계</th>
+		<td colspan="2"><input id="TotalPrice02" style="border: hidden currentColor; border-image: none; width: 98%;" type="text" readonly="" value="{{ doc.BodyContext.TotalPrice02 }}" data-type="mField" data-pattern="currency" data-sum-ref="#TranPrice02,#DayPrice02,#OrignPrice" data-formula="+"></td>
+	</tr>
+	<tr>
+		<th>첨부</th>
+		<td colspan="5">출장관련 증빙서류  (대외공문, 초청장 등)</td>
+	</tr>
+	<tr>
+		<th>비 고</th>
+		<td colspan="5">임원 수행</td>
+	</tr>
+	<tr>
+		<td style="padding: 10px;" colspan="6">
+			<p style="line-height: 24px; fonte-weight: 600;">* 교통비 및 숙박비는 실비지급이므로 영수증 제출 (단, 숙박비는 규정금액으로 지급 가능함)<br>
+				* 비고란은 지출상의 특이사항 있을 경우 기재 (임원 수행 등)
+			</p>
+		</td>
+	</tr>
+</tbody></table>

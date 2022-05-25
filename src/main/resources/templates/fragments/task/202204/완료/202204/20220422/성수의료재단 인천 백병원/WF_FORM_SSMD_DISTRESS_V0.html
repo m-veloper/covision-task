@@ -1,0 +1,123 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        
+        <col style="width:13%" />
+        <col style="width:57%" />
+        <col style="width:13%" />
+        <col style="width:17%" />
+    </colgroup>
+     <tr>
+    	<th >성명</th>
+		<td  >
+			<input type="text" name="userName" data-type="mField" value="{{ doc.BodyContext.userName }}"    style="width:98%; " >
+           
+		</td>
+		<th >처리일</th>
+		<td  >
+			<input type="text" name="resultDate" data-type="mField" value="{{ doc.BodyContext.resultDate }}"    style="width:98%; " >
+           
+		</td>
+    </tr>
+    <tr>
+    	<th >소속</th>
+		<td >
+		<input type="text" name="userDept" data-type="mField" value="{{ doc.BodyContext.userDept }}"    style="width:98%; " >
+           
+		</td>
+		<th >처리결과</th>
+		<td  >
+			<input type="text" name="result" data-type="mField" value="{{ doc.BodyContext.result }}"    style="width:98%; " >
+           
+		</td>
+		
+    </tr>
+    
+     <tr>
+		<th >직급</th>
+		<td  >
+			<input type="text"  name="userPosition" data-type="mField" value="{{ doc.BodyContext.userPosition}}"    style="width:98%; " >
+		</td>
+		<td  colspan="2">
+		</td>
+    </tr>
+    
+   <tr>
+    <th colspan ="4">
+    	고충사항
+    </th> 
+    </tr>
+    
+    <tr>
+	    <td colspan="4" >
+		    <div style="width:99% ;height : 180px">
+		    	<textarea data-type="mField" name="distressComment" style="width:99%" rows="10" >{{ doc.BodyContext.distressComment }}</textarea>
+		    </div>
+	    </td>
+    </tr>
+    <tr>
+	    <td colspan="4" >
+	    
+			<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+			    <colgroup>
+			        
+			         <col style="width:35%" />
+			        <col style="width:30%" />
+			        <col style="width:35%" />
+			    </colgroup>
+			   
+			    
+			      <tr>
+				    <td colspan ="3" style ="text-align :center ;border-left: none; border-right: none; border-top: none; border-bottom: none;">
+					    <div style ="text-align :center  ">
+					    <br>
+					    <br>
+					    	<input type="text"  name="distressReason" data-type="mField" value="{{ doc.BodyContext.distressReason }}"    style="width:30%; " >
+					    	<span>에 의하여 고충 사항을 신고합니다.</span>
+					    </div>
+				    	
+				    </td>
+			    </tr>
+			    
+			    
+			    
+			</table>
+			
+			
+			<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+				    <colgroup>
+				    	<col style="width:75%" />
+				        <col style="width:25%" />
+				    </colgroup>
+				    
+				    
+				  
+					<tr style="border-left: none; border-right: none; border-top: none; border-bottom: none; " >
+						<td style="border-left: none; border-right: none; border-top: none !important; border-bottom: none; "   ></td>	    
+						<td align ="center" style="border-left: none; border-right: none; border-top: none !important;  border-bottom: none; " >
+						<input type="text"  autocomplete ="off" data-pattern="date" data-date-format="yy년 mm월 dd일" data-type="mField"   name="writeDate"  value="{{ doc.BodyContext.writeDate }}" style="text-align:center;width:98% ; " >
+						
+						</td>
+					</tr>
+					<tr style="border-left: none; border-right: none; border-top: none; border-bottom: none; " >
+						<td align ="right" style="border-left: none; border-right: none; border-top: none !important; border-bottom: none; "   >제출자</td>	    
+						<td align ="center"  style="border-left: none; border-right: none; border-top: none !important;  border-bottom: none; " >
+						<input type="text" name="writePerson" data-type="mField" value="{{ doc.BodyContext.writePerson}}"    style="text-align:center;width:80% ; " >(서명)
+						
+						</td>
+					</tr>
+				
+			    </table>
+			    <div align ="right"  >
+			  	  의료법인 성수의료재단 인천백병원장 귀하
+			    </div>
+    
+	    </td>
+    </tr>
+    
+</table>
+
+<!--실 결재양식 내용 부분 끝 -->

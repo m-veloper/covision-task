@@ -1,0 +1,81 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+
+
+
+
+<table class="table_10 multi-row-table RowSumTable tableStyle linePlus  mt10" id="TBLINFO" style="border-left: 1px solid #c3d7df;">
+    <colgroup>
+		  <col style="width:5%" />
+        <col style="width:12%" />
+        <col style="width:6%" />
+        <col style="width:6%" />
+        <col style="width:6%" />
+        <col style="width:10.5%" />
+        <col style="width:10.5%" />
+        <col style="width:10.5%" />
+        <col style="width:10.5%" />
+        <col style="width:10.5%" />
+        <col style="width:10.5%" />
+    </colgroup>
+    <tbody>
+    	<tr class="multi-row-control" data-mode="writeOnly">
+	        <td colspan="11" style="text-align: right">
+	            <input type="button" id="btnAdd" value="+추가" class="multi-row-add smButton">
+	            <input type="button" id="btnDelSel" value="-삭제" class="multi-row-del-auto smButton">
+	        </td>
+	    </tr>
+	   
+	    <tr>
+			<th rowspan ="2">구분</th>
+	        <th rowspan ="2">공종</th>
+	        <th colspan ="3">진행일정</th>
+	        <th colspan ="2">금액</th>
+	        <th colspan ="4">업체목록</th>
+	    </tr>
+	    <tr>
+	    	
+			<th>현설</th>
+	        <th>입장</th>
+	        <th>현장<br>투입</th>
+	        <th>토급</th>
+	        <th>실행</th>
+	        <th>1</th>
+	        <th>2</th>
+	        <th>3</th>
+	        <th>4</th>
+	        
+	    </tr>
+	    <tr class="multi-row-template multi-sum">
+	    	<th class="multi-row-autospan">외주</th>
+	        <td><input name="constructKind" style="width: 99%;" type="text" data-type="rField"></td>
+	        <td><input name="localPlan" style="width: 99%;" type="text" data-type="rField"></td>
+	        <td><input name="bid" style="width: 99%;" type="text" data-type="rField"></td>
+	        <td >
+	            <input name="localInsert" style="width: 99%;" onblur="fn_sum();" type="text" data-type="rField" data-pattern="numeral">
+	        </td>
+	        <td >
+	            <input name="subcontractAmt" style="width: 99%;" onblur="fn_sum();" type="text" data-type="rField" data-pattern="numeral" data-numeral-format="0,0">
+	        </td>
+	        
+	        <td >
+	            <input name="actionAmt" style="width: 99%;" type="text" data-type="rField" data-pattern="numeral" data-numeral-format="0,0" data-sum-ref="REQ_PRICE,REQ_EA" data-formula="({0}*{1})">
+	        </td>
+	        <td><input name="company01" style="width: 99%;" type="text" data-type="rField"></td>
+	        <td><input name="company02" style="width: 99%;" type="text" data-type="rField"></td>
+	        <td><input name="company03" style="width: 99%;" type="text" data-type="rField"></td>
+	        <td><input name="company04" style="width: 99%;" type="text" data-type="rField"></td>
+	    </tr>
+	    
+	</tbody>
+</table>
+
+<table class="tableStyle linePlus "><!-- class="table_10" -->
+  <tr>
+    	
+    	<td colspan="8">
+    		<textarea id="Context" data-type="mField" style="width: 98%;height:125px">{{ doc.BodyContext.Context }}</textarea>
+    	</td>
+    </tr>
+</table>
+<!--실 결재양식 내용 부분 끝 -->

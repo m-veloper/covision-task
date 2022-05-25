@@ -1,0 +1,441 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+
+		<colgroup>
+			<col style="width:10%" />
+	       <col style="width:23%" />
+	       <col style="width:10%" />
+	       <col style="width:23%" />
+	       
+		</colgroup>
+		<tr>
+			<td colspan ="4">
+				● 정확한 위치에 본인의 이름을 자필로 기재해주시고, 누락 되었을 시 급여가 지급되지 않습니다.<br>
+				● 대리서명이 밝혀지면 퇴사사유가 됨을 유의하시고, 꼭 본인이 서명을 해주시기 바랍니다.
+			</td>
+		</tr>
+		<tr>
+			<th>현장
+			</th>
+			<td colspan="3">
+			 <input type="text" id="localName" name="localName" data-type="mField" value="{{ doc.BodyContext.localName }}"    style="width:90%; " >
+			</td>
+			
+		</tr> 
+		<tr>
+			<th>날짜
+			</th>
+			<td colspan ="3">
+				 <input  type="date"  data-type="mField"  id = "writeDate" name="writeDate"  value="{{ doc.BodyContext.writeDate }}"  style="width:30% ;" >
+			</td>
+		</tr>  
+		</table>
+
+
+<table class="table_10 linePlus mt10 multi-row-table RowSumTable tableStyle" id="request_Tbl"><!-- class="table_10" -->
+		<colgroup>
+			<col style="width:14%">
+			<col style="width:27%">
+			<col style="width:19%">
+			<col style="width:19%">
+			<col style="width:19%">
+		</colgroup>
+	<tbody>
+	
+	
+	<tr>
+		<th >근무부서</th>
+		<th >성명</th>
+		<th >출근</th>
+		<th >퇴근</th>
+		<th >서명</th>
+	</tr>
+	
+	<tr class="multi-row-control">
+		<th class="multi-row-autospan" style="text-align:center">
+			반장<br style="">
+			<input type="button" value="추가" class="usa multi-row-add" data-mode="writeOnly"><!-- onclick="addRow()"  -->
+	   		<input type="button" value="삭제" class="usa multi-row-del-auto" data-mode="writeOnly"><!-- onclick="delRow()"  -->
+		</th>
+		
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mheadName">{{ doc.BodyContext.mheadName }}</textarea>
+		</td>
+		<td>
+			<textarea type ="time" data-type="mField" rows="2" style="width:98%" id="mheadstratwork">{{ doc.BodyContext.mheadstratwork }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mheadendwork">{{ doc.BodyContext.mheadendwork }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mheadsign">{{ doc.BodyContext.mheadsign }}</textarea>
+		</td>
+		
+	</tr>	
+	<tr class="multi-row-template" style="border-top: 1px solid #c3d7df;">
+		
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="headName"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="headstratwork"></textarea>
+		</td>
+		<td >
+			<textarea data-type="rField" rows="2" style="width:98%" name="headendwork"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="headsign"></textarea>
+		</td>
+		
+	</tr>
+	
+</tbody></table>
+
+
+
+<table class="table_10 linePlus  multi-row-table RowSumTable tableStyle" id="request_Tbl1"><!-- class="table_10" -->
+		<colgroup>
+			<col style="width:14%">
+			<col style="width:27%">
+			<col style="width:19%">
+			<col style="width:19%">
+			<col style="width:19%">
+		</colgroup>
+	<tbody>
+	<tr class="multi-row-control">
+		<th class="multi-row-autospan" style="text-align:center">
+			일반<br style="">
+			<input type="button" value="추가" class="usa multi-row-add" data-mode="writeOnly"><!-- onclick="addRow()"  -->
+	   		<input type="button" value="삭제" class="usa multi-row-del-auto" data-mode="writeOnly"><!-- onclick="delRow()"  -->
+		</th>
+		
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mnormalName">{{ doc.BodyContext.mnormalName }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mnormalstratwork">{{ doc.BodyContext.mnormalstratwork }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mnormalendwork">{{ doc.BodyContext.mnormalendwork }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mnormalsign">{{ doc.BodyContext.mnormalsign }}</textarea>
+		</td>
+		
+	</tr>	
+	<tr class="multi-row-template" style="border-top: 1px solid #c3d7df;">
+		
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="normalName"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="normalstratwork"></textarea>
+		</td>
+		<td >
+			<textarea data-type="rField" rows="2" style="width:98%" name="normalendwork"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="normalsign"></textarea>
+		</td>
+		
+	</tr>
+	
+</tbody></table>
+
+
+
+
+
+<table class="table_10 linePlus  multi-row-table RowSumTable tableStyle" id="request_Tbl2"><!-- class="table_10" -->
+		<colgroup>
+			<col style="width:14%">
+			<col style="width:27%">
+			<col style="width:19%">
+			<col style="width:19%">
+			<col style="width:19%">
+		</colgroup>
+	<tbody>
+	<tr class="multi-row-control">
+		<th class="multi-row-autospan" style="text-align:center">
+			벙커<br style="">
+			<input type="button" value="추가" class="usa multi-row-add" data-mode="writeOnly"><!-- onclick="addRow()"  -->
+	   		<input type="button" value="삭제" class="usa multi-row-del-auto" data-mode="writeOnly"><!-- onclick="delRow()"  -->
+		</th>
+		
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mbunkerName">{{ doc.BodyContext.mbunkerName }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mbunkerstratwork">{{ doc.BodyContext.mbunkerstratwork }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mbunkerendwork">{{ doc.BodyContext.mbunkerendwork }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mbunkersign">{{ doc.BodyContext.mbunkersign }}</textarea>
+		</td>
+		
+	</tr>	
+	<tr class="multi-row-template" style="border-top: 1px solid #c3d7df;">
+		
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="bunkerName"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="bunkerstratwork"></textarea>
+		</td>
+		<td >
+			<textarea data-type="rField" rows="2" style="width:98%" name="bunkerendwork"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="bunkersign"></textarea>
+		</td>
+		
+	</tr>
+	
+</tbody></table>
+
+
+
+<table class="table_10 linePlus  multi-row-table RowSumTable tableStyle" id="request_Tbl3"><!-- class="table_10" -->
+		<colgroup>
+			<col style="width:14%">
+			<col style="width:27%">
+			<col style="width:19%">
+			<col style="width:19%">
+			<col style="width:19%">
+		</colgroup>
+	<tbody>
+	<tr class="multi-row-control">
+		<th class="multi-row-autospan" style="text-align:center">
+			그린모아<br style="">
+			<input type="button" value="추가" class="usa multi-row-add" data-mode="writeOnly"><!-- onclick="addRow()"  -->
+	   		<input type="button" value="삭제" class="usa multi-row-del-auto" data-mode="writeOnly"><!-- onclick="delRow()"  -->
+		</th>
+		
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mgreenName">{{ doc.BodyContext.mgreenName }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mgreenstratwork">{{ doc.BodyContext.mgreenstratwork }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mgreenendwork">{{ doc.BodyContext.mgreenendwork }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mgreensign">{{ doc.BodyContext.mgreensign }}</textarea>
+		</td>
+		
+	</tr>	
+	<tr class="multi-row-template" style="border-top: 1px solid #c3d7df;">
+		
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="greenName"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="greenstratwork"></textarea>
+		</td>
+		<td >
+			<textarea data-type="rField" rows="2" style="width:98%" name="greenendwork"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="greensign"></textarea>
+		</td>
+		
+	</tr>
+	
+</tbody></table>
+
+
+
+
+<table class="table_10 linePlus  multi-row-table RowSumTable tableStyle" id="request_Tbl4"><!-- class="table_10" -->
+		<colgroup>
+			<col style="width:14%">
+			<col style="width:27%">
+			<col style="width:19%">
+			<col style="width:19%">
+			<col style="width:19%">
+		</colgroup>
+	<tbody>
+	<tr class="multi-row-control">
+		<th class="multi-row-autospan" style="text-align:center">
+			조경<br style="">
+			<input type="button" value="추가" class="usa multi-row-add" data-mode="writeOnly"><!-- onclick="addRow()"  -->
+	   		<input type="button" value="삭제" class="usa multi-row-del-auto" data-mode="writeOnly"><!-- onclick="delRow()"  -->
+		</th>
+		
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mlandscapeName">{{ doc.BodyContext.mlandscapeName }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mlandscapestratwork">{{ doc.BodyContext.mlandscapestratwork }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mlandscapeendwork">{{ doc.BodyContext.mlandscapeendwork }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mlandscapesign">{{ doc.BodyContext.mlandscapesign }}</textarea>
+		</td>
+		
+	</tr>	
+	<tr class="multi-row-template" style="border-top: 1px solid #c3d7df;">
+		
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="landscapeName"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="landscapestratwork"></textarea>
+		</td>
+		<td >
+			<textarea data-type="rField" rows="2" style="width:98%" name="landscapeendwork"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="landscapesign"></textarea>
+		</td>
+		
+	</tr>
+	
+</tbody></table>
+
+
+
+
+<table class="table_10 linePlus  multi-row-table RowSumTable tableStyle" id="request_Tbl5"><!-- class="table_10" -->
+		<colgroup>
+			<col style="width:14%">
+			<col style="width:27%">
+			<col style="width:19%">
+			<col style="width:19%">
+			<col style="width:19%">
+		</colgroup>
+	<tbody>
+	<tr class="multi-row-control">
+		<th class="multi-row-autospan" style="text-align:center">
+			볼마크<br style="">
+			<input type="button" value="추가" class="usa multi-row-add" data-mode="writeOnly"><!-- onclick="addRow()"  -->
+	   		<input type="button" value="삭제" class="usa multi-row-del-auto" data-mode="writeOnly"><!-- onclick="delRow()"  -->
+		</th>
+		
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mballName">{{ doc.BodyContext.mballName }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mballstratwork">{{ doc.BodyContext.mballstratwork }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mballendwork">{{ doc.BodyContext.mballendwork }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mballsign">{{ doc.BodyContext.mballsign }}</textarea>
+		</td>
+		
+	</tr>	
+	<tr class="multi-row-template" style="border-top: 1px solid #c3d7df;">
+		
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="ballName"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="ballstratwork"></textarea>
+		</td>
+		<td >
+			<textarea data-type="rField" rows="2" style="width:98%" name="ballendwork"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="ballsign"></textarea>
+		</td>
+		
+	</tr>
+	
+</tbody></table>
+
+
+
+
+<table class="table_10 linePlus  multi-row-table RowSumTable tableStyle" id="request_Tbl6"><!-- class="table_10" -->
+		<colgroup>
+			<col style="width:14%">
+			<col style="width:27%">
+			<col style="width:19%">
+			<col style="width:19%">
+			<col style="width:19%">
+		</colgroup>
+	<tbody>
+	<tr class="multi-row-control">
+		<th class="multi-row-autospan" style="text-align:center">
+			제초<br style="">
+			<input type="button" value="추가" class="usa multi-row-add" data-mode="writeOnly"><!-- onclick="addRow()"  -->
+	   		<input type="button" value="삭제" class="usa multi-row-del-auto" data-mode="writeOnly"><!-- onclick="delRow()"  -->
+		</th>
+		
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mgrassName">{{ doc.BodyContext.mgrassName }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mgrassstratwork">{{ doc.BodyContext.mgrassstratwork }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mgrassendwork">{{ doc.BodyContext.mgrassendwork }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mgrasssign">{{ doc.BodyContext.mgrasssign }}</textarea>
+		</td>
+		
+	</tr>	
+	<tr class="multi-row-template" style="border-top: 1px solid #c3d7df;">
+		
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="grassName"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="grassstratwork"></textarea>
+		</td>
+		<td >
+			<textarea data-type="rField" rows="2" style="width:98%" name="grassendwork"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="grasssign"></textarea>
+		</td>
+		
+	</tr>
+	
+</tbody></table>
+
+
+<table class="tableStyle linePlus"><!-- class="table_10" -->
+
+
+		<colgroup>
+			<col style="width:14%">
+			<col style="width:27%">
+			<col style="width:19%">
+			<col style="width:19%">
+			<col style="width:19%">
+		</colgroup>
+		<tr>
+			<th>차량운행
+			</th>
+			<td>
+			 차량번호: <input type="text" id="carNo" name="carNo" data-type="mField" value="{{ doc.BodyContext.carNo }}"    style="width:40%; " >확인
+			</td>
+			<th>총원
+			</th>
+			<td colspan="2">
+				 <input type="text" id="personNo" name="personNo" data-pattern="numeral"  data-numeral-format="0,0" data-type="mField" value="{{ doc.BodyContext.personNo }}"    style="width:70%; " >명
+			</td>
+		</tr> 
+		
+		 <tr>
+    		<th>특이사항
+			</th>
+	    	<td colspan="4">
+	    		<textarea id="specilContext" data-type="mField" style="width: 98%;height:125px">{{ doc.BodyContext.specilContext }}</textarea>
+		    </td>
+	    </tr>
+		</table>
+
+
+<!--실 결재양식 내용 부분 끝 -->

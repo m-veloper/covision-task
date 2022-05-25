@@ -1,0 +1,322 @@
+
+<table class="tableStyle linePlus table_10" style="margin-top:10px;">
+    <colgroup>
+        <col style="width:30%;"/>
+        <col style="width:70%;" />
+    </colgroup>
+    <tr>
+        <th>조직도</th>
+        <td>
+            <input type="text" data-type="mField" id="NAME" value="{{ doc.BodyContext.NAME }}" style="width:20%; border:hidden;" readonly="readonly" /> 
+            <span data-mode="writeOnly">
+                <a onclick="OpenWinEmployee('NAME');">
+                    <img alt='search' style="vertical-align: middle; cursor: pointer;" src="/HtmlSite/smarts4j_n/covicore/resources/images/covision/btn_org.gif"" width="25" height="21" />
+                </a>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <th>INPUT BOX</th>
+        <td>
+            <input type="text" data-type="mField" id="INPUT_BASIC" value="{{ doc.BodyContext.INPUT_BASIC }}" style="width:98%" /> 
+        </td>
+    </tr>
+    <tr>
+        <th>숫자만 입력(numeric)</th>
+        <td>
+            <input type="text" data-type="mField" id="INPUT_NUMERIC" value="{{ doc.BodyContext.INPUT_NUMERIC }}" style="width:98%" data-pattern="numeric" />
+        </td>
+    </tr>
+    <tr>
+        <th>숫자만 입력 + 3자리 콤마(currency)</th>
+        <td>
+            <input type="text" data-type="mField" id="INPUT_CURRENCY" value="{{ doc.BodyContext.INPUT_CURRENCY }}" style="width:98%" data-pattern="currency" />
+            <!--
+                data-digit="2" : 소수점 몇째자리
+            --> 
+        </td>
+    </tr>
+    <tr>
+        <th>다양한 숫자 포맷(numeral)</th>
+        <td>
+            <input type="text" data-type="mField" id="INPUT_NUMERAL" value="{{ doc.BodyContext.INPUT_NUMERAL }}" style="width:98%" data-pattern="numeral" data-numeral-format="0,0" />
+            <!--
+                data-numeral-format="0,0" : 10,000,000
+                data-numeral-format="$0,0" : \12,000,000
+                data-numeral-format="$0,0.00" data-numeral-nation="en" : $12,300,000.00
+            -->
+        </td>
+    </tr>
+    <tr>
+        <th>달력</th>
+        <td>
+            <input type="text" data-type="mField" id="INPUT_DATE" value="{{ doc.BodyContext.INPUT_DATE }}" style="width:98%" data-pattern="date" />
+            <!--
+                data-date-format="yy-mm-dd(DD)" : 년-월-일(요일)
+                data-date-format="yy.mm.dd" : 년.월.일
+                data-date-format="yy/mm/dd" : 년/월/일
+                data-date-format="mm-dd-yy" : 월-일-년
+                data-date-format="yy년mm월dd일DD요일" : 0000년00월00일0요일
+                class="date-year-month" : 년.월
+                data-date-format="yy년mm월" class="date-year-month" : 00년 00월
+                data-date-format="yy-mm-dd(DD)" data-date-months="3" : 현재월 포함 3개월
+                data-date-format="yy-mm-dd(DD)" data-date-months="3" data-date-min="-20"  data-date-max="+1M +10D" : 20일 전부터 1개월 10일 후까지 선택 가능 (오늘날짜 기준)
+                data-date-format="yy-mm-dd" data-date-months="3" data-date-min="2014-05-15" data-date-max="2014-06-15" : 날짜 범위 선택 제한(※ 주의사항 data-date-format과 data-date-min, data-date-max의 형태가 동일 해야 함)
+                data-date-format="yy-mm-dd(DD)" data-date-disabled="sun" : 일요일 선택 불가
+                Data-date-disabled에 사용 가능한 값 : sun,mon,tue,wed,thu,fri,sat
+            -->
+        </td>
+    </tr>
+    <tr>
+        <th>시간</th>
+        <td>
+            <input type="text" data-type="mField" id="INPUT_TIME" value="{{ doc.BodyContext.INPUT_TIME }}" style="width:98%" data-pattern="time" />
+            <!--
+                data-time-step="15" : 시간간격(예시는 15분)
+                data-time-format="H:i:s" : 시:분:초
+                data-time-format="H:i A" : hh:mm AM
+                data-time-format="g:i A" : h:m AM
+                data-time-format="H:i" : 24시
+                data-time-min="09:00am" data-time-max="6:00pm" : 선택 가능한 최초/최종 시각
+                data-time-lock="12:00pm-1:00pm" : 선택불가능시간대
+            -->
+        </td>
+    </tr>
+    <tr>
+        <th>입력 가이드</th>
+        <td>
+            <input type="text" data-type="mField" id="INPUT_PLACEHOLDER" value="{{ doc.BodyContext.INPUT_PLACEHOLDER }}" style="width:98%" placeholder="설명" />
+        </td>
+    </tr>
+    <tr>
+        <th>SELECT BOX</th>
+        <td>
+            <select data-type="mField" id="SELECT_BOX" data-element-type="sel_d_v" style="width:98%;">
+                <option value="연차">연차</option>
+                <option value="반차">반차</option>
+                <option value="선연차">선연차</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <th>CHECK BOX</th>
+        <td>
+            <div data-type="mField" data-element-type="chk_d" data-node-name="CHECK_BOX">
+                <input type="checkbox" id="CHECK_BOX_01" name="CHECK_BOX" value="Groupware" /> Groupware&nbsp;&nbsp;
+                <input type="checkbox" id="CHECK_BOX_02" name="CHECK_BOX" value="MDM" />MDM&nbsp;&nbsp;
+                <input type="checkbox" id="CHECK_BOX_03" name="CHECK_BOX" value="SSO" />SSO
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <th>RADIO</th>
+        <td>
+            <div data-type="mField" data-element-type="rdo_d" data-node-name="RADIO">
+                <input type="radio" name="RADIO" value="High" />High&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="RADIO" value="Medium" />Medium&nbsp;&nbsp;
+                <input type="radio" name="RADIO" value="Low" />Low
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <th>TEXTAREA</th>
+        <td style="min-height:70px; word-break:break-all;">
+            <textarea id="TEXTAREA" data-type="mField" rows="5" style="overflow: auto; width: 98%;">{{ doc.BodyContext.TEXTAREA }}</textarea>
+        </td>
+    </tr>
+</table>
+
+<div style="float: left; width: 100%;margin-top:10px;">
+	<span style="font-weight: bold;">MULTI ROW TABLE</span>
+</div>
+<table class="multi-row-table tableStyle linePlus table_10" id="MULTI_TABLE">
+    <colgroup>
+        <col style="width:5%;" />
+        <col style="width:12%;" />
+        <col style="width:18%;" />
+        <col style="width:18%;" />
+        <col style="width:18%;" />
+        <col style="width:18%;" />
+        <col style="width:12%;" />
+    </colgroup>
+    <tr class="multi-row-control" data-mode="writeOnly">
+        <td colspan="7" style="text-align: right;border-left:hidden; border-right:hidden; border-top:hidden">
+	    	<input type="button" id="btnAdd" value="+추가" class="multi-row-add smButton">
+	        <input type="button" id="btnDelAuto" value="-선택 삭제" class="multi-row-del smButton">
+	        <input type="button" id="btnDelAuto" value="-삭제" class="multi-row-del-auto smButton">
+        </td>
+    </tr>
+    <tr>
+        <th data-mode="writeOnly" class="multi-row-selector-wrap"><input class="multi-row-select-all" type="checkbox"></th>
+        <th data-multi-row-colspan="1,2">순번</th>
+        <th>INPUT BOX</th>
+        <th>CHECK BOX</th>
+        <th>RADIO</th>
+        <th>SELECT BOX</th>
+        <th class="multi-row-autospan">동적 행</th>
+    </tr>
+    <tr class="multi-row-template">
+        <td data-mode="writeOnly" class="multi-row-selector-wrap" style="text-align:center"><input class="multi-row-selector" type="checkbox" style="text-align:center;"></td>
+        <td data-multi-row-colspan="1,2" class="multi-row-seq" style="text-align:center">1</td>
+        <td>
+            <input type="text" data-type="rField" name="INPUT_BOX" style="width:98%" /> 
+        </td>
+        <td>
+            <div class="group" data-type="rField" data-element-type="chk_d" data-node-name="CHECK_BOX">
+                <input type="checkbox" name="CHECK_BOX_ITEM" data-face-for="CHECK_BOX" value="show" />show&nbsp;&nbsp;
+                <input type="checkbox" name="CHECK_BOX_ITEM" data-face-for="CHECK_BOX" value="hide" />hide
+                <input type="text" name="CHECK_BOX" data-face-real="y" style="display:none;" />
+            </div>
+        </td>
+        <td>
+            <div class="group" data-type="rField" data-element-type="rdo_d" data-node-name="RADIO">
+                <input type="radio" name="RADIO_ITEM" value="YES" data-face-for="RADIO">YES&nbsp;&nbsp;
+                <input type="radio" name="RADIO_ITEM" value="NO" data-face-for="RADIO">NO
+                <input type="text" name="RADIO" style="display: none;" data-type="rField" data-face-real="y">
+            </div>
+        </td>
+        <td>
+            <select data-type="rField" name="SELECT_BOX" data-element-type="sel_d_t">
+                <option value="연차">연차</option>
+                <option value="반차">반차</option>
+                <option value="선연차">선연차</option>
+            </select>
+        </td>
+    </tr>
+</table>
+
+<div style="float: left; width: 100%;margin-top:10px;">
+	<span style="font-weight: bold;">SUM TABLE</span>
+</div>
+<table class="tableStyle linePlus table_10 RowSumTable">
+    <colgroup>
+        <col style="width:20%;" />
+        <col style="width:20%;" />
+        <col style="width:20%;" />
+        <col style="width:20%;" />
+        <col style="width:20%;" />
+    </colgroup>
+    <tr>
+        <th>성명</th>
+        <th>비용1</th>
+        <th>비용2</th>
+        <th>비용3</th>
+        <th>합계</th>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" data-type="mField" id="NAME_1" value="{{ doc.BodyContext.NAME_1 }}" style="width:98%" />
+        </td>
+        <td>
+            <input type="text" data-type="mField" id="COST_A_1" value="{{ doc.BodyContext.COST_A_1 }}" style="width:98%" data-pattern="currency" class="sum-table-cell" />
+        </td>
+        <td>
+            <input type="text" data-type="mField" id="COST_B_1" value="{{ doc.BodyContext.COST_B_1 }}" style="width:98%" data-pattern="currency" class="sum-table-cell" />
+        </td>
+        <td>
+            <input type="text" data-type="mField" id="COST_C_1" value="{{ doc.BodyContext.COST_C_1 }}" style="width:98%" data-pattern="currency" class="sum-table-cell" />
+        </td>
+        <td>
+            <input type="text" data-type="mField" id="ROWSUM_1" value="{{ doc.BodyContext.ROWSUM_1 }}" style="width:98%; border:hidden;" data-pattern="currency" class="sum-table-rowsum" readonly="readonly" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" data-type="mField" id="NAME_2" value="{{ doc.BodyContext.NAME_2 }}" style="width:98%" />
+        </td>
+        <td>
+            <input type="text" data-type="mField" id="COST_A_2" value="{{ doc.BodyContext.COST_A_2 }}" style="width:98%" data-pattern="currency" class="sum-table-cell" />
+        </td>
+        <td>
+            <input type="text" data-type="mField" id="COST_B_2" value="{{ doc.BodyContext.COST_B_2 }}" style="width:98%" data-pattern="currency" class="sum-table-cell" />
+        </td>
+        <td>
+            <input type="text" data-type="mField" id="COST_C_2" value="{{ doc.BodyContext.COST_C_2 }}" style="width:98%" data-pattern="currency" class="sum-table-cell" />
+        </td>
+        <td>
+            <input type="text" data-type="mField" id="ROWSUM_2" value="{{ doc.BodyContext.ROWSUM_2 }}" style="width: 98%; border: hidden;" data-pattern="currency" class="sum-table-rowsum" readonly="readonly" />
+        </td>
+    </tr>
+    <tr>
+        <th>합계</th>
+        <td>
+            <input type="text" data-type="mField" id="COLSUM_1" value="{{ doc.BodyContext.COLSUM_1 }}" style="width: 98%; border: hidden;" data-pattern="currency" class="sum-table-colsum" readonly="readonly" />
+        </td>
+        <td>
+            <input type="text" data-type="mField" id="COLSUM_2" value="{{ doc.BodyContext.COLSUM_2 }}" style="width: 98%; border: hidden;" data-pattern="currency" class="sum-table-colsum" readonly="readonly" />
+        </td>
+        <td>
+            <input type="text" data-type="mField" id="COLSUM_3" value="{{ doc.BodyContext.COLSUM_3 }}" style="width: 98%; border: hidden;" data-pattern="currency" class="sum-table-colsum" readonly="readonly" />
+        </td>
+        <td>
+            <input type="text" data-type="mField" id="TOTSUM" value="{{ doc.BodyContext.TOTSUM }}" style="width: 98%; border: hidden;" data-pattern="currency" class="sum-table-total" readonly="readonly" />
+        </td>
+    </tr>
+</table>
+
+<div style="float: left; width: 100%;margin-top:10px;">
+	<span style="font-weight: bold;">MULTI ROW TABLE + SUM TABLE</span>
+</div>
+<table class="multi-row-table tableStyle linePlus table_10 RowSumTable" id="MULTI_SUM_TABLE">
+    <colgroup>
+        <col style="width:20%;" />
+        <col style="width:20%;" />
+        <col style="width:20%;" />
+        <col style="width:20%;" />
+        <col style="width:20%;" />
+    </colgroup>
+    <tr class="multi-row-control" data-mode="writeOnly">
+        <td colspan="5" style="text-align: right;border-left:hidden; border-right:hidden; border-top:hidden">
+	    	<input type="button" id="btnAdd" value="+추가" class="multi-row-add smButton">
+	        <input type="button" id="btnDelSel" value="-삭제" class="multi-row-del-auto smButton">
+        </td>
+    </tr>
+    <tr>
+        <th>성명</th>
+        <th>비용1</th>
+        <th>비용2</th>
+        <th>비용3</th>
+        <th>합계</th>
+    </tr>
+    <tr class="multi-row-template">
+        <td>
+            <input type="text" data-type="rField" name="NAME" style="width:98%" /> 
+        </td>
+        <td>
+            <input type="text" data-type="rField" name="COST_A" style="width:98%" data-pattern="currency" class="sum-table-cell" />
+        </td>
+        <td>
+            <input type="text" data-type="rField" name="COST_B" style="width:98%" data-pattern="currency" class="sum-table-cell" />
+        </td>
+        <td>
+            <input type="text" data-type="rField" name="COST_C" style="width:98%" data-pattern="currency" class="sum-table-cell" />
+        </td>
+        <td>
+            <input type="text" data-type="rField" name="ROWSUM" style="width:98%" data-pattern="currency" class="sum-table-rowsum" />
+        </td>
+    </tr>
+    <tr>
+        <th>합계</th>
+        <td>
+            <input type="text" data-type="mField" id="MULTI_COLSUM_1" value="{{ doc.BodyContext.MULTI_COLSUM_1 }}" style="width: 98%; border: hidden;" data-pattern="currency" class="sum-table-colsum" readonly="readonly" />
+        </td>
+        <td>
+            <input type="text" data-type="mField" id="MULTI_COLSUM_2" value="{{ doc.BodyContext.MULTI_COLSUM_2 }}" style="width: 98%; border: hidden;" data-pattern="currency" class="sum-table-colsum" readonly="readonly" />
+        </td>
+        <td>
+            <input type="text" data-type="mField" id="MULTI_COLSUM_3" value="{{ doc.BodyContext.MULTI_COLSUM_3 }}" style="width: 98%; border: hidden;" data-pattern="currency" class="sum-table-colsum" readonly="readonly" />
+        </td>
+        <td>
+            <input type="text" data-type="mField" id="MULTI_TOTSUM" value="{{ doc.BodyContext.MULTI_TOTSUM }}" style="width: 98%; border: hidden;" data-pattern="currency" class="sum-table-total" readonly="readonly" />
+        </td>
+    </tr>
+</table>
+
+<!--실 결재양식 내용 부분 시작 -->
+<div style="margin-top:10px; padding:4px 6px 4px 6px;vertical-align:text-top;border:1px solid #888888;">
+<!-- 에디터 시작 -->
+<div id="divWebEditorContainer" data-element-type="editor"></div>
+<!-- 에디터 종료 -->
+</div>
+<!--실 결재양식 내용 부분 끝 -->
+ 

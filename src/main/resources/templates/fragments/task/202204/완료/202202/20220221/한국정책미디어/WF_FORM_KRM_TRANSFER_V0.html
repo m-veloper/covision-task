@@ -1,0 +1,112 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+
+		<colgroup>
+			<col style="width:15%" />
+	       <col style="width:35%" />
+	       <col style="width:15%" />
+	       <col style="width:35%" />
+		</colgroup>  
+		
+		<tr>
+    	<th >부서명</th>
+		<td  >
+		<input type="text" id="userDept" name="userDept" data-type="mField" value="{{ doc.BodyContext.userDept }}"    style="width:90%; " >
+           
+		</td>
+		<th >직위</th>
+		<td  >
+		<input type="text" id="userPosition" name="userPosition" data-type="mField" value="{{ doc.BodyContext.userPosition }}"    style="width:90%; " >
+           
+		</td>
+	    </tr>
+	    <tr>
+	   		<th >인계일</th>
+			<td  >
+			 <input type="text" data-type="mField" id="transferDay" name = "transferDay" value="{{ doc.BodyContext.transferDay }}"  size="10" style="width : 50%; text-align :center ; " data-pattern="date"  >		 	  
+			</td>
+	    	<th >인계사유</th>
+			<td  >
+			<input type="text" id="transferReason" name="transferReason" data-type="mField" value="{{ doc.BodyContext.transferReason }}"    style="width:90%; " >
+	           
+			</td>
+			
+	    </tr>
+	   
+		<tr>
+    	<th >인계자명</th>
+		<td  >
+		<input type="text" id="transferPerson1" name="transferPerson1" data-type="mField" value="{{ doc.BodyContext.transferPerson1 }}"    style="width:90%; " >(인)
+           
+		</td>
+		<th >인수자명</th>
+		<td  >
+		<input type="text" id="transferPerson2" name="transferPerson2" data-type="mField" value="{{ doc.BodyContext.transferPerson2 }}"    style="width:90%; " >(인)
+           
+		</td>
+	    </tr>
+	    
+     	<tr>
+			<td colspan="4" style="font-size:14px; border-top: none !important;  text-align :center ; "><b>업무사항 (필요 시 별도 서류 첨부할 것)<b></b>
+			</td>
+		</tr>
+		<tr>
+		<th >기본업무</th>
+		<td colspan="3">
+				<div style="width:99%">
+			    <textarea data-type="mField" id="basicWork" style="width:99%" rows="10" >{{ doc.BodyContext.basicWork }}</textarea>
+			    </div>
+			</td>
+			
+		</tr>
+		<tr>
+		<th >진행업무</th>
+		<td colspan="3">
+				<div style="width:99%">
+			    <textarea data-type="mField" id="startingWork" style="width:99%" rows="10" >{{ doc.BodyContext.startingWork }}</textarea>
+			    </div>
+			</td>
+			
+		</tr>
+		
+		 	<tr>
+			<td colspan="4" style="font-size:14px;  border-top: none !important;   text-align :center ;"><b>서류사항<b></b>
+			</td>
+		</tr>
+		<tr>
+		<th >주요서류</th>
+		<td colspan="3">
+				<div style="width:99%">
+			    <textarea data-type="mField" id="mainPaper" style="width:99%" rows="10" >{{ doc.BodyContext.mainPaper }}</textarea>
+			    </div>
+			</td>
+			
+		</tr>
+		<tr>
+		<th >반품 장비/기기</th>
+		<td colspan="3">
+				<div style="width:99%">
+			    <textarea data-type="mField" id="returnEq" style="width:99%" rows="10" >{{ doc.BodyContext.returnEq }}</textarea>
+			    </div>
+			</td>
+			
+		</tr>
+		<tr>
+		<th >계정정보</th>
+		<td colspan="3">
+				<div style="width:99%">
+			    <textarea data-type="mField" id="accoutInfo" style="width:99%" rows="10" >{{ doc.BodyContext.accoutInfo }}</textarea>
+			    </div>
+			</td>
+			
+		</tr>
+</table>
+
+
+
+
+<!--실 결재양식 내용 부분 끝 -->

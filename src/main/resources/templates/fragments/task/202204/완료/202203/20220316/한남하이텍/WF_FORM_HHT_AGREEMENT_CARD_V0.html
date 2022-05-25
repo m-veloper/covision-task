@@ -1,0 +1,124 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:15%" />
+        <col style="width:15%" />
+        <col style="width:15%" />
+        <col style="width:15%" />
+        <col style="width:15%" />
+        <col style="width:15%" />
+    </colgroup>
+    <tr>
+    	<th>구  분</th>
+    	<td colspan="5" style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="reqYn">
+    			기명법인카드&nbsp;&nbsp;
+    			&nbsp;발급&nbsp;<input type="radio" name="reqYn" value="Y" checked="checked"/>
+    			해지&nbsp;<input type="radio" name="reqYn" value="N" />
+    		</div>
+    	</td>
+    </tr>
+    <tr>
+    	<th>소  속</th>
+    	<td colspan="2">
+    		<input type="text" name="blng" data-type="mField" value="{{ doc.BodyContext.blng }}"  style="width:95%;" />
+    	</td>
+    	<th>부  서</th>
+    	<td colspan="2">
+    		<input type="text" name="dptmnt" data-type="mField" value="{{ doc.BodyContext.dptmnt }}"  style="width:95%;" />
+    	</td>
+    </tr>
+    <tr>
+    	<th>사  번</th>
+    	<td colspan="2">
+    		<input type="text" name="emplyNum" data-type="mField" value="{{ doc.BodyContext.emplyNum }}"  style="width:95%;" />
+    	</td>
+    	<th>직  급</th>
+    	<td colspan="2">
+    		<input type="text" name="rank" data-type="mField" value="{{ doc.BodyContext.rank }}"  style="width:95%;" />
+    	</td>
+    </tr>
+    <tr>
+    	<th>이  름</th>
+    	<td><input type="text" name="usrNm" data-type="mField" value="{{ doc.BodyContext.usrNm }}"  style="width:95%;" /></td>
+    	<th>영문 성</th>
+    	<td><input type="text" name="engLstNm" data-type="mField" value="{{ doc.BodyContext.engLstNm }}"  style="width:95%;" /></td>
+    	<th>영문 이름</th>
+    	<td><input type="text" name="engNm" data-type="mField" value="{{ doc.BodyContext.engNm }}"  style="width:95%;" /></td>
+    </tr>
+    <tr>
+    	<th>생년월일</th>
+    	<td colspan="2"><input type="text" name="brthDt" data-type="mField" value="{{ doc.BodyContext.brthDt }}"  style="width:95%;" /></td>
+    	<th>이메일</th>
+    	<td colspan="2"><input type="text" name="email" data-type="mField" value="{{ doc.BodyContext.email }}"  style="width:95%;" /></td>
+    </tr>
+    <tr>
+    	<th>휴대폰번호</th>
+    	<td colspan="2"><input type="text" name="phoneNum" data-type="mField" value="{{ doc.BodyContext.phoneNum }}"  style="width:95%;" /></td>
+    	<th>내선번호</th>
+    	<td colspan="2"><input type="text" name="extnsnNum" data-type="mField" value="{{ doc.BodyContext.extnsnNum }}"  style="width:95%;" /></td>
+    </tr>
+    <tr>
+    	<th>은  행</th>
+    	<td><input type="text" name="bank" data-type="mField" value="{{ doc.BodyContext.bank }}"  style="width:95%;" /></td>
+    	<th>계좌번호</th>
+    	<td colspan="3"><input type="text" name="accntNum" data-type="mField" value="{{ doc.BodyContext.accntNum }}"  style="width:95%;" placeholder="!! 급여계좌 입력해주세요 !!"/></td>
+    </tr>
+    <tr>
+    	<th>입사일</th>
+    	<td colspan="2"><input type="text" data-type="mField" data-pattern="date" data-date-format="yy년 mm월 dd일" name="joinDt" value="{{ doc.BodyContext.joinDt }}"  style="width:95%; text-align: center;"></td>
+    	<th>퇴사일</th>
+    	<td colspan="2"><input type="text" data-type="mField" data-pattern="date" data-date-format="yy년 mm월 dd일" name="leaveDt" value="{{ doc.BodyContext.leaveDt }}"  style="width:95%; text-align: center;"></td>
+    </tr>
+    <tr>
+    	<th>특이사항</th>
+    	<td colspan="5">
+    		<input type="text" name="notice" data-type="mField" value="{{ doc.BodyContext.notice }}"  style="width:95%;" />
+    	</td>
+    </tr>
+    <tr>
+    	<th>첨부서류</th>
+    	<td colspan="5">
+    		<span>신분증 사본, 통장사본</span>
+    	</td>
+    </tr>
+</table>
+<table class="tableStyle linePlus"><!-- class="table_10" -->
+	<colgroup>
+		<col style="width:*" />
+	</colgroup>
+	<tr>
+		<td style="border-top: none;">
+			<br/>
+			<p style="font-weight: bold;">*신청인은 아래 [기명법인카드 발급을 위한 개인정보 처리 필수 동의서]의 내용을 전부 확인하였습니다. </p>
+			<p class="mt5" style="font-weight: bold;">*신청인은 동의서의 내용에 대해 전부 동의하므로, 기명법인카드의 발급을 신청합니다.</p>
+			<br/>
+			<p style="font-weight: bold;">[기명법인카드 발급을 위한 개인정보 처리 필수 동의서]</p>
+			<br/>
+			<p style="font-weight: bold;">※임직원 권익보호: 본 동의를 거부하는 경우에 법인기명카드 발급이 제한됩니다.</p>
+			<p class="mt5" style="font-weight: bold;">또한 동의하시더라도 경영지원본부 재무팀을 통해 철회하거나 중단을 요청할 수 있습니다.</p>
+			<br/>
+			<p style="font-weight: bold;">1.개인정보의 수집ㆍ이용에 관한 사항</p>
+			<p class="mt5">- 목적: 법인 기명카드 발급 및 관리의 목적</p>
+			<p class="mt5">- 내용: 소속, 직급, 이름, 영문명, 주민등록번호, 휴대폰번호, 이메일주소, 출금은행계좌</p>
+			<p class="mt5">- 보유·이용기간: 퇴사 후 기명법인카드 최종사용액이 정상출금 되는 일까지</p>
+			<br/>
+			<p style="font-weight: bold;">2. 개인정보의 조회에 관한 사항</p>
+			<p class="mt5">- 목적: 법인 기명카드 발급 및 관리의 목적</p>
+			<p class="mt5">- 내용: 소속, 직급, 이름, 영문명, 주민등록번호, 휴대폰번호, 이메일주소, 출금은행계좌</p>
+			<p class="mt5">- 보유·이용기간: 퇴사 후 기명법인카드 최종사용액이 정상출금 되는 일까지</p>
+			<br/>
+			<p style="font-weight: bold;">3. 개인정보의 제공에 관한 사항</p>
+			<p class="mt5">- 제공받는 자: 재직중인 회사 및 법인기명카드 발급 금융기관</p>
+			<p class="mt5">- 목적: 법인 기명카드 발급 및 관리의 목적</p>
+			<p class="mt5">- 내용: 소속, 직급, 이름, 영문명, 주민등록번호, 휴대폰번호, 이메일주소, 출금은행계좌</p>
+			<p class="mt5">- 제공받는 자의 보유ㆍ이용기간: 퇴사 후 기명법인카드 최종사용액이 정상출금 되는 일까지</p>
+			<br/>
+			<p style="font-weight: bold;">4. 개인정보 파기</p>
+			<p class="mt5">- 소속, 직급, 이름, 영문명, 주민등록번호, 휴대폰번호, 이메일주소, 출금은행계좌는 퇴사 후 기명</p>
+			<p class="mt5">법인카드 최종사용액이 정상출금 되는 일까지 보관하며 관련법률을 준수 최대 5년간 보관함</p>
+		</td>
+	</tr>
+</table>
+<!--실 결재양식 내용 부분 끝 -->

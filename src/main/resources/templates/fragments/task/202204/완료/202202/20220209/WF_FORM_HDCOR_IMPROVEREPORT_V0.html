@@ -1,0 +1,269 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+		<colgroup>
+			<col style="width:10%" />
+	       	<col style="width:15%" />
+	       	<col style="width:10%" />
+	       	<col style="width:15%" />
+	       	<col style="width:10%" />
+	       	<col style="width:15%" />
+	       	<col style="width:10%" />
+	       	<col style="width:15%" />
+		</colgroup> 
+		<tr>
+			<th>작성일자
+			</th>
+			<td colspan="3" >
+	         <input type="text" data-type="mField" id="writeDay" name = "writeDay" value="{{ doc.BodyContext.writeDay }}" readonly="" size="10" style="width : 90%" data-pattern="date" required="">
+		
+	        </td>
+	        <th>작성자
+			</th>
+			<td  colspan="3" >
+			<input type="text" id="userName" name="userName" data-type="mField" value="{{ doc.BodyContext.userName }}"    style="width:90%; " >
+	           
+			</td>
+	       	
+		</tr> 
+		<tr>
+			<th>개선공정
+			</th>
+			<td   >
+			<input type="text" id="improveProcess" name="improveProcess" data-type="mField" value="{{ doc.BodyContext.improveProcess }}"    style="width:90%; " >
+	           
+			</td>
+			<th>작업설비
+			</th>
+			<td   >
+			<input type="text" id="equipment" name="equipment" data-type="mField" value="{{ doc.BodyContext.equipment }}"    style="width:90%; " >
+	           
+			</td>
+			<th>금형
+			</th>
+			<td   >
+			<input type="text" id="mold" name="mold" data-type="mField" value="{{ doc.BodyContext.mold }}"    style="width:90%; " >
+	           
+			</td>
+			<th>Cavity
+			</th>
+			<td   >
+			<input type="text" id="Cavity" name="Cavity" data-type="mField" value="{{ doc.BodyContext.Cavity }}"    style="width:90%; " >
+	           
+			</td>
+	       	
+		</tr>   
+		<tr>
+			<th>시작일자
+			</th>
+			<td colspan="3" >
+	          <input type="text" data-type="mField" id="startDay" title ="시작일자" name = "startDay" value="{{ doc.BodyContext.startDay }}" readonly="" size="10" style="width : 90%" data-pattern="date"  onchange="calSDATEEDATE('this');" required="">
+	        </td>
+	        <th>종료일자
+			</th>
+			<td colspan="3" >
+	           <input type="text" data-type="mField" id="closeDay" title ="종료일자" name = "closeDay" value="{{ doc.BodyContext.closeDay }}" readonly="" size="10" style="width : 90%" data-pattern="date"  onchange="calSDATEEDATE('this');" required="">
+	        </td>
+	       	
+		</tr>
+		<tr>
+			<th>개선사유
+			</th>
+			<td colspan ="7">
+	            <select data-type="mField" id="improveSELECT_BOX" data-element-type="sel_d_v" style="width:98%;">
+	                <option value="금형 개선">금형 개선</option>
+	                <option value="공정 개선(성형)">공정 개선(성형)</option>
+	                <option value="공정 개선(성형외)">공정 개선(성형외)</option>
+	                <option value="불량 개선">불량 개선</option>
+	                <option value="물류 개선">물류 개선</option>
+	                <option value="기타">기타</option>
+	            </select>
+	        </td>	       	
+		</tr>
+		
+		
+
+
+</table>
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+	<colgroup>
+		<col style="width:13%" />
+       	<col style="width:17%" />
+       	<col style="width:13%" />
+       	<col style="width:17%" />
+       	<col style="width:13%" />
+       	<col style="width:17%" />
+       	
+	</colgroup> 
+	
+	<tr>
+		<th colspan="6" >개선내용</th>
+		</tr>
+		<tr>
+        
+        <td colspan="6"style="min-height:70px; word-break:break-all;">
+            <textarea id="improveComment" data-type="mField" rows="5" style="overflow: auto; width: 98%;">{{ doc.BodyContext.improveComment }}</textarea>
+        </td>
+    </tr>
+    <tr>
+    	<th>작업자
+		</th>
+		<td   >
+			<input type="text" id="workerName" name="workerName" data-type="mField" value="{{ doc.BodyContext.workerName }}"    style="width:90%; " >           
+		</td>
+		<th>비가동 시간
+		</th>
+		<td   >
+			<input type="text" id="operationTime" name="operationTime" data-type="mField" value="{{ doc.BodyContext.operationTime }}"    style="width:90%; " >           
+		</td>
+		<th>총 비가동 시간
+		</th>
+		<td   >
+			<input type="text" id="nonOperationTime" name="nonOperationTime" data-type="mField" value="{{ doc.BodyContext.nonOperationTime }}"    style="width:90%; " >           
+		</td>
+		
+    </tr>
+</table>
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+	<colgroup>
+		<col style="width:50%" />
+       	<col style="width:50%" />
+       	
+	</colgroup> 
+	
+	<tr>
+		<th colspan ="2">개선 내용 및 진행일정
+		</th>
+	</tr>
+	<tr>
+		<td colspan ="2">
+			<!-- 에디터 시작 -->
+		   <div id="divWebEditorContainer" data-element-type="editor"></div>
+		   <!-- 에디터 끝 -->
+		</td>
+	</tr>
+</table>
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+	<colgroup>
+		<col style="width:13%" />
+       	<col style="width:17%" />
+       	<col style="width:13%" />
+       	<col style="width:17%" />
+       	<col style="width:13%" />
+       	<col style="width:17%" />
+       	
+	</colgroup> 
+	
+	<tr>
+		<th colspan ="6">절감금액</th>
+	</tr>
+    <tr>
+    	<th>조치
+		</th>
+		<td   >
+			<textarea id="reductionAction" data-type="mField" rows="2" style="overflow: auto; width: 98%;">{{ doc.BodyContext.reductionAction }}</textarea>
+		</td>
+		<th>내용
+		</th>
+		<td   >
+			<textarea id="reductionComment" data-type="mField" rows="2" style="overflow: auto; width: 98%;">{{ doc.BodyContext.reductionComment }}</textarea>      
+		</td>
+		<th>비용
+		</th>
+		<td   >
+			<input type="text" id="reductionCost" name="reductionCost" data-pattern="currency" data-type="mField" value="{{ doc.BodyContext.reductionCost }}"    style="width:90%; " >           
+		</td>
+    </tr>
+    <tr>
+		<th style ="text">첨부</th>
+		<td colspan="3"  >
+			<input type="text" id="attach" name="attach" data-type="mField" value="{{ doc.BodyContext.attach }}"    style="width:90%; " >           
+		</td>
+		<th>총액
+		</th>
+		<td   >
+			<input type="text" id="totalCost" name="totalCost" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.totalCost }}"    style="width:90%; " >           
+		</td>
+	</tr>
+		
+</table>	
+
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+	<colgroup>
+		<col style="width:13%" />
+       	<col style="width:20%" />
+       	<col style="width:13%" />
+       	<col style="width:20%" />
+       	<col style="width:13%" />
+       	<col style="width:20%" />
+       	
+	</colgroup> 
+	
+	<tr>
+		<th colspan ="4">협조부서 담당자 및 첨부 목록</th>
+		<th colspan ="2">금형 및 설비 수리 일정</th>
+	</tr>
+    <tr>
+		<th >품질팀</th>
+		<td  >
+			<input type="text" id="qualityTeam" name="qualityTeam" data-type="mField" value="{{ doc.BodyContext.qualityTeam }}"    style="width:90%; " >           
+		</td>
+		<th>연구소
+		</th>
+		<td   >
+			<input type="text" id="institute" name="institute" data-type="mField" value="{{ doc.BodyContext.institute }}"    style="width:90%; " >           
+		</td>
+		<th>수리업체
+		</th>
+		<td   >
+			<input type="text" id="repairCompany" name="repairCompany" data-type="mField" value="{{ doc.BodyContext.repairCompany }}"    style="width:90%; " >           
+		</td>
+	</tr>
+	
+	 <tr>
+		<th >생관팀</th>
+		<td   >
+			<input type="text" id="productionManagedTeam" name=""productionManagedTeam"" data-type="mField" value="{{ doc.BodyContext.productionManagedTeam }}"    style="width:90%; " >           
+		</td>
+		<th>개발팀
+		</th>
+		<td   >
+			<input type="text" id="developmentTeam" name="developmentTeam" data-type="mField" value="{{ doc.BodyContext.developmentTeam }}"    style="width:90%; " >           
+		</td>
+		<th>출고일자
+		</th>
+		<td   >
+			<input type="text" data-type="mField" id="launchDay" name = "launchDay" value="{{ doc.BodyContext.launchDay }}" readonly="" size="10" style="width : 90%" data-pattern="date" > 	   	  
+		</td>
+	</tr>
+	<tr>
+		<th >생산팀</th>
+		<td   >
+			<input type="text" id="productionTeam" name="productionTeam" data-type="mField" value="{{ doc.BodyContext.productionTeam }}"    style="width:90%; " >           
+		</td>
+		<th>관리팀
+		</th>
+		<td   >
+			<input type="text" id="managedTeam" name="managedTeam" data-type="mField" value="{{ doc.BodyContext.managedTeam }}"    style="width:90%; " >           
+		</td>
+		<th>입고일자
+		</th>
+		<td   >
+			<input type="text" data-type="mField" id="inboundDay" name = "inboundDay" value="{{ doc.BodyContext.inboundDay }}" readonly="" size="10" style="width : 90%" data-pattern="date" > 	  
+		</td>
+	</tr>
+		
+</table>	
+
+
+   
+<!--실 결재양식 내용 부분 끝 -->

@@ -1,0 +1,44 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:20%" />
+        <col style="width:80%" />
+    </colgroup>
+    <tr>
+    	<th>구&nbsp;&nbsp;&nbsp;&nbsp;분</th>
+    	<th>내&nbsp;&nbsp;&nbsp;&nbsp;용</th>
+    </tr>
+    <tr>
+    	<th>설비개요</th>
+    	<td>
+    		<textarea data-type="mField" name="facOverview" rows="5" style="width:99%; overflow-y:auto;">{{ doc.BodyContext.facOverview }}</textarea>
+    	</td>
+    </tr>
+    <tr>
+    	<th>고장현황</th>
+    	<td>
+    		<textarea data-type="mField" name="failureStatus" rows="5" style="width:99%; overflow-y:auto;">{{ doc.BodyContext.failureStatus }}</textarea>
+    	</td>
+    </tr>
+    <tr>
+    	<th>조치계획</th>
+    	<td>
+    		<textarea data-type="mField" name="actionPlan" rows="3" style="width:99%; overflow-y:auto;">{{ doc.BodyContext.actionPlan }}</textarea>
+    	</td>
+    </tr>
+    <tr>
+    	<th>참고사항</th>
+    	<td>
+    		<textarea data-type="mField" name="reference" rows="3" style="width:99%; overflow-y:auto;">{{ doc.BodyContext.reference }}</textarea>
+    	</td>
+    </tr>
+    <tr align="center">
+    	<td colspan="2">
+    		<p class="mt30" style="font-weight: bold;">2022. <input type="text" name="wrtMonth" data-type="mField" value="{{ doc.BodyContext.wrtMonth }}" style="width:5%;">. <input type="text" name="wrtDay" data-type="mField" value="{{ doc.BodyContext.wrtDay }}" style="width:5%;" >.</p>
+    		<p class="mt10" style="font-size:14px; font-weight: bold;">보고자 : <input type="text" name="wrtNm" data-type="mField" value="{{ doc.BodyContext.wrtNm }}" style="width:15%;" ></p>
+    		<p class="mt20 mb20" style="font-size:22px; font-weight: bold;">대전광역시평송청소년문화센터장 귀하</p>
+    	</td>
+    </tr>
+</table>
+<!--실 결재양식 내용 부분 끝 -->

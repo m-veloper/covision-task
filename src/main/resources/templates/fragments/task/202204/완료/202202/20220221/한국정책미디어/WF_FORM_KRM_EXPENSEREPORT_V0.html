@@ -1,0 +1,132 @@
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+		<colgroup>
+			<col style="width:16%" />
+	       <col style="width:16%" />
+	       <col style="width:16%" />
+	       <col style="width:16%" />
+	       <col style="width:16%" />
+	       <col style="width:17%" />
+		</colgroup>  
+		<tr>
+			<td colspan="6"style="font-size:14px; border-left: none; border-right: none; border-top: none !important;   ">
+			<div style="font-size:14px; text-align :center ;" ><b>아래와 같이 지출 결의서를 제출합니다.<b></b>
+			</div>
+			</td>
+		
+		</tr>
+		<tr >
+		<th >금액</th>
+		<td colspan="5" >
+		<input style ="border : none; text-align :center ;width :99%" type="text" readonly="readonly"  id="requestAmt" name="requestAmt" data-type="mField" value="{{ doc.BodyContext.requestAmt }}"    style="width:90%;text-align :left ; " >
+		
+		</tr>
+		<tr>
+			<th >발의</th>
+			<td  >
+			 <input type="text" data-type="mField" id="motionDay" name = "motionDay" value="{{ doc.BodyContext.motionDay }}"  size="10" style="width : 90%; text-align :center ; " data-pattern="date"   >
+		 	  
+			</td>
+	    	<th >부서</th>
+			<td  >
+			<input type="text" id="userDept" name="userDept" data-type="mField" value="{{ doc.BodyContext.userDept }}"    style="width:90%; " >
+	           
+			</td>
+			<th >성명</th>
+			<td  >
+			<input type="text" id="userName" name="userName" data-type="mField" value="{{ doc.BodyContext.userName }}"    style="width:90%; " >
+	           
+			</td>
+	    </tr>
+	    <tr>
+	    	<th >지출</th>
+			<td  >
+			 <input type="text" data-type="mField" id="expenseDay" name = "expenseDay" value="{{ doc.BodyContext.expenseDay }}"  size="10" style="width : 90%; text-align :center ; " data-pattern="date"  >
+			 
+			  
+			</td>
+			<th colspan="2">구분/계정과목</th>
+			<td colspan="2" >
+			 
+			 <input type="text" id="accDiv" name="accDiv" data-type="mField" value="{{ doc.BodyContext.accDiv }}"    style="width:90%; " >
+		 	 
+			</td>
+	    </tr>
+</table>
+
+
+<table class="table_10 multi-row-table RowSumTable tableStyle linePlus" id="TBLINFO" style="border-left: 1px solid #c3d7df;">
+    <colgroup>
+       <col style="width:16%" />
+	       <col style="width:32%" />
+	       <col style="width:16%" />
+	       <col style="width:16%" />
+	       <col style="width:17%" />
+    </colgroup>
+    <tbody>
+	    <tr class="multi-row-control" data-mode="writeOnly">
+	        <td colspan="5" style="text-align: right">
+	            <input type="button" id="btnAdd" value="+추가" class="multi-row-add smButton">
+	            <input type="button" id="btnDelSel" value="-삭제" class="multi-row-del-auto smButton">
+	        </td>
+	    </tr>
+	    <tr>
+	        <th>품목</th>
+	        <th>용도</th>
+	        <th>금액</th>
+	        <th>결재조건</th>
+	        <th>비고</th>
+	    </tr>
+	    <tr class="multi-row-template ">
+			<td align="left"><input name="productName" style="width: 99%; text-align : left" type="text" data-type="rField"></td>
+			<td align="left"><input name="productProposer" style="width: 99%;text-align : left" type="text" data-type="rField"></td>
+	        <td align="right">
+	            <input name="productAmt" data-pattern="numeral" data-numeral-format="0,0" style="width: 99%; text-align : right" type="text" data-type="rField"  class="sum-table-cell" onblur="NumToHangul();" onchange="NumToHangul();">
+	        </td>
+	        <td align="center"><input name="billDiv" style="width: 99%;text-align : center" type="text" data-type="rField"></td>
+	        <td align="left"> 
+	            <input name="Rmk"style="width: 99%; text-align : left" type="text" data-type="rField"  >
+	        </td>      
+	    </tr>
+	    <tr>
+        <th colspan="2">
+        </th >
+        <td align="right"><input class="sum-table-colsum" id="a_sum_1" style="width: 98%;" type="text" readonly="readonly" value="{{ doc.BodyContext.a_sum_1 }}" data-type="mField" data-pattern="numeral" data-numeral-format="0,0" ></td>
+        <th  colspan="2">
+        </th>
+    </tr>
+	    
+	</tbody>
+	
+</table>
+
+
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+		<colgroup>
+			<col style="width:16%" />
+	       <col style="width:16%" />
+	       <col style="width:16%" />
+	       <col style="width:16%" />
+	       <col style="width:16%" />
+	       <col style="width:17%" />
+		</colgroup>  
+		<tr>
+			<td colspan="6"style="font-size:14px; border-left: none; border-right: none; border-top: none !important; border-bottom: none;  ">
+			<div style="font-size:14px; text-align :center ;" ><b>위 금액을 영수(청구) 합니다.<b></b>
+			</div>
+			</td>
+		
+		</tr>
+		<tr>
+			<td align ="center" colspan="6"style="font-size:14px; border-left: none; border-right: none; border-top: none !important;  border-bottom: none; ">
+			<input type="text" id="reqDay" name="reqDay" data-type="mField" value="{{ doc.BodyContext.reqDay }}"    style="width:90%; text-align :center ;border : none ;font-size:14px;" >
+			
+			</td>
+		
+		</tr>
+</table>
+
+
+<!--실 결재양식 내용 부분 끝 -->

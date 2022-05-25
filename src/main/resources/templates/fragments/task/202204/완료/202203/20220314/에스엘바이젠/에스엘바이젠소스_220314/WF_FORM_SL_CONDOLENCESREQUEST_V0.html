@@ -1,0 +1,165 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+	   <colgroup>
+	    	<col style="width:8%">
+	    	<col style="width:16%">
+	    	<col style="width:16%">
+	    	<col style="width:16%">
+	    	<col style="width:16%">
+	    	<col style="width:24%">
+	    </colgroup>
+	    <tr>
+	    	<th colspan="2">사유발생일</th>
+	    	
+	    	<td colspan="4">
+	       		<input type="text" data-type="mField" id="reqDate" value="{{ doc.BodyContext.reqDate }}" style="width:90%;" data-pattern="date"  data-date-format="yy년 mm월 dd일 ">
+			</td>
+	    </tr>
+	    
+	     <tr>
+	    	<th colspan ="2">구분</th>
+	    	<th>경조금</th>
+	    	<th>휴가</th>
+	    	<th>기타 지원사항</th>
+	    	<th>신청표기 및 사유</th>
+	    </tr>
+	    
+	     <tr>
+	    	<th rowspan ="4">경사</th>
+	    	<th>본인 결혼</th>
+	    	<th>1,000,000 원</th>
+	    	<th>10 일</th>
+	    	<th>화환</th>
+	    	<td>
+	    		<input type="text" id="cost1" name="cost1" data-type="mField" value="{{ doc.BodyContext.cost1 }}"    style="width:98%; " >    
+	    	</td>
+	    </tr>
+	    
+	    <tr>
+	    	<th>자녀 결혼</th>
+	    	<th>1,000,000 원</th>
+	    	<th>1 일</th>
+	    	<th>화환</th>
+	    	<td>
+	    		<input type="text" id="cost2" name="cost2" data-type="mField" value="{{ doc.BodyContext.cost2 }}"    style="width:98%; " >    
+	    	</td>
+	    </tr>
+	    <tr>
+	    	<th>부모 회갑/칠순</th>
+	    	<th>200,000 원</th>
+	    	<th>1 일</th>
+	    	<th>-</th>
+	    	<td>
+	    		<input type="text" id="cost3" name="cost3" data-type="mField" value="{{ doc.BodyContext.cost3 }}"    style="width:98%; " >    
+	    	</td>
+	    </tr>
+	    <tr>
+	    	<th>출산</th>
+	    	<th>300,000 원</th>
+	    	<th>출산전후휴가<br>배우자출산휴가</th>
+	    	<th>선물</th>
+	    	<td>
+	    		<input type="text" id="cost4" name="cost4" data-type="mField" value="{{ doc.BodyContext.cost4 }}"    style="width:98%; " >    
+	    	</td>
+	    </tr>
+	    
+	     <tr>
+	    	<th rowspan ="6">애사</th>
+	    	<th>본인 사망</th>
+	    	<th>3,000,000 원</th>
+	    	<th>-</th>
+	    	<th>조화</th>
+	    	<td>
+	    		<input type="text" id="cost5" name="cost5" data-type="mField" value="{{ doc.BodyContext.cost5 }}"    style="width:98%; " >    
+	    	</td>
+	    </tr>
+	    
+	    <tr>
+	    	<th>배우자 사망</th>
+	    	<th>1,000,000 원</th>
+	    	<th>7 일</th>
+	    	<th>조화</th>
+	    	<td>
+	    		<input type="text" id="cost6" name="cost6" data-type="mField" value="{{ doc.BodyContext.cost6 }}"    style="width:98%; " >    
+	    	</td>
+	    </tr>
+	    <tr>
+	    	<th>부모 사망</th>
+	    	<th>1,000,000 원</th>
+	    	<th>5 일</th>
+	    	<th>조화</th>
+	    	<td>
+	    		<input type="text" id="cost7" name="cost7" data-type="mField" value="{{ doc.BodyContext.cost7 }}"    style="width:98%; " >    
+	    	</td>
+	    </tr>
+	    <tr>
+	    	<th>자녀 사망</th>
+	    	<th>1,000,000 원</th>
+	    	<th>5 일</th>
+	    	<th>조화</th>
+	    	<td>
+	    		<input type="text" id="cost8" name="cost8" data-type="mField" value="{{ doc.BodyContext.cost8 }}"    style="width:98%; " >    
+	    	</td>
+	    </tr>
+	    <tr>
+	    	<th>조부모 사망</th>
+	    	<th>300,000 원</th>
+	    	<th>3 일</th>
+	    	<th>조화</th>
+	    	<td>
+	    		<input type="text" id="cost9" name="cost9" data-type="mField" value="{{ doc.BodyContext.cost9 }}"    style="width:98%; " >    
+	    	</td>
+	    </tr>
+	    <tr>
+	    	<th>형제자매 사망</th>
+	    	<th>300,000 원</th>
+	    	<th>3 일</th>
+	    	<th>조화</th>
+	    	<td>
+	    		<input type="text" id="cost10" name="cost10" data-type="mField" value="{{ doc.BodyContext.cost10 }}"    style="width:98%; " >    
+	    	</td>
+	    </tr>
+	    
+	    <tr>
+	    	<th rowspan ="3">화환/<br>조화/<br>선물</th>
+	    	<th>수령일시</th>
+	    	<td colspan ="4">
+	    		<input type="text" id="receiveDate" name="receiveDate" data-type="mField" value="{{ doc.BodyContext.receiveDate }}"    style="width:98%; " >    
+	    	</td>
+	    </tr>
+	     <tr>
+	    	<th>수령장소</th>
+	    	<td colspan ="4">
+	    		<input type="text" id="receivePlace" name="receivePlace" data-type="mField" value="{{ doc.BodyContext.receivePlace }}"    style="width:98%; " >    
+	    	</td>
+	    </tr>
+	     <tr>
+	    	<th>수령자 및 연락처</th>
+	    	<td colspan ="4">
+	    		<input type="text" id="receivePerson" name="receivePerson" data-type="mField" value="{{ doc.BodyContext.receivePerson }}"    style="width:98%; " >    
+	    	</td>
+	    </tr>
+	    <tr>
+		    <td colspan ="6">
+			    <div>
+			    	※	휴가는 사유발생일로부터 부여함을 원칙으로 하며, 휴일을 포함.<br>
+					부득이한 사정으로 발생일 즉시 사용이 불가할 경우 2개월 내 사용 가능하며,<br>
+					2개월간 청구하지 않으면 경조휴가 및 경조금 청구권은 소멸<br>
+					
+					1. 신청기한 : 사유발생일로부터 2달 이내.<br>
+					2. 사유별 증빙서류 첨부<br>
+					- 결혼 : 청첩장<br>
+					- 회갑/출산 : 주민등록등본 또는 가족관계증명서<br>
+					- 사망 : 사망진단서 및 주민등록등본 또는 가족관계증명서<br>
+					3. 기혼 직원의 배우자에 해당하는 경우에도 동일하게 적용됩니다.<br>
+			    
+			    </div>
+		    </td>
+	    </tr>
+</table>	    
+	
+<!--실 결재양식 내용 부분 끝 -->

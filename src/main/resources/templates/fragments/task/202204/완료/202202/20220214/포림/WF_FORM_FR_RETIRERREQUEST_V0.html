@@ -1,0 +1,233 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+
+		<colgroup>
+			<col style="width:15%" />
+	       <col style="width:35%" />
+	       <col style="width:15%" />
+	       <col style="width:35%" />
+		</colgroup>  
+		<tr>
+			<td style="font-size:14px; border-left: none; border-right: none; border-top: none !important;  border-bottom: none; "><b>1.작성자<b></b>
+			</td>
+			<td colspan ="3" style="font-size:14px; border-left: none; border-right: none; border-top: none !important;  ">
+			</td>
+		
+		</tr>
+		<tr>
+    	<th >소속</th>
+		<td  >
+		<input type="text" id="userDept" name="userDept" data-type="mField" value="{{ doc.BodyContext.userDept }}"    style="width:90%; " >
+           
+		</td>
+		<th >직위</th>
+		<td  >
+		<input type="text" id="userPosition" name="userPosition" data-type="mField" value="{{ doc.BodyContext.userPosition }}"    style="width:90%; " >
+           
+		</td>
+	    </tr>
+	    <tr>
+	    	<th >성명</th>
+			<td  >
+			<input type="text" id="userName" name="userName" data-type="mField" value="{{ doc.BodyContext.userName }}"    style="width:90%; " >
+	           
+			</td>
+			<th >생년월일</th>
+			<td  >
+			 <input type="text" data-type="mField" id="birthDay" name = "birthDay" value="{{ doc.BodyContext.birthDay }}"  size="10" style="width : 50%; text-align :center ; " data-pattern="date" data-date-format="yy년 mm월 dd일"  >생
+		 	  
+			</td>
+	    </tr>
+	    <tr>
+	    	<th >연락처</th>
+			<td  >
+			<input type="text" id="userPhone" name="userPhone" data-type="mField" value="{{ doc.BodyContext.userPhone }}"    style="width:90%; " >
+	           
+			</td>
+			<th >주민등록번호</th>
+			<td  >
+			<input type="text" onkeyup='onlyNumber(this);'  id="userRRN1" name="userRRN1" maxlength="6" data-type="mField" value="{{ doc.BodyContext.userRRN1}}"    style="width:40%; " > -
+	         <input type="text" onkeyup='onlyNumber(this);' id="userRRN2" name="userRRN2" maxlength="7" data-type="mField" value="{{ doc.BodyContext.userRRN2}}"    style="width:40%; " >  
+			</td>
+	    </tr>  
+	    
+	     <tr>
+	    	<th >주소</th>
+			<td colspan ="3">
+			<input type="text" id="userAddr" name="userAddr" data-type="mField" value="{{ doc.BodyContext.userAddr }}"    style="width:90%; " >
+	           
+			</td>
+	    </tr>   
+</table>
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+<colgroup>
+			<col style="width:15%" />
+	       <col style="width:35%" />
+	       <col style="width:15%" />
+	       <col style="width:35%" />
+		</colgroup>  
+		<tr>
+			<td style="font-size:14px; border-left: none; border-right: none; border-top: none !important;  border-bottom: none; "><b>2.사직내용<b></b>
+			</td>
+			<td colspan ="3" style="font-size:14px; border-left: none; border-right: none; border-top: none !important;  ">
+			</td>
+		
+		</tr>
+<tr>
+			<th>입사일
+			</th>
+			<td >
+	          <input type="date"  class="input-required pattern-active pattern-required-active" id = "enterDay" name="enterDay" data-type="mField" value="{{ doc.BodyContext.enterDay }}" style="width: 90%;"  onchange="calSDATEEDATE('enterDay');" required=""> 	  
+	        </td>
+	        <th>퇴사일
+			</th>
+			<td >
+	          <input type="date" class="input-required pattern-active pattern-required-active" id = "retirementDay" name="retirementDay" data-type="mField" value="{{ doc.BodyContext.retirementDay }}"  style="width: 90%;"  onchange="calSDATEEDATE('retirementDay');" required="">	  
+	        </td>
+	       	
+		</tr>
+		<tr>
+	    	<th >퇴직사유</th>
+			<td colspan ="3">
+			<input type="text" id="retirementReason" name="retirementReason" data-type="mField" value="{{ doc.BodyContext.retirementReason }}"    style="width:90%; " >
+	           
+			</td>
+	    </tr>   
+		
+</table>
+
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+<colgroup>
+			<col style="width:15%" />
+	       <col style="width:35%" />
+	       <col style="width:15%" />
+	       <col style="width:35%" />
+		</colgroup>  
+		<tr>
+			<td style="font-size:14px; border-left: none; border-right: none; border-top: none !important;  border-bottom: none; "><b>3.확인사항<b></b>
+			</td>
+			<td colspan ="3" style="font-size:14px; border-left: none; border-right: none; border-top: none !important;  ">
+			</td>
+		
+		</tr>
+<tr>
+<th>확인사항</th>
+<th>인수자 확인</th>
+<th>확인사항</th>
+<th>인수자 확인</th>
+</tr>
+<tr>
+			<th>숙소키
+			</th>
+			<td >
+	         <input type="text" id="houseKey" name="houseKey" data-type="mField" value="{{ doc.BodyContext.houseKey }}"    style="width:90%; " >
+	         
+	        </td>
+	        <th>업무 인수인계
+			</th>
+			<td >
+	          <input type="text" id="workTransfer" name="workTransfer" data-type="mField" value="{{ doc.BodyContext.workTransfer }}"    style="width:90%; " >
+	         
+	        </td>
+	       	
+		</tr>
+		<tr>
+			<th>락카키
+			</th>
+			<td >
+	         <input type="text" id="boxKey" name="boxKey" data-type="mField" value="{{ doc.BodyContext.boxKey }}"    style="width:90%; " >
+	         
+	        </td>
+	        <th>기타
+			</th>
+			<td >
+	          <input type="text" id="workTransferEtc" name="workTransferEtc" data-type="mField" value="{{ doc.BodyContext.workTransferEtc }}"    style="width:90%; " >
+	         
+	        </td>
+	       	
+		</tr>
+		
+</table>
+
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+<colgroup>
+			<col style="width:15%" />
+	       <col style="width:35%" />
+	       <col style="width:15%" />
+	       <col style="width:35%" />
+		</colgroup>  
+		<tr>
+			<td style="font-size:14px; border-left: none; border-right: none; border-top: none !important;  border-bottom: none; "><b>4.준수사항<b></b>
+			</td>
+			<td colspan ="3" style="font-size:14px; border-left: none; border-right: none; border-top: none !important;  ">
+			</td>
+		
+		</tr>
+		
+		
+		<tr style="border:hidden;">			
+			<td colspan ="4">
+			 1) 퇴직에 따른 인수인계서를 철저히 작성하여 퇴직시까지 책임과 의무를 다한다.
+	        </td>
+		</tr>
+		<tr style="border:hidden;">			
+			<td colspan ="4">
+			 2) 퇴직 후 회사의 영업비밀을 제 3자에게 공개하거나 누설하지 않는다.
+	        </td>
+		</tr>
+		<tr style="border:hidden;">			
+			<td colspan ="4">
+			 3) 퇴직 후 회사를 상대로 근로관계에 관한 일체의 민사.형사상의 이의를 제기치 아니 한다.
+	        </td>
+		</tr>
+		<tr style="border:hidden;">			
+			<td colspan ="4">
+			 4) 본인은 위의 준수사항을 숙지하며 이를 위반하였을 경우 민.형사상의 책임을 진다.
+	        </td>
+		</tr>
+		<tr style="border:hidden;">			
+			<td colspan ="4">
+	        </td>
+		</tr>
+		<tr style="border:hidden;">
+			<td colspan ="4">
+				<div  style="text-align:center"> 위와 같은 사유로 사직서를 제출하오니 허가하여 주시기 바랍니다.
+				</div>
+			</td>
+			
+		</tr>
+		
+</table>
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+		 <colgroup>
+        
+	       	<col style="width:15%" />
+	       <col style="width:30%" />
+	       <col style="width:25%" />
+	       <col style="width:25%" />
+	       <col style="width:5%" />
+	    </colgroup>
+		<tr>
+		<td colspan ="3" style="border-left: none; border-right: none; border-top: none !important;  border-bottom: none; " ></td>
+			<td  style="border-left: none; border-right: none; border-top: none !important;  border-bottom: none; ">
+			<input type="text" data-type="mField" id="requestDay" name = "requestDay" value="{{ doc.BodyContext.requestDay }}"  size="10" style="width : 80%;text-align:right;  " data-pattern="date" data-date-format="yy년 mm월 dd일"  >
+			</td>
+			
+		</tr>
+		<tr>
+			<td colspan ="2" style="border-left: none; border-right: none; border-top: none !important;  border-bottom: none; " >
+		   </td>
+		    <td style="text-align:right;border-left: none; border-right: none; border-top: none !important;  border-bottom: none; " >신청인</td>	    
+		    <td style="border-left: none; border-right: none; border-top: none; border-bottom: none; " >
+		        	<input type="text" id="requestson" name="requestPerson" data-type="mField" value="{{ doc.BodyContext.requestPerson}}"    style="width:80%; text-align:right;" >(인)
+		      
+		    </td>
+		    </tr>
+		</table>
+<!--실 결재양식 내용 부분 끝 -->

@@ -1,0 +1,141 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+		<colgroup>
+			<col style="width:15%" />
+	       <col style="width:35%" />
+	       <col style="width:15%" />
+	       <col style="width:35%" />
+		</colgroup>  
+		<tr>
+			<td style="font-size:14px; border-left: none; border-right: none; border-top: none !important;  border-bottom: none; "><b>1.작성자</b>
+			</td>
+			<td colspan ="3" style="font-size:14px; border-left: none; border-right: none; border-top: none !important;  ">
+			</td>
+		
+		</tr>
+		<tr>
+			<th>소속(부서)
+			</th>
+			<td >
+	          <input type="text" id = "userDept" name="userDept" data-type="mField" value="{{ doc.BodyContext.userDept }}" style="width: 99%;"  > 	  
+	        </td>
+	        <th>직급
+			</th>
+			<td >
+	          <input type="text"  name="userPosition" data-type="mField" value="{{ doc.BodyContext.userPosition }}" style="width: 99%;"  > 	  
+	        </td>
+		</tr>
+		
+		  
+		  <tr>
+			<th>성명
+			</th>
+			<td >
+	          <input type="text" name="userName" data-type="mField" value="{{ doc.BodyContext.userName }}" style="width: 99%;"  > 	  
+	        </td>
+	        <th>작성일
+			</th>
+			<td >
+	          <input type="text" data-pattern="date"  name="writeDay" data-type="mField" value="{{ doc.BodyContext.writeDay }}" style="width: 99%;"   > 	  
+	        </td>
+		</tr>
+		  
+</table>
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+		<colgroup>
+			<col style="width:15%" />
+	       <col style="width:35%" />
+	       <col style="width:15%" />
+	       <col style="width:35%" />
+		</colgroup>  
+		<tr>
+			<td style="font-size:14px; border-left: none; border-right: none; border-top: none !important;  border-bottom: none; "><b>2.교육개요</b>
+			</td>
+			<td colspan ="3" style="font-size:14px; border-left: none; border-right: none; border-top: none !important;  ">
+			</td>
+		
+		</tr>
+		<tr>
+			<th>교육명
+			</th>
+			<td >
+	          <input type="text" name="educationName" data-type="mField" value="{{ doc.BodyContext.educationName }}" style="width: 99%;"  > 	  
+	        </td>
+	        <th>담당자
+			</th>
+			<td >
+	          <input type="text"  name="educationManager" data-type="mField" value="{{ doc.BodyContext.educationName }}" style="width: 99%;"  > 	  
+	        </td>
+		</tr>
+		
+		<tr>
+			<th>교육부서
+			</th>
+			<td >
+	          <input type="text" name="educationDept" data-type="mField" value="{{ doc.BodyContext.educationDept }}" style="width: 99%;"  > 	  
+	        </td>
+	        <th>교육장소
+			</th>
+			<td >
+	          <input type="text"  name="educationPlace" data-type="mField" value="{{ doc.BodyContext.educationPlace }}" style="width: 99%;"  > 	  
+	        </td>
+		</tr>
+		
+		<tr>
+			<th>교육기간
+			</th>
+			<td >
+	          <input type="text" name="educationTerm" data-type="mField" value="{{ doc.BodyContext.educationTerm }}" style="width: 99%;"  > 	  
+	        </td>
+	        <th>교육시간
+			</th>
+			<td >
+	          <input type="text"  name="educationTime" data-type="mField" value="{{ doc.BodyContext.educationTime }}" style="width: 99%;"  > 	  
+	        </td>
+		</tr>
+		
+		<tr>
+			<th>참가자
+			</th>
+			<td colspan="2"  style="  border-right: none !important;  ">
+	          <input type="text"  name="joinPerson" data-type="mField" value="{{ doc.BodyContext.joinPerson }}" style="width: 99%;"  > 	  
+	        </td>
+	        
+			<td >
+				(총
+				<input type="text"  name="joinCount" data-type="mField" value="{{ doc.BodyContext.joinCount }}" style="width: 20%;"  >
+	          	인) 	  
+	        </td>
+		</tr>
+		
+		
+		
+		<tr>
+			<th>수료인원
+			</th>
+			<td colspan="3">
+				<div data-type="mField" data-node-name="changeType1" data-element-type="chk_d">
+					<input type="checkbox" id="changeType1" name="changeType1" value="전인원">전인원
+					<input type="checkbox" id="changeType2" name="changeType1" value="미수료">미수료
+					 (미수료 인원 및 사유 : <input type="text" id = "graduatePerson" name="graduatePerson" data-type="mField" value="{{ doc.BodyContext.graduatePerson }}" style="width: 30%;"  > 	  ) 
+	       
+				</div>
+	         </td>
+	        
+		</tr>
+		
+		<tr>
+			<th>교육내용
+			</th>
+			<td colspan="3">
+	         	<textarea id="educationRmk" data-type="mField" style="width: 98%;height:125px">{{ doc.BodyContext.educationRmk }}</textarea>
+	        </td>
+		</tr>
+		
+		  
+</table>
+<!--실 결재양식 내용 부분 끝 -->

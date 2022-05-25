@@ -1,0 +1,102 @@
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        
+        <col style="width:13%" />
+        <col style="width:37%" />
+        <col style="width:13%" />
+        <col style="width:37%" />
+    </colgroup>
+    <tr>
+    	<th >거래처명</th>
+			<td  align="center" >
+			 <input type="text" id="companyName" name="companyName" data-type="mField" value="{{ doc.BodyContext.companyName }}"    style="width:90%; text-align :center ;" >
+		 	  
+			</td>
+		<th >검수일자</th>
+		<td  align="center" >
+		 <input type="text" data-type="mField" id="checkDay" title ="검수일" name = "checkDay" value="{{ doc.BodyContext.checkDay }}" size="10" style="width : 90%" data-pattern="date"   >
+		</td>
+    </tr>
+      <tr>
+    	<th >과제명</th>
+		<td  align="center" >
+		<input type="text" id="taskName" name="taskName" data-type="mField" value="{{ doc.BodyContext.taskName }}"    style="width:90%; text-align :center ;" >
+           
+		</td>
+		<th >검수부서</th>
+		<td  align="center" >
+		<input type="text" id="checkDept" name="checkDept" data-type="mField" value="{{ doc.BodyContext.checkDept }}"    style="width:90%;text-align :center ; " >
+           
+		</td>
+		
+    </tr>
+  
+    <tr>
+    	<th >세목/세세목</th>
+		<td align="center" >
+		<input type="text" id="items1" name="items" data-type="mField" value="{{ doc.BodyContext.items }}"    style="width:45%; text-align :center ;" >/
+		<input type="text" id="items2" name="items2" data-type="mField" value="{{ doc.BodyContext.items2 }}"    style="width:45%; text-align :center ;" >
+           
+		</td>
+		<th >검수자</th>
+		<td  align="center" >
+		<input type="text" id="checkPerson" name="checkPerson" data-type="mField" value="{{ doc.BodyContext.checkPerson }}"    style="width:83%;text-align :center ; " >(인)
+           
+		</td>
+		
+    </tr>
+</table>
+
+<table class="table_10 multi-row-table RowSumTable tableStyle linePlus" id="TBLINFO" style="border-left: 1px solid #c3d7df;">
+    <colgroup>
+		<col style="width: 20%">
+        <col style="width: 15%">
+        <col style="width: 15%">
+        <col style="width: 15%">
+        <col style="width: 15%">
+        <col style="width: 20%">
+    </colgroup>
+    <tbody>
+	    <tr class="multi-row-control" data-mode="writeOnly">
+	        <td colspan="6" style="text-align: right">
+	            <input type="button" id="btnAdd" value="+추가" class="multi-row-add usa">
+	            <input type="button" id="btnDelSel" value="-삭제" class="multi-row-del-auto usa">
+	        </td>
+	    </tr>
+	    <tr>
+			
+	        <th>품명</th>
+	        <th>규격</th>
+	        <th>단가</th>
+	        <th>수량</th>
+	        <th>공급가액</th>
+	        <th>검수결과</th>
+	    </tr>
+	    <tr class="multi-row-template multi-sum">
+			<td><input name="REQ_ITMENAME" style="width: 99%;" type="text" data-type="rField"></td>
+			<td><input name="REQ_STANDARD" style="width: 99%;" type="text" data-type="rField"></td>
+	        <td align="right">
+	            <input name="REQ_EA" style="width: 99%;" onblur="fn_sum();" type="text" data-type="rField" data-pattern="numeral">
+	        </td>
+	        <td align="right">
+	            <input name="REQ_PRICE" style="width: 99%;" onblur="fn_sum();" type="text" data-type="rField" data-pattern="numeral" data-numeral-format="0,0" >
+	        </td>
+	        
+	        <td align="right">
+	            <input name="REQ_TOTAL" style="width: 99%;" type="text" readonly="readonly" data-type="rField" data-pattern="numeral" data-numeral-format="0,0"  data-sum-ref="REQ_PRICE,REQ_EA" data-formula="({0}*{1})">
+	        </td>
+	        <td><input name="REQ_ETC" style="width: 99%;" type="text" data-type="rField"></td>
+	    </tr>
+	    <tr>
+			
+	        <th colspan="4">총 금액</th>
+	        <td align="right">
+	            <input id="REQ_TOTALPRICE" style="width: 99%;" type="text" readonly="readonly" value="{{ doc.BodyContext.REQ_TOTALPRICE }}" data-type="mField" data-pattern="numeral" data-numeral-format="0,0">
+	        </td>
+	        <th></th>
+	    </tr>
+	</tbody>
+</table>
+
+<!--실 결재양식 내용 부분 끝 -->

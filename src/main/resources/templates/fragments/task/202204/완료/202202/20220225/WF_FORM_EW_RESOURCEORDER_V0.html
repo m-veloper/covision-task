@@ -1,0 +1,188 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:8%" />
+        <col style="width:8%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:14%" />
+        <col style="width:6%" />
+        <col style="width:14%" />
+        <col style="width:6%" />
+        <col style="width:14%" />
+        
+    </colgroup>
+    
+    <tr>
+    <th colspan="2">발주일자    
+    </th>
+    <td colspan="3" align="center" >
+		<input type="text" data-type="mField" id="orderDay" title ="발주일자" name = "orderDay" value="{{ doc.BodyContext.orderDay }}"  size="10" style="width : 95%" data-pattern="date"   >
+	</td>
+     <th colspan="2">납품일자    
+    </th>
+    <td colspan="3">
+    	<input type="text" data-type="mField" id="supplyDay" title ="납품일자" name = "supplyDay" value="{{ doc.BodyContext.supplyDay }}"  size="10" style="width : 95%" data-pattern="date"   >
+    </td>
+    </tr>
+    
+    <tr>
+    <th colspan="2">공사명    
+    </th>
+    <td colspan="4" align="center" >
+		<input type="text" id="constructName" name="constructName" data-type="mField" value="{{ doc.BodyContext.constructName }}"    style="width:98%; " >
+	</td>
+     <th>공종    
+    </th>
+    <td colspan="3" >
+    	<input type="text" id="constructDiv" name="constructDiv" data-type="mField" value="{{ doc.BodyContext.constructDiv }}"    style="width:98%; " >
+    </td>
+    </tr>
+    
+    <tr>
+    <th colspan="2">외주업체    
+    </th>
+    <td colspan="2" align="center" >
+		<input type="text" onchange="companyChange();"  id="subCompanyName" name="subCompanyName" data-type="mField" value="{{ doc.BodyContext.subCompanyName }}"    style="width:98%; " >
+	</td>
+     <th>담당자    
+    </th>
+    <td >
+    	<input type="text" id="managerNmae" name="managerNmae" data-type="mField" value="{{ doc.BodyContext.managerNmae }}"    style="width:98%; " >
+    </td>
+    <th>TEL    
+    </th>
+    <td >
+    	<input type="text" id="phoneNo" name="phoneNo" data-type="mField" value="{{ doc.BodyContext.phoneNo }}"    style="width:98%; " >
+    </td>
+    <th>FAX    
+    </th>
+    <td >
+    	<input type="text" id="FaxNo" name="FaxNo" data-type="mField" value="{{ doc.BodyContext.FaxNo }}"    style="width:98%; " >
+    </td>
+    
+    </tr>
+</table>
+
+<table class="table_3 RowSumTable tableStyle linePlus" cellspacing="0" cellpadding="0">
+    <colgroup>
+        <col style="width: 4.5%">
+        <col style="width: 20.5%">
+        <col style="width: 12.5%">
+        <col style="width: 12.5%">
+        <col style="width: 12.5%">
+        <col style="width: 12.5%">
+        <col style="width: 12.5%">
+        <col style="width: 12.5%">
+        
+    </colgroup>
+    <tbody>
+    
+    <tr>
+        <th>번호</th>
+        <th>업체명</th>
+        <th>도급금액</th>
+        <th>실행금액<br>(A)</th>
+        <th>발주누계금액<br>(B)</th>
+        <th>발주확정액<br>(C)</th>
+        <th>잔여실행금액<br>A-(B+C)</th>
+        <th>비고</th>
+    </tr>
+    <tr>
+        <td><input id="a_NO1" style="width: 98%;border:none" type="text" value="{{ doc.BodyContext.a_NO1 }}" data-type="mField" readonly=""></td>
+        <td><input id="a_NAME1" style="width: 98%;" type="text" value="{{ doc.BodyContext.a_NAME1 }}" data-type="mField" readonly=""></td>
+        <td><input id="a_cost_11" onchange="fn_costChange1();"  onblur="fn_costChange1();" style="width: 98%;" type="text" value="{{ doc.BodyContext.a_cost_11 }}" data-type="mField" data-pattern="currency"></td>
+        <td><input class="sum-table-cell" id="a_cost_12" style="width: 98%;" type="text" value="{{ doc.BodyContext.a_cost_12 }}" data-type="mField" data-pattern="currency"></td>
+        <td><input class="sum-table-cell" id="a_cost_13" style="width: 98%;" type="text" value="{{ doc.BodyContext.a_cost_13 }}" data-type="mField" data-pattern="currency"></td>
+        <td><input class="sum-table-cell" id="a_cost_14" style="width: 98%;" type="text" value="{{ doc.BodyContext.a_cost_14 }}" data-type="mField" data-pattern="currency" readonly=""></td>
+        <td><input type="text" readonly=""data-type="mField" id="a_cost_15" name="a_cost_15" style="width:98%; text-align:right;" value="{{ doc.BodyContext.a_cost_15 }}" data-pattern="currency" data-formula="({0}-({1}+{2}))" data-sum-ref="#a_cost_12,#a_cost_13,#a_cost_14" ></td>
+        <td><input id="a_RMK1" style="width: 98%;" type="text" value="{{ doc.BodyContext.a_RMK1 }}" data-type="mField"  ></td>
+       
+    </tr>
+    <tr>
+        <td><input id="a_NO2" style="width: 98%; border:none" type="text" value="{{ doc.BodyContext.a_NO2 }}" data-type="mField" readonly=""></td>
+        <td><input id="a_NAME2" style="width: 98%;" type="text" value="{{ doc.BodyContext.a_NAME2 }}" data-type="mField"></td>
+        <td><input id="a_cost_21" onchange="fn_costChange2();"  onblur="fn_costChange2();"style="width: 98%;" type="text" value="{{ doc.BodyContext.a_cost_21 }}" data-type="mField" data-pattern="currency"></td>
+        <td><input class="sum-table-cell" id="a_cost_22" style="width: 98%;" type="text" value="{{ doc.BodyContext.a_cost_22 }}" data-type="mField" data-pattern="currency"></td>
+        <td><input class="sum-table-cell" id="a_cost_23" style="width: 98%;" type="text" value="{{ doc.BodyContext.a_cost_23 }}" data-type="mField" data-pattern="currency"></td>
+        <td><input class="sum-table-cell" id="a_cost_24" style="width: 98%;" type="text" value="{{ doc.BodyContext.a_cost_24 }}" data-type="mField" data-pattern="currency"></td>
+         <td><input type="text" readonly=""data-type="mField" id="a_cost_25" name="a_cost_25" style="width:98%; text-align:right;" value="{{ doc.BodyContext.a_cost_25 }}" data-pattern="currency" data-formula="({0}-({1}+{2}))" data-sum-ref="#a_cost_22,#a_cost_23,#a_cost_24" ></td>
+        <td><input id="a_RMK2" style="width: 98%;" type="text" value="{{ doc.BodyContext.a_RMK2 }}" data-type="mField"  ></td>
+    </tr>
+    <tr>
+        <td><input id="a_NO3" style="width: 98%;border:none" type="text" value="{{ doc.BodyContext.a_NO3 }}" data-type="mField" readonly=""></td>
+        <td><input id="a_NAME3" style="width: 98%;" type="text" value="{{ doc.BodyContext.a_NAME3 }}" data-type="mField"></td>
+        <td><input id="a_cost_31" onchange="fn_costChange3();"  onblur="fn_costChange3();"style="width: 98%;" type="text" value="{{ doc.BodyContext.a_cost_31 }}" data-type="mField" data-pattern="currency"></td>
+        <td><input class="sum-table-cell" id="a_cost_32" style="width: 98%;" type="text" value="{{ doc.BodyContext.a_cost_32 }}" data-type="mField" data-pattern="currency"></td>
+        <td><input class="sum-table-cell" id="a_cost_33" style="width: 98%;" type="text" value="{{ doc.BodyContext.a_cost_33 }}" data-type="mField" data-pattern="currency"></td>
+        <td><input class="sum-table-cell" id="a_cost_34" style="width: 98%;" type="text" value="{{ doc.BodyContext.a_cost_34 }}" data-type="mField" data-pattern="currency"></td>
+        <td><input type="text" readonly="" data-type="mField" id="a_cost_35" name="a_cost_35" style="width:98%; text-align:right;" value="{{ doc.BodyContext.a_cost_35 }}" data-pattern="currency" data-formula="({0}-({1}+{2}))" data-sum-ref="#a_cost_32,#a_cost_33,#a_cost_34" ></td>
+        <td><input id="a_RMK3" style="width: 98%;" type="text" value="{{ doc.BodyContext.a_RMK3 }}" data-type="mField" ></td>
+    </tr>
+ 
+</tbody></table>
+
+
+
+<table class="table_10 multi-row-table RowSumTable tableStyle linePlus  mt10" id="TBLINFO" style="border-left: 1px solid #c3d7df;">
+    <colgroup>
+		 <col style="width: 4.5%">
+		 <col style="width: 20.5%">
+		 <col style="width: 12.5%">
+		 <col style="width: 12.5%">
+		 <col style="width: 12.5%">
+		 <col style="width: 12.5%">
+		 <col style="width: 12.5%">
+		 <col style="width: 12.5%">
+    </colgroup>
+    <tbody>
+    	<tr class="multi-row-control" data-mode="writeOnly">
+	        <td colspan="8" style="text-align: right">
+	            <input type="button" id="btnAdd" value="+추가" class="multi-row-add smButton">
+	            <input type="button" id="btnDelSel" value="-삭제" class="multi-row-del-auto smButton">
+	        </td>
+	    </tr>
+	    <tr>
+		    <th colspan="8">내역
+		    </th>
+	    </tr>
+	    <tr>
+			<th>No.</th>
+	        <th>자재명</th>
+	        <th>규격</th>
+	        <th>단위</th>
+	        <th>수량</th>
+	        <th>단가</th>
+	        <th>금액</th>
+	        <th>비고</th>
+	    </tr>
+	    <tr class="multi-row-template multi-sum">
+			<td class="multi-row-seq"></td>
+	        <td><input name="REQ_ITMENAME" style="width: 99%;" type="text" data-type="rField"></td>
+	        <td><input name="REQ_ITMESTANDARD" style="width: 99%;" type="text" data-type="rField"></td>
+	        <td><input name="REQ_ITMEUNIT" style="width: 99%;" type="text" data-type="rField"></td>
+	        <td align="right">
+	            <input name="REQ_EA" style="width: 99%;" onblur="fn_sum();" type="text" data-type="rField" data-pattern="numeral">
+	        </td>
+	        <td align="right">
+	            <input name="REQ_PRICE" style="width: 99%;" onblur="fn_sum();" type="text" data-type="rField" data-pattern="numeral" data-numeral-format="0,0">
+	        </td>
+	        
+	        <td align="right">
+	            <input name="REQ_TOTAL" style="width: 99%;" type="text" readonly="readonly" data-type="rField" data-pattern="numeral" data-numeral-format="0,0" data-sum-ref="REQ_PRICE,REQ_EA" data-formula="({0}*{1})">
+	        </td>
+	        <td><input name="REQ_ETC" style="width: 99%;" type="text" data-type="rField"></td>
+	    </tr>
+	    <tr>
+			<th data-mode="writeOnly"></th>
+	        <th colspan="5">총 금액</th>
+	        <td align="right">
+	            <input id="REQ_TOTALPRICE" style="width: 99%;" type="text" readonly="readonly" value="{{ doc.BodyContext.REQ_TOTALPRICE }}" data-type="mField" data-pattern="numeral" data-numeral-format="0,0">
+	        </td>
+	        <th></th>
+	    </tr>
+	</tbody>
+</table>
+<!--실 결재양식 내용 부분 끝 -->

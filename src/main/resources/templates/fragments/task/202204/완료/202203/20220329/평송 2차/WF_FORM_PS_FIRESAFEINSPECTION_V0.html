@@ -1,0 +1,382 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:15%" />
+        <col style="width:45%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+    </colgroup>
+    <tr>
+    	<td colspan="5">
+    		<input type="text" name="checkDt" data-type="mField" data-pattern="date" data-date-format="yy년 mm월 dd일(D요일)" value="{{ doc.BodyContext.checkDt }}"  style="width:35%;"placeholder="날짜선택" title="점검일" required>
+    	</td>
+    </tr>
+    <tr>
+    	<th>점검항목</th>
+    	<th>일일점검내용</th>
+    	<th>적합</th>
+    	<th>부적합</th>
+    	<th>조치</th>
+    </tr>
+    <!-- 화기취급 영역 시작-->
+    <tr>
+    	<th rowspan="6">화기취급</th>
+    	<td>화기는 불연성깔판위에 전도되지 않는 구조로 설치여부</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_1">
+    			<input type="radio" name="rdo_1" value="1" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_1">
+    			<input type="radio" name="rdo_1" value="2" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_1">
+    			<input type="radio" name="rdo_1" value="3" />
+    		</div>
+    	</td>
+    </tr>
+    <tr>
+    	<td>가연물로부터 1m이상 이결설치 여부</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_2">
+    			<input type="radio" name="rdo_2" value="1" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_2">
+    			<input type="radio" name="rdo_2" value="2" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_2">
+    			<input type="radio" name="rdo_2" value="3" />
+    		</div>
+    	</td>
+    </tr>
+    <tr>
+    	<td>노후, 손상, 불량기구 사용여부</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_3">
+    			<input type="radio" name="rdo_3" value="1" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_3">
+    			<input type="radio" name="rdo_3" value="2" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_3">
+    			<input type="radio" name="rdo_3" value="3" />
+    		</div>
+    	</td>
+    </tr>
+    <tr>
+    	<td>전열기는 문어발식으로 용량 초과 사용 여부</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_4">
+    			<input type="radio" name="rdo_4" value="1" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_4">
+    			<input type="radio" name="rdo_4" value="2" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_4">
+    			<input type="radio" name="rdo_4" value="3" />
+    		</div>
+    	</td>
+    </tr>
+    <tr>
+    	<td>사용하지 않는 화기의 완전소화조치 및 전원차단 여부</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_5">
+    			<input type="radio" name="rdo_5" value="1" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_5">
+    			<input type="radio" name="rdo_5" value="2" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_5">
+    			<input type="radio" name="rdo_5" value="3" />
+    		</div>
+    	</td>
+    </tr>
+    <tr>
+    	<td>불연재의 휴지통 사용 및 퇴청시는 비워 놓는지 여부</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_6">
+    			<input type="radio" name="rdo_6" value="1" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_6">
+    			<input type="radio" name="rdo_6" value="2" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_6">
+    			<input type="radio" name="rdo_6" value="3" />
+    		</div>
+    	</td>
+    </tr>
+    <!-- 화기취급 영역 끝 -->
+    <!-- 소방시설 영역 시작-->
+    <tr>
+    	<th rowspan="8">소방시설</th>
+    	<td>소화기, 피난기구의 지정된 위치 비치여부</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_7">
+    			<input type="radio" name="rdo_7" value="1" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_7">
+    			<input type="radio" name="rdo_7" value="2" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_7">
+    			<input type="radio" name="rdo_7" value="3" />
+    		</div>
+    	</td>
+    </tr>
+    <tr>
+    	<td>자동화재탐지설비 등 작동상태 양호 여부</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_8">
+    			<input type="radio" name="rdo_8" value="1" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_8">
+    			<input type="radio" name="rdo_8" value="2" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_8">
+    			<input type="radio" name="rdo_8" value="3" />
+    		</div>
+    	</td>
+    </tr>
+    <tr>
+    	<td>감지기의 오동작 및 기능불량 여부</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_9">
+    			<input type="radio" name="rdo_9" value="1" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_9">
+    			<input type="radio" name="rdo_9" value="2" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_9">
+    			<input type="radio" name="rdo_9" value="3" />
+    		</div>
+    	</td>
+    </tr>
+    <tr>
+    	<td>유도표시 및 유도등의 점등 양호 여부</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_10">
+    			<input type="radio" name="rdo_10" value="1" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_10">
+    			<input type="radio" name="rdo_10" value="2" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_10">
+    			<input type="radio" name="rdo_10" value="3" />
+    		</div>
+    	</td>
+    </tr>
+    <tr>
+    	<td>소방용수 공급펌프의 상시 작동 여부</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_11">
+    			<input type="radio" name="rdo_11" value="1" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_11">
+    			<input type="radio" name="rdo_11" value="2" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_11">
+    			<input type="radio" name="rdo_11" value="3" />
+    		</div>
+    	</td>
+    </tr>
+    <tr>
+    	<td>소방용수 공급펌프 이상소음 발생 여부</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_12">
+    			<input type="radio" name="rdo_12" value="1" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_12">
+    			<input type="radio" name="rdo_12" value="2" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_12">
+    			<input type="radio" name="rdo_12" value="3" />
+    		</div>
+    	</td>
+    </tr>
+    <tr>
+    	<td>소화수의 상시 확보 여부</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_13">
+    			<input type="radio" name="rdo_13" value="1" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_13">
+    			<input type="radio" name="rdo_13" value="2" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_13">
+    			<input type="radio" name="rdo_13" value="3" />
+    		</div>
+    	</td>
+    </tr>
+    <tr>
+    	<td>소방용수 압력탱크의 압력게이지 정상 여부</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_14">
+    			<input type="radio" name="rdo_14" value="1" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_14">
+    			<input type="radio" name="rdo_14" value="2" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_14">
+    			<input type="radio" name="rdo_14" value="3" />
+    		</div>
+    	</td>
+    </tr>
+    <!-- 소방시설 영역 끝-->
+    <!-- 옥내소화전 및 소화기 영역 시작-->
+    <tr>
+    	<th rowspan="5">옥내소화전<br/>및 소화기</th>
+    	<td>소화기의 압력게이지 정상 여부</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_15">
+    			<input type="radio" name="rdo_15" value="1" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_15">
+    			<input type="radio" name="rdo_15" value="2" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_15">
+    			<input type="radio" name="rdo_15" value="3" />
+    		</div>
+    	</td>
+    </tr>
+    <tr>
+    	<td>옥내소화전 호스의 상태 정상 여부</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_16">
+    			<input type="radio" name="rdo_16" value="1" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_16">
+    			<input type="radio" name="rdo_16" value="2" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_16">
+    			<input type="radio" name="rdo_16" value="3" />
+    		</div>
+    	</td>
+    </tr>
+    <tr>
+    	<td>호스의 커플링 훼손 여부</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_17">
+    			<input type="radio" name="rdo_17" value="1" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_17">
+    			<input type="radio" name="rdo_17" value="2" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_17">
+    			<input type="radio" name="rdo_17" value="3" />
+    		</div>
+    	</td>
+    </tr>
+    <tr>
+    	<td>옥내소화전 표시등의 점등상태 양호 여부</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_18">
+    			<input type="radio" name="rdo_18" value="1" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_18">
+    			<input type="radio" name="rdo_18" value="2" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_18">
+    			<input type="radio" name="rdo_18" value="3" />
+    		</div>
+    	</td>
+    </tr>
+    <tr>
+    	<td>소화전 주위의 장애물 여부</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_19">
+    			<input type="radio" name="rdo_19" value="1" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_19">
+    			<input type="radio" name="rdo_19" value="2" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_19">
+    			<input type="radio" name="rdo_19" value="3" />
+    		</div>
+    	</td>
+    </tr>
+    <!-- 옥내소화전 및 소화기 영역 끝-->
+    <!-- 특이사항 -->
+    <tr>
+    	<th>특이사항</th>
+    	<td colspan="4">
+    		<textarea data-type="mField" name="notice" rows="5" style="width:99%; overflow-y:auto;">{{ doc.BodyContext.notice }}</textarea>
+    	</td>
+    </tr>
+</table>
+<!--실 결재양식 내용 부분 끝 -->

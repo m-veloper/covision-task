@@ -1,0 +1,799 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:7%">
+		<col style="width:7%">
+		<col style="width:7%">
+		<col style="width:7%">
+		<col style="width:7%">
+		<col style="width:7%">
+		<col style="width:7%">
+		<col style="width:10%">
+		<col style="width:27%">
+		<col style="width:16%">
+    </colgroup>
+    <tr>
+    	<th rowspan ="2">날씨</th>
+    	<th colspan ="2">온도(℃)</th>
+    	<th colspan ="2">습도(％)</th>
+    	<th colspan ="2">근부습도(％)</th>
+    	<th rowspan ="2" >강우／강설<br>(mm／cm)</th>
+    	<th>특이사항</th>
+    	<th>비고</th>
+    </tr>
+     <tr>
+    	<th>최저</th>    	
+    	<th>최고</th>
+    	<th>최저</th>    	
+    	<th>최고</th>
+    	<th>최저</th>    	
+    	<th>최고</th>
+    	<td rowspan="2"> 
+    		<textarea id="uniqueThing"  rows="3" data-type="mField" style="width: 98%;">{{ doc.BodyContext.uniqueThing }}</textarea>
+		</td>
+    	<td rowspan="2">    	
+    	<textarea id="REMARK" rows="3" data-type="mField" style="width: 98%;">{{ doc.BodyContext.REMARK }}</textarea>
+    	</td>
+    </tr>
+    <tr>
+    	<td>
+    		<input type="text" data-type="mField" id="whether" name = "whether" value="{{ doc.BodyContext.whether }}" style="width : 95%" >
+    	</td>
+    	<td>
+    		<input type="text" data-type="mField" id="tempLow" name = "tempLow" value="{{ doc.BodyContext.tempLow }}" style="width : 95%" >
+    	</td>
+    	<td>
+    		<input type="text" data-type="mField" id="tempHigh" name = "tempHigh" value="{{ doc.BodyContext.tempHigh }}" style="width : 95%" >
+    	</td>
+    	<td>
+    		<input type="text" data-type="mField" id="humLow" name = "humLow" value="{{ doc.BodyContext.humLow }}" style="width : 95%" >
+    	</td>
+    	<td>
+    		<input type="text" data-type="mField" id="humHigh" name = "humHigh" value="{{ doc.BodyContext.humHigh }}" style="width : 95%" >
+    	</td>
+    	<td>
+    		<input type="text" data-type="mField" id="rootHumLow" name = "rootHumLow" value="{{ doc.BodyContext.rootHumLow }}" style="width : 95%" >
+    	</td>
+    	<td>
+    		<input type="text" data-type="mField" id="rootHumHigh" name = "rootHumHigh" value="{{ doc.BodyContext.rootHumHigh }}" style="width : 95%" >
+    	</td>
+    	<td>
+    		<input type="text" data-type="mField" id="rainfall" name = "rainfall" value="{{ doc.BodyContext.rainfall }}" style="width : 95%" >
+    	</td>
+    </tr>
+</table>
+	
+	
+
+<table class="table_10 linePlus mt10 multi-row-table RowSumTable tableStyle" id="request_Tbl"><!-- class="table_10" -->
+	<colgroup>
+        <col style="width:8%">
+		<col style="width:23%">
+		<col style="width:23%">
+		<col style="width:23%">
+		<col style="width:23%">
+    </colgroup>
+	<tbody><tr>
+		<td colspan="6" style="text-align:center; font-size:16px; font-weight:bold; border:none;">
+			코스관리 업무일지(<input type="text" data-type="mField" id="courselocal" name = "courselocal" value="{{ doc.BodyContext.courselocal }}" style="width : 250px" >)
+		</td>
+	</tr>
+
+	<tr>
+		<th rowspan ="2">구분</th>
+		<th colspan ="2">전일작업</th>
+		<th colspan ="2">금일작업</th>
+	</tr>
+	<tr>
+		<th >작업내용</th>
+		<th >작업자</th>
+		<th >작업내용</th>
+		<th >작업자</th>
+	</tr>
+	<tr class="multi-row-control">
+		<td class="multi-row-autospan" style="text-align:center">
+			GREEN<br style="">
+			<input type="button" value="추가" class="usa multi-row-add" data-mode="writeOnly"><!-- onclick="addRow()"  -->
+	   		<input type="button" value="삭제" class="usa multi-row-del-auto" data-mode="writeOnly"><!-- onclick="delRow()"  -->
+		</td>
+		
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mgreenBeforeWorkComment">{{ doc.BodyContext.mgreenBeforeWorkComment }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mgreenBeforeWorkPerson">{{ doc.BodyContext.mgreenBeforeWorkPerson }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mgreenTodayWorkComment">{{ doc.BodyContext.mgreenTodayWorkComment }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mgreenTodayWorkPerson">{{ doc.BodyContext.mgreenBeforeWorkPerson }}</textarea>
+		</td>
+	</tr>	
+	<tr class="multi-row-template" style="border-top: 1px solid #c3d7df;">
+		
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="greenBeforeWorkComment"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="greenBeforeWorkPerson"></textarea>
+		</td>
+		<td >
+			<textarea data-type="rField" rows="2" style="width:98%" name="greenTodayWorkComment"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="greenTodayWorkPerson"></textarea>
+		</td>
+	</tr>
+	
+</tbody></table>
+
+
+
+<table class="table_10 linePlus mt10 multi-row-table RowSumTable tableStyle" id="request_Tbl1"><!-- class="table_10" -->
+	<colgroup>
+		<col style="width:8%">
+		<col style="width:23%">
+		<col style="width:23%">
+		<col style="width:23%">
+		<col style="width:23%">
+	</colgroup>
+	<tbody><tr class="multi-row-control">
+		<td class="multi-row-autospan" style="text-align:center">
+			TEEG컬러<br style="">
+			<input type="button" value="추가" class="usa multi-row-add" data-mode="writeOnly"><!-- onclick="addRow()"  -->
+	   		<input type="button" value="삭제" class="usa multi-row-del-auto" data-mode="writeOnly"><!-- onclick="delRow()"  -->
+		</td>
+		
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mTEEGBeforeWorkComment">{{ doc.BodyContext.mTEEGBeforeWorkComment }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mTEEGBeforeWorkPerson">{{ doc.BodyContext.mTEEGBeforeWorkPerson }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mTEEGTodayWorkComment">{{ doc.BodyContext.mTEEGTodayWorkComment }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mTEEGTodayWorkPerson">{{ doc.BodyContext.mTEEGTodayWorkPerson }}</textarea>
+		</td>
+	</tr>	
+	<tr class="multi-row-template" style="border-top: 1px solid #c3d7df;">
+		
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="TEEGBeforeWorkComment"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="TEEGBeforeWorkPerson"></textarea>
+		</td>
+		<td >
+			<textarea data-type="rField" rows="2" style="width:98%" name="TEEGTodayWorkComment"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="TEEGTodayWorkPerson"></textarea>
+		</td>
+	</tr>
+	
+</tbody></table>
+
+
+
+<table class="table_10 linePlus mt10 multi-row-table RowSumTable tableStyle" id="request_Tbl2"><!-- class="table_10" -->
+	<colgroup>
+		<col style="width:8%">
+		<col style="width:23%">
+		<col style="width:23%">
+		<col style="width:23%">
+		<col style="width:23%">
+	</colgroup>
+	<tbody><tr class="multi-row-control">
+		<td class="multi-row-autospan" style="text-align:center">
+			F/W<br style="">
+			<input type="button" value="추가" class="usa multi-row-add" data-mode="writeOnly"><!-- onclick="addRow()"  -->
+	   		<input type="button" value="삭제" class="usa multi-row-del-auto" data-mode="writeOnly"><!-- onclick="delRow()"  -->
+		</td>
+		
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mFWBeforeWorkComment">{{ doc.BodyContext.mFWBeforeWorkComment }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mFWBeforeWorkPerson">{{ doc.BodyContext.mFWBeforeWorkPerson }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mFWTodayWorkComment">{{ doc.BodyContext.mFWTodayWorkComment }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mFWTodayWorkPerson">{{ doc.BodyContext.mFWTodayWorkPerson }}</textarea>
+		</td>
+	</tr>	
+	<tr class="multi-row-template" style="border-top: 1px solid #c3d7df;">
+		
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="FWBeforeWorkComment"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="FWBeforeWorkPerson"></textarea>
+		</td>
+		<td >
+			<textarea data-type="rField" rows="2" style="width:98%" name="FWTodayWorkComment"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="greenTodayWorkPerson"></textarea>
+		</td>
+	</tr>
+	
+</tbody></table>
+
+
+
+<table class="table_10 linePlus mt10 multi-row-table RowSumTable tableStyle" id="request_Tbl3"><!-- class="table_10" -->
+	<colgroup>
+		<col style="width:8%">
+		<col style="width:23%">
+		<col style="width:23%">
+		<col style="width:23%">
+		<col style="width:23%">
+	</colgroup>
+	<tbody><tr class="multi-row-control">
+		<td class="multi-row-autospan" style="text-align:center">
+			R/H<br style="">
+			<input type="button" value="추가" class="usa multi-row-add" data-mode="writeOnly"><!-- onclick="addRow()"  -->
+	   		<input type="button" value="삭제" class="usa multi-row-del-auto" data-mode="writeOnly"><!-- onclick="delRow()"  -->
+		</td>
+		
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mRHBeforeWorkComment">{{ doc.BodyContext.mRHBeforeWorkComment }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mRHBeforeWorkPerson">{{ doc.BodyContext.mRHBeforeWorkPerson }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mRHTodayWorkComment">{{ doc.BodyContext.mRHTodayWorkComment }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mRHTodayWorkPerson">{{ doc.BodyContext.mRHTodayWorkPerson }}</textarea>
+		</td>
+	</tr>	
+	<tr class="multi-row-template" style="border-top: 1px solid #c3d7df;">
+		
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="RHBeforeWorkComment"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="RHBeforeWorkPerson"></textarea>
+		</td>
+		<td >
+			<textarea data-type="rField" rows="2" style="width:98%" name="RHTodayWorkComment"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="RHTodayWorkPerson"></textarea>
+		</td>
+	</tr>
+	
+</tbody></table>
+
+
+<table class="table_10 linePlus mt10 multi-row-table RowSumTable tableStyle" id="request_Tbl4"><!-- class="table_10" -->
+	<colgroup>
+		<col style="width:8%">
+		<col style="width:23%">
+		<col style="width:23%">
+		<col style="width:23%">
+		<col style="width:23%">
+	</colgroup>
+	<tbody><tr class="multi-row-control">
+		<td class="multi-row-autospan" style="text-align:center">
+			S/K<br style="">
+			<input type="button" value="추가" class="usa multi-row-add" data-mode="writeOnly"><!-- onclick="addRow()"  -->
+	   		<input type="button" value="삭제" class="usa multi-row-del-auto" data-mode="writeOnly"><!-- onclick="delRow()"  -->
+		</td>
+		
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mSKBeforeWorkComment">{{ doc.BodyContext.mSKBeforeWorkComment }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mSKBeforeWorkPerson">{{ doc.BodyContext.mSKBeforeWorkPerson }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mSKTodayWorkComment">{{ doc.BodyContext.mSKTodayWorkComment }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mSKTodayWorkPerson">{{ doc.BodyContext.mSKTodayWorkPerson }}</textarea>
+		</td>
+	</tr>	
+	<tr class="multi-row-template" style="border-top: 1px solid #c3d7df;">
+		
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="SKBeforeWorkComment"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="SKBeforeWorkPerson"></textarea>
+		</td>
+		<td >
+			<textarea data-type="rField" rows="2" style="width:98%" name="SKTodayWorkComment"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="SKTodayWorkPerson"></textarea>
+		</td>
+	</tr>
+	
+</tbody></table>
+
+
+
+<table class="table_10 linePlus mt10 multi-row-table RowSumTable tableStyle" id="request_Tbl5"><!-- class="table_10" -->
+	<colgroup>
+		<col style="width:8%">
+		<col style="width:23%">
+		<col style="width:23%">
+		<col style="width:23%">
+		<col style="width:23%">
+	</colgroup>
+	<tbody><tr class="multi-row-control">
+		<td class="multi-row-autospan" style="text-align:center">
+			벙커<br style="">
+			<input type="button" value="추가" class="usa multi-row-add" data-mode="writeOnly"><!-- onclick="addRow()"  -->
+	   		<input type="button" value="삭제" class="usa multi-row-del-auto" data-mode="writeOnly"><!-- onclick="delRow()"  -->
+		</td>
+		
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mBunkerBeforeWorkComment">{{ doc.BodyContext.mBunkerBeforeWorkComment }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mBunkerBeforeWorkPerson">{{ doc.BodyContext.mBunkerBeforeWorkPerson }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mBunkerTodayWorkComment">{{ doc.BodyContext.mBunkerTodayWorkComment }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mBunkerTodayWorkPerson">{{ doc.BodyContext.mBunkerTodayWorkPerson }}</textarea>
+		</td>
+	</tr>	
+	<tr class="multi-row-template" style="border-top: 1px solid #c3d7df;">
+		
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="BunkerBeforeWorkComment"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="BunkerBeforeWorkPerson"></textarea>
+		</td>
+		<td >
+			<textarea data-type="rField" rows="2" style="width:98%" name="BunkerTodayWorkComment"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="BunkerTodayWorkPerson"></textarea>
+		</td>
+	</tr>
+	
+</tbody></table>
+
+
+<table class="table_10 linePlus mt10 multi-row-table RowSumTable tableStyle" id="request_Tbl6"><!-- class="table_10" -->
+	<colgroup>
+		<col style="width:8%">
+		<col style="width:23%">
+		<col style="width:23%">
+		<col style="width:23%">
+		<col style="width:23%">
+	</colgroup>
+	<tbody><tr class="multi-row-control">
+		<td class="multi-row-autospan" style="text-align:center">
+			조경<br style="">
+			<input type="button" value="추가" class="usa multi-row-add" data-mode="writeOnly"><!-- onclick="addRow()"  -->
+	   		<input type="button" value="삭제" class="usa multi-row-del-auto" data-mode="writeOnly"><!-- onclick="delRow()"  -->
+		</td>
+		
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mLSBeforeWorkComment">{{ doc.BodyContext.mLSBeforeWorkComment }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mLSBeforeWorkPerson">{{ doc.BodyContext.mLSBeforeWorkPerson }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mLSTodayWorkComment">{{ doc.BodyContext.mLSTodayWorkComment }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mLSTodayWorkPerson">{{ doc.BodyContext.mLSTodayWorkPerson }}</textarea>
+		</td>
+	</tr>	
+	<tr class="multi-row-template" style="border-top: 1px solid #c3d7df;">
+		
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="LSBeforeWorkComment"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="LSBeforeWorkPerson"></textarea>
+		</td>
+		<td >
+			<textarea data-type="rField" rows="2" style="width:98%" name="LSTodayWorkComment"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="LSTodayWorkPerson"></textarea>
+		</td>
+	</tr>
+	
+</tbody></table>
+
+
+
+<table class="table_10 linePlus mt10 multi-row-table RowSumTable tableStyle" id="request_Tbl7"><!-- class="table_10" -->
+	<colgroup>
+		<col style="width:8%">
+		<col style="width:23%">
+		<col style="width:23%">
+		<col style="width:23%">
+		<col style="width:23%">
+	</colgroup>
+	<tbody><tr class="multi-row-control">
+		<td class="multi-row-autospan" style="text-align:center">
+			정비<br style="">
+			<input type="button" value="추가" class="usa multi-row-add" data-mode="writeOnly"><!-- onclick="addRow()"  -->
+	   		<input type="button" value="삭제" class="usa multi-row-del-auto" data-mode="writeOnly"><!-- onclick="delRow()"  -->
+		</td>
+		
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mAlignBeforeWorkComment">{{ doc.BodyContext.mAlignBeforeWorkComment }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mAlignBeforeWorkPerson">{{ doc.BodyContext.mAlignBeforeWorkPerson }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mAlignTodayWorkComment">{{ doc.BodyContext.mAlignTodayWorkComment }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mAlignTodayWorkPerson">{{ doc.BodyContext.mAlignTodayWorkPerson }}</textarea>
+		</td>
+	</tr>	
+	<tr class="multi-row-template" style="border-top: 1px solid #c3d7df;">
+		
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="AlignBeforeWorkComment"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="AlignBeforeWorkPerson"></textarea>
+		</td>
+		<td >
+			<textarea data-type="rField" rows="2" style="width:98%" name="AlignTodayWorkComment"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="AlignTodayWorkPerson"></textarea>
+		</td>
+	</tr>
+	
+</tbody></table>
+
+
+<table class="table_10 linePlus mt10 multi-row-table RowSumTable tableStyle" id="request_Tbl8"><!-- class="table_10" -->
+	<colgroup>
+		<col style="width:8%">
+		<col style="width:23%">
+		<col style="width:23%">
+		<col style="width:23%">
+		<col style="width:23%">
+	</colgroup>
+	<tbody><tr class="multi-row-control">
+		<td class="multi-row-autospan" style="text-align:center">
+			기타<br style="">
+			<input type="button" value="추가" class="usa multi-row-add" data-mode="writeOnly"><!-- onclick="addRow()"  -->
+	   		<input type="button" value="삭제" class="usa multi-row-del-auto" data-mode="writeOnly"><!-- onclick="delRow()"  -->
+		</td>
+		
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mEtcBeforeWorkComment">{{ doc.BodyContext.mEtcBeforeWorkComment }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mEtcBeforeWorkPerson">{{ doc.BodyContext.mEtcBeforeWorkPerson }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mEtcTodayWorkComment">{{ doc.BodyContext.mEtcTodayWorkComment }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mEtcTodayWorkPerson">{{ doc.BodyContext.mEtcTodayWorkPerson }}</textarea>
+		</td>
+	</tr>	
+	<tr class="multi-row-template" style="border-top: 1px solid #c3d7df;">
+		
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="EtcBeforeWorkComment"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="EtcBeforeWorkPerson"></textarea>
+		</td>
+		<td >
+			<textarea data-type="rField" rows="2" style="width:98%" name="EtcTodayWorkComment"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="EtcTodayWorkPerson"></textarea>
+		</td>
+	</tr>
+	
+</tbody></table>
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+    </colgroup>
+    <tr>
+    	<th>내장객
+    	</th>
+    	<th>금일
+    	</th>
+    	<th>1부:
+    	</th>
+    	<td>
+    	<input type="text" data-type="mField" id="todayFst" name = "todayFst" value="{{ doc.BodyContext.todayFst }}" style="width : 95%" >
+    	</td>
+    	<th>2부:
+    	</th>
+    	<td>
+    	<input type="text" data-type="mField" id="todaySec" name = "todaySec" value="{{ doc.BodyContext.todaySec }}" style="width : 95%" >
+    	</td>
+    	<th>계: 
+    	</th>
+    	<td colspan ="2">
+    	<input type="text" data-type="mField" id="todayTot" name = "todayTot" value="{{ doc.BodyContext.todayTot }}" style="width : 95%" >
+    	</td>
+    	<th>명일
+    	</th>
+    	<th>1부:
+    	</th>
+    	<td>
+    	<input type="text" data-type="mField" id="nextFst" name = "nextFst" value="{{ doc.BodyContext.nextFst }}" style="width : 95%" >
+    	</td>
+    	<th>2부:
+    	</th>
+    	<td>
+    	<input type="text" data-type="mField" id="nextSec" name = "nextSec" value="{{ doc.BodyContext.nextSec }}" style="width : 95%" >
+    	</td>
+    	<th>계: 
+    	</th>
+    	<td colspan ="2">
+    	<input type="text" data-type="mField" id="nextTot" name = "nextTot" value="{{ doc.BodyContext.nextTot }}" style="width : 95%" >
+    	</td>
+    </tr>
+    <tr>
+    	<th colspan ="17">투입자재
+    	</th>
+    </tr>
+    <tr>
+    	<th >농약
+    	</th>
+    	<td colspan ="16">
+    	<input type="text" data-type="mField" id="pesticides" name = "pesticides" value="{{ doc.BodyContext.pesticides }}" style="width : 95%" >
+    	</td>
+    </tr>
+    <tr>
+    	<th >비료
+    	</th>
+    	<td colspan ="16">
+    	<input type="text" data-type="mField" id="fertilizer" name = "fertilizer" value="{{ doc.BodyContext.fertilizer }}" style="width : 95%" >
+    	</td>
+    </tr>
+    <tr>
+    	<th >기타
+    	</th>
+    	<td colspan ="16">
+    	<input type="text" data-type="mField" id="etcMatter" name = "etcMatter" value="{{ doc.BodyContext.etcMatter }}" style="width : 95%" >
+    	</td>
+    </tr>
+</table>
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+    </colgroup>
+    <tr>
+    	<th rowspan="3">직원
+    	</th>
+    	<th colspan="3">인원현황
+    	</th>
+    	<th colspan="5">금일휴무자
+    	</th>
+    	<th colspan="5">명일휴무자
+    	</th>
+    	<th colspan="3">지원기타
+    	</th>
+    </tr>
+    <tr>
+    	<th>총원
+    	</th>
+    	<th>금일
+    	</th>
+    	<th>명일
+    	</th>
+    	<td rowspan ="2" colspan ="5">
+    	<textarea id="totRestPerson" rows="3" data-type="mField" style="width: 98%;">{{ doc.BodyContext.totRestPerson }}</textarea>
+    	</td>
+    	<td rowspan ="2" colspan ="5">
+    	<textarea id="nextRestPerson" rows="3" data-type="mField" style="width: 98%;">{{ doc.BodyContext.nextRestPerson }}</textarea>
+    	</td>
+    	<td rowspan ="2" colspan ="3">
+    	<textarea id="supportPerson" rows="3" data-type="mField" style="width: 98%;">{{ doc.BodyContext.supportPerson }}</textarea>
+    	</td>
+    </tr>
+    <tr>
+   		<td >
+    	<input type="text" data-type="mField" id="totPerson" name = "totPerson" value="{{ doc.BodyContext.totPerson }}" style="width : 95%" >
+    	</td>
+    	<td >
+    	<input type="text" data-type="mField" id="todayPerson" name = "todayPerson" value="{{ doc.BodyContext.todayPerson }}" style="width : 95%" >
+    	</td>
+    	<td >
+    	<input type="text" data-type="mField" id="nextPerson" name = "nextPerson" value="{{ doc.BodyContext.nextPerson }}" style="width : 95%" >
+    	</td>
+    </tr>
+    <tr>
+    	<th>협력직
+    	</th>
+    	<th>남자
+    	</th>
+    	<td >
+    	<input type="text" data-type="mField" id="subMale" name = "subMale" value="{{ doc.BodyContext.subMale }}" style="width : 95%" >
+    	</td>
+    	<th>반장
+    	</th>
+    	<td >
+    	<input type="text" data-type="mField" id="subFeMale" name = "subFeMale" value="{{ doc.BodyContext.subFeMale }}" style="width : 95%" >
+    	</td>
+    	<th>(女)<br>볼마크
+    	</th>
+    	<td >
+    	<input type="text" data-type="mField" id="ballFeMale" name = "ballFeMale" value="{{ doc.BodyContext.ballFeMale }}" style="width : 95%" >
+    	</td>
+    	<th>(男)<br>예초
+    	</th>
+    	<td >
+    	<input type="text" data-type="mField" id="grassMale" name = "grassMale" value="{{ doc.BodyContext.grassMale }}" style="width : 95%" >
+    	</td>
+    	<th>(女)<br>잡역
+    	</th>
+    	<td >
+    	<input type="text" data-type="mField" id="anotherFeMale" name = "anotherFeMale" value="{{ doc.BodyContext.anotherFeMale }}" style="width : 95%" >
+    	</td>
+    	<th>그린<br>예지
+    	</th>
+    	<td >
+    	<input type="text" data-type="mField" id="greenRound" name = "greenRound" value="{{ doc.BodyContext.greenRound }}" style="width : 95%" >
+    	</td>
+    	<th>조경
+    	</th>
+    	<td >
+    	<input type="text" data-type="mField" id="landscape" name = "landscape" value="{{ doc.BodyContext.landscape }}" style="width : 95%" >
+    	</td>
+    	<th>벙커<br>기타
+    	</th>
+    	<td >
+    	<input type="text" data-type="mField" id="bunker" name = "bunker" value="{{ doc.BodyContext.bunker }}" style="width : 95%" >
+    	</td>
+    </tr>
+</table>
+
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+        <col style="width:5.8%">
+    </colgroup>
+    <tr>
+    	<th colspan="11">예고(mm)
+    	</th>
+    	<th colspan="6">그린컨디션
+    	</th>
+    </tr>
+    <tr>
+    	<th>구분
+    	</th>
+    	<th colspan ="2">GREEN
+    	</th>
+    	<th >COLLAR
+    	</th>
+    	<th>TEE
+    	</th>
+    	<th colspan ="2">F/W
+    	</th>
+    	<th colspan ="2">AB러프
+    	</th>
+    	<th colspan ="2">H러프(법면)
+    	</th>
+    	<th colspan ="4">그 린 스 피 드(M)
+    	</th>
+    	<th>그린<br>밀도<br>(개/㎠)
+    	</th>
+    	<th>근부<br>(cm)
+    	</th>
+    </tr>
+    <tr>
+    	<th rowspan ="2">예고
+    	</th>
+    	<td colspan ="2">
+    	<input type="text" data-type="mField" id="GREEN1" name = "GREEN1" value="{{ doc.BodyContext.GREEN1 }}" style="width : 95%" >
+    	</td>
+    	<td rowspan ="2">
+    	<input type="text" data-type="mField" id="COLLAR" name = "COLLAR" value="{{ doc.BodyContext.COLLAR }}" style="width : 95%" >
+    	</td>
+    	<td rowspan ="2">
+    	<input type="text" data-type="mField" id="TEE" name = "TEE" value="{{ doc.BodyContext.TEE }}" style="width : 95%" >
+    	</td>
+    	<td colspan ="2" rowspan ="2">
+    	<input type="text" data-type="mField" id="FW" name = "FW" value="{{ doc.BodyContext.FW }}" style="width : 95%" >
+    	</td>
+    	<td colspan ="2" rowspan ="2">
+    	<input type="text" data-type="mField" id="ABrough" name = "ABrough" value="{{ doc.BodyContext.ABrough }}" style="width : 95%" >
+    	</td>
+    	<td colspan ="2" rowspan ="2">
+    	<input type="text" data-type="mField" id="Hrough" name = "Hrough" value="{{ doc.BodyContext.Hrough }}" style="width : 95%" >
+    	</td>
+    	<th colspan ="2">힐코스
+    	</th>
+    	<th colspan ="2">레이크코스
+    	</th>
+    	<td rowspan ="2">
+    	<input type="text" data-type="mField" id="greenDensity" name = "greenDensity" value="{{ doc.BodyContext.greenDensity }}" style="width : 95%" >
+    	</td>
+    	<td rowspan ="2">
+    	<input type="text" data-type="mField" id="rootLength" name = "rootLength" value="{{ doc.BodyContext.rootLength }}" style="width : 95%" >
+    	</td>
+    	
+    </tr>
+    <tr>
+	    <td colspan ="2">
+	    <input type="text" data-type="mField" id="GREEN2" name = "GREEN2" value="{{ doc.BodyContext.GREEN2 }}" style="width : 95%" >
+	    </td>
+	    <td colspan ="2">
+	    <input type="text" data-type="mField" id="hillCourse" name = "hillCourse" value="{{ doc.BodyContext.hillCourse }}" style="width : 95%" >
+	    </td>
+	    <td colspan ="2">
+	    <input type="text" data-type="mField" id="lakeCourse" name = "lakeCourse" value="{{ doc.BodyContext.lakeCourse }}" style="width : 95%" >
+	    </td>
+    </tr>
+</table>
+
+<!--실 결재양식 내용 부분 끝 -->

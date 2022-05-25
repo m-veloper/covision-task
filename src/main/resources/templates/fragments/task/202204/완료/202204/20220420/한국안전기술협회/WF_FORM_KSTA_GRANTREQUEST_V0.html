@@ -1,0 +1,148 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+		<colgroup>
+			<col style="width:12%" />
+	       <col style="width:35%" />
+	       <col style="width:12%" />
+	       <col style="width:35%" />
+		</colgroup>  
+		<tr>
+			<th>소속
+			</th>
+			<td >
+	          <input type="text" id = "userDept" name="userDept" data-type="mField" value="{{ doc.BodyContext.userDept }}" style="width: 99%;"  > 	  
+	        </td>
+	        <th>직위
+			</th>
+			<td >
+	          <input type="text"  name="userPosition" data-type="mField" value="{{ doc.BodyContext.userPosition }}" style="width: 99%;"  > 	  
+	        </td>
+		</tr>
+		
+		  
+		  <tr>
+			<th>성명
+			</th>
+			<td >
+	          <input type="text" name="userName" data-type="mField" value="{{ doc.BodyContext.userName }}" style="width: 99%;"  > 	  
+	        </td>
+	        <th>생년월일
+			</th>
+			<td >
+				<input type="text" name="enterDay" data-type="mField" value="{{ doc.BodyContext.enterDay }}" style="width: 99%;"  > 
+	        </td>
+		</tr>
+
+</table>
+
+
+<table class="tableStyle linePlus "><!-- class="table_10" -->
+
+		<colgroup>
+			<col style="width:14%" />
+	       <col style="width:18%" />
+	       <col style="width:11.5%" />
+	       <col style="width:11.5%" />
+	       <col style="width:11.5%" />
+	       <col style="width:11.5%" />
+	       <col style="width:11.5%" />
+	       <col style="width:11.5%" />
+		</colgroup>  
+		<tr>
+			<th rowspan ="4">자동차<br>종합보험료<br>보조비<br>신청
+			</th>
+			<th >차종
+			</th>
+			<td colspan ="2">
+	          <input type="text"  name="carDiv" data-type="mField" value="{{ doc.BodyContext.carDiv }}" style="width: 99%;"  > 	  
+	        </td>
+	        <th colspan ="2">차량번호
+			</th>
+			<td colspan ="2">
+	          <input type="text"  name="carNo" data-type="mField" value="{{ doc.BodyContext.carNo }}" style="width: 99%;"  > 	  
+	        </td>
+		</tr>
+		
+		<tr>
+			<th >차량소유주(관계)
+			</th>
+			<td colspan ="6">
+	          <input type="text"  name="carOwner" data-type="mField" value="{{ doc.BodyContext.carOwner }}" style="width: 99%;"  > 	  
+	        </td>
+		</tr>  
+		<tr>
+			<th rowspan="2">종합보험가입<br>항목
+			</th>
+			<th >책임보험<br>(대인배상1)
+			</th>
+			<th >대인배상2
+			</th>
+			<th >대물배상
+			</th>
+			<th >자기신체<br>사고
+			</th>
+			<th >무보험 차<br>상태
+			</th>
+			<th >자기차량<br>손해
+			</th>
+			
+		</tr>  
+		<tr>
+			<td align="center">
+				<div data-type="mField" data-node-name="changeType1" data-element-type="chk_d">
+					<input type="checkbox" id="changeType1" name="changeType1" value="책임보험">
+				</div>
+			</td>
+			<td align="center">
+				<div data-type="mField" data-node-name="changeType2" data-element-type="chk_d">
+					<input type="checkbox" id="changeType2" name="changeType2" value="대인배상2">
+				</div>
+			</td>
+			<td align="center">
+				<div data-type="mField" data-node-name="changeType3" data-element-type="chk_d">
+					<input type="checkbox" id="changeType3" name="changeType3" value="대물배상">
+				</div>
+			</td>
+			<td align="center">
+				<div data-type="mField" data-node-name="changeType4" data-element-type="chk_d">
+					<input type="checkbox" id="changeType4" name="changeType4" value="자기신체사고">
+				</div>
+			</td>
+			<td align="center">
+				<div data-type="mField" data-node-name="changeType5" data-element-type="chk_d">
+					<input type="checkbox" id="changeType5" name="changeType5" value="무보험차상해">
+				</div>
+			</td>
+			<td align="center">
+				<div data-type="mField" data-node-name="changeType6" data-element-type="chk_d">
+					<input type="checkbox" id="changeType6" name="changeType6" value="자기차량손해">
+				</div>
+			</td>
+			
+		</tr>  
+		 <tr>
+			<th rowspan ="2">자동차 종합보험료 보조비 신청
+			</th>
+			<th >유종
+			</th>
+			<td colspan ="2">
+	          <input type="text"  name="carOil" data-type="mField" value="{{ doc.BodyContext.carOil }}" style="width: 99%;"  > 	  
+	        </td>
+	        <th colspan ="2">총주행거리
+			</th>
+			<td colspan ="2">
+	          <input type="text"  name="carDistance" data-type="mField" value="{{ doc.BodyContext.carDistance }}" style="width: 99%;"  > 	  
+	        </td>
+		</tr>
+		
+		<tr>
+			<td colspan ="7">
+	         	※자동차 보험료 보조비 지급,개인차량 운향 및 보조금 신청 이후 차량 운영과 관련 발생되는 차량사고<br>
+	         	및 차량 수리의 책임은 본인의 과실 여하를 불문하고 본인의 책임으로 귀속됨을 확약합니다.
+	        </td>
+		</tr>
+
+</table>
+<!--실 결재양식 내용 부분 끝 -->

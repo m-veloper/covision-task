@@ -1,0 +1,194 @@
+
+
+<!--실 결재양식 내용 부분 시작 -->
+	<!--  20220404 수정전
+	    <table class="tableStyle linePlus mt10">
+
+		<colgroup>
+	       <col style="width:20%" />
+	       <col style="width:20%" />
+	       <col style="width:20%" />
+	       <col style="width:20%" />
+	       <col style="width:20%" />
+		</colgroup>  
+	     <tr>
+	    	<th colspan="5" style ="text-align : left !important">1.심의안건</th>			
+	    </tr>
+	    <tr>
+	    	<td colspan="5" >
+				<textarea id="decideComment" data-type="mField"style="width: 98%;height:80px">{{ doc.BodyContext.decideComment }}</textarea>
+			</td>
+	    </tr>
+	    
+	     <tr>
+	    	<th colspan="5" style ="text-align : left !important">2.의결권행사</th>			
+	    </tr>
+	    <tr>
+		    <th>찬성</th>
+		    <th>조건부찬성</th>
+		    <th>재검토</th>
+		    <th>부적정</th>
+		    <th>기타(기권  등)</th>
+	    </tr>
+	    <tr>
+	    	<td  align="center">
+				 <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1">
+	            	<input type="checkbox" id="chkBox_01" name="chkBox_1" value="찬성">찬성
+	            </div>
+			</td>
+			 <td  align="center">
+				 <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1">
+	                <input type="checkbox" id="chkBox_02" name="chkBox_1" value="조건부찬성">조건부찬성
+	            
+	            </div>
+			</td>
+			 <td align="center" >
+				 <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1">
+	            	<input type="checkbox" id="chkBox_01" name="chkBox_1" value="재검토">재검토
+	            
+	            </div>
+			</td>
+			 <td align="center" >
+				 <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1">         
+	                <input type="checkbox" id="chkBox_04" name="chkBox_1" value="부적정">부적정	            
+	            </div>
+			</td>
+			 <td align="center" >
+				 <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1">
+	                <input type="checkbox" id="chkBox_05" name="chkBox_1" value="기타(기권  등)">기타(기권  등)
+	            
+	            </div>
+			</td>
+			
+	    </tr>
+	    
+	    
+	    
+	    
+	     <tr>
+	    	<th colspan="5" style ="text-align : left !important" >3.의견(조건부 찬성인 경우 그 조건, 재검토인 경우 재검토를 요하는 사항, 부적정인 경우 그 이유 등)</th>			
+	    </tr>
+	    <tr>
+	    	<td colspan="5" >
+				<textarea id="opnionComment" data-type="mField"style="width: 98%;height:80px">{{ doc.BodyContext.opnionComment }}</textarea>
+			</td>
+	    </tr>
+	    
+	    
+	     
+	    </table>
+-->	    
+
+<table class="tableStyle linePlus mt10">
+
+		<colgroup>
+	       <col style="width:20%" />
+	       <col style="width:20%" />
+	       <col style="width:20%" />
+	       <col style="width:20%" />
+	       <col style="width:20%" />
+		</colgroup>  
+	     <tr>
+	    	<th colspan="5" style ="text-align : left !important">1.심의안건</th>			
+	    </tr>
+	    <tr>
+	    	<td colspan="5" >
+				<textarea id="decideComment" data-type="mField"style="width: 98%;height:80px">{{ doc.BodyContext.decideComment }}</textarea>
+			</td>
+	    </tr>
+	    </table>
+	    
+	    
+	    
+<table class="table_10 multi-row-table tableStyle linePlus" id="TBLINFO" style="border-left: 1px solid #c3d7df;">
+    <colgroup>
+       <col style="width:17.5%" />
+       <col style="width:16.5%" />
+       <col style="width:16.5%" />
+       <col style="width:16.5%" />
+       <col style="width:16.5%" />
+       <col style="width:16.5%" />
+	</colgroup>  
+    <tbody>
+	    <tr class="multi-row-control" data-mode="writeOnly">
+	        <td colspan="6" style="text-align: right">
+	            <input type="button" id="btnAdd" value="+추가" class="multi-row-add smButton">
+	            <input type="button" id="btnDelSel" value="-삭제" class="multi-row-del-auto smButton">
+	        </td>
+	    </tr>
+	    <tr>
+	    	<th></th>
+		    <th>찬성</th>
+		    <th>조건부찬성</th>
+		    <th>재검토</th>
+		    <th>부적정</th>
+		    <th>기타(기권  등)</th>
+	    </tr>
+	    <tr class="multi-row-template">
+	     	<td>
+	     		<input name="itemName" style="width: 99%;" type="text" data-type="rField">
+	     	</td>
+	    	<td  align="center">
+				 	            
+	           <div class="group" data-type="rField" data-element-type="chk_d" data-node-name="CHECK_BOX1">
+	                <input type="checkbox" name="CHECK_BOX_ITEM1" data-face-for="CHECK_BOX1" value="찬성" />찬성&nbsp;&nbsp;
+	                <input type="text" name="CHECK_BOX1" data-face-real="y" style="display:none;" />
+	            </div>
+			</td>
+			 <td  align="center">	            
+                <div class="group" data-type="rField" data-element-type="chk_d" data-node-name="CHECK_BOX2">
+	                <input type="checkbox" name="CHECK_BOX_ITEM2" data-face-for="CHECK_BOX2" value="조건부찬성" />조건부찬성&nbsp;&nbsp;
+	                <input type="text" name="CHECK_BOX2" data-face-real="y" style="display:none;" />
+           		</div>
+			</td>
+			 <td align="center" >	            
+                <div class="group" data-type="rField" data-element-type="chk_d" data-node-name="CHECK_BOX3">
+	                <input type="checkbox" name="CHECK_BOX_ITEM3" data-face-for="CHECK_BOX3" value="재검토" />재검토&nbsp;&nbsp;
+	                <input type="text" name="CHECK_BOX3" data-face-real="y" style="display:none;" />
+	            </div>
+			</td>
+			 <td align="center" >	            
+                <div class="group" data-type="rField" data-element-type="chk_d" data-node-name="CHECK_BOX4">
+	                <input type="checkbox" name="CHECK_BOX_ITEM4" data-face-for="CHECK_BOX4" value="부적절" />부적절&nbsp;&nbsp;
+	                <input type="text" name="CHECK_BOX4" data-face-real="y" style="display:none;" />
+	            </div>
+	            
+			</td>
+			 <td align="center" >
+				          
+                <div class="group" data-type="rField" data-element-type="chk_d" data-node-name="CHECK_BOX5">
+	                <input type="checkbox" name="CHECK_BOX_ITEM5" data-face-for="CHECK_BOX5" value="기타(기권 등)" />기타(기권 등)&nbsp;&nbsp;
+	                <input type="text" name="CHECK_BOX5" data-face-real="y" style="display:none;" />
+	            </div>
+	            
+			</td>
+			
+	    </tr>
+	</tbody>
+</table>
+	    
+	   
+	    
+		<table class="tableStyle linePlus ">
+
+		<colgroup>
+	       <col style="width:20%" />
+	       <col style="width:20%" />
+	       <col style="width:20%" />
+	       <col style="width:20%" />
+	       <col style="width:20%" />
+		</colgroup>  
+	    
+	     <tr>
+	    	<th colspan="5" style ="text-align : left !important" >3.의견(조건부 찬성인 경우 그 조건, 재검토인 경우 재검토를 요하는 사항, 부적정인 경우 그 이유 등)</th>			
+	    </tr>
+	    <tr>
+	    	<td colspan="5" >
+				<textarea id="opnionComment" data-type="mField"style="width: 98%;height:80px">{{ doc.BodyContext.opnionComment }}</textarea>
+			</td>
+	    </tr>
+	    
+	    
+	     
+	    </table>
+<!--실 결재양식 내용 부분 끝 -->

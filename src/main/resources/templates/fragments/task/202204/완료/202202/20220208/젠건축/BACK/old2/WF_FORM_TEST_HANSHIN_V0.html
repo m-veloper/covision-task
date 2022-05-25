@@ -1,0 +1,85 @@
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10 multi-row-table sortable" id="ItemTbl">
+	
+	<tbody>
+         <colgroup>
+         <col style="width: 5%">
+         <col style="width: 17%">
+         <col style="width: 21%">
+         <col style="width: 13%">
+         <col style="width: 40%">
+    </colgroup>
+    	<tr class="multi-row-control" data-mode="writeOnly">
+			<td colspan="5" align="right" class="ui-sortable">
+				<input type="button" value="+추가" class="multi-row-add usa" data-mode="writeOnly">
+				<input type="button" value="-삭제" class="multi-row-del-auto usa" data-mode="writeOnly">
+			</td>
+		</tr>        
+	
+	</tbody>
+	<tbody class="tbody">
+		<tr class="multi-row-template">
+			<td colspan="5" class="ui-sortable">
+				
+				<!-- 카드신청 -->
+				<table class="multi-row-table tableStyle linePlus table_10 RowSumTable multi-sum" name="subTbl"  id="xformid_1">
+					<colgroup>
+						<col style="width: 5%;">		
+						<col style="width: 10%;">
+						<col style="width: 37%;">		
+						<col style="width: 12%;">
+						<col style="width: 12%;">
+						<col style="width: 12%;">
+						<col style="width: 12%;">
+					</colgroup>
+					<tbody><tr class="multi-row-control" data-mode="writeOnly">
+						<td colspan="3" style="text-align: right; border-left: hidden; border-right: hidden; border-top: hidden">
+						<p >카드 NO
+						<input type="text" onkeyup='onlyNumber(this);'  maxlength="20" data-type="mField" id="CardNo" name="CardNo" value="{{ doc.BodyContext.CardNo }}" style="width: 300px ;text-align:center; border-left: hidden; border-right: hidden; border-top: hidden" />
+						</p>
+						</td>
+						<td colspan="4" style="text-align: right; border-left: hidden; border-right: hidden; border-top: hidden">
+							<input type="button" value="+추가" class="multi-row-add smButton">
+							<input type="button"  value="-삭제" class="multi-row-del-auto smButton">
+						</td>
+					</tr>
+					<tr>
+						<th>No</th>		
+						<th>날짜</th>
+						<th>사용내용</th>		
+						<th>사용금액</th>
+						<th>잔액계</th>
+						<th>사용자</th>
+						<th>확인</th>
+					</tr>
+					<tr class="multi-row-template multi-sum">
+						<td class="multi-row-seq" style="text-align: center">1</td>		
+						<td>
+							<input type="text" data-type="rField" data-pattern="date"   data-date-format="mm/dd" name="CardUseDay" style="width: 98%">
+							</td>
+						<td>
+							<input type="text" data-type="rField" name="CardUseComment" style="width: 98%">
+							</td>		
+						<td style="text-align: right;">
+							<input type="text" data-type="rField" data-pattern="numeral" data-numeral-format="0,0"  name="CardUseAmt" style="width: 98%">
+							</td>
+						<td style="text-align: right;">
+							<input type="text" data-type="rField" data-pattern="numeral" data-numeral-format="0,0"  name="CardUseRemain" style="width: 98%">
+						</td>
+						<td style="text-align: right;">
+							<input type="text" data-type="rField" name="CardUser" style="width: 98%">
+						</td>
+						<td style="text-align: right;">
+							<input type="text" data-type="rField" name="CardConfirm " style="width: 98%">
+						</td>
+					</tr>
+				</tbody>
+				</table>
+				
+				
+			</td>
+		</tr>
+    
+	</tbody>
+</table>
+<!--실 결재양식 내용 부분 끝 -->

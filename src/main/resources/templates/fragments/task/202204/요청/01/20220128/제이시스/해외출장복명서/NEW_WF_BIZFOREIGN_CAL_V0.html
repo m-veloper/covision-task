@@ -1,0 +1,351 @@
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus table_10 RowSumTable">
+    <colgroup>
+        <col style="width: 12%" />
+        <col style="width: 10%" />
+        <col style="width: 7%" />
+        <col style="width: 17%" />
+        <col style="width: 15%" />
+        <col style="width: 7%" />
+        <col style="width: 9%" />
+        <col style="width: 22%" />
+    </colgroup>
+    <tr>
+        <th rowspan="2">출장자</th>
+        <th colspan="2">소속</th>
+        <th>직책/직급</th>
+        <th>성명</th>
+        <th colspan="2">출장국가</th>
+        <th>출장도시</th>
+    </tr>
+    <tr>
+        <td colspan="2" align="center">
+            <input type="text" data-type="mField" id="BiztripDept" value="{{ doc.BodyContext.BiztripDept }}" title="출장자 소속" style="width: 99%; text-align: center;" required />
+        </td>
+        <td align="center">
+            <input type="text" data-type="mField" id="BiztripPosition" value="{{ doc.BodyContext.BiztripPosition }}" title="출장자 직책/직급" style="width: 99%; text-align: center;" required />
+        </td>
+        <td align="center">
+            <input type="text" data-type="mField" id="BiztripName" value="{{ doc.BodyContext.BiztripName }}" title="출장자 성명" style="width: 65%; text-align: center;" required />
+            <span data-mode="writeOnly">
+                <a onclick="OpenWinEmployee('BiztripName');">
+                    <img alt='search' style="vertical-align: middle; cursor: pointer;" src="/HtmlSite/smarts4j_n/covicore/resources/images/covision/btn_org.gif"" width="25" height="21" />
+                </a>
+            </span>
+        </td>
+        <td colspan="2">
+            <input type="text" data-type="mField" id="BiztripNation" value="{{ doc.BodyContext.BiztripNation }}" title="출장국가" style="width: 99%;" required />
+        </td>
+        <td>
+            <input type="text" data-type="mField" id="BiztripCity" value="{{ doc.BodyContext.BiztripCity }}" title="출장도시" style="width: 99%;" required />
+        </td>
+    </tr>
+    <tr>
+        <th rowspan="4">출장일정</th>
+        <th rowspan="2">전체일정</th>
+        <th>예정</th>
+        <td colspan="5">
+            <input type="text" data-type="mField" id="AllSdate_Scedule" value="{{ doc.BodyContext.AllSdate_Scedule }}" readonly="" data-pattern="date" title="전체일정 예정 출발일" required style="width: 80px;" onchange="calSDATEEDATE('AllSdate_Scedule');"/> ~
+            <input type="text" data-type="mField" id="AllEdate_Scedule" value="{{ doc.BodyContext.AllEdate_Scedule }}" readonly="" data-pattern="date" title="전체일정 예정 도착일" required style="width: 80px;"  onchange="calSDATEEDATE('AllEdate_Scedule');"/>
+        </td>
+    </tr>
+    <tr>
+        <th>실제</th>
+        <td colspan="5">
+            <input type="text" data-type="mField" id="AllSdate_Real" value="{{ doc.BodyContext.AllSdate_Real }}" readonly="" data-pattern="date" title="전체일정 실제 출발일" required style="width: 80px;"  onchange="calSDATEEDATE('AllSdate_Real');"/> ~
+            <input type="text" data-type="mField" id="AllEdate_Real" value="{{ doc.BodyContext.AllEdate_Real }}" readonly="" data-pattern="date" title="전체일정 실제 도착일" required style="width: 80px;"  onchange="calSDATEEDATE('AllEdate_Real');"/>
+        </td>
+    </tr>
+    <tr>
+        <th rowspan="2">업무일정</th>
+        <th>예정</th>
+        <td colspan="5">
+            <input type="text" data-type="mField" id="WorkSdate_Scedule" value="{{ doc.BodyContext.WorkSdate_Scedule }}" readonly="" data-pattern="date" title="업무일정 예정 출발일" required style="width: 80px;"  onchange="calSDATEEDATE('WorkSdate_Scedule');"/> ~
+            <input type="text" data-type="mField" id="WorkEdate_Scedule" value="{{ doc.BodyContext.WorkEdate_Scedule }}" readonly="" data-pattern="date" title="업무일정 예정 도착일" required style="width: 80px;"  onchange="calSDATEEDATE('WorkEdate_Scedule');"/>
+        </td>
+    </tr>
+    <tr>
+        <th>실제</th>
+        <td colspan="5">
+            <input type="text" data-type="mField" id="WorkSdate_Real" value="{{ doc.BodyContext.WorkSdate_Real }}" readonly="" data-pattern="date" title="업무일정 실제 출발일" required style="width: 80px;"  onchange="calSDATEEDATE('WorkSdate_Real');"/> ~
+            <input type="text" data-type="mField" id="WorkEdate_Real" value="{{ doc.BodyContext.WorkEdate_Real }}" readonly="" data-pattern="date" title="업무일정 실제 도착일" required style="width: 80px;"  onchange="calSDATEEDATE('WorkEdate_Real');"/>
+        </td>
+    </tr>
+    <tr>
+        <th>출장목적</th>
+        <td colspan="7" style="word-break: break-all; padding-top:3px;">
+            <textarea data-type="mField" id="BiztripObj" rows="5" style="width:98%;overflow-y:auto;" required>{{ doc.BodyContext.BiztripObj }}</textarea>
+        </td>
+    </tr>
+    <tr>
+        <th>출장순로</th>
+        <td colspan="7">
+            <input type="text" data-type="mField" id="BiztripDistance" value="{{ doc.BodyContext.BiztripDistance }}" title="출장순로" style="width: 99%;" placeholder="(예시: Example)  Seoul - 출장지(Destination) - Seoul" required />
+        </td>
+    </tr>
+    <tr>
+        <th colspan="8">
+            여비정산
+            <p data-mode="writeOnly">화폐 기호 : <input type="text" data-type="mField" id="MoneySymbol" name="MoneySymbol" value="{{ doc.BodyContext.MoneySymbol }}" style="width: 25px;text-align:center;" /></p>
+        </th>
+    </tr>
+    <tr>
+        <th>구분</th>
+        <th colspan="2">기처리액</th>
+        <th>정산신청액</th>
+        <th colspan="2">총정산액</th>
+        <th colspan="2">사용 상세내역 기재</th>
+    </tr>
+    <tr>
+        <th rowspan="2">숙박비</th>
+        <td colspan="2" align="right">
+            <input type="text" data-type="mField" id="RoomMoneySymbol1" value="{{ doc.BodyContext.RoomMoneySymbol1 }}" class="watch-value" data-watch="[name=MoneySymbol]" style="width: 17%;text-align:center;" />
+            <input type="text" data-type="mField" id="RoomMoneyProcess" value="{{ doc.BodyContext.RoomMoneyProcess }}" class="sum-table-cell" data-pattern="numeral" data-digit="2" data-formula-zero="0.5" data-numeral-format="0,0.00" style="width: 78%;text-align:right;" placeholder="-" />
+        </td>
+        <td align="right">
+            <input type="text" data-type="mField" id="RoomMoneySymbol2" value="{{ doc.BodyContext.RoomMoneySymbol2 }}" class="watch-value" data-watch="[name=MoneySymbol]" style="width: 17%;text-align:center;" />
+            <input type="text" data-type="mField" id="RoomMoneyCalc" value="{{ doc.BodyContext.RoomMoneyCalc }}" class="sum-table-cell" data-pattern="numeral" data-digit="2" data-formula-zero="0.5" data-numeral-format="0,0.00" title="" style="width: 78%;text-align:right;" placeholder="-" />
+        </td>
+        <td colspan="2" align="right">
+            <input type="text" data-type="mField" id="RoomMoneySymbol3" value="{{ doc.BodyContext.RoomMoneySymbol3 }}" class="watch-value" data-watch="[name=MoneySymbol]" style="width: 17%;text-align:center;" />
+            <input type="text" data-type="mField" id="RoomMoneyTotal" value="{{ doc.BodyContext.RoomMoneyTotal }}" class="sum-table-rowsum" data-pattern="numeral" data-digit="2" data-formula-zero="0.5" data-numeral-format="0,0.00" title="" style="width: 80%;text-align:right;" placeholder="-" />
+        </td>
+        <td rowspan="2" colspan="2">
+            <label style="margin-right:0px;">1박 당 금액 : </label>
+            <input type="text" data-type="mField" id="RentalRoomMoneyRowTotal" value="{{ doc.BodyContext.RentalRoomMoneyRowTotal }}" data-pattern="currency" title="1박 당 금액" style="width: 35%;text-align:right;" placeholder="-" />
+            <label style="margin-right:0px;">(원)</label>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" align="right">
+            <input type="text" data-type="mField" id="RoomMoneySymbol_Ko1" value="{{ doc.BodyContext.RoomMoneySymbol_Ko1 }}" style="width: 17%;text-align:center; border: 0;" readonly="readonly" />
+            <input type="text" data-type="mField" id="RoomMoneyProcess_Ko" value="{{ doc.BodyContext.RoomMoneyProcess_Ko }}" class="sum-table-cell" data-pattern="currency" style="width: 78%;text-align:right;" placeholder="-" />
+        </td>
+        <td align="right">
+            <input type="text" data-type="mField" id="RoomMoneySymbol_Ko2" value="{{ doc.BodyContext.RoomMoneySymbol_Ko2 }}" style="width: 17%;text-align:center; border: 0;" readonly="readonly" />
+            <input type="text" data-type="mField" id="RoomMoneyCalc_Ko" value="{{ doc.BodyContext.RoomMoneyCalc_Ko }}" class="sum-table-cell" data-pattern="currency" title="" style="width: 78%;text-align:right;" placeholder="-" />
+        </td>
+        <td colspan="2" align="right">
+            <input type="text" data-type="mField" id="RoomMoneySymbol_Ko3" value="{{ doc.BodyContext.RoomMoneySymbol_Ko3 }}" style="width: 17%;text-align:center; border: 0;" readonly="readonly" />
+            <input type="text" data-type="mField" id="RoomMoneyTotal_Ko" value="{{ doc.BodyContext.RoomMoneyTotal_Ko }}" class="sum-table-rowsum" data-pattern="currency" title="" style="width: 80%;text-align:right;" placeholder="-" />
+        </td>
+    </tr>
+
+    <tr>
+        <th rowspan="2">식비</th>
+        <td colspan="2" align="right">
+            <input type="text" data-type="mField" id="FoodMoneySymbol1" value="{{ doc.BodyContext.FoodMoneySymbol1 }}" class="watch-value" data-watch="[name=MoneySymbol]" style="width: 17%;text-align:center;" />
+            <input type="text" data-type="mField" id="FoodMoneyProcess" value="{{ doc.BodyContext.FoodMoneyProcess }}" class="sum-table-cell" data-pattern="numeral" data-digit="2" data-formula-zero="0.5" data-numeral-format="0,0.00" style="width: 78%;text-align:right;" placeholder="-" />
+        </td>
+        <td align="right">
+            <input type="text" data-type="mField" id="FoodMoneySymbol2" value="{{ doc.BodyContext.FoodMoneySymbol2 }}" class="watch-value" data-watch="[name=MoneySymbol]" style="width: 17%;text-align:center;" />
+            <input type="text" data-type="mField" id="FoodMoneyCalc" value="{{ doc.BodyContext.FoodMoneyCalc }}" class="sum-table-cell" data-pattern="numeral" data-digit="2" data-formula-zero="0.5" data-numeral-format="0,0.00" title="" style="width: 78%;text-align:right;" placeholder="-" />
+        </td>
+        <td colspan="2" align="right">
+            <input type="text" data-type="mField" id="FoodMoneySymbol3" value="{{ doc.BodyContext.FoodMoneySymbol3 }}" class="watch-value" data-watch="[name=MoneySymbol]" style="width: 17%;text-align:center;" />
+            <input type="text" data-type="mField" id="FoodMoneyTotal" value="{{ doc.BodyContext.FoodMoneyTotal }}" class="sum-table-rowsum" data-pattern="numeral" data-digit="2" data-formula-zero="0.5" data-numeral-format="0,0.00" title="" style="width: 80%;text-align:right;" placeholder="-" />
+        </td>
+        <td rowspan="2" colspan="2" style="padding-top:3px;">
+            <textarea data-type="mField" id="FoodReason" rows="4"style="width:100%;overflow-y:auto;" placeholder="사용내역 기재" title="식비 사용내역">{{ doc.BodyContext.FoodReason }}</textarea>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" align="right">
+            <input type="text" data-type="mField" id="FoodMoneySymbol_Ko1" value="{{ doc.BodyContext.FoodMoneySymbol_Ko1 }}" style="width: 17%;text-align:center; border: 0;" readonly="readonly" />
+            <input type="text" data-type="mField" id="FoodMoneyProcess_Ko" value="{{ doc.BodyContext.FoodMoneyProcess_Ko }}" class="sum-table-cell" data-pattern="currency" style="width: 78%;text-align:right;" placeholder="-" />
+        </td>
+        <td align="right">
+            <input type="text" data-type="mField" id="FoodMoneySymbol_Ko2" value="{{ doc.BodyContext.FoodMoneySymbol_Ko2 }}" style="width: 17%;text-align:center; border: 0;" readonly="readonly" />
+            <input type="text" data-type="mField" id="FoodMoneyCalc_Ko" value="{{ doc.BodyContext.FoodMoneyCalc_Ko }}" class="sum-table-cell" data-pattern="currency" title="" style="width: 78%;text-align:right;" placeholder="-" />
+        </td>
+        <td colspan="2" align="right">
+            <input type="text" data-type="mField" id="FoodMoneySymbol_Ko3" value="{{ doc.BodyContext.FoodMoneySymbol_Ko3 }}" style="width: 17%;text-align:center; border: 0;" readonly="readonly" />
+            <input type="text" data-type="mField" id="FoodMoneyTotal_Ko" value="{{ doc.BodyContext.FoodMoneyTotal_Ko }}" class="sum-table-rowsum" data-pattern="currency" title="" style="width: 80%;text-align:right;" placeholder="-" />
+        </td>
+    </tr>
+
+    <tr>
+        <th rowspan="2">교통비</th>
+        <td colspan="2" align="right">
+            <input type="text" data-type="mField" id="TrafficMoneySymbol1" value="{{ doc.BodyContext.TrafficMoneySymbol1 }}" class="watch-value" data-watch="[name=MoneySymbol]" style="width: 17%;text-align:center;" />
+            <input type="text" data-type="mField" id="TrafficMoneyProcess" value="{{ doc.BodyContext.TrafficMoneyProcess }}" class="sum-table-cell" data-pattern="numeral" data-digit="2" data-formula-zero="0.5" data-numeral-format="0,0.00" style="width: 78%;text-align:right;" placeholder="-" />
+        </td>
+        <td align="right">
+            <input type="text" data-type="mField" id="TrafficMoneySymbol2" value="{{ doc.BodyContext.TrafficMoneySymbol2 }}" class="watch-value" data-watch="[name=MoneySymbol]" style="width: 17%;text-align:center;" />
+            <input type="text" data-type="mField" id="TrafficMoneyCalc" value="{{ doc.BodyContext.TrafficMoneyCalc }}" class="sum-table-cell" data-pattern="numeral" data-digit="2" data-formula-zero="0.5" data-numeral-format="0,0.00" title="" style="width: 78%;text-align:right;" placeholder="-" />
+        </td>
+        <td colspan="2" align="right">
+            <input type="text" data-type="mField" id="TrafficMoneySymbol3" value="{{ doc.BodyContext.TrafficMoneySymbol3 }}" class="watch-value" data-watch="[name=MoneySymbol]" style="width: 17%;text-align:center;" />
+            <input type="text" data-type="mField" id="TrafficMoneyTotal" value="{{ doc.BodyContext.TrafficMoneyTotal }}" class="sum-table-rowsum" data-pattern="numeral" data-digit="2" data-formula-zero="0.5" data-numeral-format="0,0.00" title="" style="width: 80%;text-align:right;" placeholder="-" />
+        </td>
+        <td rowspan="2" colspan="2" style="padding-top:3px;">
+            <textarea data-type="mField" id="TrafficReason" rows="4"style="width:100%;overflow-y:auto;" placeholder="사용내역 기재" title="교통비 사용내역">{{ doc.BodyContext.TrafficReason }}</textarea>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" align="right">
+            <input type="text" data-type="mField" id="TrafficMoneySymbol_Ko1" value="{{ doc.BodyContext.TrafficMoneySymbol_Ko1 }}" style="width: 17%;text-align:center; border: 0;" readonly="readonly" />
+            <input type="text" data-type="mField" id="TrafficMoneyProcess_Ko" value="{{ doc.BodyContext.TrafficMoneyProcess_Ko }}" class="sum-table-cell" data-pattern="currency" style="width: 78%;text-align:right;" placeholder="-" />
+        </td>
+        <td align="right">
+            <input type="text" data-type="mField" id="TrafficMoneySymbol_Ko2" value="{{ doc.BodyContext.TrafficMoneySymbol_Ko2 }}" style="width: 17%;text-align:center; border: 0;" readonly="readonly" />
+            <input type="text" data-type="mField" id="TrafficMoneyCalc_Ko" value="{{ doc.BodyContext.TrafficMoneyCalc_Ko }}" class="sum-table-cell" data-pattern="currency" title="" style="width: 78%;text-align:right;" placeholder="-" />
+        </td>
+        <td colspan="2" align="right">
+            <input type="text" data-type="mField" id="TrafficMoneySymbol_Ko3" value="{{ doc.BodyContext.TrafficMoneySymbol_Ko3 }}" style="width: 17%;text-align:center; border: 0;" readonly="readonly" />
+            <input type="text" data-type="mField" id="TrafficMoneyTotal_Ko" value="{{ doc.BodyContext.TrafficMoneyTotal_Ko }}" class="sum-table-rowsum" data-pattern="currency" title="" style="width: 80%;text-align:right;" placeholder="-" />
+        </td>
+    </tr>
+
+    <tr>
+        <th rowspan="2">부대비<br />(\20,000/<br />Day)</th>
+        <td colspan="2" align="right">
+            <input type="text" data-type="mField" id="UnitCostSymbol1" value="{{ doc.BodyContext.TrafficMoneySymbol1 }}" class="watch-value" data-watch="[name=MoneySymbol]" style="width: 17%;text-align:center;" />
+            <input type="text" data-type="mField" id="UnitCostProcess" value="{{ doc.BodyContext.TrafficMoneyProcess }}" class="sum-table-cell" data-pattern="numeral" data-digit="2" data-formula-zero="0.5" data-numeral-format="0,0.00" style="width: 78%;text-align:right;" placeholder="-" />
+        </td>
+        <td align="right">
+            <input type="text" data-type="mField" id="UnitCostSymbol2" value="{{ doc.BodyContext.TrafficMoneySymbol2 }}" class="watch-value" data-watch="[name=MoneySymbol]" style="width: 17%;text-align:center;" />
+            <input type="text" data-type="mField" id="UnitCostCalc" value="{{ doc.BodyContext.TrafficMoneyCalc }}" class="sum-table-cell" data-pattern="numeral" data-digit="2" data-formula-zero="0.5" data-numeral-format="0,0.00" title="" style="width: 78%;text-align:right;" placeholder="-" />
+        </td>
+        <td colspan="2" align="right">
+            <input type="text" data-type="mField" id="UnitCostSymbol3" value="{{ doc.BodyContext.TrafficMoneySymbol3 }}" class="watch-value" data-watch="[name=MoneySymbol]" style="width: 17%;text-align:center;" />
+            <input type="text" data-type="mField" id="UnitCostTotal" value="{{ doc.BodyContext.TrafficMoneyTotal }}" class="sum-table-rowsum" data-pattern="numeral" data-digit="2" data-formula-zero="0.5" data-numeral-format="0,0.00" title="" style="width: 80%;text-align:right;" placeholder="-" />
+        </td>
+        <td rowspan="2" colspan="2" style="padding-top:3px;">
+            <textarea data-type="mField" id="UnitCostReason" rows="4"style="width:100%;overflow-y:auto;" placeholder="사용내역 기재" title="부대비 사용내역" required>{{ doc.BodyContext.UnitCostReason }}</textarea>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" align="right">
+            <input type="text" data-type="mField" id="UnitCostSymbol_Ko1" value="{{ doc.BodyContext.UnitCostSymbol_Ko1 }}" style="width: 17%;text-align:center; border: 0;" readonly="readonly" />
+            <input type="text" data-type="mField" id="UnitCostProcess_Ko" value="{{ doc.BodyContext.UnitCostProcess_Ko }}" class="sum-table-cell" data-pattern="currency" style="width: 78%;text-align:right;" placeholder="-" />
+        </td>
+        <td align="right">
+            <input type="text" data-type="mField" id="UnitCostSymbol_Ko2" value="{{ doc.BodyContext.UnitCostSymbol_Ko2 }}" style="width: 17%;text-align:center; border: 0;" readonly="readonly" />
+            <input type="text" data-type="mField" id="UnitCostCalc_Ko" value="{{ doc.BodyContext.UnitCostCalc_Ko }}" class="sum-table-cell" data-pattern="currency" title="" style="width: 78%;text-align:right;" placeholder="-" />
+        </td>
+        <td colspan="2" align="right">
+            <input type="text" data-type="mField" id="UnitCostSymbol_Ko3" value="{{ doc.BodyContext.UnitCostSymbol_Ko3 }}" style="width: 17%;text-align:center; border: 0;" readonly="readonly" />
+            <input type="text" data-type="mField" id="UnitCostTotal_Ko" value="{{ doc.BodyContext.UnitCostTotal_Ko }}" class="sum-table-rowsum" data-pattern="currency" title="" style="width: 80%;text-align:right;" placeholder="-" />
+        </td>
+    </tr>
+
+    <tr>
+        <th rowspan="2">항공임</th>
+        <td colspan="2" align="right">
+            <input type="text" data-type="mField" id="AirplaneMoneySymbol1" value="{{ doc.BodyContext.AirplaneMoneySymbol1 }}" class="watch-value" data-watch="[name=MoneySymbol]" style="width: 17%;text-align:center;" />
+            <input type="text" data-type="mField" id="AirplaneMoneyProcess" value="{{ doc.BodyContext.AirplaneMoneyProcess }}" class="sum-table-cell" data-pattern="numeral" data-digit="2" data-formula-zero="0.5" data-numeral-format="0,0.00" style="width: 78%;text-align:right;" placeholder="-" />
+        </td>
+        <td align="right">
+            <input type="text" data-type="mField" id="AirplaneMoneySymbol2" value="{{ doc.BodyContext.AirplaneMoneySymbol2 }}" class="watch-value" data-watch="[name=MoneySymbol]" style="width: 17%;text-align:center;" />
+            <input type="text" data-type="mField" id="AirplaneMoneyCalc" value="{{ doc.BodyContext.AirplaneMoneyCalc }}" class="sum-table-cell" data-pattern="numeral" data-digit="2" data-formula-zero="0.5" data-numeral-format="0,0.00" title="" style="width: 78%;text-align:right;" placeholder="-" />
+        </td>
+        <td colspan="2" align="right">
+            <input type="text" data-type="mField" id="AirplaneMoneySymbol3" value="{{ doc.BodyContext.AirplaneMoneySymbol3 }}" class="watch-value" data-watch="[name=MoneySymbol]" style="width: 17%;text-align:center;" />
+            <input type="text" data-type="mField" id="AirplaneMoneyTotal" value="{{ doc.BodyContext.AirplaneMoneyTotal }}" class="sum-table-rowsum" data-pattern="numeral" data-digit="2" data-formula-zero="0.5" data-numeral-format="0,0.00" title="" style="width: 80%;text-align:right;" placeholder="-" />
+        </td>
+        <td rowspan="2" colspan="2" style="padding-top:3px;">
+            <textarea data-type="mField" id="AirplaneMoneyReason" rows="4"style="width:100%;overflow-y:auto;" placeholder="사용내역 기재" title="부대비 사용내역" required>{{ doc.BodyContext.AirplaneMoneyReason }}</textarea>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" align="right">
+            <input type="text" data-type="mField" id="AirplaneMoneySymbol_Ko1" value="{{ doc.BodyContext.AirplaneMoneySymbol_Ko1 }}" style="width: 17%;text-align:center; border: 0;" readonly="readonly" />
+            <input type="text" data-type="mField" id="AirplaneMoneyProcess_Ko" value="{{ doc.BodyContext.AirplaneMoneyProcess_Ko }}" class="sum-table-cell" data-pattern="currency" style="width: 78%;text-align:right;" placeholder="-" />
+        </td>
+        <td align="right">
+            <input type="text" data-type="mField" id="AirplaneMoneySymbol_Ko2" value="{{ doc.BodyContext.AirplaneMoneySymbol_Ko2 }}" style="width: 17%;text-align:center; border: 0;" readonly="readonly" />
+            <input type="text" data-type="mField" id="AirplaneMoneyCalc_Ko" value="{{ doc.BodyContext.AirplaneMoneyCalc_Ko }}" class="sum-table-cell" data-pattern="currency" title="" style="width: 78%;text-align:right;" placeholder="-" />
+        </td>
+        <td colspan="2" align="right">
+            <input type="text" data-type="mField" id="AirplaneMoneySymbol_Ko3" value="{{ doc.BodyContext.AirplaneMoneySymbol_Ko3 }}" style="width: 17%;text-align:center; border: 0;" readonly="readonly" />
+            <input type="text" data-type="mField" id="AirplaneMoneyTotal_Ko" value="{{ doc.BodyContext.AirplaneMoneyTotal_Ko }}" class="sum-table-rowsum" data-pattern="currency" title="" style="width: 80%;text-align:right;" placeholder="-" />
+        </td>
+    </tr>
+
+    <tr>
+        <th rowspan="2">비자	</th>
+        <td colspan="2" align="right">
+            <input type="text" data-type="mField" id="VisaSymbol1" value="{{ doc.BodyContext.VisaSymbol1 }}" class="watch-value" data-watch="[name=MoneySymbol]" style="width: 17%;text-align:center;" />
+            <input type="text" data-type="mField" id="VisaProcess" value="{{ doc.BodyContext.VisaProcess }}" class="sum-table-cell" data-pattern="numeral" data-digit="2" data-formula-zero="0.5" data-numeral-format="0,0.00" style="width: 78%;text-align:right;" placeholder="-" />
+        </td>
+        <td align="right">
+            <input type="text" data-type="mField" id="VisaSymbol2" value="{{ doc.BodyContext.VisaSymbol2 }}" class="watch-value" data-watch="[name=MoneySymbol]" style="width: 17%;text-align:center;" />
+            <input type="text" data-type="mField" id="VisaCalc" value="{{ doc.BodyContext.VisaCalc }}" class="sum-table-cell" data-pattern="numeral" data-digit="2" data-formula-zero="0.5" data-numeral-format="0,0.00" title="" style="width: 78%;text-align:right;" placeholder="-" />
+        </td>
+        <td colspan="2" align="right">
+            <input type="text" data-type="mField" id="VisaSymbol3" value="{{ doc.BodyContext.VisaSymbol3 }}" class="watch-value" data-watch="[name=MoneySymbol]" style="width: 17%;text-align:center;" />
+            <input type="text" data-type="mField" id="VisaTotal" value="{{ doc.BodyContext.VisaTotal }}" class="sum-table-rowsum" data-pattern="numeral" data-digit="2" data-formula-zero="0.5" data-numeral-format="0,0.00" title="" style="width: 80%;text-align:right;" placeholder="-" />
+        </td>
+        <td rowspan="2" colspan="2" style="padding-top:3px;">
+            <textarea data-type="mField" id="VisaReason" rows="4"style="width:100%;overflow-y:auto;" title="비자 사용내역">{{ doc.BodyContext.VisaReason }}</textarea>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" align="right">
+            <input type="text" data-type="mField" id="VisaSymbol_Ko1" value="{{ doc.BodyContext.VisaSymbol_Ko1 }}" style="width: 17%;text-align:center; border: 0;" readonly="readonly" />
+            <input type="text" data-type="mField" id="VisaProcess_Ko" value="{{ doc.BodyContext.VisaProcess_Ko }}" class="sum-table-cell" data-pattern="currency" style="width: 78%;text-align:right;" placeholder="-" />
+        </td>
+        <td align="right">
+            <input type="text" data-type="mField" id="VisaSymbol_Ko2" value="{{ doc.BodyContext.VisaSymbol_Ko2 }}" style="width: 17%;text-align:center; border: 0;" readonly="readonly" />
+            <input type="text" data-type="mField" id="VisaCalc_Ko" value="{{ doc.BodyContext.VisaCalc_Ko }}" class="sum-table-cell" data-pattern="currency" title="" style="width: 78%;text-align:right;" placeholder="-" />
+        </td>
+        <td colspan="2" align="right">
+            <input type="text" data-type="mField" id="VisaSymbol_Ko3" value="{{ doc.BodyContext.VisaSymbol_Ko3 }}" style="width: 17%;text-align:center; border: 0;" readonly="readonly" />
+            <input type="text" data-type="mField" id="VisaTotal_Ko" value="{{ doc.BodyContext.VisaTotal_Ko }}" class="sum-table-rowsum" data-pattern="currency" title="" style="width: 80%;text-align:right;" placeholder="-" />
+        </td>
+    </tr>
+
+    <tr>
+        <th rowspan="2">합계</th>
+        <td colspan="2" align="right">
+            <input type="text" data-type="mField" id="TotSymbol1" value="{{ doc.BodyContext.TotSymbol1 }}" class="watch-value" data-watch="[name=MoneySymbol]" style="width: 17%;text-align:center;" />
+            <input type="text" data-type="mField" id="TotProcess" value="{{ doc.BodyContext.TotProcess }}" class="sum-table-colsum" data-pattern="numeral" data-digit="2" data-formula-zero="0.5" data-numeral-format="0,0.00" style="width: 78%;text-align:right;" placeholder="-" />
+        </td>
+        <td align="right">
+            <input type="text" data-type="mField" id="TotSymbol2" value="{{ doc.BodyContext.TotSymbol2 }}" class="watch-value" data-watch="[name=MoneySymbol]" style="width: 17%;text-align:center;" />
+            <input type="text" data-type="mField" id="TotCalc" value="{{ doc.BodyContext.TotCalc }}" class="sum-table-colsum" data-pattern="numeral" data-digit="2" data-formula-zero="0.5" data-numeral-format="0,0.00" title="" style="width: 78%;text-align:right;" placeholder="-" />
+        </td>
+        <td colspan="2" align="right">
+            <input type="text" data-type="mField" id="TotSymbol3" value="{{ doc.BodyContext.TotSymbol3 }}" class="watch-value" data-watch="[name=MoneySymbol]" style="width: 17%;text-align:center;" />
+            <input type="text" data-type="mField" id="TotTotal" value="{{ doc.BodyContext.TotTotal }}" class="sum-table-total" data-pattern="numeral" data-digit="2" data-formula-zero="0.5" data-numeral-format="0,0.00" title="" style="width: 80%;text-align:right;" placeholder="-" />
+        </td>
+        <td rowspan="2" colspan="2" style="padding-top:3px;"></td>
+    </tr>
+    <tr>
+        <td colspan="2" align="right">
+            <input type="text" data-type="mField" id="TotSymbol_Ko1" value="{{ doc.BodyContext.TotSymbol_Ko1 }}" style="width: 17%;text-align:center; border: 0;" readonly="readonly" />
+            <input type="text" data-type="mField" id="TotProcess_Ko" value="{{ doc.BodyContext.TotProcess_Ko }}" class="sum-table-colsum" data-pattern="currency" style="width: 78%;text-align:right;" placeholder="-" />
+        </td>
+        <td align="right">
+            <input type="text" data-type="mField" id="TotSymbol_Ko2" value="{{ doc.BodyContext.TotSymbol_Ko2 }}" style="width: 17%;text-align:center; border: 0;" readonly="readonly" />
+            <input type="text" data-type="mField" id="TotCalc_Ko" value="{{ doc.BodyContext.TotCalc_Ko }}" class="sum-table-colsum" data-pattern="currency" title="" style="width: 78%;text-align:right;" placeholder="-" />
+        </td>
+        <td colspan="2" align="right">
+            <input type="text" data-type="mField" id="TotSymbol_Ko3" value="{{ doc.BodyContext.TotSymbol_Ko3 }}" style="width: 17%;text-align:center; border: 0;" readonly="readonly" />
+            <input type="text" data-type="mField" id="TotTotal_Ko" value="{{ doc.BodyContext.TotTotal_Ko }}" class="sum-table-total" data-pattern="currency" title="" style="width: 80%;text-align:right;" placeholder="-" />
+        </td>
+    </tr>
+
+</table>
+<table class="table_10 tableStyle linePlus" style="margin-top:-1px;" id="Table1">
+    <colgroup>
+        <col style="width: 12%" height="20px" />
+        <col style="width: 72%" />
+        <col style="width: 16%" />
+    </colgroup>
+    <tr>
+        <th rowspan="2" style="line-height:19px;">예외사항<br>합리적인<br>사유기재</th>
+        <td rowspan="2">
+            <textarea data-type="mField" id="WARCOMMENT1" name="WARCOMMENT1" rows="4" style="width:98%;overflow-y:auto;">{{ doc.BodyContext.WARCOMMENT1 }}</textarea>
+            <input type="hidden" data-type="mField" id="LASTCONFIRM" name="LASTCONFIRM" value="{{ doc.BodyContext.LASTCONFIRM }}" />
+        </td>
+        <th>확인</th>
+    </tr>
+    <tr>
+        <td style="text-align:center;"><input type="text" data-type="mField" id="LASTAPVERNAME" name="LASTAPVERNAME" value="{{ doc.BodyContext.LASTAPVERNAME }}" readonly="" style="width:97%;border:0px solid #ffffff" /></td>
+    </tr>
+</table>
+
+
+<!--실 결재양식 내용 부분 끝 -->

@@ -1,0 +1,111 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+	   <colgroup>
+	    	<col style="width:10%">
+	    	<col style="width:18%">
+	    	<col style="width:20%">
+	    	<col style="width:30%">
+	    	<col style="width:22%">
+	    </colgroup>
+	    <tr>
+	    	<th colspan="2">신청자</th>
+	    	<td align="center">
+				<input type="text" id="reqName" name="reqName" data-type="mField" value="{{ doc.BodyContext.reqName }}"    style="width:98%; text-align:center" >    
+			</td>
+	    	<th>입사일</th>
+	    	<td align="center">
+	       		<input type="text" data-type="mField" id="reqDate" value="{{ doc.BodyContext.reqDate }}" style="width:90%; text-align:center" placeholder="(예: 2020 년 1월 1일 )" data-pattern="date"  data-date-format="yy년 mm월 dd일 ">
+			</td>
+	    </tr>
+	    
+	    <tr>
+	    	<th colspan="2">신청기간</th>
+	    	<td colspan="3" align="center">
+				<input type="text" id="reqTerm" name="reqTerm" data-type="mField" value="{{ doc.BodyContext.reqTerm }}"  placeholder="(예 : 2022년 1월분, 2022년 1~2월분 등)"  style="width:98%; text-align:center" >    
+			</td>
+	    </tr>
+	     <tr>
+	    	<th colspan="2">지원항목</th>
+	    	<th>지원금액</th>
+	    	<th>기간/횟수</th>
+	    	<th>신청금액 표기</th>
+	    </tr>
+	     <tr>
+	    	<th rowspan="2">이사비</th>
+	    	<th>본인만</th>
+	    	<th>80 만원 한도</th>
+	    	<th rowspan="2">최초 1회<br>(2022년 6월 30일 전)</th>
+	    	<td >
+				<input type="text" id="reqSelfMoveAmt" name="reqSelfMoveAmt" onchange="fn_sum();"  onblur="fn_sum();" data-type="mField" value="{{ doc.BodyContext.reqSelfMoveAmt }}"  placeholder="(예 : 800,000)" data-pattern="numeral"   style="width:98%; " >    
+			</td>
+	    </tr>
+	    
+	     <tr>
+	    	<th>가족과 함께</th>
+	    	<th>200 만원 한도</th>
+	    	<td >
+				<input type="text" id="reqFamilyMoveAmt" name="reqFamilyMoveAmt" onchange="fn_sum();"  onblur="fn_sum();" data-type="mField" value="{{ doc.BodyContext.reqFamilyMoveAmt }}" data-pattern="numeral"    style="width:98%; " >    
+			</td>
+	    </tr>
+	    
+	     <tr>
+	    	<th rowspan="2">주거비</th>
+	    	<th>월세</th>
+	    	<th>월 60 만원 한도</th>
+	    	<th rowspan="2">2022년 1월 1일 ~<br>2023년 12월 31일<br>(최대 24개월)</th>
+	    	<td >
+				<input type="text" id="reqHouseMonthlyAmt" name="reqHouseMonthlyAmt" onchange="fn_sum();"  onblur="fn_sum();" data-type="mField" value="{{ doc.BodyContext.reqHouseMonthlyAmt }}" data-pattern="numeral"  placeholder="(예 : 500,000)"  style="width:98%; " >    
+			</td>
+	    </tr>
+	    
+	     <tr>
+	    	<th>자가/전세</th>
+	    	<th>월 60 만원 한도</th>
+	    	<td >
+				<input type="text" id="reqHouseAmt" name="reqHouseAmt" onchange="fn_sum();"  onblur="fn_sum();" data-type="mField" value="{{ doc.BodyContext.reqHouseAmt }}"   data-pattern="numeral"  style="width:98%; " >    
+			</td>
+	    </tr>
+	    
+	     <tr>
+	    	<th rowspan="2">교통비</th>
+	    	<th>대중교통</th>
+	    	<th>월 20 만원 정액</th>
+	    	<th rowspan="2">2022년 1월 1일 ~<br>6월 30일 (최대 6개월)</th>
+	    	<td >
+				<input type="text" id="publicTransportAmt" name="publicTransportAmt" onchange="fn_sum();"  onblur="fn_sum();" data-type="mField" value="{{ doc.BodyContext.publicTransportAmt }}" data-pattern="numeral"    style="width:98%; " >    
+			</td>
+	    </tr>
+	    
+	     <tr>
+	    	<th>유류비</th>
+	    	<th>월 20 만원 정액</th>
+	    	<td >
+				<input type="text" id="reqOilAmt" name="reqOilAmt" onchange="fn_sum();"  onblur="fn_sum();" data-type="mField" value="{{ doc.BodyContext.reqOilAmt }}"   data-pattern="numeral"  style="width:98%; " >    
+			</td>
+	    </tr>
+	    
+	       <tr>
+	    	<th colspan="4">신청금액 계</th>
+	    	<td >
+				<input type="text" id="sumAmt" name="sumAmt" readonly ="readonly" data-type="mField" value="{{ doc.BodyContext.sumAmt }}"   data-pattern="numeral"  style="width:98%; " >    
+			</td>
+	    </tr>
+	    <tr>
+		    <td colspan ="5">
+			    <div>
+					 <strong>※ 지원항목별 증빙서류 첨부 </strong><br>
+					   1. 이사비: 주민등록등본, 이사계약서, 이체 내역증빙서류<br>
+					   2. 주거비(월세) : 주민등록등본(반기 1회), 월세계약서(최초 1회), 이체 내역증빙서류(매월)<br>
+					   3. 주거비(자가/전세) : 주민등록등본(반기 1회), 전세/매매계약서(최초 1회), 대출계약서(최초 1회), 이체내역 증빙서류(매월)<br>
+					      ※ 가족 명의계약의 경우, 가족관계증명서제출 (최초 1회)<br>
+					   4. 교통비(대중교통) : 주민등록등본(최초 1회), 교통/하이패스이용내역(매월)<br>
+					   5. 교통비(유류비) : 주민등록등본(최초 1회), 차량등록증(최초 1회), 교통/하이패스이용내역(매월)	<br>		
+				</div>
+		    
+		    </td>
+	    </tr>
+</table>
+
+
+<!--실 결재양식 내용 부분 끝 -->

@@ -1,0 +1,109 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="multi-row-table tableStyle linePlus mt10" id="sumTable"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:12%" />
+        <col style="width:20%" />
+        <col style="width:12%" />
+        <col style="width:15%" />
+        <col style="width:12%" />
+        <col style="width:15%" />
+        <col style="width:10%" />
+        <col style="width:17%" />
+        <col style="width:16%" />
+    </colgroup>
+    <tr>
+    	<th>발주일자</th>
+    	<td colspan="2">
+    		<input type="text" name="arrvlReqDt" data-type="mField" data-pattern="date" data-date-format="yy년 mm월 dd일" value="{{ doc.BodyContext.arrvlReqDt }}"  style="width:95%; text-align: center;">
+    	</td>
+    	<td style="border-top: none; border-right: none;"></td>
+    	<td style="border-top: none; border-right: none;"></td>
+    	<td style="border-top: none; border-right: none;"></td>
+    	<td style="border-top: none; border-right: none;"></td>
+    	<td style="border-top: none; border-right: none;"></td>
+    	<td style="border-top: none; border-right: none;"></td>
+    </tr>
+    <tr class="multi-row-control" data-mode="writeOnly">
+    	<td colspan="9">
+    		<em class="btn_iws_l" style="float: right;">
+                <span class="btn_iws_r multi-row-add" id="btnAdd" style="cursor: pointer;">
+                    <strong class="txt_btn_ws">
+                        <img class="ico_btn" alt="" src="/approval/resources/images/xform/ico_plus.gif">추가
+                    </strong>
+                </span>
+            </em>
+            <em class="btn_iws_l" style="float: right; padding-right: 10px;">
+                <span class="btn_iws_r multi-row-del-auto" id="btnDel" style="cursor: pointer;">
+                    <strong class="txt_btn_ws">
+                        <img class="ico_btn" alt="" src="/approval/resources/images/xform/ico_x.gif">삭제
+                    </strong>
+                </span>
+            </em>
+    	</td>
+    </tr>
+    <tr>
+    	<th>입고예정일</th>
+    	<th>구매요청자</th>
+    	<th>프로젝트명</th>
+    	<th>품명</th>
+    	<th>발주처</th>
+    	<th>구매사유</th>
+    	<th>총수량</th>
+    	<th>총발주금액(VAT별도)</th>
+    	<th>비고</th>
+    </tr>
+    <tr class="multi-row-template">
+    	<td>
+    		<select data-type="rField" data-element-type="sel_d_t" name="expctdDt" style="width: 98%;">
+    			<option value="01">국내제품(발주일~1주 내외)</option>
+    			<option value="02">국내제품(발주일~2주 내외)</option>
+    			<option value="03">해외제품(발주일~3주 내외)</option>
+    			<option value="04">해외제품(발주일~3주 이상)</option>
+    			<option value="05">기타</option>
+    		</select>
+    	</td>
+    	<td><input type="text" data-type="rField" name="reqPrchsNm" style="width: 99%;" /></td>
+    	<td><input type="text" data-type="rField" name="prjctNm" style="width: 99%;" /></td>
+    	<td><input type="text" data-type="rField" name="itmNm" style="width: 99%;" /></td>
+    	<td><input type="text" data-type="rField" name="ordrNm" style="width: 99%;" /></td>
+    	<td>
+    		<select data-type="rField" data-element-type="sel_d_t" name="rsnPrchs" style="width: 98%;">
+    			<option value="01">비교 견적 X(연구소 긴급 요청)</option>
+    			<option value="02">비교 견적 X(단가 50만원 미만 항목)</option>
+    			<option value="03">비교 견적 X(단독 공급망)</option>
+    			<option value="04">가격 우위</option>
+    			<option value="05">기타</option>
+    		</select>
+    	</td>
+    	<td>
+    		<input type="text" data-type="rField" name="totQnt" style="width: 99%;" data-pattern="currency" class="sum-table-cell" onblur="COST_CAL()" />
+    	</td>
+    	<td>
+    		<input type="text" data-type="rField" name="totAmt" style="width: 99%;" data-pattern="currency" class="sum-table-cell" onblur="COST_CAL()" />
+    	</td>
+    	<td><input type="text" data-type="rField" name="note" style="width: 99%;" /></td>
+    </tr>
+    <tr>
+    	<th colspan="6">합  계</th>
+    	<th><input type="text" data-type="mField" id="sumTotQnt" name="sumTotQnt" value="{{ doc.BodyContext.sumTotQnt }}" data-pattern="currency"  class="sum-table-colsum"style="width: 98%;" readonly="readonly" /></th>
+    	<th><input type="text" data-type="mField" id="sumTotAmt" name="sumTotAmt" value="{{ doc.BodyContext.sumTotAmt }}" data-pattern="currency"  class="sum-table-colsum"style="width: 98%;" readonly="readonly" /></th>
+    	<th></th>
+    </tr>
+</table>
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+	<colgroup>
+        <col style="width:13%" />
+        <col style="width:*%" />
+    </colgroup>
+    <tr>
+		<th>기타사항</th>
+		<td><textarea name="etc" data-type="mField" style="width: 98%;">{{ doc.BodyContext.etc }}</textarea></td>    
+    </tr>
+    <tr>
+		<th>특이사항</th>
+		<td><textarea name="notice" data-type="mField" style="width: 98%;">{{ doc.BodyContext.notice }}</textarea></td>    
+    </tr>
+</table>
+
+<!--실 결재양식 내용 부분 끝 -->

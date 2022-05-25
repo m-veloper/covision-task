@@ -1,0 +1,53 @@
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:12%">
+        <col style="width:38%">
+        <col style="width:12%">
+        <col style="width:*">
+    </colgroup>
+    <tbody>
+    <tr>
+	    <th>구분 
+	    </th>
+		<td colspan ="3">
+			<select name="div_WREATH" data-type="mField" data-element-type="sel_d_v" style="width: 98%;"  value="{{ doc.BodyContext.div_WREATH }}" >
+				<option value="경조화환">경조화환</option>
+				<option value="근조화환">근조화환</option>
+				<option value="기타 ">기타 </option>
+			</select>
+		</td>
+				
+				
+    </tr>
+    <tr>
+    	<th>신청자</th>
+    	<td><input type="text" data-type="mField" name="reqPerson" value="{{ doc.BodyContext.reqPerson }}" style="width:98%"></td>
+    	<th>신청일</th>
+    	<td>
+    		<input type="text" data-type="mField" name="deliveryDate" value="{{ doc.BodyContext.deliveryDate }}" style="width:98%" data-pattern="date">
+    	
+    	</td>
+    </tr>
+        
+     <tr>
+    	<th>받는분</th>
+    	<td><input type="text" data-type="mField" name="sentPerson" value="{{ doc.BodyContext.sentPerson }}" style="width:98%"></td>
+    	<th>받는분 연락처</th>
+    	<td><input type="text" data-type="mField" name="phone" value="{{ doc.BodyContext.phone }}" style="width:98%"></td>
+    </tr>
+    
+    <tr>
+    	<th>주소</th>
+    	<td colspan ="3"><input type="text" data-type="mField" name="place" value="{{ doc.BodyContext.place }}" style="width:98%"></td>
+    </tr>
+   
+    
+    <tr>
+    	<th>문구</th>
+    	<td colspan ="3"><input type="text" data-type="mField" name="sentMessage" value="{{ doc.BodyContext.sentMessage }}" style="width:98%"></td>
+    </tr>
+  
+  
+</tbody></table>
+<!--실 결재양식 내용 부분 끝 -->

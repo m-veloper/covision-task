@@ -1,0 +1,97 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:9%" />
+        <col style="width:35%" />
+        <col style="width:15%" />
+        <col style="width:20%" />
+    </colgroup>
+    <tr>
+    	<th>현장명</th>
+    	<td align="center">
+    		<input type="text" name="sceneNm" data-type="mField" value="{{ doc.BodyContext.sceneNm }}"  style="width:98%;">
+    	</td>
+    	<th>작성일자</th>
+    	<td align="center">
+    		<input type="text" data-type="mField" data-pattern="date" data-date-format="yy년 mm월 dd일" name="wrtDt" value="{{ doc.BodyContext.wrtDt }}"  style="width:98%; text-align: center;">
+    	</td>
+    </tr>
+</table>
+
+
+<table class="multi-row-table tableStyle linePlus mt10" id="sumTable"><!-- class="table_10" -->
+	<colgroup>
+        <col style="width:15%" />
+        <col style="width:15%" />
+        <col style="width:7%" />
+        <col style="width:12%" />
+        <col style="width:13%" />
+        <col style="width:13%" />
+        <col style="width:13%" />
+    </colgroup>
+    <tr class="multi-row-control" data-mode="writeOnly">
+	    	<td colspan="7">
+	    		<em class="btn_iws_l" style="float: right;">
+	                <span class="btn_iws_r multi-row-add" id="btnAdd" style="cursor: pointer;">
+	                    <strong class="txt_btn_ws">
+	                        <img class="ico_btn" alt="" src="/approval/resources/images/xform/ico_plus.gif">추가
+	                    </strong>
+	                </span>
+	            </em>
+	            <em class="btn_iws_l" style="float: right; padding-right: 10px;">
+	                <span class="btn_iws_r multi-row-del-auto" id="btnDel" style="cursor: pointer;">
+	                    <strong class="txt_btn_ws">
+	                        <img class="ico_btn" alt="" src="/approval/resources/images/xform/ico_x.gif">삭제
+	                    </strong>
+	                </span>
+	            </em>
+	    	</td>
+	    </tr>
+    <tr>
+    	<th>품목</th>
+    	<th>규격</th>
+    	<th>단위</th>
+    	<th>금회 요청량</th>
+    	<th>반입요청일</th>
+    	<th>수급처</th>
+    	<th>비고</th>
+    </tr>
+    <tr class="multi-row-template">
+    	<td align="center">
+    		<input type="text" data-type="rField" name="itmNm" style="width: 99%;" />
+    	</td>
+    	<td align="center">
+    		<input type="text" data-type="rField" name="itmStndrd" style="width: 99%;" />
+    	</td>
+    	<td align="center">
+    		<input type="text" data-type="rField" name="itmUnit" style="width: 99%;" />
+    	</td>
+    	<td align="center">
+    		<input type="text" data-type="rField" data-pattern="currency" name="itmReqAmt" style="width: 99%;" />
+    	</td>
+    	<td align="center">
+    		<input type="text" data-type="rField" name="itmReqDt" data-pattern="date" data-date-format="yy년 mm월 dd일" style="width: 99%;" />
+    	</td>
+    	<td align="center">
+    		<input type="text" data-type="rField" name="itmBnfcr" style="width: 99%;" />
+    	</td>
+    	<td align="left">
+    		<input type="text" data-type="rField" name="itmNote" style="width: 99%;" />
+    	</td>
+    </tr>
+</table>
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+	<colgroup>
+        <col style="width:9%" />
+        <col style="width:35%" />
+    </colgroup>
+    <tr>
+    	<th>특이사항</th>
+    	<td align="left">
+    		<textarea data-type="mField" name="notice" rows="5" style="width:99%;">{{ doc.BodyContext.notice }}</textarea>
+    	</td>
+    </tr>
+</table>
+<!--실 결재양식 내용 부분 끝 -->

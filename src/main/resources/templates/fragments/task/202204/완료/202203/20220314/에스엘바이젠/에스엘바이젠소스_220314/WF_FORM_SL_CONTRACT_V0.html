@@ -1,0 +1,65 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:17%" />
+        <col style="width:33%" />
+        <col style="width:17%" />
+        <col style="width:33%" />
+    </colgroup>
+    <tr>
+    	<th>계약서명</th>
+    	<td colspan="3">
+    		<input type="text" name="cntrctNm" data-type="mField" value="{{ doc.BodyContext.cntrctNm }}"  style="width:98%;">
+    	</td>
+    </tr>
+    <tr>
+    	<th>계약체결대상</th>
+    	<td colspan="3">
+    		<input type="text" name="subCntrct" data-type="mField" value="{{ doc.BodyContext.subCntrct }}"  style="width:98%;">
+    	</td>
+    </tr>
+    <tr>
+    	<th>계약유형</th>
+    	<td colspan="3">
+    		<select data-type="mField" data-element-type="sel_d_t" data-node-name="cntractType" val style="width: 98%;">
+    			<option value="01">기술이전</option>
+    			<option value="02">위/수탁계약</option>
+    			<option value="03">연구개발</option>
+    			<option value="04">CDA</option>
+    			<option value="05">기타(연구개발)</option>
+    			<option value="06">경영일반</option>
+    			<option value="07">투자</option>
+    			<option value="08">기타(경영)</option>
+    		</select>
+    	</td>
+    </tr>
+    <tr>
+    	<th>계약일자</th>
+    	<td>
+    		<input type="text" name="cntractDt" data-type="mField" data-pattern="date" data-date-format="yy년 mm월 dd일" value="{{ doc.BodyContext.cntractDt }}"  style="width:95%; text-align: center;">
+    	</td>
+    	<th>계약기간</th>
+    	<td>
+    		<input type="text" name="cntractPrd" data-type="mField" value="{{ doc.BodyContext.cntractPrd }}"  style="width:98%;">
+    	</td>
+    </tr>
+    <tr>
+    	<th>계약금액<br/>(VAT별도)</th>
+    	<td colspan="3">
+    		\&nbsp;<input type="text" name="cntractAmt" data-type="mField" value="{{ doc.BodyContext.cntractAmt }}" data-pattern="currency" style="width:95%;" />
+    	</td>
+    </tr>
+    <tr>
+    	<th>계약내용</th>
+    	<td colspan="3" style="height: 120px;">
+    		<textarea id="cntractCmmnt" name="" data-type="mField" style="width: 98%; height: 98%;">{{ doc.BodyContext.cntractCmmnt }}</textarea>
+    	</td>
+    </tr><tr>
+    	<th>기타사항</th>
+    	<td colspan="3">
+    		<textarea id="cntractEtc" name="" data-type="mField" style="width: 98%;">{{ doc.BodyContext.cntractEtc }}</textarea>
+    	</td>
+    </tr>
+</table>
+<!--실 결재양식 내용 부분 끝 -->

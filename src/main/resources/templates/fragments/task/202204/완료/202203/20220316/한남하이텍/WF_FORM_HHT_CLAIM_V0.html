@@ -1,0 +1,160 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:15%" />
+    </colgroup>
+    <tr>
+    	<th colspan="2">업체명</th>
+    	<td colspan="4">
+    		<input type="text" name="bizNm" data-type="mField" value="{{ doc.BodyContext.bizNm }}"  style="width:99%;" placeholder="→ 거래처명 작성" />
+    	</td>
+    	<td style="border-top: none; border-bottom: none; border-right: none;"></td>
+    	<td style="border-top: none; border-bottom: none; border-right: none;"></td>
+    	<td style="border-top: none; border-bottom: none; border-right: none;"></td>
+    </tr>
+    <tr>
+    	<th colspan="2">클레임 일자</th>
+    	<td colspan="4">
+    		<input type="text" data-type="mField" data-pattern="date" data-date-format="yy년 mm월 dd일" name="claimDt" value="{{ doc.BodyContext.claimDt }}" style="width:99%;" placeholder="Claim report 일자 작성"/>
+    	</td>
+    	<td style="border-top: none; border-bottom: none; border-right: none;"></td>
+    	<td style="border-top: none; border-bottom: none; border-right: none;"></td>
+    	<td style="border-top: none; border-bottom: none; border-right: none;"></td>
+    </tr>
+    <tr>
+    	<th colspan="2">수출 C/I 번호</th>
+    	<td colspan="4">
+    		<input type="text" name="ciNo" data-type="mField" value="{{ doc.BodyContext.ciNo }}"  style="width:99%;" placeholder="→ 수출시 C/I번호 작성" />
+    	</td>
+    	<td style="border-top: none; border-bottom: none; border-right: none;"></td>
+    	<td style="border-top: none; border-bottom: none; border-right: none;"></td>
+    	<td style="border-top: none; border-bottom: none; border-right: none;"></td>
+    </tr>
+    <tr>
+    	<th colspan="2">수출신고필증 번호</th>
+    	<td colspan="4">
+    		<input type="text" name="pltNo" data-type="mField" value="{{ doc.BodyContext.pltNo }}"  style="width:99%;" placeholder="→ 수출시 신고필증 번호 작성"/>
+    	</td>
+    	<td style="border-top: none; border-bottom: none; border-right: none;"></td>
+    	<td style="border-top: none; border-bottom: none; border-right: none;"></td>
+    	<td style="border-top: none; border-bottom: none; border-right: none;"></td>
+    </tr>
+    <tr>
+    	<th colspan="2">수출 B/L 번호</th>
+    	<td colspan="4">
+    		<input type="text" name="blNo" data-type="mField" value="{{ doc.BodyContext.blNo }}"  style="width:99%;" placeholder="→ 수출시 B/L번호 작성"/>
+    	</td>
+    	<td style="border-top: none; border-bottom: none; border-right: none;"></td>
+    	<td style="border-top: none; border-bottom: none; border-right: none;"></td>
+    	<td style="border-top: none; border-bottom: none; border-right: none;"></td>
+    </tr>
+</table>
+
+<table class="tableStyle linePlus mt15"><!-- class="table_10" -->
+	<colgroup>
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:15%" />
+    </colgroup>
+    <tr>
+    	<th colspan="2">클레임 사유</th>
+    	<td colspan="7" style="height: 120px;">
+    		<textarea name="reason" data-type="mField" style="width: 98%; height: 98%;" placeholder="→ 클레임 Report 내용 요약하여 작성">{{ doc.BodyContext.reason }}</textarea>
+    	</td>
+    </tr>
+</table>
+
+<table class="tableStyle linePlus mt15"><!-- class="table_10" -->
+	<colgroup>
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:15%" />
+    </colgroup>
+    <tr>
+    	<th colspan="2">비고 및 요구사항</th>
+    	<td colspan="7" style="height: 120px;">
+    		<textarea name="etc" data-type="mField" style="width: 98%; height: 98%;" placeholder="→ 클레임에 따른 요구사항 및 특이 기타 사항 기재">{{ doc.BodyContext.etc }}</textarea>
+    	</td>
+    </tr>
+</table>
+<table class="multi-row-table tableStyle linePlus mt15" id="sumTable"><!-- class="table_10" -->
+	<colgroup>
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:17%" />
+    </colgroup>
+    <tr class="multi-row-control" data-mode="writeOnly">
+    	<td colspan="9">
+    		<em class="btn_iws_l" style="float: right;">
+                <span class="btn_iws_r multi-row-add" id="btnAdd" style="cursor: pointer;">
+                    <strong class="txt_btn_ws">
+                        <img class="ico_btn" alt="" src="/approval/resources/images/xform/ico_plus.gif">추가
+                    </strong>
+                </span>
+            </em>
+            <em class="btn_iws_l" style="float: right; padding-right: 10px;">
+                <span class="btn_iws_r multi-row-del-auto" id="btnDel" style="cursor: pointer;">
+                    <strong class="txt_btn_ws">
+                        <img class="ico_btn" alt="" src="/approval/resources/images/xform/ico_x.gif">삭제
+                    </strong>
+                </span>
+            </em>
+    	</td>
+    </tr>
+    <tr>
+    	<th>품번</th>
+    	<th colspan="2">품명</th>
+    	<th>규격</th>
+    	<th>단위</th>
+    	<th>수량</th>
+    	<th>판매단가</th>
+    	<th>판매금액</th>
+    	<th>LOT NO.</th>
+    </tr>
+    <tr class="multi-row-template">
+    	<td><input type="text" data-type="rField" name="itmNo" style="width: 99%;" /></td>
+    	<td colspan="2"><input type="text" data-type="rField" name="itmNm" style="width: 99%;" /></td>
+    	<td><input type="text" data-type="rField" name="itmStndrd" style="width: 99%;" /></td>
+    	<td><input type="text" data-type="rField" name="itmUnit" style="width: 99%;" /></td>
+    	<td><input type="text" data-type="rField" name="itmQnt" style="width: 99%;" data-pattern="currency" class="sum-table-cell" onblur="COST_CAL()" /></td>
+    	<td><input type="text" data-type="rField" name="itmPrice" style="width: 99%;" data-pattern="currency" class="sum-table-cell" onblur="COST_CAL()" /></td>
+    	<td><input type="text" data-type="rField" name="itmAmt" style="width: 99%;" data-pattern="currency" class="sum-table-cell" onblur="COST_CAL()" readonly="readonly" /></td>
+    	<td><input type="text" data-type="rField" name="lotNo" style="width: 99%;" /></td>
+    </tr>
+    <tr>
+    	<th colspan="4">합계</th>
+    	<th></th>
+    	<th></th>
+    	<th></th>
+    	<th><input type="text" data-type="mField" id="totAmt" name="totAmt" value="{{ doc.BodyContext.totAmt }}" data-pattern="currency"  class="sum-table-colsum" style="width: 98%;" readonly="readonly"/></th>
+    	<th></th>
+    </tr>
+</table>
+<!--실 결재양식 내용 부분 끝 -->

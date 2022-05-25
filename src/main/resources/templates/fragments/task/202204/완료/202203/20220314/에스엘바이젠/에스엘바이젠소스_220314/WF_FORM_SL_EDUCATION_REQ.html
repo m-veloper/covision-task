@@ -1,0 +1,60 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:15%" />
+        <col style="width:*" />
+    </colgroup>
+    <tr>
+    	<th>신청/보고 여부</th>
+    	<td>
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rprtYn">
+    			<input type="radio" name="rprtYn" value="01" checked="checked" />&nbsp;신청서&nbsp;&nbsp;
+    			<input type="radio" name="rprtYn" value="02" />&nbsp;보고서
+    		</div>
+    	</td>
+    </tr>
+    <tr>
+    	<th>신청/참석인원</th>
+    	<td>
+    		<input type="text" name="prsnl" data-type="mField" value="{{ doc.BodyContext.prsnl }}"  style="width:98%;">
+    	</td>
+    </tr>
+    <tr>
+    	<th>교육일시</th>
+    	<td>
+    		<input type="text" name="eduDt" data-type="mField" value="{{ doc.BodyContext.eduDt }}"  style="width:98%;">
+    	</td>
+    </tr>
+    <tr>
+    	<th>교육기관</th>
+    	<td>
+    		<input type="text" name="eduInstn" data-type="mField" value="{{ doc.BodyContext.eduInstn }}"  style="width:98%;">
+    	</td>
+    </tr>
+    <tr>
+    	<th>교육장소</th>
+    	<td>
+    		<input type="text" name="eduArea" data-type="mField" value="{{ doc.BodyContext.eduArea }}"  style="width:98%;">
+    	</td>
+    </tr>
+    <tr>
+    	<th>비용</th>
+    	<td>
+    		<input type="text" name="cost" data-type="mField" value="{{ doc.BodyContext.cost }}"  style="width:98%;">
+    	</td>
+    </tr>
+    <tr>
+    	<th>교육내용</th>
+    	<td>
+    		<input type="text" name="eduCnts" data-type="mField" value="{{ doc.BodyContext.eduCnts }}"  style="width:98%;">
+    	</td>
+    </tr>
+    <tr>
+    	<th>교육목적<br/>및<br/>기대효과</th>
+    	<td>
+    		<textarea name="eduEffect" data-type="mField" style="width: 98%; height: 100px;" placeholder="(자세하게 기재 바랍니다.)">{{ doc.BodyContext.eduEffect }}</textarea>
+    	</td>
+    </tr>
+</table>
+<!--실 결재양식 내용 부분 끝 -->

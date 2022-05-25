@@ -1,0 +1,72 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:12%" />
+        <col style="width:16.5%" />
+        <col style="width:*" />
+    </colgroup>
+    <tr>
+    	<th>법인 카드번호</th>
+    	<td colspan="2"><input type="text" data-type="mField" id="corpCardNum" value="{{ doc.BodyContext.corpCardNum }}" style="width:98%"></td>
+    </tr>
+     <tr>
+    	<th>작성일자</th>
+    	<td colspan="2"><input type="text" data-type="mField" id="wDate" value="{{ doc.BodyContext.wDate }}" style="width:120px"></td>
+    </tr>
+    <tr>
+		<td colspan="3">
+			<table class="tableStyle linePlus mt10 multi-row-table RowSumTable" id="corpTbl1">
+				<colgroup>
+					<col style="width:15%" />
+					<col style="width:15%" />
+					<col style="width:15%" />
+					<col style="width:25%" />
+					<col style="width:15%" />
+					<col style="width:15%" />
+				</colgroup>
+				<tr class="multi-row-control">
+					<td colspan="6" data-mode="writeOnly"  align="right">
+						<input type="button" value="+추가" class="multi-row-add usa">
+						<input type="button" value="-삭제" class="multi-row-del-auto usa">
+					</td>
+				</tr>
+				<tr>	
+					<th>구분</th>
+					<th>일자</th>
+					<th>사용액</th>
+					<th>사용내역</th>
+					<th>장소</th>
+					<th>비고</th>
+				</tr>
+				<tr class="multi-row-template">
+					<td align="center">
+		            <select name="Division" data-type="rField" data-element-type="sel_d_v"  style="width: 98%; text-align :center;" title="구분" >
+		    			<option value="선택">선택</option>
+		    			<option value="회의비">회의비</option>
+		    			<option value="접대비">접대비</option>
+		    			<option value="여비교통비">여비교통비</option>
+		    			<option value="차량유지비">차량유지비</option>
+		    			<option value="소모품비">소모품비</option>
+		    			<option value="기타">기타</option>
+		    			
+		    		</select>  
+			        </td>
+					<td><input type="text" data-type="rField" name="corpDate1" style="width:98%" data-pattern="date"></td>
+					<td><input type="text" data-type="rField" name="corpPrice1" style="width:98%" data-pattern="currency" class="sum-table-cell"></td>
+					<td><input type="text" data-type="rField" name="corpUseCon1" style="width:98%"></td>
+					<td><input type="text" data-type="rField" name="corpPlace1" style="width:98%"></td>
+					<td><input type="text" data-type="rField" name="corpEtc1" style="width:98%"></td>
+				</tr>
+				<tr>
+					<th colspan="2">합계</th>
+					<td><input type='text' data-type="mField" id="corpTotal1" value="{{ doc.BodyContext.corpTotal1 }}" style="width:98%;border:0px;" readonly data-pattern="currency" class="sum-table-colsum"></td>
+					<th colspan="3"></th>
+				</tr>
+			
+			</table>
+		</td>		    
+    </tr>
+    
+</table>
+<!--실 결재양식 내용 부분 끝 -->

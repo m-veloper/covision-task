@@ -1,0 +1,192 @@
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt15">
+    <colgroup>
+        <col style="width: 12%">
+        <col style="width: 10%">
+        <col style="width: 9%">
+        <col style="width: 20%">
+        <col style="width: 16%">
+        <col style="width: 7%">
+        <col style="width: 9%">
+        <col style="width: 15%">
+    </colgroup>
+    <tbody><tr>
+        <th rowspan="2">출장자</th>
+        <th colspan="2">소속</th>
+        <th>직책/직급</th>
+        <th>성명</th>
+        <th colspan="2">출장국가</th>
+        <th>출장도시</th>
+    </tr>
+    <tr>
+        <td colspan="2" align="center">
+            <input type="text" data-type="mField" id="BiztripDept" value="{{ doc.BodyContext.BiztripDept }}" title="출장자 소속" style="width: 99%; text-align: center;" required="">
+        </td>
+        <td align="center">
+            <input type="text" data-type="mField" id="BiztripPosition" value="{{ doc.BodyContext.BiztripPosition }}" title="출장자 직책/직급" style="width: 99%; text-align: center;" required="">
+        </td>
+        <td align="center">
+            <input type="text" data-type="mField" id="BiztripName" value="{{ doc.BodyContext.BiztripName }}" title="출장자 성명" style="width: 65%; text-align: center;" required="">
+            <span data-mode="writeOnly">
+                <a onclick="OpenWinEmployee('BiztripName');">
+                    <img alt="search" style="vertical-align: middle; cursor: pointer;"  width="25" height="21">
+                </a>
+            </span>
+        </td>
+        <td colspan="2">
+            <input type="text" data-type="mField" id="BiztripNation" value="{{ doc.BodyContext.BiztripNation }}" title="출장국가" style="width: 99%;" required="">
+        </td>
+        <td>
+            <input type="text" data-type="mField" id="BiztripCity" value="{{ doc.BodyContext.BiztripCity }}" title="출장도시" style="width: 99%;" required="">
+        </td>
+    </tr>
+    <tr>
+        <th rowspan="2">출장일정</th>
+        <th>전체일정</th>
+        <th>출발</th>
+        <td colspan="2">
+            <input type="text" data-type="mField" id="AllSceduleSdate" value="{{ doc.BodyContext.AllSceduleSdate }}" readonly="" data-pattern="date" title="전체일정 출발일" required="" style="width: 80px;" onchange="calScheduleSDATEEDATE(this);">
+        </td>
+        <th>도착</th>
+        <td colspan="2">
+            <input type="text" data-type="mField" id="AllSceduleEdate" value="{{ doc.BodyContext.AllSceduleEdate }}" readonly="" data-pattern="date" title="전체일정 도착일" required="" style="width: 80px;" onchange="calScheduleSDATEEDATE(this);">
+        </td>
+    </tr>
+    <tr>
+        <th>업무일정</th>
+        <th>출발</th>
+        <td colspan="2">
+            <input type="text" data-type="mField" id="WorkSdate" value="{{ doc.BodyContext.WorkSdate }}" readonly="" data-pattern="date" title="업무일정 출발일" style="width: 80px;" required="" onchange="calWorkSDATEEDATE(this);">
+        </td>
+        <th>도착</th>
+        <td colspan="2">
+            <input type="text" data-type="mField" id="WorkEdate" value="{{ doc.BodyContext.WorkEdate }}" readonly="" data-pattern="date" title="업무일정 도착일" style="width: 80px;" required="" onchange="calWorkSDATEEDATE(this);">
+        </td>
+    </tr>
+    <tr>
+        <th>출장목적</th>
+        <td colspan="7" style="word-break: break-all; padding-top:3px;">
+            <textarea data-type="mField" id="BiztripObj" rows="5" style="width:98%;overflow-y:auto;" required="">{{ doc.BodyContext.BiztripObj }}</textarea>
+        </td>
+    </tr>
+    <tr>
+        <th>출장 순로</th>
+        <td colspan="7">
+            <input type="text" data-type="mField" id="BiztripDistance" value="{{ doc.BodyContext.BiztripDistance }}" title="출장순로" style="width: 99%;" placeholder="(예시: Example)  Seoul - 출장지(Destination) - Seoul" required="">
+        </td>
+    </tr>
+    <tr>
+        <th colspan="8">사용액</th>
+    </tr>
+    <tr>
+        <th>구분</th>
+        <th colspan="3">회사출장규정</th>
+        <th colspan="2">계획액</th>
+        <th colspan="2">비고</th>
+    </tr>
+    <tr>
+        <th>숙박비</th>
+        <td colspan="3"></td>
+        <td colspan="2">
+            \ <input type="text" data-type="mField" id="RoomPlanMoney" value="{{ doc.BodyContext.RoomPlanMoney }}" class="sum-table-cell" data-pattern="currency" title="숙박비 계획액" style="width: 85%;text-align:right;" placeholder="-">
+         </td>
+        <td colspan="2">
+            <label style="margin-right:0px;">1박 당 금액 :</label>
+            <input type="text" data-type="mField" id="RentalRoomMoney" value="{{ doc.BodyContext.RentalRoomMoney }}" data-pattern="currency" title="1박 당 금액" style="width: 35%;text-align:right;" placeholder="-">
+            <label style="margin-right:0px;">(원)</label>
+        </td>
+    </tr>
+    <tr>
+        <th>식비</th>
+        <td colspan="3" style="text-align:center;">
+            <label>조식:￦25,000/중식:￦35,000/석식:￦60,000</label>
+        </td>
+        <td colspan="2">
+            \ <input type="text" data-type="mField" id="FoodMoney" value="{{ doc.BodyContext.FoodMoney }}" class="sum-table-cell" data-pattern="currency" title="식비 계획액" style="width: 85%;text-align:right;" placeholder="-">
+            
+        </td><td colspan="2">
+            <input type="text" data-type="mField" id="FoodEtc" value="{{ doc.BodyContext.FoodEtc }}" title="식비 비고" style="width: 99%;">
+        </td>
+    </tr>
+    <tr>
+        <th>교통비</th>
+        <td colspan="3" style="text-align:center;">
+            <label>한국에서 발생하는 공항버스, 공항철도</label>
+        </td>
+        <td colspan="2">
+            \ <input type="text" data-type="mField" id="TrafficMoney" value="{{ doc.BodyContext.TrafficMoney }}" class="sum-table-cell" data-pattern="currency" title="교통비 계획액" style="width: 85%;text-align:right;" placeholder="-">
+            
+        </td><td colspan="2">
+            <input type="text" data-type="mField" id="TrafficEtc" value="{{ doc.BodyContext.TrafficEtc }}" title="교통비 비고" style="width: 99%;">
+        </td>
+    </tr>
+    <tr>
+        <th>부대비</th>
+        <td colspan="3" style="text-align:center;">
+            <label>\20,000/day</label>
+        </td>
+        <td colspan="2">
+            \ <input type="text" data-type="mField" id="UnitCost" value="{{ doc.BodyContext.UnitCost }}" class="sum-table-cell" data-pattern="currency" title="부대비 계획액" style="width: 85%;text-align:right;" placeholder="-">
+            
+        </td><td colspan="2">
+            <input type="text" data-type="mField" id="UnitCostEtc" value="{{ doc.BodyContext.UnitCostEtc }}" title="부대비 비고" style="width: 99%;">
+        </td>
+    </tr>
+    <tr>
+        <th>비자</th>
+        <td colspan="3" style="text-align:center;">
+            <label>복수비자 발급 시 예외사항에 사유 명시</label>
+        </td>
+        <td colspan="2">
+            \ <input type="text" data-type="mField" id="VisaMoney" value="{{ doc.BodyContext.VisaMoney }}" class="sum-table-cell" data-pattern="currency" title="비자 계획액" style="width: 85%;text-align:right;" placeholder="-">
+            
+        </td><td colspan="2">
+            <input type="text" data-type="mField" id="VisaEtc" value="{{ doc.BodyContext.VisaEtc }}" title="부대비 비고" style="width: 99%;">
+        </td>
+    </tr>
+    <tr>
+        <th>항공임</th>
+        <td colspan="3" style="text-align:center;">직원: Economy<br style="">임원: 6hr 이하 Economy, 6hr 이상 Business</td>
+        <td colspan="2">
+            \ <input type="text" data-type="mField" id="AirplaneMoney" value="{{ doc.BodyContext.AirplaneMoney }}" class="sum-table-cell" data-pattern="currency" title="항공임 계획액" style="width: 85%;text-align:right;" placeholder="-">
+            
+        </td><td colspan="2">
+            <input type="text" data-type="mField" id="AirplaneEtc" value="{{ doc.BodyContext.AirplaneEtc }}" title="항공임 비고" style="width: 99%;">
+        </td>
+    </tr>
+    <tr>
+        <th colspan="4">합계</th>
+        <td colspan="2">
+            \ <input type="text" data-type="mField" id="TotalPlanMoney" value="{{ doc.BodyContext.TotalPlanMoney }}" class="sum-table-colsum" data-pattern="currency" title="계획액 합계" style="width: 85%;text-align:right; border: 0;" readonly="readonly" data-formula="+" data-sum-ref="#RoomPlanMoney,#FoodMoney,#TrafficMoney,#UnitCost,#VisaMoney,#AirplaneMoney">
+        </td>
+        <td colspan="2"></td>
+    </tr>
+</tbody></table>
+
+<table class="tableStyle linePlus" style="margin-top:-1px;" id="Table1">
+    <colgroup>
+        <col style="width: 25%" height="20px">
+        <col style="width: 60%">
+        <col style="width: 15%">
+    </colgroup>
+    <tbody><tr>
+        <th rowspan="2" style="line-height:19px;">예외사항<br>합리적인<br>사유기재</th>
+        <td rowspan="2">
+            <textarea data-type="mField" id="WARCOMMENT1" name="WARCOMMENT1" rows="4" style="width:98%;overflow-y:auto;">{{ doc.BodyContext.WARCOMMENT1 }}</textarea>
+            <input type="hidden" data-type="mField" id="LASTCONFIRM" name="LASTCONFIRM" value="{{ doc.BodyContext.LASTCONFIRM }}" style="">
+        </td>
+        <th>확인</th>
+    </tr>
+    <tr>
+        <td style="text-align:center;"><input type="text" data-type="mField" id="LASTAPVERNAME" name="LASTAPVERNAME" value="{{ doc.BodyContext.LASTAPVERNAME }}" readonly="" style="width:97%;border:0px solid #ffffff"></td>
+    </tr>
+</tbody></table>
+
+<div> 
+    <div data-type="mField" data-element-type="chk_d" data-node-name="Chk_Agree">
+        <label style="font-size:12px;" for="Chk_Agree_01">* 회사 출장 규정을 숙지하였고, 허용 범위 내에서 발생하는 비용에 한해 회사의 비용지원을 받을 수 있음을 확인합니다.</label>&nbsp;&nbsp;
+        <input type="checkbox" id="Chk_Agree_01" name="Chk_Agree" value="동의">
+    </div>
+</div>
+
+<!--실 결재양식 내용 부분 끝 -->

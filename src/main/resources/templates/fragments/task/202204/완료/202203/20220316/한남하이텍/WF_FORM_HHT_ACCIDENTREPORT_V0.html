@@ -1,0 +1,60 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:15%" />
+        <col style="width:35%" />
+        <col style="width:15%" />
+        <col style="width:35%" />
+    </colgroup>
+    <tr>
+    	<th>소  속</th>
+    	<td>
+    		<input type="text" name="department" data-type="mField" value="{{ doc.BodyContext.department }}"  style="width:98%;">
+    	</td>
+    	<th>성  명</th>
+    	<td>
+    		<input type="text" name="name" data-type="mField" value="{{ doc.BodyContext.name }}"  style="width:98%; " >
+    	</td>
+    </tr>
+    <tr>
+    	<th>일  시</th>
+    	<td colspan="3">
+    		<input type="text" name="date" data-type="mField" value="{{ doc.BodyContext.date }}"  style="width:98%;">
+    	</td>
+    </tr>
+    <tr>
+    	<th>장  소</th>
+    	<td colspan="3">
+    		<input type="text" name="area" data-type="mField" value="{{ doc.BodyContext.area }}"  style="width:98%;">
+    	</td>
+    </tr>
+    <tr>
+    	<th colspan="4"><p>세부내용</p><p>(6하원칙에 따라 원인 및 경위 등 상세 서술)</p></th>
+    </tr>
+    <tr>
+    	<td colspan="4" style="height: 70px;"><textarea name="dtlCmmnt" data-type="mField" style="width: 98%; height: 90%;">{{ doc.BodyContext.dtlCmmnt }}</textarea></td>
+    </tr>
+    <tr>
+    	<th colspan="4">피해상황 (대인/대물/차량/기타)</th>
+    </tr>
+    <tr>
+    	<td colspan="4" style="height: 70px;"><textarea name="dmgSttn" data-type="mField" style="width: 98%; height: 90%;">{{ doc.BodyContext.dmgSttn }}</textarea></td>
+    </tr>
+    <tr>
+    	<th colspan="4">처리내역</th>
+    </tr>
+    <tr>
+    	<td colspan="4" style="height: 70px;"><textarea name="hisPrcs" data-type="mField" style="width: 98%; height: 90%;">{{ doc.BodyContext.hisPrcs }}</textarea></td>
+    </tr>
+    <tr>
+    	<td colspan="4" style="text-align: center;">
+    		</br>
+	    	<p class="mt5">위와 같이 경위서를 제출 합니다.</p>
+	    	<p class="mt5"<p><input type="text" name="createdDt" data-type="mField" data-pattern="date" data-date-format="yy년 mm월 dd일" value="{{ doc.BodyContext.createdDt }}"  style="width:30%; text-align: center;"></p>
+    		<p class="mt5">제 출 인 :<input type="text" name="submiter" data-type="mField" value="{{ doc.BodyContext.submiter }}"  style="width:20%;">&nbsp;(인)</p>
+    		</br>
+    	</td>
+    </tr>
+</table>
+<!--실 결재양식 내용 부분 끝 -->

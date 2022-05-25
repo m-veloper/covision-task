@@ -1,0 +1,133 @@
+<!--실 결재양식 내용 부분 시작 -->
+
+
+
+<table class="table_10 multi-row-table RowSumTable tableStyle linePlus mt10" id="TBLINFO" style="border-left: 1px solid #c3d7df;">
+    <colgroup>
+         <col style="width: 12%">
+        <col style="width: 14%">
+        <col style="width: 14%">
+        <col style="width: 15%">
+        <col style="width: 15%">
+        <col style="width: 15%">
+        <col style="width: 15%">
+    </colgroup>
+    <tbody>
+	    <tr class="multi-row-control" data-mode="writeOnly">
+	        <td colspan="7" style="text-align: right">
+	            <input type="button" id="btnAdd" value="+추가" class="multi-row-add smButton">
+	            <input type="button" id="btnDelSel" value="-삭제" class="multi-row-del-auto smButton">
+	        </td>
+	    </tr>
+	    <tr>
+	        <th class="multi-row-autospan">출장자<br>
+	        <input type="button" value="추가" class="usa multi-row-add" data-mode="writeOnly"><!-- onclick="addRow()"  -->
+	   		<input type="button" value="삭제" class="usa multi-row-del-auto" data-mode="writeOnly"><!-- onclick="delRow()"  -->
+	        </th>
+	        <th colspan ="2">부서명</th>
+	        <th>성명</th>
+	        <th>직위</th>
+	        <th colspan ="2">비고</th>
+	    </tr>
+	    <tr class="multi-row-template ">
+			<td colspan ="2"><input name="user_dept_0" style="width: 99%;" type="text" data-type="rField"></td>
+	        <td >
+	            <input name="user_name_0" style="width: 99%;" type="text" data-type="rField">
+	        </td>
+	        <td >
+	            <input name="user_pstn_0" style="width: 99%;" type="text" data-type="rField">
+	        </td>
+	        <td colspan ="2">
+	            <input name="user_rmk_0" style="width: 99%;" type="text" data-type="rField">
+	        </td>
+	    </tr>
+	    
+	</tbody>
+</table>
+
+<table class="table_3 RowSumTable tableStyle linePlus" cellpadding="0" cellspacing="0">
+    <colgroup>
+        <col style="width: 12%">
+        <col style="width: 14%">
+        <col style="width: 14%">
+        <col style="width: 14%">
+        <col style="width: 15%">
+        <col style="width: 15%">
+        <col style="width: 15%">
+    </colgroup>
+    <tbody>
+     <tr>
+        <th>출장구분</th>
+        <td align="center" colspan="6">
+            <div data-type="mField" data-element-type="chk_d" data-node-name="tripType">
+	   			<input type="checkbox" id="Type1" name="tripType" value="국내">국내 &nbsp;&nbsp;
+	   			<input type="checkbox" id="Type2" name="tripType" value="국외">국외 &nbsp;&nbsp;
+   			</div>
+        </td>
+    </tr>
+    <tr>
+        <th>출장지역</th>
+        <td colspan="6">
+            <textarea data-type="mField" id="t_area" rows="3" cols="15" style="width:98%;overflow-y:auto;padding-left:0px;padding-right:0px;">{{ doc.BodyContext.t_area }}</textarea>
+        </td>
+    </tr>
+    <tr>
+        <th>출장목적</th>
+        <td colspan="6">
+            <textarea data-type="mField" id="t_purpose" rows="4" cols="15" style="width:98%;overflow-y:auto;padding-left:0px;padding-right:0px;">{{ doc.BodyContext.t_purpose }}</textarea>
+        </td>
+    </tr>
+    
+    <tr>
+        <th>출장일정</th>
+        <td colspan="6">
+            <textarea data-type="mField" id="t_schedule" rows="4" cols="15" style="width:98%;overflow-y:auto;padding-left:0px;padding-right:0px;" placeholder="출장내용 기입">{{ doc.BodyContext.t_schedule }}</textarea>
+        </td>
+    </tr>
+    
+     <tr>
+        <th>교통편</th>
+        <td align="center" colspan="6">
+             <div data-type="mField" data-element-type="chk_d" data-node-name="vType">
+	   			<input type="checkbox" id="Type1" name="vType" value="국내">차량 &nbsp;&nbsp;
+	   			<input type="checkbox" id="Type3" name="vType" value="국외">버스 &nbsp;&nbsp;
+	   			<input type="checkbox" id="Type4" name="vType" value="국외">기차 &nbsp;&nbsp;
+	   			<input type="checkbox" id="Type5" name="vType" value="국외">항공 &nbsp;&nbsp;
+	   			<input type="checkbox" id="Type6" name="vType" value="국외">기타 &nbsp;&nbsp;
+	   			(<input type="text" id="vEtc" name="vType" data-type="mField" value="{{ doc.BodyContext.vEtc }}"    style="width:150px; " >
+      
+	    			)
+   			</div>
+        </td>
+    </tr>
+   
+    <tr>
+        <th>출장기간</th>
+        <td colspan="6">
+            <input type="text" data-type="mField" id="SDATE" value="{{ doc.BodyContext.SDATE }}" data-pattern="date" title="시작일" required="" style="width:12%;height:20px;" readonly="readonly">
+            <b>&nbsp;~&nbsp;</b>
+            <input type="text" data-type="mField" id="EDATE" value="{{ doc.BodyContext.EDATE }}" data-pattern="date" title="종료일" required="" style="width:12%;height:20px;" readonly="readonly" onchange="validateVacDate()">
+            &nbsp;
+            (<input type="text" data-type="mField" id="NIGHTS" value="{{ doc.BodyContext.NIGHTS }}" data-pattern="period" data-period-ref="SDATE,EDATE" size="5" readonly="readonly" style="width:40px;height:20px;text-align:right"><b>박</b>  &nbsp;&nbsp;
+            <input type="text" data-type="mField" id="DAYS" value="{{ doc.BodyContext.DAYS }}" data-pattern="period" data-period-ref="SDATE,EDATE,1" size="5" readonly="readonly" style="width: 40px; height: 20px;text-align:right"><b>일</b>)
+        </td>
+    </tr>
+    
+     <tr>
+        <th>사용경비</th>
+        <td colspan="6">
+            <textarea data-type="mField" id="t_amt" rows="4" cols="15" style="width:98%;overflow-y:auto;padding-left:0px;padding-right:0px;" placeholder="교통비/숙박비/식비/국외출장여비 등  실제사용내역 기입">{{ doc.BodyContext.t_amt }}</textarea>
+        </td>
+    </tr>
+    
+    <tr>
+        <th>기타</th>
+        <td colspan="6">
+            <textarea data-type="mField" id="t_commnet" rows="4" cols="15" style="width:98%;overflow-y:auto;padding-left:0px;padding-right:0px;">{{ doc.BodyContext.t_commnet }}</textarea>
+        </td>
+    </tr>
+    
+</tbody></table>
+
+
+<!--실 결재양식 내용 부분 끝 -->

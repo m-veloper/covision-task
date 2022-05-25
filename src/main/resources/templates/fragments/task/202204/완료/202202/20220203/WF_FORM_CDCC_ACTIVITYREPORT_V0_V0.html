@@ -1,0 +1,155 @@
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10 multi-row-table sortable" id="ItemTbl">
+	
+	<tbody>
+         <colgroup>
+         <col style="width: 5%">
+         <col style="width: 17%">
+         <col style="width: 21%">
+         <col style="width: 13%">
+         <col style="width: 40%">
+    </colgroup>
+    	<tr class="multi-row-control" data-mode="writeOnly">
+			<td colspan="5" align="right" class="ui-sortable">
+				<input type="button" value="+추가" class="multi-row-add usa" data-mode="writeOnly">
+				<input type="button" value="-삭제" class="multi-row-del-auto usa" data-mode="writeOnly">
+			</td>
+		</tr>
+    <tr>
+	   	
+		    <th rowspan="2"  >연번</th>    
+	        <th rowspan="2">활동종류</th>
+	        <th rowspan=>활동실무자</th>
+	        <th rowspan="2">만나게 된<br>주민/지역사회</th>
+	        <th rowspan="2">활동내역</th>
+	    </tr>
+	     <tr>
+	    
+	        <th>활동일시</th>
+	    </tr>
+	    <tr readonly="readonly" data-mode="writeOnly">
+						
+						<td rowspan="3" >예시</td>
+							<td rowspan="3" class="ui-sortable" readonly="readonly">
+                              <div class="group sortable-container ui-sortable xform-checkbox" data-type="rField" data-node-name="Check" data-element-type="chk_d">
+							 	<input type="checkbox" name="transCheckEx" data-face-for="Check" value="h1">안부확인<br>
+                               <input type="checkbox" name="togeCheckEx" data-face-for="Check" value="h2">갈등확인 <br>
+                               <input type="checkbox" name="togeCheckEx" data-face-for="Check" value="h3">고충처리 <br>
+                               <input type="checkbox" name="togeCheckEx" data-face-for="Check" value="h4">문의응대 <br>
+                               <input type="checkbox" name="togeCheckEx" data-face-for="Check" value="h5">홍보활동 <br>
+                               <input type="checkbox" name="togeCheckEx" data-face-for="Check" value="h6">동중심활동 <br>
+                               <input type="checkbox" name="togeCheckEx" data-face-for="Check" value="h7">후원발굴/관리<br>
+                               <input type="checkbox" name="togeCheckEx" data-face-for="Check" value="h8">기타(
+                               <input type="text" name="etcOpnion" data-type="rField"  style="width:60px;" >)
+                               <br>
+                               
+                             		
+                              </div>
+                                </td>
+                                <td>
+                               	김OO
+                                </td>
+                                <td  rowspan="2">
+                               	김OO,이OO<br>홍OO,박OO
+                               	<div>총( 4 명)
+                               	
+                               	</div>
+                                </td>
+                                <td  rowspan="2">
+                                </td>
+							
+						</tr>
+						<tr readonly="readonly" data-mode="writeOnly">
+							
+							<td  class="ui-sortable">
+								2022.02.03</br>	  
+								(00:00~00:00)
+							</td>
+						</tr>
+						<tr readonly="readonly" data-mode="writeOnly">
+							<th  style ="text-align : center">
+								사회복지사<br>
+								의견/제언
+								 
+							</th>
+							<td  colspan="2" class="ui-sortable">								
+							</td>
+						</tr>         
+	
+	</tbody>
+	<tbody class="tbody">
+		<tr class="multi-row-template">
+			<td colspan="5" class="ui-sortable">
+				<table class="tableStyle linePlus sortable" name="subTbl" style="border:hidden; width:100%" id="xformid_1">
+					<colgroup>
+         <col style="width: 4.5%">
+         <col style="width: 17%">
+         <col style="width: 21%">
+         <col style="width: 13%">
+         <col style="width: 40%">
+    </colgroup>
+   
+	  
+    <tbody>
+					<tbody>
+						<tr>
+						
+						<td rowspan="3" class="multi-row-seq"></td>
+							<td rowspan="3" class="ui-sortable">
+                              <div class="group sortable-container ui-sortable xform-checkbox" data-type="rField" data-node-name="Check" data-element-type="chk_d">
+							 	<input type="checkbox" name="transCheck" data-face-for="Check" value="h1">안부확인<br>
+                               <input type="checkbox" name="togeCheck" data-face-for="Check" value="h2">갈등확인 <br>
+                               <input type="checkbox" name="togeCheck" data-face-for="Check" value="h3">고충처리 <br>
+                               <input type="checkbox" name="togeCheck" data-face-for="Check" value="h4">문의응대 <br>
+                               <input type="checkbox" name="togeCheck" data-face-for="Check" value="h5">홍보활동 <br>
+                               <input type="checkbox" name="togeCheck" data-face-for="Check" value="h6">동중심활동 <br>
+                               <input type="checkbox" name="togeCheck" data-face-for="Check" value="h7">후원발굴/관리<br>
+                               <input type="checkbox" name="togeCheck" data-face-for="Check" value="h8">기타(
+                               <input type="text" name="etcOpnion" data-type="rField"  style="width:60px;" >)
+                               <br>
+                               
+                             	<input type="text" data-type="rField" name="Check" data-face-real="y" style="display: none;">
+                              </div>
+                                </td>
+                                <td>
+                               	 <input type="text" name="businessman" data-type="rField" style="width:85%;" >
+                                </td>
+                                <td  rowspan="2">
+                               	<textarea data-type="rField" name="metPerson" style="width:99%" rows="4" required>{{ doc.BodyContext.metPerson }}</textarea></br>
+                               	<div>총( <input type="text" name="metPersonCnt" data-type="rField"  style="width:40px;" >명)
+                               	
+                               	</div>
+                                </td>
+                                <td  rowspan="2">
+                               	  <textarea data-type="rField" name="actionComment" style="width:99%" rows="4" required>{{ doc.BodyContext.actionComment }}</textarea>
+                                </td>
+							
+						</tr>
+						<tr>
+							
+							<td  class="ui-sortable">
+								 <input type="text" name="activeDate"  data-pattern="date" data-type="rField" style="width: 90%;"></br>	  
+								<input type="text" name="StartTime" data-type="rField" data-pattern="time" data-time-format="H:i" style="width:40%;"  required title="시작시간">
+					    		~
+					    		<input type="text" name="EndTime" data-type="rField" data-pattern="time" data-time-format="H:i" style="width:40%;"  required title="종료시간"> 
+							</td>
+						</tr>
+						<tr>
+							<th  style ="text-align : center">
+								사회복지사<br>
+								의견/제언
+								 
+							</th>
+							<td  colspan="2" class="ui-sortable">								
+								 1<textarea data-type="rField" name="opnion" style="width:99%" rows="2" required>{{ doc.BodyContext.opnion }}</textarea>
+							</td>
+						</tr>                     
+                      
+					</tbody>
+				</table>
+			</td>
+		</tr>
+    
+	</tbody>
+</table>
+<!--실 결재양식 내용 부분 끝 -->

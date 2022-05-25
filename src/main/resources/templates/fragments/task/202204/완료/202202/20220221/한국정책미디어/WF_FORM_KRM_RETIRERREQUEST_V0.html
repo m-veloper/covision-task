@@ -1,0 +1,138 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+
+		<colgroup>
+			<col style="width:15%" />
+	       <col style="width:35%" />
+	       <col style="width:15%" />
+	       <col style="width:35%" />
+		</colgroup>  
+		
+		<tr>
+    	<th >소속</th>
+		<td  >
+		<input type="text" id="userDept" name="userDept" data-type="mField" value="{{ doc.BodyContext.userDept }}"    style="width:90%; " >
+           
+		</td>
+		<th >직위</th>
+		<td  >
+		<input type="text" id="userPosition" name="userPosition" data-type="mField" value="{{ doc.BodyContext.userPosition }}"    style="width:90%; " >
+           
+		</td>
+	    </tr>
+	    <tr>
+	    	<th >성명</th>
+			<td  >
+			<input type="text" id="userName" name="userName" data-type="mField" value="{{ doc.BodyContext.userName }}"    style="width:90%; " >
+	           
+			</td>
+			<th >생년월일</th>
+			<td  >
+			  <input type="date"   id = "birthDay" name="birthDay" data-type="mField" value="{{ doc.BodyContext.birthDay }}" style="width: 90%;"  > 	   
+			</td>
+	    </tr>
+	    <tr>
+			<th>입사일
+			</th>
+			<td >
+	          <input type="date"  id = "enterDay" name="enterDay" data-type="mField" value="{{ doc.BodyContext.enterDay }}" style="width: 90%;"  onchange="calSDATEEDATE('enterDay');" > 	  
+	        </td>
+	        <th>퇴사일
+			</th>
+			<td >
+			<input type="date"  id = "retirementDay" name="retirementDay" data-type="mField" value="{{ doc.BodyContext.retirementDay }}" style="width: 90%;"  onchange="calSDATEEDATE('retirementDay');" > 	    
+	        </td>
+	       	
+		</tr>
+		 <tr>
+	    	<th >직무명</th>
+			<td colspan ="3">
+			<input type="text" id="userWorkName" name="userWorkName" data-type="mField" value="{{ doc.BodyContext.userWorkName }}"    style="width:90%; " >
+	           
+			</td>
+	    </tr>  
+	    
+	    <tr>
+	    <th >퇴직사유</th>
+	    	<td colspan="3">
+                      <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1">
+					  &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id ="chkBox_01" name="chkBox_1"  value="chkBox_1">정&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;년&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id ="chkBox_02" name="chkBox_1"  value="chkBox_2">전&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;직 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id ="chkBox_03" name="chkBox_1"  value="chkBox_3">개인신병 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id ="chkBox_04" name="chkBox_1"  value="chkBox_4">진&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;학 <br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id ="chkBox_05" name="chkBox_1"  value="chkBox_5">결&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;혼&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id ="chkBox_06" name="chkBox_1"  value="chkBox_6">가&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;사&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id ="chkBox_07" name="chkBox_1"  value="chkBox_7">권&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;고&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id ="chkBox_08" name="chkBox_1"  value="chkBox_8">기타(
+                      <input type="text" name="etcOpnion" id="etcOpnion" value="{{ doc.BodyContext.etcOpnion }}"   data-type="mField"  style="width:80px;" >)
+                   <br>
+                   
+                 	<input type="text" data-type="rField" name="Check" data-face-real="y" style="display: none;">
+                  </div>
+                  </td>
+	    </tr>
+	    <tr>
+	    	<th >연락처</th>
+			<td colspan ="3">
+			<input type="text" id="userPhone" name="userPhone" data-type="mField" value="{{ doc.BodyContext.userPhone }}"    style="width:90%; " >
+	           
+			</td>
+	    </tr>  
+	    
+	     
+</table>
+
+
+
+
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+<colgroup>
+			<col style="width:15%" />
+	       <col style="width:35%" />
+	       <col style="width:15%" />
+	       <col style="width:35%" />
+		</colgroup>  
+		
+		<tr style="border:hidden; height:100px;">
+			<td colspan ="4" style="border:hidden;">
+				<div  style="text-align:center;border:hidden;"> 본인은 상기와 같은 내용으로 퇴직하고자 하오니 재가하여 주시기 바랍니다. 
+				</div>
+			</td>
+			
+		</tr>
+		<tr  style="border:hidden; height:100px;">
+			<td align ="center" colspan="6"style="border-left: none; border-right: none; border-top: none !important;  border-bottom: none; ">
+			<input type="text" id="reqDay" name="reqDay" data-type="mField" value="{{ doc.BodyContext.reqDay }}"    style="width:90%; text-align :center ;border : none ;font-size:14px;" >
+			
+			</td>
+		
+		</tr>
+		
+</table>
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+		 <colgroup>
+        
+	       	<col style="width:15%" />
+	       <col style="width:30%" />
+	       <col style="width:25%" />
+	       <col style="width:25%" />
+	       <col style="width:5%" />
+	    </colgroup>
+		
+		<tr>
+			<td colspan ="2" style="border-left: none; border-right: none; border-top: none !important;  border-bottom: none; " >
+		   </td>
+		    <td style="text-align:right;border-left: none; border-right: none; border-top: none !important;  border-bottom: none; " >신청인</td>	    
+		    <td style="border-left: none; border-right: none; border-top: none; border-bottom: none; " >
+		        	<input type="text" id="requestPerson" name="requestPerson" data-type="mField" value="{{ doc.BodyContext.requestPerson}}"    style="width:80%; text-align:right;" >(인)
+		      
+		    </td>
+		    </tr>
+		    
+		    
+		</table>
+<!--실 결재양식 내용 부분 끝 -->

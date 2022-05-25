@@ -1,0 +1,102 @@
+﻿<table class="tableStyle linePlus table_10 RowSumTable" style="margin-top: 10px;">
+	<colgroup>
+		<col style="width: 20%;">
+		<col style="width: 80%;">
+	</colgroup>
+	<tbody><tr>
+		<th>지급업체</th>
+		<td><input type="text" data-type="mField" id="ReCompany" value="{{ doc.BodyContext.ReCompany }}" style="width: 98%"></td>
+	</tr>
+	<tr>
+		<th>ERP등록(거래처)</th>
+		<td><input type="text" data-type="mField" id="ErpResign" value="{{ doc.BodyContext.ErpResign }}" style="width: 98%"></td>
+	</tr>
+	<tr>
+		<th>적요</th>
+		<td><input type="text" data-type="mField" id="Abstract" value="{{ doc.BodyContext.Abstract }}" style="width: 98%"></td>
+	</tr>
+	<tr>
+		<th>사업부</th>
+		<td><input type="text" data-type="mField" id="BusniseDept" value="{{ doc.BodyContext.BusniseDept }}" style="width: 98%" placeholder="EX) 전사공통 또는 영업1팀 또는 영업2팀 또는 중국영업팀"></td>
+	</tr>
+	<tr>
+		<th>Project No.</th>
+		<td><input type="text" data-type="mField" id="ProjectNo" value="{{ doc.BodyContext.ProjectNo }}" style="width: 98%" placeholder="EX) ISM000000-000A또는 공통"></td>
+	</tr>
+	<tr>
+		<th>증빙일자</th>
+		<td><input type="text" data-type="mField" id="EvidenceDate" value="{{ doc.BodyContext.EvidenceDate }}" style="width: 98%" data-pattern="date" readonly=""></td>
+	</tr>
+	<tr>
+		<th>지급요청일자</th>
+		<td><input type="text" data-type="mField" id="ReqSugDate" value="{{ doc.BodyContext.ReqSugDate }}" style="width: 98%" data-pattern="date" readonly=""></td>
+	</tr>
+	<tr>
+		<th>공급가액</th>
+		<td>
+		<select name="div_user1" data-type="mField" data-element-type="sel_d_t" style="width: 10%;"  value="{{ doc.BodyContext.div_user1 }}" onchange ="ChangeValue1(this);" >
+   			<option value="1">￦</option>
+   			<option value="2">＄</option>
+   			<option value="3">€</option>
+   			<option value="4">¥</option>
+   			<option value="5">元</option>
+   			<option value="6">기타</option>
+   		</select>  
+   		<input type="text" id="div_user_input1" name="div_user_input1" data-type="mField" value="{{ doc.BodyContext.div_user_input1 }}"    style="width:98%; display:none" >
+		<input type="text" id="selectUser1" name="selectUser1" data-type="mField" value="{{ doc.BodyContext.selectUser1 }}"    style="width:15%; " readonly="true" >
+		
+		<input type="text" data-type="mField" class="sum-table-cell" id="ReCost" value="{{ doc.BodyContext.ReCost }}" style="width: 70%" data-pattern="currency"></td>
+	</tr>
+	<tr>
+		<th>부가세</th>
+		<td>
+		<select name="div_user2" data-type="mField" data-element-type="sel_d_t" style="width: 10%;"  value="{{ doc.BodyContext.div_user2 }}" onchange ="ChangeValue2(this);" >
+   			<option value="1">￦</option>
+   			<option value="2">＄</option>
+   			<option value="3">€</option>
+   			<option value="4">¥</option>
+   			<option value="5">元</option>
+   			<option value="6">기타</option>
+   		</select>  
+   		<input type="text" id="div_user_input2" name="div_user_input2" data-type="mField" value="{{ doc.BodyContext.div_user_input2 }}"    style="width:98%; display:none" >
+		<input type="text" id="selectUser2" name="selectUser2" data-type="mField" value="{{ doc.BodyContext.selectUser2 }}"    style="width:15%; " readonly="true" >		
+		
+		<input type="text" data-type="mField" class="sum-table-cell" id="Surtax" value="{{ doc.BodyContext.Surtax }}" style="width: 70%" data-pattern="currency"></td>
+	</tr>
+	<tr>
+		<th>합계</th>
+		<td>
+		<select name="div_user3" data-type="mField" data-element-type="sel_d_t" style="width: 10%;"  value="{{ doc.BodyContext.div_user3 }}" onchange ="ChangeValue3(this);" >
+   			<option value="1">￦</option>
+   			<option value="2">＄</option>
+   			<option value="3">€</option>
+   			<option value="4">¥</option>
+   			<option value="5">元</option>
+   			<option value="6">기타</option>
+   		</select>  
+   		<input type="text" id="div_user_input3" name="div_user_input3" data-type="mField" value="{{ doc.BodyContext.div_user_input3 }}"    style="width:98%; display:none" >
+		<input type="text" id="selectUser3" name="selectUser3" data-type="mField" value="{{ doc.BodyContext.selectUser3 }}"    style="width:15%; " readonly="true" >
+		
+		<input type="text" data-type="mField" class="sum-table-colsum" id="Total" value="{{ doc.BodyContext.Total }}" style="width: 70%" data-pattern="currency" readonly=""></td>
+	</tr>
+	<tr>
+		<th>증빙서류</th>
+		<td><input type="text" data-type="mField" id="Document" value="{{ doc.BodyContext.Document }}" style="width: 98%" placeholder="세금계산서, 계약서, 영수증, INVOICE 등 적격증빙"></td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<p style="line-height:24px; font-weight:600">
+			&nbsp;■ 유의 사항&nbsp;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. 영수증 사본(스캔본)은 본 전자결재 작성시 파일로 첨부<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. 영수증 원본은 재무팀으로 제출	<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. 지급요청일자는 정기결재일인 5일, 10일, 15일, 20일, 25일, 말일 중 선택하여 기입<br>			
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ 정기결재일이 휴일인 경우 다음 영업일에 지급됩니다.<br> 			
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ 지급요청일자(정기결제일)로부터 (-3)영업일까지 최종결재가 완료되지 않을 경우,	<br>		
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;최종결재일에 따라 자금지급일이 미루어집니다.<br>			
+			</p>
+			<p style="margin-top:10px;">
+				&nbsp;<a href="http://gw.ismedia.co.kr/" target="_blank">☞ 세부적인 작성 방법 안내 바로가기&nbsp;(Ctrl Key + 클릭)</a>
+			</p>
+		</td>
+	</tr>
+</tbody></table>

@@ -1,0 +1,524 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+ 
+<table class="tableStyle linePlus mt10 RowSumTable"  ><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:15%" />
+        <col style="width:15%" />
+        <col style="width:14%" />
+        <col style="width:14%" />
+        <col style="width:14%" />
+        <col style="width:14%" />
+        <col style="width:14%" />
+    </colgroup>
+    <tr>
+    	<th rowspan ="2">구분</th>
+    	<th rowspan ="2">금액</th>
+    	<th colspan ="5">프로그램 사업</th>
+    </tr>
+    <tr>
+    	<th>생활체육</th>
+    	<th>기획수련활동</th>
+    	<th>평생교육활동</th>
+    	<th>방과후아카데미</th>
+    	<th>
+    		<input type="text" name="prgramEtc" data-type="mField" value="{{ doc.BodyContext.prgramEtc }}"    style="width:98%; " >
+    	</th>
+    </tr>
+    <tr>
+	    <td>현금수입</td>
+	    <td>
+	    	<input type="text" readonly ="readonly" id="T1_rowSum1" name="T1_rowSum1" class="sum-table-rowsum" data-pattern="currency" data-formula="+"   data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T1_rowSum1 }}"    style="width:98%; " >	    
+	    </td>
+	    <td>
+	    	<input type="text" id="T1_cost11" name="T1_cost11" onchange ="fn_r1_sum();" onblur="fn_r1_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T1_cost11 }}"    style="width:98%; " >
+	    </td>
+	    <td>
+	    	<input type="text" id="T1_cost12" name="T1_cost12" onchange ="fn_r1_sum();" onblur="fn_r1_sum();" class="sum-table-cell"data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T1_cost12 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" id="T1_cost13" name="T1_cost13" onchange ="fn_r1_sum();" onblur="fn_r1_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T1_cost13 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" id="T1_cost14" name="T1_cost14" onchange ="fn_r1_sum();" onblur="fn_r1_sum();"  class="sum-table-cell"data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T1_cost14 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" id="T1_cost15" name="T1_cost15" onchange ="fn_r1_sum();" onblur="fn_r1_sum();"  class="sum-table-cell"data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T1_cost15 }}"    style="width:98%; " >
+	    </td>
+	   
+    </tr>
+    
+     <tr>
+	    <td>계좌이체수입</td>
+	    <td>
+	    	<input type="text" readonly ="readonly" id="T1_rowSum2" name="T1_rowSum2"  class="sum-table-rowsum" data-pattern="currency" data-formula="+"    data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T1_rowSum2 }}"    style="width:98%; " >	    
+	    </td>
+	    <td>
+	    	<input type="text" id="T1_cost21" name="T1_cost21" onchange ="fn_r2_sum();" onblur="fn_r2_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T1_cost21 }}"    style="width:98%; " >
+	    </td>
+	    <td>
+	    	<input type="text" id="T1_cost22" name="T1_cost22" onchange ="fn_r2_sum();" onblur="fn_r2_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T1_cost22 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" id="T1_cost23" name="T1_cost23" onchange ="fn_r2_sum();" onblur="fn_r2_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T1_cost23 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" id="T1_cost24" name="T1_cost24" onchange ="fn_r2_sum();" onblur="fn_r2_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T1_cost24 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" id="T1_cost25" name="T1_cost25" onchange ="fn_r2_sum();" onblur="fn_r2_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T1_cost25 }}"    style="width:98%; " >
+	    </td>
+	   
+    </tr>
+    
+     <tr>
+	    <td>카드수입</td>
+	    <td>
+	    	<input type="text" readonly ="readonly"  id="T1_rowSum3" name="T1_rowSum3"  class="sum-table-rowsum" data-pattern="currency" data-formula="+"    data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T1_rowSum3 }}"    style="width:98%; " >	    
+	    </td>
+	    <td>
+	    	<input type="text" id="T1_cost31" name="T1_cost31" onchange ="fn_r3_sum();" onblur="fn_r3_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T1_cost31 }}"    style="width:98%; " >
+	    </td>
+	    <td>
+	    	<input type="text" id="T1_cost32" name="T1_cost32" onchange ="fn_r3_sum();" onblur="fn_r3_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T1_cost32 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" id="T1_cost33" name="T1_cost33" onchange ="fn_r3_sum();" onblur="fn_r3_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T1_cost33 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" id="T1_cost34" name="T1_cost34" onchange ="fn_r3_sum();" onblur="fn_r3_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T1_cost34 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" id="T1_cost35" name="T1_cost35" onchange ="fn_r3_sum();" onblur="fn_r3_sum();" class="sum-table-cell"  data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T1_cost35 }}"    style="width:98%; " >
+	    </td>
+	   
+    </tr>
+    
+     <tr>
+	    <td>환불</td>
+	    <td>
+	    	<input type="text" readonly ="readonly"  id="T1_rowSum4" name="T1_rowSum4"   class="sum-table-rowsum" data-pattern="currency" data-formula="+"   data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T1_rowSum4 }}"    style="width:98%; " >	    
+	    </td>
+	    <td>
+	    	<input type="text" id="T1_cost41" name="T1_cost41" onchange ="fn_r4_sum();" onblur="fn_r4_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T1_cost41 }}"    style="width:98%; " >
+	    </td>
+	    <td>
+	    	<input type="text" id="T1_cost42" name="T1_cost42" onchange ="fn_r4_sum();" onblur="fn_r4_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T1_cost42 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" id="T1_cost43" name="T1_cost43" onchange ="fn_r4_sum();" onblur="fn_r4_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T1_cost43 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" id="T1_cost44" name="T1_cost44" onchange ="fn_r4_sum();" onblur="fn_r4_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T1_cost44 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" id="T1_cost45" name="T1_cost45" onchange ="fn_r4_sum();" onblur="fn_r4_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T1_cost45 }}"    style="width:98%; " >
+	    </td>
+	   
+    </tr>
+    
+     <tr>
+	    <th>소계</th>
+	    <td>
+	    	<input type="text" readonly ="readonly"  id="T1_rowSumTot" name="T1_rowSumTot"  class="sum-table-total"   data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T1_rowSumTot }}"    style="width:98%; " >	    
+	    </td>
+	    <td>
+	    	<input type="text" readonly ="readonly"  id="T1_cost51" name="T1_cost51" class="sum-table-colsum" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T1_cost51 }}"    style="width:98%; " >
+	    </td>
+	    <td>
+	    	<input type="text" readonly ="readonly"  id="T1_cost52" name="T1_cost52" class="sum-table-colsum" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T1_cost52 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" readonly ="readonly"  id="T1_cost53" name="T1_cost53" class="sum-table-colsum"  data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T1_cost53 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" readonly ="readonly"  id="T1_cost54" name="T1_cost54" class="sum-table-colsum"  data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T1_cost54 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" readonly ="readonly"  id="T1_cost55" name="T1_cost55" class="sum-table-colsum" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T1_cost55 }}"    style="width:98%; " >
+	    </td>
+	   
+    </tr>
+</table>
+
+<table class="tableStyle linePlus mt10 RowSumTable"  ><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:15%" />
+        <col style="width:15%" />
+        <col style="width:14%" />
+        <col style="width:14%" />
+        <col style="width:14%" />
+        <col style="width:14%" />
+        <col style="width:14%" />
+    </colgroup>
+    <tr>
+    	<th rowspan ="2">구분</th>
+    	<th rowspan ="2">금액</th>
+    	<th colspan ="5">부대시설사업수입</th>
+    </tr>
+    <tr>
+    	<th>시설대관</th>
+    	<th>임대수입</th>
+    	<th>
+    		<input type="text" name="subAmt1" data-type="mField" value="{{ doc.BodyContext.subAmt1 }}"    style="width:98%; " >
+    	</th>
+    	<th>
+    		<input type="text" name="subAmt2" data-type="mField" value="{{ doc.BodyContext.subAmt2 }}"    style="width:98%; " >
+    	</th>
+    	<th>
+    		<input type="text" name="subAmt3" data-type="mField" value="{{ doc.BodyContext.subAmt3 }}"    style="width:98%; " >
+    	</th>
+    </tr>
+    <tr>
+	    <td>현금수입</td>
+	    <td>
+	    	<input type="text" readonly ="readonly"  id="T2_rowSum1" name="T2_rowSum1" class="sum-table-rowsum" data-pattern="currency" data-formula="+"   data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T2_rowSum1 }}"    style="width:98%; " >	    
+	    </td>
+	    <td>
+	    	<input type="text" id="T2_cost11" name="T2_cost11" onchange ="fn_r1_sum();" onblur="fn_r1_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T2_cost11 }}"    style="width:98%; " >
+	    </td>
+	    <td>
+	    	<input type="text" id="T2_cost12" name="T2_cost12" onchange ="fn_r1_sum();" onblur="fn_r1_sum();" class="sum-table-cell"data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T2_cost12 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" id="T2_cost13" name="T2_cost13" onchange ="fn_r1_sum();" onblur="fn_r1_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T2_cost13 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" id="T2_cost14" name="T2_cost14" onchange ="fn_r1_sum();" onblur="fn_r1_sum();"  class="sum-table-cell"data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T2_cost14 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" id="T2_cost15" name="T2_cost15" onchange ="fn_r1_sum();" onblur="fn_r1_sum();"  class="sum-table-cell"data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T2_cost15 }}"    style="width:98%; " >
+	    </td>
+	   
+    </tr>
+    
+     <tr>
+	    <td>계좌이체수입</td>
+	    <td>
+	    	<input type="text" readonly ="readonly"  id="T2_rowSum2" name="T2_rowSum2"  class="sum-table-rowsum" data-pattern="currency" data-formula="+"    data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T2_rowSum2 }}"    style="width:98%; " >	    
+	    </td>
+	    <td>
+	    	<input type="text" id="T2_cost21" name="T2_cost21" onchange ="fn_r2_sum();" onblur="fn_r2_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T2_cost21 }}"    style="width:98%; " >
+	    </td>
+	    <td>
+	    	<input type="text" id="T2_cost22" name="T2_cost22" onchange ="fn_r2_sum();" onblur="fn_r2_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T2_cost22 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" id="T2_cost23" name="T2_cost23" onchange ="fn_r2_sum();" onblur="fn_r2_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T2_cost23 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" id="T2_cost24" name="T2_cost24" onchange ="fn_r2_sum();" onblur="fn_r2_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T2_cost24 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" id="T2_cost25" name="T2_cost25" onchange ="fn_r2_sum();" onblur="fn_r2_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T2_cost25 }}"    style="width:98%; " >
+	    </td>
+	   
+    </tr>
+    
+     <tr>
+	    <td>카드수입</td>
+	    <td>
+	    	<input type="text" readonly ="readonly"  id="T2_rowSum3" name="T2_rowSum3"  class="sum-table-rowsum" data-pattern="currency" data-formula="+"    data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T2_rowSum3 }}"    style="width:98%; " >	    
+	    </td>
+	    <td>
+	    	<input type="text" id="T2_cost31" name="T2_cost31" onchange ="fn_r3_sum();" onblur="fn_r3_sum();"  class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T2_cost31 }}"    style="width:98%; " >
+	    </td>
+	    <td>
+	    	<input type="text" id="T2_cost32" name="T2_cost32" onchange ="fn_r3_sum();" onblur="fn_r3_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T2_cost32 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" id="T2_cost33" name="T2_cost33" onchange ="fn_r3_sum();" onblur="fn_r3_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T2_cost33 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" id="T2_cost34" name="T2_cost34" onchange ="fn_r3_sum();" onblur="fn_r3_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T2_cost34 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" id="T2_cost35" name="T2_cost35" onchange ="fn_r3_sum();" onblur="fn_r3_sum();" class="sum-table-cell"  data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T2_cost35 }}"    style="width:98%; " >
+	    </td>
+	   
+    </tr>
+    
+     <tr>
+	    <td>환불</td>
+	    <td>
+	    	<input type="text" readonly ="readonly"  id="T2_rowSum4" name="T2_rowSum4"   class="sum-table-rowsum" data-pattern="currency" data-formula="+"   data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T2_rowSum4 }}"    style="width:98%; " >	    
+	    </td>
+	    <td>
+	    	<input type="text" id="T2_cost41" name="T2_cost41" onchange ="fn_r4_sum();" onblur="fn_r4_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T2_cost41 }}"    style="width:98%; " >
+	    </td>
+	    <td>
+	    	<input type="text" id="T2_cost42" name="T2_cost42" onchange ="fn_r4_sum();" onblur="fn_r4_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T2_cost42 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" id="T2_cost43" name="T2_cost43" onchange ="fn_r4_sum();" onblur="fn_r4_sum();"class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T2_cost43 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" id="T2_cost44" name="T2_cost44" onchange ="fn_r4_sum();" onblur="fn_r4_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T2_cost44 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" id="T2_cost45" name="T2_cost45" onchange ="fn_r4_sum();" onblur="fn_r4_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T2_cost45 }}"    style="width:98%; " >
+	    </td>
+	   
+    </tr>
+    
+     <tr>
+	    <th>소계</th>
+	    <td>
+	    	<input type="text" readonly ="readonly"  id="T2_rowSumTot" name="T2_rowSumTot"  class="sum-table-total"   data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T2_rowSumTot }}"    style="width:98%; " >	    
+	    </td>
+	    <td>
+	    	<input type="text" readonly ="readonly"  id="T2_cost51" name="T2_cost51" class="sum-table-colsum" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T2_cost51 }}"    style="width:98%; " >
+	    </td>
+	    <td>
+	    	<input type="text" readonly ="readonly"  id="T2_cost52" name="T2_cost52" class="sum-table-colsum" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T2_cost52 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" readonly ="readonly"  id="T2_cost53" name="T2_cost53" class="sum-table-colsum"  data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T2_cost53 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" readonly ="readonly"  id="T2_cost54" name="T2_cost54" class="sum-table-colsum"  data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T2_cost54 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" readonly ="readonly"  id="T2_cost55" name="T2_cost55" class="sum-table-colsum" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T2_cost55 }}"    style="width:98%; " >
+	    </td>
+	   
+    </tr>
+</table>
+
+
+<table class="tableStyle linePlus mt10 RowSumTable"  ><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:15%" />
+        <col style="width:15%" />
+        <col style="width:14%" />
+        <col style="width:14%" />
+        <col style="width:14%" />
+        <col style="width:14%" />
+        <col style="width:14%" />
+    </colgroup>
+    <tr>
+    	<th rowspan ="2">구분</th>
+    	<th rowspan ="2">금액</th>
+    	<th colspan ="2">보조금</th>
+    	<th colspan ="3">기타</th>
+    </tr>
+    <tr>
+    	<th>위탁금</th>
+    	<th>
+    		<input type="text" name="support1" data-type="mField" value="{{ doc.BodyContext.support1 }}"    style="width:98%; " >
+    	</th>
+    	<th>
+    		<input type="text" name="etc1" data-type="mField" value="{{ doc.BodyContext.etc1 }}"    style="width:98%; " >
+    	</th>
+    	<th>
+    		<input type="text" name="etc2" data-type="mField" value="{{ doc.BodyContext.etc2 }}"    style="width:98%; " >
+    	</th>
+    	<th>
+    		<input type="text" name="etc3" data-type="mField" value="{{ doc.BodyContext.etc3 }}"    style="width:98%; " >
+    	</th>
+    </tr>
+    <tr>
+	    <td>현금수입</td>
+	    <td>
+	    	<input type="text" readonly ="readonly"  id="T3_rowSum1" name="T3_rowSum1" class="sum-table-rowsum" data-pattern="currency" data-formula="+"   data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T3_rowSum1 }}"    style="width:98%; " >	    
+	    </td>
+	    <td>
+	    	<input type="text" id="T3_cost11" name="T3_cost11"  onchange ="fn_r1_sum();" onblur="fn_r1_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T3_cost11 }}"    style="width:98%; " >
+	    </td>
+	    <td>
+	    	<input type="text" id="T3_cost12" name="T3_cost12"  onchange ="fn_r1_sum();" onblur="fn_r1_sum();" class="sum-table-cell"data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T3_cost12 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" id="T3_cost13" name="T3_cost13"  onchange ="fn_r1_sum();" onblur="fn_r1_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T3_cost13 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" id="T3_cost14" name="T3_cost14"  onchange ="fn_r1_sum();" onblur="fn_r1_sum();"  class="sum-table-cell"data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T3_cost14 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" id="T3_cost15" name="T3_cost15"  onchange ="fn_r1_sum();" onblur="fn_r1_sum();"  class="sum-table-cell"data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T3_cost15 }}"    style="width:98%; " >
+	    </td>
+	   
+    </tr>
+    
+     <tr>
+	    <td>계좌이체수입</td>
+	    <td>
+	    	<input type="text" readonly ="readonly"  id="T3_rowSum2" name="T3_rowSum2"  class="sum-table-rowsum" data-pattern="currency" data-formula="+"    data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T3_rowSum2 }}"    style="width:98%; " >	    
+	    </td>
+	    <td>
+	    	<input type="text" id="T3_cost21" name="T3_cost21" onchange ="fn_r2_sum();" onblur="fn_r2_sum();"  class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T3_cost21 }}"    style="width:98%; " >
+	    </td>
+	    <td>
+	    	<input type="text" id="T3_cost22" name="T3_cost22" onchange ="fn_r2_sum();" onblur="fn_r2_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T3_cost22 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" id="T3_cost23" name="T3_cost23" onchange ="fn_r2_sum();" onblur="fn_r2_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T3_cost23 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" id="T3_cost24" name="T3_cost24" onchange ="fn_r2_sum();" onblur="fn_r2_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T3_cost24 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" id="T3_cost25" name="T3_cost25" onchange ="fn_r2_sum();" onblur="fn_r2_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T3_cost25 }}"    style="width:98%; " >
+	    </td>
+	   
+    </tr>
+    
+     <tr>
+	    <td>카드수입</td>
+	    <td>
+	    	<input type="text" readonly ="readonly"  id="T3_rowSum3" name="T3_rowSum3"  class="sum-table-rowsum" data-pattern="currency" data-formula="+"    data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T3_rowSum3 }}"    style="width:98%; " >	    
+	    </td>
+	    <td>
+	    	<input type="text" id="T3_cost31" name="T3_cost31" onchange ="fn_r3_sum();" onblur="fn_r3_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T3_cost31 }}"    style="width:98%; " >
+	    </td>
+	    <td>
+	    	<input type="text" id="T3_cost32" name="T3_cost32" onchange ="fn_r3_sum();" onblur="fn_r3_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T3_cost32 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" id="T3_cost33" name="T3_cost33" onchange ="fn_r3_sum();" onblur="fn_r3_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T3_cost33 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" id="T3_cost34" name="T3_cost34" onchange ="fn_r3_sum();" onblur="fn_r3_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T3_cost34 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" id="T3_cost35" name="T3_cost35" onchange ="fn_r3_sum();" onblur="fn_r3_sum();" class="sum-table-cell"  data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T3_cost35 }}"    style="width:98%; " >
+	    </td>
+	   
+    </tr>
+    
+     <tr>
+	    <td>환불</td>
+	    <td>
+	    	<input type="text" readonly ="readonly"  id="T3_rowSum4" name="T3_rowSum4"   class="sum-table-rowsum" data-pattern="currency" data-formula="+"   data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T3_rowSum4 }}"    style="width:98%; " >	    
+	    </td>
+	    <td>
+	    	<input type="text" id="T3_cost41" name="T3_cost41" onchange ="fn_r4_sum();" onblur="fn_r4_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T3_cost41 }}"    style="width:98%; " >
+	    </td>
+	    <td>
+	    	<input type="text" id="T3_cost42" name="T3_cost42" onchange ="fn_r4_sum();" onblur="fn_r4_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T3_cost42 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" id="T3_cost43" name="T3_cost43" onchange ="fn_r4_sum();" onblur="fn_r4_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T3_cost43 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" id="T3_cost44" name="T3_cost44" onchange ="fn_r4_sum();" onblur="fn_r4_sum();" class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T3_cost44 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" id="T3_cost45" name="T3_cost45" onchange ="fn_r4_sum();" onblur="fn_r4_sum();"class="sum-table-cell" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T3_cost45 }}"    style="width:98%; " >
+	    </td>
+	   
+    </tr>
+    
+     <tr>
+	    <th>소계</th>
+	    <td>
+	    	<input type="text" readonly ="readonly"  id="T3_rowSumTot" name="T3_rowSumTot"  class="sum-table-total"   data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T3_rowSumTot }}"    style="width:98%; " >	    
+	    </td>
+	    <td>
+	    	<input type="text" readonly ="readonly"  id="T3_cost51" name="T3_cost51" class="sum-table-colsum" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T3_cost51 }}"    style="width:98%; " >
+	    </td>
+	    <td>
+	    	<input type="text" readonly ="readonly"  id="T3_cost52" name="T3_cost52" class="sum-table-colsum" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T3_cost52 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" readonly ="readonly"  id="T3_cost53" name="T3_cost53" class="sum-table-colsum"  data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T3_cost53 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" readonly ="readonly"  id="T3_cost54" name="T3_cost54" class="sum-table-colsum"  data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T3_cost54 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	    	<input type="text" readonly ="readonly"  id="T3_cost55" name="T3_cost55" class="sum-table-colsum" data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.T3_cost55 }}"    style="width:98%; " >
+	    </td>
+	   
+    </tr>
+</table>
+
+<table class="tableStyle linePlus mt10 RowSumTable"  ><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:15%" />
+        <col style="width:15%" />
+        <col style="width:14%" />
+        <col style="width:14%" />
+        <col style="width:14%" />
+        <col style="width:14%" />
+        <col style="width:14%" />
+    </colgroup>
+    <tr>
+    	<th rowspan ="2">구분</th>
+    	<th rowspan ="2">합계</th>
+    	<td colspan ="5" style ="border : none"></td>
+    </tr>
+    <tr>
+    	<td style ="border : none"></td>
+    	<td style ="border : none"></td>
+    	<td style ="border : none"></td>
+    	<td style ="border : none"></td>
+    	<td style ="border : none"></td>
+    </tr>
+    <tr>
+	    <td>현금수입</td>
+	    <td>
+	    	<input type="text" readonly ="readonly"  id="rowSum1DailyTot" name="rowSum1" class="sum-table-rowsum" data-pattern="currency" data-formula="+"   data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.rowSum1 }}"    style="width:98%; " >	    
+	    </td>
+	    <td style ="border : none"></td>
+	   <td style ="border : none"></td>
+	   <td style ="border : none"></td>
+	   <td style ="border : none"></td>
+	   <td style ="border : none"></td>
+	   
+	   
+    </tr>
+    
+     <tr>
+	    <td>계좌이체수입</td>
+	    <td>
+	    	<input type="text" readonly ="readonly"  id="rowSum2DailyTot" name="rowSum2"  class="sum-table-rowsum" data-pattern="currency" data-formula="+"    data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.rowSum2 }}"    style="width:98%; " >	    
+	    </td>
+	    <td style ="border : none"></td>
+	   <td style ="border : none"></td>
+	   <td style ="border : none"></td>
+	   <td style ="border : none"></td>
+	   <td style ="border : none"></td>
+	   
+    </tr>
+    
+     <tr>
+	    <td>카드수입</td>
+	    <td>
+	    	<input type="text" readonly ="readonly"  id="rowSum3DailyTot" name="rowSum3"  class="sum-table-rowsum" data-pattern="currency" data-formula="+"    data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.rowSum3 }}"    style="width:98%; " >	    
+	    </td>
+	     <td style ="border : none"></td>
+	   <td style ="border : none"></td>
+	   <td style ="border : none"></td>
+	   <td style ="border : none"></td>
+	   <td style ="border : none"></td>
+	   
+    </tr>
+    
+     <tr>
+	    <td>환불</td>
+	    <td>
+	    	<input type="text" readonly ="readonly"  id="rowSum4DailyTot" name="rowSum4"   class="sum-table-rowsum" data-pattern="currency" data-formula="+"   data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.rowSum4 }}"    style="width:98%; " >	    
+	    </td>
+	     <td style ="border : none"></td>
+	   <td style ="border : none"></td>
+	   <td style ="border : none"></td>
+	   <td style ="border : none"></td>
+	   <td style ="border : none"></td>
+	   
+    </tr>
+    
+     <tr>
+	    <th>소계</th>
+	    <td>
+	    	<input type="text" readonly ="readonly"  id="rowSumTotDailyTot" name="rowSumTot"  class="sum-table-total"   data-type="mField" data-pattern="currency" value="{{ doc.BodyContext.rowSumTot }}"    style="width:98%; " >	    
+	    </td>
+	    <td style ="border : none"></td>
+	   <td style ="border : none"></td>
+	   <td style ="border : none"></td>
+	   <td style ="border : none"></td>
+	   <td style ="border : none"></td>
+	   
+    </tr>
+</table>
+<!--실 결재양식 내용 부분 끝 -->

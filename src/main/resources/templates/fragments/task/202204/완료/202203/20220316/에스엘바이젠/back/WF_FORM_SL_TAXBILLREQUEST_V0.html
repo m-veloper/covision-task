@@ -1,0 +1,224 @@
+<!--실 결재양식 내용 부분 시작 -->
+   <table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+	   <colgroup>
+	    	<col style="width:12%">
+	    	<col style="width:23%">
+	    	<col style="width:12%">
+	    	<col style="width:23%">
+	    	<col style="width:12%">
+	    	<col style="width:*">
+	    </colgroup>
+
+		
+	<tr>
+		<th rowspan="3">거래처명
+		</th>
+		<td  rowspan="3">
+		<input type="text" id="companyName" name="companyName" data-type="mField" value="{{ doc.BodyContext.companyName }}"    style="width:98%; " >        
+		</td>
+		<th rowspan="3">거래처담당자
+		</th>
+		<td>
+		<input type="text" id="managerName" name="managerName" data-type="mField" value="{{ doc.BodyContext.managerName }}"   placeholder="담당자명" style="width:98%; " >        
+		</td>
+		<th>비용성격
+		</th>
+		<td > 
+			<select name="div_user" data-type="mField" data-element-type="sel_d_v" style="width: 98%;"  value="{{ doc.BodyContext.div_user}}"  >
+    			<option value="용역매출">용역매출</option>
+    			<option value="기타이전매출">기타이전매출</option>
+    			<option value="기타매출">기타매출</option>
+    			<option value="유형자산처분">유형자산처분</option>
+    			<option value="비용정산">비용정산</option>
+    			<option value="기타">기타</option>
+    		</select>
+		</td>
+	</tr>
+	<tr>
+		<td >		
+			<input type="text" id="managerPhone" name="managerPhone" data-type="mField" value="{{ doc.BodyContext.managerPhone }}"  placeholder="연락처"   style="width:98%; " >            
+		</td>
+		<th>과제상세
+		</th>
+		<td >
+			<textarea id="detailCommnet"  rows="2" data-type="mField" style="width: 98%;height:98%;" placeholder="재무팀에서 공지한 과제상세분류 기재">{{ doc.BodyContext.detailCommnet}}</textarea>      
+		</td>
+	</tr>
+	<tr>
+		<td >
+		   <input type="text" id="managerMail" name="managerMail" data-type="mField" value="{{ doc.BodyContext.managerMail }}" placeholder="이메일주소"   style="width:98%; " > 
+		</td>
+		<th>비용성격
+		</th>
+		<td >
+			<input type="text" id="processTerm" name="processTerm" data-type="mField" value="{{ doc.BodyContext.processTerm }}"    style="width:98%; " >        
+		</td>
+	</tr>
+	
+</table>
+
+
+<table class="table_10 multi-row-table RowSumTable tableStyle linePlus" id="TBLINFO" style="border-left: 1px solid #c3d7df;">
+    <colgroup>
+		<col style="width: 12%">
+        <col style="width: 15%">
+        <col style="width: 14.5%">
+        <col style="width: 14.5%">
+        <col style="width: 14.5%">
+        <col style="width: 14.5%">
+    </colgroup>
+    <tbody>
+	    <tr class="multi-row-control" data-mode="writeOnly">
+	        <td colspan="7" style="text-align: right">
+	            <input type="button" id="btnAdd" value="+추가" class="multi-row-add smButton">
+	            <input type="button" id="btnDelSel" value="-삭제" class="multi-row-del-auto smButton">
+	        </td>
+	    </tr>
+	    <tr>
+			<th>No.</th>
+	        <th>항목</th>
+	        <th>수량</th>
+	        <th>단가</th>
+	        <th>금액</th>
+	        
+	        <th>부가세</th>
+	        <th>비고</th>
+	    </tr>
+	    <tr class="multi-row-template multi-sum">
+			<td class="multi-row-seq"></td>
+	        <td><input name="REQ_ITMENAME" style="width: 99%;" type="text" data-type="rField"></td>
+	        <td align="right">
+	            <input name="REQ_EA" style="width: 99%;" onblur="fn_sum1();fn_sum2();" type="text" data-type="rField" data-pattern="numeral">
+	        </td>
+	        <td align="right">
+	            <input name="REQ_PRICE" style="width: 99%;" onblur="fn_sum1();fn_sum2();" type="text" data-type="rField" data-pattern="numeral" data-numeral-format="$0,0">
+	        </td>	        
+	        <td align="right">
+	            <input name="REQ_TOTAL" style="width: 99%;" type="text" readonly="readonly" data-type="rField" data-pattern="numeral" data-numeral-format="$0,0" data-sum-ref="REQ_PRICE,REQ_EA" data-formula="({0}*{1})">
+	        </td>
+	        <td align="right">
+	            <input name="REQ_VAT" style="width: 99%;" type="text" readonly="readonly" data-type="rField" data-pattern="numeral" data-numeral-format="$0,0"  data-sum-ref="REQ_TOTAL" data-formula="({0}*0.1)">
+	        </td>
+	        <td><input name="REQ_ETC" style="width: 99%;" type="text" data-type="rField"></td>
+	    </tr>
+	    <tr>
+	        <th colspan="4">부분합계</th>
+	        <td align="right">
+	            <input id="REQ_TOTALPRICE" style="width: 99%;" type="text" readonly="readonly" value="{{ doc.BodyContext.REQ_TOTALPRICE }}" data-type="mField" data-pattern="numeral" data-numeral-format="$0,0">
+	        </td>
+	         <td align="right">
+	            <input id="REQ_VAT" style="width: 99%;" type="text" readonly="readonly" value="{{ doc.BodyContext.REQ_VAT }}" data-type="mField" data-pattern="numeral" data-numeral-format="$0,0">
+	        </td>
+	        <th></th>
+	    </tr>
+	    <tr>
+	        <th colspan="4">총 합계</th>
+	        <td colspan="2" align="right">
+	            <input id="REQ_TOTAL" style="width: 99%;" type="text" readonly="readonly" value="{{ doc.BodyContext.REQ_TOTAL }}" data-type="mField" data-pattern="numeral" data-numeral-format="$0,0">
+	        </td>
+	        
+	        <th></th>
+	    </tr>
+	</tbody>
+</table>
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+	<colgroup>
+	       <col style="width:12%" />
+	       <col style="width:88%" />
+	       
+		</colgroup>  
+		<tr >
+		<th>제목
+		</th>
+			<td >
+				<input type="text" id="subTitle" name="subTitle" data-type="mField" value="{{ doc.BodyContext.subTitle }}"    style="width:98%; " >    
+			</td>
+		</tr>
+		
+</table>
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+	<colgroup>
+	      <col style="width:12%" />
+	       <col style="width:88%" />
+	       
+		</colgroup>  
+	<tr style="height:150px;">
+	<th>내용
+	</th>
+		<td >
+			<textarea id="comment"  rows="10" data-type="mField" style="width: 98%;height:98%;">{{ doc.BodyContext.comment }}</textarea>
+		</td>
+	</tr>
+	
+</table>
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+	<colgroup>
+	      <col style="width:12%">
+	    	<col style="width:23%">
+	    	<col style="width:12%">
+	    	<col style="width:23%">
+	    	<col style="width:12%">
+	    	<col style="width:*">
+	       
+		</colgroup>  
+	<tr >
+	<th>입금방법
+	</th>
+		<td colspan="5">
+			<div data-type="mField" data-element-type="chk_d" data-node-name="divType1">
+    			<input type="checkbox" id="div11" name="divType1" value="계좌이체">계좌이체
+    		</div>
+		</td>
+	</tr>
+	
+	<tr>
+		<th>입금계좌
+		</th>
+		<td colspan="3">
+		<input type="text" id="accountNo" name="accountNo" data-type="mField" value="{{ doc.BodyContext.accountNo }}"    style="width:98%; " >        
+		</td>
+		<th>입금예정일
+		</th>
+		<td >
+			<input type="text" data-type="mField" id="reqDate" value="{{ doc.BodyContext.reqDate }}" style="width:90%;" data-pattern="date">
+		</td>	     	
+	</tr>
+	<tr >
+		<th>구분
+		</th>
+		<th colspan="5">첨부서류
+		</th>
+		</tr>
+	<tr >
+	<th>기본증빙서류
+	</th>
+		<td colspan="5">
+			<div data-type="mField" data-element-type="chk_d" data-node-name="divType2">
+    			<input type="checkbox" id="div21" name="divType2" value="사업자등록증">사업자등록증
+    		</div>
+		</td>
+	</tr>
+	
+	<tr >
+	<th>추가증빙서류
+	</th>
+		<td colspan="5">
+			<div data-type="mField" data-element-type="chk_d" data-node-name="divType1">
+    			<input type="checkbox" id="div11" name="divType1" value="계약서(날인)">계약서(날인)&nbsp;&nbsp;&nbsp;
+    			<input type="checkbox" id="div11" name="divType1" value="거래명세서">거래명세서&nbsp;&nbsp;&nbsp;
+    			<input type="checkbox" id="div11" name="divType1" value="invoice">invoice&nbsp;&nbsp;&nbsp;
+    			<input type="checkbox" id="div11" name="divType1" value="청구서">청구서&nbsp;&nbsp;&nbsp;
+    			<input type="checkbox" id="div11" name="divType1" value="결과보고서">결과보고서&nbsp;&nbsp;&nbsp;
+    			<input type="checkbox" id="div11" name="divType1" value="기타">기타
+    		</div>
+		</td>
+	</tr>
+	
+</table>
+
+	
+
+<!--실 결재양식 내용 부분 끝 -->

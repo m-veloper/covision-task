@@ -1,0 +1,262 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+
+		<colgroup>
+			<col style="width:15%" />
+	       <col style="width:13%" />
+	       <col style="width:13%" />
+	       <col style="width:13%" />
+	       <col style="width:15%" />
+	       <col style="width:15%" />
+	       <col style="width:16%" />
+	       
+		</colgroup>  
+	
+		<tr>
+			<td style="font-size:14px; border-left: none; border-right: none; border-top: none !important;  border-bottom: none; "><b>1. 인적사항</b>
+			</td>
+			<td colspan ="6" style="font-size:14px; border-left: none; border-right: none; border-top: none !important;  ">
+			</td>
+		
+		</tr>
+		<tr>
+			<th>부서명</th>
+			<th>사원번호</th>
+			<th>성명</th>
+			<th>직위</th>
+			<th>입사일자</th>
+			<th>퇴사일자</th>
+			<th>연락처</th>
+			
+		</tr>		 
+		<tr>
+			<td>
+				<input type="text" name="userDept" data-type="mField" value="{{ doc.BodyContext.userDept }}"    style="width:98%; " >
+			</td>
+			<td>
+				<input type="text" name="userEmpNO" data-type="mField" value="{{ doc.BodyContext.userEmpNO }}"    style="width:98%; " >
+			</td>
+			<td>
+				<input type="text" name="userName" data-type="mField" value="{{ doc.BodyContext.userName }}"    style="width:98%; " >
+			</td>
+			<td>
+				<input type="text" name="userPosition" data-type="mField" value="{{ doc.BodyContext.userPosition }}"    style="width:98%; " >
+			</td>
+			<td>
+				<input type="text" name="enterDate" data-type="mField" value="{{ doc.BodyContext.enterDate }}"    style="width:98%; " >
+			</td>
+			<td>
+				<input type="text" name="retireDate" data-type="mField" value="{{ doc.BodyContext.retireDate }}"    style="width:98%; " >
+			</td>
+			<td>
+				<input type="text" name="phoneNo" data-type="mField" value="{{ doc.BodyContext.phoneNo }}"    style="width:98%; " >
+			</td>
+		</tr>
+		
+</table>
+
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+
+		<colgroup>
+			<col style="width:15%" />
+	       <col style="width:13%" />
+	       <col style="width:13%" />
+	       <col style="width:13%" />
+	       <col style="width:15%" />
+	       <col style="width:15%" />
+	       <col style="width:16%" />
+	       
+		</colgroup>  
+	
+		<tr>
+			<td style="font-size:14px; border-left: none; border-right: none; border-top: none !important; "><b> 2. 퇴사사유</b>
+			</td>
+			<td colspan ="6" style="font-size:14px; border-left: none; border-right: none; border-top: none !important;  ">
+			</td>
+		
+		</tr>
+		<tr>
+			<td colspan ="7" align ="center">
+			
+              <table class="tableStyle linePlus ">
+	              	<colgroup>
+						<col style="width:33%" />
+				       <col style="width:34%" />
+				       <col style="width:33%" />
+					</colgroup>  
+					<tr>
+						<td style ="border : none">
+							 <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1"><br>
+		            			 <input type="checkbox" id ="chkBox_01" name="chkBox_1"  value="chkBox_01">직장 이전
+	            			 </div>
+						</td>
+						<td style ="border : none">
+							<div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1"><br>
+		            			 <input type="checkbox" id ="chkBox_02" name="chkBox_1"  value="chkBox_02">건강 이상
+	            			 </div>
+						</td>
+						<td style ="border : none">
+							<div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1"><br>
+		            			 <input type="checkbox" id ="chkBox_03" name="chkBox_1"  value="chkBox_03">결혼/출산/육아
+	            			 </div>
+						</td>
+					</tr>
+					<tr>
+						<td style ="border : none">
+							<div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1"><br>
+		            			 <input type="checkbox" id ="chkBox_04" name="chkBox_1"  value="chkBox_04">거주지 이전
+	            			 </div>
+						</td>
+						<td style ="border : none">
+							<div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1"><br>
+		            			 <input type="checkbox" id ="chkBox_05" name="chkBox_1"  value="chkBox_05">적성 부적합
+	            			 </div>
+						</td>
+						<td style ="border : none">
+							<div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1"><br>
+		            			 <input type="checkbox" id ="chkBox_06" name="chkBox_1"  value="chkBox_06">능력개발/교육
+	            			 </div>
+						</td>
+					</tr>
+					<tr>
+						<td style ="border : none">
+							<div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1"><br>
+		            			 <input type="checkbox" id ="chkBox_07" name="chkBox_1"  value="chkBox_07">명예 퇴직
+	            			 </div>
+						</td>
+						<td style ="border : none">
+							<div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1"><br>
+		            			 <input type="checkbox" id ="chkBox_08" name="chkBox_1"  value="chkBox_08">휴식
+	            			 </div>
+						</td>
+						<td style ="border : none">
+							<div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1"><br>
+		            			 <input type="checkbox" id ="chkBox_09" name="chkBox_1"  value="chkBox_09">가구원 간병
+	            			 </div>
+						</td>
+					</tr>
+					<tr>
+						<td style ="border : none">
+							<div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1"><br>
+		            			 <input type="checkbox" id ="chkBox_10" name="chkBox_1"  value="chkBox_10">계약만료
+	            			 </div>
+						</td>
+						<td style ="border : none">
+							<div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1"><br>
+		            			 <input type="checkbox" id ="chkBox_11" name="chkBox_1"  value="chkBox_11">권고사직
+	            			 </div>
+						</td>
+						<td style ="border : none">
+							<div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1"><br>
+		            			 <input type="checkbox" id ="chkBox_12" name="chkBox_1"  value="chkBox_12">기타(
+                 				 <input type="text" name="etcOpnion2" value="{{ doc.BodyContext.etcOpnion2 }}"   data-type="mField"  style="width:80px;" >)
+	            			 </div>
+						</td>
+					</tr>
+				
+              </table>
+			</td>
+		</tr>
+		<tr>
+			<td colspan ="7">
+			<div style="width:99% ;height : 60px">
+					<textarea data-type="mField" name="interviewCommnet" style="width:99%" placeholder ="진료부원장 면담 내용 : "rows="3" >{{ doc.BodyContext.interviewCommnet }}</textarea>
+				</div>
+			</td>
+		</tr>	 
+		<tr>
+			
+			<td colspan ="7" align ="center">
+				<div style="width:99% ;">
+					본인은 <input type="text"  autocomplete ="off" data-pattern="date" data-date-format="yy년 mm월 dd일" data-type="mField" placeholder="20  년  월  일"   name="retireEndDate"  value="{{ doc.BodyContext.retireEndDate }}" style="width:20% ; text-align:center" >	
+			
+					자로 퇴직함에 있어 아래 조항을 성실히 준수할 것을 서약합니다.
+				</div>
+			</td>
+			
+		</tr>
+		<tr>
+			<td colspan ="7">
+				<div style="width:99% ;">
+				<br>
+				1. 본인은 퇴직에 따른 업무 인수, 인계의 철저로 최종 퇴사 시까지 책임과 의무를 완수하고, 퇴직 후	재직 시 업무상 제반 비밀사항을 타인에게 누설함이 귀사의 경영에 막대한 손해와 피해를 준다는	사실을 지각하고 일체 이를 누설하지 않겠습니다.<br>
+				2. 재직 중 반환물품 (사원증, 사무용품, 사물함 열쇠, 기타 등) 은 퇴직일 전일까지 반환하겠습니다.<br>
+				3. 기타 병원과 관련된 제반사항은 병원규정에 의거 퇴직일 전일까지 처리하겠습니다.<br>
+				4. 만일, 본인이 상기 사항을 위반하여 본원에 손해가 발생하였을 경우에는 서약에 의거 민 형사상의	책임을 지겠습니다.<br>
+				<br>
+				</div>
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan ="7">
+			
+			<table class="tableStyle linePlus "><!-- class="table_10" -->
+			    <colgroup>
+			        
+			         <col style="width:5%" />
+			         <col style="width:90%" />
+			        <col style="width:5%" />
+			    </colgroup>
+			    	
+					<tr  >
+						<td style="border-right: none;">
+						</td>
+						<td  style="border-right: none;">
+						본인은 퇴직연금 정산을 퇴사일 기준 익월 말일까지 완료함에 동의합니다.    [ 확인 :
+							<input type="text" name="agree" data-type="mField" value="{{ doc.BodyContext.agree }}"    style="width:15%;  " >         
+						 (인) ] <br>
+						(단, 퇴직연금통장 사본 제출 완료 시)
+						</td>
+						<td style="border-left: none ">
+						</td>
+					</tr>
+				
+					
+			    </table>
+    
+    
+    
+			
+			</td>
+		</tr>
+		
+</table>
+
+
+<table class="tableStyle linePlus "><!-- class="table_10" -->
+    <colgroup>
+        
+         <col style="width:30%" />
+         <col style="width:40%" />
+        <col style="width:30%" />
+    </colgroup>
+    	
+		<tr  >
+			<td style="border-right: none; border-top: none !important; border-bottom: none; "   ></td>	    
+			<td align ="center" style="border-left: none; border-right: none; border-top: none !important;  border-bottom: none; " >
+				<input type="text"  autocomplete ="off" data-pattern="date" data-date-format="yy년 mm월 dd일" placeholder ="20    년      월       일" data-type="mField"   name="writeDate"  value="{{ doc.BodyContext.writeDate }}" style="text-align:center;width:98% ; " >			
+			</td>
+			<td style=" border-top: none !important; border-bottom: none; "   >
+			<br><br></td>	  
+		</tr>
+		<tr  >
+			<td style="border-right: none; border-top: none !important; border-bottom: none; "   ></td>	  
+			<td align ="center" style="border-left: none; border-right: none; border-top: none !important; border-bottom: none; "   >서약인 : 
+				<input type="text" name="writePerson" data-type="mField" value="{{ doc.BodyContext.writePerson}}"    style="text-align:center;width:65% ; " >(인)
+			</td>	    
+			<td align ="right"  style="border-left: none;  border-top: none !important;  border-bottom: none; " >
+				
+			</td>
+		</tr>
+	
+		
+    </table>
+   
+
+<!--실 결재양식 내용 부분 끝 -->

@@ -1,0 +1,185 @@
+<table class="tableStyle linePlus table_10 sortable" style="margin-top:10px;" id="xformid_1">
+    <colgroup>
+        <col style="width:15%;">
+        <col style="width:13%;">
+        <col style="width:13%;">
+        <col style="width:14%;">
+        <col style="width:45%;">
+    </colgroup>
+    <tbody><tr>
+    	<th>위임전결사항</th>
+    	<th>항</th>
+    	<th>호</th>
+    	<th>목</th>
+    	<th>전결사항</th>
+    </tr>
+    <tr>
+    	<td class="ui-sortable">
+            <input type="text" data-type="mField" id="Matters" value="{{ doc.BodyContext.Matters }}" style="width:98%"> 
+        </td>
+    	<td class="ui-sortable">
+            <input type="text" data-type="mField" id="Hang" value="{{ doc.BodyContext.Hang }}" style="width:98%"> 
+        </td>
+    	<td class="ui-sortable">
+            <input type="text" data-type="mField" id="Ho" value="{{ doc.BodyContext.Ho }}" style="width:98%"> 
+        </td>
+    	<td class="ui-sortable">
+            <input type="text" data-type="mField" id="Mock" value="{{ doc.BodyContext.Mock }}" style="width:98%"> 
+        </td>
+    	<td class="ui-sortable">
+            <input type="text" data-type="mField" id="Matters02" value="{{ doc.BodyContext.Matters02 }}" style="width:98%"> 
+        </td>
+    </tr>
+</tbody></table>
+<!-- 예산상항 -->
+<table class="tableStyle linePlus table_10 sortable" style="border-top:hidden;" id="xformid_2">
+    <colgroup>
+        <col style="width:15%;">
+        <col style="width:20%;">
+        <col style="width:20%;">
+        <col style="width:20%;">
+        <col style="width:25%;">
+    </colgroup>
+    <tbody><tr>
+    	<th rowspan="2">예산사항</th>
+    	<th>예산</th>
+    	<th>본건 지출액</th>
+    	<th>지출 누계액</th>
+    	<th>잔액</th>
+    </tr>
+    <tr>
+        <td class="ui-sortable">
+            <input type="text" data-type="mField" id="Budget" value="{{ doc.BodyContext.Budget }}" style="width:98%" data-pattern="currency"> 
+        </td>
+        <td class="ui-sortable">
+            <input type="text" data-type="mField" id="Price01" value="{{ doc.BodyContext.Price01 }}" style="width:98%" data-pattern="currency"> 
+        </td>
+        <td class="ui-sortable">
+            <input type="text" data-type="mField" id="Price02" value="{{ doc.BodyContext.Price02 }}" style="width:98%" data-pattern="currency"> 
+        </td>
+        <td class="ui-sortable">
+            <input type="text" data-type="mField" id="Balance" value="{{ doc.BodyContext.Balance }}" style="width:98%" data-pattern="currency"> 
+        </td>
+    </tr>
+</tbody></table>
+<!-- 청소내역 -->
+<table class="multi-row-table tableStyle linePlus table_10 RowSumTable sortable" id="MULTI_TABLE02" style="margin-top:10px;">
+    <colgroup>
+        <col style="width:5%;">
+        <col style="width:15%;">
+        <col style="width:13%;">
+        <col style="width:18%;">
+        <col style="width:15%;">
+        <col style="width:15%;">
+        <col style="width:19%;">
+    </colgroup>
+    <tbody><tr class="multi-row-control">
+    	<td colspan="3" style="text-align: left;border-left:hidden; border-right:hidden; border-top:hidden" class="ui-sortable">
+    		<p>1. 청소내역 (단위: 부가세별도)
+    		</p>
+    	</td>
+        <td data-mode="writeOnly" colspan="4" style="text-align: right;border-left:hidden; border-right:hidden; border-top:hidden" class="ui-sortable">
+	    	<input type="button" id="btnAdd" value="+추가" class="multi-row-add smButton" onclick="plusBtn('addbtn')">
+	        <input type="button" id="btnDelAuto" value="-삭제" class="multi-row-del-auto smButton" onclick="plusBtn('MinusBtn')">
+        </td>
+    </tr>
+    <tr>
+    	<th>구    분</th>
+    	<th>업체명</th>
+    	<th>면적</th>
+    	<th>계약금액</th>
+    	<th>청소일자</th>
+    	<th>청소가맹점</th>
+    	<th>비 고</th>
+    </tr>
+    <tr class="multi-row-template">
+        <td class="multi-row-seq ui-sortable" style="text-align: center">1</td>
+        <td class="ui-sortable">
+            <input type="text" data-type="rField" name="ComName" style="width:98%"> 
+        </td>
+        <td class="ui-sortable">
+            <input type="text" data-type="rField" name="Area" style="width:98%"> 
+        </td>
+        <td class="ui-sortable">
+            <input type="text" data-type="rField" name="ContPrice" style="width:98%" data-pattern="currency" class="sum-table-cell" onkeyup="checkValue()"> 
+        </td>
+        <td class="ui-sortable">
+            <input type="text" data-type="rField" name="ContDate" style="width:98%" data-pattern="date" readonly=""> 
+        </td>
+        <td class="ui-sortable">
+            <input type="text" data-type="rField" name="Store" style="width:98%"> 
+        </td>
+        <td class="ui-sortable">
+            <input type="text" data-type="rField" name="Note" style="width:98%"> 
+        </td>
+    </tr>
+    <tr>
+    	<th colspan="2">합계</th>
+    	 <td colspan="5" class="ui-sortable">
+            <input type="text" data-type="mField" id="Total" value="{{ doc.BodyContext.Total }}" style="width:98%; border:hidden;" data-pattern="currency" class="sum-table-colsum" readonly="">
+        </td>
+    </tr>
+</tbody></table>
+<!-- 가맹점 지급내역 -->
+<table class="multi-row-table tableStyle linePlus table_10 RowSumTable sortable" id="MULTI_TABLE03" style="margin-top:10px;">
+    <colgroup>
+        <col style="width:5%;">
+        <col style="width:13%;">
+        <col style="width:14%;">
+        <col style="width:12%;">
+        <col style="width:15%;">
+        <col style="width:13%;">
+        <col style="width:13%;">
+        <col style="width:15%;">
+    </colgroup>
+    <tbody><tr class="multi-row-control">
+    	<td colspan="4" style="text-align: left;border-left:hidden; border-right:hidden; border-top:hidden" class="ui-sortable">
+    		<p>2. 가맹점 지급내역 (단위: 원,부가세별도)
+    		</p>
+    	</td>
+        <td data-mode="writeOnly" colspan="3" style="text-align: right;border-left:hidden; border-right:hidden; border-top:hidden" class="ui-sortable">
+	    	<input type="hidden" id="addbtn" value="+추가" class="multi-row-add smButton" style="">
+	        <input type="hidden" id="MinusBtn" value="-삭제" class="multi-row-del-auto smButton" style="">
+        </td>
+    </tr>
+    <tr>
+    	<th>구    분</th>
+    	<th>업체명</th>
+    	<th>계약금액</th>
+    	<th>수수료율</th>
+    	<th>수수료</th>
+    	<th>가맹점 총지급액</th>
+    	<th>가맹점 월지급액</th>
+    	<th>비 고</th>
+    </tr>
+    <tr class="multi-row-template multi-sum">
+        <td class="multi-row-seq ui-sortable" style="text-align: center">1</td>
+        <td class="ui-sortable">
+            <input type="text" data-type="rField" name="ComName2" style="width:98%"> 
+        </td>
+        <td class="ui-sortable">
+            <input type="text" data-type="rField" class="sum-table-cell ContPrice02" name="ContPrice02" data-pattern="currency" style="width:98%; border:hidden" readonly=""> 
+        </td>
+        <td class="ui-sortable">
+            <input type="text" data-type="rField" name="ChargePer" style="width:98%" onkeyup="vauelChange(this, 'ChargePer')"> 
+        </td>
+        <td class="ui-sortable">
+            <input type="text" data-type="rField" name="Charge" style="width:98%;" class="Charge" data-pattern="currency" onkeyup="vauelChange(this, 'Charge')"> 
+        </td>
+        <td class="ui-sortable">
+            <input type="text" data-type="rField" class="ContTotal" name="ContTotal" style="width:98%; border:hidden;" data-pattern="currency" data-sum-ref=".ContPrice02,.Charge" data-formula="({0}-{1})" readonly=""> 
+        </td>
+        <td class="ui-sortable">
+            <input type="text" data-type="rField" name="ContMonthTotal" style="width:98%; border:hidden;" data-pattern="currency" data-sum-ref=".ContTotal" data-formula="({0}/12)" data-formula-digit="1" readonly=""> 
+        </td>
+        <td class="ui-sortable">
+            <input type="text" data-type="rField" name="Note02" style="width:98%"> 
+        </td>
+    </tr>
+    <tr>
+    	<td colspan="8" style="padding:20px 0; border-bottom: hidden; border-left: hidden; border-right: hidden" class="ui-sortable">
+    		<p style="margin-bottom:6px;">&nbsp;3. 예산사항</p>
+            <textarea id="Matter" data-type="mField" rows="3" style="overflow: auto; width: 98%;">{{ doc.BodyContext.Matter }}</textarea>
+    	</td>
+    </tr>
+</tbody></table>

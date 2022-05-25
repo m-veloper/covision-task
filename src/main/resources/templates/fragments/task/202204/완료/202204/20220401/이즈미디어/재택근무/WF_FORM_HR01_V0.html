@@ -1,0 +1,64 @@
+<table class="tableStyle linePlus mt10" id="WF_FORM_HR01">
+	<colgroup>
+    	<col style="width:17%">
+    	<col style="width:16%">
+    	<col style="width:15%">
+    	<col style="width:17%">
+    	<col style="width:35%">
+    </colgroup>
+    
+      <tbody><tr>
+    	<td colspan="6">
+            <div style="color:black; font-weight:bold">1. 재택근무신청내용</div>
+    	</td>
+    </tr>
+      <tr>
+        <th>부서명</th>
+        <td colspan="6" style="width:98%; border-top: 1px solid #c3d7df;">
+            <input type="text" name="userDept" data-type="mField" value="{{ doc.BodyContext.userDept }}" style="width:98%" placeholder="OO팀">
+        </td>    
+    </tr>
+    <tr>
+        <th>대상자 성명</th>
+        <td colspan="6" style="width:98%">
+            <input type="text" name="userName" data-type="mField" value="{{ doc.BodyContext.userName }}" style="width:98%" placeholder="본인 혹은 본인외00명">
+        </td>    
+    </tr>
+      
+   	<tr>
+    	<th>기간</th>
+    	 <td colspan="6">
+    	 <input name="req_period" style="width: 99%;" type="text" value="{{ doc.BodyContext.req_period }}" data-type="mField" placeholder="YYYY-MM-DD ~ YYYY-MM-DD 까지(또는 회사가 지정한 기간까지)">
+    	 </td>
+    </tr>
+
+    	<tr>
+    		<th>근무장소</th>
+    		<td colspan="6">
+    			<textarea data-type="mField" name="req_location" rows="3" style="overflow:auto;width:99%;" placeholder="실거주 자택 
+ *그 외의 장소에 대해서는 회사가 정한 방법에 따라 별도로 승인받은 후 진행">{{ doc.BodyContext.req_location }}</textarea>
+    		</td>
+    	</tr>
+       	<tr>
+    		<th>사유</th>
+    		<td colspan="6">
+    			<input id="req_reason" style="width: 99%;" type="text" value="{{ doc.BodyContext.req_reason }}" data-type="mField">
+    		</td>
+    	</tr>   
+    	<tr>
+    		<th>업무대행자<br>동의여부</th>
+    		<td colspan="6">
+    			<textarea data-type="mField" id="req_qualification" rows="5" style="overflow:auto;width:99%;" placeholder="동의(업무대행자 : OOO) 
+ *업무대행자(유관 팀원)의 합의 결재 추가">{{ doc.BodyContext.req_qualification }}</textarea>
+    		</td>
+    	</tr>
+    <tr>
+        <td colspan="6">
+            <div style="color:black; font-weight:bold">※ 신규 입사 시 기본 품목으로 지급되는 S/W는 현업 그룹장까지 결재선을 지정해 주시기 바랍니다.</div>
+            <br style="">
+            <div style="color:blue; font-weight:bold">*재택근무시 노트북 등의 사내 비품을 회사 외부로 반출하는 경우에는 <br style="">&nbsp; 전자결재 서식 중 &lt;전산-사내비품 반출신청서&gt; 를 작성하여 결재를 받아야 합니다.</div>
+            <br style="">
+            <div> ○ 본 신청서의 결재선은 작성자 - 팀장 - 그룹장(또는 임원) 입니다.</div>
+        </td>
+    </tr>
+</tbody></table>

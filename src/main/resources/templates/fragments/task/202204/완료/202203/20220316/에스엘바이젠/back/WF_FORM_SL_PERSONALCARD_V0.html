@@ -1,0 +1,320 @@
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:12%">
+        <col style="width:16.5%">
+        <col style="width:*">
+    </colgroup>
+    <tbody><tr>
+    	<th>사용자</th>
+    	<td colspan="2"><input type="text" data-type="mField" id="writer" value="{{ doc.BodyContext.writer }}" style="width:98%"></td>
+    </tr>
+     <tr>
+    	<th>작성일자</th>
+    	<td colspan="2"><input type="text" data-type="mField" id="wDate" value="{{ doc.BodyContext.wDate }}" style="width:120px"></td>
+    </tr>
+    <tr>
+    	<th title="한솔시큐어 직원들과의 식사 , 음료 등">회의비<br>(팀식대/음료)</th>
+		<td colspan="2">
+			<table class="tableStyle linePlus mt10 multi-row-table RowSumTable" id="personTbl1">
+				<colgroup>
+					<col style="width:18%">
+					<col style="width:18%">
+					<col style="width:28%">
+					<col style="width:18%">
+					<col style="width:18%">
+				</colgroup>
+				<tbody><tr class="multi-row-control">
+					<td colspan="5" data-mode="writeOnly" align="right">
+						<input type="button" value="+추가" class="multi-row-add usa">
+						<input type="button" value="-삭제" class="multi-row-del-auto usa">
+					</td>
+				</tr>
+				<tr>
+					<th>일자</th>
+					<th>사용액</th>
+					<th>사용내역</th>
+					<th>장소</th>
+					<th>비고</th>
+				</tr>
+				<tr class="multi-row-template">
+					<td><input type="text" data-type="rField" name="personDate1" style="width:98%" data-pattern="date"></td>
+					<td><input type="text" data-type="rField" name="personPrice1" style="width:98%" data-pattern="currency" class="sum-table-cell"></td>
+					<td><input type="text" data-type="rField" name="personUseCon1" style="width:98%"></td>
+					<td><input type="text" data-type="rField" name="personPlace1" style="width:98%"></td>
+					<td><input type="text" data-type="rField" name="personEtc1" style="width:98%"></td>
+				</tr>
+				<tr>
+					<th>소계</th>
+					<td><input type="text" data-type="mField" id="personTotal1" value="{{ doc.BodyContext.personTotal1 }}" style="width:98%;border:0px;" readonly="" data-pattern="currency" class="sum-table-colsum"></td>
+					<th colspan="3"></th>
+				</tr>
+			
+			</tbody></table>
+		</td>		    
+    </tr>
+    <tr>
+    	<th title="거래처 직원들과의 식사, 음료, 주대 등">접대비<br>(거래처 식대/주대/골프)</th>
+    	<td colspan="2">
+    		<table class="tableStyle linePlus mt10 multi-row-table RowSumTable" id="personTbl2">
+				<colgroup>
+					<col style="width:18%">
+					<col style="width:18%">
+					<col style="width:28%">
+					<col style="width:18%">
+					<col style="width:18%">
+				</colgroup>
+				<tbody><tr class="multi-row-control">
+					<td colspan="5" data-mode="writeOnly" align="right">
+						<input type="button" value="+추가" class="multi-row-add usa">
+						<input type="button" value="-삭제" class="multi-row-del-auto usa">
+					</td>
+				</tr>
+				<tr>
+					<th>일자</th>
+					<th>사용액</th>
+					<th>사용내역</th>
+					<th>장소</th>
+					<th>비고</th>
+				</tr>
+				<tr class="multi-row-template">
+					<td><input type="text" data-type="rField" name="personDate2" style="width:98%" data-pattern="date"></td>
+					<td><input type="text" data-type="rField" name="personPrice2" style="width:98%" data-pattern="currency" class="sum-table-cell"></td>
+					<td><input type="text" data-type="rField" name="personUseCon2" style="width:98%"></td>
+					<td><input type="text" data-type="rField" name="personPlace2" style="width:98%"></td>
+					<td><input type="text" data-type="rField" name="personEtc2" style="width:98%"></td>
+				</tr>
+				<tr>
+					<th>소계</th>
+					<td><input type="text" data-type="mField" id="personTotal2" value="{{ doc.BodyContext.personTotal2 }}" style="width:98%;border:0px;" data-pattern="currency" class="sum-table-colsum" readonly=""></td>
+					<th colspan="3"></th>
+				</tr>
+			
+			</tbody></table>
+    	</td>
+    </tr>
+     <tr>
+    	<th title="시내/외 교통비">여비교통비<br>(시내 교통비/숙박비, 항공권 등)</th>
+    	<td colspan="2">
+    		<table class="tableStyle linePlus mt10 multi-row-table RowSumTable" id="personTbl3">
+				<colgroup>
+					<col style="width:18%">
+					<col style="width:18%">
+					<col style="width:28%">
+					<col style="width:18%">
+					<col style="width:18%">
+				</colgroup>
+				<tbody><tr class="multi-row-control">
+					<td colspan="5" data-mode="writeOnly" align="right">
+						<input type="button" value="+추가" class="multi-row-add usa">
+						<input type="button" value="-삭제" class="multi-row-del-auto usa">
+					</td>
+				</tr>
+				<tr>
+					<th>일자</th>
+					<th>사용액</th>
+					<th>사용내역</th>
+					<th>장소</th>
+					<th>비고</th>
+				</tr>
+				<tr class="multi-row-template">
+					<td><input type="text" data-type="rField" name="personDate3" style="width:98%" data-pattern="date"></td>
+					<td><input type="text" data-type="rField" name="personPrice3" style="width:98%" data-pattern="currency" class="sum-table-cell"></td>
+					<td><input type="text" data-type="rField" name="personUseCon3" style="width:98%"></td>
+					<td><input type="text" data-type="rField" name="personPlace3" style="width:98%"></td>
+					<td><input type="text" data-type="rField" name="personEtc3" style="width:98%"></td>
+				</tr>
+				<tr>
+					<th>소계</th>
+					<td><input type="text" data-type="mField" id="personTotal3" value="{{ doc.BodyContext.personTotal3 }}" style="width:98%;border:0px;" data-pattern="currency" class="sum-table-colsum"></td>
+					<th colspan="3"></th>
+				</tr>
+			
+			</tbody></table>
+    	</td>
+    </tr>
+    <tr>
+    	<th title="유류비, 주차료, 통행료, 법인차량 수리비 등">차량유지비<br>(주차료/통행료)</th>
+    	<td colspan="2">
+    		<table class="tableStyle linePlus mt10 multi-row-table RowSumTable" id="personTbl4">
+				<colgroup>
+					<col style="width:18%">
+					<col style="width:18%">
+					<col style="width:28%">
+					<col style="width:18%">
+					<col style="width:18%">
+				</colgroup>
+				<tbody><tr class="multi-row-control">
+					<td colspan="5" data-mode="writeOnly" align="right">
+						<input type="button" value="+추가" class="multi-row-add usa">
+						<input type="button" value="-삭제" class="multi-row-del-auto usa">
+					</td>
+				</tr>
+				<tr>
+					<th>일자</th>
+					<th>사용액</th>
+					<th>사용내역</th>
+					<th>장소</th>
+					<th>비고</th>
+				</tr>
+				<tr class="multi-row-template">
+					<td><input type="text" data-type="rField" name="personDate4" style="width:98%" data-pattern="date"></td>
+					<td><input type="text" data-type="rField" name="personPrice4" style="width:98%" data-pattern="currency" class="sum-table-cell"></td>
+					<td><input type="text" data-type="rField" name="personUseCon4" style="width:98%"></td>
+					<td><input type="text" data-type="rField" name="personPlace4" style="width:98%"></td>
+					<td><input type="text" data-type="rField" name="personEtc4" style="width:98%"></td>
+				</tr>
+				<tr>
+					<th>소계</th>
+					<td><input type="text" data-type="mField" id="personTotal4" value="{{ doc.BodyContext.personTotal4 }}" style="width:98%;border:0px;" data-pattern="currency" class="sum-table-colsum"></td>
+					<th colspan="3"></th>
+				</tr>
+			
+			</tbody></table>
+    	</td>
+    </tr>
+    <tr>
+    	<th title="위 항목을 제외한 비용">기타 비용</th>
+    	<td colspan="2">
+    		<table class="tableStyle linePlus mt10 multi-row-table RowSumTable" id="personTbl5">
+				<colgroup>
+					<col style="width:18%">
+					<col style="width:18%">
+					<col style="width:28%">
+					<col style="width:18%">
+					<col style="width:18%">
+				</colgroup>
+				<tbody><tr class="multi-row-control">
+					<td colspan="5" data-mode="writeOnly" align="right">
+						<input type="button" value="+추가" class="multi-row-add usa">
+						<input type="button" value="-삭제" class="multi-row-del-auto usa">
+					</td>
+				</tr>
+				<tr>
+					<th>일자</th>
+					<th>사용액</th>
+					<th>사용내역</th>
+					<th>장소</th>
+					<th>비고</th>
+				</tr>
+				<tr class="multi-row-template">
+					<td><input type="text" data-type="rField" name="personDate5" style="width:98%" data-pattern="date"></td>
+					<td><input type="text" data-type="rField" name="personPrice5" style="width:98%" data-pattern="currency" class="sum-table-cell"></td>
+					<td><input type="text" data-type="rField" name="personUseCon5" style="width:98%"></td>
+					<td><input type="text" data-type="rField" name="personPlace5" style="width:98%"></td>
+					<td><input type="text" data-type="rField" name="personEtc5" style="width:98%"></td>
+				</tr>
+				<tr>
+					<th>소계</th>
+					<td><input type="text" data-type="mField" id="personTotal5" value="{{ doc.BodyContext.personTotal5 }}" style="width:98%;border:0px;" data-pattern="currency" class="sum-table-colsum"></td>
+					<th colspan="3"></th>
+				</tr>
+			
+			</tbody></table>
+    	</td>
+    </tr>
+    <tr>
+    	<th colspan="2">합계</th>
+    	<td><input type="text" data-type="mField" id="totalPrice" value="{{ doc.BodyContext.totalPrice }}" style="width:100px;border:0px;" data-pattern="numeral sum" data-numeral-format="0,0" data-sum-ref="#personTotal1,#personTotal2,#personTotal3,#personTotal4,#personTotal5"></td>
+    </tr>	
+    
+</tbody></table>
+
+<br style="">
+■ 개인차량 유류비 정산<br style="">
+<div style ="font-size:12">*여비교통비 중 개인차량 금액 근거 기재<br style=""></div>
+
+
+
+<table class="tableStyle linePlus mt10 multi-row-table RowSumTable" id="carTbl">
+	<colgroup>
+		<col style="width:12%;">
+		<col style="width:12%;">
+		<col style="width:12%;">
+		<col style="width:12%;">
+		<col style="width:12%;">
+		<col style="width:12%;">
+		<col style="width:12%;">
+		<col style="width:12%;">
+	</colgroup>
+	<tbody><tr>
+		<th>차종</th>
+		<td><input type="text" data-type="mField" id="carType" value="{{ doc.BodyContext.carType }}" style="width:98%"></td>
+		<th>기름종류</th>
+		<td>
+			<select data-type="mField" id="improveSELECT_BOX" data-element-type="sel_d_t" style="width:98%;"  onchange ="ChangeOil(this);">
+                <option value="0">선택</option>
+                <option value="1">휘발류</option>
+                <option value="2">경유</option>
+                <option value="3">LPG</option>
+            </select>
+		
+		</td>
+		<th>연비
+		</th>
+		<td>
+			<input type="text" data-type="mField" id="fuelEfficiency" readonly="readonly" value="{{ doc.BodyContext.fuelEfficiency }}" style="width:75%">km
+		</td>
+		
+		<th>전국유가평균</th>
+		<td><input type="text" data-type="mField" id="eachPrice" value="{{ doc.BodyContext.eachPrice }}" style="width:75%" data-pattern="currency" onchange ="ChangeAvgOil(this);">원</td>
+		
+	</tr>
+	
+	
+	<tr data-mode="writeOnly">
+		<td colspan="8">*전국유가평균은 매월 말일자 기준으로 공지함(한국석유공사 유가정보서비스(www.opinet.co.kr) 근거)</td>
+	</tr>
+	<tr class="multi-row-control">
+		<td colspan="8" data-mode="writeOnly" align="right">
+			<input type="button" value="+추가" class="multi-row-add usa">
+			<input type="button" value="-삭제" class="multi-row-del-auto usa">
+		</td>
+	</tr>
+	<tr>
+		<th rowspan="2">일자</th>
+		<th colspan="7">유류비내역</th>
+	</tr>
+	<tr>
+		<th>출발지</th>
+		<th>목적지</th>
+		<th>왕복거리(km)</th>
+		<th>통행료</th>
+		
+		<th>총교통비</th>
+		<th colspan="2">업무내용</th>
+	</tr>
+	<tr class="multi-row-template">
+		<td><input type="text" data-type="rField" name="carDate" style="width:99%" data-pattern="date"></td>
+		<td><input type="text" data-type="rField" name="carStart" style="width:99%"></td>
+		<td><input type="text" data-type="rField" name="carEnd" style="width:99%"></td>
+		<td><input type="text" data-type="rField" data-pattern="currency" name="carkm" onblur="fn_sum_test(this);"  onchange="fn_sum_test(this);" style="width:99%" >
+		
+		</td>
+		<td>
+			<input type="text" data-type="rField" name="carFee1" style="width:99%; display:none" >
+			<input type="text" data-type="rField" name="carFee2" style="width:99%; display:none" >		
+			<input type="text" data-type="rField" data-pattern="currency"  name="carToll" onblur="fn_sum_test(this);" onchange="fn_sum_test(this);" style="width:99% " >
+		</td>
+		<td>
+		<input type="text" data-type="rField" readonly="readonly" name="carprice" style="width:99%" data-pattern="currency"  ></td>
+		<td colspan="2"><input type="text" data-type="rField" name="carEtc" style="width:99%"></td>
+	</tr>
+	<tr>
+		<th colspan="5">합계</th>
+		<td><input type="text" data-type="mField" id="carTotal" readonly="readonly"  value="{{ doc.BodyContext.carTotal }}" style="width:98%;border:0px" data-pattern="currency" ></td>
+		<th colspan="2"></th>
+	</tr>
+	<tr data-mode="writeOnly">
+		<td colspan="8">
+		*거리 : 네이버 길찾기 활용, 편도, 왕복 모두 포함한 총 거리 기재 바랍니다.<br style="">
+		*첨부 : 네이버지도, 동행료, 출장신청서(해당시)<br style="">
+		*연료단가 : 한국석유공사 유가정보서비스(www.opinet.co.kr)에서 제공하는 전국 평균가격을 적용<br style="">
+		
+	</tr>
+</tbody></table>
+
+
+
+
+<!--실 결재양식 내용 부분 끝 -->

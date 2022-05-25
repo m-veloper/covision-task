@@ -1,0 +1,87 @@
+
+
+<!--실 결재양식 내용 부분 시작 -->
+	
+	    <table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+		<colgroup>
+	       <col style="width:20%" />
+	       <col style="width:20%" />
+	       <col style="width:20%" />
+	       <col style="width:20%" />
+	       <col style="width:20%" />
+		</colgroup>  
+		
+		
+	    
+	    
+	    
+	    
+	     <tr>
+	    	<th colspan="5" style ="text-align : left !important">1.심의안건</th>			
+	    </tr>
+	    <tr>
+	    	<td colspan="5" >
+				<textarea id="decideComment" data-type="mField"style="width: 98%;height:80px">{{ doc.BodyContext.decideComment }}</textarea>
+			</td>
+	    </tr>
+	    
+	     <tr>
+	    	<th colspan="5" style ="text-align : left !important">2.의결권행사</th>			
+	    </tr>
+	    <tr>
+		    <th>찬성</th>
+		    <th>조건부찬성</th>
+		    <th>재검토</th>
+		    <th>부적정</th>
+		    <th>기타(기권  등)</th>
+	    </tr>
+	    <tr>
+	    	<td  align="center">
+				 <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1">
+	            	<input type="checkbox" id="chkBox_01" name="chkBox_1" value="찬성">찬성
+	            </div>
+			</td>
+			 <td  align="center">
+				 <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1">
+	                <input type="checkbox" id="chkBox_02" name="chkBox_1" value="조건부찬성">조건부찬성
+	            
+	            </div>
+			</td>
+			 <td align="center" >
+				 <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1">
+	            	<input type="checkbox" id="chkBox_01" name="chkBox_1" value="재검토">재검토
+	            
+	            </div>
+			</td>
+			 <td align="center" >
+				 <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1">         
+	                <input type="checkbox" id="chkBox_04" name="chkBox_1" value="부적정">부적정	            
+	            </div>
+			</td>
+			 <td align="center" >
+				 <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1">
+	                <input type="checkbox" id="chkBox_05" name="chkBox_1" value="기타(기권  등)">기타(기권  등)
+	            
+	            </div>
+			</td>
+			
+	    </tr>
+	    
+	    
+	    
+	    
+	     <tr>
+	    	<th colspan="5" style ="text-align : left !important" >3.의견(조건부 찬성인 경우 그 조건, 재검토인 경우 재검토를 요하는 사항, 부적정인 경우 그 이유 등)</th>			
+	    </tr>
+	    <tr>
+	    	<td colspan="5" >
+				<textarea id="opnionComment" data-type="mField"style="width: 98%;height:80px">{{ doc.BodyContext.opnionComment }}</textarea>
+			</td>
+	    </tr>
+	    
+	    
+	     
+	    </table>
+	    
+<!--실 결재양식 내용 부분 끝 -->

@@ -1,0 +1,105 @@
+<!--실 결재양식 내용 부분 시작 -->
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+		<colgroup>
+			<col style="width:15%">
+	       	<col style="width:35%">
+	       	<col style="width:15%">
+	       	<col style="width:35%">
+		</colgroup> 
+		<tbody><tr>
+			 <th>일자
+			</th>
+			<td>
+				<div>
+				<input type="text" data-type="mField" id="requestDay" title="신청일" name="requestDay" value="{{ doc.BodyContext.requestDay }}" size="10" style="width : 70%;text-align:center" data-pattern="date" data-date-format="yy년 mm월 dd일 (DD요일)">
+				</div>
+				 
+			</td>
+			  <th>작성자
+			</th>
+			<td>
+				<input type="text" id="userName" name="userName" data-type="mField" value="{{ doc.BodyContext.userName}}" style="width:90%; ">
+			</td>
+			
+		</tr>
+</tbody></table>		
+		
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+		<colgroup>
+			<col style="width:15%">
+	       	<col style="width:35%">
+	       	<col style="width:15%">
+	       	<col style="width:35%">
+		</colgroup> 
+		
+		
+</table>
+
+<table class="table_10 multi-row-table  tableStyle linePlus" id="TBLINFO" style="border-left: 1px solid #c3d7df;">
+    <colgroup>
+		
+        <col style="width: 22%">
+        <col style="width: 22%">
+        <col style="width: 34%">
+        <col style="width: 22%">
+    </colgroup>
+    <tbody>
+	    <tr class="multi-row-control" data-mode="writeOnly">
+	        <td colspan="4" style="text-align: right">
+	            <input type="button" value="+추가" class="multi-row-add usa">
+			<input type="button" value="-삭제" class="multi-row-del-auto usa">
+	        </td>
+	    </tr>
+	     <tr>
+	      <th colspan="4">금일 업무실적</th>
+	     </tr>
+	    <tr>
+	        
+	        <th>업무시간</th>
+	        <th>업무명</th>
+	        <th>업무내용</th>
+	        <th>비고</th>
+	    </tr>
+	    <tr class="multi-row-template multi-sum">
+			 <td>
+			 	<input type="text" name="StartTime" data-type="rField" data-pattern="time" data-time-format="H:i" style="width:40%;" title="시작시간">
+	    		~
+	    		<input type="text" name="EndTime" data-type="rField" data-pattern="time" data-time-format="H:i" style="width:40%;" title="종료시간"> 
+			 </td>
+	        <td>
+	            <input name="workNmae" style="width: 99%;" type="text" data-type="rField">
+	        </td>
+	        <td>
+	            <input name="workList" style="width: 99%;" type="text" data-type="rField">
+	        </td>
+	        <td>
+	            <input name="workRmk" style="width: 99%;" type="text" data-type="rField">
+	        </td>
+	    </tr>
+	    <tr>
+	    <th colspan="4">내일 업무계획</th>
+	    </tr>
+	    
+	    <tr>
+    		<th>오전</th>
+	    	<td colspan="3">
+	    		<textarea id="Context1" data-type="mField" style="width: 98%;height:125px">{{ doc.BodyContext.Context1 }}</textarea>
+	    	</td>
+	    </tr>
+	    
+	    <tr>
+    	
+	    	<th>오전</th>
+	    	<td colspan="3">
+	    		<textarea id="Context2" data-type="mField" style="width: 98%;height:125px">{{ doc.BodyContext.Context2 }}</textarea>
+	    	</td>
+	    </tr>
+	   
+	</tbody>
+</table>
+
+
+<!--실 결재양식 내용 부분 끝 -->

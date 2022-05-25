@@ -1,0 +1,84 @@
+<!-- HIDDEN FIELD -->
+<input type="hidden" data-type="mField" id="HID_OVERTIME_WORK_FIID" />
+<!-- HIDDEN PROCESSID -->
+<input type="hidden" data-type="mField" id="HID_PROCESSID" />
+
+<!-- HIDDEN PROCESSID -->
+<input type="hidden" data-type="mField" id="RESULT_COMMENT" />
+
+<table class="tableStyle linePlus mt10 multi-row-table RowSumTable" id="TBL_WORK_INFO"><!-- class="table_10" -->
+    <colgroup>
+    	<col style="width:30px"/>
+        <col style="width:15%" />
+        <col style="width:15%" />
+        <col style="width:20%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:20%" />
+        <col style="width:10%" />
+    </colgroup>
+    
+    <tr class="multi-row-control" align="right" data-mode="writeOnly">
+		<td colspan="8" style="border:none;">
+			<input type="button" value="+추가" class="multi-row-add usa">
+			<input type="button" value="-삭제" class="multi-row-del usa">
+		</td>
+	</tr>
+	
+    <tr>
+    	<th data-mode="writeOnly">
+        	<label for="TBL_WORK_INFO_select_all"></label>
+            <input type="checkbox" id="TBL_WORK_INFO_select_all" class="multi-row-select-all">
+        </th>
+    	<th data-multi-row-colspan="1,2" style="border-left: 1px solid #c3d7df;">근무자</th>
+    	<th>날짜</th>
+    	<th>근무시간</th>
+    	<th>유휴(분)</th>
+    	<th>신청시간</th>
+    	<th>업무내용</th>
+    	<th>가능시간</th>
+    </tr>
+    <tr class="multi-row-template">
+    	<td data-mode="writeOnly" class="multi-row-selector-wrap">
+            <input type="checkbox" id="" class="multi-row-selector">
+        </th>
+    	<td align="center" data-multi-row-colspan="1,2" style="border-left: 1px solid #c3d7df;">
+    		<input type="hidden" name="UserCode" data-type="rField" style="width:99%;">
+    		<input type="hidden" name="CompanyCode" data-type="rField" style="width:99%;">
+    		<input type="text" name="UserName" data-type="rField" style="width:65%;" readonly="readonly" required title="근무자">
+    		<span data-mode="writeOnly">
+				<a onclick="OpenWinEmployee(this);">
+					<img alt="search" style="vertical-align: middle; cursor:pointer;" src="/HtmlSite/smarts4j_n/covicore/resources/images/covision/btn_org.gif" width="25" height="21">
+				</a>
+			</span>
+    	</td>
+    	<td align="center">
+    		<input type="text" name="JobDate" data-type="rField" data-pattern="date" style="width:99%;" required title="날짜" onchange="ChangeSubject(this);">
+    	</td>
+    	<td align="center" class="multi-period">
+    		<input type="text" name="StartTime" data-type="rField" data-pattern="time" data-time-format="H:i" style="width:40%;" onchange="calWorkTime(this);" required title="시작시간">
+    		~
+    		<input type="text" name="EndTime" data-type="rField" data-pattern="time" data-time-format="H:i" style="width:40%;" onchange="calWorkTime(this);" required title="종료시간">
+    	</td>
+    	<td align="center">
+    		<input type="text" name="IdleTime" data-type="rField" data-pattern="numeric" style="width:99%;" onchange="calWorkTime(this);" title="유휴(분)">
+    	</td>
+    	<td align="center">
+    		<input type="text" name="WorkTime" data-type="rField" style="width:99%;" onchange="calTotalTime();" readonly="readonly" required title="신청시간">
+    	</td>
+    	<td style="min-height: 50px;">
+    		<!-- <input type="text" name="Etc" data-type="rField" style="width:99%;"> -->
+    		<textarea name="Etc" data-type="rField" style="width:98%;" rows="3"></textarea>
+    	</td>
+    	<td>
+    		<input type="text" name="AvailableTime" data-type="rField" style="width:98%;" readonly="readonly">
+    	</td>
+    </tr>  
+    <tr class="totalTr">
+    	<th colspan="5">합 계</th>
+    	<td align="center">
+    		<input type="text" id="TotalTime" data-type="mField" data-pattern="time" data-time-format="H:i" value="{{ doc.BodyContext.TotalTime }}" style="width:99%;" readonly="readonly">
+    	</td>
+    	<th colspan="2"></th>
+    </tr>
+</table>

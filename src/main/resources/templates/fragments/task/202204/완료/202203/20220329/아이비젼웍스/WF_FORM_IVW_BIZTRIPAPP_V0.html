@@ -1,0 +1,170 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:9%" />
+        <col style="width:7%" />
+        <col style="width:6%" />
+        <col style="width:4%" />
+        <col style="width:7%" />
+        <col style="width:5%" />
+        <col style="width:12%" />
+        <col style="width:7%" />
+        <col style="width:15%" />
+    </colgroup>
+    <tr>
+    	<td colspan="9" align="center">아래와 같이 출장진행을 품의하오니 검토 후 재가하여 주시기 바랍니다.</td>
+    </tr>
+    <td colspan="9" style="text-align:right; padding-left: 10px;">
+	    <span data-mode="writeOnly">
+	        <a onclick="OpenWinEmployee('DEPUTY_NAME')">
+				<img alt="search" style="vertical-align: middle; cursor:pointer;" src="/HtmlSite/smarts4j_n/covicore/resources/images/covision/btn_org.gif" width="25" height="21">
+			</a>
+		</span>
+	</td>
+    <tr>
+    	<th>출 장 자</th>
+    	<th>성명</th>
+    	<td colspan="2">
+    		<input type="text" data-type="mField" id="DEPUTY_NAME" value="{{ doc.BodyConext.DEPUTY_NAME }}" data-binding="pre" title="성명" required="" readonly="readonly" style="width:98%;border:0px solid;">
+            <input type="hidden" data-type="mField" id="DEPUTY_CODE" value="{{ doc.BodyContext.DEPUTY_CODE }}" style="width: 98%;">
+    	</td>
+    	<th>소속</th>
+    	<td colspan="2">
+    		<input type="text" data-type="mField" id="ExGroupName" name="ExGroupName" value="{{ doc.BodyConext.ExGroupName }}" data-binding="pre"  title="소속" required="" readonly="readonly" style="width:98%;border:0px solid;">
+    	</td>
+    	<th>직위</th>
+    	<td>
+    		<input type="text" data-type="mField" id="PO" name="PO" value="{{ doc.BodyConext.PO }}" data-binding="pre"  title="직위" required="" readonly="readonly" style="width:98%;border:0px solid;">
+    	</td>
+    </tr>
+    <tr>
+    	<th>출 장 지</th>
+    	<td colspan="4">
+    		<input type="text" name="bizTrip" data-type="mField" value="{{ doc.BodyContext.bizTrip }}"  style="width:98%;" >
+    	</td>
+    	<th colspan="2">PJ코드</th>
+    	<td colspan="2">
+    		<input type="text" name="pjCode" data-type="mField" value="{{ doc.BodyContext.pjCode }}"  style="width:98%;" >
+    	</td>
+    </tr>
+    <tr>
+    	<th>출장기간</th>
+    	<td colspan="2">
+    		<input type="text" data-type="mField" data-pattern="date"  id="SDATE" name="SDATE" value="{{ doc.BodyContext.SDATE }}"  style="width:98%; text-align: center;" onchange="calSDATEEDATE(this);">
+    	</td>
+    	<td align="center">~</td>
+    	<td colspan="2">
+    		<input type="text" data-type="mField" data-pattern="date"  id="EDATE" name="EDATE" value="{{ doc.BodyContext.EDATE }}"  style="width:98%; text-align: center;" onchange="calSDATEEDATE(this);">
+    	</td>
+    	<td colspan="3">
+    		( <input type="text" name="CALDAY" id="CALDAY" data-type="mField" value="{{ doc.BodyContext.CALDAY }}"  readonly="readonly" style="width:10%; border:0px solid;" > 일간 ) 
+    	</td>
+    </tr>
+    <tr>
+    	<th>출장목적<br/>(지시사항)</th>
+    	<td colspan="8">
+    		<textarea data-type="mField" id="bizPurpose" name="bizPurpose" rows="5" style="overflow:auto;width:98%;">{{ doc.BodyContext.bizPurpose }}</textarea>
+    	</td>
+    </tr>
+</table>
+
+<table class="multi-row-table tableStyle linePlus mt10" id="sumTable"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:15%" />
+        <col style="width:8%" />
+        <col style="width:3%" />
+        <col style="width:3%" />
+        <col style="width:7%" />
+        <col style="width:7%" />
+        <col style="width:7%" />
+        <col style="width:10%" />
+        <col style="width:7%" />
+    </colgroup>
+    <tbody>
+	    <tr class="multi-row-control" data-mode="writeOnly">
+	    	<td colspan="9">
+	    		<em class="btn_iws_l" style="float: right;">
+	                <span class="btn_iws_r multi-row-add" id="btnAdd" style="cursor: pointer;">
+	                    <strong class="txt_btn_ws">
+	                        <img class="ico_btn" alt="" src="/approval/resources/images/xform/ico_plus.gif">추가
+	                    </strong>
+	                </span>
+	            </em>
+	            <em class="btn_iws_l" style="float: right; padding-right: 10px;">
+	                <span class="btn_iws_r multi-row-del-auto" id="btnDel" style="cursor: pointer;">
+	                    <strong class="txt_btn_ws">
+	                        <img class="ico_btn" alt="" src="/approval/resources/images/xform/ico_x.gif">삭제
+	                    </strong>
+	                </span>
+	            </em>
+	    	</td>
+	    </tr>
+	    <tr>
+	    	<th>구분</th>
+	    	<th colspan="8">품명</th>
+	    </tr>
+	    <tr class="multi-row-template">
+	    	<th>항공권 발권신청</th>
+	    	<td>
+	    		<select data-type="rField" data-element-type="sel_d_t" data-node-name="" style="width:98%;">
+	    			<option value="신규">신규</option>
+	    			<option value="변경">변경</option>
+	    		</select>
+	    	</td>
+	    	<th colspan="2">출국일</th>
+	    	<td colspan="2" align="center">
+	    		<input type="text" data-type="rField" data-pattern="date"  name="outDt" style="width:98%; text-align: center;">
+	    	</td>
+	    	<th>귀국일</th>
+	    	<td colspan="2" align="center">
+	    		<input type="text" data-type="rField" data-pattern="date"  name="inDt" style="width:98%; text-align: center;">
+	    	</td>
+	    </tr>
+	    <tr class="multi-row-template">
+	    	<th>출장관련 요청서류</th>
+	    	<td colspan="8">
+	    		<input type="text" name="bizTrip" data-type="rField" style="width:98%;" >
+	    	</td>
+	    </tr>
+	    <tr class="multi-row-template">
+	    	<th>법인카드 반출신청</th>
+	    	<th>신청사유</th>
+	    	<td colspan="7">
+	    		<input type="text" name="cardReqReason" data-type="rField" style="width:98%;" >
+	    	</td>
+	    </tr>
+	    <tr class="multi-row-template">
+	    	<th>출장여비 선지급</th>
+	    	<th>신청금액</th>
+	    	<td align="center">\</td>
+	    	<td colspan="2">
+	    		<input type="text" data-type="rField" name="bizReqAmt" style="width: 99%;" data-pattern="currency"  />
+	    	</td>
+	    	<th>신청사유</th>
+	    	<td colspan="3">
+	    		<input type="text" name="bizReqReason" data-type="rField" style="width:98%;" >
+	    	</td>
+	    </tr>
+	    <tr class="multi-row-template">
+	    	<th>파견수당 선지급</th>
+	    	<th>신청금액</th>
+	    	<td align="center">\</td>
+	    	<td colspan="2">
+	    		<input type="text" data-type="rField" name="supReqAmt" style="width: 99%;" data-pattern="currency"  />
+	    	</td>
+	    	<th>신청사유</th>
+	    	<td colspan="3">
+	    		<input type="text" name="supReqReason" data-type="rField" style="width:98%;" >
+	    	</td>
+	    </tr>
+	    <tr class="multi-row-template">
+	    	<th>기타</th>
+	    	<td colspan="8">
+	    		<textarea data-type="rField" name="etc" rows="5" style="overflow:auto;width:98%;"></textarea>
+	    	</td>
+	    </tr>
+    </tbody>
+</table>
+
+<!--실 결재양식 내용 부분 끝 -->

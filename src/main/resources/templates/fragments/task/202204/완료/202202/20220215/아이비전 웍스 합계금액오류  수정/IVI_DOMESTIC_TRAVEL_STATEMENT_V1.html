@@ -1,0 +1,369 @@
+<div style="text-align:center; font-size:13px">
+<br style="">
+아래와 같이 국내출장시 사용한 출장여비내역을 보고하오니 정산바랍니다.
+<br style="">
+</div>
+
+<table class="table_10 tableStyle linePlus mt10"><!-- class="table_10" -->
+	<colgroup>
+		<col style="width:12%">
+		<col style="width:25%">
+		<col style="width:30%">
+		<col style="width:12%">
+		<col style="width:21%">
+	</colgroup>
+	<tbody><tr>
+		<th>출장지</th>
+		<td colspan="4">
+			<input type="text" data-type="mField" style="width:98%;" id="Work_Place" value="{{doc.BodyContext.Work_Place}}">
+		</td>
+	</tr>
+	<tr>
+		<th>출장기간</th>
+		<td colspan="4">
+			<input type="text" data-type="mField" data-pattern="date" data-date-format="yy년 mm월 dd일" readonly="" onchange="calSDATEEDATE();" style="width:150px;" id="Start_Date" value="{{doc.BodyContext.Start_Date}}">&nbsp;~&nbsp;
+			<input type="text" data-type="mField" data-pattern="date" data-date-format="yy년 mm월 dd일" readonly="" onchange="calSDATEEDATE();" style="width:150px;" id="End_Date" value="{{doc.BodyContext.End_Date}}">&nbsp;
+			(<input type="text" data-type="mField" style="width:35px; border:none;" readonly="" id="Total_Day" value="{{doc.BodyContext.Total_Day}}">일간)
+		</td>
+	</tr>
+	<tr>
+		<th>출장목적</th>
+		<td colspan="2">
+			<input type="text" data-type="mField" style="width:98%;" id="Trip_Purpose" value="{{doc.BodyContext.Trip_Purpose}}">
+		</td>
+		<th>PJ코드</th>
+		<td>
+			<input type="text" data-type="mField" style="width:98%;" id="PJ_Code" value="{{doc.BodyContext.PJ_Code}}">
+		</td>
+	</tr>
+	<tr>
+		<th>정산총액</th>
+		<td>
+			<input type="text" data-type="mField" style="width:150px; text-align:right; border:none;" class="watch-value" data-watch="[name=Total_Cost]" id="Expected_Cost" value="{{doc.BodyContext.Expected_Cost}}" readonly=""> 원
+		</td>
+	</tr>
+</tbody></table>	
+	
+<table class="table_10 linePlus mt10 multi-row-table RowSumTable tableStyle" id="request_Tbl"><!-- class="table_10" -->
+	<colgroup>
+		<col style="width:12%">
+		<col style="width:9%">
+		<col style="width:16%">
+		<col style="width:33%">
+		<col style="width:16%">
+		<col style="width:14%">
+	</colgroup>
+	<tbody><tr>
+		<td colspan="6" style="text-align:center; font-size:16px; font-weight:bold; border:none;">
+			출장경비내역
+		</td>
+	</tr>
+
+	<tr>
+		<th>구분</th>
+		<th>일자</th>
+		<th>사용처</th>
+		<th>사용 내역</th>
+		<th>사용금액</th>
+		<th>PJ코드</th>
+	</tr>
+	<tr class="multi-row-control">
+		<td class="multi-row-autospan" style="text-align:center">
+			교통비<br style="">
+			<input type="button" value="추가" class="usa multi-row-add" data-mode="writeOnly"><!-- onclick="addRow()"  -->
+	   		<input type="button" value="삭제" class="usa multi-row-del-auto" data-mode="writeOnly"><!-- onclick="delRow()"  -->
+		</td>
+		<td align="center">
+			<input type="text" data-type="mField" data-pattern="date" data-date-format="mm-dd" id="mTraffic_Date" name="mTraffic_Date" style="width:98%; text-align:center;" readonly="" value="{{doc.BodyContext.mTraffic_Date}}">
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mTraffic_Office">{{doc.BodyContext.mTraffic_Office}}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mTraffic_Context">{{doc.BodyContext.mTraffic_Context}}</textarea>
+		</td>
+		<td align="right">
+			<input type="text" data-type="mField" id="mTraffic_Cost" name="mTraffic_Cost" data-pattern="currency" class="sum-table-cell" style="width:98%;" value="{{doc.BodyContext.mTraffic_Cost}}">
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mTraffic_ETC">{{doc.BodyContext.mTraffic_ETC}}</textarea>
+		</td>
+	</tr>
+	
+	<tr class="multi-row-template" style="border-top: 1px solid #c3d7df;">
+		<td align="center">
+			<input type="text" data-type="rField" data-pattern="date" data-date-format="mm-dd" name="Traffic_Date" style="width:98%; text-align:center;" readonly="">
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="Traffic_Office"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="Traffic_Context"></textarea>
+		</td>
+		<td align="right">
+			<input type="text" data-type="rField" name="Traffic_Cost" data-pattern="currency" class="sum-table-cell" style="width:98%;">
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="Traffic_ETC"></textarea>
+		</td>
+	</tr>
+	<tr style="display:none;">
+    	<td align="center" colspan="6" style="">
+	        <input type="text" name="Total_Traffic" id="Total_Traffic" value="{{doc.BodyContext.Total_Traffic}}" data-type="mField" data-pattern="currency" class="sum-table-colsum" style="width: 98%; border: none;" readonly="">
+	    </td>
+	</tr>
+	<tr style="display:none;">
+    	<td align="center" colspan="6" style="">
+	        <input type="text" name="Total_Traffic2" id="Total_Traffic2" value="{{doc.BodyContext.Total_Traffic2}}" data-type="mField" data-pattern="currency" data-sum-ref="#Total_Traffic,#mTraffic_Cost" data-formula="+" style="width: 98%; border: none;" readonly="">
+	    </td>
+	</tr>
+</tbody></table>
+
+<table class="table_10 linePlus mt10 multi-row-table RowSumTable tableStyle" id="request_Tbl1"><!-- class="table_10" -->
+	<colgroup>
+		<col style="width:12%">
+		<col style="width:9%">
+		<col style="width:16%">
+		<col style="width:33%">
+		<col style="width:16%">
+		<col style="width:14%">
+	</colgroup>
+	<tbody><tr class="multi-row-control">
+		<td class="multi-row-autospan" style="text-align:center">
+			숙박비<br style="">
+			<input type="button" value="추가" class="usa multi-row-add" data-mode="writeOnly"><!-- onclick="addRow()"  -->
+	   		<input type="button" value="삭제" class="usa multi-row-del-auto" data-mode="writeOnly"><!-- onclick="delRow()"  -->
+		</td>
+		<td align="center">
+			<input type="text" data-type="mField" data-pattern="date" data-date-format="mm-dd" id="mRoom_Date" name="mRoom_Date" style="width:98%; text-align:center;" readonly="" value="{{doc.BodyContext.mRoom_Date}}">
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mRoom_Office">{{doc.BodyContext.mRoom_Office}}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mRoom_Context">{{doc.BodyContext.mRoom_Context}}</textarea>
+		</td>
+		<td align="right">
+			<input type="text" data-type="mField" id="mRoom_Cost" name="mRoom_Cost" data-pattern="currency" class="sum-table-cell" style="width:98%;" value="{{doc.BodyContext.mRoom_Cost}}">
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mRoom_ETC">{{doc.BodyContext.mRoom_ETC}}</textarea>
+		</td>
+	</tr>
+	
+	<tr class="multi-row-template" style="border-top: 1px solid #c3d7df;">
+		<td align="center">
+			<input type="text" data-type="rField" data-pattern="date" data-date-format="mm-dd" name="Room_Date" style="width:98%; text-align:center;" readonly="">
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="Room_Office"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="Room_Context"></textarea>
+		</td>
+		<td align="right">
+			<input type="text" data-type="rField" name="Room_Cost" data-pattern="currency" class="sum-table-cell" style="width:98%;">
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="Room_ETC"></textarea>
+		</td>
+	</tr>
+	<tr style="display:none;">
+    	<td align="center" colspan="6" style="">
+	        <input type="text" name="Total_Room" id="Total_Room" value="{{doc.BodyContext.Total_Room}}" data-type="mField" data-pattern="currency" class="sum-table-colsum" style="width: 98%; border: none;" readonly="">
+	    </td>
+	</tr>
+	<tr style="display:none;">
+    	<td align="center" colspan="6" style="">
+	        <input type="text" name="Total_Room2" id="Total_Room2" value="{{doc.BodyContext.Total_Room2}}" data-type="mField" data-pattern="currency" data-sum-ref="#Total_Room,#mRoom_Cost" data-formula="+" style="width: 98%; border: none;" readonly="">
+	    </td>
+	</tr>
+</tbody></table>
+
+<table class="table_10 linePlus mt10 multi-row-table RowSumTable tableStyle" id="request_Tbl2"><!-- class="table_10" -->
+	<colgroup>
+		<col style="width:12%">
+		<col style="width:9%">
+		<col style="width:16%">
+		<col style="width:33%">
+		<col style="width:16%">
+		<col style="width:14%">
+	</colgroup>
+	<tbody><tr class="multi-row-control">
+		<td class="multi-row-autospan" style="text-align:center">
+			식비<br style="">
+			<input type="button" value="추가" class="usa multi-row-add" data-mode="writeOnly"><!-- onclick="addRow()"  -->
+	   		<input type="button" value="삭제" class="usa multi-row-del-auto" data-mode="writeOnly"><!-- onclick="delRow()"  -->
+		</td>
+		<td align="center">
+			<input type="text" data-type="mField" data-pattern="date" data-date-format="mm-dd" id="mEat_Date" name="mEat_Date" style="width:98%; text-align:center;" readonly="" value="{{doc.BodyContext.mEat_Date}}">
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mEat_Office">{{doc.BodyContext.mEat_Office}}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mEat_Context">{{doc.BodyContext.mEat_Context}}</textarea>
+		</td>
+		<td align="right">
+			<input type="text" data-type="mField" id="mEat_Cost" name="mEat_Cost" data-pattern="currency" class="sum-table-cell" style="width:98%;" value="{{doc.BodyContext.mEat_Cost}}">
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mEat_ETC">{{doc.BodyContext.mEat_ETC}}</textarea>
+		</td>
+	</tr>
+	
+	<tr class="multi-row-template" style="border-top: 1px solid #c3d7df;">
+		<td align="center">
+			<input type="text" data-type="rField" data-pattern="date" data-date-format="mm-dd" name="Eat_Date" style="width:98%; text-align:center;" readonly="">
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="Eat_Office"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="Eat_Context"></textarea>
+		</td>
+		<td align="right">
+			<input type="text" data-type="rField" name="Eat_Cost" data-pattern="currency" class="sum-table-cell" style="width:98%;">
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="Eat_ETC"></textarea>
+		</td>
+	</tr>
+	<tr style="display:none;">
+    	<td align="center" colspan="6" style="">
+	        <input type="text" name="Total_Eat" id="Total_Eat" value="{{doc.BodyContext.Total_Eat}}" data-type="mField" data-pattern="currency" class="sum-table-colsum" style="width: 98%; border: none;" readonly="">
+	    </td>
+	</tr>
+	<tr style="display:none;">
+    	<td align="center" colspan="6" style="">
+	        <input type="text" name="Total_Eat2" id="Total_Eat2" value="{{doc.BodyContext.Total_Eat2}}" data-type="mField" data-pattern="currency" data-sum-ref="#Total_Eat,#mEat_Cost" data-formula="+" style="width: 98%; border: none;" readonly="">
+	    </td>
+	</tr>
+</tbody></table>
+
+
+<table class="table_10 linePlus mt10 multi-row-table RowSumTable tableStyle" id="request_Tbl3"><!-- class="table_10" -->
+	<colgroup>
+		<col style="width:12%">
+		<col style="width:9%">
+		<col style="width:16%">
+		<col style="width:33%">
+		<col style="width:16%">
+		<col style="width:14%">
+	</colgroup>
+	<tbody><tr class="multi-row-control">
+		<td class="multi-row-autospan" style="text-align:center">
+			기타<br style="">
+			<input type="button" value="추가" class="usa multi-row-add" data-mode="writeOnly"><!-- onclick="addRow()"  -->
+	   		<input type="button" value="삭제" class="usa multi-row-del-auto" data-mode="writeOnly"><!-- onclick="delRow()"  -->
+		</td>
+		<td align="center">
+			<input type="text" data-type="mField" data-pattern="date" data-date-format="mm-dd" id="mEtc_Date" name="mEtc_Date" style="width:98%; text-align:center;" readonly="" value="{{doc.BodyContext.mEtc_Date}}">
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mEtc_Office">{{doc.BodyContext.mEtc_Office}}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mEtc_Context">{{doc.BodyContext.mEtc_Context}}</textarea>
+		</td>
+		<td align="right">
+			<input type="text" data-type="mField" id="mEtc_Cost" name="mEtc_Cost" data-pattern="currency" class="sum-table-cell" style="width:98%;" value="{{doc.BodyContext.mEtc_Cost}}">
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mEtc_ETC">{{doc.BodyContext.mEtc_ETC}}</textarea>
+		</td>
+	</tr>
+	
+	<tr class="multi-row-template" style="border-top: 1px solid #c3d7df;">
+		<td align="center">
+			<input type="text" data-type="rField" data-pattern="date" data-date-format="mm-dd" name="Etc_Date" style="width:98%; text-align:center;" readonly="">
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="Etc_Office"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="Etc_Context"></textarea>
+		</td>
+		<td align="right">
+			<input type="text" data-type="rField" name="Etc_Cost" data-pattern="currency" class="sum-table-cell" style="width:98%;">
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="Etc_ETC"></textarea>
+		</td>
+	</tr>
+	<tr style="display:none;">
+    	<td align="center" colspan="6" style="">
+	        <input type="text" name="Total_Etc" id="Total_Etc" value="{{doc.BodyContext.Total_Etc}}" data-type="mField" data-pattern="currency" class="sum-table-colsum" style="width: 98%; border: none;" readonly="">
+	    </td>
+	</tr>
+	<tr style="display:none;">
+    	<td align="center" colspan="6" style="">
+	        <input type="text" name="Total_Etc2" id="Total_Etc2" value="{{doc.BodyContext.Total_Etc2}}" data-type="mField" data-pattern="currency" data-sum-ref="#Total_Etc,#mEtc_Cost" data-formula="+" style="width: 98%; border: none;" readonly="">
+	    </td>
+	</tr>
+
+</tbody></table>
+
+<table class="table_10 linePlus mt10 multi-row-table RowSumTable tableStyle" id="request_Tbl4"><!-- class="table_10" -->
+	<colgroup>
+		<col style="width:12%">
+		<col style="width:9%">
+		<col style="width:16%">
+		<col style="width:33%">
+		<col style="width:16%">
+		<col style="width:14%">
+	</colgroup>
+	<tbody><tr class="multi-row-control">
+		<td class="multi-row-autospan" style="text-align:center">
+			출장수당<br style="">
+			<input type="button" value="추가" class="usa multi-row-add" data-mode="writeOnly"><!-- onclick="addRow()"  -->
+	   		<input type="button" value="삭제" class="usa multi-row-del-auto" data-mode="writeOnly"><!-- onclick="delRow()"  -->
+		</td>
+		<td colspan="3" align="center">
+			<input type="text" data-type="mField" data-pattern="date" readonly="" onchange="calDATE();" style="width:150px;" id="SStart_Date" value="{{doc.BodyContext.SStart_Date}}">&nbsp;~&nbsp;
+			<input type="text" data-type="mField" data-pattern="date" readonly="" onchange="calDATE();" style="width:150px;" id="EEnd_Date" value="{{doc.BodyContext.EEnd_Date}}">&nbsp;
+			(<input type="text" data-type="mField" style="width:35px; border:none;" readonly="" id="TTotal_Day" value="{{doc.BodyContext.TTotal_Day}}">일)		
+		</td>
+		<td align="right">
+			<input type="text" id="mDaily_Cost" value="{{doc.BodyContext.mDaily_Cost}}" data-type="mField" data-pattern="numeral" data-numeral-format="0,0" style="width:98%;">
+		</td>
+		<td>
+			<textarea id="Daily_Etc" data-type="mField" style="width:98%;">{{doc.BodyContext.Dail_Etc}}</textarea>
+		</td>
+	</tr>
+	<tr class="multi-row-template">
+		<td colspan="3" align="center">
+			<input type="text" data-type="rField" data-pattern="date" readonly="" onchange="calSSDATEEDATE(this);" style="width:150px;" name="Start_Date">&nbsp;~&nbsp;
+			<input type="text" data-type="rField" data-pattern="date" readonly="" onchange="calSSDATEEDATE(this);" style="width:150px;" name="End_Date">&nbsp;
+			(<input type="text" data-type="rField" style="width:35px; border:none;" readonly="" name="Total_Day">일)		
+		</td>
+		<td align="right">
+			<input type="text" name="Daily_Cost" data-type="rField" data-pattern="numeral" data-numeral-format="0,0" onkeyup="calDaily(this);" style="width:98%;">
+		</td>
+		<td>
+			<textarea name="Daily_Etc" data-type="rField" style="width:98%;"></textarea>
+		</td>
+	</tr>
+	
+	<tr style="display:none;">
+    	<td align="center" colspan="6" style="">
+	        <input type="text" name="Total_Daily" id="Total_Daily" value="{{doc.BodyContext.Total_Daily }}" data-type="mField" data-pattern="currency" class="sum-table-colsum" style="width: 98%; border: none;" readonly="">
+	    </td>
+	</tr>
+	<tr style="display:none;">
+    	<td align="center" colspan="6" style="">
+	        <input type="text" name="Total_Daily2" id="Total_Daily2" value="{{doc.BodyContext.Total_Daily2 }}" data-type="mField" data-pattern="currency" data-sum-ref="#Total_Daily,#mDaily_Cost"  data-formula="+" style="width: 98%; border: none;" readonly="">
+	    </td>
+	</tr>
+
+	<tr>
+		<td colspan="3" style="border-left:0px; border-bottom:0px;"></td>
+		<th>총 사용금액</th>
+		<td align="right">
+	        <input type="text" name="Total_Cost" id="Total_Cost" data-sum-ref="#Total_Traffic2,#Total_Room2,#Total_Eat2,#Total_Etc2,#Total_Daily2" data-formula="+" value="{{doc.BodyContext.Total_Cost}}" data-type="mField" data-pattern="currency" style="width:98%; border:none;" readonly="">
+	    </td>
+	    <td style="border-right:0px; border-bottom:0px;"></td>	
+	</tr>
+
+</tbody></table>
+<!--실 결재양식 내용 부분 끝 -->

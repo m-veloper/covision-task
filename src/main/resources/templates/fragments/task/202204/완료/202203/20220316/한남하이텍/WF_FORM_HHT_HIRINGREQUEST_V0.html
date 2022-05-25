@@ -1,0 +1,339 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+  <table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+			<colgroup>
+		       <col style="width:10%" />
+		       <col style="width:20%" />
+		       <col style="width:20%" />
+		       <col style="width:15%" />
+		       <col style="width:15%" />
+		       <col style="width:20%" />
+			</colgroup>  
+			
+			 <tr>
+				 <th > 회사명
+				 </th>
+				 <td colspan="2" >
+					<input type="text" id="userCorporation" name="userCorporation" data-type="mField" value="{{ doc.BodyContext.userCorporation }}"    style="width:98%; " >
+		      
+				</td>
+			 
+		    	<th > 본부/팀</th>
+				<td  colspan="2">
+					<input type="text" id="userDept" name="userDept" data-type="mField" value="{{ doc.BodyContext.userDept }}"    style="width:98%; " >
+		      
+				</td>
+				
+		    </tr>
+		     <tr>
+				<th rowspan="2"> 채용사유
+				</th>
+				<th > 증원사유
+				</th>
+				<th > 결원사유
+				</th>
+				<th colspan="3"> 채용 상세 사유
+				</th>
+				
+		    </tr>
+		    <tr>
+		    	 <td >
+					<select name="div_added_hiring" data-type="mField" data-element-type="sel_d_v" style="width: 98%;"  value="{{ doc.BodyContext.div_added_hiring }}"  >
+		    			<option value="선택">선택</option>
+		    			<option value="프로젝트수주">프로젝트수주</option>
+		    			<option value="부서증원">부서증원</option>
+		    		</select>
+				</td>
+				 <td  >
+					<select name="div_vacancy" data-type="mField" data-element-type="sel_d_v" style="width: 98%;"  value="{{ doc.BodyContext.div_vacancy }}"  >
+		    			<option value="선택">선택</option>
+		    			<option value="퇴사">퇴사</option>
+		    			<option value="부서이동">부서이동</option>
+		    			<option value="휴직">휴직</option>
+		    		</select>
+				</td>
+				 <td colspan="3" >
+					<textarea id="hirigDetail" data-type="mField"  style="width: 98%;height:80px">{{ doc.BodyContext.hirigDetail }}</textarea>
+				</td>
+		    </tr>
+		    <tr>
+		   		<th>일반/긴급</th>
+		   		<td>
+		   			<select name="div_emergency" data-type="mField" data-element-type="sel_d_v" style="width: 98%;"  value="{{ doc.BodyContext.div_emergency }}"  >
+		    			<option value="선택">선택</option>
+		    			<option value="일반">일반</option>
+		    			<option value="긴급">긴급</option>
+		    		</select>
+		   		
+		   		</td>
+		   		<th>긴급채용<br>요청사유</th>
+		   		<td colspan="3">
+		   			<textarea id="emergencyReason" data-type="mField"style="width: 98%;height:80px">{{ doc.BodyContext.emergencyReason }}</textarea>
+		   		</td>
+		    </tr>
+		    <tr>
+		    	<th rowspan="2">채용채널</th>
+		    	<td colspan="2">
+			    	 <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1" ><br>
+		                <input type="checkbox" id="chkBox_01" name="chkBox_1" value="잡포탈(잡코리아, 사람인)">&nbsp;잡포탈(잡코리아, 사람인)&nbsp;<br><br>
+		                <input type="checkbox" id="chkBox_02" name="chkBox_1" value="사내 Job Posting">&nbsp;사내 Job Posting&nbsp;<br><br>
+		                <input type="checkbox" id="chkBox_03" name="chkBox_1" value="기타 채용플랫폼">&nbsp;기타 채용플랫폼&nbsp;<br><br>
+		                <input type="checkbox" id="chkBox_04" name="chkBox_1" value="서치펌">&nbsp;서치펌&nbsp;<br><br>
+		           	 </div>
+		    	</td>
+		    	<th >기타<br>채용플랫폼</th>
+		    	<td colspan="2">
+		    		<textarea id="etcPlatform" data-type="mField"  placeholder="ex. 프로그래머스,  &#13;&#10; 원티드, 로켓펀치 등" style="width: 98%;height:150px">{{ doc.BodyContext.etcPlatform }}</textarea>
+		    	</td>
+		    </tr>
+		    <tr>
+		    	
+		    	<td colspan="5">
+		    	※ 기타 채용플랫폼, 서치펌의 경우 채용 시 채용수수료가 발생할 수 있으며 	<br>
+		    	해당 수수료는 사업부에서 지출결의서 상신을 통해 지급								
+		    	</td>
+		    </tr>
+		    
+		     <tr>
+		    	
+		    	<th colspan="2">채용직무</th>
+		    	<th>인원</th>
+		    	<th>고용형태</th>
+		    	<th>계약기간</th>
+		    	<th>연장/전환<br>가능성</th>
+		    </tr>
+		    
+		    <tr>
+		    	
+		    	<td colspan="2">
+		    		<input type="text" id="workDiv" name="workDiv" data-type="mField" value="{{ doc.BodyContext.workDiv }}"    style="width:98%; " >		      	
+		    	</td>
+		    	<td>
+		    		<input type="text" id="workPersonCnt" name="workPersonCnt" data-type="mField" value="{{ doc.BodyContext.workPersonCnt }}"    style="width:88%; " >명		      	
+		    	</td>
+		    	<td>
+		    		<select name="div_hiring" data-type="mField" data-element-type="sel_d_v" style="width: 98%;"  value="{{ doc.BodyContext.div_hiring }}"  >
+		    			<option value="선택">선택</option>
+		    			<option value="정규직">정규직</option>
+		    			<option value="계약직(인턴)">계약직(인턴)</option>
+		    			<option value="계약직(경력)">계약직(경력)</option>
+		    		</select>		      	
+		    	</td>
+		    	<td>
+		    		<input type="text" id="contractTerm" name="contractTerm" data-type="mField" value="{{ doc.BodyContext.contractTerm }}"    style="width:70%; " >개월		      	
+		    	</td>
+		    	<td>
+		    		<select name="div_extension" data-type="mField" data-element-type="sel_d_v" style="width: 98%;"  value="{{ doc.BodyContext.div_extension }}"  >
+		    			<option value="선택">선택</option>
+		    			<option value="불가">불가</option>
+		    			<option value="계약 연장가능">계약 연장가능</option>
+		    			<option value="정규직 전환 가능">정규직 전환 가능</option>
+		    		</select>	
+		    	</td>
+		    </tr>
+		    <tr>
+		    <td colspan="6">
+				    ※고용형태<br>									
+				- 정규직: 수습 3개월 필수 / 계약직: 계약기간을 정한 근로자<br>										
+				- 계약기간, 연장/전환가능성은 계약직의 경우에만 기재<br>
+		    </td>
+		    </tr>
+		    
+		    
+	</table>	
+	
+	
+	  <table class="tableStyle linePlus "><!-- class="table_10" -->
+
+			<colgroup>
+		       <col style="width:10%" />
+		       <col style="width:10%" />
+		       <col style="width:10%" />
+		       <col style="width:20%" />
+		       <col style="width:15%" />
+		       <col style="width:15%" />
+		       <col style="width:20%" />
+			</colgroup>  
+			  <tr>
+		    	
+		    	<th colspan="2">선호경력</th>
+		    	<th colspan="2">경력추가사항</th>
+		    	<th colspan="2">부서희망 연봉수준</th>
+		    	<th>채용희망<br>일자</th>
+		    </tr>
+		    
+		    <tr>
+		    	
+		    	<td colspan="2">
+		    		<select name="div_prefer_career" data-type="mField" data-element-type="sel_d_v" style="width: 98%;"  value="{{ doc.BodyContext.div_prefer_career }}"  >
+		    			<option value="선택">선택</option>
+		    			<option value="신입">신입</option>
+		    			<option value="1년~3년">1년~3년</option>
+		    			<option value="3년~5년">3년~5년</option>
+		    			<option value="5년~7년">5년~7년</option>
+		    			<option value="7년~9년">7년~9년</option>
+		    			<option value="9년 이상">9년 이상</option>		    			
+		    		</select>
+		    	</td>
+		    	<td colspan="2">
+		    		<select name="div_career_added" data-type="mField" data-element-type="sel_d_v" style="width: 98%;"  value="{{ doc.BodyContext.div_career_added }}"  >
+		    			<option value="선택">선택</option>
+		    			<option value="선호 경력 이상 가능">선호 경력 이상 가능</option>
+		    			<option value="선호 경력 이하 가능">선호 경력 이하 가능</option>	
+		    			<option value="선호 경력 이상/이하 무관">선호 경력 이상/이하 무관</option>			
+		    		</select>
+		    	</td>
+		    	<td colspan="2">
+		    			<input type="text" id="wantedPay" name="wantedPay" data-type="mField" value="{{ doc.BodyContext.wantedPay }}"  placeholder="ex. 2,400~2,600만원"  style="width:98%; " >		      	
+		    	</td>
+		    	<td>
+		    		<input type="text" id="wantedhiringDay" name="wantedhiringDay" data-type="mField" value="{{ doc.BodyContext.wantedhiringDay }}"  placeholder="년  월"  style="width:98%; " >		      	
+		    	</td>
+		    </tr>
+		    
+		    <tr>
+		    	<th rowspan="3">담당<br>직무</th>
+		    	<td rowspan="3" colspan="3">
+		    		<input type="text" id="chargePosition" name="chargePosition" data-type="mField" value="{{ doc.BodyContext.chargePosition }}"  style="width:98%; " >
+		    	</td>
+		    	<th rowspan="3">주요<br>업무비중(%)</th>
+		    	<td>
+		    		<select name="div_importance1" data-type="mField" data-element-type="sel_d_v" style="width: 98%;"  value="{{ doc.BodyContext.div_importance1 }}"  >
+		    			<option value="선택">선택</option>
+		    			<option value="10%">10%</option>
+		    			<option value="20%">20%</option>
+		    			<option value="30%">30%</option>
+		    			<option value="40%">40%</option>
+		    			<option value="50%">50%</option>
+		    			<option value="60%">60%</option>
+		    			<option value="70%">70%</option>
+		    			<option value="80%">80%</option>
+		    			<option value="90%">90%</option>
+		    			<option value="100%">100%</option>
+		    		</select>
+		    	</td>
+		    	<td>
+		    		<input type="text" id="importance1" name="importance1" data-type="mField" value="{{ doc.BodyContext.importance1}}"  placeholder="ex. SA 운영"  style="width:98%; " >
+		    	</td>
+		    </tr>
+		    <tr>
+		    	<td>
+		    	<select name="div_importance2" data-type="mField" data-element-type="sel_d_v" style="width: 98%;"  value="{{ doc.BodyContext.div_importance1 }}"  >
+		    			<option value="선택">선택</option>
+		    			<option value="10%">10%</option>
+		    			<option value="20%">20%</option>
+		    			<option value="30%">30%</option>
+		    			<option value="40%">40%</option>
+		    			<option value="50%">50%</option>
+		    			<option value="60%">60%</option>
+		    			<option value="70%">70%</option>
+		    			<option value="80%">80%</option>
+		    			<option value="90%">90%</option>
+		    			<option value="100%">100%</option>
+		    		</select>
+		    	</td>
+		    	<td>
+		    		<input type="text" id="importance2" name="importance1" data-type="mField" value="{{ doc.BodyContext.importance2 }}"  placeholder="ex. DA 기획/운영"  style="width:98%; " >
+		    	</td>
+		    </tr>
+		     <tr>
+		    	<td>
+		    		<select name="div_importance3" data-type="mField" data-element-type="sel_d_v" style="width: 98%;"  value="{{ doc.BodyContext.div_importance1 }}"  >
+		    			<option value="선택">선택</option>
+		    			<option value="10%">10%</option>
+		    			<option value="20%">20%</option>
+		    			<option value="30%">30%</option>
+		    			<option value="40%">40%</option>
+		    			<option value="50%">50%</option>
+		    			<option value="60%">60%</option>
+		    			<option value="70%">70%</option>
+		    			<option value="80%">80%</option>
+		    			<option value="90%">90%</option>
+		    			<option value="100%">100%</option>
+		    		</select>
+		    	</td>
+		    	<td>
+		    		<input type="text" id="importance3" name="importance1" data-type="mField" value="{{ doc.BodyContext.importance3 }}"  placeholder="ex. SNS 기획/운영"  style="width:98%; " >
+		    	</td>
+		    </tr>
+		    
+		    <tr>
+			    <th>업무내용</th>
+			    <td colspan="6">
+			    	<textarea id="workComment" data-type="mField"  placeholder="실제 담당 프로젝트에 맞추어 구체적으로 기재" style="width: 98%;height:120px">{{ doc.BodyContext.workComment }}</textarea>
+			    </td>
+		    </tr>
+		    <tr>
+			    <th>자격요건</th>
+			    <td colspan="6">
+			    	<textarea id="taskEligible" data-type="mField"  placeholder="채용에 필요한 최소한의 해당 직무, 기술, 프로그램 및 경력사항 등 &#13;&#10; 이력서 검토시 필수 요청사항 기입 (ex. 자격증, 업종경력 등)" style="width: 98%;height:120px">{{ doc.BodyContext.taskEligible }}</textarea>
+			    </td>
+		    </tr>
+		    <tr>
+			    <th>우대요건</th>
+			    <td colspan="6">
+			    	<textarea id="taskAdventage" data-type="mField"  placeholder="현재 사용 중인 프로그램 혹은 요구되는 경력이나 &#13;&#10; 자격요건을 갖추면 내부적인 가이드, 교육이 가능한 요건)" style="width: 98%;height:120px">{{ doc.BodyContext.taskAdventage }}</textarea>
+			    </td>
+		    </tr>
+		    <tr>
+			    <th>직무관련<br>가이드</th>
+			    <td colspan="6">
+			    	<textarea id="taskGuide" data-type="mField" placeholder="자격증, 직무명, 포지션명, 주요 사용 프로그램, 기술 등 기재 &#13;&#10; (ex. 디지털마케팅, AE, Google Analytics, GAIQ, 페이스북 광고, SA, DA)" style="width: 98%;height:120px">{{ doc.BodyContext.taskGuide }}</textarea>
+			    </td>
+		    </tr>
+		    
+		   
+		</table>    
+		
+		<table class="tableStyle linePlus "><!-- class="table_10" -->
+
+			<colgroup>
+		       <col style="width:10%" />
+		       <col style="width:30%" />
+		       <col style="width:20%" />
+		       <col style="width:20%" />
+		       <col style="width:20%" />
+			</colgroup> 
+			<tr>
+				<th>부서<br>선호학과
+				</th>
+				<td>
+					<select name="div_dept_prefer" data-type="mField" data-element-type="sel_d_v" style="width: 98%;"  value="{{ doc.BodyContext.div_dept_prefer }}"  >
+		    			<option value="선택">선택</option>	
+		    			<option value="무관">무관</option>		
+		    			<option value="선호학과">선호학과</option>		
+		    			<option value="필수학과">필수학과</option>		
+		    		</select>
+				</td>
+		    	<td>
+		    		<input type="text" id="deptPrefer" name="deptPrefer" data-type="mField" value="{{ doc.BodyContext.deptPrefer }}"   style="width:98%; " >
+		    	</td>
+		    	<th>선호학력</th>
+		    	<td>
+		    		<select name="div_prefer_edu_career" data-type="mField" data-element-type="sel_d_v" style="width: 98%;"  value="{{ doc.BodyContext.div_prefer_edu_career }}"  >
+		    			<option value="선택">선택</option>	
+		    			<option value="고졸 이상">고졸 이상</option>		
+		    			<option value="전문학사 이상">전문학사 이상</option>		
+		    			<option value="학사 이상">학사 이상</option>		
+		    			<option value="석사 이상 ">석사 이상 </option>
+		    		</select>
+		    	</td>
+			</tr>
+			
+			<tr>
+			    <th>부서</th>
+			    <td colspan="4">
+			   	 	<textarea id="deptCommnet" data-type="mField" placeholder="공고상 노출되지는 않으나 담당 프로젝트, 팀 구성 등 채용 시 팀 내 선호사항" style="width: 98%;height:80px">{{ doc.BodyContext.deptCommnet }}</textarea>
+			    
+			    </td>
+		    </tr>
+		    <tr>
+			    <th>동종업계<br>회사명</th>
+			    <td colspan="4">
+			    	<textarea id="similarCompanyName" data-type="mField" style="width: 98%;height:80px">{{ doc.BodyContext.similarCompanyName }}</textarea>
+			    
+			    </td>
+		    </tr>
+		</table>
+<!--실 결재양식 내용 부분 끝 -->

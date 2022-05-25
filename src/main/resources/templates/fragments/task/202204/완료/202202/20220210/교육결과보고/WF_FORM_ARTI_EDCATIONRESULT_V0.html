@@ -1,0 +1,75 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+		<colgroup>
+			<col style="width:15%" />
+	       	<col style="width:35%" />
+	       	<col style="width:15%" />
+	       	<col style="width:35%" />
+		</colgroup> 
+		
+		
+		<tr>
+			<th>교육명
+			</th>
+			<td colspan ="3" >
+	         <input type="text" data-type="mField" id="educationName" name = "educationName" value="{{ doc.BodyContext.educationName }}" size="10" style="width : 95%" >
+		
+	        </td>
+	       
+	       	
+		</tr>
+		<tr>
+			
+	        <th>교육기관
+			</th>
+			<td colspan ="3"  >
+			<input type="text" id="educationCompany" name="educationCompany" data-type="mField" value="{{ doc.BodyContext.educationCompany }}"    style="width:95%; " >
+	           
+			</td>
+	       	
+		</tr>
+		
+		
+	       	
+		</tr> 
+		
+		
+		<tr>
+			<th>교육시작일
+			</th>
+			<td  >
+	          <input type="text" data-type="mField" id="startDay" title ="교육시작일" name = "startDay" value="{{ doc.BodyContext.startDay }}"  size="10" style="width : 50%" data-pattern="date"  onchange="calSDATEEDATE('this');" >
+	        </td>
+	        <th>교육종료일
+			</th>
+			<td  >
+	           <input type="text" data-type="mField" id="closeDay" title ="교육종료일" name = "closeDay" value="{{ doc.BodyContext.closeDay }}" size="10" style="width : 50%" data-pattern="date"  onchange="calSDATEEDATE('this');" >
+	        </td>
+	       	
+		</tr> 
+		
+		<tr style="height:150px; ">
+		<th style="height:150px; " >교육내용</th>
+		 
+        <td colspan="3"style="height:150px;min-height:100px; word-break:break-all;">
+            <textarea id="educationContents" data-type="mField" rows="8" style="overflow: auto; width: 98%;">{{ doc.BodyContext.educationContents }}</textarea>
+        </td>
+		</tr>
+		
+		
+		<tr style="height:150px; ">
+		<th  style="height:150px; " >교육소감</th>
+		 
+        <td colspan="3"style="height:150px;min-height:100px; word-break:break-all;">
+            <textarea id="educationOpinion" data-type="mField" rows="8" style="overflow: auto; width: 98%;">{{ doc.BodyContext.educationOpinion }}</textarea>
+        </td>
+		</tr>
+
+
+</table>
+
+
+   
+<!--실 결재양식 내용 부분 끝 -->

@@ -1,0 +1,489 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+
+	
+
+<table class="table_10 linePlus mt10 multi-row-table RowSumTable tableStyle" id="request_Tbl"><!-- class="table_10" -->
+	<colgroup>
+       <col style="width:12%">
+		<col style="width:20%">
+		<col style="width:12%">
+		<col style="width:20%">
+		<col style="width:12%">
+		<col style="width:24%">
+    </colgroup>
+	<tbody>
+	<tr>
+		<td colspan="7" style="text-align:center; font-size:16px; font-weight:bold; border-left: none; border-right: none; border-top: none;  ">
+			코스관리 주간 업무계획
+		</td>
+	</tr>
+	<tr>
+		<th>현장명 : 
+		</th>
+		<td colspan="6" >
+			<input type="text" data-type="mField" id="courselocal" name = "courselocal" value="{{ doc.BodyContext.courselocal }}" style="width : 98%" >
+		</td>
+	</tr>
+	
+
+	<tr>
+		<th rowspan ="2">구분</th>
+		<th colspan ="2" style ="border-bottom: none;">지난주 실시사항
+			<div>
+			( <input type="text" data-type="mField" id="beforestartDay" name = "beforestartDay" value="{{ doc.BodyContext.beforestartDay }}" readonly="" size="10" style="width : 35%; " data-pattern="date" data-date-format="mm월 dd일"  >
+			~
+			<input type="text" data-type="mField" id="beforeendDay" name = "beforeendDay" value="{{ doc.BodyContext.beforeendDay }}" readonly="" size="10" style="width : 35% ; " data-pattern="date" data-date-format="mm월 dd일"  >
+			)
+			</div>
+		</th>
+		<th colspan ="2" style ="border-bottom: none;">금주 예정사항
+			<div>
+			( <input type="text" data-type="mField" id="weekstartDay" name = "weekstartDay" value="{{ doc.BodyContext.weekstartDay }}" readonly="" size="10" style="width : 35%;  " data-pattern="date" data-date-format="mm월 dd일"  >
+			~
+			<input type="text" data-type="mField" id="weekendDay" name = "weekendDay" value="{{ doc.BodyContext.weekendDay }}" readonly="" size="10" style="width : 35% ; " data-pattern="date" data-date-format="mm월 dd일"  >
+			)
+			</div>
+		</th>
+		<th rowspan ="2">비고</th>
+	</tr>
+	
+	<tr>
+		<th >작업내용</th>
+		<th >진척사항</th>
+		<th >작업내용</th>
+		<th >예정일</th>
+	</tr>
+	
+	<tr class="multi-row-control">
+		<th class="multi-row-autospan" style="text-align:center">
+			GREEN<br style="">
+			<input type="button" value="추가" class="usa multi-row-add" data-mode="writeOnly"><!-- onclick="addRow()"  -->
+	   		<input type="button" value="삭제" class="usa multi-row-del-auto" data-mode="writeOnly"><!-- onclick="delRow()"  -->
+		</th>
+		
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mgreenBeforeWorkComment">{{ doc.BodyContext.mgreenBeforeWorkComment }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mgreenBeforeProgression">{{ doc.BodyContext.mgreenBeforeProgression }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mgreenWeekComment">{{ doc.BodyContext.mgreenWeekComment }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mgreenWeekSchedule">{{ doc.BodyContext.mgreenWeekSchedule }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mgreenRmk">{{ doc.BodyContext.mgreenRmk }}</textarea>
+		</td>
+	</tr>	
+	<tr class="multi-row-template" style="border-top: 1px solid #c3d7df;">
+		
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="greenBeforeWorkComment"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="greenBeforeProgression"></textarea>
+		</td>
+		<td >
+			<textarea data-type="rField" rows="2" style="width:98%" name="greenWeekComment"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="greenWeekSchedule"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="greenRmk"></textarea>
+		</td>
+	</tr>
+	
+</tbody></table>
+
+
+
+<table class="table_10 linePlus mt10 multi-row-table RowSumTable tableStyle" id="request_Tbl1"><!-- class="table_10" -->
+	<colgroup>
+		<col style="width:12%">
+		<col style="width:20%">
+		<col style="width:12%">
+		<col style="width:20%">
+		<col style="width:12%">
+		<col style="width:24%">
+	</colgroup>
+	<tbody><tr class="multi-row-control">
+		<th class="multi-row-autospan" style="text-align:center">
+			TeeApron<br style="">
+			<input type="button" value="추가" class="usa multi-row-add" data-mode="writeOnly"><!-- onclick="addRow()"  -->
+	   		<input type="button" value="삭제" class="usa multi-row-del-auto" data-mode="writeOnly"><!-- onclick="delRow()"  -->
+		</th>
+		
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mTeeApronBeforeWorkComment">{{ doc.BodyContext.mTeeApronBeforeWorkComment }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mTeeApronBeforeProgression">{{ doc.BodyContext.mTeeApronBeforeProgression }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mTeeApronWeekComment">{{ doc.BodyContext.mTeeApronWeekComment }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mTeeApronWeekSchedule">{{ doc.BodyContext.mTeeApronWeekSchedule }}</textarea>
+		</td>
+			<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mTeeApronRmk">{{ doc.BodyContext.mTeeApronRmk }}</textarea>
+		</td>
+	</tr>	
+	<tr class="multi-row-template" style="border-top: 1px solid #c3d7df;">
+		
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="TeeApronBeforeWorkComment"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="TeeApronBeforeProgression"></textarea>
+		</td>
+		<td >
+			<textarea data-type="rField" rows="2" style="width:98%" name="TeeApronWeekComment"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="TeeApronWeekSchedule"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="TeeApronRmk"></textarea>
+		</td>
+	</tr>
+	
+</tbody></table>
+
+
+
+<table class="table_10 linePlus mt10 multi-row-table RowSumTable tableStyle" id="request_Tbl2"><!-- class="table_10" -->
+	<colgroup>
+		<col style="width:12%">
+		<col style="width:20%">
+		<col style="width:12%">
+		<col style="width:20%">
+		<col style="width:12%">
+		<col style="width:24%">
+	</colgroup>
+	<tbody><tr class="multi-row-control">
+		<th class="multi-row-autospan" style="text-align:center">
+			Fairway<br style="">
+			<input type="button" value="추가" class="usa multi-row-add" data-mode="writeOnly"><!-- onclick="addRow()"  -->
+	   		<input type="button" value="삭제" class="usa multi-row-del-auto" data-mode="writeOnly"><!-- onclick="delRow()"  -->
+		</th>
+		
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mFairwayBeforeWorkComment">{{ doc.BodyContext.mFairwayBeforeWorkComment }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mFairwayBeforeProgression">{{ doc.BodyContext.mFairwayBeforeProgression }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mFairwayWeekComment">{{ doc.BodyContext.mFairwayWeekComment }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mFairwayWeekSchedule">{{ doc.BodyContext.mFairwayWeekSchedule }}</textarea>
+		</td>
+			<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mFairwayRmk">{{ doc.BodyContext.mFairwayRmk }}</textarea>
+		</td>
+	</tr>	
+	<tr class="multi-row-template" style="border-top: 1px solid #c3d7df;">
+		
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="FairwayBeforeWorkComment"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="FairwayBeforeProgression"></textarea>
+		</td>
+		<td >
+			<textarea data-type="rField" rows="2" style="width:98%" name="FairwayWeekComment"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="FairwayWeekSchedule"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="FairwayRmk"></textarea>
+		</td>
+	</tr>
+	
+</tbody></table>
+
+
+<table class="table_10 linePlus mt10 multi-row-table RowSumTable tableStyle" id="request_Tbl3"><!-- class="table_10" -->
+	<colgroup>
+		<col style="width:12%">
+		<col style="width:20%">
+		<col style="width:12%">
+		<col style="width:20%">
+		<col style="width:12%">
+		<col style="width:24%">
+	</colgroup>
+	<tbody><tr class="multi-row-control">
+		<th class="multi-row-autospan" style="text-align:center">
+			Rough<br style="">
+			<input type="button" value="추가" class="usa multi-row-add" data-mode="writeOnly"><!-- onclick="addRow()"  -->
+	   		<input type="button" value="삭제" class="usa multi-row-del-auto" data-mode="writeOnly"><!-- onclick="delRow()"  -->
+		</th>
+		
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mRoughBeforeWorkComment">{{ doc.BodyContext.mRoughBeforeWorkComment }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mRoughBeforeProgression">{{ doc.BodyContext.mRoughBeforeProgression }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mRoughWeekComment">{{ doc.BodyContext.mRoughWeekComment }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mRoughWeekSchedule">{{ doc.BodyContext.mRoughWeekSchedule }}</textarea>
+		</td>
+			<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mRoughRmk">{{ doc.BodyContext.mRoughRmk }}</textarea>
+		</td>
+	</tr>	
+	<tr class="multi-row-template" style="border-top: 1px solid #c3d7df;">
+		
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="RoughBeforeWorkComment"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="RoughBeforeProgression"></textarea>
+		</td>
+		<td >
+			<textarea data-type="rField" rows="2" style="width:98%" name="RoughWeekComment"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="RoughWeekSchedule"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="RoughRmk"></textarea>
+		</td>
+	</tr>
+	
+</tbody></table>
+
+<table class="table_10 linePlus mt10 multi-row-table RowSumTable tableStyle" id="request_Tbl4"><!-- class="table_10" -->
+	<colgroup>
+		<col style="width:12%">
+		<col style="width:20%">
+		<col style="width:12%">
+		<col style="width:20%">
+		<col style="width:12%">
+		<col style="width:24%">
+	</colgroup>
+	<tbody><tr class="multi-row-control">
+		<th class="multi-row-autospan" style="text-align:center">
+			조경<br style="">
+			<input type="button" value="추가" class="usa multi-row-add" data-mode="writeOnly"><!-- onclick="addRow()"  -->
+	   		<input type="button" value="삭제" class="usa multi-row-del-auto" data-mode="writeOnly"><!-- onclick="delRow()"  -->
+		</th>
+		
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mLandScapeBeforeWorkComment">{{ doc.BodyContext.mLandScapeBeforeWorkComment }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mLandScapeBeforeProgression">{{ doc.BodyContext.mLandScapeBeforeProgression }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mLandScapehWeekComment">{{ doc.BodyContext.mLandScapehWeekComment }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mLandScapeWeekSchedule">{{ doc.BodyContext.mLandScapeWeekSchedule }}</textarea>
+		</td>
+			<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mLandScapeRmk">{{ doc.BodyContext.mLandScapeRmk }}</textarea>
+		</td>
+	</tr>	
+	<tr class="multi-row-template" style="border-top: 1px solid #c3d7df;">
+		
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="LandScapeBeforeWorkComment"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="LandScapeBeforeProgression"></textarea>
+		</td>
+		<td >
+			<textarea data-type="rField" rows="2" style="width:98%" name="LandScapeWeekComment"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="LandScapeWeekSchedule"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="LandScapeRmk"></textarea>
+		</td>
+	</tr>
+	
+</tbody></table>
+
+
+<table class="table_10 linePlus mt10 multi-row-table RowSumTable tableStyle" id="request_Tbl5"><!-- class="table_10" -->
+	<colgroup>
+		<col style="width:12%">
+		<col style="width:20%">
+		<col style="width:12%">
+		<col style="width:20%">
+		<col style="width:12%">
+		<col style="width:24%">
+	</colgroup>
+	<tbody><tr class="multi-row-control">
+		<th class="multi-row-autospan" style="text-align:center">
+			S / K<br style="">
+			<input type="button" value="추가" class="usa multi-row-add" data-mode="writeOnly"><!-- onclick="addRow()"  -->
+	   		<input type="button" value="삭제" class="usa multi-row-del-auto" data-mode="writeOnly"><!-- onclick="delRow()"  -->
+		</th>
+		
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mSKBeforeWorkComment">{{ doc.BodyContext.mSKBeforeWorkComment }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mSKBeforeProgression">{{ doc.BodyContext.mSKBeforeProgression }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mSKhWeekComment">{{ doc.BodyContext.mSKhWeekComment }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mSKWeekSchedule">{{ doc.BodyContext.mSKWeekSchedule }}</textarea>
+		</td>
+			<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mSKRmk">{{ doc.BodyContext.mSKRmk }}</textarea>
+		</td>
+	</tr>	
+	<tr class="multi-row-template" style="border-top: 1px solid #c3d7df;">
+		
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="SKBeforeWorkComment"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="SKBeforeProgression"></textarea>
+		</td>
+		<td >
+			<textarea data-type="rField" rows="2" style="width:98%" name="SKWeekComment"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="SKWeekSchedule"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="SKRmk"></textarea>
+		</td>
+	</tr>
+	
+</tbody></table>
+
+
+<table class="table_10 linePlus mt10 multi-row-table RowSumTable tableStyle" id="request_Tbl6"><!-- class="table_10" -->
+	<colgroup>
+		<col style="width:12%">
+		<col style="width:20%">
+		<col style="width:12%">
+		<col style="width:20%">
+		<col style="width:12%">
+		<col style="width:24%">
+	</colgroup>
+	<tbody><tr class="multi-row-control">
+		<th class="multi-row-autospan" style="text-align:center">
+			장비<br style="">
+			<input type="button" value="추가" class="usa multi-row-add" data-mode="writeOnly"><!-- onclick="addRow()"  -->
+	   		<input type="button" value="삭제" class="usa multi-row-del-auto" data-mode="writeOnly"><!-- onclick="delRow()"  -->
+		</th>
+		
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mEquipmentBeforeWorkComment">{{ doc.BodyContext.mEquipmentBeforeWorkComment }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mEquipmentProgression">{{ doc.BodyContext.mEquipmentProgression }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mEquipmentComment">{{ doc.BodyContext.mEquipmentComment }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mEquipmentSchedule">{{ doc.BodyContext.mEquipmentSchedule }}</textarea>
+		</td>
+			<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mEquipmentRmk">{{ doc.BodyContext.mEquipmentRmk }}</textarea>
+		</td>
+	</tr>	
+	<tr class="multi-row-template" style="border-top: 1px solid #c3d7df;">
+		
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="EquipmentBeforeWorkComment"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="EquipmentBeforeProgression"></textarea>
+		</td>
+		<td >
+			<textarea data-type="rField" rows="2" style="width:98%" name="EquipmentWeekComment"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="EquipmentWeekSchedule"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="EquipmentRmk"></textarea>
+		</td>
+	</tr>
+	
+</tbody></table>
+
+
+<table class="table_10 linePlus mt10 multi-row-table RowSumTable tableStyle" id="request_Tbl7"><!-- class="table_10" -->
+	<colgroup>
+		<col style="width:12%">
+		<col style="width:20%">
+		<col style="width:12%">
+		<col style="width:20%">
+		<col style="width:12%">
+		<col style="width:24%">
+	</colgroup>
+	<tbody><tr class="multi-row-control">
+		<th class="multi-row-autospan" style="text-align:center">
+			기타<br style="">
+			<input type="button" value="추가" class="usa multi-row-add" data-mode="writeOnly"><!-- onclick="addRow()"  -->
+	   		<input type="button" value="삭제" class="usa multi-row-del-auto" data-mode="writeOnly"><!-- onclick="delRow()"  -->
+		</th>
+		
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mEtcBeforeWorkComment">{{ doc.BodyContext.mEtcBeforeWorkComment }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mEtcProgression">{{ doc.BodyContext.mEtcProgression }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mEtcComment">{{ doc.BodyContext.mEtcComment }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mEtcSchedule">{{ doc.BodyContext.mEtcSchedule }}</textarea>
+		</td>
+			<td>
+			<textarea data-type="mField" rows="2" style="width:98%" id="mEtcRmk">{{ doc.BodyContext.mEtcRmk }}</textarea>
+		</td>
+	</tr>	
+	<tr class="multi-row-template" style="border-top: 1px solid #c3d7df;">
+		
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="EtcComment"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="EtcBeforeProgression"></textarea>
+		</td>
+		<td >
+			<textarea data-type="rField" rows="2" style="width:98%" name="EtcWeekComment"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="EtcWeekSchedule"></textarea>
+		</td>
+		<td>
+			<textarea data-type="rField" rows="2" style="width:98%" name="EtcRmk"></textarea>
+		</td>
+	</tr>
+	
+</tbody>
+<tr>
+    	<th>본사 지원 <br>요청 사항</th>
+		<td colspan="5" >
+         <textarea data-type="mField" id="mainCompanyRequest" style="width:99%" rows="3" required>{{ doc.BodyContext.mainCompanyRequest }}</textarea>
+		</td>
+    </tr>
+</table>
+
+
+<!--실 결재양식 내용 부분 끝 -->

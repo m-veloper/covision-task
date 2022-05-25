@@ -1,0 +1,292 @@
+<!--실 결재양식 내용 부분 시작 -->
+   <table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+	   <colgroup>
+	    	<col style="width:12%">
+	    	<col style="width:23%">
+	    	<col style="width:12%">
+	    	<col style="width:23%">
+	    	<col style="width:12%">
+	    	<col style="width:*">
+	    </colgroup>
+
+			
+	<tr>
+		<th>과제분류
+		</th>
+		<td > 
+			<select name="div_task" data-type="mField" data-element-type="sel_d_v" style="width: 98%;"  value="{{ doc.BodyContext.div_task }}"  >
+    			<option value="내부파이프라인">내부파이프라인</option>
+    			<option value="외주용역">외주용역</option>
+    			<option value="해당없음">해당없음</option>
+    		</select>
+		</td>
+		<th>과제상세
+		</th>
+		<td >
+			<textarea id="detailCommnet"  rows="2" data-type="mField" style="width: 98%;height:98%;" placeholder="과제분류에 따른 상세내역 기재(재무팀 공지)">{{ doc.BodyContext.detailCommnet}}</textarea>      
+		</td>
+		
+		
+		<th>통화
+		</th>
+		<td > 
+			<select name="div_money" data-type="mField" data-element-type="sel_d_v" style="width: 98%;"  value="{{ doc.BodyContext.div_money }}"  >
+    			<option value="KRW">KRW</option>
+    			<option value="USD">USD</option>
+    			<option value="JPY">JPY</option>
+    			<option value="EUR">EUR</option>
+    			<option value="CNY">CNY</option>
+    			<option value="GBP">GBP</option>
+    		</select>
+		</td>
+	</tr>
+	<tr>
+		<th rowspan="3">거래처명
+		</th>
+		<td  rowspan="3">       
+			<textarea id="companyName"  rows="2" data-type="mField" style="width: 98%;" placeholder="사업자등록증참고">{{ doc.BodyContext.companyName }}</textarea>      
+		
+		</td>
+		<th rowspan="3">거래처담당자
+		</th>
+		<td>
+			<input type="text" id="managerName" name="managerName" data-type="mField" value="{{ doc.BodyContext.managerName }}"   placeholder="이름" style="width:98%; " >        
+		</td>
+		<th>비용성격
+		</th>
+		<td > 
+			<select name="div_money_purpose" data-type="mField" data-element-type="sel_d_v" style="width: 98%;"  value="{{ doc.BodyContext.div_money_purpose }}"  >
+    			<option value="일반운영">일반운영</option>
+    			<option value="연구개발">연구개발</option>
+    			<option value="GMP">GMP</option>
+    			<option value="YSLI">YSLI</option>
+			<option value="자산">자산</option>
+			<option value="인건비">인건비</option>
+    		</select>
+		</td>
+	</tr>
+	<tr>
+		<td >
+		 
+			<input type="text" id="managerPhone" name="managerPhone" data-type="mField" value="{{ doc.BodyContext.managerPhone }}" placeholder="연락처"    style="width:98%; " >      
+		</td>
+		<th>비용귀속
+		</th>
+		<td >
+			<input type="text" id="feeRevert" name="feeRevert" data-type="mField" value="{{ doc.BodyContext.feeRevert }}"    style="width:98%; " >        
+		      
+		</td>
+	</tr>
+	<tr>
+		<td >
+		   <input type="text" id="managerMail" name="managerMail" data-type="mField" value="{{ doc.BodyContext.managerMail }}"  placeholder="메일주소"   style="width:98%; " >      
+		</td>
+		<th>수행기간
+		</th>
+		<td >
+			<input type="text" id="processTerm" name="processTerm" data-type="mField" value="{{ doc.BodyContext.processTerm }}"    style="width:98%; " >        
+		</td>
+	</tr>
+	
+</table>
+<div style ="text-align :center">아래와 같이 지출하고자 하오니 지출을 결의하여 주시기 바랍니다.</div>
+
+
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+	<colgroup>
+	       <col style="width:12%" />
+	       <col style="width:88%" />
+	       
+		</colgroup>  
+		<tr >
+		<th>제목
+		</th>
+			<td >
+				<input type="text" id="subTitle" name="subTitle" data-type="mField" value="{{ doc.BodyContext.subTitle }}"    style="width:98%; " >    
+			</td>
+		</tr>
+		
+</table>
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+	<colgroup>
+	      <col style="width:12%" />
+	       <col style="width:88%" />
+	       
+		</colgroup>  
+	<tr style="height:150px;">
+	<th>내용
+	</th>
+		<td >
+			<textarea id="comment"  rows="10" data-type="mField" style="width: 98%;height:98%;">{{ doc.BodyContext.comment }}</textarea>
+		</td>
+	</tr>
+	
+</table>
+
+<div style ="text-align :center">구매항목이 있을 경우만 아래 기재 바랍니다.</div>
+
+<table class="table_10 multi-row-table RowSumTable tableStyle linePlus" id="TBLINFO" style="border-left: 1px solid #c3d7df;">
+    <colgroup>
+		<col style="width: 5.5%">
+        <col style="width: 60%">
+        <col style="width: 15%">
+        <col style="width:*" />
+    </colgroup>
+    <tbody>
+	    <tr class="multi-row-control" data-mode="writeOnly">
+	        <td colspan="4" style="text-align: right">
+	            <input type="button" id="btnAdd" value="+추가" class="multi-row-add smButton">
+	            <input type="button" id="btnDelSel" value="-삭제" class="multi-row-del-auto smButton">
+	        </td>
+	    </tr>
+	    <tr>
+			<th>No.</th>
+	        <th>항목</th>
+	        <th>공급가액</th>
+	        <th>비고</th>
+	    </tr>
+	    <tr class="multi-row-template multi-sum">
+			<td class="multi-row-seq"></td>
+	        <td><input name="REQ_ITMENAME" style="width: 99%;" type="text" data-type="rField"></td>
+	        <td align="right">
+	            <input name="REQ_PRICE" style="width: 99%;" onblur="COST_CAL();" type="text" data-type="rField" data-pattern=currency data-numeral-format="0,0">
+	        </td>	        
+	        <td><input name="REQ_ETC" style="width: 99%;" type="text" data-type="rField"></td>
+	    </tr>
+	    <tr>
+	        <th colspan="2">부가세</th>
+	         <td align="right">
+	            <input name="REQ_VAT" style="width: 99%;" type="text" value="{{ doc.BodyContext.REQ_VAT }}" data-type="mField" data-pattern="currency" data-numeral-format="0,0" onblur="COST_CAL();">
+	        </td>
+	        <th></th>
+	    </tr>
+	    <tr>
+	        <th colspan="2">총 합계</th>
+	        <td align="right">
+	            <input name="REQ_TOTAL" style="width: 99%;" type="text" readonly="readonly" value="{{ doc.BodyContext.REQ_TOTAL }}" data-type="mField" data-pattern="currency" data-numeral-format="0,0">
+	        </td>
+	        <th></th>
+	    </tr>
+	</tbody>
+</table>
+
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+	<colgroup>
+	      <col style="width:12.5%">
+	      <col style="width:12.5%">
+	      <col style="width:12.5%">
+	      <col style="width:12.5%">
+	      <col style="width:12.5%">
+	      <col style="width:12.5%">
+	      <col style="width:12.5%">
+	      
+	       
+		</colgroup>  
+	<tr >
+	<th>결제방법
+	</th>
+		<td colspan="7">
+			<div data-type="mField" data-element-type="chk_d" data-node-name="divType1">
+    			<input type="checkbox" id="div11" name="divType1" value="계좌이체">계좌이체
+    			<input type="checkbox" id="div12" name="divType1" value="자동이체">자동이체
+    			<input type="checkbox" id="div13" name="divType1" value="지로납부">지로납부
+    			<input type="checkbox" id="div14" name="divType1" value="법인카드결제">법인카드결제
+    			
+    		</div>
+		</td>
+	</tr>
+	
+	<tr>
+		<th>입금성격
+		</th>
+		<td colspan="4">
+			<div data-type="mField" data-element-type="chk_d" data-node-name="divType5">
+    			<input type="checkbox" id="div51" name="divType5" value="사후지급">계좌이체
+    			<input type="checkbox" id="div52" name="divType5" value="선입금 후 계산서 발행">선입금 후 계산서 발행
+    			
+    		</div>
+		</td>
+		<th>지출 예정일
+		</th>
+		<td colspan="2">
+			<!-- <input type="text" data-type="mField" id="reqDate" value="{{ doc.BodyContext.reqDate }}" style="width:90%;" > -->
+			<span>계산서 발행 익월 말</span>
+		</td>	
+	</tr>
+	
+	<tr>
+		<th>송금계좌
+		</th>
+		<th>은행이름
+		</th>
+		<td >
+		<input type="text" id="bankName" name="bankName" data-type="mField" value="{{ doc.BodyContext.bankName }}"    style="width:98%; " >        
+		</td>
+		<th>계죄번호
+		</th>
+		<td >
+		<input type="text" id="accountNo" name="accountNo" data-type="mField" value="{{ doc.BodyContext.accountNo }}"    style="width:98%; " >        
+		</td>
+		<th>예금주
+		</th>
+		<td colspan="2">
+			<input type="text" data-type="mField" id="accMaster" name="accMaster"  value="{{ doc.BodyContext.accMaster }}" style="width:98%;" >
+		</td>	     	
+	</tr>
+	<tr >
+		<th>구분
+		</th>
+		<th colspan="7">첨부서류
+		</th>
+		</tr>
+	<tr >
+	<th>기본증빙서류
+	</th>
+		<td colspan="7">
+			<!-- <div data-type="mField" data-element-type="chk_d" data-node-name="divType2">
+    			<input type="checkbox" id="div21" name="divType2" value="세금계산서">세금계산서
+    			<input type="checkbox" id="div22" name="divType2" value="계산서">계산서
+    			<input type="checkbox" id="div23" name="divType2" value="현금영수증">현금영수증
+    			<input type="checkbox" id="div24" name="divType2" value="간이영수증">간이영수증
+    			<input type="checkbox" id="div25" name="divType2" value="카드영수증">카드영수증
+    		</div> -->
+    		<span>■세금계산서 ■계산서 ■현금영수증 ■간이영수증 ■카드영수증</span>
+		</td>
+	</tr>
+	
+	<tr >
+	<th>추가증빙서류
+	</th>
+		<td colspan="7">
+			<!-- <div data-type="mField" data-element-type="chk_d" data-node-name="divType3">
+    			<input type="checkbox" id="div31" name="divType3" value="계약서(날인)">계약서(날인)&nbsp;&nbsp;&nbsp;
+    			<input type="checkbox" id="div32" name="divType3" value="거래명세서">거래명세서&nbsp;&nbsp;&nbsp;
+    			<input type="checkbox" id="div33" name="divType3" value="invoice">invoice&nbsp;&nbsp;&nbsp;
+    			<input type="checkbox" id="div34" name="divType3" value="청구서">청구서&nbsp;&nbsp;&nbsp;
+    			<input type="checkbox" id="div35" name="divType3" value="결과보고서">결과보고서&nbsp;&nbsp;&nbsp;
+    			<input type="checkbox" id="div36" name="divType3" value="기타">기타
+    		</div> -->
+    		<span>■계약서(날인) ■거래명세서 ■invoice ■청구서 ■결과보고서 ■기타</span>
+		</td>
+	</tr>
+	
+	<tr >
+	<th>최초거래서류
+	</th>
+		<td colspan="7">
+			<!-- <div data-type="mField" data-element-type="chk_d" data-node-name="divType4">
+    			<input type="checkbox" id="div41" name="divType4" value="사업자등록증">사업자등록증
+    			<input type="checkbox" id="div42" name="divType4" value="통장사본">통장사본
+    		</div> -->
+    		<span>■사업자등록증 ■통장사본</span>
+		</td>
+	</tr>
+	
+</table>
+
+	
+
+<!--실 결재양식 내용 부분 끝 -->

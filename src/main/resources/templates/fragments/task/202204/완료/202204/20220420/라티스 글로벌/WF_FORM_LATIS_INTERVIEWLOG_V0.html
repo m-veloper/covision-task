@@ -1,0 +1,119 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+		<colgroup>
+			<col style="width:20%" />
+	       <col style="width:20%" />
+	       <col style="width:20%" />
+	       <col style="width:20%" />
+	       <col style="width:20%" />
+		</colgroup>  
+		
+		<tr>
+			<th>법인
+			</th>
+			<td colspan="4">
+	          <select name="corporation" data-type="mField" data-element-type="sel_d_v" style="width: 98%;"  value="{{ doc.BodyContext.corporation }}" >
+					<option value="라티스글로벌커뮤니케이션스">라티스글로벌커뮤니케이션스 </option>
+	    			<option value="텍스트리">텍스트리</option>
+	    			<option value="스마트라이">스마트라이</option>
+    			</select>  	  
+	        </td>
+		</tr>
+		
+		  
+		  <tr>
+		  	<th>면담진행자
+			</th>
+			<th>소속
+			</th>
+			<td >
+	          <input type="text" name="progressDept" data-type="mField" value="{{ doc.BodyContext.progressDept }}" style="width: 99%;"  > 	  
+	        </td>
+	        <th>성명
+			</th>
+			<td >
+	          <input type="text"  name="progressName" data-type="mField" value="{{ doc.BodyContext.progressName }}" style="width: 99%;"  > 	  
+	        </td>
+		</tr>
+		
+		 <tr>
+		  	<th>면담대상자
+			</th>
+			<th>소속
+			</th>
+			<td >
+	          <input type="text" name="targetDept" data-type="mField" value="{{ doc.BodyContext.targetDept }}" style="width: 99%;"  > 	  
+	        </td>
+	        <th>성명
+			</th>
+			<td >
+	          <input type="text"  name="targetName" data-type="mField" value="{{ doc.BodyContext.targetName }}" style="width: 99%;"  > 	  
+	        </td>
+		</tr>
+		
+		 <tr>
+		  	<th>구분			
+			</th>
+			<td colspan ="2">
+				<select name="division" data-type="mField" data-element-type="sel_d_v" style="width: 98%;"  value="{{ doc.BodyContext.division }}" >
+					<option value="수습사원">수습사원 </option>
+	    			<option value="재직자">재직자</option>
+	    			<option value="퇴직희망자">퇴직희망자</option>
+    			</select> 
+	        </td>
+	        <th>차수
+			</th>
+			<td >
+	          <select name="degree" data-type="mField" data-element-type="sel_d_v" style="width: 98%;"  value="{{ doc.BodyContext.degree }}" >
+					<option value="1차">1차 </option>
+					<option value="2차">2차 </option>
+					<option value="3차">3차 </option>
+					<option value="4차">4차 </option>
+					<option value="5차">5차 </option>
+					<option value="6차">6차 </option>
+					<option value="7차">7차 </option>
+					<option value="8차">8차 </option>
+					<option value="9차">9차 </option>
+					<option value="10차">10차 </option>
+	   			</select> 	  
+	        </td>
+		</tr>
+		
+		 <tr>
+		  	<th>면담일자			
+			</th>
+			<td colspan ="4">
+	          <input type="text" data-pattern="date"  autocomplete ="off"    name="interviewDate" data-type="mField" value="{{ doc.BodyContext.interviewDate }}" style="width: 99%;"  > 	  
+	        </td>
+	       
+		</tr>
+		 <tr>
+		  	<th>작성일자			
+			</th>
+			<td colspan ="4">
+	          <input type="text" data-pattern="date"  autocomplete ="off"    name="writeDate" data-type="mField" value="{{ doc.BodyContext.writeDate }}" style="width: 99%;"  > 	  
+	        </td>
+	       
+		</tr>
+		
+			<tr>
+			<th>면담내용
+			</th>
+			<td colspan="4">
+	         	<textarea id="interviewRmk" data-type="mField" style="width: 98%;height:125px">{{ doc.BodyContext.interviewRmk }}</textarea>
+	        </td>
+		</tr>
+		
+			<tr>
+			<th>의견
+			</th>
+			<td colspan="4">
+	         	<textarea id="interviewOpinion" data-type="mField" style="width: 98%;height:125px">{{ doc.BodyContext.interviewOpinion }}</textarea>
+	        </td>
+		</tr>
+		
+		
+		  
+</table>

@@ -1,0 +1,47 @@
+<p style="margin-top:30px; font-size:13px; text-align:center;">아래와 같이 출장진행을 품의하오니 검토 후 재가하여 주시기 바랍니다.</p>
+<table class="tableStyle linePlus mt10 multi-row-table" id="tbl_info">
+    <colgroup>
+        <col style="width:12%" />
+        <col style="width:10%" />
+        <col style="width:19%" />
+        <col style="width:10%" />
+        <col style="width:19%" />
+        <col style="width:10%" />
+        <col style="width:19%" />
+    </colgroup>
+
+	<tr class="multi-row-control" align="right" data-mode="writeOnly">
+		<td colspan="7">
+			<input type="button" value="+추가" class="multi-row-add usa">
+			<input type="button" value="-삭제" class="multi-row-del-auto usa">
+		</td>
+	</tr>
+	
+	<tr class="multi-row-template">
+		<th>출장기간</th>
+		<td colspan="6" style="border-top: 1px solid #c3d7df !important;">
+			<input type="text" name="SDate" data-type="rField" style="width:100px;" data-pattern="date" onchange="calTotDays(this);">
+			<input type="text" name="STime" data-type="rField" style="width:100px;" data-pattern="time" data-time-format="H:i" onchange="calTotDays(this);">
+			~ 
+			<input type="text" name="EDate" data-type="rField" style="width:100px;" data-pattern="date" onchange="calTotDays(this);"> 
+			<input type="text" name="ETime" data-type="rField" style="width:100px;" data-pattern="time" data-time-format="H:i" onchange="calTotDays(this);"> 
+			(<input type="text" name="TotDays" data-type="rField" style="width:40px; border:none;" readonly> 일간)
+		</td>
+	</tr>
+	<tr class="multi-row-template">
+		<th>출장지</th>
+		<td colspan="3">
+			<input type="text" name="BizArea" data-type="rField" style="width:99%;">
+		</td>
+		<th>PJ코드</th>
+		<td colspan="2">
+			<input type="text" name="PJCode" data-type="rField" style="width:99%;">
+		</td>
+	</tr>
+	<tr class="multi-row-template">
+		<th>출장목적 및 결과</th>
+		<td colspan="6">
+			<textarea data-type="rField" name="BiztripObj" rows="5" style="width:99%; resize:none;">{{ doc.BodyContext.BiztripObj }}</textarea>
+		</td>
+	</tr>
+</table>

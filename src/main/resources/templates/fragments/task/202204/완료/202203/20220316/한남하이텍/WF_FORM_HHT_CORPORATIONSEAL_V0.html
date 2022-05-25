@@ -1,0 +1,87 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:12.5%" />
+        <col style="width:12.5%" />
+        <col style="width:12.5%" />
+        <col style="width:12.5%" />
+        <col style="width:12.5%" />
+        <col style="width:12.5%" />
+        <col style="width:12.5%" />
+        <col style="width:12.5%" />
+        
+    </colgroup>
+    
+   <tr>
+		<th colspan="2">프로젝트명
+		</th>
+		<td colspan ="3">
+			<input type="text" id="projectName" name="projectName" data-type="mField" value="{{ doc.BodyContext.projectName }}"    style="width:98%; " >
+		</td>
+		<th colspan="1">계약일자
+		</th>
+		<td colspan ="2">
+			<input type="text" id="reqDate" name="reqDate" data-type="mField" data-pattern="date" value="{{ doc.BodyContext.reqDate }}"    style="width:98%; " >	      
+		</td>
+	
+	</tr>
+	<tr>
+		<th colspan="2">목적
+		</th>
+		<td colspan ="6">
+			<input type="text" id="purpose" name="purpose" data-type="mField" value="{{ doc.BodyContext.purpose }}"    style="width:98%; " >
+		</td>
+	
+	</tr>
+	<tr>
+    	<th colspan="2">제출처</th>
+    	<td colspan="6">
+    		<input type="text" id="submitDept" name="submitDept" data-type="mField" value="{{ doc.BodyContext.submitDept }}"    style="width:98%; " >
+    	</td>
+    </tr>
+     <tr>
+		<th colspan="2">추가서류</th>
+		<td class="Approval_labelTD" colspan="6" style="padding-left:3px;text-align:center">
+            <div data-type="mField" data-element-type="chk_d" data-node-name="chkBox_1">
+            	<input type="checkbox" id="chkBox_01" name="chkBox_1" value="인감증명서">인감증명서&nbsp;&nbsp;
+                <input type="checkbox" id="chkBox_02" name="chkBox_1" value="법인등기부등본">법인등기부등본&nbsp;&nbsp;
+                <input type="checkbox" id="chkBox_03" name="chkBox_1" value="사용인감계">사용인감계&nbsp;&nbsp;
+                <input type="checkbox" id="chkBox_04" name="chkBox_1" value="기타">기타&nbsp;&nbsp;
+            
+            </div>
+		</td>
+	</tr>
+    <tr>
+    	<th colspan="2">특이사항</th>
+    	<td colspan="6">
+    		<input type="text" id="comment" name="comment" data-type="mField" value="{{ doc.BodyContext.comment }}"    style="width:98%; " >
+    	</td>
+    </tr>
+       
+     <tr>
+    	
+    	<td colspan="8">
+    		<div>
+    		[증빙서류]	<br>
+    		1. 계약서<br>
+    		2. 기타 증빙서류 (요청서 등)			​	​	​	​	​
+    		
+    		</div>
+    	</td>
+    </tr>
+    
+    <tr>
+    	
+    	<td colspan="8">
+    		<div>
+    		[NOTICE]<br>
+    		 - 법인 및 사용인감은 일 1회 정해진 시간에 일괄 날인 합니다.<br>
+    		 - 인감날인 신청 및 기타 계약품의 등 품의서 완결 후 날인하여야 합니다.	<br>
+    		 - 날인 후 지원부서 비치되어 있는 날인대장에 본인 서명해 주시기 바랍니다.	<br>					
+    		
+    		</div>
+    	</td>
+    </tr>
+</table>
+<!--실 결재양식 내용 부분 끝 -->

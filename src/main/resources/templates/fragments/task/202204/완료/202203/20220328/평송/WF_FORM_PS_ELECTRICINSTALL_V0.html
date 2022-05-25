@@ -1,0 +1,741 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+<colgroup>
+        <col style="width:6.25%" />
+        <col style="width:6.25%" />
+        <col style="width:6.25%" />
+        <col style="width:6.25%" />
+        <col style="width:6.25%" />
+        <col style="width:6.25%" />
+        <col style="width:6.25%" />
+        <col style="width:6.25%" />
+        
+        <col style="width:5.5%" />
+        <col style="width:5.5%" />
+        <col style="width:5.5%" />
+        <col style="width:5.5%" />
+        <col style="width:5.5%" />
+        <col style="width:5.5%" />
+        <col style="width:5.5%" />
+        <col style="width:5.5%" />
+        <col style="width:5.5%" />
+        
+    </colgroup>
+    
+     <tr>
+	    <td colspan ="17" style ="border-left: none; border-right: none;  border-top: none; border-bottom: none;">
+	    	<input type="text" data-type="mField" id="requestDay" name = "requestDay" value="{{ doc.BodyContext.requestDay }}"  size="10" style="width : 25%; border-left: none; border-right: none;  border-top: none; border-bottom: none; " data-pattern="date" data-date-format="yy년 mm월 dd일 (DD요일)"  >
+		</td>
+    </tr>
+    
+    <tr >
+	    <th colspan ="8">특 별 고 압 반
+	    </th>
+	    <th colspan ="9">저 압 배 전 반
+	    </th>
+    </tr>
+    
+     <tr >
+	    <th colspan ="3">전압[KV]
+	    </th>
+	    <th colspan ="3">전류[A]
+	    </th>
+	    <th >역률
+	    </th>
+	    <th >전력
+	    </th>
+	    <th colspan ="9">전압[V]
+	    </th>
+    </tr>
+     <tr >
+	    <th rowspan="2">R-S
+	    </th>
+	     <th rowspan="2">S-T
+	    </th>
+	     <th rowspan="2">T-R
+	    </th>
+	     <th rowspan="2">R
+	    </th>
+	     <th rowspan="2">S
+	    </th>
+	     <th rowspan="2">T
+	    </th>
+	     <th rowspan="2">[%]
+	    </th>
+	      <th rowspan="2">[kw]
+	    </th>
+	    <th colspan="3">LV-1
+	    </th>
+	    <th colspan="3">LV-4
+	    </th>
+	    <th colspan="3">LV-6
+	    </th>
+    </tr>
+    <tr>
+	    <th>R-S
+	    </th>
+	    <th>S-T
+	    </th>
+	    <th>T-R
+	    </th>
+	    <th>R-S
+	    </th>
+	    <th>S-T
+	    </th>
+	    <th>T-R
+	    </th>
+	    <th>R-S
+	    </th>
+	    <th>S-T
+	    </th>
+	    <th>T-R
+	    </th>
+    </tr>
+    <tr>
+	    <td>
+	    	<input type="text" id="kVrs" name="kVrs" data-type="mField" value="{{ doc.BodyContext.kVrs }}"    style="width:98%; " >	
+	    </td>
+	     <td>
+	     	<input type="text" id="kVst" name="kVst" data-type="mField" value="{{ doc.BodyContext.kVst }}"    style="width:98%; " >	
+	    </td>
+	     <td>
+	     	<input type="text" id="kVts" name="kVts" data-type="mField" value="{{ doc.BodyContext.kVts }}"    style="width:98%; " >	
+	    </td>
+	     <td>
+	     	<input type="text" id="electricityR" name="electricityR" data-type="mField" value="{{ doc.BodyContext.electricityR }}"    style="width:98%; " >	
+	    </td>
+	     <td>
+	     	<input type="text" id="electricityS" name="electricityS" data-type="mField" value="{{ doc.BodyContext.electricityS }}"    style="width:98%; " >	
+	    </td>
+	     <td>
+	     	<input type="text" id="electricityT" name="electricityT" data-type="mField" value="{{ doc.BodyContext.electricityT }}"    style="width:98%; " >	
+	    </td>
+	     <td>
+	     	<input type="text" id="percent" name="percent" data-type="mField" value="{{ doc.BodyContext.percent }}"    style="width:98%; " >	
+	    </td>
+	     <td>
+	     	<input type="text" id="kw" name="kw" data-type="mField" value="{{ doc.BodyContext.kw }}"    style="width:98%; " >	
+	    </td>
+	     <td>
+	     	<input type="text" id="vlv1Rs" name="vlv1Rs" data-type="mField" value="{{ doc.BodyContext.vlv1Rs }}"    style="width:98%; " >	
+	    </td>
+	     <td>
+	     	<input type="text" id="vlv1St" name="vlv1St" data-type="mField" value="{{ doc.BodyContext.vlv1St }}"    style="width:98%; " >	
+	    </td>
+	     <td>
+	     	<input type="text" id="vlv1Tr" name="vlv1Tr" data-type="mField" value="{{ doc.BodyContext.vlv1Tr }}"    style="width:98%; " >	
+	    </td>
+	     <td>
+	     	<input type="text" id="vlv4Rs" name="vlv4Rs" data-type="mField" value="{{ doc.BodyContext.vlv4Rs }}"    style="width:98%; " >	
+	    </td>
+	     <td>
+	     	<input type="text" id="vlv4St" name="vlv4St" data-type="mField" value="{{ doc.BodyContext.vlv4St }}"    style="width:98%; " >	
+	    </td>
+	     <td>
+	     	<input type="text" id="vlv4Tr" name="vlv4Tr" data-type="mField" value="{{ doc.BodyContext.vlv4Tr }}"    style="width:98%; " >	
+	    </td>
+	     <td>
+	     	<input type="text" id="vlv6Rs" name="vlv6Rs" data-type="mField" value="{{ doc.BodyContext.vlv6Rs }}"    style="width:98%; " >	
+	    </td>
+	     <td>
+	     	<input type="text" id="vlv6St" name="vlv6St" data-type="mField" value="{{ doc.BodyContext.vlv6St }}"    style="width:98%; " >	
+	    </td>
+	     <td>
+	     	<input type="text" id="vlv6Tr" name="vlv6Tr" data-type="mField" value="{{ doc.BodyContext.vlv6Tr }}"    style="width:98%; " >	
+	    </td>  
+    </tr>
+   
+    
+</table>
+
+
+<table class="tableStyle linePlus "><!-- class="table_10" -->
+    <colgroup>
+       <col style="width:6.5%" />
+        <col style="width:6.5%" />
+        <col style="width:7%" />
+        <col style="width:15%" />
+        <col style="width:15%" />
+        
+        <col style="width:5.5%" />
+        <col style="width:5.5%" />
+        <col style="width:5.5%" />
+        <col style="width:5.5%" />
+        <col style="width:5.5%" />
+        <col style="width:5.5%" />
+        <col style="width:5.5%" />
+        <col style="width:5.5%" />
+        <col style="width:5.5%" />
+	 	<tr>
+	        <th colspan ="5">전 력 량[kwh]
+		    </th>
+		    <th colspan ="9">전 류[A]
+		    </th>
+	    </tr>
+	    
+	     <tr >
+		    <th colspan ="2">지 침
+		    </th>
+		    <th >배 율
+		    </th>
+		    <th >일사용량
+		    </th>
+		    <th >사용량누계
+		    </th>
+		     <th colspan="3">LV-1
+		    </th>
+		    <th colspan="3">LV-4
+		    </th>
+		    <th colspan="3">LV-6
+		    </th>
+	    </tr>
+	    <tr >
+		    <th >유효<br>전력
+		    </th>
+		    <td >
+		    	<input type="text" name="validKwh" data-type="mField" value="{{ doc.BodyContext.validKwh }}"    style="width:98%; " >	
+		    </td>
+		    <td rowspan ="2">
+		   	 	<input type="text" name="percentKwh" data-type="mField" value="{{ doc.BodyContext.percentKwh }}"    style="width:98%; " >	
+		    </td>
+		    <td >
+		   		 <input type="text" name="validDayUse" data-type="mField" value="{{ doc.BodyContext.validDayUse }}"    style="width:98%; " >	
+		    </td>
+		    <td >
+		    	<input type="text" name="validDayUseTotal" data-type="mField" value="{{ doc.BodyContext.validDayUseTotal }}"    style="width:98%; " >	
+		    </td>
+		    <th>R
+		    </th>
+		    <th>S
+		    </th>
+		    <th>T
+		    </th>
+		    <th>R
+		    </th>
+		    <th>S
+		    </th>
+		    <th>T
+		    </th>
+		    <th>R
+		    </th>
+		    <th>S
+		    </th>
+		    <th>T
+		    </th>
+	    </tr>
+	    <tr>
+	    	<th >무효<br>전력
+		    </th>
+		    <td >
+		   	 	<input type="text" name="unValidKwh" data-type="mField" value="{{ doc.BodyContext.unValidKwh }}"    style="width:98%; " >
+		    </td>
+		    <td >
+		   		 <input type="text" name="unValidDayUse" data-type="mField" value="{{ doc.BodyContext.unValidDayUse }}"    style="width:98%; " >	
+		    </td>
+		    <td >
+		    	<input type="text" name="unValidDayUseTotal" data-type="mField" value="{{ doc.BodyContext.unValidDayUseTotal }}"    style="width:98%; " >	
+		    </td>
+		    <td >
+		    	<input type="text" name="alv1R" data-type="mField" value="{{ doc.BodyContext.alv1R }}"    style="width:98%; " >	
+		    </td>
+		    <td >
+		    	<input type="text" name="alv1S" data-type="mField" value="{{ doc.BodyContext.alv1S }}"    style="width:98%; " >	
+		    </td>
+		    <td >
+		    	<input type="text" name="alv1T" data-type="mField" value="{{ doc.BodyContext.alv1T }}"    style="width:98%; " >	
+		    </td>
+		    <td >
+		    	<input type="text" name="alv4R" data-type="mField" value="{{ doc.BodyContext.alv4R }}"    style="width:98%; " >	
+		    </td>
+		    <td >
+		    	<input type="text" name="alv4S" data-type="mField" value="{{ doc.BodyContext.alv4S }}"    style="width:98%; " >	
+		    </td>
+		    <td >
+		    	<input type="text" name="alv4T" data-type="mField" value="{{ doc.BodyContext.alv4T }}"    style="width:98%; " >	
+		    </td>
+		    <td >
+		    	<input type="text" name="alv6R" data-type="mField" value="{{ doc.BodyContext.alv6R }}"    style="width:98%; " >	
+		    </td>
+		   <td >
+		    	<input type="text" name="alv6S" data-type="mField" value="{{ doc.BodyContext.alv6S }}"    style="width:98%; " >	
+		    </td>
+		   <td >
+		    	<input type="text" name="alv6T" data-type="mField" value="{{ doc.BodyContext.alv6T }}"    style="width:98%; " >	
+		    </td>
+	    </tr>
+    
+</table>
+
+<table class="tableStyle linePlus "><!-- class="table_10" -->
+		<colgroup>
+			<col style="width:12.5%" />
+			<col style="width:12.5%" />
+			<col style="width:12.5%" />
+			<col style="width:12.5%" />
+			
+			
+			<col style="width:17%" />
+			<col style="width:16.5%" />
+			<col style="width:16.5%" />
+		</colgroup>
+		<tr>
+			<th colspan="4">발 전 기 운 전
+			</th>
+			<th colspan="3">TR반 (온도)
+			</th>
+		</tr>
+		<tr>
+			<th >운전구분
+			</th>
+			<td >
+				<input type="text" name="generatorDiv" data-type="mField" value="{{ doc.BodyContext.generatorDiv }}"    style="width:98%; " >	
+			</td>
+			<th >연료사용량
+			</th>
+			<td >
+				<input type="text" name="generatorOil" data-type="mField" value="{{ doc.BodyContext.generatorOil }}"    style="width:98%; " >	
+			</td>
+			<th >1
+			</th>
+			<th >2
+			</th>
+			<th >3
+			</th>
+		</tr>
+		<tr>
+			<th >운전시간
+			</th>
+			<td >
+				<input type="text" name="generatorRunning" data-type="mField" value="{{ doc.BodyContext.generatorRunning }}"    style="width:98%; " >	
+			</td>
+			<th >잔 량
+			</th>
+			<td >
+				<input type="text" name="generatorRemain" data-type="mField" value="{{ doc.BodyContext.generatorRemain }}"    style="width:98%; " >	
+			</td>
+			<td >
+				<input type="text" name="trTemp1" data-type="mField" value="{{ doc.BodyContext.trTemp1 }}"    style="width:98%; " >	
+			</td>
+			<td >
+				<input type="text" name="trTemp2" data-type="mField" value="{{ doc.BodyContext.trTemp2 }}"    style="width:98%; " >	
+			</td>
+			<td >
+				<input type="text" name="trTemp3" data-type="mField" value="{{ doc.BodyContext.trTemp3 }}"    style="width:98%; " >	
+			</td>
+		</tr>
+		
+		<tr >
+			<th colspan ="7">점 검 및 작 업 사 항
+			</th>
+		</tr>
+		
+		<tr >
+			<td colspan ="7">
+				<textarea data-type="mField" name="taskComment" rows="10" style="width:99%; overflow-y:auto;">{{ doc.BodyContext.taskComment }}</textarea> 
+			</td>
+		</tr>
+       
+       
+</table>
+
+<table class="tableStyle linePlus "><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:15%" />
+        <col style="width:45%" />
+        <col style="width:13.3%"/>
+        <col style="width:13.3%"/>
+        <col style="width:13.3%"/>
+    </colgroup>
+     
+    <tr>
+	    <th>점검항목	    
+	    </th>
+	    <th>일일점검내용	    
+	    </th>
+	    <th>적합	    
+	    </th>
+	    <th>부적합	    
+	    </th>
+	    <th>조치	    
+	    </th>
+    </tr>
+    
+   
+    
+    <tr>
+	    <th rowspan ="9">변전설비  
+	    </th>
+	    <td style =" ">변압기 외관점검(냄새,진동,이상음,변색) 양호 유무
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun001">
+                <input type="radio"  name="gubun001" value="0" data-text="" />
+            </span>
+	    </td>
+	    <td align="center">
+	   		<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun001">
+                <input type="radio"  name="gubun001" value="1" data-text="" />
+            </span>
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun001">
+               <input type="radio"   name="gubun001" value="2" data-text="" />
+           	</span>
+	    </td>
+		
+		
+    </tr>
+    <tr>
+	    <td style =" ">콘센더 및 차단기의 동작상태 여부
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun002">
+                <input type="radio"  name="gubun002" value="0" data-text="" />
+            </span>
+	    </td>
+	    <td align="center">
+	   		<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun002">
+                <input type="radio"  name="gubun002" value="1" data-text="" />
+            </span>
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun002">
+               <input type="radio"   name="gubun002" value="2" data-text="" />
+           	</span>
+	    </td>
+    </tr>
+    
+      <tr>
+	    <td style =" ">마그네트 스위치 동작상태 여부
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun003">
+                <input type="radio"  name="gubun003" value="0" data-text="" />
+            </span>
+	    </td>
+	    <td align="center">
+	   		<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun003">
+                <input type="radio"  name="gubun003" value="1" data-text="" />
+            </span>
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun003">
+               <input type="radio"   name="gubun003" value="2" data-text="" />
+           	</span>
+	    </td>
+    </tr>
+    <tr>
+        <td style =" ">이상전압 유무
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun004">
+                <input type="radio"  name="gubun004" value="0" data-text="" />
+            </span>
+	    </td>
+	    <td align="center">
+	   		<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun004">
+                <input type="radio"  name="gubun004" value="1" data-text="" />
+            </span>
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun004">
+               <input type="radio"   name="gubun004" value="2" data-text="" />
+           	</span>
+	    </td>
+    </tr>
+    
+     <tr>
+        <td style =" ">누전현상 유무
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun005">
+                <input type="radio"  name="gubun005" value="0" data-text="" />
+            </span>
+	    </td>
+	    <td align="center">
+	   		<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun005">
+                <input type="radio"  name="gubun005" value="1" data-text="" />
+            </span>
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun005">
+               <input type="radio"   name="gubun005" value="2" data-text="" />
+           	</span>
+	    </td>
+    </tr>
+      <tr>
+	    <td style =" ">외관점검 및 표시등의 점등상태 양호 유무
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun006">
+                <input type="radio"  name="gubun006" value="0" data-text="" />
+            </span>
+	    </td>
+	    <td align="center">
+	   		<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun006">
+                <input type="radio"  name="gubun006" value="1" data-text="" />
+            </span>
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun006">
+               <input type="radio"   name="gubun006" value="2" data-text="" />
+           	</span>
+	    </td>
+    </tr>
+    
+    <tr>
+	    <td style =" ">각 계기의 지시값 확인 및 이상 유무
+	    </td>
+	<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun007">
+                <input type="radio"  name="gubun007" value="0" data-text="" />
+            </span>
+	    </td>
+	    <td align="center">
+	   		<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun007">
+                <input type="radio"  name="gubun007" value="1" data-text="" />
+            </span>
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun007">
+               <input type="radio"   name="gubun007" value="2" data-text="" />
+           	</span>
+	    </td>
+    </tr>
+    
+       <tr>
+	    <td style =" ">전동기 외관 점검 및 부하전류 상태 확인 여부
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun008">
+                <input type="radio"  name="gubun008" value="0" data-text="" />
+            </span>
+	    </td>
+	    <td align="center">
+	   		<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun008">
+                <input type="radio"  name="gubun008" value="1" data-text="" />
+            </span>
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun008">
+               <input type="radio"   name="gubun008" value="2" data-text="" />
+           	</span>
+	    </td>
+    </tr>
+    
+       <tr>
+	    <td style =" ">접지선의 접지부위 부식 여부
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun009">
+                <input type="radio"  name="gubun009" value="0" data-text="" />
+            </span>
+	    </td>
+	    <td align="center">
+	   		<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun009">
+                <input type="radio"  name="gubun009" value="1" data-text="" />
+            </span>
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun009">
+               <input type="radio"   name="gubun009" value="2" data-text="" />
+           	</span>
+	    </td>
+    </tr>
+    
+     
+    
+    <tr>
+	    <th rowspan ="6">발전설비 
+	    </th>
+	    <td style =" ">발전기 운전상태 정상작동 유무
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun010">
+                <input type="radio"  name="gubun010" value="0" data-text="" />
+            </span>
+	    </td>
+	    <td align="center">
+	   		<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun010">
+                <input type="radio"  name="gubun010" value="1" data-text="" />
+            </span>
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun010">
+               <input type="radio"   name="gubun010" value="2" data-text="" />
+           	</span>
+	    </td>
+		
+    </tr>
+    
+    <tr> 
+	    <td style =" ">발전기 밧데리 충전상태 확인 여부
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun011">
+                <input type="radio"  name="gubun011" value="0" data-text="" />
+            </span>
+	    </td>
+	    <td align="center">
+	   		<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun011">
+                <input type="radio"  name="gubun011" value="1" data-text="" />
+            </span>
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun011">
+               <input type="radio"   name="gubun011" value="2" data-text="" />
+           	</span>
+	    </td>
+		
+    </tr>
+    
+    <tr> 
+	    <td style =" ">냉각수 및 연료탱크 보충량 상태 확인 여부
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun012">
+                <input type="radio"  name="gubun012" value="0" data-text="" />
+            </span>
+	    </td>
+	    <td align="center">
+	   		<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun012">
+                <input type="radio"  name="gubun012" value="1" data-text="" />
+            </span>
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun012">
+               <input type="radio"   name="gubun012" value="2" data-text="" />
+           	</span>
+	    </td>
+    </tr>
+    
+    <tr> 
+	    <td style =" ">이상음 및 진동 유무
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun013">
+                <input type="radio"  name="gubun013" value="0" data-text="" />
+            </span>
+	    </td>
+	    <td align="center">
+	   		<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun013">
+                <input type="radio"  name="gubun013" value="1" data-text="" />
+            </span>
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun013">
+               <input type="radio"   name="gubun013" value="2" data-text="" />
+           	</span>
+	    </td>
+    </tr>
+    
+       <tr> 
+	    <td style =" ">축전지의 충전전압 및 밧데리 상태 확인 여부
+	    </td>
+	<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun014">
+                <input type="radio"  name="gubun014" value="0" data-text="" />
+            </span>
+	    </td>
+	    <td align="center">
+	   		<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun014">
+                <input type="radio"  name="gubun014" value="1" data-text="" />
+            </span>
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun014">
+               <input type="radio"   name="gubun014" value="2" data-text="" />
+           	</span>
+	    </td>
+    </tr>
+    <tr> 
+	    <td style =" ">주위 인화물질의 방치 여부
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun015">
+                <input type="radio"  name="gubun015" value="0" data-text="" />
+            </span>
+	    </td>
+	    <td align="center">
+	   		<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun015">
+                <input type="radio"  name="gubun015" value="1" data-text="" />
+            </span>
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun015">
+               <input type="radio"   name="gubun015" value="2" data-text="" />
+           	</span>
+	    </td>
+    </tr>
+    <tr>
+	    <th rowspan ="3">조명설비   
+	    </th>
+	    <td style =" ">기계실 및 전기실 조명설비 이상유무 확인
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun016">
+                <input type="radio"  name="gubun016" value="0" data-text="" />
+            </span>
+	    </td>
+	    <td align="center">
+	   		<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun016">
+                <input type="radio"  name="gubun016" value="1" data-text="" />
+            </span>
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun016">
+               <input type="radio"   name="gubun016" value="2" data-text="" />
+           	</span>
+	    </td>
+		
+    </tr>
+    
+    <tr> 
+	    <td style =" ">본관 조명설비 이상유무 확인
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun017">
+                <input type="radio"  name="gubun017" value="0" data-text="" />
+            </span>
+	    </td>
+	    <td align="center">
+	   		<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun017">
+                <input type="radio"  name="gubun017" value="1" data-text="" />
+            </span>
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun017">
+               <input type="radio"   name="gubun017" value="2" data-text="" />
+           	</span>
+	    </td>
+    </tr>
+    
+    <tr> 
+	    <td style =" ">수영장시설 조명설비 이상 유무 확인
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun018">
+                <input type="radio"  name="gubun018" value="0" data-text="" />
+            </span>
+	    </td>
+	    <td align="center">
+	   		<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun018">
+                <input type="radio"  name="gubun018" value="1" data-text="" />
+            </span>
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun018">
+               <input type="radio"   name="gubun018" value="2" data-text="" />
+           	</span>
+	    </td>
+    </tr>
+      <tr >
+    	<th >특이사항
+		</th>
+		<td colspan ="4">
+			<textarea data-type="mField" name="notice" rows="5" style="width:99%; overflow-y:auto;">{{ doc.BodyContext.notice }}</textarea> 
+		</td>
+    </tr>
+</table>
+<!--실 결재양식 내용 부분 끝 -->

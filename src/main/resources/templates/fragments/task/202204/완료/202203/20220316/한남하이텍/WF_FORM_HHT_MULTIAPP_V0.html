@@ -1,0 +1,91 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<div class="mt10">
+	<span style="font-weight: bold; font-size: 15px;">·기준정보</span>
+</div>
+<table class="tableStyle linePlus" style="margin-top: 2px;"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:20%" />
+        <col style="width:*" />
+    </colgroup>
+    <tr>
+    	<th>부서/신청자이름</th>
+    	<td>
+    		<span id="dptReqNm"></span>
+    	</td>
+    </tr>
+    <tr>
+    	<th>제목</th>
+    	<td>
+    		<input type="text" name="titleNm" data-type="mField" value="{{ doc.BodyContext.titleNm }}"  style="width:98%;" required/>
+    	</td>
+    </tr>
+</table>
+<div class="mt20">
+	<span style="font-weight: bold; font-size: 15px;">·신청정보</span>
+</div>
+<table class="tableStyle linePlus" style="margin-top: 2px;"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:20%" />
+        <col style="width:*" />
+    </colgroup>
+    <tr>
+    	<th>유형/구분</th>
+    	<td>
+    		<select data-type="mField" data-element-type="sel_d_t" data-node-name="ctgType" name="ctgType" style="width: 30%;" required>
+    			<option value="" selected="selected">선택</option>
+    			<option value="01">출장</option>
+    			<option value="02">외근</option>
+    			<option value="03">외출</option>
+    			<option value="04">재택근무</option>
+    		</select>
+    	</td>
+    </tr>
+    <tr>
+    	<th>일시</th>
+    	<td>
+    		<input type="text" id="SDATE" name="SDATE" data-type="mField" data-pattern="date" data-date-format="yy-mm-dd(DD)" value="{{ doc.BodyContext.SDATE }}"  style="width:25%;" required onchange="calDateTime(this);">
+    		<input type="text" id="STIME" name="STIME" data-type="mField" data-pattern="time" data-time-format="H:i" data-time-step="10" style="width:15%;" required value="{{ doc.BodyContext.STIME }}" onchange="calDateTime(this);">
+    		&nbsp;~&nbsp;
+    		<input type="text" id="EDATE" name="EDATE" data-type="mField" data-pattern="date" data-date-format="yy-mm-dd(DD)" value="{{ doc.BodyContext.EDATE }}"  style="width:25%;" required onchange="calDateTime(this);">
+    		<input type="text" id="ETIME" name="ETIME" data-type="mField" data-pattern="time" data-time-format="H:i" data-time-step="10" style="width:15%;" value="{{ doc.BodyContext.ETIME }}" required  onchange="calDateTime(this);"/>
+    	</td>
+    </tr>
+    <tr>
+    	<th>기간</th>
+    	<td>
+    		<input type="text" id="totPeriod" name="totPeriod" data-type="mField" value="{{ doc.BodyContext.totPeriod }}"  style="width:98%;" readonly="readonly"/>
+    	</td>
+    </tr>
+    <tr>
+    	<th>출발지</th>
+    	<td>
+    		<input type="text" name="strtPnt" data-type="mField" value="{{ doc.BodyContext.strtPnt }}"  style="width:98%;" placeholder="출발지를 입력해주세요."/>
+    	</td>
+    </tr>
+    <tr>
+    	<th>목적지</th>
+    	<td>
+    		<input type="text" name="dstntn" data-type="mField" value="{{ doc.BodyContext.dstntn }}"  style="width:98%;" placeholder="도착지를 입력해주세요."/>
+    	</td>
+    </tr>
+    <tr>
+    	<th>장소</th>
+    	<td>
+    		<input type="text" name="area" data-type="mField" value="{{ doc.BodyContext.area }}"  style="width:98%;" required placeholder="출장장소를 입력해주세요."/>
+    	</td>
+    </tr>
+    <tr>
+    	<th>목적</th>
+    	<td>
+    		<input type="text" name="prps" data-type="mField" value="{{ doc.BodyContext.prps }}"  style="width:98%;" required placeholder="신청목적을 입력해주세요."/>
+    	</td>
+    </tr>
+    <tr>
+    	<th>비고</th>
+    	<td>
+    		<input type="text" name="etc" data-type="mField" value="{{ doc.BodyContext.etc }}"  style="width:98%;" placeholder="비고를 입력해주세요."/>
+    	</td>
+    </tr>
+</table>
+<!--실 결재양식 내용 부분 끝 -->

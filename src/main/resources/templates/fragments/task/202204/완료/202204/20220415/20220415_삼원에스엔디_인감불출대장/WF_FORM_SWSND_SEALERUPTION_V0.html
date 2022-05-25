@@ -1,0 +1,69 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+
+
+<table class="table_10 multi-row-table RowSumTable tableStyle linePlus" id="TBLINFO" style="border-left: 1px solid #c3d7df; ">
+    <colgroup>
+        <col style="width: 12%">
+        <col style="width: 10%">
+        <col style="width: 25%">
+        <col style="width: 15%">
+        <col style="width: 12%">
+        <col style="width: 10%">
+        <col style="width: 20%">
+    </colgroup>
+    <tbody>
+		<tr class="multi-row-control" data-mode="writeOnly">
+		
+			<td colspan="7" style="text-align: right" >
+				<input type="button" id="btnAdd" value="+추가" class="multi-row-add smButton">
+				<input type="button" id="btnDelSel" value="-삭제" class="multi-row-del-auto smButton">
+			</td>
+		</tr>
+		<tr>
+		     <th >신청일자</th>
+		     <th >신청자</th>
+		     <th >제목</th>
+		     <th >제출처</th>
+		     <th >불출일자</th>
+		     <th >구분</th>
+		     <th >비고</th>
+		     
+		 </tr>
+	    
+	    <tr class="multi-row-template  ">
+	    	<td align="center">
+	    		<input type="text" name="requestDate" autocomplete ="off" data-pattern="date" data-date-format="yy.mm.dd" data-type="rField" style="width: 98%;text-align:center">
+    		</td>
+    		<td align="center">
+	            <input name="requestPerson" style="width: 98%; text-align:center" type="text" data-type="rField"  > 
+	        </td>
+	        <td align="center">
+	            <input name="requestName" style="width: 98%; text-align:center" type="text" data-type="rField"  > 
+	        </td>		
+	        <td align="center">
+	            <input name="requestPurpose" style="width: 98%; text-align:center" type="text" data-type="rField"  > 
+	        </td>
+	    	<td align="center">
+	    		<input type="text" name="eruptionDate" autocomplete ="off" data-pattern="date" data-date-format="yy.mm.dd" data-type="rField" style="width: 98%;text-align:center">
+    		</td>
+	         <td align="center">
+	            <select name="DivisionTbl01" data-type="rField" data-element-type="sel_d_v" style="width: 98%;text-align:center" title="구분" >
+	    			<option value="">선택</option>
+	    			<option value="계약">계약</option>
+	    			<option value="입찰">입찰</option>
+	    			<option value="현설">현설</option>
+	    			<option value="기타">기타</option>
+	    		</select>  
+	        </td>
+	        
+	         <td align="center">
+	         	 <input name="rmk" style="width: 98%; text-align:center" type="text" data-type="rField"  >
+	             
+	        </td>   
+	    </tr>
+	   
+    </tbody>
+	
+</table>
+<!--실 결재양식 내용 부분 끝 -->

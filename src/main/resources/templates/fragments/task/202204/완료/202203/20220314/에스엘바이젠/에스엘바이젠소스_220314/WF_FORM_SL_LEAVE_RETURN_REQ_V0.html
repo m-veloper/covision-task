@@ -1,0 +1,44 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:15%" />
+        <col style="width:*" />
+    </colgroup>
+    <tr>
+    	<th>신청서 종류</th>
+    	<td>
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="reportType">
+    			<input type="radio" name="reportType" value="01" checked="checked" />&nbsp;휴직 신청서&nbsp;&nbsp;
+    			<input type="radio" name="reportType" value="02" />&nbsp;복직 신청서
+    		</div>
+    	</td>
+    </tr>
+    <tr>
+    	<th>휴직기간</th>
+    	<td align="center">
+    		<input type="text" name="leaveSdt" data-type="mField" data-pattern="date" data-date-format="yy년 mm월 dd일" value="{{ doc.BodyContext.leaveSdt }}"  style="width:40%; text-align: center;">
+    		~
+    		<input type="text" name="leaveEdt" data-type="mField" data-pattern="date" data-date-format="yy년 mm월 dd일" value="{{ doc.BodyContext.leaveEdt }}"  style="width:40%; text-align: center;">
+    	</td>
+    </tr>
+    <tr>
+    	<th>복직예정일</th>
+    	<td>
+    		<input type="text" name="returnDt" data-type="mField" data-pattern="date" data-date-format="yy년 mm월 dd일" value="{{ doc.BodyContext.returnDt }}"  style="width:98%; text-align: center;">
+    	</td>
+    </tr>
+    <tr>
+    	<th>휴직/복직<br/>사유</th>
+    	<td>
+    		<input type="text" name="reason" data-type="mField" value="{{ doc.BodyContext.reason }}"  style="width:98%;">
+    	</td>
+    </tr>
+    <tr>
+    	<th>(휴직) 업무<br/>인수인계자</th>
+    	<td>
+    		<input type="text" name="trnstnNm" data-type="mField" value="{{ doc.BodyContext.trnstnNm }}"  style="width:98%;">
+    	</td>
+    </tr>
+</table>
+<!--실 결재양식 내용 부분 끝 -->

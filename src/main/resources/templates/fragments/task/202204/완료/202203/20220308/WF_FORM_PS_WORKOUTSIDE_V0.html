@@ -1,0 +1,76 @@
+
+
+<!--실 결재양식 내용 부분 시작 -->
+
+	    
+	    
+	    
+	    <table class="table_10 linePlus  multi-row-table RowSumTable tableStyle" id="TBLINFO"><!-- class="table_10" -->
+			<colgroup>
+		       <col style="width:15%" />
+		       <col style="width:12%" />
+		       <col style="width:12%" />
+		       <col style="width:12%" />
+		       <col style="width:12%" />
+		       <col style="width:12%" />
+		       <col style="width:12.5%" />
+		       <col style="width:12.5%" />
+		    </colgroup>
+			<tbody>
+			
+			<tr class="multi-row-control" >
+			        <td colspan="8" style="text-align: right">
+			            <input type="button" id="btnDtlAdd" value="+추가" class="multi-row-add ">
+			            <input type="button" id="btnDtlDelSel" value="-삭제" class="multi-row-del-auto ">
+			        </td>
+		      </tr>
+		      <tr>
+		      <th >날짜</th>
+		      <th >운행 전(km)</th>
+		      <th >운행 후(km)</th>
+		      <th >운행 거리</th>
+		      <th >출발지</th>
+		      <th >목적지</th>		      
+		      <th >운행목적</th>
+		      <th >비고</th>
+		           
+		      </tr>
+		
+			  <tr class="multi-row-template ">
+			 		<td>
+			        	<input type="text" data-type="rField" required data-pattern="date"   data-date-format="yy/mm/dd" name="driveDate" title ="날짜" style="width: 98%">
+			        </td>
+			        <td  >
+						<input type="text"  name="driveBefore" required data-type="rField"   title ="운행 전(km)"   data-pattern="numeral" style="width:98%; " >			           
+					</td>
+					<td  >
+						<input type="text"  name="driveAfter" required data-type="rField"   title ="운행 후(km)"  data-pattern="numeral" style="width:98%; " >			           
+					</td>
+					
+					<td  >
+						<input type="text"  name="driveDistance" required data-type="rField"  title ="운행 거리"  data-pattern="numeral" style="width:98%; " >
+			        </td>
+			        
+			        <td>
+			        	<input type="text"  name="startPoint" required data-type="rField"   title ="출발지"   style="width:98%; " >
+			        </td>
+					
+					 <td>
+			        	<input type="text"  name="goalPoint" required data-type="rField"  title ="목적지"   style="width:98%; " >
+			        </td>
+			        
+			         <td>
+			        	<input type="text"  name="drivePurpose" required data-type="rField"   title ="운행목적"   style="width:98%; " >
+			        </td>
+			        
+			         <td>
+			        	<input type="text"  name="driveRmk" required data-type="rField" title ="비고"     style="width:98%; " >
+			        </td>
+			        
+			    </tr>
+		</tbody></table>
+		
+		
+		
+	    
+<!--실 결재양식 내용 부분 끝 -->

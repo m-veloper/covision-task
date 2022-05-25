@@ -1,0 +1,477 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+
+	
+
+<table class="tableStyle linePlus mt10" id="request_Tbl"><!-- class="table_10" -->
+	<colgroup>
+       <col style="width:12%">
+		<col style="width:20%">
+		<col style="width:12%">
+		<col style="width:20%">
+		<col style="width:12%">
+		<col style="width:24%">
+    </colgroup>
+	<tr>
+		<td colspan="7" style="text-align:center; font-size:16px; font-weight:bold; border-left: none; border-right: none; border-top: none;  ">
+			<input type="text" data-type="mField" id="beforeMonthTitle" name = "beforeMonthTitle" value="{{ doc.BodyContext.beforeMonthTitle }}" style="width : 30px" >
+			월 업무 실적 및 
+			<input type="text" data-type="mField" id="afterMonthTitle" name = "afterMonthTitle" value="{{ doc.BodyContext.afterMonthTitle }}" style="width : 30px" >	
+			월 계획
+		</td>
+	</tr>
+	<tr>
+		<th>현장명 : 
+		</th>
+		<td colspan="6" >
+			<input type="text" data-type="mField" id="courselocal" name = "courselocal" value="{{ doc.BodyContext.courselocal }}" style="width : 98%" >
+		
+		</td>
+	</tr>
+	
+
+	
+	<tr>
+		<th >구분</th>
+		<th > 
+		<input type="text" data-type="mField" id="beforeMonth" name = "beforeMonth" value="{{ doc.BodyContext.beforeMonth }}" style="width : 30px" >		
+		월 업무실적
+		</th>
+		<th >일정</th>
+		<th >
+		<input type="text" data-type="mField" id="afterMonth" name = "afterMonth" value="{{ doc.BodyContext.afterMonth }}" style="width : 30px" >		
+		월 계획사항</th>
+		<th >예정일</th>
+		<th >비고</th>
+	</tr>
+	<tr>
+		<th rowspan ="4">
+		Green
+		</th>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mgreenBeforeWorkComment1">{{ doc.BodyContext.mgreenBeforeWorkComment1 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mgreenBeforeWorkPerson1">{{ doc.BodyContext.mgreenBeforeWorkPerson1 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mgreenTodayWorkComment1">{{ doc.BodyContext.mgreenTodayWorkComment1 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mgreenTodayWorkPerson1">{{ doc.BodyContext.mgreenBeforeWorkPerson1 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mgreenRmk1">{{ doc.BodyContext.mgreenRmk1 }}</textarea>
+		</td>
+		
+	</tr>
+	<tr>
+		
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mgreenBeforeWorkComment2">{{ doc.BodyContext.mgreenBeforeWorkComment2 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mgreenBeforeWorkPerson2">{{ doc.BodyContext.mgreenBeforeWorkPerson2 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mgreenTodayWorkComment2">{{ doc.BodyContext.mgreenTodayWorkComment2 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mgreenTodayWorkPerson2">{{ doc.BodyContext.mgreenBeforeWorkPerson2 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mgreenRmk2">{{ doc.BodyContext.mgreenRmk2 }}</textarea>
+		</td>
+		
+	</tr>
+	<tr>
+		
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mgreenBeforeWorkComment3">{{ doc.BodyContext.mgreenBeforeWorkComment3 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mgreenBeforeWorkPerson3">{{ doc.BodyContext.mgreenBeforeWorkPerson3 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mgreenTodayWorkComment3">{{ doc.BodyContext.mgreenTodayWorkComment3 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mgreenTodayWorkPerson3">{{ doc.BodyContext.mgreenBeforeWorkPerson3 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mgreenRmk3">{{ doc.BodyContext.mgreenRmk3 }}</textarea>
+		</td>
+		
+	</tr>
+	<tr>
+		
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mgreenBeforeWorkComment4">{{ doc.BodyContext.mgreenBeforeWorkComment4 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mgreenBeforeWorkPerson4">{{ doc.BodyContext.mgreenBeforeWorkPerson4 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mgreenTodayWorkComment4">{{ doc.BodyContext.mgreenTodayWorkComment4 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mgreenTodayWorkPerson4">{{ doc.BodyContext.mgreenBeforeWorkPerson4 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mgreenRmk4">{{ doc.BodyContext.mgreenRmk4 }}</textarea>
+		</td>
+		
+	</tr>
+	
+	<tr>
+		<th rowspan ="3">
+		Tee
+		</th>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mTeeBeforeWorkComment1">{{ doc.BodyContext.mTeeBeforeWorkComment1 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mTeeBeforeWorkPerson1">{{ doc.BodyContext.mTeeBeforeWorkPerson1 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mTeeTodayWorkComment1">{{ doc.BodyContext.mTeeTodayWorkComment1 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mTeeTodayWorkPerson1">{{ doc.BodyContext.mTeeTodayWorkPerson1 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mTeeRmk1">{{ doc.BodyContext.mTeeRmk1 }}</textarea>
+		</td>
+		
+	</tr>
+	<tr>
+		
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mTeeBeforeWorkComment2">{{ doc.BodyContext.mTeeBeforeWorkComment2 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mTeeBeforeWorkPerson2">{{ doc.BodyContext.mTeeBeforeWorkPerson2 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mTeeTodayWorkComment2">{{ doc.BodyContext.mTeeTodayWorkComment2 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mTeeTodayWorkPerson2">{{ doc.BodyContext.mTeeTodayWorkPerson2 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mTeeRmk2">{{ doc.BodyContext.mTeeRmk2 }}</textarea>
+		</td>
+		
+	</tr>
+	
+	<tr>
+		
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mTeeBeforeWorkComment3">{{ doc.BodyContext.mTeeBeforeWorkComment3 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mTeeBeforeWorkPerson3">{{ doc.BodyContext.mTeeBeforeWorkComment3 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mTeeTodayWorkComment3">{{ doc.BodyContext.mTeeTodayWorkComment3 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mTeeTodayWorkPerson3">{{ doc.BodyContext.mTeeTodayWorkPerson3 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mTeeRmk3">{{ doc.BodyContext.mTeeRmk3 }}</textarea>
+		</td>
+		
+	</tr>
+	
+	<tr>
+		<th rowspan ="6">
+		Fairway
+		</th>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mFairwayBeforeWorkComment1">{{ doc.BodyContext.mFairwayBeforeWorkComment1 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mFairwayBeforeWorkPerson1">{{ doc.BodyContext.mFairwayBeforeWorkPerson1 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mFairwayTodayWorkComment1">{{ doc.BodyContext.mFairwayTodayWorkComment1 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mFairwayTodayWorkPerson1">{{ doc.BodyContext.mFairwayTodayWorkPerson1 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mFairwayRmk1">{{ doc.BodyContext.mFairwayRmk1 }}</textarea>
+		</td>
+		
+	</tr>
+	<tr>
+		
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mFairwayBeforeWorkComment2">{{ doc.BodyContext.mFairwayBeforeWorkComment2 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mFairwayBeforeWorkPerson2">{{ doc.BodyContext.mFairwayBeforeWorkPerson2 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mFairwayTodayWorkComment2">{{ doc.BodyContext.mFairwayTodayWorkComment2 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mFairwayTodayWorkPerson2">{{ doc.BodyContext.mFairwayTodayWorkPerson2 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mFairwayRmk2">{{ doc.BodyContext.mFairwayRmk2 }}</textarea>
+		</td>
+		
+	</tr>
+	<tr>
+		
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mFairwayBeforeWorkComment3">{{ doc.BodyContext.mFairwayBeforeWorkComment3 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mFairwayBeforeWorkPerson3">{{ doc.BodyContext.mFairwayBeforeWorkPerson3 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mFairwayTodayWorkComment3">{{ doc.BodyContext.mFairwayTodayWorkComment3 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mFairwayTodayWorkPerson3">{{ doc.BodyContext.mFairwayTodayWorkPerson3 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mFairwayRmk3">{{ doc.BodyContext.mFairwayRmk3 }}</textarea>
+		</td>
+		
+	</tr>
+	<tr>
+		
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mFairwayBeforeWorkComment4">{{ doc.BodyContext.mFairwayBeforeWorkComment4 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mFairwayBeforeWorkPerson4">{{ doc.BodyContext.mFairwayBeforeWorkPerson4 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mFairwayTodayWorkComment4">{{ doc.BodyContext.mFairwayTodayWorkComment4 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mFairwayTodayWorkPerson4">{{ doc.BodyContext.mFairwayTodayWorkPerson4 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mFairwayRmk4">{{ doc.BodyContext.mFairwayRmk4 }}</textarea>
+		</td>
+		
+	</tr>
+	<tr>
+		
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mFairwayBeforeWorkComment5">{{ doc.BodyContext.mFairwayBeforeWorkComment5 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mFairwayBeforeWorkPerson5">{{ doc.BodyContext.mFairwayBeforeWorkPerson5 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mFairwayTodayWorkComment5">{{ doc.BodyContext.mFairwayTodayWorkComment5 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mFairwayTodayWorkPerson5">{{ doc.BodyContext.mFairwayTodayWorkPerson5 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mFairwayRmk5">{{ doc.BodyContext.mFairwayRmk5 }}</textarea>
+		</td>
+		
+	</tr>
+	
+	<tr>
+		
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mFairwayBeforeWorkComment6">{{ doc.BodyContext.mFairwayBeforeWorkComment6 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mFairwayBeforeWorkPerson6">{{ doc.BodyContext.mFairwayBeforeWorkPerson6 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mFairwayTodayWorkComment6">{{ doc.BodyContext.mFairwayTodayWorkComment6 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mFairwayTodayWorkPerson6">{{ doc.BodyContext.mFairwayTodayWorkPerson6 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mFairwayRmk6">{{ doc.BodyContext.mFairwayRmk6 }}</textarea>
+		</td>
+		
+	</tr>
+	
+	
+	<tr>
+		<th >
+		조경
+		</th>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mLSBeforeWorkComment1">{{ doc.BodyContext.mLSBeforeWorkComment1 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mLSBeforeWorkPerson1">{{ doc.BodyContext.mLSBeforeWorkPerson1 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mLSTodayWorkComment1">{{ doc.BodyContext.mLSTodayWorkComment1 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mLSTodayWorkPerson1">{{ doc.BodyContext.mLSTodayWorkPerson1 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mLSRmk1">{{ doc.BodyContext.mLSRmk1 }}</textarea>
+		</td>
+		
+	</tr>
+	<tr>
+		<th >
+		S / K
+		</th>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mSKBeforeWorkComment1">{{ doc.BodyContext.mSKBeforeWorkComment1 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mSKBeforeWorkPerson1">{{ doc.BodyContext.mSKBeforeWorkPerson1 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mSKTodayWorkComment1">{{ doc.BodyContext.mSKTodayWorkComment1 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mSKTodayWorkPerson1">{{ doc.BodyContext.mSKTodayWorkPerson1 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mSKRmk1">{{ doc.BodyContext.mSKRmk1 }}</textarea>
+		</td>
+		
+	</tr>
+	<tr>
+		<th >
+		장비
+		</th>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="meEquipBeforeWorkComment1">{{ doc.BodyContext.meEquipBeforeWorkComment1 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mEquipBeforeWorkPerson1">{{ doc.BodyContext.mEquipBeforeWorkPerson1 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mEquipTodayWorkComment1">{{ doc.BodyContext.mEquipTodayWorkComment1 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mEquipTodayWorkPerson1">{{ doc.BodyContext.mEquipTodayWorkPerson1 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mEquipRmk1">{{ doc.BodyContext.mEquipRmk1 }}</textarea>
+		</td>
+		
+	</tr>
+	
+	<tr>
+		<th rowspan="5">
+		기타
+		</th>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="meEtcBeforeWorkComment1">{{ doc.BodyContext.meEtcBeforeWorkComment1 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mEtcBeforeWorkPerson1">{{ doc.BodyContext.mEtcBeforeWorkPerson1 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mEtcTodayWorkComment1">{{ doc.BodyContext.mEtcTodayWorkComment1 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mEtcTodayWorkPerson1">{{ doc.BodyContext.mEtcTodayWorkPerson1 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mEtcRmk1">{{ doc.BodyContext.mEtcRmk1 }}</textarea>
+		</td>
+		
+	</tr>
+	
+	<tr>
+		
+		<td>
+			<textarea data-type="mField" style="width:98%" id="meEtcBeforeWorkComment2">{{ doc.BodyContext.meEtcBeforeWorkComment2 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mEtcBeforeWorkPerson2">{{ doc.BodyContext.mEtcBeforeWorkPerson2 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mEtcTodayWorkComment2">{{ doc.BodyContext.mEtcTodayWorkComment2 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mEtcTodayWorkPerson2">{{ doc.BodyContext.mEtcTodayWorkPerson2 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mEtcRmk2">{{ doc.BodyContext.mEtcRmk2 }}</textarea>
+		</td>
+		
+	</tr>
+	
+	<tr>
+		
+		<td>
+			<textarea data-type="mField" style="width:98%" id="meEtcBeforeWorkComment3">{{ doc.BodyContext.meEtcBeforeWorkComment3 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mEtcBeforeWorkPerson3">{{ doc.BodyContext.mEtcBeforeWorkPerson3 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mEtcTodayWorkComment3">{{ doc.BodyContext.mEtcTodayWorkComment3 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mEtcTodayWorkPerson3">{{ doc.BodyContext.mEtcTodayWorkPerson3 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mEtcRmk3">{{ doc.BodyContext.mEtcRmk3 }}</textarea>
+		</td>
+		
+	</tr>
+	
+	<tr>
+		
+		<td>
+			<textarea data-type="mField" style="width:98%" id="meEtcBeforeWorkComment4">{{ doc.BodyContext.meEtcBeforeWorkComment4 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mEtcBeforeWorkPerson4">{{ doc.BodyContext.mEtcBeforeWorkPerson4 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mEtcTodayWorkComment4">{{ doc.BodyContext.mEtcTodayWorkComment4 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mEtcTodayWorkPerson4">{{ doc.BodyContext.mEtcTodayWorkPerson4 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mEtcRmk4">{{ doc.BodyContext.mEtcRmk4 }}</textarea>
+		</td>
+		
+	</tr>
+	
+	<tr>
+		
+		<td>
+			<textarea data-type="mField" style="width:98%" id="meEtcBeforeWorkComment5">{{ doc.BodyContext.meEtcBeforeWorkComment5 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mEtcBeforeWorkPerson5">{{ doc.BodyContext.mEtcBeforeWorkPerson5 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField"  style="width:98%" id="mEtcTodayWorkComment5">{{ doc.BodyContext.mEtcTodayWorkComment5 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mEtcTodayWorkPerson5">{{ doc.BodyContext.mEtcTodayWorkPerson5 }}</textarea>
+		</td>
+		<td>
+			<textarea data-type="mField" style="width:98%" id="mEtcRmk5">{{ doc.BodyContext.mEtcRmk5 }}</textarea>
+		</td>
+		
+	</tr>
+</table>
+<div style="font-size :12px">
+※ 계획사항은 기상 및 내장객 수에 따라 변동 가능
+</div>
+
+
+<!--실 결재양식 내용 부분 끝 -->

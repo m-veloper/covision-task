@@ -1,0 +1,95 @@
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:35%" />
+        <col style="width:*" />
+    </colgroup>
+    <tr>
+    	<th>신청자(단체)명</th>
+    	<td>
+    		<input type="text" name="reqNm" data-type="mField" value="{{ doc.BodyContext.reqNm }}" class="fs15" style="width:98%;" >
+    	</td>
+    </tr>
+    <tr>
+    	<th rowspan="2">사 용 기 간</th>
+    	<td>
+    		<p>
+    			2022년 <input type="text" name="useStMonth" data-type="mField" value="{{ doc.BodyContext.useStMonth }}" style="width:10%;" > 월 
+    			<input type="text" name="useStDay" data-type="mField" value="{{ doc.BodyContext.useStDay }}" style="width:10%;" > 일 
+    			<input type="text" name="useStHour" data-type="mField" value="{{ doc.BodyContext.useStHour }}" style="width:10%;" > 시 부터
+    		</p>
+    	</td>
+    </tr>
+    <tr>
+    	<td>
+    		<p>
+    			2022년 <input type="text" name="useEdMonth" data-type="mField" value="{{ doc.BodyContext.useEdMonth }}" style="width:10%;" > 월 
+    			<input type="text" name="useEdDay" data-type="mField" value="{{ doc.BodyContext.useEdDay }}" style="width:10%;" > 일 
+    			<input type="text" name="useEdHour" data-type="mField" value="{{ doc.BodyContext.useEdHour }}" style="width:10%;" > 시 까지
+    		</p>
+    	</td>
+    </tr>
+    <tr>
+    	<th>사 용 목 적</th>
+    	<td>
+    		<input type="text" name="usePurpose" data-type="mField" value="{{ doc.BodyContext.usePurpose }}" style="width:98%;" >
+    	</td>
+    </tr>
+    <tr>
+    	<th>사 용 료</th>
+    	<td>
+    		<input type="text" name="usePay" data-type="mField" value="{{ doc.BodyContext.usePay }}" style="width:98%;" >
+    	</td>
+    </tr>
+    <tr>
+    	<th>납 부 기 간</th>
+    	<td>
+    		<input type="text" name="payStDt" data-type="mField" data-pattern="date" data-date-format="yy년 mm월 dd일" value="{{ doc.BodyContext.payStDt }}"  style="width:35%;" >
+    		~
+    		<input type="text" name="payEdDt" data-type="mField" data-pattern="date" data-date-format="yy년 mm월 dd일" value="{{ doc.BodyContext.payEdDt }}"  style="width:35%;" >
+    	</td>
+    </tr>
+    <tr>
+    	<td colspan="2" style="border-bottom: none;">
+	    	<p class="mt10 mb10" style="font-size: 15px;">
+	    		「대전광역시 청소년수련시설 운영 조례」 제8조 및 같은 조례 시행규칙 제3조 제2항에 따라 위와 같이 시설 사용을 통지합니다.
+	    	</p>
+	    </td>
+    </tr>
+    <tr align="center">
+    	<td colspan="2" style="border-bottom: none;">
+    		<p class="mt10 mb10" style="font-size: 15px;">
+    			<!-- <input type="text" name="wrtYears" id="wrtYears" data-type="mField" value="{{ doc.BodyContext.wrtYears }}" style="width:5%; border: 0px; text-align: right;" readonly="readonly">년&nbsp;
+    			<input type="text" name="wrtMonth" id="wrtMonth" data-type="mField" value="{{ doc.BodyContext.wrtMonth }}" style="width:5%; border: 0px; text-align: right;" readonly="readonly">월&nbsp;
+    			<input type="text" name="wrtDay" id="wrtDay" data-type="mField" value="{{ doc.BodyContext.wrtDay }}" style="width:5%; border: 0px; text-align: right;" readonly="readonly">일&nbsp; -->
+    			<span id="wrtYears"></span>년&nbsp;
+    			<span id="wrtMonth"></span>월&nbsp;
+    			<span id="wrtDay"></span>일&nbsp;
+    		</p>
+    	</td>
+    </tr>
+    <tr align="center">
+    	<td colspan="2">
+    		<p class="mt15 mb15" style="font-size: 20px; font-weight: bold;">대전광역시평송청소년문화센터장</p>
+    	</td>
+    </tr>
+    <tr>
+    	<th colspan="2">
+    		<p style="font-size: 20px; font-weight: bold;">시설 사용 시 주의사항</p>
+    	</th>
+    </tr>
+    <tr>
+    	<td colspan="2" style="font-size: 14px;">
+    		<p class="mt5">1. 사용 승인된 시설 외에는 사용할 수 없습니다.</p>
+			<p class="mt5">2. 소정의 사용료를 납부하여야 합니다.</p>
+			<p class="mt5">3. 시설 사용 중 시설물(비품 등)을 멸실 또는 훼손하였을 때에는 변상하여야 합니다.</p>
+			<p class="mt5">4. 사용 기간 중 임시 설치한 시설물은 행사 종료 후 원상복구하여야 합니다.</p>
+			<p class="mt5">5. 전시실을 사용하는 경우 전시품 내역서를 첨부하여야 합니다.</p>
+			<p class="mt5">6. 승인을 받은 자 이외의 법인, 단체, 개인에게 사용에 대한 권리를 양도하거나 전대할 수</p> 
+			<p class="mt5 ml10">     없습니다.</p>
+			<p class="mt5">7. 승인조건 위반 시 사용승인을 취소 또는 정지할 수 있으며 이로 인한 손해에 대하여 책임을</p>
+			<p class="mt5 ml10">     지지 않습니다.</p>
+    	</td>
+    </tr>
+</table>
+<!--실 결재양식 내용 부분 끝 -->

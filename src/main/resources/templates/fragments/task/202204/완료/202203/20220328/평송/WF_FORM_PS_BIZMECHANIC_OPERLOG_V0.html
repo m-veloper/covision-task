@@ -1,0 +1,936 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+    </colgroup>
+    <tr>
+    	<td colspan="9">
+    		<input type="text" name="checkDt" data-type="mField" data-pattern="date" data-date-format="yy년 mm월 dd일(D요일)" value="{{ doc.BodyContext.checkDt }}"  style="width:35%;"placeholder="날짜선택" title="점검일" required>
+    	</td>
+    </tr>
+    <tr>
+    	<th></th>
+    	<th>보일러4톤</th>
+    	<th>보일러2톤</th>
+    	<th>온수보일러</th>
+    	<th>구분</th>
+    	<th>입고량</th>
+    	<th>재고량</th>
+    	<th>사용량</th>
+    	<th>월누계</th>
+    </tr>
+    <tr>
+    	<th rowspan="2">보일러<br/>가동시간</th>
+    	<td rowspan="2">
+    		<input type="text" name="upTime_1" data-type="mField" value="{{ doc.BodyContext.upTime_1 }}"  style="width:98%;" >
+    	</td>
+    	<td rowspan="2">
+    		<input type="text" name="upTime_2" data-type="mField" value="{{ doc.BodyContext.upTime_2 }}"  style="width:98%;" >
+    	</td>
+    	<td rowspan="2">
+    		<input type="text" name="upTime_3" data-type="mField" value="{{ doc.BodyContext.upTime_3 }}"  style="width:98%;" >
+    	</td>
+    	<th>청관제2t</th>
+    	<td>
+    		<input type="text" name="cg_2t_1" data-type="mField" value="{{ doc.BodyContext.cg_2t_1 }}"  style="width:98%;" >
+    	</td>
+    	<td>
+    		<input type="text" name="cg_2t_2" data-type="mField" value="{{ doc.BodyContext.cg_2t_2 }}"  style="width:98%;" >
+    	</td>
+    	<td>
+    		<input type="text" name="cg_2t_3" data-type="mField" value="{{ doc.BodyContext.cg_2t_3 }}"  style="width:98%;" >
+    	</td>
+    	<td>
+    		<input type="text" name="cg_2t_4" data-type="mField" value="{{ doc.BodyContext.cg_2t_4 }}"  style="width:98%;" >
+    	</td>
+    </tr>
+    <tr>
+    	<th>청관제4t</th>
+    	<td>
+    		<input type="text" name="cg_4t_1" data-type="mField" value="{{ doc.BodyContext.cg_4t_1 }}"  style="width:98%;" >
+    	</td>
+    	<td>
+    		<input type="text" name="cg_4t_2" data-type="mField" value="{{ doc.BodyContext.cg_4t_2 }}"  style="width:98%;" >
+    	</td>
+    	<td>
+    		<input type="text" name="cg_4t_3" data-type="mField" value="{{ doc.BodyContext.cg_4t_3 }}"  style="width:98%;" >
+    	</td>
+    	<td>
+    		<input type="text" name="cg_4t_4" data-type="mField" value="{{ doc.BodyContext.cg_4t_4 }}"  style="width:98%;" >
+    	</td>
+    </tr>
+    <tr>
+    	<th rowspan="2">총가동시간</th>
+    	<td rowspan="2">
+    		<input type="text" name="totTime_1" data-type="mField" value="{{ doc.BodyContext.totTime_1 }}"  style="width:98%;" >
+    	</td>
+    	<td rowspan="2">
+    		<input type="text" name="totTime_2" data-type="mField" value="{{ doc.BodyContext.totTime_2 }}"  style="width:98%;" >
+    	</td>
+    	<td rowspan="2">
+    		<input type="text" name="totTime_3" data-type="mField" value="{{ doc.BodyContext.totTime_3 }}"  style="width:98%;" >
+    	</td>
+    	<th>정제염2t</th>
+    	<td>
+    		<input type="text" name="gj_2t_1" data-type="mField" value="{{ doc.BodyContext.gj_2t_1 }}"  style="width:98%;" >
+    	</td>
+    	<td>
+    		<input type="text" name="gj_2t_2" data-type="mField" value="{{ doc.BodyContext.gj_2t_2 }}"  style="width:98%;" >
+    	</td>
+    	<td>
+    		<input type="text" name="gj_2t_3" data-type="mField" value="{{ doc.BodyContext.gj_2t_3 }}"  style="width:98%;" >
+    	</td>
+    	<td>
+    		<input type="text" name="gj_2t_4" data-type="mField" value="{{ doc.BodyContext.gj_2t_4 }}"  style="width:98%;" >
+    	</td>
+    </tr>
+    <tr>
+    	<th>정제염4t</th>
+    	<td>
+    		<input type="text" name="gj_4t_1" data-type="mField" value="{{ doc.BodyContext.gj_4t_1 }}"  style="width:98%;" >
+    	</td>
+    	<td>
+    		<input type="text" name="gj_4t_2" data-type="mField" value="{{ doc.BodyContext.gj_4t_2 }}"  style="width:98%;" >
+    	</td>
+    	<td>
+    		<input type="text" name="gj_4t_3" data-type="mField" value="{{ doc.BodyContext.gj_4t_3 }}"  style="width:98%;" >
+    	</td>
+    	<td>
+    		<input type="text" name="gj_4t_4" data-type="mField" value="{{ doc.BodyContext.gj_4t_4 }}"  style="width:98%;" >
+    	</td>
+    </tr>
+</table>
+<table class="tableStyle linePlus"><!-- class="table_10" -->
+	<colgroup>
+        <col style="width:7%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+    </colgroup>
+    <tr>
+    	<th rowspan="4">보일러<br/>이상유무</th>
+    	<th>호기별</th>
+    	<th>급수계통</th>
+    	<th>송시계통</th>
+    	<th>연료계통</th>
+    	<th>안전장치계통</th>
+    </tr>
+    <tr>
+    	<th>보일러 4Ton</th>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_v" data-node-name="stateYn_4t_1">
+    			<input type="radio" name="stateYn_4t_1" data-text="정상" />&nbsp;정상&nbsp;
+    			<input type="radio" name="stateYn_4t_1" data-text="불량" />&nbsp;불량
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_v" data-node-name="stateYn_4t_2">
+    			<input type="radio" name="stateYn_4t_2" data-text="정상" />&nbsp;정상&nbsp;
+    			<input type="radio" name="stateYn_4t_2" data-text="불량" />&nbsp;불량
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_v" data-node-name="stateYn_4t_3">
+    			<input type="radio" name="stateYn_4t_3" data-text="정상" />&nbsp;정상&nbsp;
+    			<input type="radio" name="stateYn_4t_3" data-text="불량" />&nbsp;불량
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_v" data-node-name="stateYn_4t_4">
+    			<input type="radio" name="stateYn_4t_4" data-text="정상" />&nbsp;정상&nbsp;
+    			<input type="radio" name="stateYn_4t_4" data-text="불량" />&nbsp;불량
+    		</div>
+    	</td>
+    </tr>
+    <tr>
+    	<th>보일러 2Ton</th>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_v" data-node-name="stateYn_2t_1">
+    			<input type="radio" name="stateYn_2t_1" data-text="정상" />&nbsp;정상&nbsp;
+    			<input type="radio" name="stateYn_2t_1" data-text="불량" />&nbsp;불량
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_v" data-node-name="stateYn_2t_2">
+    			<input type="radio" name="stateYn_2t_2" data-text="정상" />&nbsp;정상&nbsp;
+    			<input type="radio" name="stateYn_2t_2" data-text="불량" />&nbsp;불량
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_v" data-node-name="stateYn_2t_3">
+    			<input type="radio" name="stateYn_2t_3" data-text="정상" />&nbsp;정상&nbsp;
+    			<input type="radio" name="stateYn_2t_3" data-text="불량" />&nbsp;불량
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_v" data-node-name="stateYn_2t_4">
+    			<input type="radio" name="stateYn_2t_4" data-text="정상" />&nbsp;정상&nbsp;
+    			<input type="radio" name="stateYn_2t_4" data-text="불량" />&nbsp;불량
+    		</div>
+    	</td>
+    </tr>
+    <tr>
+    	<th>온수보일러</th>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_v" data-node-name="stateYn_on_1">
+    			<input type="radio" name="stateYn_on_1" data-text="정상" />&nbsp;정상&nbsp;
+    			<input type="radio" name="stateYn_on_1" data-text="불량" />&nbsp;불량
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_v" data-node-name="stateYn_on_2">
+    			<input type="radio" name="stateYn_on_2" data-text="정상" />&nbsp;정상&nbsp;
+    			<input type="radio" name="stateYn_on_2" data-text="불량" />&nbsp;불량
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_v" data-node-name="stateYn_on_3">
+    			<input type="radio" name="stateYn_on_3" data-text="정상" />&nbsp;정상&nbsp;
+    			<input type="radio" name="stateYn_on_3" data-text="불량" />&nbsp;불량
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_v" data-node-name="stateYn_on_4">
+    			<input type="radio" name="stateYn_on_4" data-text="정상" />&nbsp;정상&nbsp;
+    			<input type="radio" name="stateYn_on_4" data-text="불량" />&nbsp;불량
+    		</div>
+    	</td>
+    </tr>
+    <tr>
+    	<th rowspan="4">냉동기<br/>가동시간</th>
+    	<th rowspan="2">냉동기 210RT</th>
+    	<th rowspan="2">냉동기 120RT</th>
+    	<th colspan="3">이상유무</th>
+    </tr>
+    <tr>
+    	<th></th>
+    	<th>210RT</th>
+    	<th>120RT</th>
+    </tr>
+    <tr>
+    	<td>
+    		<input type="text" name="runTime_210RT_01" data-type="mField" value="{{ doc.BodyContext.runTime_210RT_01 }}"  style="width:98%;" >
+    	</td>
+    	<td>
+    		<input type="text" name="runTime_120RT_01" data-type="mField" value="{{ doc.BodyContext.runTime_120RT_01 }}"  style="width:98%;" >
+    	</td>
+    	<th>냉동기본체</th>
+    	<td>
+    		<input type="text" name="runTime_210RT_YN_01" data-type="mField" value="{{ doc.BodyContext.runTime_210RT_YN_01 }}"  style="width:98%;" >
+    	</td>
+    	<td>
+    		<input type="text" name="runTime_120RT_YN_01" data-type="mField" value="{{ doc.BodyContext.runTime_120RT_YN_01 }}"  style="width:98%;" >
+    	</td>
+    </tr>
+    <tr>
+    	<td>
+    		<input type="text" name="runTime_210RT_02" data-type="mField" value="{{ doc.BodyContext.runTime_210RT_02 }}"  style="width:98%;" >
+    	</td>
+    	<td>
+    		<input type="text" name="runTime_120RT_02" data-type="mField" value="{{ doc.BodyContext.runTime_120RT_02 }}"  style="width:98%;" >
+    	</td>
+    	<th>냉수계통</th>
+    	<td>
+    		<input type="text" name="runTime_210RT_YN_02" data-type="mField" value="{{ doc.BodyContext.runTime_210RT_YN_02 }}"  style="width:98%;" >
+    	</td>
+    	<td>
+    		<input type="text" name="runTime_120RT_YN_02" data-type="mField" value="{{ doc.BodyContext.runTime_120RT_YN_02 }}"  style="width:98%;" >
+    	</td>
+    </tr>
+    <tr>
+    	<th>총가동시간</th>
+    	<td>
+    		<input type="text" name="totTime_210RT_01" data-type="mField" value="{{ doc.BodyContext.totTime_210RT_01 }}"  style="width:98%;" >
+    	</td>
+    	<td>
+    		<input type="text" name="totTime_120RT_01" data-type="mField" value="{{ doc.BodyContext.totTime_120RT_01 }}"  style="width:98%;" >
+    	</td>
+    	<th>냉각수계통</th>
+    	<td>
+    		<input type="text" name="runTime_210RT_YN_03" data-type="mField" value="{{ doc.BodyContext.runTime_210RT_YN_03 }}"  style="width:98%;" >
+    	</td>
+    	<td>
+    		<input type="text" name="runTime_120RT_YN_03" data-type="mField" value="{{ doc.BodyContext.runTime_120RT_YN_03 }}"  style="width:98%;" >
+    	</td>
+    </tr>
+</table>
+<table class="tableStyle linePlus"><!-- class="table_10" -->
+	<colgroup>
+		<col style="width:7%" />
+		<col style="width:10%" />
+		<col style="width:3%" />
+		<col style="width:10%" />
+		<col style="width:3%" />
+		<col style="width:10%" />
+		<col style="width:15%" />
+	</colgroup>
+	<tr>
+		<th rowspan="3">흡수식<br/>냉동기</th>
+		<th>냉각수온도<br/>1호/2호</th>
+		<th>입구</th>
+		<td>
+			<input type="text" name="abIn_01" data-type="mField" value="{{ doc.BodyContext.abIn_01 }}"  style="width:40%;" >
+			/
+			<input type="text" name="abIn_02" data-type="mField" value="{{ doc.BodyContext.abIn_02 }}"  style="width:40%;" >
+		</td>
+		<th>출구</th>
+		<td>
+			<input type="text" name="abOut_01" data-type="mField" value="{{ doc.BodyContext.abOut_01 }}"  style="width:40%;" >
+			/
+			<input type="text" name="abOut_02" data-type="mField" value="{{ doc.BodyContext.abOut_02 }}"  style="width:40%;" >
+		</td>
+		<th>비고</th>
+	</tr>
+	<tr>
+		<th>냉각수온도<br/>1호/2호</th>
+		<th>입구</th>
+		<td>
+			<input type="text" name="abIn_03" data-type="mField" value="{{ doc.BodyContext.abIn_03 }}"  style="width:40%;" >
+			/
+			<input type="text" name="abIn_04" data-type="mField" value="{{ doc.BodyContext.abIn_04 }}"  style="width:40%;" >
+		</td>
+		<th>출구</th>
+		<td>
+			<input type="text" name="abOut_03" data-type="mField" value="{{ doc.BodyContext.abOut_03 }}"  style="width:40%;" >
+			/
+			<input type="text" name="abOut_04" data-type="mField" value="{{ doc.BodyContext.abOut_04 }}"  style="width:40%;" >
+		</td>
+		<td rowspan="2">
+			<textarea data-type="mField" name="note" rows="3" style="width:99%; overflow-y:auto;">{{ doc.BodyContext.note }}</textarea>
+		</td>
+	</tr>
+	<tr>
+		<th>냉각수온도<br/>1호/2호</th>
+		<th>1호</th>
+		<td>
+			<input type="text" name="abOut_1ho_1" data-type="mField" value="{{ doc.BodyContext.abOut_1ho_1 }}"  style="width:40%;" >
+			/
+			<input type="text" name="abOut_1ho_2" data-type="mField" value="{{ doc.BodyContext.abOut_1ho_2 }}"  style="width:40%;" >
+		</td>
+		<th>1호</th>
+		<td>
+			<input type="text" name="abOut_2ho_1" data-type="mField" value="{{ doc.BodyContext.abOut_2ho_1 }}"  style="width:40%;" >
+			/
+			<input type="text" name="abOut_2ho_2" data-type="mField" value="{{ doc.BodyContext.abOut_2ho_2 }}"  style="width:40%;" >
+		</td>
+	</tr>
+</table>
+<table class="tableStyle linePlus"><!-- class="table_10" -->
+	<colgroup>
+		<col style="width:8%" />
+		<col style="width:8%" />
+		<col style="width:8%" />
+		<col style="width:8%" />
+		<col style="width:8%" />
+		<col style="width:8%" />
+		<col style="width:8%" />
+		<col style="width:8%" />
+	</colgroup>
+	<tr>
+		<th rowspan="6">가스사용량<br/>(LNG)</th>
+		<th colspan="2">구분</th>
+		<th>금일지침</th>
+		<th>전일지침</th>
+		<th>사용량</th>
+		<th>월사용누계</th>
+		<th>비고</th>
+	</tr>
+	<tr>
+		<th rowspan="2">보일러 4톤</th>
+		<th>비보정</th>
+		<td>
+			<input type="text" name="lng_4tUncrt_01" data-type="mField" value="{{ doc.BodyContext.lng_4tUncrt_01 }}"  style="width:98%;" >
+		</td>
+		<td>
+			<input type="text" name="lng_4tUncrt_02" data-type="mField" value="{{ doc.BodyContext.lng_4tUncrt_02 }}"  style="width:98%;" >
+		</td>
+		<td>
+			<input type="text" name="lng_4tUncrt_03" data-type="mField" value="{{ doc.BodyContext.lng_4tUncrt_03 }}"  style="width:98%;" >
+		</td>
+		<td>
+			<input type="text" name="lng_4tUncrt_04" data-type="mField" value="{{ doc.BodyContext.lng_4tUncrt_04 }}"  style="width:98%;" >
+		</td>
+		<td>
+			<input type="text" name="lng_4tUncrt_05" data-type="mField" value="{{ doc.BodyContext.lng_4tUncrt_05 }}"  style="width:98%;" >
+		</td>
+	</tr>
+	<tr>
+		<th>보정</th>
+		<td>
+			<input type="text" name="lng_4tCrt_01" data-type="mField" value="{{ doc.BodyContext.lng_4tCrt_01 }}"  style="width:98%;" >
+		</td>
+		<td>
+			<input type="text" name="lng_4tCrt_02" data-type="mField" value="{{ doc.BodyContext.lng_4tCrt_02 }}"  style="width:98%;" >
+		</td>
+		<td>
+			<input type="text" name="lng_4tCrt_03" data-type="mField" value="{{ doc.BodyContext.lng_4tCrt_03 }}"  style="width:98%;" >
+		</td>
+		<td>
+			<input type="text" name="lng_4tCrt_04" data-type="mField" value="{{ doc.BodyContext.lng_4tCrt_04 }}"  style="width:98%;" >
+		</td>
+		<td>
+			<input type="text" name="lng_4tCrt_05" data-type="mField" value="{{ doc.BodyContext.lng_4tCrt_05 }}"  style="width:98%;" >
+		</td>
+	</tr>
+	<tr>
+		<th rowspan="2">보일러 2톤</th>
+		<th>비보정</th>
+		<td>
+			<input type="text" name="lng_2tUncrt_01" data-type="mField" value="{{ doc.BodyContext.lng_2tUncrt_01 }}"  style="width:98%;" >
+		</td>
+		<td>
+			<input type="text" name="lng_2tUncrt_02" data-type="mField" value="{{ doc.BodyContext.lng_2tUncrt_02 }}"  style="width:98%;" >
+		</td>
+		<td>
+			<input type="text" name="lng_2tUncrt_03" data-type="mField" value="{{ doc.BodyContext.lng_2tUncrt_03 }}"  style="width:98%;" >
+		</td>
+		<td>
+			<input type="text" name="lng_2tUncrt_04" data-type="mField" value="{{ doc.BodyContext.lng_2tUncrt_04 }}"  style="width:98%;" >
+		</td>
+		<td>
+			<input type="text" name="lng_2tUncrt_05" data-type="mField" value="{{ doc.BodyContext.lng_2tUncrt_05 }}"  style="width:98%;" >
+		</td>
+	</tr>
+	<tr>
+		<th>보정</th>
+		<td>
+			<input type="text" name="lng_2tCrt_01" data-type="mField" value="{{ doc.BodyContext.lng_2tCrt_01 }}"  style="width:98%;" >
+		</td>
+		<td>
+			<input type="text" name="lng_2tCrt_02" data-type="mField" value="{{ doc.BodyContext.lng_2tCrt_02 }}"  style="width:98%;" >
+		</td>
+		<td>
+			<input type="text" name="lng_2tCrt_03" data-type="mField" value="{{ doc.BodyContext.lng_2tCrt_03 }}"  style="width:98%;" >
+		</td>
+		<td>
+			<input type="text" name="lng_2tCrt_04" data-type="mField" value="{{ doc.BodyContext.lng_2tCrt_04 }}"  style="width:98%;" >
+		</td>
+		<td>
+			<input type="text" name="lng_2tCrt_05" data-type="mField" value="{{ doc.BodyContext.lng_2tCrt_05 }}"  style="width:98%;" >
+		</td>
+	</tr>
+	<tr>
+		<th colspan="2">온수보일러(대열보일러)</th>
+		<td>
+			<input type="text" name="lng_on_01" data-type="mField" value="{{ doc.BodyContext.lng_on_01 }}"  style="width:98%;" >
+		</td>
+		<td>
+			<input type="text" name="lng_on_02" data-type="mField" value="{{ doc.BodyContext.lng_on_02 }}"  style="width:98%;" >
+		</td>
+		<td>
+			<input type="text" name="lng_on_03" data-type="mField" value="{{ doc.BodyContext.lng_on_03 }}"  style="width:98%;" >
+		</td>
+		<td>
+			<input type="text" name="lng_on_04" data-type="mField" value="{{ doc.BodyContext.lng_on_04 }}"  style="width:98%;" >
+		</td>
+		<td>
+			<input type="text" name="lng_on_05" data-type="mField" value="{{ doc.BodyContext.lng_on_05 }}"  style="width:98%;" >
+		</td>
+	</tr>
+	<tr>
+		<th rowspan="2">상수도</th>
+		<th rowspan="2" colspan="2">수도사용량</th>
+		<th>금일지침</th>
+		<th>전일지침</th>
+		<th>사용량</th>
+		<th>월사용누계</th>
+		<th>비고</th>
+	</tr>
+	<tr>
+		<td>
+			<input type="text" name="sUseCnt_01" data-type="mField" value="{{ doc.BodyContext.sUseCnt_01 }}"  style="width:98%;" >
+		</td>
+		<td>
+			<input type="text" name="sUseCnt_02" data-type="mField" value="{{ doc.BodyContext.sUseCnt_02 }}"  style="width:98%;" >
+		</td>
+		<td>
+			<input type="text" name="sUseCnt_03" data-type="mField" value="{{ doc.BodyContext.sUseCnt_03 }}"  style="width:98%;" >
+		</td>
+		<td>
+			<input type="text" name="sUseCnt_04" data-type="mField" value="{{ doc.BodyContext.sUseCnt_04 }}"  style="width:98%;" >
+		</td>
+		<td>
+			<input type="text" name="sUseCnt_05" data-type="mField" value="{{ doc.BodyContext.sUseCnt_05 }}"  style="width:98%;" >
+		</td>
+	</tr>
+	<tr>
+		<th>작업 및<br/>특이사항</th>
+		<td colspan="7">
+			<textarea data-type="mField" name="notice_1" rows="5" style="width:99%; overflow-y:auto;">{{ doc.BodyContext.notice_1 }}</textarea>
+		</td>
+	</tr>
+</table>
+<table class="tableStyle linePlus mt20"><!-- class="table_10" -->
+	<colgroup>
+		<col style="width:10%" />
+		<col style="width:10%" />
+		<col style="width:20%" />
+		<col style="width:10%" />
+		<col style="width:10%" />
+		<col style="width:10%" />
+	</colgroup>
+	<tr>
+		<th colspan="2">점검항목</th>
+		<th>점검내용</th>
+		<th>적합</th>
+		<th>부적합</th>
+		<th>조치</th>
+	</tr>
+	<tr>
+		<th rowspan="7">냉∙난방<br/>설비</th>
+		<td rowspan="7" align="center">
+			<table>
+				<tr><th>공조기</th></tr>
+				<tr><th>급∙배기휀</th></tr>
+				<tr><th>열교환기</th></tr>
+				<tr><th>방열기</th></tr>
+				<tr><th>냉동기</th></tr>
+			</table>
+		</td>
+		<td>기기의 이상소음 발생여부</td>
+		<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_1">
+    			<input type="radio" name="rdo_1" value="1" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_1">
+    			<input type="radio" name="rdo_1" value="2" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_1">
+    			<input type="radio" name="rdo_1" value="3" />
+    		</div>
+    	</td>
+	</tr>
+	<tr>
+		<td>베어링 및 밸브 상태</td>
+		<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_2">
+    			<input type="radio" name="rdo_2" value="1" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_2">
+    			<input type="radio" name="rdo_2" value="2" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_2">
+    			<input type="radio" name="rdo_2" value="3" />
+    		</div>
+    	</td>
+	</tr>
+	<tr>
+		<td>밸브 작동 상태</td>
+		<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_3">
+    			<input type="radio" name="rdo_3" value="1" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_3">
+    			<input type="radio" name="rdo_3" value="2" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_3">
+    			<input type="radio" name="rdo_3" value="3" />
+    		</div>
+    	</td>
+	</tr>
+	<tr>
+		<td>트랩 작동 상태</td>
+		<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_4">
+    			<input type="radio" name="rdo_4" value="1" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_4">
+    			<input type="radio" name="rdo_4" value="2" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_4">
+    			<input type="radio" name="rdo_4" value="3" />
+    		</div>
+    	</td>
+	</tr>
+	<tr>
+		<td>계기 이상 여부</td>
+		<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_5">
+    			<input type="radio" name="rdo_5" value="1" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_5">
+    			<input type="radio" name="rdo_5" value="2" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_5">
+    			<input type="radio" name="rdo_5" value="3" />
+    		</div>
+    	</td>
+	</tr>
+	<tr>
+		<td>배관 등 파손 여부</td>
+		<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_6">
+    			<input type="radio" name="rdo_6" value="1" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_6">
+    			<input type="radio" name="rdo_6" value="2" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_6">
+    			<input type="radio" name="rdo_6" value="3" />
+    		</div>
+    	</td>
+	</tr>
+	<tr>
+		<td>보온상태</td>
+		<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_7">
+    			<input type="radio" name="rdo_7" value="1" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_7">
+    			<input type="radio" name="rdo_7" value="2" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_7">
+    			<input type="radio" name="rdo_7" value="3" />
+    		</div>
+    	</td>
+	</tr>
+	<tr>
+		<th rowspan="6">급∙배수<br/>설비</th>
+		<td rowspan="6" align="center">
+			<table>
+				<tr><th>급수펌프</th></tr>
+				<tr><th>고가수조</th></tr>
+				<tr><th>지하저수조</th></tr>
+				<tr><th>배수펌프</th></tr>
+			</table>
+		</td>
+		<td>이상소음 발생 여부</td>
+		<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_8">
+    			<input type="radio" name="rdo_8" value="1" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_8">
+    			<input type="radio" name="rdo_8" value="2" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_8">
+    			<input type="radio" name="rdo_8" value="3" />
+    		</div>
+    	</td>
+	</tr>
+	<tr>
+		<td>계기 및 센서 동작 상태</td>
+		<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_9">
+    			<input type="radio" name="rdo_9" value="1" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_9">
+    			<input type="radio" name="rdo_9" value="2" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_9">
+    			<input type="radio" name="rdo_9" value="3" />
+    		</div>
+    	</td>
+	</tr>
+	<tr>
+		<td>체크밸브 누수 여부</td>
+		<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_10">
+    			<input type="radio" name="rdo_10" value="1" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_10">
+    			<input type="radio" name="rdo_10" value="2" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_10">
+    			<input type="radio" name="rdo_10" value="3" />
+    		</div>
+    	</td>
+	</tr>
+	<tr>
+		<td>배관 등 파손 여부</td>
+		<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_11">
+    			<input type="radio" name="rdo_11" value="1" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_11">
+    			<input type="radio" name="rdo_11" value="2" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_11">
+    			<input type="radio" name="rdo_11" value="3" />
+    		</div>
+    	</td>
+	</tr>
+	<tr>
+		<td>밸브류 동작 상태 여부</td>
+		<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_12">
+    			<input type="radio" name="rdo_12" value="1" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_12">
+    			<input type="radio" name="rdo_12" value="2" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_12">
+    			<input type="radio" name="rdo_12" value="3" />
+    		</div>
+    	</td>
+	</tr>
+	<tr>
+		<td>펌프 작동 상태 여부</td>
+		<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_13">
+    			<input type="radio" name="rdo_13" value="1" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_13">
+    			<input type="radio" name="rdo_13" value="2" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_13">
+    			<input type="radio" name="rdo_13" value="3" />
+    		</div>
+    	</td>
+	</tr>
+	<tr>
+		<th rowspan="3">자동제어<br/>설비</th>
+		<td rowspan="3" align="center">
+			<table>
+				<tr><th>제어기기</th></tr>
+				<tr><th>온도,습도,풍량<br/>감지센서</th></tr>
+				<tr><th>배수펌프</th></tr>
+			</table>
+		</td>
+		<td>센서 감지 감도 여부</td>
+		<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_14">
+    			<input type="radio" name="rdo_14" value="1" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_14">
+    			<input type="radio" name="rdo_14" value="2" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_14">
+    			<input type="radio" name="rdo_14" value="3" />
+    		</div>
+    	</td>
+	</tr>
+	<tr>
+		<td>전동 댐퍼 동작 상태</td>
+		<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_15">
+    			<input type="radio" name="rdo_15" value="1" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_15">
+    			<input type="radio" name="rdo_15" value="2" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_15">
+    			<input type="radio" name="rdo_15" value="3" />
+    		</div>
+    	</td>
+	</tr>
+	<tr>
+		<td>제어기기 입∙출력 상태</td>
+		<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_16">
+    			<input type="radio" name="rdo_16" value="1" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_16">
+    			<input type="radio" name="rdo_16" value="2" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_16">
+    			<input type="radio" name="rdo_16" value="3" />
+    		</div>
+    	</td>
+	</tr>
+	<tr>
+		<th rowspan="4">소방설비</th>
+		<td rowspan="4" align="center">
+			<table>
+				<tr><th>소화전펌프</th></tr>
+				<tr><th>스프링쿨러펌프</th></tr>
+				<tr><th>압력펌프</th></tr>
+				<tr><th>옥∙내외소화전</th></tr>
+			</table>
+		</td>
+		<td>펌프 이상소음 발생 여부</td>
+		<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_17">
+    			<input type="radio" name="rdo_17" value="1" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_17">
+    			<input type="radio" name="rdo_17" value="2" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_17">
+    			<input type="radio" name="rdo_17" value="3" />
+    		</div>
+    	</td>
+	</tr>
+	<tr>
+		<td>밸브 작동 상태</td>
+		<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_18">
+    			<input type="radio" name="rdo_18" value="1" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_18">
+    			<input type="radio" name="rdo_18" value="2" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_18">
+    			<input type="radio" name="rdo_18" value="3" />
+    		</div>
+    	</td>
+	</tr>
+	<tr>
+		<td>압력감지센서 동작 상태</td>
+		<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_19">
+    			<input type="radio" name="rdo_19" value="1" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_19">
+    			<input type="radio" name="rdo_19" value="2" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_19">
+    			<input type="radio" name="rdo_19" value="3" />
+    		</div>
+    	</td>
+	</tr>
+	<tr>
+		<td>옥내소방호스 이상 유무</td>
+		<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_20">
+    			<input type="radio" name="rdo_20" value="1" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_20">
+    			<input type="radio" name="rdo_20" value="2" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_20">
+    			<input type="radio" name="rdo_20" value="3" />
+    		</div>
+    	</td>
+	</tr>
+	<tr>
+		<th rowspan="2">오수처리장</th>
+		<td rowspan="2" align="center">
+			<table>
+				<tr><th>방류조</th></tr>
+				<tr><th>급∙배기휀</th></tr>
+			</table>
+		</td>
+		<td>방류조 수중펌프 작동 상태</td>
+		<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_21">
+    			<input type="radio" name="rdo_21" value="1" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_21">
+    			<input type="radio" name="rdo_21" value="2" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_21">
+    			<input type="radio" name="rdo_21" value="3" />
+    		</div>
+    	</td>
+	</tr>
+	<tr>
+		<td>급∙배기휀 가동 상태</td>
+		<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_22">
+    			<input type="radio" name="rdo_22" value="1" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_22">
+    			<input type="radio" name="rdo_22" value="2" />
+    		</div>
+    	</td>
+    	<td style="text-align: center;">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="rdo_22">
+    			<input type="radio" name="rdo_22" value="3" />
+    		</div>
+    	</td>
+	</tr>
+	<tr>
+		<th colspan="2">특이사항</th>
+		<td colspan="4">
+			<textarea data-type="mField" name="notice_2" rows="5" style="width:99%; overflow-y:auto;">{{ doc.BodyContext.notice_2 }}</textarea>
+		</td>
+	</tr>
+</table>
+<!--실 결재양식 내용 부분 끝 -->

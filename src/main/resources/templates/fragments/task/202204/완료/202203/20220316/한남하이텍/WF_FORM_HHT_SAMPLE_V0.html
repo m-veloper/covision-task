@@ -1,0 +1,116 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="multi-row-table tableStyle linePlus mt10" id="sumTable"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:15%" />
+        <col style="width:10%" />
+        <col style="width:10%" />
+        <col style="width:17%" />
+        <col style="width:10%" />
+        <col style="width:12%" />
+        <col style="width:12%" />
+    </colgroup>
+    <tr>
+    	<th>용도구분</th>
+    	<td colspan="6">
+    		<input type="text" name="prpsType" data-type="mField" value="{{ doc.BodyContext.prpsType }}"  style="width:99%;" placeholder="개발 인허가 품질 총무 영업 교환 마케팅 연구"/>
+    	</td>
+    </tr>
+    <tr>
+    	<th>사유</th>
+    	<td colspan="6">
+    		<input type="text" name="reason" data-type="mField" value="{{ doc.BodyContext.reason }}"  style="width:99%;" placeholder="상세하게 작성하세요."/>
+    	</td>
+    </tr>
+    <tr>
+    	<th>거래처명</th>
+    	<td colspan="6">
+    		<input type="text" name="acntNm" data-type="mField" value="{{ doc.BodyContext.acntNm }}"  style="width:99%;" placeholder="거래처명을 입력하세요."/>
+    	</td>
+    </tr>
+    <tr>
+    	<th>ETD(출고요청일)</th>
+    	<td colspan="6">
+    		<input type="text" name="etd" data-type="mField" data-pattern="date" data-date-format="yy년 mm월 dd일" value="{{ doc.BodyContext.etd }}"  style="width:99%;" placeholder="날짜를 정확히 입력하세요."/>
+    	</td>
+    </tr>
+    <tr>
+    	<th>통관방법</th>
+    	<td colspan="6">
+    		<input type="text" name="method" data-type="mField" value="{{ doc.BodyContext.method }}"  style="width:99%;" placeholder="예) 간이, 전시회"/>
+    	</td>
+    </tr>
+    <tr>
+    	<th>선적조건</th>
+    	<td colspan="6">
+    		<input type="text" name="condition" data-type="mField" value="{{ doc.BodyContext.condition }}"  style="width:99%;" placeholder="INCOTERMS 작성하세요."/>
+    	</td>
+    </tr>
+    <tr>
+    	<th>운송사</th>
+    	<td colspan="6">
+    		<input type="text" name="carrier" data-type="mField" value="{{ doc.BodyContext.carrier }}"  style="width:99%;" placeholder="DHL, TNT, HANDCARRY 등을 입력하세요."/>
+    	</td>
+    </tr>
+    <tr>
+    	<th>선적항</th>
+    	<td colspan="6">
+    		<input type="text" name="shpBox" data-type="mField" value="{{ doc.BodyContext.shpBox }}"  style="width:99%;" placeholder="공항명, 항구명을 입력하세요."/>
+    	</td>
+    </tr>
+    <tr>
+    	<th>도착항</th>
+    	<td colspan="6">
+    		<input type="text" name="shpPort" data-type="mField" value="{{ doc.BodyContext.shpPort }}"  style="width:99%;" placeholder="공항명, 항구명을 입력하세요."/>
+    	</td>
+    </tr>
+    <tr>
+    	<th>배송주소</th>
+    	<td colspan="6">
+    		<input type="text" name="deliAddr" data-type="mField" value="{{ doc.BodyContext.deliAddr }}"  style="width:99%;" placeholder="배송주소를 입력하세요."/>
+    	</td>
+    </tr>
+    <tr>
+    	<th>추가요청사항 및 확인사항</th>
+    	<td colspan="6">
+    		<input type="text" name="request" data-type="mField" value="{{ doc.BodyContext.request }}"  style="width:99%;" placeholder="기타 필요사항을 입력하세요."/>
+    	</td>
+    </tr>
+    <tr class="multi-row-control" data-mode="writeOnly">
+    	<td colspan="7">
+    		<em class="btn_iws_l" style="float: right;">
+                <span class="btn_iws_r multi-row-add" id="btnAdd" style="cursor: pointer;">
+                    <strong class="txt_btn_ws">
+                        <img class="ico_btn" alt="" src="/approval/resources/images/xform/ico_plus.gif">추가
+                    </strong>
+                </span>
+            </em>
+            <em class="btn_iws_l" style="float: right; padding-right: 10px;">
+                <span class="btn_iws_r multi-row-del-auto" id="btnDel" style="cursor: pointer;">
+                    <strong class="txt_btn_ws">
+                        <img class="ico_btn" alt="" src="/approval/resources/images/xform/ico_x.gif">삭제
+                    </strong>
+                </span>
+            </em>
+    	</td>
+    </tr>
+    <tr>
+    	<th>품번</th>
+    	<th>품명</th>
+    	<th>규격</th>
+    	<th>단위</th>
+    	<th>수량</th>
+    	<th>정상판매시 통화</th>
+    	<th>정상판매시 단가</th>
+    </tr>
+    <tr class="multi-row-template">
+    	<td><input type="text" data-type="rField" name="itmNo" style="width: 99%;" /></td>
+    	<td><input type="text" data-type="rField" name="itmNm" style="width: 99%;" /></td>
+    	<td><input type="text" data-type="rField" name="itmStndrd" style="width: 99%;" /></td>
+    	<td><input type="text" data-type="rField" name="itmUnit" style="width: 99%;" /></td>
+    	<td><input type="text" data-type="rField" name="itmCnt" style="width: 99%;" /></td>
+    	<td><input type="text" data-type="rField" name="itmCrnc" style="width: 99%;" /></td>
+    	<td><input type="text" data-type="rField" name="itmPrc" style="width: 99%;" /></td>
+    </tr>
+</table>
+<!--실 결재양식 내용 부분 끝 -->

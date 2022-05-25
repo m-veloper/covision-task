@@ -1,0 +1,440 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:15%" />
+        <col style="width:45%" />
+        <col style="width:13.3%"/>
+        <col style="width:13.3%"/>
+        <col style="width:13.3%"/>
+    </colgroup>
+      <tr>
+	    <td colspan ="5" style ="border-left: none; border-right: none;  border-top: none; border-bottom: none;">
+	    	<input type="text" data-type="mField" id="requestDay" name = "requestDay" value="{{ doc.BodyContext.requestDay }}"  size="10" style="width : 25%; border-left: none; border-right: none;  border-top: none; border-bottom: none; " data-pattern="date" data-date-format="yy년 mm월 dd일 (DD요일)"  >
+		</td>
+    </tr>
+    <tr>
+	    <th>점검항목	    
+	    </th>
+	    <th>일일점검내용	    
+	    </th>
+	    <th>적합	    
+	    </th>
+	    <th>부적합	    
+	    </th>
+	    <th>조치	    
+	    </th>
+    </tr>
+    <tr>
+	    <th rowspan ="6">배관 및<br>부속품	    
+	    </th>
+	    <td style =" ">가스배관 및 밸브류의 누설유무
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun001">
+                <input type="radio"  name="gubun001" value="0" data-text="" />
+            </span>
+	    </td>
+	    <td align="center">
+	   		<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun001">
+                <input type="radio"  name="gubun001" value="1" data-text="" />
+            </span>
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun001">
+               <input type="radio"   name="gubun001" value="2" data-text="" />
+           	</span>
+	    </td>
+		
+		
+    </tr>
+    <tr>
+	    <td style =" ">부식 및 기계적 손상의 유무
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun002">
+                <input type="radio"   name="gubun002" value="0" data-text="" />
+            </span>
+	    </td>
+	    <td align="center">
+	   		<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun002">
+                <input type="radio"  name="gubun002" value="1" data-text="" />
+            </span>
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun002">
+               <input type="radio"   name="gubun002" value="2" data-text="" />
+           	</span>
+	    </td>
+    </tr>
+    
+      <tr>
+	    <td style =" ">밸브류의 조작 상태
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun003">
+                <input type="radio"  name="gubun003" value="0" data-text="" />
+            </span>
+	    </td>
+	    <td align="center">
+	   		<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun003">
+                <input type="radio"  name="gubun003" value="1" data-text="" />
+            </span>
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun003">
+               <input type="radio"   name="gubun003" value="2" data-text="" />
+           	</span>
+	    </td>
+    </tr>
+    <tr>
+        <td style =" ">스트레이너의 막힘 유무
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun004">
+                <input type="radio"  name="gubun004" value="0" data-text="" />
+            </span>
+	    </td>
+	    <td align="center">
+	   		<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun004">
+                <input type="radio"  name="gubun004" value="1" data-text="" />
+            </span>
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun004">
+               <input type="radio"   name="gubun004" value="2" data-text="" />
+           	</span>
+	    </td>
+    </tr>
+    
+     <tr>
+        <td style =" ">압력 조정기의 작동 상태
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun005">
+                <input type="radio"  name="gubun005" value="0" data-text="" />
+            </span>
+	    </td>
+	    <td align="center">
+	   		<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun005">
+                <input type="radio"  name="gubun005" value="1" data-text="" />
+            </span>
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun005">
+               <input type="radio"   name="gubun005" value="2" data-text="" />
+           	</span>
+	    </td>
+    </tr>
+    
+    <tr>
+	    <td style =" ">버너의 막힘, 손상 등의 유무
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun006">
+                <input type="radio"  name="gubun006" value="0" data-text="" />
+            </span>
+	    </td>
+	    <td align="center">
+	   		<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun006">
+                <input type="radio"  name="gubun006" value="1" data-text="" />
+            </span>
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun006">
+               <input type="radio"   name="gubun006" value="2" data-text="" />
+           	</span>
+	    </td>
+    </tr>
+    
+    <tr>
+	    <th rowspan ="7">보일러 <br>연소장치	    
+	    </th>
+	    <td style =" ">응축수탱크의 이상 유무
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun007">
+                <input type="radio"  name="gubun007" value="0" data-text="" />
+            </span>
+	    </td>
+	    <td align="center">
+	   		<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun007">
+                <input type="radio"  name="gubun007" value="1" data-text="" />
+            </span>
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun007">
+               <input type="radio"   name="gubun007" value="2" data-text="" />
+           	</span>
+	    </td>
+    </tr>
+    
+    <tr> 
+	    <td style =" ">점화, 소화 시의 이상 유무
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun008">
+                <input type="radio"  name="gubun008" value="0" data-text="" />
+            </span>
+	    </td>
+	   <td align="center">
+	   		<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun008">
+                <input type="radio"  name="gubun008" value="1" data-text="" />
+            </span>
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun008">
+               <input type="radio"   name="gubun008" value="2" data-text="" />
+           	</span>
+	    </td>
+		
+    </tr>
+    
+    <tr> 
+	    <td style =" ">송풍기의 구동부, 베어링의 이상 유무
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun009">
+                <input type="radio"  name="gubun009" value="0" data-text="" />
+            </span>
+	    </td>
+	    <td align="center">
+	   		<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun009">
+                <input type="radio"  name="gubun009" value="1" data-text="" />
+            </span>
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun009">
+               <input type="radio"   name="gubun009" value="2" data-text="" />
+           	</span>
+	    </td>
+    </tr>
+    
+    <tr> 
+	    <td style =" ">송풍기 필터의 막힘 유무
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun010">
+                <input type="radio"  name="gubun010" value="0" data-text="" />
+            </span>
+	    </td>
+	   <td align="center">
+	   		<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun010">
+                <input type="radio"  name="gubun010" value="1" data-text="" />
+            </span>
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun010">
+               <input type="radio"   name="gubun010" value="2" data-text="" />
+           	</span>
+	    </td>
+    </tr>
+    
+       <tr> 
+	    <td style =" ">급배기 설비의 이상 유무
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun011">
+                <input type="radio"  name="gubun011" value="0" data-text="" />
+            </span>
+	    </td>
+	    <td align="center">
+	   		<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun011">
+                <input type="radio"  name="gubun011" value="1" data-text="" />
+            </span>
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun011">
+               <input type="radio"   name="gubun011" value="2" data-text="" />
+           	</span>
+	    </td>
+    </tr>
+    <tr> 
+	    <td style =" ">연도의 이상 과열 유무
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun012">
+                <input type="radio"  name="gubun001" value="0" data-text="" />
+            </span>
+	    </td>
+	    <td align="center">
+	   		<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun012">
+                <input type="radio"  name="gubun012" value="1" data-text="" />
+            </span>
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun012">
+               <input type="radio"   name="gubun012" value="2" data-text="" />
+           	</span>
+	    </td>
+    </tr>
+    <tr> 
+	    <td style =" ">제어반의 이상음 및 이상온도 유무
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun013">
+                <input type="radio"  name="gubun013" value="0" data-text="" />
+            </span>
+	    </td>
+	    <td align="center">
+	   		<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun013">
+                <input type="radio"  name="gubun013" value="1" data-text="" />
+            </span>
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun013">
+               <input type="radio"   name="gubun013" value="2" data-text="" />
+           	</span>
+	    </td>
+    </tr>
+    
+    <tr>
+	    <th rowspan ="7">안전장치   
+	    </th>
+	    <td style =" ">제어반 각 표시등 등의 동작 상태
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun014">
+                <input type="radio"  name="gubun014" value="0" data-text="" />
+            </span>
+	    </td>
+	    <td align="center">
+	   		<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun014">
+                <input type="radio"  name="gubun014" value="1" data-text="" />
+            </span>
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun014">
+               <input type="radio"   name="gubun014" value="2" data-text="" />
+           	</span>
+	    </td>
+    </tr>
+    
+    <tr> 
+	    <td style =" ">연소실 주변의 가연물, 위험물 및 장애요인 유무
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun015">
+                <input type="radio"  name="gubun015" value="0" data-text="" />
+            </span>
+	    </td>
+	    <td align="center">
+	   		<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun015">
+                <input type="radio"  name="gubun015" value="1" data-text="" />
+            </span>
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun015">
+               <input type="radio"   name="gubun015" value="2" data-text="" />
+           	</span>
+	    </td>
+    </tr>
+    
+    <tr> 
+	    <td style =" ">안전 차단 밸브의 작동이상 유무
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun016">
+                <input type="radio"  name="gubun016" value="0" data-text="" />
+            </span>
+	    </td>
+	    <td align="center">
+	   		<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun016">
+                <input type="radio"  name="gubun016" value="1" data-text="" />
+            </span>
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun016">
+               <input type="radio"   name="gubun016" value="2" data-text="" />
+           	</span>
+	    </td>
+    </tr>
+    
+    <tr> 
+	    <td style =" ">가스 정압기실의 작동이상 유무
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun017">
+                <input type="radio"  name="gubun017" value="0" data-text="" />
+            </span>
+	    </td>
+	    <td align="center">
+	   		<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun017">
+                <input type="radio"  name="gubun017" value="1" data-text="" />
+            </span>
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun017">
+               <input type="radio"   name="gubun017" value="2" data-text="" />
+           	</span>
+	    </td>
+    </tr>
+    
+       <tr> 
+	    <td style =" ">가스 기록지의 작동상태
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun018">
+                <input type="radio"  name="gubun018" value="0" data-text="" />
+            </span>
+	    </td>
+	    <td align="center">
+	   		<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun018">
+                <input type="radio"  name="gubun018" value="1" data-text="" />
+            </span>
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun018">
+               <input type="radio"   name="gubun018" value="2" data-text="" />
+           	</span>
+	    </td>
+    </tr>
+    <tr> 
+	    <td style =" ">누설 경보기의 작동상태
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun019">
+                <input type="radio"  name="gubun019" value="0" data-text="" />
+            </span>
+	    </td>
+	    <td align="center">
+	   		<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun019">
+                <input type="radio"  name="gubun019" value="1" data-text="" />
+            </span>
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun019">
+               <input type="radio"   name="gubun019" value="2" data-text="" />
+           	</span>
+	    </td>
+    </tr>
+    <tr> 
+	    <td style =" ">압력스위치의 작동상태
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun020">
+                <input type="radio"  name="gubun020" value="0" data-text="" />
+            </span>
+	    </td>
+	    <td align="center">
+	   		<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun020">
+                <input type="radio"  name="gubun020" value="1" data-text="" />
+            </span>
+	    </td>
+		<td align="center">
+			<span data-type="mField" data-element-type="rdo_d" data-node-name="gubun020">
+               <input type="radio"   name="gubun020" value="2" data-text="" />
+           	</span>
+	    </td>
+    </tr>	
+        	
+      <tr >
+    	<th >특이사항
+		</th>
+		<td colspan ="4">
+			<textarea data-type="mField" name="notice" rows="5" style="width:99%; overflow-y:auto;">{{ doc.BodyContext.notice }}</textarea> 
+		</td>
+    </tr>
+</table>
+
+<!--실 결재양식 내용 부분 끝 -->

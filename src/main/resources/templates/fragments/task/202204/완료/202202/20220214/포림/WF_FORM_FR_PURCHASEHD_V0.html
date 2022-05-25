@@ -1,0 +1,230 @@
+<!--실 결재양식 내용 부분 시작 -->
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+		<colgroup>
+			<col style="width:15%" />
+	       	<col style="width:35%" />
+	       	<col style="width:15%" />
+	       	<col style="width:35%" />
+		</colgroup> 
+		<tr>
+			<td colspan ="4" style="border:hidden;">
+				<div  style="text-align:center">
+				<input type="text" data-type="mField" id="requestDay" title ="신청일" name = "requestDay" value="{{ doc.BodyContext.requestDay }}"  size="10" style="width : 100px;text-align:center" data-pattern="date" data-date-format="yy.mm.dd"  >
+				</div>
+				 
+			</td>
+			
+		</tr>
+		
+		<tr style="border:hidden;">
+			<td colspan ="4">
+				<div  style="text-align:center">아래와 같이 구매코자 품의 하오니 결재하여 주시기 바랍니다.
+				</div>
+			</td>
+			
+		</tr>
+		</table>
+		
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+		<colgroup>
+			<col style="width:15%" />
+	       	<col style="width:35%" />
+	       	<col style="width:15%" />
+	       	<col style="width:35%" />
+		</colgroup> 
+		
+		
+		<tr>
+			<th>현장명
+			</th>
+			<td  >
+	         <input type="text" data-type="mField" id="localName" name = "localName" value="{{ doc.BodyContext.localName }}" size="10" style="width : 95%" >
+		
+	        </td>
+	        
+	        <th>담당자
+			</th>
+			<td  >
+			<input type="text" id="educationCompany" name="educationCompany" data-type="mField" value="{{ doc.BodyContext.educationCompany }}"    style="width:95%; " >
+	           
+			</td>
+	       
+	       	
+		</tr>
+</table>
+
+<table class="table_10 multi-row-table RowSumTable tableStyle linePlus" id="equipmentTbl" style="border-left: 1px solid #c3d7df;">
+    <colgroup>
+		<col style="width: 4%">
+        <col style="width: 21%">
+        <col style="width: 17%">
+        <col style="width: 17%">
+        <col style="width: 17%">
+        <col style="width: 16%">
+    </colgroup>
+    <tbody>
+	    <tr class="multi-row-control" data-mode="writeOnly">
+	        <td colspan="6" style="text-align: right">
+	            <input type="button" value="+추가" class="multi-row-add usa">
+			<input type="button" value="-삭제" class="multi-row-del-auto usa">
+	        </td>
+	    </tr>
+	    <tr>
+	        <th>No.</th>
+	        <th>상품명</th>
+	        <th>단가</th>
+	        <th>수량</th>
+	        <th>금액</th>
+	        <th>비고</th>
+	    </tr>
+	    <tr class="multi-row-template multi-sum">
+			 <td class="multi-row-seq"></td>
+			 <td><input name="REQ_ITMENAME" style="width: 99%;" type="text" data-type="rField"></td>
+	        <td align="right">
+	            <input name="REQ_PRICE" style="width: 99%;" onblur="fn_sum();" type="text" data-type="rField" data-pattern="numeral" data-numeral-format="$0,0">
+	        </td>
+	        <td align="right">
+	            <input name="REQ_EA" style="width: 99%;" onblur="fn_sum();" type="text" data-type="rField" data-pattern="numeral">
+	        </td>
+	        <td align="right">
+	            <input name="REQ_TOTAL" style="width: 99%;" type="text" readonly="readonly" data-type="rField" data-pattern="numeral" data-numeral-format="$0,0" data-sum-ref="REQ_PRICE,REQ_EA" data-formula="({0}*{1})">
+	        </td>
+	        <td><input name="REQ_ETC" style="width: 99%;" type="text" data-type="rField"></td>
+	    </tr>
+	    <tr>
+	        <th colspan="4">총 금액</th>
+	        <td align="right">
+	            <input id="REQ_TOTALPRICE" style="width: 99%;" type="text" readonly="readonly" value="{{ doc.BodyContext.REQ_TOTALPRICE }}" data-type="mField" data-pattern="numeral" data-numeral-format="$0,0">
+	        </td>
+	        <th></th>
+	    </tr>
+	</tbody>
+</table>
+
+
+
+	
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+		<colgroup>
+			<col style="width:15%" />
+	       	<col style="width:35%" />
+	       	<col style="width:15%" />
+	       	<col style="width:35%" />
+		</colgroup> 
+		
+		
+		<tr>
+			<th>공급회사명
+			</th>
+			<td  >
+	         <input type="text" data-type="mField" id="localName" name = "localName" value="{{ doc.BodyContext.localName }}" size="10" style="width : 95%" >
+		
+	        </td>
+	        
+	        <th>납품시기
+			</th>
+			<td  >
+			<input type="text" data-type="mField" id="deliveryDay" title ="납품시기" name = "deliveryDay" value="{{ doc.BodyContext.deliveryDay }}"  size="10" style="width : 100px;text-align:center" data-pattern="date"   >
+				   
+			</td>
+	       
+	       	
+		</tr>
+		
+		
+		<tr>
+			<th>지불조건
+			</th>
+			<td  >
+	         <input type="text" data-type="mField" id="payment" name = "payment" value="{{ doc.BodyContext.payment }}" size="10" style="width : 95%" >
+		
+	        </td>
+	        
+	        <th>투입방법
+			</th>
+			<td  >
+			<input type="text" id="inputWay" name="inputWay" data-type="mField" value="{{ doc.BodyContext.inputWay }}"    style="width:95%; " >
+	           
+			</td>
+	       
+	       	
+		</tr>
+			<th>인도조건
+			</th>
+			<td  >
+	         <input type="text" data-type="mField" id="deliveryCondition " name = "deliveryCondition" value="{{ doc.BodyContext.deliveryCondition }}" size="10" style="width : 95%" >
+		
+	        </td>
+	        
+	        <th>포장상태
+			</th>
+			<td  >
+			<input type="text" id="packing" name="packing" data-type="mField" value="{{ doc.BodyContext.packing }}"    style="width:95%; " >
+	           
+			</td>
+	       
+	       	
+		</tr>
+</table>
+
+
+<table class="tableStyle linePlus mt10 multi-row-table sortable" id="ItemTbl">
+    <colgroup>
+		<col style="width: 4%">        
+        <col style="width: 16%">
+        <col style="width: 13%">
+        <col style="width: 16%">      
+        <col style="width: 13%">
+        <col style="width: 16%">
+        <col style="width: 22%">
+        
+    </colgroup>
+    <tbody>
+	    <tr class="multi-row-control" data-mode="writeOnly">
+	        <td colspan="8" style="text-align: right">
+	            <input type="button" value="+추가" class="multi-row-add usa">
+			<input type="button" value="-삭제" class="multi-row-del-auto usa">
+	        </td>
+	    </tr>
+	    <tr>
+			
+			<th rowspan="2">No.</th>
+	        <th rowspan="2">회사명</th>
+	        <th colspan ="2">견적</th>
+	        <th colspan ="2">최종</th>
+	        <th rowspan="2">비고</th>
+	    </tr>
+	     <tr>
+			
+	        <th>단가</th>
+	        <th>금액</th>
+	        <th>단가</th>
+	        <th>금액</th>
+	    </tr>
+	     <tr class="multi-row-template">
+			<td class="multi-row-seq"></td>
+	        <td><input name="COMPANYNAME" style="width: 99%;" type="text" data-type="rField"></td>
+	        <td align="right">
+	            <input name="ESTIMATE_REQ_PRICE" style="width: 99%;"  type="text" data-type="rField" data-pattern="numeral" data-numeral-format="$0,0">
+	        </td>
+	       
+	        <td align="right">
+	            <input name="ESTIMATE_REQ_TOTAL" style="width: 99%;" type="text"  data-type="rField" data-pattern="numeral" data-numeral-format="$0,0">
+	        </td>
+	         <td align="right">
+	            <input name="LAST_REQ_PRICE" style="width: 99%;"  type="text" data-type="rField" data-pattern="numeral" data-numeral-format="$0,0">
+	        </td>
+	       
+	        <td align="right">
+	            <input name="LAST_REQ_TOTAL" style="width: 99%;" type="text"  data-type="rField" data-pattern="numeral" data-numeral-format="$0,0">
+	        </td>
+	        <td><input name="ESTIMATE_REQ_ETC" style="width: 99%;" type="text" data-type="rField"></td>
+	    </tr>
+	</tbody>
+</table>
+
+<!--실 결재양식 내용 부분 끝 -->

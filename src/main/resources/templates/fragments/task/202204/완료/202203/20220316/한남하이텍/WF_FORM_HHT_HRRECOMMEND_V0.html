@@ -1,0 +1,174 @@
+
+
+<!--실 결재양식 내용 부분 시작 -->
+	<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+		<colgroup>
+			<col style="width:20%" />
+	       <col style="width:20%" />
+	       <col style="width:40%" />
+	       <col style="width:20%" />
+		</colgroup>  
+		<tr>
+			<td colspan="4">				
+				<div> <strong>■ 추천인</strong>
+				</div>
+			</td>
+		</tr>
+		 <tr>
+	    	<th > 사업부</th>
+				<td  >
+					<input type="text" id="userDiv" name="userDiv" data-type="mField" value="{{ doc.BodyContext.userDiv }}"    style="width:98%; " >
+		      
+				</td>
+			<th >본부/팀</th>
+			<td  >
+				<input type="text" id="userDept" name="userDept" data-type="mField" value="{{ doc.BodyContext.userDept }}"    style="width:98%; " >
+	      
+			</td>
+	    </tr>
+	    
+	     <tr>
+	    	<th > 성명/직급</th>
+				<td  >
+					<input type="text" id="userName" name="userName" data-type="mField" value="{{ doc.BodyContext.userName }}"    style="width:98%; " >
+		      
+				</td>
+			<th >피추천인과의 관계</th>
+			<td  >
+				<input type="text" id="recommendRelation" name="recommendRelation" data-type="mField" value="{{ doc.BodyContext.recommendRelation }}"    style="width:98%; " >
+	      
+			</td>
+	    </tr>
+	    
+	   
+	    
+	    </table>	
+	    
+	    <table class="tableStyle linePlus "><!-- class="table_10" -->
+
+		<colgroup>
+			<col style="width:20%" />
+	       <col style="width:20%" />
+	       <col style="width:20%" />
+	       <col style="width:20%" />
+	       <col style="width:20%" />
+		</colgroup>  
+		<tr>
+			<td colspan="5">
+				<div> <strong>■ 피추천인</strong>
+				</div>
+			</td>
+		</tr>
+		 <tr>
+	    	<th > 성명</th>
+				<td  >
+					<input type="text" id="sufferName" name="sufferName" data-type="mField" value="{{ doc.BodyContext.sufferName }}"    style="width:98%; " >
+		      
+				</td>
+			<th rowspan="3">경력사항</th>
+			<th >총경력</th>
+			<td  >
+				<input type="text" id="totalCareer" name="totalCareer" data-type="mField" placeholder="  년   개월" value="{{ doc.BodyContext.totalCareer }}"    style="width:98%; " >
+	      
+			</td>
+	    </tr>
+	    
+	     <tr>
+	    	<th > 연락처</th>
+				<td  >
+					<input type="text" id="phoneNo" name="phoneNo" data-type="mField" value="{{ doc.BodyContext.phoneNo }}"    style="width:98%; " >
+		      
+				</td>
+			<th >현재(최종)<br>회사명/팀</th>
+			<td  >
+				<input type="text" id="lastCompany" name="lastCompany" data-type="mField" value="{{ doc.BodyContext.lastCompany }}"    style="width:98%; " >
+	      
+			</td>
+	    </tr>
+	      <tr>
+	    	<th > 이메일</th>
+				<td  >
+					<input type="text" id="email" name="email" data-type="mField" value="{{ doc.BodyContext.email }}"    style="width:98%; " >
+		      
+				</td>
+			<th >현재(최종)<br>직급</th>
+			<td  >
+				<input type="text" id="lastGrade" name="lastGrade" data-type="mField" value="{{ doc.BodyContext.lastGrade }}"    style="width:98%; " >
+	      
+			</td>
+	    </tr>
+	    
+	   
+	    
+	    </table>
+	    
+	    
+	    <table class="tableStyle linePlus "><!-- class="table_10" -->
+
+		<colgroup>
+			<col style="width:20%" />
+	       <col style="width:80%" />
+		</colgroup>  
+		<tr>
+			<td colspan="2">
+				<div>
+					<strong>■ 추천내용</strong>
+				</div>
+			</td>
+		</tr>
+		 <tr>
+	    	<th > 추천직무</th>
+			<td  >
+				<input type="text" id="recommendPosition" name="recommendPosition" data-type="mField" value="{{ doc.BodyContext.recommendPosition }}"    style="width:98%; " >
+	      
+			</td>
+	    </tr>
+	    
+	    <tr  style="height:80px">
+		    	
+	    	<td colspan="2" >
+	    		<textarea id="recommendReason" data-type="mField" placeholder="추천사유 (추천하는 이유, 지원분야의 적합성, 발전성 등)" style="width: 98%;height:80px">{{ doc.BodyContext.recommendReason }}</textarea>
+	    	</td>
+	    </tr>
+	    
+	    <tr  style="height:80px">
+		    	
+	    	<td colspan="2">
+	    		<textarea id="etcComment" data-type="mField" placeholder="기타사항 (추천인이 회사에 특히 요망하는 사항이나 인사팀에서 유의해야 할 사항 등)" style="width: 98%;height:80px">{{ doc.BodyContext.etcComment }}</textarea>
+	    	</td>
+	    </tr>
+	    
+	    </table>
+	    
+	    <table class="tableStyle linePlus "><!-- class="table_10" -->
+		   <colgroup>
+		       
+		        <col style="width:99%" />
+		   </colgroup>
+		   <tr>
+			   <td style=" border-top: none; border-bottom: none; ">
+				   <div>
+				     [안내사항]<br>
+				    - 피추천자의 이력서, 자기소개서, 포트폴리오 등을 반드시 첨부해주시길 바랍니다.
+				   </div>
+			  
+			   </td>
+		   </tr>
+		   
+		   <tr>
+			   <td style="border-top: none; border-bottom: none; ">
+				   <div align="center">
+				   	  위와 같이 추천서를 제출합니다.
+				   </div>
+			  
+			   </td>
+		   </tr>
+		   <tr>
+			   <td style=" border-bottom: none; " align="center">
+			   	<input  type="text" data-type="mField" id = "writeDate" name="writeDate" data-pattern="date" data-date-format="yy년 mm월 dd일"  value="{{ doc.BodyContext.writeDate }}" placeholder="20   년    월    일" style="width:98% ;text-align :center;  border:0px solid;" >
+			   </td>
+		   </tr>
+	   </table>
+	    	    
+<!--실 결재양식 내용 부분 끝 -->

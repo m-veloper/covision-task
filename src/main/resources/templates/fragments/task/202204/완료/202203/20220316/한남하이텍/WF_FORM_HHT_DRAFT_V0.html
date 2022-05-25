@@ -1,0 +1,108 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:100%" />
+    </colgroup>
+    <tr>
+    	<th>내  용</th>
+    </tr>
+    <tr>
+    	<td>
+    		<!-- 에디터 시작 -->
+			<div id="divWebEditorContainer" data-element-type="editor"></div>
+			<!-- 에디터 끝 -->
+    	</td>
+    </tr>
+</table>
+<table class="multi-row-table tableStyle linePlus mt10" id="sumTable"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:10%" />
+        <col style="width:25%" />
+        <col style="width:20%" />
+        <col style="width:12.5%" />
+        <col style="width:12.5%" />
+        <col style="width:20%" />
+    </colgroup>
+    <tbody>
+	    <tr class="multi-row-control" data-mode="writeOnly">
+	    	<td colspan="6">
+	    		<em class="btn_iws_l" style="float: right;">
+	                <span class="btn_iws_r multi-row-add" id="btnAdd" style="cursor: pointer;">
+	                    <strong class="txt_btn_ws">
+	                        <img class="ico_btn" alt="" src="/approval/resources/images/xform/ico_plus.gif">추가
+	                    </strong>
+	                </span>
+	            </em>
+	            <em class="btn_iws_l" style="float: right; padding-right: 10px;">
+	                <span class="btn_iws_r multi-row-del-auto" id="btnDel" style="cursor: pointer;">
+	                    <strong class="txt_btn_ws">
+	                        <img class="ico_btn" alt="" src="/approval/resources/images/xform/ico_x.gif">삭제
+	                    </strong>
+	                </span>
+	            </em>
+	    	</td>
+	    </tr>
+	    <tr>
+	    	<th>순번</th>
+	    	<th>품명</th>
+	    	<th>규격</th>
+	    	<th>수량</th>
+	    	<th>단가</th>
+	    	<th>금액(VAT포함)</th>
+	    </tr>
+	    <tr class="multi-row-template">
+	    	<td class="multi-row-seq"></td>
+	    	<td><input type="text" data-type="rField" name="itmNm" style="width: 99%;" /></td>
+	    	<td><input type="text" data-type="rField" name="stndrd" style="width: 99%;" /></td>
+	    	<td><input type="text" data-type="rField" name="amnt" style="width: 99%;" data-pattern="currency" class="sum-table-cell" onblur="COST_CAL()" /></td>
+	    	<td><input type="text" data-type="rField" name="unit" style="width: 99%;" data-pattern="currency" class="sum-table-cell" onblur="COST_CAL()" /></td>
+	    	<td><input type="text" data-type="rField" name="cost" style="width: 99%;" data-pattern="currency" class="sum-table-cell" readonly="readonly"/></td>
+	    </tr>
+    </tbody>
+</table>
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        <col style="width:15%" />
+        <col style="width:35%" />
+        <col style="width:15%" />
+        <col style="width:35%" />
+    </colgroup>
+    <tr>
+    	<th>거래처명</th>
+    	<td><input type="text" name="cstmNm" data-type="mField" value="{{ doc.BodyContext.cstmNm }}"  style="width:98%;" ></td>
+    	<th>거래처 담당자</th>
+    	<td><input type="text" name="cstmMng" data-type="mField" value="{{ doc.BodyContext.cstmMng }}"  style="width:98%;" ></td>
+    </tr>
+    <tr>
+    	<th>수령일</br>(완료일)</th>
+    	<td>
+    		<input type="text" data-type="mField" data-pattern="date" data-date-format="yy년 mm월 dd일" name="rcptDt" value="{{ doc.BodyContext.rcptDt }}"  style="width:98%; text-align: center;">
+    	</td>
+    	<th>연락처</th>
+    	<td><input type="text" name="cstmCnct" data-type="mField" value="{{ doc.BodyContext.cstmCnct }}"  style="width:98%;" ></td>
+    </tr>
+    <tr>
+    	<th>계약결제조건</th>
+    	<td colspan="3">
+    		<input type="text" name="cntrctStlmtCndtn" data-type="mField" value="{{ doc.BodyContext.cntrctStlmtCndtn }}"  style="width:98%;" >
+    	</td>
+    </tr>
+    <tr>
+    	<th>공용법인카드<br/>신청유무</th>
+    	<td colspan="3" class="ml5">
+    		<div data-type="mField" data-element-type="rdo_d" data-node-name="reqYn">
+    			<input type="radio" name="reqYn" value="Y" />&nbsp;신청&nbsp;
+    			<input type="radio" name="reqYn" value="N" checked="checked" />&nbsp;신청X
+    		</div>
+    	</td>
+    </tr>
+    <tr>
+    	<th>비고</th>
+    	<td colspan="3">
+    		<p class="mt5">※ 견적서, 기타 기안 내용을 확일할 수 있는 서류첨부</p>
+    		<p class="mt5">※ 품명은 품목당 작성하되, 품목 수가 많은 경우 견적서 첨부한 후 '00외'로 기재</p>
+    	</td>
+    </tr>
+</table>
+<!--실 결재양식 내용 부분 끝 -->

@@ -1,0 +1,429 @@
+<table class="table_10 linePlus mt10 multi-row-table RowSumTable tableStyle" id="TBLINFO"><!-- class="table_10" -->
+	<colgroup>
+        <col style="width:12%">
+		<col style="width:20%">
+		<col style="width:20%">		
+		<col style="width:12%">
+		<col style="width:12%">
+		<col style="width:12%">
+		<col style="width:12%">
+    </colgroup>
+	<tbody>
+	
+	<tr>
+	<th>현장명
+	</th>
+		<td colspan="6" >
+			<input type="text" style="width : 98%"data-type="mField" id="localName" name = "localName" value="{{ doc.BodyContext.localName }}"  >
+		</td>
+	</tr>
+	<tr class="multi-row-control" data-mode="writeOnly">
+	        <td colspan="8" style="text-align: right">
+	            <input type="button" id="btnAdd" value="+작업추가" class="multi-row-add usa">
+	            <input type="button" id="btnDelSel" value="-작업삭제" class="multi-row-del-auto usa">
+	            <input type="button"  value="+안전추가" onclick="dtladdClick()" class=" usa">
+	            <input type="button"   value="-안전삭제" onclick="dtldelClick()" class="usa">
+	            
+	        </td>
+	    </tr>
+	    <tr>
+		    <th colspan="8">내역
+		    </th>
+	    </tr>
+	<tr>
+	<th colspan="2" >
+	 <input type="text" data-type="mField" id="workDay"  name = "writeDay" value="{{ doc.BodyContext.workDay }}" size="10" style="width : 98%" data-pattern="date"  data-date-format="yy-mm-dd(DD)"  >
+	</th>
+	<th>날씨 :
+		<input type="text" style="width : 70%"data-type="mField" id="weather" name = "localName" value="{{ doc.BodyContext.weather }}"  >
+	</th>
+	<th>공종
+	</th>
+	<th>누계
+	</th>
+	<th>금일
+	</th>
+	<th>계
+	</th>
+</tr>
+
+	  <tr class="multi-row-template multi-sum">
+	        <td colspan="3"><input name="workComment1" style="width: 99%;" type="text" data-type="rField"></td>
+	        <td><input name="constructName1" style="width: 99%;" type="text" data-type="rField"></td>
+	        <td align="right">
+	            <input name="todayTotal1" style="width: 99%;" onblur="fn_sum_todayTotal1();" onchange="fn_sum_todayTotal1();" type="text" data-type="rField" data-pattern="numeral">
+	        </td>
+	        <td align="right">
+	            <input name="todayUse1" style="width: 99%;" onblur="fn_sum_todayUse1();" onchange="fn_sum_todayUse1();" type="text" data-type="rField" data-pattern="numeral" data-numeral-format="0,0">
+	        </td>
+	        
+	        <td align="right">
+	            <input name="rowTotal1" style="width: 99%;" type="text" readonly="readonly" data-type="rField" data-pattern="numeral" data-numeral-format="0,0" data-sum-ref="todayTotal1,todayUse1" data-formula="({0}+{1})">
+	        </td>
+	    </tr>
+	    <tr style="display:none" >
+	        <th colspan="4">총 계</th>
+	        <td align="right">
+	            <input id="todayTotalSum1" style="width: 99%;" type="text" readonly="readonly" value="{{ doc.BodyContext.todayTotalSum1 }}" data-type="mField" data-pattern="numeral" data-numeral-format="0,0">
+	        </td>
+	        <td align="right">
+	            <input id="todayUseSum1" style="width: 99%;" type="text" readonly="readonly" value="{{ doc.BodyContext.todayUseSum1 }}" data-type="mField" data-pattern="numeral" data-numeral-format="0,0">
+	        </td>
+	        <td align="right">
+	            <input id="rowTotalSum1" style="width: 99%;" type="text" readonly="readonly" value="{{ doc.BodyContext.rowTotalSum1 }}" data-type="mField" data-pattern="numeral" data-numeral-format="0,0">
+	        </td>
+	    </tr>
+	    
+	    
+	    
+	
+</tbody></table>
+
+
+
+
+<table class="table_10 linePlus  multi-row-table RowSumTable tableStyle" id="TBLINFO1"><!-- class="table_10" -->
+	<colgroup>
+        <col style="width:12%">
+		<col style="width:20%">
+		<col style="width:20%">		
+		<col style="width:12%">
+		<col style="width:12%">
+		<col style="width:12%">
+		<col style="width:12%">
+    </colgroup>
+	<tbody>
+	
+	<tr class="multi-row-control" style ="display:none">
+	        <td colspan="8" style="text-align: right">
+	            <input type="button" id="btnDtlAdd" value="+추가" class="multi-row-add ">
+	            <input type="button" id="btnDtlDelSel" value="-삭제" class="multi-row-del-auto ">
+	        </td>
+      </tr>
+
+	  <tr class="multi-row-template multi-sum">
+	        <td colspan="3"><input name="workComment2" style="width: 99%;" type="text" data-type="rField"></td>
+	        <td><input name="constructName2" style="width: 99%;" type="text" data-type="rField"></td>
+	        <td align="right">
+	            <input name="todayTotal2" style="width: 99%;" onblur="fn_sum_todayTotal2();" onchange="fn_sum_todayTotal2();" type="text" data-type="rField" data-pattern="numeral">
+	        </td>
+	        <td align="right">
+	            <input name="todayUse2" style="width: 99%;" onblur="fn_sum_todayUse2();" onchange="fn_sum_todayUse2();" type="text" data-type="rField" data-pattern="numeral" data-numeral-format="0,0">
+	        </td>
+	        
+	        <td align="right">
+	            <input name="rowTotal2" style="width: 99%;" type="text" readonly="readonly" data-type="rField" data-pattern="numeral" data-numeral-format="0,0" data-sum-ref="todayTotal2,todayUse2" data-formula="({0}+{1})">
+	        </td>
+	    </tr>
+	    <tr style="display:none" >
+	        <th colspan="4">총 계</th>
+	        <td align="right">
+	            <input id="todayTotalSum2" style="width: 99%;" type="text" readonly="readonly" value="{{ doc.BodyContext.todayTotalSum2 }}" data-type="mField" data-pattern="numeral" data-numeral-format="0,0">
+	        </td>
+	        <td align="right">
+	            <input id="todayUseSum2" style="width: 99%;" type="text" readonly="readonly" value="{{ doc.BodyContext.todayUseSum2 }}" data-type="mField" data-pattern="numeral" data-numeral-format="0,0">
+	        </td>
+	        <td align="right">
+	            <input id="rowTotalSum2" style="width: 99%;" type="text" readonly="readonly" value="{{ doc.BodyContext.rowTotalSum2 }}" data-type="mField" data-pattern="numeral" data-numeral-format="0,0">
+	        </td>
+	    </tr>
+	    	
+</tbody></table>
+
+
+<table class="table_10 linePlus  multi-row-table RowSumTable tableStyle" id="TBLINFO2"><!-- class="table_10" -->
+	<colgroup>
+        <col style="width:12%">
+		<col style="width:20%">
+		<col style="width:20%">		
+		<col style="width:12%">
+		<col style="width:12%">
+		<col style="width:12%">
+		<col style="width:12%">
+    </colgroup>
+	<tbody>
+	
+
+	  <tr class="multi-row-template multi-sum">
+	        <td colspan="3"><input name="workComment3" style="width: 99%;" type="text" data-type="rField"></td>
+	        <td><input name="constructName3" style="width: 99%;" type="text" data-type="rField"></td>
+	        <td align="right">
+	            <input name="todayTotal3" style="width: 99%;" onblur="fn_sum_todayTotal3();" onchange="fn_sum_todayTotal3();" type="text" data-type="rField" data-pattern="numeral">
+	        </td>
+	        <td align="right">
+	            <input name="todayUse3" style="width: 99%;" onblur="fn_sum_todayUse3();" onchange="fn_sum_todayUse3();" type="text" data-type="rField" data-pattern="numeral" data-numeral-format="0,0">
+	        </td>
+	        
+	        <td align="right">
+	            <input name="rowTotal3" style="width: 99%;" type="text" readonly="readonly" data-type="rField" data-pattern="numeral" data-numeral-format="0,0" data-sum-ref="todayTotal3,todayUse3" data-formula="({0}+{1})">
+	        </td>
+	    </tr>
+	    <tr  style="display:none">
+	        <th colspan="4">총 계</th>
+	        <td align="right">
+	            <input id="todayTotalSum3" style="width: 99%;" type="text" readonly="readonly" value="{{ doc.BodyContext.todayTotalSum3 }}" data-type="mField" data-pattern="numeral" data-numeral-format="0,0">
+	        </td>
+	        <td align="right">
+	            <input id="todayUseSum3" style="width: 99%;" type="text" readonly="readonly" value="{{ doc.BodyContext.todayUseSum3 }}" data-type="mField" data-pattern="numeral" data-numeral-format="0,0">
+	        </td>
+	        <td align="right">
+	            <input id="rowTotalSum3" style="width: 99%;" type="text" readonly="readonly" value="{{ doc.BodyContext.rowTotalSum3 }}" data-type="mField" data-pattern="numeral" data-numeral-format="0,0">
+	        </td>
+	    </tr>
+	    	
+</tbody></table>
+
+<table class="tableStyle linePlus "><!-- class="table_10" -->
+<colgroup>
+        <col style="width:12%">
+		<col style="width:20%">
+		<col style="width:20%">		
+		<col style="width:12%">
+		<col style="width:12%">
+		<col style="width:12%">
+		<col style="width:12%">
+    </colgroup>
+    
+    <tr >
+    		<th colspan="3">현장회의록
+    		</th>
+	        <th colspan="1">계</th>
+	        <td align="right">
+	            <input id="todayTotalSum4" style="width: 99%;" type="text" readonly="readonly" value="{{ doc.BodyContext.todayTotalSum4 }}" data-type="mField" data-pattern="numeral" data-numeral-format="0,0">
+	        </td>
+	        <td align="right">
+	            <input id="todayUseSum4" style="width: 99%;" type="text" readonly="readonly" value="{{ doc.BodyContext.todayUseSum4 }}" data-type="mField" data-pattern="numeral" data-numeral-format="0,0">
+	        </td>
+	        <td align="right">
+	            <input id="rowTotalSum4" style="width: 99%;" type="text" readonly="readonly" value="{{ doc.BodyContext.rowTotalSum4 }}" data-type="mField" data-pattern="numeral" data-numeral-format="0,0">
+	        </td>
+	    </tr>
+</table>
+
+
+<table class="tableStyle linePlus "><!-- class="table_10" -->
+	<colgroup>
+        <col style="width:12%">
+		<col style="width:20%">
+		<col style="width:20%">		
+		<col style="width:12%">
+		<col style="width:9%">
+		<col style="width:9%">
+		<col style="width:9%">
+		<col style="width:9%">
+    </colgroup>
+    <tr>
+	    <th rowspan="14" colspan="3">
+	    <textarea id="Context" data-type="mField" style="width: 98%;height:98% ;text-align :left">{{ doc.BodyContext.Context }}</textarea>
+	    </th>
+	    <th colspan="5">자재 입출고 현황
+	    </th>
+    <tr>
+    <tr>
+	    <th>품명
+	    </th>
+	    <th>규격
+	    </th>
+	    <th>단위
+	    </th>
+	    <th>수량
+	    </th>
+	    <th>업체명
+	    </th>
+    </tr>
+    <tr>
+	    <td>
+	    	<input type="text" id="itemName1" name="itemName1" data-type="mField" value="{{ doc.BodyContext.itemName1 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	     	<input type="text" id="standard1" name="standard1" data-type="mField" value="{{ doc.BodyContext.standard1 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	     	<input type="text" id="unit1" name="unit1" data-type="mField" value="{{ doc.BodyContext.unit1 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	     	<input type="text" id="qty1" name="qty1" data-type="mField" value="{{ doc.BodyContext.qty1 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	     	<input type="text" id="companyName1" name="companyName1" data-type="mField" value="{{ doc.BodyContext.companyName1 }}"    style="width:98%; " >
+	    </td>
+    
+    </tr>
+    <tr>
+	    <td>
+	    	<input type="text" id="itemName2" name="itemName2" data-type="mField" value="{{ doc.BodyContext.itemName2 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	     	<input type="text" id="standard2" name="standard2" data-type="mField" value="{{ doc.BodyContext.standard2 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	     	<input type="text" id="unit2" name="unit2" data-type="mField" value="{{ doc.BodyContext.unit2 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	     	<input type="text" id="qty2" name="qty2" data-type="mField" value="{{ doc.BodyContext.qty2 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	     	<input type="text" id="companyName2" name="companyName2" data-type="mField" value="{{ doc.BodyContext.companyName2 }}"    style="width:98%; " >
+	    </td>
+    
+    </tr>
+    <tr>
+	    <td>
+	    	<input type="text" id="itemName3" name="itemName3" data-type="mField" value="{{ doc.BodyContext.itemName3 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	     	<input type="text" id="standard3" name="standard3" data-type="mField" value="{{ doc.BodyContext.standard3 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	     	<input type="text" id="unit3" name="unit3" data-type="mField" value="{{ doc.BodyContext.unit3 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	     	<input type="text" id="qty3" name="qty3" data-type="mField" value="{{ doc.BodyContext.qty3 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	     	<input type="text" id="companyName3" name="companyName3" data-type="mField" value="{{ doc.BodyContext.companyName3 }}"    style="width:98%; " >
+	    </td>
+    
+    </tr>
+    <tr>
+	    <td>
+	    	<input type="text" id="itemName4" name="itemName4" data-type="mField" value="{{ doc.BodyContext.itemName4 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	     	<input type="text" id="standard4" name="standard4" data-type="mField" value="{{ doc.BodyContext.standard4 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	     	<input type="text" id="unit4" name="unit4" data-type="mField" value="{{ doc.BodyContext.unit4 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	     	<input type="text" id="qty4" name="qty4" data-type="mField" value="{{ doc.BodyContext.qty4 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	     	<input type="text" id="companyName4" name="companyName4" data-type="mField" value="{{ doc.BodyContext.companyName4 }}"    style="width:98%; " >
+	    </td>
+    
+    </tr>
+    <tr>
+	    <td>
+	    	<input type="text" id="itemName5" name="itemName5" data-type="mField" value="{{ doc.BodyContext.itemName5 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	     	<input type="text" id="standard5" name="standard5" data-type="mField" value="{{ doc.BodyContext.standard5 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	     	<input type="text" id="unit5" name="unit5" data-type="mField" value="{{ doc.BodyContext.unit5 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	     	<input type="text" id="qty5" name="qty5" data-type="mField" value="{{ doc.BodyContext.qty5 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	     	<input type="text" id="companyName5" name="companyName5" data-type="mField" value="{{ doc.BodyContext.companyName5 }}"    style="width:98%; " >
+	    </td>
+    
+    </tr>
+    
+    <tr>
+	    <th>품명
+	    </th>
+	    <th>단위
+	    </th>
+	    <th>누계
+	    </th>
+	    <th>금일
+	    </th>
+	    <th>계
+	    </th>
+    </tr>
+    
+    
+     <tr>
+	    <td>
+	    	<input type="text" id="itemName21" name="itemName21" data-type="mField" value="{{ doc.BodyContext.itemName21 }}"    style="width:98%; text-align:center" >
+	    </td>
+	     <td>
+	     	<input type="text" id="unit21" name="unit21" data-type="mField" value="{{ doc.BodyContext.unit21 }}"   style="width:98%; text-align:center" >
+	    </td>
+	     <td>
+	     	<input type="text" id="totalSum21" name="totalSum21" data-type="mField" value="{{ doc.BodyContext.totalSum21}}"    style="width:98%; " >
+	    </td>
+	     <td>
+	     	<input type="text" id="today21" name="today21" data-type="mField" value="{{ doc.BodyContext.today21 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	     	<input type="text" id="sum21" name="sum21" data-type="mField" value="{{ doc.BodyContext.sum21 }}"    style="width:98%; " >
+	    </td>
+    
+    </tr>
+     <tr>
+	    <td>
+	    	<input type="text" id="itemName22" name="itemName21" data-type="mField" value="{{ doc.BodyContext.itemName22 }}"    style="width:98%; text-align:center" >
+	    </td>
+	     <td>
+	     	<input type="text" id="unit22" name="unit22" data-type="mField" value="{{ doc.BodyContext.unit22 }}"    style="width:98%; text-align:center" >
+	    </td>
+	     <td>
+	     	<input type="text" id="totalSum22" name="totalSum22" data-type="mField" value="{{ doc.BodyContext.totalSum22}}"    style="width:98%; " >
+	    </td>
+	     <td>
+	     	<input type="text" id="today22" name="today22" data-type="mField" value="{{ doc.BodyContext.today22 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	     	<input type="text" id="sum22" name="sum22" data-type="mField" value="{{ doc.BodyContext.sum22 }}"    style="width:98%; " >
+	    </td>
+    
+    </tr>
+     <tr>
+	    <td>
+	    	<input type="text" id="itemName23" name="itemName23" data-type="mField" value="{{ doc.BodyContext.itemName23 }}"   style="width:98%; text-align:center" >
+	    </td>
+	     <td>
+	     	<input type="text" id="unit23" name="unit23" data-type="mField" value="{{ doc.BodyContext.unit23 }}"    style="width:98%; text-align:center" >
+	    </td>
+	     <td>
+	     	<input type="text" id="totalSum23" name="totalSum23" data-type="mField" value="{{ doc.BodyContext.totalSum23}}"    style="width:98%; " >
+	    </td>
+	     <td>
+	     	<input type="text" id="today23" name="today23" data-type="mField" value="{{ doc.BodyContext.today23 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	     	<input type="text" id="sum23" name="sum23" data-type="mField" value="{{ doc.BodyContext.sum23 }}"    style="width:98%; " >
+	    </td>
+    
+    </tr>
+     <tr>
+	    <td>
+	    	<input type="text" id="itemName24" name="itemName24" data-type="mField" value="{{ doc.BodyContext.itemName24 }}"    style="width:98%; text-align:center" >
+	    </td>
+	     <td>
+	     	<input type="text" id="unit24" name="unit24" data-type="mField" value="{{ doc.BodyContext.unit24 }}"    style="width:98%; text-align:center" >
+	    </td>
+	     <td>
+	     	<input type="text" id="totalSum24" name="totalSum24" data-type="mField" value="{{ doc.BodyContext.totalSum24 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	     	<input type="text" id="today24" name="today24" data-type="mField" value="{{ doc.BodyContext.today24 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	     	<input type="text" id="sum24" name="sum24" data-type="mField" value="{{ doc.BodyContext.sum24 }}"    style="width:98%; " >
+	    </td>
+    
+    </tr>
+     <tr>
+	    <td>
+	    	<input type="text" id="itemName25" name="itemName25" data-type="mField" value="{{ doc.BodyContext.itemName25 }}"    style="width:98%; text-align:center" >
+	    </td>
+	     <td>
+	     	<input type="text" id="unit25" name="unit25" data-type="mField" value="{{ doc.BodyContext.unit25 }}"    style="width:98%; text-align:center" >
+	    </td>
+	     <td>
+	     	<input type="text" id="totalSum25" name="totalSum25" data-type="mField" value="{{ doc.BodyContext.totalSum25}}"    style="width:98%; " >
+	    </td>
+	     <td>
+	     	<input type="text" id="today25" name="today25" data-type="mField" value="{{ doc.BodyContext.today25 }}"    style="width:98%; " >
+	    </td>
+	     <td>
+	     	<input type="text" id="sum25" name="sum25" data-type="mField" value="{{ doc.BodyContext.sum25 }}"    style="width:98%; " >
+	    </td>
+    
+    </tr>
+</table>

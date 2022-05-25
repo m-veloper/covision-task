@@ -1,0 +1,122 @@
+
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+<input type="hidden" data-type="rField" name="UserCode">
+<input type="hidden" data-type="rField" name="CompanyCode">
+
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        
+        <col style="width:13%" />
+        <col style="width:37%" />
+        <col style="width:13%" />
+        <col style="width:37%" />
+    </colgroup>
+     <tr>
+		<td colspan ="4"style="font-size:14px; text-align :center ; border-left: none; border-right: none; border-top: none !important; "><b>아래와 같은 사유로 병가 신청서를 제출합니다.<b></b>
+		</td>
+	
+	</tr>
+      <tr>
+    	<th >신청자</th>
+		<td  colspan ="3">
+		<input type="text" id="userName" name="userName" data-type="mField" value="{{ doc.BodyContext.userName }}"    style="width:90%; " >
+           
+		</td>
+		
+    </tr>
+    <tr>
+    	<th >소속</th>
+		<td   >
+		<input type="text" id="userDept" name="userDept" data-type="mField" value="{{ doc.BodyContext.userDept }}"    style="width:90%; " >
+           
+		</td>
+		 <th >직급</th>
+		<td   >
+		<input type="text" id="userPosition" name="userPosition" data-type="mField" value="{{ doc.BodyContext.userPosition }}"    style="width:90%; " >
+           
+		</td>
+    </tr>
+		   
+    
+    <tr>
+   			 <th >신청일자</th>
+			<td  colspan ="3">
+			 
+			 <input type="text" data-type="mField" id="requestDay" name = "requestDay" value="{{ doc.BodyContext.requestDay }}"  size="10" style="width : 25%; text-align :center ; " data-pattern="date" data-date-format="yy년 mm월 dd일"  >
+		 	  
+			</td>
+    </tr>
+     <tr>
+    	<th >기간</th>
+		<td  colspan ="3">
+		<input type="text" id="term" name="term" data-type="mField" value="{{ doc.BodyContext.term }}"    style="width:90%; " >
+           
+		</td>
+		
+    </tr>
+    
+   
+     <tr style ="height :150px">
+   			 <th >사유</th>
+			<td  colspan ="3" style ="height :150px">
+			 <div style="width:99% ; height : 99%">
+		    	<textarea data-type="mField" id="sickLeaveReason" style="width:99%" rows="8" >{{ doc.BodyContext.sickLeaveReason }}</textarea>
+		    </div>
+			</td>
+    </tr>
+    
+     <tr style ="height :150px">
+   			 <th >세부내용</th>
+			<td  colspan ="3" style ="height :150px">
+			 <div style="width:99% ; height : 99%">
+		    	<textarea data-type="mField" id="sickLeaveComment" style="width:99%" rows="8" >{{ doc.BodyContext.sickLeaveComment }}</textarea>
+		    </div>
+			</td>
+    </tr>
+     <tr style ="height :80px ;text-align :center ;">
+    <td colspan ="4" style ="height :80px ;text-align :center ;">
+    	   상기 본인은 위와 같은 사유로 병가 신청서를 제출하오니 허락하여 주시기 바랍니다.
+    </td> 
+    </tr>
+    
+</table>
+
+<table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+    <colgroup>
+        
+         <col style="width:35%" />
+        <col style="width:30%" />
+        <col style="width:35%" />
+    </colgroup>
+   
+  
+    
+</table>
+    
+    
+    <table class="tableStyle linePlus mt10"><!-- class="table_10" -->
+
+		 <colgroup>
+        
+	       	<col style="width:15%" />
+	       <col style="width:30%" />
+	       <col style="width:25%" />
+	       <col style="width:25%" />
+	       <col style="width:5%" />
+	    </colgroup>
+		
+		<tr>
+			<td colspan ="2" style="border-left: none; border-right: none; border-top: none !important;  border-bottom: none; " >
+		   	</td>
+	   		<td style="text-align:right;border-left: none; border-right: none; border-top: none !important;  border-bottom: none; " >신청자</td>	    
+		    <td style="border-left: none; border-right: none; border-top: none; border-bottom: none; " >
+		    	<input type="text" id="requestson" name="requestPerson" data-type="mField" value="{{ doc.BodyContext.requestPerson}}"    style="width:80%; text-align:right;" >(인)
+		      
+		    </td>
+	    </tr>
+	</table>
+
+<!--실 결재양식 내용 부분 끝 -->

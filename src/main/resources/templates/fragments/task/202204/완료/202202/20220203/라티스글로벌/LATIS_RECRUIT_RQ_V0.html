@@ -1,0 +1,166 @@
+<table class="table_10 tableStyle linePlus mt10 RowSumTable multi-row-table" id="recruit_Tbl"><!-- class="table_10" -->
+    <colgroup>
+    	<col style="width:15%">
+    	<col style="width:55%">
+    	<col style="width:10%">
+    	<col style="width:20%">
+    </colgroup>
+	<tbody><tr class="multi-row-control">
+		<td colspan="2" style="font-size:14px; font-weight:bold; border-top:none; border-left:none;border-right:none;">
+			1. 채용요청
+		</td>
+		<td colspan="2" style="border-top:none; border-left:none;border-right:none;" align="right">
+			<input type="button" value="+추가" class="multi-row-add usa" data-mode="writeOnly">
+			<input type="button" value="-삭제" class="multi-row-del-auto usa" data-mode="writeOnly">
+		</td>
+	</tr>
+	<tr>
+		<th rowspan="2">채용 사유</th>
+		<td colspan="3">
+			<div data-type="mField" data-element-type="chk_d" data-node-name="Reason_Recruit">
+				<input type="checkbox" name="Reason_Recruit" value="신규충원">&nbsp;신규충원&nbsp;&nbsp;
+				<input type="checkbox" name="Reason_Recruit" value="대체충원(퇴직/휴직 등)">&nbsp;대체충원(퇴직/휴직 등)&nbsp;&nbsp;
+				<input type="checkbox" name="Reason_Recruit" value="기타">&nbsp;기타
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3">
+			<font size="1px">*위 선택항목에 대한 구체적인 내용을 상세히 기재해 주시기 바랍니다.</font><br style="">
+			<textarea data-type="mField" style="width:98%;" id="Reason_Context" rows="5">{{doc.BodyContext.Reason_Context}}</textarea>
+		</td>
+	</tr>
+	<tr class="multi-row-template">
+		<th style="font-size:12px;">근무하게 될 부서</th>
+		<td>
+			<input type="text" data-type="rField" name="Expected_Dep" style="width:98%;">
+		</td>
+		<th>인원</th>
+		<td align="center">
+			<input type="text" data-type="rField" name="Expected_Man" style="width:50%;">명
+		</td>
+	</tr>
+	<tr class="multi-row-template">
+		<th>담당직무</th>
+		<td colspan="3">
+			<input type="text" data-type="rField" name="Expected_Job" style="width:98%">
+		</td>
+	</tr>
+	<tr class="multi-row-template">
+		<th>활용계획</th>
+		<td colspan="3">
+			<textarea data-type="rField" style="width:98%;" name="Expected_Plan" rows="5"></textarea>
+		</td>
+	</tr>
+	<tr class="multi-row-template">
+		<th rowspan="2">고용형태</th>
+		<td colspan="3">
+			<div class="group" data-type="rField" data-element-type="chk_d" data-node-name="Job_Type1" style="display:inline;">
+				<input type="checkbox" name="Job_Type_" data-face-for="Job_Type1" value="정규직">&nbsp;정규직[수습3개월적용]&nbsp;&nbsp;
+				<input type="text" name="Job_Type1" data-face-real="y" data-type="rField" style="display: none;">
+			</div>
+			<div class="group" data-type="rField" data-element-type="chk_d" data-node-name="Job_Type2" style="display:inline;">
+				<input type="checkbox" name="Job_Type_" data-face-for="Job_Type2" value="계약직">&nbsp;계약직&nbsp;&nbsp;
+				<input type="text" name="Job_Type2" data-face-real="y" data-type="rField" style="display: none;">
+			</div>
+			<div class="group" data-type="rField" data-element-type="chk_d" data-node-name="Job_Type3" style="display:inline;">
+				<input type="checkbox" name="Job_Type_" data-face-for="Job_Type3" value="기타">&nbsp;기타
+				<input type="text" name="Job_Type3" data-face-real="y" data-type="rField" style="display: none;">
+			</div>
+		</td>
+	</tr>
+	<tr class="multi-row-template">
+		<td colspan="3">
+			<font size="1px">*기타를 선택한 경우 해당 내용을 상세히 기재해 주시기 바랍니다.</font><br style="">
+			<input type="text" data-type="rField" name="Ect_Reason" style="width:98%;">
+		</td>
+	</tr>
+	<tr class="multi-row-template">
+		<th>면접방법</th>
+		<td colspan="3">
+			<div class="group" data-type="rField" data-element-type="chk_d" data-node-name="metCase1" style="display:inline;">
+				<input type="checkbox" name="metCase" data-face-for="metCase1" value="meet">&nbsp;대면면접&nbsp;&nbsp;
+				<input type="text" name="metCase1" data-face-real="y" data-type="rField" style="display: none;">
+			</div>
+			<div class="group" data-type="rField" data-element-type="chk_d" data-node-name="metCase2" style="display:inline;">
+				<input type="checkbox" name="metCase" data-face-for="metCase2" value="job">&nbsp;JobFlex 화상면접&nbsp;&nbsp;
+				<input type="text" name="metCase2" data-face-real="y" data-type="rField" style="display: none;">
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<th>사내인재추천제도<br>활용여부</th>
+		<td colspan="3">
+            <div data-type="mField" data-element-type="chk_d" data-node-name="CHECK_BOX">
+                <input type="checkbox" name="CHECK_BOX" value="활용함"> 활용함&nbsp;&nbsp;
+                <input type="checkbox" name="CHECK_BOX" value="활용안함">활용안함&nbsp;&nbsp;
+            </div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="4" style="font-size:14px; font-weight:bold; border-left:none;border-right:none;">
+			2. 공고내용
+		</td>
+	</tr>
+	<tr>
+		<th>공고기간</th>
+		<td colspan="3">
+			<input type="text" data-type="mField" data-pattern="date" data-date-format="yy년 mm월 dd일" style="width:150px;" id="Notice_SDate" value="{{doc.BodyContext.Notice_SDate}}" readonly="">&nbsp;~
+			<input type="text" data-type="mField" data-pattern="date" data-date-format="yy년 mm월 dd일" style="width:150px;" id="Notice_EDate" value="{{doc.BodyContext.Notice_EDate}}" readonly="">
+		</td>
+	</tr>
+	<tr>
+		<th>경력구분</th>
+		<td colspan="3">
+			<div data-type="mField" data-element-type="chk_d" data-node-name="Career">
+				<input type="checkbox" name="Career" value="신입">&nbsp;신입&nbsp;&nbsp;
+				<input type="checkbox" name="Career" value="경력">&nbsp;경력&nbsp;[
+				<input type="text" data-type="mField" id="Career_Y" value="{{doc.BodyContext.Career_Y}}" style="width:30px;">년 이상]&nbsp;&nbsp;
+				<input type="checkbox" name="Career" value="무관">&nbsp;무관
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<th>학력사항</th>
+		<td colspan="3">
+			<div data-type="mField" data-element-type="chk_d" data-node-name="Edu_Level">
+				<input type="checkbox" name="Edu_Level" value="고졸">&nbsp;고졸&nbsp;&nbsp;
+				<input type="checkbox" name="Edu_Level" value="전문학사">&nbsp;전문학사&nbsp;&nbsp;
+				<input type="checkbox" name="Edu_Level" value="학사">&nbsp;학사&nbsp;&nbsp;
+				<input type="checkbox" name="Edu_Level" value="학사이상">&nbsp;학사이상&nbsp;&nbsp;
+				<input type="checkbox" name="Edu_Level" value="무관">&nbsp;무관
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<th>전&nbsp;&nbsp;&nbsp;&nbsp;공</th>
+		<td colspan="3">
+			<input type="text" data-type="mField" id="Major_Sort" value="{{doc.BodyContext.Major_Sort}}" style="width:200px;">
+			<span data-type="mField" data-element-type="chk_d" data-node-name="Major">
+				<input type="checkbox" name="Major" value="무관">&nbsp;무관
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<th>공고문 작성</th>
+		<td colspan="3">
+			<textarea data-type="mField" style="width:98%;" id="Notice_Context" rows="10">{{doc.BodyContext.Notice_Context}}</textarea><br style="">
+			<font color="red" size="1px">* 작성해 주신 내용으로 채용사이트에 게시되오니 구체적으로 기재해 주시기 바랍니다.</font>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="4" style="font-size:14px; font-weight:bold; border-left:none;border-right:none;">
+			3. 비고
+		</td>
+	</tr>
+	<tr>
+		<th>기타의견</th>
+		<td colspan="3">
+			<textarea data-type="mField" style="width:98%;" id="Etc_Opin" rows="5">{{doc.BodyContext.Etc_Opin}}</textarea>
+		</td>
+	</tr>
+</tbody></table>
+<div style="font-size:13px; text-align:center;">
+<br style=""><strong>상기와 같이 인력 충원을 요청하오니 처리하여 주시기 바랍니다.</strong><br style="">
+</div>
+<!--실 결재양식 내용 부분 끝 -->

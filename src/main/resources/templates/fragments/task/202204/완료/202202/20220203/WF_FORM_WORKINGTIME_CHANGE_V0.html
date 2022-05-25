@@ -1,0 +1,72 @@
+<!--실 결재양식 내용 부분 시작 -->
+<table class="tableStyle linePlus mt10 sortable" id="xformid_1"><!-- class="table_10" -->
+
+<input type="hidden" data-type="rField" name="UserCode">
+<input type="hidden" data-type="rField" name="CompanyCode">
+
+
+</table><table class="tableStyle linePlus mt10 sortable" id="xformid_2"><!-- class="table_10" -->
+    <colgroup>
+        
+        <col style="width:15%">
+        <col style="width:85%">
+    </colgroup>
+    <tbody><tr>
+    	<th>기존근무시간</th>
+		<td class="ui-sortable">
+			 <input type="text" name="orgStartTime" data-type="mField" value="{{ doc.BodyContext.orgStartTime }}" onchange="chkWorkTime1(this);" data-pattern="time" data-time-format="H:i" style="width:40%;" required="" title="시작시간">
+	   		~
+	   		<input type="text" name="orgEndTime" data-type="mField" value="{{ doc.BodyContext.orgEndTime }}" onchange="chkWorkTime1(this);" data-pattern="time" data-time-format="H:i" style="width:40%;" required="" title="종료시간"> 
+		</td>
+		
+    </tr>
+      <tr>
+    	<th>변경근무시간</th>
+		<td class="ui-sortable">
+			 <input type="text" name="modStartTime" data-type="mField" value="{{ doc.BodyContext.modStartTime }}" onchange="chkWorkTime2(this);" data-pattern="time" data-time-format="H:i" style="width:40%;" required="" title="시작시간">
+	   		~
+	   		<input type="text" name="modEndTime" data-type="mField" value="{{ doc.BodyContext.modEndTime }}" onchange="chkWorkTime2(this);" data-pattern="time" data-time-format="H:i" style="width:40%;" required="" title="종료시간"> 
+		</td>
+		
+    </tr>
+   
+    
+</tbody></table>
+
+<table class="tableStyle linePlus mt10 sortable" id="xformid_3"><!-- class="table_10" -->
+    <colgroup>
+        
+         <col style="width:15%">
+        <col style="width:70%">
+        <col style="width:15%">
+    </colgroup>
+    
+      <tbody><tr>
+	    <td colspan="3" style="text-align :center ;border-left: none; border-right: none;  border-bottom: none;" class="ui-sortable">
+		    <div style="text-align :center  " class="sortable-container ui-sortable">
+		    	<span>상기 근무 시간을 변경하고자 품의 하오니 검토 후 재가하여 주시기 바랍니다.</span>
+		    </div>
+	    	
+	    </td>
+    </tr>
+    
+</tbody></table>
+<table class="tableStyle linePlus mt10 sortable" id="xformid_4"><!-- class="table_10" -->
+    <colgroup>
+        
+         <col style="width:40%">
+         <col style="width:20%">
+         <col style="width:40%">
+    </colgroup>
+    <tbody><tr>
+    <td style="border-left: none; border-right: none; border-top: none; border-bottom: none; " align="center" class="ui-sortable">
+    </td>
+    <td style="border-left: none; border-right: none; border-top: none; border-bottom: none; " align="center" class="ui-sortable">
+    <input data-type="mField" text-align="center" id="writeDate" name="writeDate" value="{{ doc.BodyContext.writeDate }}" readonly="readonly" style="width:98% ; border:0px solid;">
+    </td>
+    <td style="border-left: none; border-right: none; border-top: none; border-bottom: none;" align="center" class="ui-sortable">
+    </td>
+    </tr>
+    </tbody></table>
+
+<!--실 결재양식 내용 부분 끝 -->
